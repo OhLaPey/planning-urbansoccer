@@ -1,0 +1,18 @@
+{
+  "semaine": 5,
+  "annee": 2026,
+  "date_debut": "26 Janvier",
+  "date_fin": "1 Février",
+  "employesActifs": [
+    "BOULARDET Lucas",
+    "CARRERE Peïo",
+    "CRUZEL Quentin",
+    "DE NOUEL Maxime",
+    "DONAER Nicolas",
+    "MADIELE Henri",
+    "PEREZ Loic",
+    "PUJOL Mathieu",
+    "TOPPAN Mattis",
+    "TINGUY Florian"
+  ]
+}
