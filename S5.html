@@ -7,144 +7,67 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             min-height: 100vh;
             padding: 20px;
         }
-        
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 20px;
-        }
-        
-        .logo {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-        
-        h1 {
-            color: #FF6B35;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        
-        .subtitle {
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-        
+        .container { max-width: 500px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 20px; padding: 20px; }
+        .logo { font-size: 48px; margin-bottom: 10px; }
+        h1 { color: #FF6B35; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .subtitle { color: #888; font-size: 14px; margin-bottom: 5px; }
         .dates {
-            color: #FF6B35;
-            font-size: 18px;
-            font-weight: 600;
+            color: #FF6B35; font-size: 18px; font-weight: 600;
             background: rgba(255, 107, 53, 0.1);
-            padding: 10px 20px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 10px;
+            padding: 10px 20px; border-radius: 20px;
+            display: inline-block; margin-top: 10px;
         }
-        
-        /* Week Tabs */
         .week-selector {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 8px;
+            margin-bottom: 25px; flex-wrap: wrap;
         }
-        
         .week-tab {
             padding: 10px 18px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            color: #888;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 14px;
+            border-radius: 25px; color: #888;
+            text-decoration: none; font-weight: 500; font-size: 14px;
             transition: all 0.2s ease;
         }
-        
         .week-tab:hover {
             background: rgba(255, 107, 53, 0.1);
-            border-color: rgba(255, 107, 53, 0.3);
-            color: #FF6B35;
+            border-color: rgba(255, 107, 53, 0.3); color: #FF6B35;
         }
-        
-        .week-tab.active {
-            background: #FF6B35;
-            border-color: #FF6B35;
-            color: white;
-        }
-        
-        .employees {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        
+        .week-tab.active { background: #FF6B35; border-color: #FF6B35; color: white; }
+        .employees { display: flex; flex-direction: column; gap: 8px; }
         .employee {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display: flex; align-items: center; justify-content: space-between;
             padding: 16px 20px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
+            border-radius: 12px; color: white;
+            text-decoration: none; font-weight: 500;
             transition: all 0.2s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
         a.employee:hover {
             background: rgba(255, 107, 53, 0.2);
-            border-color: #FF6B35;
-            transform: translateX(5px);
+            border-color: #FF6B35; transform: translateX(5px);
         }
-        
-        a.employee::after {
-            content: '📅';
-            font-size: 20px;
-        }
-        
+        a.employee::after { content: '📅'; font-size: 20px; }
         .employee.repos {
             color: #555;
             background: rgba(255, 255, 255, 0.02);
             border-color: rgba(255, 255, 255, 0.05);
         }
-        
         .badge {
-            font-size: 11px;
-            padding: 4px 10px;
+            font-size: 11px; padding: 4px 10px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            color: #555;
-            font-weight: 400;
+            border-radius: 20px; color: #555; font-weight: 400;
         }
-        
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #666;
-            font-size: 12px;
-        }
+        .footer { text-align: center; margin-top: 30px; color: #666; font-size: 12px; }
     </style>
 </head>
 <body>
@@ -155,17 +78,15 @@
             <p class="subtitle">Semaine 5</p>
             <div class="dates">26 Janvier → 1 Février</div>
         </div>
-        
         <div class="week-selector">
             <a href="#" class="week-tab active">S5</a>
         </div>
-        
         <div class="employees">
-            <div class="employee repos">BONILLO Matthieu <span class="badge">Repos</span></div>
+            <a href="ics/bonillo-matthieu.ics" class="employee">BONILLO Matthieu</a>
             <div class="employee repos">BOULARDET Lucas <span class="badge">Repos</span></div>
-            <div class="employee repos">CARRERE Peïo <span class="badge">Repos</span></div>
-            <a href="ics/castellon-pascaline.ics" class="employee">CASTELLON Pascaline</a>
-            <div class="employee repos">COHAT Linda <span class="badge">Repos</span></div>
+            <a href="ics/carrere-peio.ics" class="employee">CARRERE Peïo</a>
+            <div class="employee repos">CASTELLON Pascaline <span class="badge">Repos</span></div>
+            <a href="ics/cohat-linda.ics" class="employee">COHAT Linda</a>
             <a href="ics/cruzel-quentin.ics" class="employee">CRUZEL Quentin</a>
             <a href="ics/de-nouel-maxime.ics" class="employee">DE NOUEL Maxime</a>
             <a href="ics/divien-yohan.ics" class="employee">DIVIEN Yohan</a>
@@ -182,9 +103,8 @@
             <div class="employee repos">RABII Mehdi <span class="badge">Repos</span></div>
             <div class="employee repos">SEIGNE Kevin <span class="badge">Repos</span></div>
             <a href="ics/tinguy-florian.ics" class="employee">TINGUY Florian</a>
-            <div class="employee repos">TOPPAN Mattis <span class="badge">Repos</span></div>
+            <a href="ics/toppan-mattis.ics" class="employee">TOPPAN Mattis</a>
         </div>
-        
         <div class="footer">
             <p>Cliquez sur votre nom pour ajouter le planning à votre calendrier</p>
         </div>
