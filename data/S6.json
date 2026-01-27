@@ -1,0 +1,24 @@
+{
+  "semaine": 6,
+  "annee": 2026,
+  "date_debut": "2 Février",
+  "date_fin": "8 Février",
+  "employesActifs": [
+    "BONILLO Matthieu",
+    "CARRERE Peïo",
+    "CRUZEL Quentin",
+    "DE NOUEL Maxime",
+    "DIVIEN Yohan",
+    "DONAER Nicolas",
+    "DOVINA Théo",
+    "MADIELE Henri",
+    "MOSTEFA Yanis",
+    "PEREZ Loic",
+    "PISTORE Remi",
+    "PUJOL Mathieu",
+    "RABII Mehdi",
+    "SEIGNE Kevin",
+    "TINGUY Florian",
+    "TOPPAN Mattis"
+  ]
+}
