@@ -1,0 +1,57 @@
+name: Générer planning et publier sur GitHub Pages
+
+on:
+  push:
+    paths:
+      - 'Plannings *.xlsx'
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer les dépendances
+        run: pip install openpyxl
+
+      - name: Générer les fichiers (ICS, HTML, JSON)
+        run: python generate.py
+
+      - name: Préparer les fichiers pour Pages
+        run: |
+          mkdir -p _site
+          cp -r ics/ _site/ics/
+          cp -r data/ _site/data/
+          cp index.html _site/
+          cp S*.html _site/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
