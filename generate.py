@@ -106,6 +106,30 @@ def get_cell(ws, row, col):
     return ws[f"{col}{row}"].value
 
 
+def normalize_time_str(val):
+    """Normalise une valeur de cellule horaire en chaîne « HH:MM/HH:MM[+] ».
+
+    Gère :
+    - str  « 08:00/10:00 », « 8:00/10:00 », « 19:00/00:30+ »
+    - datetime (Excel formate la cellule en Heure) → converti en str
+    - Retourne None si non reconnu.
+    """
+    if isinstance(val, datetime):
+        # Excel time-formatted cell: openpyxl returns datetime(1900,1,1,H,M,S)
+        # On ne peut extraire qu'une seule heure, pas un intervalle → warning
+        return None
+    if not isinstance(val, str):
+        return None
+    s = val.strip()
+    if not s:
+        return None
+    # Accepter les heures à 1 ou 2 chiffres : « 8:00/10:00 » → « 08:00/10:00 »
+    m = re.match(r"^(\d{1,2}):(\d{2})/(\d{1,2}):(\d{2})(\+?)$", s)
+    if not m:
+        return None
+    return f"{int(m.group(1)):02d}:{m.group(2)}/{int(m.group(3)):02d}:{m.group(4)}{m.group(5)}"
+
+
 def parse_time(time_str, base_date):
     """Parse « 08:00/10:00 » ou « 19:00/00:30+ » en (start_dt, end_dt).
 
@@ -157,21 +181,22 @@ def parse_employees(ws, dates, week_num):
         name_cell = get_cell(ws, row, "A")
         if name_cell and isinstance(name_cell, str) and name_cell.strip():
             if current_name:
-                employees[current_name] = parse_shifts(ws, current_rows, dates, week_num)
+                employees[current_name] = parse_shifts(ws, current_rows, dates, week_num, current_name)
             current_name = name_cell.strip()
             current_rows = [row]
         elif current_name:
             current_rows.append(row)
 
     if current_name:
-        employees[current_name] = parse_shifts(ws, current_rows, dates, week_num)
+        employees[current_name] = parse_shifts(ws, current_rows, dates, week_num, current_name)
 
     return employees
 
 
-def parse_shifts(ws, rows, dates, week_num):
+def parse_shifts(ws, rows, dates, week_num, employee_name=""):
     """Parse les créneaux d'un employé à partir de ses lignes."""
     events = []
+    warnings = []
 
     i = 0
     while i < len(rows):
@@ -182,7 +207,7 @@ def parse_shifts(ws, rows, dates, week_num):
             val = get_cell(ws, row, col)
             if val and isinstance(val, str):
                 val = val.strip()
-                if val and not re.match(r"^\d{2}:\d{2}/\d{2}:\d{2}", val):
+                if val and not re.match(r"^\d{1,2}:\d{2}/\d{1,2}:\d{2}", val):
                     has_codes = True
                     codes[col] = val
 
@@ -191,26 +216,51 @@ def parse_shifts(ws, rows, dates, week_num):
             if i + 1 < len(rows):
                 time_row = rows[i + 1]
                 for col in COLS:
-                    val = get_cell(ws, time_row, col)
-                    if val and isinstance(val, str) and re.match(r"^\d{2}:\d{2}/\d{2}:\d{2}", val.strip()):
-                        times[col] = val.strip()
+                    raw_val = get_cell(ws, time_row, col)
+                    if raw_val is None:
+                        continue
+                    normalized = normalize_time_str(raw_val)
+                    if normalized:
+                        times[col] = normalized
+                    elif isinstance(raw_val, datetime):
+                        warnings.append(
+                            f"  /!\\ {employee_name} ligne {time_row} col {col} : "
+                            f"cellule format\u00e9e en Heure ({raw_val.strftime('%H:%M')}), "
+                            f"convertir en texte dans Excel"
+                        )
+            else:
+                for col, code in codes.items():
+                    if col in dates:
+                        warnings.append(
+                            f"  /!\\ {employee_name} ligne {row} col {col} : "
+                            f"code \u00ab {code} \u00bb sans ligne horaire en dessous"
+                        )
 
             for col, code in codes.items():
-                if col in times and col in dates:
-                    parsed = parse_time(times[col], dates[col])
-                    if parsed:
-                        label = CODE_NAMES.get(code, code)
-                        events.append({
-                            "code": code,
-                            "label": label,
-                            "start": parsed[0],
-                            "end": parsed[1],
-                            "week": week_num,
-                        })
+                if col in dates:
+                    if col in times:
+                        parsed = parse_time(times[col], dates[col])
+                        if parsed:
+                            label = CODE_NAMES.get(code, code)
+                            events.append({
+                                "code": code,
+                                "label": label,
+                                "start": parsed[0],
+                                "end": parsed[1],
+                                "week": week_num,
+                            })
+                    else:
+                        warnings.append(
+                            f"  /!\\ {employee_name} ligne {row} col {col} : "
+                            f"code \u00ab {code} \u00bb sans horaire trouv\u00e9"
+                        )
 
             i += 2
         else:
             i += 1
+
+    for w in warnings:
+        print(w)
 
     events.sort(key=lambda e: e["start"])
     return events
