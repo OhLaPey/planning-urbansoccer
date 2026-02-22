@@ -345,32 +345,34 @@ def generate_ics(name, events, week_notes=None):
         week_updates = wn.get("updates", [])
         extra_desc = ""
         if week_comment:
-            extra_desc += "\\n---\\n" + week_comment
+            extra_desc += week_comment
         for upd in week_updates:
             upd_text = upd.get("text", "")
             upd_date = upd.get("date", "")
             if upd_text:
                 prefix = f"MAJ {upd_date}: " if upd_date else "MAJ: "
-                extra_desc += "\\n" + prefix + upd_text
+                if extra_desc:
+                    extra_desc += "\n"
+                extra_desc += prefix + upd_text
 
         for i, evt in enumerate(by_week[week_num], 1):
             dt_start = evt["start"].strftime("%Y%m%dT%H%M%S")
             dt_end = evt["end"].strftime("%Y%m%dT%H%M%S")
-            # Escape for ICS DESCRIPTION
-            desc = evt['label']
-            if extra_desc:
-                desc += extra_desc
+            # Escape for ICS DESCRIPTION (notes only, label is in SUMMARY)
+            desc = extra_desc
             desc_escaped = desc.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
-            lines.extend([
+            vevent = [
                 "BEGIN:VEVENT",
                 f"UID:{s}-s{week_num}-{i}@urban7d",
                 f"DTSTAMP:{dt_start}",
                 f"DTSTART;TZID=Europe/Paris:{dt_start}",
                 f"DTEND;TZID=Europe/Paris:{dt_end}",
                 f"SUMMARY:{evt['label']}",
-                f"DESCRIPTION:{desc_escaped}",
-                "END:VEVENT",
-            ])
+            ]
+            if desc_escaped:
+                vevent.append(f"DESCRIPTION:{desc_escaped}")
+            vevent.append("END:VEVENT")
+            lines.extend(vevent)
 
     lines.append("END:VCALENDAR")
     return "\r\n".join(lines)
@@ -421,11 +423,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
     DAYS_FULL = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
     monday = datetime.fromisocalendar(year, week_num, 1)
     day_labels_json = json.dumps([
-        f"{DAYS_SHORT[i]} {(monday + timedelta(days=i)).day}/{(monday + timedelta(days=i)).month:02d}"
+        f"{DAYS_SHORT[i]} {(monday + timedelta(days=i)).day:02d}/{(monday + timedelta(days=i)).month:02d}"
         for i in range(7)
     ], ensure_ascii=False)
     day_labels_full_json = json.dumps([
-        f"{DAYS_FULL[i]} {(monday + timedelta(days=i)).day}/{(monday + timedelta(days=i)).month:02d}"
+        f"{DAYS_FULL[i]} {(monday + timedelta(days=i)).day:02d}/{(monday + timedelta(days=i)).month:02d}"
         for i in range(7)
     ], ensure_ascii=False)
 
@@ -476,7 +478,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             z-index: 0;
             pointer-events: none;
             background: url('bg-team.jpg') center center / cover no-repeat;
-            opacity: 0.08;
+            opacity: 0.12;
         }}
         .container {{ position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }}
 
@@ -545,6 +547,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .tl-name:hover {{ color: #FF7832; }}
         .tl-bar-container {{ flex: 1; position: relative; height: 26px;
                              background: rgba(255,255,255,0.02); border-radius: 5px; }}
+        .tl-grid-line {{ position: absolute; top: 0; bottom: 0; width: 1px; pointer-events: none; z-index: 0; }}
+        .tl-grid-line.hour {{ background: rgba(255,255,255,0.10); }}
+        .tl-grid-line.half {{ background: rgba(255,255,255,0.05); border-left: 1px dashed rgba(255,255,255,0.08); width: 0; }}
         .tl-bar {{ position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
                    font-size: 9px; font-weight: 600; overflow: hidden;
@@ -874,6 +879,17 @@ def generate_html(week_employees, week_num, year, all_weeks):
             var pxPerHour = 40;
             inner.style.minWidth = (70 + range * pxPerHour) + 'px';
 
+            // Grid line positions for bar containers
+            var gridLines = [];
+            for (var gh = minH; gh <= maxH; gh++) {{
+                var pos = ((gh - minH) / range) * 100;
+                gridLines.push({{ pos: pos, cls: 'hour' }});
+                if (gh < maxH) {{
+                    var halfPos = ((gh + 0.5 - minH) / range) * 100;
+                    gridLines.push({{ pos: halfPos, cls: 'half' }});
+                }}
+            }}
+
             // Time markers
             var markerRow = document.createElement('div');
             markerRow.className = 'timeline-row';
@@ -914,6 +930,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
                 var barContainer = document.createElement('div');
                 barContainer.className = 'tl-bar-container';
+
+                // Add grid lines
+                gridLines.forEach(function(gl) {{
+                    var line = document.createElement('div');
+                    line.className = 'tl-grid-line ' + gl.cls;
+                    line.style.left = gl.pos + '%';
+                    barContainer.appendChild(line);
+                }});
 
                 byName[name].forEach(function(ev) {{
                     var s = new Date(ev.start);
@@ -1018,15 +1042,16 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
 
         function generateICSForNames(names) {{
-            // Build notes description from NOTES_DATA
+            // Build notes description from NOTES_DATA (notes only, no label)
             var noteDesc = '';
             if (NOTES_DATA.comment) {{
-                noteDesc += '\\n---\\n' + NOTES_DATA.comment;
+                noteDesc += NOTES_DATA.comment;
             }}
             (NOTES_DATA.updates || []).forEach(function(u) {{
                 if (u.text) {{
                     var prefix = u.date ? ('MAJ ' + u.date + ': ') : 'MAJ: ';
-                    noteDesc += '\\n' + prefix + u.text;
+                    if (noteDesc) noteDesc += '\\n';
+                    noteDesc += prefix + u.text;
                 }}
             }});
 
@@ -1043,13 +1068,12 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 emp.events.forEach(function(ev, i) {{
                     var s = new Date(ev.start);
                     var e = new Date(ev.end);
-                    var desc = ev.label + noteDesc;
                     lines.push('BEGIN:VEVENT');
                     lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
                     lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
                     lines.push('DTEND;TZID=Europe/Paris:' + toICSDate(e));
                     lines.push('SUMMARY:' + name + ' - ' + ev.label);
-                    lines.push('DESCRIPTION:' + icsEscape(desc));
+                    if (noteDesc) lines.push('DESCRIPTION:' + icsEscape(noteDesc));
                     lines.push('END:VEVENT');
                 }});
             }});
