@@ -12,9 +12,6 @@
         body {
             font-family: Tahoma, 'Inter', sans-serif;
             background: #1E1E1E;
-            background-image:
-                radial-gradient(ellipse at 20% 50%, rgba(255,120,50,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(255,120,50,0.04) 0%, transparent 50%);
             min-height: 100vh;
             padding: 15px;
             color: #fff;
@@ -26,22 +23,8 @@
             inset: 0;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.03;
-            background-image:
-                /* terrain central */
-                linear-gradient(to right, #fff 1px, transparent 1px),
-                linear-gradient(to bottom, #fff 1px, transparent 1px),
-                /* rond central */
-                radial-gradient(circle at 50% 50%, transparent 58px, #fff 58px, #fff 60px, transparent 60px),
-                /* ligne médiane */
-                linear-gradient(to right, transparent 49.8%, #fff 49.8%, #fff 50.2%, transparent 50.2%),
-                /* lignes de but */
-                linear-gradient(to bottom, transparent 30%, #fff 30%, #fff 30.3%, transparent 30.3%),
-                linear-gradient(to bottom, transparent 69.7%, #fff 69.7%, #fff 70%, transparent 70%),
-                linear-gradient(to right, transparent 25%, #fff 25%, #fff 25.3%, transparent 25.3%),
-                linear-gradient(to right, transparent 74.7%, #fff 74.7%, #fff 75%, transparent 75%);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+            background: url('bg-team.jpg') center center / cover no-repeat;
+            opacity: 0.08;
         }
         .container { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
 
@@ -91,26 +74,33 @@
                            color: #FF7832; }
 
         /* ── Timeline (vue Journée) ── */
-        .timeline { position: relative; margin-bottom: 20px; }
-        .time-grid { position: relative; min-height: 200px; }
+        .timeline { position: relative; margin-bottom: 20px;
+                     overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        /* ── Scrollbar orange néon ── */
+        .timeline::-webkit-scrollbar { height: 6px; }
+        .timeline::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 3px; }
+        .timeline::-webkit-scrollbar-thumb { background: #FF7832; border-radius: 3px;
+                                              box-shadow: 0 0 8px rgba(255,120,50,0.6); }
+        .timeline { scrollbar-width: thin; scrollbar-color: #FF7832 rgba(255,255,255,0.04); }
+        .timeline-inner { min-width: 500px; }
         .time-markers { display: flex; justify-content: space-between; padding: 0 0 6px 0;
                          border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
-        .time-marker { font-size: 9px; color: #444; font-weight: 500; }
+        .time-marker { font-size: 9px; color: #555; font-weight: 500; }
         .timeline-row { display: flex; align-items: center; margin-bottom: 4px; }
-        .tl-name { width: 65px; font-size: 10px; color: #888; font-weight: 500;
+        .tl-name { width: 70px; font-size: 10px; color: #aaa; font-weight: 500;
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
                     padding-right: 6px; cursor: pointer; transition: color 0.2s; }
         .tl-name:hover { color: #FF7832; }
-        .tl-bar-container { flex: 1; position: relative; height: 24px;
+        .tl-bar-container { flex: 1; position: relative; height: 26px;
                              background: rgba(255,255,255,0.02); border-radius: 5px; }
         .tl-bar { position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
-                   font-size: 8px; font-weight: 600; overflow: hidden;
+                   font-size: 9px; font-weight: 600; overflow: hidden;
                    border-left: 2px solid; transition: all 0.2s;
                    cursor: default; }
         .tl-bar:hover { filter: brightness(1.3); z-index: 2;
                          box-shadow: 0 0 12px var(--glow-color); }
-        .tl-bar .bar-label { padding: 0 3px; white-space: nowrap; }
+        .tl-bar .bar-label { padding: 0 4px; white-space: nowrap; }
 
         /* ── Employee list (vue Staff) ── */
         .employee-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
@@ -160,24 +150,19 @@
 
         .no-events { text-align: center; padding: 30px; color: #444; font-size: 13px; }
 
-        /* ── Checkboxes export (vue Journée) ── */
-        .tl-check { flex-shrink: 0; width: 18px; height: 18px; margin-left: 6px;
-                     accent-color: #FF7832; cursor: pointer; }
-        .export-bar { display: none; justify-content: center; gap: 10px; margin-top: 12px; }
-        .export-bar.visible { display: flex; }
-        .export-btn { display: inline-flex; align-items: center; gap: 6px;
-                       padding: 10px 22px; background: #FF7832; color: white;
-                       border: none; border-radius: 20px; font-size: 13px; font-weight: 600;
-                       cursor: pointer; font-family: inherit; transition: all 0.2s;
-                       box-shadow: 0 0 15px rgba(255,120,50,0.3); }
-        .export-btn:hover { background: #ff9050;
-                             box-shadow: 0 0 25px rgba(255,120,50,0.5); transform: scale(1.02); }
-        .export-btn:disabled { opacity: 0.4; cursor: default; transform: none;
-                                box-shadow: none; }
-        .select-all-row { display: flex; justify-content: flex-end; align-items: center;
-                           gap: 6px; margin-bottom: 6px; font-size: 11px; color: #666; }
-        .select-all-row label { cursor: pointer; }
-        .select-all-row input { accent-color: #FF7832; cursor: pointer; }
+        /* ── Notes de semaine ── */
+        .week-notes { margin-bottom: 15px; }
+        .week-notes:empty { display: none; }
+        .note-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+                      border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }
+        .note-card.comment { border-left: 3px solid #FF7832; }
+        .note-card.update { border-left: 3px solid #ffc000; }
+        .note-label { font-size: 10px; font-weight: 700; text-transform: uppercase;
+                       letter-spacing: 0.5px; margin-bottom: 6px; }
+        .note-label.comment { color: #FF7832; }
+        .note-label.update { color: #ffc000; }
+        .note-text { font-size: 12px; color: #ccc; line-height: 1.6; white-space: pre-line; }
+        .note-date { font-size: 10px; color: #666; margin-bottom: 4px; }
 
         /* ── Legend ── */
         .legend { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
@@ -201,6 +186,8 @@
             <a href="S10.html" class="week-tab">S10</a>
         </div>
 
+        <div class="week-notes" id="week-notes"></div>
+
         <div class="view-toggle">
             <button class="view-btn active" data-view="day">Vue Journée</button>
             <button class="view-btn" data-view="staff">Vue Staff</button>
@@ -210,11 +197,7 @@
         <div id="view-day">
             <div class="day-tabs" id="day-tabs"></div>
             <div class="legend" id="legend"></div>
-            <div id="select-all-container"></div>
             <div class="timeline" id="timeline"></div>
-            <div class="export-bar" id="export-bar">
-                <button class="export-btn" id="export-btn" disabled>Exporter la sélection</button>
-            </div>
         </div>
 
         <!-- ── Vue Staff (liste) ── -->
@@ -339,6 +322,10 @@
 
             renderLegend(allCodes);
 
+            // Scrollable inner wrapper
+            var inner = document.createElement('div');
+            inner.className = 'timeline-inner';
+
             // Find time range
             var minH = 24, maxH = 0;
             dayEvents.forEach(function(d) {
@@ -346,7 +333,7 @@
                 var e = new Date(d.ev.end);
                 var sh = s.getHours() + s.getMinutes()/60;
                 var eh = e.getHours() + e.getMinutes()/60;
-                if (eh <= sh) eh = 24; // crosses midnight
+                if (eh <= sh) eh = 24;
                 if (sh < minH) minH = sh;
                 if (eh > maxH) maxH = eh;
             });
@@ -355,7 +342,11 @@
             if (maxH <= minH) maxH = minH + 1;
             var range = maxH - minH;
 
-            // Time markers — aligned with bar containers
+            // Set inner width: 40px per hour for comfortable reading
+            var pxPerHour = 40;
+            inner.style.minWidth = (70 + range * pxPerHour) + 'px';
+
+            // Time markers
             var markerRow = document.createElement('div');
             markerRow.className = 'timeline-row';
             var markerSpacer = document.createElement('div');
@@ -372,11 +363,7 @@
                 markers.appendChild(m);
             }
             markerRow.appendChild(markers);
-            var markerCbSpacer = document.createElement('div');
-            markerCbSpacer.style.width = '24px';
-            markerCbSpacer.style.flexShrink = '0';
-            markerRow.appendChild(markerCbSpacer);
-            tl.appendChild(markerRow);
+            inner.appendChild(markerRow);
 
             // Group by employee
             var byName = {};
@@ -426,49 +413,11 @@
                     barContainer.appendChild(bar);
                 });
 
-                var cb = document.createElement('input');
-                cb.type = 'checkbox';
-                cb.className = 'tl-check';
-                cb.setAttribute('data-name', name);
-                cb.onchange = updateExportBar;
-
                 row.appendChild(barContainer);
-                row.appendChild(cb);
-                tl.appendChild(row);
+                inner.appendChild(row);
             });
 
-            // Select-all row
-            var selAllContainer = document.getElementById('select-all-container');
-            selAllContainer.innerHTML = '';
-            if (nameOrder.length > 0) {
-                var selRow = document.createElement('div');
-                selRow.className = 'select-all-row';
-                selRow.innerHTML = '<label for="select-all-cb">Tout sélectionner</label>';
-                var selCb = document.createElement('input');
-                selCb.type = 'checkbox';
-                selCb.id = 'select-all-cb';
-                selCb.onchange = function() {
-                    document.querySelectorAll('.tl-check').forEach(function(c) { c.checked = selCb.checked; });
-                    updateExportBar();
-                };
-                selRow.appendChild(selCb);
-                selAllContainer.appendChild(selRow);
-            }
-        }
-
-        // ── Export logic ──
-        function updateExportBar() {
-            var checked = document.querySelectorAll('.tl-check:checked');
-            var bar = document.getElementById('export-bar');
-            var btn = document.getElementById('export-btn');
-            if (checked.length > 0) {
-                bar.classList.add('visible');
-                btn.disabled = false;
-                btn.textContent = 'Exporter ' + checked.length + ' planning' + (checked.length > 1 ? 's' : '');
-            } else {
-                bar.classList.remove('visible');
-                btn.disabled = true;
-            }
+            tl.appendChild(inner);
         }
 
         function pad2(n) { return n.toString().padStart(2, '0'); }
@@ -505,24 +454,6 @@
             lines.push('END:VCALENDAR');
             return lines.join('\r\n');
         }
-
-        document.getElementById('export-btn').onclick = function() {
-            var checked = document.querySelectorAll('.tl-check:checked');
-            var names = [];
-            checked.forEach(function(cb) { names.push(cb.getAttribute('data-name')); });
-            if (names.length === 0) return;
-
-            var ics = generateICSForNames(names);
-            var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-            var url = URL.createObjectURL(blob);
-            var a = document.createElement('a');
-            a.href = url;
-            a.download = 'planning-export.ics';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        };
 
         // ── View toggle ──
         document.querySelectorAll('.view-btn').forEach(function(btn) {
@@ -623,8 +554,34 @@
             btn.onclick = function() { openModal(btn.getAttribute('data-name')); };
         });
 
-        // ── Timeline name click also in day view ──
-        // (handled inline above)
+        // ── Load weekly notes ──
+        (function() {
+            var notesEl = document.getElementById('week-notes');
+            fetch('notes/S9.json').then(function(r) {
+                if (!r.ok) return null;
+                return r.json();
+            }).then(function(data) {
+                if (!data) return;
+                if (data.comment) {
+                    var card = document.createElement('div');
+                    card.className = 'note-card comment';
+                    card.innerHTML = '<div class="note-label comment">Note de semaine</div>' +
+                        '<div class="note-text">' + data.comment.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
+                    notesEl.appendChild(card);
+                }
+                if (data.updates && data.updates.length > 0) {
+                    data.updates.forEach(function(u) {
+                        var card = document.createElement('div');
+                        card.className = 'note-card update';
+                        var dateStr = u.date ? '<div class="note-date">' + u.date + '</div>' : '';
+                        card.innerHTML = '<div class="note-label update">Mise à jour</div>' +
+                            dateStr +
+                            '<div class="note-text">' + u.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
+                        notesEl.appendChild(card);
+                    });
+                }
+            }).catch(function() {});
+        })();
 
         // Initial render
         renderTimeline();
