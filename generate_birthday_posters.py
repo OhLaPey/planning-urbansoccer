@@ -205,23 +205,47 @@ def delete_slide(prs, idx):
     prs.slides._sldIdLst.remove(sldId)
 
 
+def split_prenoms(prenom):
+    """Sépare 'Prénom1 et Prénom2' en liste de prénoms individuels."""
+    if " et " in prenom:
+        return [p.strip() for p in prenom.split(" et ")]
+    return [prenom]
+
+
+def is_double(prenom):
+    """Vérifie si c'est un double anniversaire."""
+    return " et " in prenom
+
+
 def set_name_on_slide(slide, template_index, prenom):
-    """Remplace le prénom sur un slide selon le type de template."""
-    if template_index == TEMPLATE_ORANGE:
-        # shape[3] = prénom
+    """Remplace le prénom sur un slide selon le type de template.
+
+    Pour les doubles anniversaires (« Prénom1 et Prénom2 ») :
+    - Bump : utilise les 2 emplacements dédiés (shape[3] + shape[6])
+    - Orange / FFF : affiche les 2 prénoms sur des lignes séparées
+    """
+    prenoms = split_prenoms(prenom)
+
+    if template_index == TEMPLATE_BUMP:
+        # Bump a 2 emplacements nom : shape[6] (visible) et shape[3] (sous la 2e image)
+        if len(prenoms) >= 2:
+            slide.shapes[6].text_frame.paragraphs[0].runs[0].text = prenoms[0]
+            slide.shapes[3].text_frame.paragraphs[0].runs[0].text = prenoms[1]
+        else:
+            slide.shapes[6].text_frame.paragraphs[0].runs[0].text = prenoms[0]
+            slide.shapes[3].text_frame.paragraphs[0].runs[0].text = prenoms[0]
+
+    elif template_index == TEMPLATE_ORANGE:
+        # shape[3] = prénom — pour double, on met les 2 séparés par « & »
         shape = slide.shapes[3]
-        shape.text_frame.paragraphs[0].runs[0].text = prenom
+        display_text = " &\n".join(prenoms) if len(prenoms) > 1 else prenoms[0]
+        shape.text_frame.paragraphs[0].runs[0].text = display_text
 
     elif template_index == TEMPLATE_FFF_BIENVENUE:
         # shape[2] = prénom
         shape = slide.shapes[2]
-        shape.text_frame.paragraphs[0].runs[0].text = prenom
-
-    elif template_index == TEMPLATE_BUMP:
-        # shape[6] = prénom visible (Bump branding page)
-        # shape[3] = prénom caché (sous la 2e image)
-        slide.shapes[6].text_frame.paragraphs[0].runs[0].text = prenom
-        slide.shapes[3].text_frame.paragraphs[0].runs[0].text = prenom
+        display_text = " &\n".join(prenoms) if len(prenoms) > 1 else prenoms[0]
+        shape.text_frame.paragraphs[0].runs[0].text = display_text
 
 
 def set_code_on_slide(slide, code):
@@ -229,18 +253,6 @@ def set_code_on_slide(slide, code):
     # shape[1] = code
     shape = slide.shapes[1]
     shape.text_frame.paragraphs[0].runs[0].text = code
-
-
-def handle_double_prenom(prenom):
-    """Gère les cas 'Prénom1 et Prénom2' (double anniversaire).
-
-    Retourne une liste de prénoms individuels.
-    """
-    # Patterns : "Sofiane et Lenny", "Gabriel et Gustavo", "Amir et Adam"
-    if " et " in prenom:
-        parts = [p.strip() for p in prenom.split(" et ")]
-        return parts
-    return [prenom]
 
 
 def generate_pptx(birthdays, template_path, output_path):
@@ -255,21 +267,26 @@ def generate_pptx(birthdays, template_path, output_path):
 
     for entry in birthdays:
         formule = entry["formule"]
-        prenoms = handle_double_prenom(entry["prenom"])
+        prenom = entry["prenom"]
         template_indices = FORMULE_MAP[formule]
 
-        for prenom in prenoms:
-            for tmpl_idx in template_indices:
-                new_slide = clone_slide(prs, tmpl_idx)
-
-                if tmpl_idx == TEMPLATE_FFF_CERTIFICAT:
-                    # Pour le certificat, on met un placeholder
-                    # L'utilisateur peut ensuite ajouter le vrai code
+        for tmpl_idx in template_indices:
+            if tmpl_idx == TEMPLATE_FFF_CERTIFICAT:
+                # Certificat FFF : un par enfant (chacun a son propre code)
+                for individual in split_prenoms(prenom):
+                    new_slide = clone_slide(prs, tmpl_idx)
                     code = entry.get("code_fff", "________")
                     set_code_on_slide(new_slide, code)
-                else:
-                    set_name_on_slide(new_slide, tmpl_idx, prenom)
-
+                    slides_created.append({
+                        "prenom": individual,
+                        "formule": formule,
+                        "template": tmpl_idx,
+                        "slide_index": len(prs.slides) - 1,
+                    })
+            else:
+                # Bienvenue / poster : un seul slide avec les 2 prénoms
+                new_slide = clone_slide(prs, tmpl_idx)
+                set_name_on_slide(new_slide, tmpl_idx, prenom)
                 slides_created.append({
                     "prenom": prenom,
                     "formule": formule,
@@ -327,10 +344,13 @@ def print_recap(birthdays, sheet_title):
     for b in birthdays:
         f = b["formule"]
         formule_counts[f] = formule_counts.get(f, 0) + 1
-        # Compter les slides (double prénoms + certificats FFF)
-        n_prenoms = len(handle_double_prenom(b["prenom"]))
-        n_slides = n_prenoms * len(FORMULE_MAP[f])
-        total_slides += n_slides
+        # Compter les slides : 1 poster par entrée + 1 certificat par enfant FFF
+        n_prenoms = len(split_prenoms(b["prenom"]))
+        for tmpl in FORMULE_MAP[f]:
+            if tmpl == TEMPLATE_FFF_CERTIFICAT:
+                total_slides += n_prenoms  # un certificat par enfant
+            else:
+                total_slides += 1  # un poster avec les 2 noms
 
     print(f"\n  Total : {len(birthdays)} anniversaires, {total_slides} slides")
     for f, count in sorted(formule_counts.items()):
