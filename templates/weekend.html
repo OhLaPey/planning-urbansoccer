@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% block title %}Week-end {{ format_date(sat_date).split(' ')[1] }}-{{ format_date(sun_date).split(' ')[1] }} {{ format_date(sat_date).split(' ')[2] }}{% endblock %}
+
+{% block content %}
+<!-- Navigation -->
+<div class="card" style="padding: 12px;">
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <form style="display: flex; align-items: center; gap: 8px;">
+                <input type="date" name="date" value="{{ sat_date }}"
+                       class="form-input" style="max-width: 180px;"
+                       onchange="window.location.href='/weekend?date=' + this.value">
+            </form>
+            <a href="/?date={{ sat_date }}" class="btn btn-secondary btn-sm">Vue jour</a>
+        </div>
+        <span class="card-title" style="font-size: 11px;">Week-end</span>
+    </div>
+</div>
+
+<!-- Stats globales -->
+{% set all_b = sat_birthdays + sun_birthdays %}
+{% if all_b %}
+<div class="stats">
+    <span class="stat-badge stat-total">{{ all_b|length }} anniv · {{ sat_total_enfants + sun_total_enfants }} enfants</span>
+    {% set all_fc = {} %}
+    {% for b in all_b %}
+        {% if all_fc.update({b.formule: all_fc.get(b.formule, 0) + 1}) %}{% endif %}
+    {% endfor %}
+    {% if all_fc.get("Ligue 1") %}
+    <span class="stat-badge stat-ligue1">{{ all_fc["Ligue 1"] }} Ligue 1</span>
+    {% endif %}
+    {% if all_fc.get("Champions League") %}
+    <span class="stat-badge stat-cl">{{ all_fc["Champions League"] }} CL</span>
+    {% endif %}
+    {% if all_fc.get("FFF") %}
+    <span class="stat-badge stat-fff">{{ all_fc["FFF"] }} FFF</span>
+    {% endif %}
+    {% if all_fc.get("Bump") %}
+    <span class="stat-badge stat-bump">{{ all_fc["Bump"] }} Bump</span>
+    {% endif %}
+</div>
+{% endif %}
+
+<!-- SAMEDI -->
+<div class="card">
+    <div class="card-header">
+        <span class="card-title">{{ format_date(sat_date) }}</span>
+        <div style="display: flex; gap: 6px;">
+            <span class="stat-badge stat-total" style="font-size: 10px;">{{ sat_birthdays|length }} anniv</span>
+            <a href="/add?date={{ sat_date }}" class="btn btn-primary btn-sm">+ Ajouter</a>
+        </div>
+    </div>
+
+    {% if sat_birthdays %}
+    <div class="birthday-list">
+        {% for b in sat_birthdays %}
+        <div class="birthday-row">
+            <span class="birthday-time">{{ b.horaire or '—' }}</span>
+            <div>
+                <div class="birthday-name">{{ b.prenom }}</div>
+                {% if b.animateur %}
+                <div class="birthday-details">{{ b.animateur }}{% if b.commentaires %} · {{ b.commentaires }}{% endif %}</div>
+                {% endif %}
+            </div>
+            <span class="birthday-formule
+                {% if b.formule == 'Ligue 1' %}formule-ligue1
+                {% elif b.formule == 'Champions League' %}formule-cl
+                {% elif b.formule == 'FFF' %}formule-fff
+                {% elif b.formule == 'Bump' %}formule-bump
+                {% endif %}">{{ b.formule }}</span>
+            <span class="birthday-kids">{{ b.nb_enfants or '—' }}</span>
+            <div class="birthday-actions">
+                <a href="/edit/{{ b.id }}" class="btn btn-secondary btn-sm">Modifier</a>
+                <form method="POST" action="/duplicate/{{ b.id }}" style="display:inline;">
+                    <button type="submit" class="btn btn-secondary btn-sm" title="Dupliquer">Copier</button>
+                </form>
+                <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ b.id }}, '{{ b.prenom }}')">Suppr</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state" style="padding: 20px;">
+        <p>Aucun anniversaire samedi.</p>
+        <a href="/add?date={{ sat_date }}" class="btn btn-primary btn-sm">Ajouter</a>
+    </div>
+    {% endif %}
+</div>
+
+<!-- DIMANCHE -->
+<div class="card">
+    <div class="card-header">
+        <span class="card-title">{{ format_date(sun_date) }}</span>
+        <div style="display: flex; gap: 6px;">
+            <span class="stat-badge stat-total" style="font-size: 10px;">{{ sun_birthdays|length }} anniv</span>
+            <a href="/add?date={{ sun_date }}" class="btn btn-primary btn-sm">+ Ajouter</a>
+        </div>
+    </div>
+
+    {% if sun_birthdays %}
+    <div class="birthday-list">
+        {% for b in sun_birthdays %}
+        <div class="birthday-row">
+            <span class="birthday-time">{{ b.horaire or '—' }}</span>
+            <div>
+                <div class="birthday-name">{{ b.prenom }}</div>
+                {% if b.animateur %}
+                <div class="birthday-details">{{ b.animateur }}{% if b.commentaires %} · {{ b.commentaires }}{% endif %}</div>
+                {% endif %}
+            </div>
+            <span class="birthday-formule
+                {% if b.formule == 'Ligue 1' %}formule-ligue1
+                {% elif b.formule == 'Champions League' %}formule-cl
+                {% elif b.formule == 'FFF' %}formule-fff
+                {% elif b.formule == 'Bump' %}formule-bump
+                {% endif %}">{{ b.formule }}</span>
+            <span class="birthday-kids">{{ b.nb_enfants or '—' }}</span>
+            <div class="birthday-actions">
+                <a href="/edit/{{ b.id }}" class="btn btn-secondary btn-sm">Modifier</a>
+                <form method="POST" action="/duplicate/{{ b.id }}" style="display:inline;">
+                    <button type="submit" class="btn btn-secondary btn-sm" title="Dupliquer">Copier</button>
+                </form>
+                <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ b.id }}, '{{ b.prenom }}')">Suppr</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state" style="padding: 20px;">
+        <p>Aucun anniversaire dimanche.</p>
+        <a href="/add?date={{ sun_date }}" class="btn btn-primary btn-sm">Ajouter</a>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Downloads week-end -->
+{% if sat_birthdays or sun_birthdays %}
+<div class="card" style="padding: 12px;">
+    <div class="card-header" style="margin-bottom: 8px;">
+        <span class="card-title">Fichiers week-end</span>
+    </div>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+        <a href="/generate/weekend-posters/{{ sat_date }}" class="btn btn-primary btn-sm">Affiches PDF (WE)</a>
+        <a href="/generate/weekend-recap/{{ sat_date }}" class="btn btn-secondary btn-sm">Recap Excel (WE)</a>
+        <a href="/generate/weekend-recap-pdf/{{ sat_date }}" class="btn btn-secondary btn-sm">Recap PDF (WE)</a>
+    </div>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06);">
+        {% if sat_birthdays %}
+        <a href="/generate/posters/{{ sat_date }}" class="btn btn-secondary btn-sm" style="font-size: 10px;">Affiches Sam.</a>
+        <a href="/generate/recap/{{ sat_date }}" class="btn btn-secondary btn-sm" style="font-size: 10px;">Recap Sam.</a>
+        {% endif %}
+        {% if sun_birthdays %}
+        <a href="/generate/posters/{{ sun_date }}" class="btn btn-secondary btn-sm" style="font-size: 10px;">Affiches Dim.</a>
+        <a href="/generate/recap/{{ sun_date }}" class="btn btn-secondary btn-sm" style="font-size: 10px;">Recap Dim.</a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Confirm delete dialog -->
+<div class="confirm-overlay" id="confirm-dialog">
+    <div class="confirm-box">
+        <p>Supprimer l'anniversaire de <strong id="confirm-name"></strong> ?</p>
+        <form id="delete-form" method="POST" style="display: inline;">
+            <button type="button" class="btn btn-secondary" onclick="closeConfirm()">Annuler</button>
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function confirmDelete(id, name) {
+    document.getElementById('confirm-name').textContent = name;
+    document.getElementById('delete-form').action = '/delete/' + id;
+    document.getElementById('confirm-dialog').classList.add('active');
+}
+function closeConfirm() {
+    document.getElementById('confirm-dialog').classList.remove('active');
+}
+document.getElementById('confirm-dialog').addEventListener('click', function(e) {
+    if (e.target === this) closeConfirm();
+});
+</script>
+{% endblock %}
