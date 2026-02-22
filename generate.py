@@ -441,11 +441,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
     DAYS_FULL = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
     monday = datetime.fromisocalendar(year, week_num, 1)
     day_labels_json = json.dumps([
-        f"{DAYS_SHORT[i]} {(monday + timedelta(days=i)).day}/{(monday + timedelta(days=i)).month:02d}"
+        f"{DAYS_SHORT[i]} {(monday + timedelta(days=i)).day:02d}/{(monday + timedelta(days=i)).month:02d}"
         for i in range(7)
     ], ensure_ascii=False)
     day_labels_full_json = json.dumps([
-        f"{DAYS_FULL[i]} {(monday + timedelta(days=i)).day}/{(monday + timedelta(days=i)).month:02d}"
+        f"{DAYS_FULL[i]} {(monday + timedelta(days=i)).day:02d}/{(monday + timedelta(days=i)).month:02d}"
         for i in range(7)
     ], ensure_ascii=False)
 
@@ -496,7 +496,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             z-index: 0;
             pointer-events: none;
             background: url('bg-team.jpg') center center / cover no-repeat;
-            opacity: 0.08;
+            opacity: 0.13;
         }}
         .container {{ position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }}
 
