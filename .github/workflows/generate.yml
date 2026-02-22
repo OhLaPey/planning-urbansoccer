@@ -39,6 +39,10 @@ jobs:
           cp -r data/ _site/data/
           cp index.html _site/
           cp S*.html _site/
+          cp bg-team.jpg _site/ 2>/dev/null || true
+          cp -r notes/ _site/notes/ 2>/dev/null || true
+          cp sw.js _site/ 2>/dev/null || true
+          cp latest.json _site/ 2>/dev/null || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -12,9 +12,6 @@
         body {
             font-family: Tahoma, 'Inter', sans-serif;
             background: #1E1E1E;
-            background-image:
-                radial-gradient(ellipse at 20% 50%, rgba(255,120,50,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(255,120,50,0.04) 0%, transparent 50%);
             min-height: 100vh;
             padding: 15px;
             color: #fff;
@@ -26,22 +23,8 @@
             inset: 0;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.03;
-            background-image:
-                /* terrain central */
-                linear-gradient(to right, #fff 1px, transparent 1px),
-                linear-gradient(to bottom, #fff 1px, transparent 1px),
-                /* rond central */
-                radial-gradient(circle at 50% 50%, transparent 58px, #fff 58px, #fff 60px, transparent 60px),
-                /* ligne médiane */
-                linear-gradient(to right, transparent 49.8%, #fff 49.8%, #fff 50.2%, transparent 50.2%),
-                /* lignes de but */
-                linear-gradient(to bottom, transparent 30%, #fff 30%, #fff 30.3%, transparent 30.3%),
-                linear-gradient(to bottom, transparent 69.7%, #fff 69.7%, #fff 70%, transparent 70%),
-                linear-gradient(to right, transparent 25%, #fff 25%, #fff 25.3%, transparent 25.3%),
-                linear-gradient(to right, transparent 74.7%, #fff 74.7%, #fff 75%, transparent 75%);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+            background: url('bg-team.jpg') center center / cover no-repeat;
+            opacity: 0.08;
         }
         .container { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
 
@@ -91,26 +74,33 @@
                            color: #FF7832; }
 
         /* ── Timeline (vue Journée) ── */
-        .timeline { position: relative; margin-bottom: 20px; }
-        .time-grid { position: relative; min-height: 200px; }
+        .timeline { position: relative; margin-bottom: 20px;
+                     overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        /* ── Scrollbar orange néon ── */
+        .timeline::-webkit-scrollbar { height: 6px; }
+        .timeline::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 3px; }
+        .timeline::-webkit-scrollbar-thumb { background: #FF7832; border-radius: 3px;
+                                              box-shadow: 0 0 8px rgba(255,120,50,0.6); }
+        .timeline { scrollbar-width: thin; scrollbar-color: #FF7832 rgba(255,255,255,0.04); }
+        .timeline-inner { min-width: 500px; }
         .time-markers { display: flex; justify-content: space-between; padding: 0 0 6px 0;
                          border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
-        .time-marker { font-size: 9px; color: #444; font-weight: 500; }
+        .time-marker { font-size: 9px; color: #555; font-weight: 500; }
         .timeline-row { display: flex; align-items: center; margin-bottom: 4px; }
-        .tl-name { width: 65px; font-size: 10px; color: #888; font-weight: 500;
+        .tl-name { width: 70px; font-size: 10px; color: #aaa; font-weight: 500;
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
                     padding-right: 6px; cursor: pointer; transition: color 0.2s; }
         .tl-name:hover { color: #FF7832; }
-        .tl-bar-container { flex: 1; position: relative; height: 24px;
+        .tl-bar-container { flex: 1; position: relative; height: 26px;
                              background: rgba(255,255,255,0.02); border-radius: 5px; }
         .tl-bar { position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
-                   font-size: 8px; font-weight: 600; overflow: hidden;
+                   font-size: 9px; font-weight: 600; overflow: hidden;
                    border-left: 2px solid; transition: all 0.2s;
                    cursor: default; }
         .tl-bar:hover { filter: brightness(1.3); z-index: 2;
                          box-shadow: 0 0 12px var(--glow-color); }
-        .tl-bar .bar-label { padding: 0 3px; white-space: nowrap; }
+        .tl-bar .bar-label { padding: 0 4px; white-space: nowrap; }
 
         /* ── Employee list (vue Staff) ── */
         .employee-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
@@ -160,24 +150,96 @@
 
         .no-events { text-align: center; padding: 30px; color: #444; font-size: 13px; }
 
-        /* ── Checkboxes export (vue Journée) ── */
-        .tl-check { flex-shrink: 0; width: 18px; height: 18px; margin-left: 6px;
-                     accent-color: #FF7832; cursor: pointer; }
-        .export-bar { display: none; justify-content: center; gap: 10px; margin-top: 12px; }
+        /* ── Custom checkbox (DA) ── */
+        .tl-check-wrap { flex-shrink: 0; margin-left: 6px; }
+        .tl-check { display: none; }
+        .tl-check-label { display: block; width: 20px; height: 20px; border-radius: 5px;
+                           border: 2px solid rgba(255,255,255,0.15); cursor: pointer;
+                           transition: all 0.2s; position: relative; }
+        .tl-check-label:hover { border-color: rgba(255,120,50,0.5); }
+        .tl-check:checked + .tl-check-label { background: #FF7832; border-color: #FF7832;
+                                                box-shadow: 0 0 8px rgba(255,120,50,0.4); }
+        .tl-check:checked + .tl-check-label::after { content: ''; position: absolute;
+            left: 5px; top: 2px; width: 5px; height: 9px;
+            border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+        .export-bar { display: none; justify-content: center; margin-top: 12px; }
         .export-bar.visible { display: flex; }
         .export-btn { display: inline-flex; align-items: center; gap: 6px;
-                       padding: 10px 22px; background: #FF7832; color: white;
-                       border: none; border-radius: 20px; font-size: 13px; font-weight: 600;
-                       cursor: pointer; font-family: inherit; transition: all 0.2s;
-                       box-shadow: 0 0 15px rgba(255,120,50,0.3); }
-        .export-btn:hover { background: #ff9050;
-                             box-shadow: 0 0 25px rgba(255,120,50,0.5); transform: scale(1.02); }
-        .export-btn:disabled { opacity: 0.4; cursor: default; transform: none;
-                                box-shadow: none; }
+                       padding: 10px 22px; background: rgba(255,120,50,0.15); color: #FF7832;
+                       border: 1px solid rgba(255,120,50,0.3); border-radius: 20px;
+                       font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;
+                       transition: all 0.2s; }
+        .export-btn:hover { background: #FF7832; color: #fff;
+                             box-shadow: 0 0 20px rgba(255,120,50,0.4); }
         .select-all-row { display: flex; justify-content: flex-end; align-items: center;
-                           gap: 6px; margin-bottom: 6px; font-size: 11px; color: #666; }
-        .select-all-row label { cursor: pointer; }
-        .select-all-row input { accent-color: #FF7832; cursor: pointer; }
+                           gap: 6px; margin-bottom: 4px; padding-right: 2px; }
+        .select-all-label { font-size: 10px; color: #555; cursor: pointer; }
+
+        /* ── Notes de semaine ── */
+        .week-notes { margin-bottom: 15px; }
+        .note-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+                      border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }
+        .note-card.comment { border-left: 3px solid #FF7832; }
+        .note-card.update { border-left: 3px solid #ffc000; }
+        .note-header { display: flex; justify-content: space-between; align-items: center;
+                        margin-bottom: 6px; }
+        .note-label { font-size: 10px; font-weight: 700; text-transform: uppercase;
+                       letter-spacing: 0.5px; }
+        .note-label.comment { color: #FF7832; }
+        .note-label.update { color: #ffc000; }
+        .note-text { font-size: 12px; color: #ccc; line-height: 1.6; white-space: pre-line; }
+        .note-text:empty::before { content: 'Cliquer pour ajouter...'; color: #444; font-style: italic; }
+        .note-text[contenteditable=true] { outline: none; border: 1px solid rgba(255,120,50,0.2);
+                                            border-radius: 6px; padding: 8px; min-height: 40px;
+                                            background: rgba(0,0,0,0.2); }
+        .note-actions { display: flex; gap: 6px; }
+        .note-btn { background: none; border: none; color: #555; font-size: 14px;
+                     cursor: pointer; padding: 2px 4px; transition: color 0.2s; }
+        .note-btn:hover { color: #FF7832; }
+        .note-btn.del:hover { color: #ff5050; }
+        .add-note-btn { display: flex; align-items: center; justify-content: center; gap: 6px;
+                         padding: 8px; background: rgba(255,255,255,0.02);
+                         border: 1px dashed rgba(255,255,255,0.1); border-radius: 10px;
+                         color: #444; font-size: 11px; cursor: pointer; transition: all 0.2s;
+                         font-family: inherit; width: 100%; margin-bottom: 8px; }
+        .add-note-btn:hover { border-color: rgba(255,120,50,0.3); color: #FF7832; }
+        .publish-btn { display: flex; align-items: center; justify-content: center; gap: 6px;
+                        padding: 10px 16px; background: #FF7832; border: none; border-radius: 10px;
+                        color: #fff; font-size: 12px; font-weight: 600; cursor: pointer;
+                        transition: all 0.2s; font-family: inherit; width: 100%; margin-top: 8px;
+                        box-shadow: 0 0 15px rgba(255,120,50,0.3); }
+        .publish-btn:hover { background: #ff9050; box-shadow: 0 0 25px rgba(255,120,50,0.5); }
+        .publish-btn:disabled { background: #444; box-shadow: none; cursor: not-allowed; color: #888; }
+        .publish-btn.success { background: #64dc3c; box-shadow: 0 0 15px rgba(100,220,60,0.3); }
+        .admin-setup { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+        .admin-input { flex: 1; padding: 8px 10px; background: rgba(0,0,0,0.3);
+                        border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+                        color: #ccc; font-size: 11px; font-family: inherit; outline: none; }
+        .admin-input:focus { border-color: rgba(255,120,50,0.4); }
+        .admin-input::placeholder { color: #444; }
+        .admin-save-btn { padding: 8px 12px; background: rgba(255,120,50,0.15);
+                           border: 1px solid rgba(255,120,50,0.3); border-radius: 8px;
+                           color: #FF7832; font-size: 11px; cursor: pointer; font-family: inherit;
+                           white-space: nowrap; }
+        .admin-hint { font-size: 10px; color: #444; margin-top: 4px; }
+
+        /* ── Notification bell ── */
+        .notif-btn { position: fixed; bottom: 20px; right: 20px; z-index: 50;
+                      width: 48px; height: 48px; border-radius: 50%; border: 2px solid rgba(255,120,50,0.3);
+                      background: rgba(30,30,30,0.95); color: #FF7832; font-size: 20px;
+                      cursor: pointer; display: flex; align-items: center; justify-content: center;
+                      transition: all 0.3s; box-shadow: 0 0 15px rgba(255,120,50,0.2); }
+        .notif-btn:hover { border-color: #FF7832; box-shadow: 0 0 25px rgba(255,120,50,0.4);
+                            transform: scale(1.05); }
+        .notif-btn.active { background: #FF7832; color: #fff; border-color: #FF7832;
+                             box-shadow: 0 0 20px rgba(255,120,50,0.5); }
+        .notif-btn .bell { line-height: 1; }
+        .notif-toast { position: fixed; bottom: 80px; right: 20px; z-index: 50;
+                        background: rgba(30,30,30,0.95); border: 1px solid rgba(255,120,50,0.3);
+                        border-radius: 10px; padding: 10px 14px; color: #ccc; font-size: 11px;
+                        max-width: 220px; opacity: 0; transform: translateY(10px);
+                        transition: all 0.3s; pointer-events: none; }
+        .notif-toast.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
         /* ── Legend ── */
         .legend { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
@@ -201,6 +263,8 @@
             <a href="S10.html" class="week-tab">S10</a>
         </div>
 
+        <div class="week-notes" id="week-notes"></div>
+
         <div class="view-toggle">
             <button class="view-btn active" data-view="day">Vue Journée</button>
             <button class="view-btn" data-view="staff">Vue Staff</button>
@@ -213,7 +277,7 @@
             <div id="select-all-container"></div>
             <div class="timeline" id="timeline"></div>
             <div class="export-bar" id="export-bar">
-                <button class="export-btn" id="export-btn" disabled>Exporter la sélection</button>
+                <button class="export-btn" id="export-btn">Exporter la sélection</button>
             </div>
         </div>
 
@@ -264,8 +328,15 @@
         </div>
     </div>
 
+    <!-- Notification bell -->
+    <button class="notif-btn" id="notif-btn" title="Notifications">
+        <span class="bell">&#128276;</span>
+    </button>
+    <div class="notif-toast" id="notif-toast"></div>
+
     <script>
     (function() {
+        var NOTES_DATA = {"comment": "Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires", "updates": [{"date": "2026-02-20", "text": "MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée"}]};
         var DATA = {"BONILLO Matthieu": {"slug": "bonillo-matthieu", "events": []}, "BOULARDET Lucas": {"slug": "boulardet-lucas", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T20:00", "end": "2026-02-25T00:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T17:30", "end": "2026-02-26T00:00", "day": 2}]}, "CARRERE Peïo": {"slug": "carrere-peio", "events": [{"code": "CUP-L", "label": "Cup League", "start": "2026-02-23T07:30", "end": "2026-02-23T09:45", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-23T09:45", "end": "2026-02-23T17:30", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T09:00", "end": "2026-02-24T09:45", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T09:45", "end": "2026-02-24T16:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T09:45", "end": "2026-02-25T13:30", "day": 2}, {"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-02-25T13:30", "end": "2026-02-25T17:30", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T17:30", "end": "2026-02-25T18:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T17:30", "end": "2026-02-26T20:15", "day": 3}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-02-26T20:15", "end": "2026-02-26T20:30", "day": 3}, {"code": "L-ARB", "label": "L-ARB", "start": "2026-02-26T20:30", "end": "2026-02-26T21:30", "day": 3}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-02-26T21:30", "end": "2026-02-26T21:45", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-28T11:30", "end": "2026-02-28T16:30", "day": 5}, {"code": "EV-RE", "label": "Événement régisseur", "start": "2026-02-28T16:30", "end": "2026-02-28T20:30", "day": 5}, {"code": "CUP-L", "label": "Cup League", "start": "2026-03-01T07:30", "end": "2026-03-01T08:45", "day": 6}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T08:45", "end": "2026-03-01T16:00", "day": 6}]}, "CASTELLON Pascaline": {"slug": "castellon-pascaline", "events": []}, "COHAT Linda": {"slug": "cohat-linda", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-23T18:30", "end": "2026-02-24T00:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T18:00", "end": "2026-02-26T22:00", "day": 3}]}, "CRUZEL Quentin": {"slug": "cruzel-quentin", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-23T17:30", "end": "2026-02-24T00:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T16:00", "end": "2026-02-25T00:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T13:30", "end": "2026-02-25T22:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-27T18:30", "end": "2026-02-28T00:00", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-28T17:00", "end": "2026-02-28T22:20", "day": 5}]}, "DE NOUEL Maxime": {"slug": "de-nouel-maxime", "events": [{"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-02-23T07:30", "end": "2026-02-23T13:00", "day": 0}, {"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-02-23T13:30", "end": "2026-02-23T19:00", "day": 0}, {"code": "STA-P", "label": "STA-P", "start": "2026-02-24T09:45", "end": "2026-02-24T12:15", "day": 1}, {"code": "STA-P", "label": "STA-P", "start": "2026-02-24T13:15", "end": "2026-02-24T15:45", "day": 1}, {"code": "CUP-L", "label": "Cup League", "start": "2026-02-24T15:45", "end": "2026-02-24T16:45", "day": 1}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-02-25T09:45", "end": "2026-02-25T12:15", "day": 2}, {"code": "PAD-A", "label": "Padel animation", "start": "2026-02-25T13:00", "end": "2026-02-25T14:45", "day": 2}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-02-25T14:45", "end": "2026-02-25T17:15", "day": 2}, {"code": "STA-P", "label": "STA-P", "start": "2026-02-27T09:45", "end": "2026-02-27T12:15", "day": 4}, {"code": "STA-P", "label": "STA-P", "start": "2026-02-27T13:15", "end": "2026-02-27T15:45", "day": 4}, {"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-03-01T07:30", "end": "2026-03-01T13:00", "day": 6}]}, "DIVIEN Yohan": {"slug": "divien-yohan", "events": []}, "DONAER Nicolas": {"slug": "donaer-nicolas", "events": []}, "DOVINA Théo": {"slug": "dovina-theo", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T20:00", "end": "2026-02-26T00:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T20:00", "end": "2026-02-27T00:00", "day": 3}]}, "HEBERT Jean Baptiste": {"slug": "hebert-jean-baptiste", "events": []}, "JARGUEL Thomas": {"slug": "jarguel-thomas", "events": [{"code": "STAGE", "label": "Stage", "start": "2026-02-23T09:00", "end": "2026-02-23T10:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T10:00", "end": "2026-02-23T12:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T12:00", "end": "2026-02-23T12:30", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T13:00", "end": "2026-02-23T14:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T09:00", "end": "2026-02-24T10:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T10:00", "end": "2026-02-24T12:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T12:00", "end": "2026-02-24T12:30", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T13:00", "end": "2026-02-24T14:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T14:00", "end": "2026-02-24T16:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T16:00", "end": "2026-02-24T17:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T17:00", "end": "2026-02-24T18:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T09:00", "end": "2026-02-25T10:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T10:00", "end": "2026-02-25T12:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T12:00", "end": "2026-02-25T12:30", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T13:00", "end": "2026-02-25T14:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T14:00", "end": "2026-02-25T16:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T16:00", "end": "2026-02-25T17:00", "day": 2}]}, "KABUNDA NDEKE Marvyn": {"slug": "kabunda-ndeke-marvyn", "events": []}, "LABEFODE Thomas": {"slug": "labefode-thomas", "events": []}, "MADIELE Henri": {"slug": "madiele-henri", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-23T09:00", "end": "2026-02-23T15:40", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T12:00", "end": "2026-02-24T14:30", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T15:00", "end": "2026-02-24T22:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T11:30", "end": "2026-02-26T18:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-27T11:30", "end": "2026-02-27T17:30", "day": 4}]}, "MOSTEFA Yanis": {"slug": "mostefa-yanis", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T09:30", "end": "2026-03-01T10:15", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-01T10:15", "end": "2026-03-01T12:15", "day": 6}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T12:15", "end": "2026-03-01T12:45", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-01T13:45", "end": "2026-03-01T17:45", "day": 6}]}, "PEREZ Loic": {"slug": "perez-loic", "events": [{"code": "STAGE", "label": "Stage", "start": "2026-02-23T09:00", "end": "2026-02-23T10:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T10:00", "end": "2026-02-23T12:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T12:30", "end": "2026-02-23T14:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T14:00", "end": "2026-02-23T16:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T16:00", "end": "2026-02-23T17:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T17:00", "end": "2026-02-23T18:00", "day": 0}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-02-23T19:15", "end": "2026-02-23T19:30", "day": 0}, {"code": "L-ARB", "label": "L-ARB", "start": "2026-02-23T19:30", "end": "2026-02-23T20:30", "day": 0}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-02-23T20:30", "end": "2026-02-23T20:45", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T09:45", "end": "2026-02-24T10:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T10:00", "end": "2026-02-24T12:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T12:30", "end": "2026-02-24T14:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T14:00", "end": "2026-02-24T16:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T16:00", "end": "2026-02-24T17:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T09:00", "end": "2026-02-25T10:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T10:00", "end": "2026-02-25T12:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T12:30", "end": "2026-02-25T14:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T14:00", "end": "2026-02-25T16:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T16:00", "end": "2026-02-25T17:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T17:00", "end": "2026-02-25T18:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T09:45", "end": "2026-02-26T10:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T10:00", "end": "2026-02-26T12:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T12:30", "end": "2026-02-26T14:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T14:00", "end": "2026-02-26T16:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T16:00", "end": "2026-02-26T17:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T17:00", "end": "2026-02-26T18:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T09:00", "end": "2026-02-27T10:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-27T10:00", "end": "2026-02-27T12:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T12:30", "end": "2026-02-27T14:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-27T14:00", "end": "2026-02-27T16:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T16:00", "end": "2026-02-27T17:00", "day": 4}]}, "PISTORE Remi": {"slug": "pistore-remi", "events": []}, "PUJOL Mathieu": {"slug": "pujol-mathieu", "events": [{"code": "STAGE", "label": "Stage", "start": "2026-02-26T09:00", "end": "2026-02-26T09:45", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T09:45", "end": "2026-02-26T18:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-27T09:45", "end": "2026-02-27T18:00", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-28T08:45", "end": "2026-02-28T17:00", "day": 5}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T15:00", "end": "2026-03-01T22:20", "day": 6}]}, "RABII Mehdi": {"slug": "rabii-mehdi", "events": [{"code": "ANNIV", "label": "Anniversaire", "start": "2026-02-28T13:45", "end": "2026-02-28T17:45", "day": 5}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-28T17:45", "end": "2026-02-28T21:15", "day": 5}]}, "SANGARNE Enzo": {"slug": "sangarne-enzo", "events": [{"code": "FORE", "label": "FORE", "start": "2026-02-23T08:30", "end": "2026-02-23T09:00", "day": 0}, {"code": "FORP", "label": "FORP", "start": "2026-02-23T09:00", "end": "2026-02-23T13:30", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T14:00", "end": "2026-02-23T16:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T16:00", "end": "2026-02-23T17:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T09:00", "end": "2026-02-26T10:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T10:00", "end": "2026-02-26T12:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T12:00", "end": "2026-02-26T12:30", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T13:00", "end": "2026-02-26T14:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T14:00", "end": "2026-02-26T16:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T16:00", "end": "2026-02-26T17:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T17:00", "end": "2026-02-26T18:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T18:00", "end": "2026-02-26T19:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T09:00", "end": "2026-02-27T10:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-27T10:00", "end": "2026-02-27T12:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T12:00", "end": "2026-02-27T12:30", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T13:00", "end": "2026-02-27T14:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-27T14:00", "end": "2026-02-27T16:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T16:00", "end": "2026-02-27T17:00", "day": 4}]}, "SEIGNE Kevin": {"slug": "seigne-kevin", "events": []}, "TINGUY Florian": {"slug": "tinguy-florian", "events": []}, "TOPPAN Mattis": {"slug": "toppan-mattis", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T20:00", "end": "2026-02-27T00:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-27T18:00", "end": "2026-02-28T00:00", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T16:00", "end": "2026-03-01T23:15", "day": 6}]}};
         var COLORS = {"VDC": {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff", "text": "#ffffff"}, "L-REG": {"bg": "rgba(180,100,255,0.20)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.20)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.25)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.25)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.20)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.25)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.20)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.25)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,120,50,0.25)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,120,50,0.25)", "border": "#ff7832", "text": "#ff9850"}};
         var DEFAULT_C = {"bg": "rgba(255,255,255,0.10)", "border": "#888888", "text": "#cccccc"};
@@ -339,6 +410,10 @@
 
             renderLegend(allCodes);
 
+            // Scrollable inner wrapper
+            var inner = document.createElement('div');
+            inner.className = 'timeline-inner';
+
             // Find time range
             var minH = 24, maxH = 0;
             dayEvents.forEach(function(d) {
@@ -346,7 +421,7 @@
                 var e = new Date(d.ev.end);
                 var sh = s.getHours() + s.getMinutes()/60;
                 var eh = e.getHours() + e.getMinutes()/60;
-                if (eh <= sh) eh = 24; // crosses midnight
+                if (eh <= sh) eh = 24;
                 if (sh < minH) minH = sh;
                 if (eh > maxH) maxH = eh;
             });
@@ -355,7 +430,11 @@
             if (maxH <= minH) maxH = minH + 1;
             var range = maxH - minH;
 
-            // Time markers — aligned with bar containers
+            // Set inner width: 40px per hour for comfortable reading
+            var pxPerHour = 40;
+            inner.style.minWidth = (70 + range * pxPerHour) + 'px';
+
+            // Time markers
             var markerRow = document.createElement('div');
             markerRow.className = 'timeline-row';
             var markerSpacer = document.createElement('div');
@@ -372,11 +451,7 @@
                 markers.appendChild(m);
             }
             markerRow.appendChild(markers);
-            var markerCbSpacer = document.createElement('div');
-            markerCbSpacer.style.width = '24px';
-            markerCbSpacer.style.flexShrink = '0';
-            markerRow.appendChild(markerCbSpacer);
-            tl.appendChild(markerRow);
+            inner.appendChild(markerRow);
 
             // Group by employee
             var byName = {};
@@ -426,48 +501,67 @@
                     barContainer.appendChild(bar);
                 });
 
+                var cbWrap = document.createElement('div');
+                cbWrap.className = 'tl-check-wrap';
+                var cbId = 'cb-' + name.replace(/\s+/g, '-');
                 var cb = document.createElement('input');
                 cb.type = 'checkbox';
                 cb.className = 'tl-check';
+                cb.id = cbId;
                 cb.setAttribute('data-name', name);
                 cb.onchange = updateExportBar;
+                var cbLabel = document.createElement('label');
+                cbLabel.className = 'tl-check-label';
+                cbLabel.setAttribute('for', cbId);
+                cbWrap.appendChild(cb);
+                cbWrap.appendChild(cbLabel);
 
                 row.appendChild(barContainer);
-                row.appendChild(cb);
-                tl.appendChild(row);
+                row.appendChild(cbWrap);
+                inner.appendChild(row);
             });
 
-            // Select-all row
-            var selAllContainer = document.getElementById('select-all-container');
-            selAllContainer.innerHTML = '';
+            tl.appendChild(inner);
+
+            // Select-all
+            var selContainer = document.getElementById('select-all-container');
+            selContainer.innerHTML = '';
             if (nameOrder.length > 0) {
                 var selRow = document.createElement('div');
                 selRow.className = 'select-all-row';
-                selRow.innerHTML = '<label for="select-all-cb">Tout sélectionner</label>';
+                var selCbWrap = document.createElement('div');
+                selCbWrap.className = 'tl-check-wrap';
                 var selCb = document.createElement('input');
                 selCb.type = 'checkbox';
+                selCb.className = 'tl-check';
                 selCb.id = 'select-all-cb';
                 selCb.onchange = function() {
-                    document.querySelectorAll('.tl-check').forEach(function(c) { c.checked = selCb.checked; });
+                    document.querySelectorAll('#timeline .tl-check').forEach(function(c) { c.checked = selCb.checked; });
                     updateExportBar();
                 };
-                selRow.appendChild(selCb);
-                selAllContainer.appendChild(selRow);
+                var selLabel = document.createElement('label');
+                selLabel.className = 'tl-check-label';
+                selLabel.setAttribute('for', 'select-all-cb');
+                selCbWrap.appendChild(selCb);
+                selCbWrap.appendChild(selLabel);
+                var selText = document.createElement('span');
+                selText.className = 'select-all-label';
+                selText.textContent = 'Tout';
+                selRow.appendChild(selText);
+                selRow.appendChild(selCbWrap);
+                selContainer.appendChild(selRow);
             }
         }
 
-        // ── Export logic ──
         function updateExportBar() {
-            var checked = document.querySelectorAll('.tl-check:checked');
+            var checked = document.querySelectorAll('#timeline .tl-check:checked');
             var bar = document.getElementById('export-bar');
-            var btn = document.getElementById('export-btn');
             if (checked.length > 0) {
                 bar.classList.add('visible');
-                btn.disabled = false;
-                btn.textContent = 'Exporter ' + checked.length + ' planning' + (checked.length > 1 ? 's' : '');
+                document.getElementById('export-btn').textContent =
+                    'Exporter ' + checked.length + ' planning' + (checked.length > 1 ? 's' : '');
             } else {
                 bar.classList.remove('visible');
-                btn.disabled = true;
             }
         }
 
@@ -479,7 +573,23 @@
                 pad2(dt.getHours()) + pad2(dt.getMinutes()) + '00';
         }
 
+        function icsEscape(str) {
+            return str.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
+        }
+
         function generateICSForNames(names) {
+            // Build notes description from NOTES_DATA
+            var noteDesc = '';
+            if (NOTES_DATA.comment) {
+                noteDesc += '\n---\n' + NOTES_DATA.comment;
+            }
+            (NOTES_DATA.updates || []).forEach(function(u) {
+                if (u.text) {
+                    var prefix = u.date ? ('MAJ ' + u.date + ': ') : 'MAJ: ';
+                    noteDesc += '\n' + prefix + u.text;
+                }
+            });
+
             var lines = [
                 'BEGIN:VCALENDAR', 'VERSION:2.0',
                 'PRODID:-//Planning Urban 7D//FR',
@@ -493,12 +603,13 @@
                 emp.events.forEach(function(ev, i) {
                     var s = new Date(ev.start);
                     var e = new Date(ev.end);
+                    var desc = ev.label + noteDesc;
                     lines.push('BEGIN:VEVENT');
                     lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
                     lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
                     lines.push('DTEND;TZID=Europe/Paris:' + toICSDate(e));
                     lines.push('SUMMARY:' + name + ' - ' + ev.label);
-                    lines.push('DESCRIPTION:' + ev.label);
+                    lines.push('DESCRIPTION:' + icsEscape(desc));
                     lines.push('END:VEVENT');
                 });
             });
@@ -507,11 +618,10 @@
         }
 
         document.getElementById('export-btn').onclick = function() {
-            var checked = document.querySelectorAll('.tl-check:checked');
+            var checked = document.querySelectorAll('#timeline .tl-check:checked');
             var names = [];
-            checked.forEach(function(cb) { names.push(cb.getAttribute('data-name')); });
+            checked.forEach(function(c) { names.push(c.getAttribute('data-name')); });
             if (names.length === 0) return;
-
             var ics = generateICSForNames(names);
             var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
             var url = URL.createObjectURL(blob);
@@ -623,11 +733,319 @@
             btn.onclick = function() { openModal(btn.getAttribute('data-name')); };
         });
 
-        // ── Timeline name click also in day view ──
-        // (handled inline above)
+        // ── Notes de semaine (injectées depuis notes/SXX.json) ──
+        var REPO = 'OhLaPey/planning-urbansoccer';
+        var NOTES_PATH = 'notes/S9.json';
+        var TOKEN_KEY = 'planning-admin-token';
+        var notesEl = document.getElementById('week-notes');
+        var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
+        var notesDirty = false;
+
+        function getToken() { return localStorage.getItem(TOKEN_KEY) || ''; }
+        function setToken(t) { localStorage.setItem(TOKEN_KEY, t); }
+
+        function renderNotes() {
+            var data = notesWork;
+            notesEl.innerHTML = '';
+
+            // Comment card
+            var card = document.createElement('div');
+            card.className = 'note-card comment';
+            var hdr = document.createElement('div');
+            hdr.className = 'note-header';
+            hdr.innerHTML = '<span class="note-label comment">Note de semaine</span>';
+            var editBtn = document.createElement('button');
+            editBtn.className = 'note-btn';
+            editBtn.innerHTML = '✎';
+            editBtn.title = 'Éditer';
+            hdr.appendChild(editBtn);
+            card.appendChild(hdr);
+            var txt = document.createElement('div');
+            txt.className = 'note-text';
+            txt.textContent = data.comment || '';
+            card.appendChild(txt);
+            notesEl.appendChild(card);
+
+            editBtn.onclick = function() {
+                if (txt.contentEditable === 'true') {
+                    txt.contentEditable = 'false';
+                    data.comment = txt.innerText;
+                    editBtn.innerHTML = '✎';
+                    notesDirty = true;
+                    renderNotes();
+                } else {
+                    txt.contentEditable = 'true';
+                    txt.focus();
+                    editBtn.innerHTML = '✔';
+                }
+            };
+
+            // Update cards
+            data.updates.forEach(function(u, idx) {
+                var ucard = document.createElement('div');
+                ucard.className = 'note-card update';
+                var uhdr = document.createElement('div');
+                uhdr.className = 'note-header';
+                var dateLabel = u.date ? (' — ' + u.date) : '';
+                uhdr.innerHTML = '<span class="note-label update">Mise à jour' + dateLabel + '</span>';
+                var uactions = document.createElement('div');
+                uactions.className = 'note-actions';
+                var uedit = document.createElement('button');
+                uedit.className = 'note-btn';
+                uedit.innerHTML = '✎';
+                uedit.title = 'Éditer';
+                var udel = document.createElement('button');
+                udel.className = 'note-btn del';
+                udel.innerHTML = '✖';
+                udel.title = 'Supprimer';
+                uactions.appendChild(uedit);
+                uactions.appendChild(udel);
+                uhdr.appendChild(uactions);
+                ucard.appendChild(uhdr);
+                var utxt = document.createElement('div');
+                utxt.className = 'note-text';
+                utxt.textContent = u.text || '';
+                ucard.appendChild(utxt);
+                notesEl.appendChild(ucard);
+
+                uedit.onclick = function() {
+                    if (utxt.contentEditable === 'true') {
+                        utxt.contentEditable = 'false';
+                        data.updates[idx].text = utxt.innerText;
+                        uedit.innerHTML = '✎';
+                        notesDirty = true;
+                        renderNotes();
+                    } else {
+                        utxt.contentEditable = 'true';
+                        utxt.focus();
+                        uedit.innerHTML = '✔';
+                    }
+                };
+                udel.onclick = function() {
+                    data.updates.splice(idx, 1);
+                    notesDirty = true;
+                    renderNotes();
+                };
+            });
+
+            // Add update button
+            var addBtn = document.createElement('button');
+            addBtn.className = 'add-note-btn';
+            addBtn.textContent = '+ Ajouter une mise à jour';
+            addBtn.onclick = function() {
+                var today = new Date();
+                var ds = today.getFullYear() + '-' +
+                    (today.getMonth()+1).toString().padStart(2,'0') + '-' +
+                    today.getDate().toString().padStart(2,'0');
+                data.updates.push({ date: ds, text: '' });
+                notesDirty = true;
+                renderNotes();
+                var cards = notesEl.querySelectorAll('.note-card.update .note-text');
+                if (cards.length > 0) {
+                    var last = cards[cards.length - 1];
+                    last.contentEditable = 'true';
+                    last.focus();
+                    var editBtns = notesEl.querySelectorAll('.note-card.update .note-btn:not(.del)');
+                    if (editBtns.length > 0) editBtns[editBtns.length - 1].innerHTML = '✔';
+                }
+            };
+            notesEl.appendChild(addBtn);
+
+            // Publish button (visible when changes exist or token not set)
+            var token = getToken();
+            if (!token) {
+                // Admin setup: enter GitHub token
+                var setup = document.createElement('div');
+                setup.className = 'admin-setup';
+                var inp = document.createElement('input');
+                inp.className = 'admin-input';
+                inp.type = 'password';
+                inp.placeholder = 'Token GitHub (admin)';
+                var saveBtn = document.createElement('button');
+                saveBtn.className = 'admin-save-btn';
+                saveBtn.textContent = 'Enregistrer';
+                saveBtn.onclick = function() {
+                    if (inp.value.trim()) {
+                        setToken(inp.value.trim());
+                        renderNotes();
+                    }
+                };
+                setup.appendChild(inp);
+                setup.appendChild(saveBtn);
+                notesEl.appendChild(setup);
+                var hint = document.createElement('div');
+                hint.className = 'admin-hint';
+                hint.textContent = 'Token requis pour publier les notes (GitHub > Settings > Tokens > contents: write)';
+                notesEl.appendChild(hint);
+            } else if (notesDirty) {
+                var pubBtn = document.createElement('button');
+                pubBtn.className = 'publish-btn';
+                pubBtn.textContent = 'Publier les notes';
+                pubBtn.onclick = function() {
+                    pubBtn.disabled = true;
+                    pubBtn.textContent = 'Publication en cours...';
+                    pushNotesToGitHub(data, pubBtn);
+                };
+                notesEl.appendChild(pubBtn);
+            }
+        }
+
+        function pushNotesToGitHub(data, btn) {
+            var token = getToken();
+            var content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\n')));
+            var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + NOTES_PATH;
+
+            // First get the current file SHA (required for update)
+            fetch(apiUrl, {
+                headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }
+            })
+            .then(function(r) { return r.ok ? r.json() : { sha: null }; })
+            .then(function(file) {
+                var body = {
+                    message: 'MAJ notes S9 depuis la page',
+                    content: content,
+                    branch: 'main'
+                };
+                if (file.sha) body.sha = file.sha;
+
+                return fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+            })
+            .then(function(r) {
+                if (r.ok) {
+                    notesDirty = false;
+                    showRefreshCountdown(btn);
+                } else {
+                    return r.json().then(function(err) {
+                        btn.disabled = false;
+                        btn.textContent = 'Erreur : ' + (err.message || 'vérifier le token');
+                        btn.classList.remove('success');
+                    });
+                }
+            })
+            .catch(function(e) {
+                btn.disabled = false;
+                btn.textContent = 'Erreur réseau, réessayer';
+            });
+        }
+
+        function showRefreshCountdown(btn) {
+            var seconds = 90;
+            btn.classList.add('success');
+            btn.disabled = true;
+
+            function tick() {
+                if (seconds > 0) {
+                    btn.textContent = 'Publié ✔ En ligne dans ~' + seconds + 's — Rafraîchir';
+                    seconds--;
+                    setTimeout(tick, 1000);
+                } else {
+                    btn.textContent = 'C'est en ligne ! Rafraîchir la page';
+                }
+                btn.disabled = false;
+                btn.onclick = function() { location.reload(); };
+            }
+            tick();
+        }
+
+        renderNotes();
 
         // Initial render
         renderTimeline();
+
+        // ── Notifications (Service Worker) ──
+        var notifBtn = document.getElementById('notif-btn');
+        var notifToast = document.getElementById('notif-toast');
+        var CHECK_INTERVAL = 30 * 60 * 1000; // 30 min
+        var checkTimer = null;
+
+        function showToast(msg, duration) {
+            notifToast.textContent = msg;
+            notifToast.classList.add('show');
+            setTimeout(function() { notifToast.classList.remove('show'); }, duration || 3000);
+        }
+
+        function updateBellState() {
+            if ('Notification' in window && Notification.permission === 'granted') {
+                notifBtn.classList.add('active');
+                notifBtn.title = 'Notifications activées';
+            } else {
+                notifBtn.classList.remove('active');
+                notifBtn.title = 'Activer les notifications';
+            }
+        }
+
+        function startPeriodicCheck() {
+            if (checkTimer) return;
+            checkTimer = setInterval(function() {
+                if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage({ type: 'CHECK_UPDATES' });
+                }
+            }, CHECK_INTERVAL);
+            // First check after 5s
+            setTimeout(function() {
+                if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage({ type: 'CHECK_UPDATES' });
+                }
+            }, 5000);
+        }
+
+        function registerSW() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js').then(function(reg) {
+                    console.log('SW registered');
+                    // Initialize the SW with current latest.json
+                    fetch('latest.json?_t=' + Date.now())
+                        .then(function(r) { return r.json(); })
+                        .then(function(data) {
+                            if (reg.active) {
+                                reg.active.postMessage({ type: 'INIT', data: JSON.stringify(data) });
+                            }
+                        }).catch(function() {});
+                    if (Notification.permission === 'granted') {
+                        startPeriodicCheck();
+                    }
+                }).catch(function(err) { console.log('SW error', err); });
+            }
+        }
+
+        notifBtn.onclick = function() {
+            if (!('Notification' in window)) {
+                showToast('Notifications non supportées sur ce navigateur');
+                return;
+            }
+            if (Notification.permission === 'granted') {
+                showToast('Notifications déjà activées ✔');
+                return;
+            }
+            if (Notification.permission === 'denied') {
+                showToast('Notifications bloquées. Active-les dans les paramètres du navigateur.');
+                return;
+            }
+            Notification.requestPermission().then(function(perm) {
+                updateBellState();
+                if (perm === 'granted') {
+                    showToast('Notifications activées ! Tu seras prévenu des nouveaux plannings.');
+                    registerSW();
+                    startPeriodicCheck();
+                } else {
+                    showToast('Notifications refusées');
+                }
+            });
+        };
+
+        updateBellState();
+        if ('Notification' in window && Notification.permission === 'granted') {
+            registerSW();
+        }
+
     })();
     </script>
 </body>

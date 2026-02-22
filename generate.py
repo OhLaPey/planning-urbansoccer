@@ -290,12 +290,15 @@ def parse_shifts(ws, rows, dates, week_num, employee_name=""):
 # ── Génération ICS (abonnement calendrier) ─────────────────────────────────
 
 
-def generate_ics(name, events):
+def generate_ics(name, events, week_notes=None):
     """Génère le contenu ICS pour un employé (toutes semaines confondues).
 
     Chaque fichier ICS contient TOUS les événements de l'employé, ce qui
     permet à l'abonnement calendrier de rester à jour automatiquement.
+    week_notes: dict {week_num: notes_data} pour ajouter les commentaires.
     """
+    if week_notes is None:
+        week_notes = {}
     s = slug(name)
     lines = [
         "BEGIN:VCALENDAR",
@@ -336,9 +339,28 @@ def generate_ics(name, events):
         by_week[w].append(evt)
 
     for week_num in sorted(by_week.keys()):
+        # Build description with weekly notes if available
+        wn = week_notes.get(week_num, {})
+        week_comment = wn.get("comment", "")
+        week_updates = wn.get("updates", [])
+        extra_desc = ""
+        if week_comment:
+            extra_desc += "\\n---\\n" + week_comment
+        for upd in week_updates:
+            upd_text = upd.get("text", "")
+            upd_date = upd.get("date", "")
+            if upd_text:
+                prefix = f"MAJ {upd_date}: " if upd_date else "MAJ: "
+                extra_desc += "\\n" + prefix + upd_text
+
         for i, evt in enumerate(by_week[week_num], 1):
             dt_start = evt["start"].strftime("%Y%m%dT%H%M%S")
             dt_end = evt["end"].strftime("%Y%m%dT%H%M%S")
+            # Escape for ICS DESCRIPTION
+            desc = evt['label']
+            if extra_desc:
+                desc += extra_desc
+            desc_escaped = desc.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
             lines.extend([
                 "BEGIN:VEVENT",
                 f"UID:{s}-s{week_num}-{i}@urban7d",
@@ -346,7 +368,7 @@ def generate_ics(name, events):
                 f"DTSTART;TZID=Europe/Paris:{dt_start}",
                 f"DTEND;TZID=Europe/Paris:{dt_end}",
                 f"SUMMARY:{evt['label']}",
-                f"DESCRIPTION:{evt['label']}",
+                f"DESCRIPTION:{desc_escaped}",
                 "END:VEVENT",
             ])
 
@@ -374,12 +396,26 @@ def build_events_json(week_employees):
     return json.dumps(data, ensure_ascii=False)
 
 
+def load_week_notes(week_num):
+    """Charge les notes de semaine depuis notes/SXX.json."""
+    path = f"notes/S{week_num}.json"
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            pass
+    return {"comment": "", "updates": []}
+
+
 def generate_html(week_employees, week_num, year, all_weeks):
     """Génère la page HTML avec preview timeline + vue individuelle + abonnement."""
     date_range = format_date_range(year, week_num)
     events_json = build_events_json(week_employees)
     colors_json = json.dumps(CODE_COLORS, ensure_ascii=False)
     default_color_json = json.dumps(DEFAULT_COLOR, ensure_ascii=False)
+    notes_data = load_week_notes(week_num)
+    notes_json = json.dumps(notes_data, ensure_ascii=False)
 
     DAYS_SHORT = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
     DAYS_FULL = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
@@ -428,9 +464,6 @@ def generate_html(week_employees, week_num, year, all_weeks):
         body {{
             font-family: Tahoma, 'Inter', sans-serif;
             background: #1E1E1E;
-            background-image:
-                radial-gradient(ellipse at 20% 50%, rgba(255,120,50,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(255,120,50,0.04) 0%, transparent 50%);
             min-height: 100vh;
             padding: 15px;
             color: #fff;
@@ -442,22 +475,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
             inset: 0;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.03;
-            background-image:
-                /* terrain central */
-                linear-gradient(to right, #fff 1px, transparent 1px),
-                linear-gradient(to bottom, #fff 1px, transparent 1px),
-                /* rond central */
-                radial-gradient(circle at 50% 50%, transparent 58px, #fff 58px, #fff 60px, transparent 60px),
-                /* ligne médiane */
-                linear-gradient(to right, transparent 49.8%, #fff 49.8%, #fff 50.2%, transparent 50.2%),
-                /* lignes de but */
-                linear-gradient(to bottom, transparent 30%, #fff 30%, #fff 30.3%, transparent 30.3%),
-                linear-gradient(to bottom, transparent 69.7%, #fff 69.7%, #fff 70%, transparent 70%),
-                linear-gradient(to right, transparent 25%, #fff 25%, #fff 25.3%, transparent 25.3%),
-                linear-gradient(to right, transparent 74.7%, #fff 74.7%, #fff 75%, transparent 75%);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+            background: url('bg-team.jpg') center center / cover no-repeat;
+            opacity: 0.08;
         }}
         .container {{ position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }}
 
@@ -507,26 +526,33 @@ def generate_html(week_employees, week_num, year, all_weeks):
                            color: #FF7832; }}
 
         /* ── Timeline (vue Journée) ── */
-        .timeline {{ position: relative; margin-bottom: 20px; }}
-        .time-grid {{ position: relative; min-height: 200px; }}
+        .timeline {{ position: relative; margin-bottom: 20px;
+                     overflow-x: auto; -webkit-overflow-scrolling: touch; }}
+        /* ── Scrollbar orange néon ── */
+        .timeline::-webkit-scrollbar {{ height: 6px; }}
+        .timeline::-webkit-scrollbar-track {{ background: rgba(255,255,255,0.04); border-radius: 3px; }}
+        .timeline::-webkit-scrollbar-thumb {{ background: #FF7832; border-radius: 3px;
+                                              box-shadow: 0 0 8px rgba(255,120,50,0.6); }}
+        .timeline {{ scrollbar-width: thin; scrollbar-color: #FF7832 rgba(255,255,255,0.04); }}
+        .timeline-inner {{ min-width: 500px; }}
         .time-markers {{ display: flex; justify-content: space-between; padding: 0 0 6px 0;
                          border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }}
-        .time-marker {{ font-size: 9px; color: #444; font-weight: 500; }}
+        .time-marker {{ font-size: 9px; color: #555; font-weight: 500; }}
         .timeline-row {{ display: flex; align-items: center; margin-bottom: 4px; }}
-        .tl-name {{ width: 65px; font-size: 10px; color: #888; font-weight: 500;
+        .tl-name {{ width: 70px; font-size: 10px; color: #aaa; font-weight: 500;
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
                     padding-right: 6px; cursor: pointer; transition: color 0.2s; }}
         .tl-name:hover {{ color: #FF7832; }}
-        .tl-bar-container {{ flex: 1; position: relative; height: 24px;
+        .tl-bar-container {{ flex: 1; position: relative; height: 26px;
                              background: rgba(255,255,255,0.02); border-radius: 5px; }}
         .tl-bar {{ position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
-                   font-size: 8px; font-weight: 600; overflow: hidden;
+                   font-size: 9px; font-weight: 600; overflow: hidden;
                    border-left: 2px solid; transition: all 0.2s;
                    cursor: default; }}
         .tl-bar:hover {{ filter: brightness(1.3); z-index: 2;
                          box-shadow: 0 0 12px var(--glow-color); }}
-        .tl-bar .bar-label {{ padding: 0 3px; white-space: nowrap; }}
+        .tl-bar .bar-label {{ padding: 0 4px; white-space: nowrap; }}
 
         /* ── Employee list (vue Staff) ── */
         .employee-list {{ display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }}
@@ -576,24 +602,96 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
         .no-events {{ text-align: center; padding: 30px; color: #444; font-size: 13px; }}
 
-        /* ── Checkboxes export (vue Journée) ── */
-        .tl-check {{ flex-shrink: 0; width: 18px; height: 18px; margin-left: 6px;
-                     accent-color: #FF7832; cursor: pointer; }}
-        .export-bar {{ display: none; justify-content: center; gap: 10px; margin-top: 12px; }}
+        /* ── Custom checkbox (DA) ── */
+        .tl-check-wrap {{ flex-shrink: 0; margin-left: 6px; }}
+        .tl-check {{ display: none; }}
+        .tl-check-label {{ display: block; width: 20px; height: 20px; border-radius: 5px;
+                           border: 2px solid rgba(255,255,255,0.15); cursor: pointer;
+                           transition: all 0.2s; position: relative; }}
+        .tl-check-label:hover {{ border-color: rgba(255,120,50,0.5); }}
+        .tl-check:checked + .tl-check-label {{ background: #FF7832; border-color: #FF7832;
+                                                box-shadow: 0 0 8px rgba(255,120,50,0.4); }}
+        .tl-check:checked + .tl-check-label::after {{ content: ''; position: absolute;
+            left: 5px; top: 2px; width: 5px; height: 9px;
+            border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }}
+        .export-bar {{ display: none; justify-content: center; margin-top: 12px; }}
         .export-bar.visible {{ display: flex; }}
         .export-btn {{ display: inline-flex; align-items: center; gap: 6px;
-                       padding: 10px 22px; background: #FF7832; color: white;
-                       border: none; border-radius: 20px; font-size: 13px; font-weight: 600;
-                       cursor: pointer; font-family: inherit; transition: all 0.2s;
-                       box-shadow: 0 0 15px rgba(255,120,50,0.3); }}
-        .export-btn:hover {{ background: #ff9050;
-                             box-shadow: 0 0 25px rgba(255,120,50,0.5); transform: scale(1.02); }}
-        .export-btn:disabled {{ opacity: 0.4; cursor: default; transform: none;
-                                box-shadow: none; }}
+                       padding: 10px 22px; background: rgba(255,120,50,0.15); color: #FF7832;
+                       border: 1px solid rgba(255,120,50,0.3); border-radius: 20px;
+                       font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;
+                       transition: all 0.2s; }}
+        .export-btn:hover {{ background: #FF7832; color: #fff;
+                             box-shadow: 0 0 20px rgba(255,120,50,0.4); }}
         .select-all-row {{ display: flex; justify-content: flex-end; align-items: center;
-                           gap: 6px; margin-bottom: 6px; font-size: 11px; color: #666; }}
-        .select-all-row label {{ cursor: pointer; }}
-        .select-all-row input {{ accent-color: #FF7832; cursor: pointer; }}
+                           gap: 6px; margin-bottom: 4px; padding-right: 2px; }}
+        .select-all-label {{ font-size: 10px; color: #555; cursor: pointer; }}
+
+        /* ── Notes de semaine ── */
+        .week-notes {{ margin-bottom: 15px; }}
+        .note-card {{ background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+                      border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }}
+        .note-card.comment {{ border-left: 3px solid #FF7832; }}
+        .note-card.update {{ border-left: 3px solid #ffc000; }}
+        .note-header {{ display: flex; justify-content: space-between; align-items: center;
+                        margin-bottom: 6px; }}
+        .note-label {{ font-size: 10px; font-weight: 700; text-transform: uppercase;
+                       letter-spacing: 0.5px; }}
+        .note-label.comment {{ color: #FF7832; }}
+        .note-label.update {{ color: #ffc000; }}
+        .note-text {{ font-size: 12px; color: #ccc; line-height: 1.6; white-space: pre-line; }}
+        .note-text:empty::before {{ content: 'Cliquer pour ajouter...'; color: #444; font-style: italic; }}
+        .note-text[contenteditable=true] {{ outline: none; border: 1px solid rgba(255,120,50,0.2);
+                                            border-radius: 6px; padding: 8px; min-height: 40px;
+                                            background: rgba(0,0,0,0.2); }}
+        .note-actions {{ display: flex; gap: 6px; }}
+        .note-btn {{ background: none; border: none; color: #555; font-size: 14px;
+                     cursor: pointer; padding: 2px 4px; transition: color 0.2s; }}
+        .note-btn:hover {{ color: #FF7832; }}
+        .note-btn.del:hover {{ color: #ff5050; }}
+        .add-note-btn {{ display: flex; align-items: center; justify-content: center; gap: 6px;
+                         padding: 8px; background: rgba(255,255,255,0.02);
+                         border: 1px dashed rgba(255,255,255,0.1); border-radius: 10px;
+                         color: #444; font-size: 11px; cursor: pointer; transition: all 0.2s;
+                         font-family: inherit; width: 100%; margin-bottom: 8px; }}
+        .add-note-btn:hover {{ border-color: rgba(255,120,50,0.3); color: #FF7832; }}
+        .publish-btn {{ display: flex; align-items: center; justify-content: center; gap: 6px;
+                        padding: 10px 16px; background: #FF7832; border: none; border-radius: 10px;
+                        color: #fff; font-size: 12px; font-weight: 600; cursor: pointer;
+                        transition: all 0.2s; font-family: inherit; width: 100%; margin-top: 8px;
+                        box-shadow: 0 0 15px rgba(255,120,50,0.3); }}
+        .publish-btn:hover {{ background: #ff9050; box-shadow: 0 0 25px rgba(255,120,50,0.5); }}
+        .publish-btn:disabled {{ background: #444; box-shadow: none; cursor: not-allowed; color: #888; }}
+        .publish-btn.success {{ background: #64dc3c; box-shadow: 0 0 15px rgba(100,220,60,0.3); }}
+        .admin-setup {{ display: flex; align-items: center; gap: 6px; margin-top: 8px; }}
+        .admin-input {{ flex: 1; padding: 8px 10px; background: rgba(0,0,0,0.3);
+                        border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+                        color: #ccc; font-size: 11px; font-family: inherit; outline: none; }}
+        .admin-input:focus {{ border-color: rgba(255,120,50,0.4); }}
+        .admin-input::placeholder {{ color: #444; }}
+        .admin-save-btn {{ padding: 8px 12px; background: rgba(255,120,50,0.15);
+                           border: 1px solid rgba(255,120,50,0.3); border-radius: 8px;
+                           color: #FF7832; font-size: 11px; cursor: pointer; font-family: inherit;
+                           white-space: nowrap; }}
+        .admin-hint {{ font-size: 10px; color: #444; margin-top: 4px; }}
+
+        /* ── Notification bell ── */
+        .notif-btn {{ position: fixed; bottom: 20px; right: 20px; z-index: 50;
+                      width: 48px; height: 48px; border-radius: 50%; border: 2px solid rgba(255,120,50,0.3);
+                      background: rgba(30,30,30,0.95); color: #FF7832; font-size: 20px;
+                      cursor: pointer; display: flex; align-items: center; justify-content: center;
+                      transition: all 0.3s; box-shadow: 0 0 15px rgba(255,120,50,0.2); }}
+        .notif-btn:hover {{ border-color: #FF7832; box-shadow: 0 0 25px rgba(255,120,50,0.4);
+                            transform: scale(1.05); }}
+        .notif-btn.active {{ background: #FF7832; color: #fff; border-color: #FF7832;
+                             box-shadow: 0 0 20px rgba(255,120,50,0.5); }}
+        .notif-btn .bell {{ line-height: 1; }}
+        .notif-toast {{ position: fixed; bottom: 80px; right: 20px; z-index: 50;
+                        background: rgba(30,30,30,0.95); border: 1px solid rgba(255,120,50,0.3);
+                        border-radius: 10px; padding: 10px 14px; color: #ccc; font-size: 11px;
+                        max-width: 220px; opacity: 0; transform: translateY(10px);
+                        transition: all 0.3s; pointer-events: none; }}
+        .notif-toast.show {{ opacity: 1; transform: translateY(0); pointer-events: auto; }}
 
         /* ── Legend ── */
         .legend {{ display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
@@ -616,6 +714,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
 {week_tabs.rstrip()}
         </div>
 
+        <div class="week-notes" id="week-notes"></div>
+
         <div class="view-toggle">
             <button class="view-btn active" data-view="day">Vue Journ\u00e9e</button>
             <button class="view-btn" data-view="staff">Vue Staff</button>
@@ -628,7 +728,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             <div id="select-all-container"></div>
             <div class="timeline" id="timeline"></div>
             <div class="export-bar" id="export-bar">
-                <button class="export-btn" id="export-btn" disabled>Exporter la s\u00e9lection</button>
+                <button class="export-btn" id="export-btn">Exporter la s\u00e9lection</button>
             </div>
         </div>
 
@@ -656,8 +756,15 @@ def generate_html(week_employees, week_num, year, all_weeks):
         </div>
     </div>
 
+    <!-- Notification bell -->
+    <button class="notif-btn" id="notif-btn" title="Notifications">
+        <span class="bell">&#128276;</span>
+    </button>
+    <div class="notif-toast" id="notif-toast"></div>
+
     <script>
     (function() {{
+        var NOTES_DATA = {notes_json};
         var DATA = {events_json};
         var COLORS = {colors_json};
         var DEFAULT_C = {default_color_json};
@@ -731,6 +838,10 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
             renderLegend(allCodes);
 
+            // Scrollable inner wrapper
+            var inner = document.createElement('div');
+            inner.className = 'timeline-inner';
+
             // Find time range
             var minH = 24, maxH = 0;
             dayEvents.forEach(function(d) {{
@@ -738,7 +849,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 var e = new Date(d.ev.end);
                 var sh = s.getHours() + s.getMinutes()/60;
                 var eh = e.getHours() + e.getMinutes()/60;
-                if (eh <= sh) eh = 24; // crosses midnight
+                if (eh <= sh) eh = 24;
                 if (sh < minH) minH = sh;
                 if (eh > maxH) maxH = eh;
             }});
@@ -747,7 +858,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
             if (maxH <= minH) maxH = minH + 1;
             var range = maxH - minH;
 
-            // Time markers — aligned with bar containers
+            // Set inner width: 40px per hour for comfortable reading
+            var pxPerHour = 40;
+            inner.style.minWidth = (70 + range * pxPerHour) + 'px';
+
+            // Time markers
             var markerRow = document.createElement('div');
             markerRow.className = 'timeline-row';
             var markerSpacer = document.createElement('div');
@@ -764,11 +879,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 markers.appendChild(m);
             }}
             markerRow.appendChild(markers);
-            var markerCbSpacer = document.createElement('div');
-            markerCbSpacer.style.width = '24px';
-            markerCbSpacer.style.flexShrink = '0';
-            markerRow.appendChild(markerCbSpacer);
-            tl.appendChild(markerRow);
+            inner.appendChild(markerRow);
 
             // Group by employee
             var byName = {{}};
@@ -818,48 +929,67 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     barContainer.appendChild(bar);
                 }});
 
+                var cbWrap = document.createElement('div');
+                cbWrap.className = 'tl-check-wrap';
+                var cbId = 'cb-' + name.replace(/\\s+/g, '-');
                 var cb = document.createElement('input');
                 cb.type = 'checkbox';
                 cb.className = 'tl-check';
+                cb.id = cbId;
                 cb.setAttribute('data-name', name);
                 cb.onchange = updateExportBar;
+                var cbLabel = document.createElement('label');
+                cbLabel.className = 'tl-check-label';
+                cbLabel.setAttribute('for', cbId);
+                cbWrap.appendChild(cb);
+                cbWrap.appendChild(cbLabel);
 
                 row.appendChild(barContainer);
-                row.appendChild(cb);
-                tl.appendChild(row);
+                row.appendChild(cbWrap);
+                inner.appendChild(row);
             }});
 
-            // Select-all row
-            var selAllContainer = document.getElementById('select-all-container');
-            selAllContainer.innerHTML = '';
+            tl.appendChild(inner);
+
+            // Select-all
+            var selContainer = document.getElementById('select-all-container');
+            selContainer.innerHTML = '';
             if (nameOrder.length > 0) {{
                 var selRow = document.createElement('div');
                 selRow.className = 'select-all-row';
-                selRow.innerHTML = '<label for="select-all-cb">Tout s\u00e9lectionner</label>';
+                var selCbWrap = document.createElement('div');
+                selCbWrap.className = 'tl-check-wrap';
                 var selCb = document.createElement('input');
                 selCb.type = 'checkbox';
+                selCb.className = 'tl-check';
                 selCb.id = 'select-all-cb';
                 selCb.onchange = function() {{
-                    document.querySelectorAll('.tl-check').forEach(function(c) {{ c.checked = selCb.checked; }});
+                    document.querySelectorAll('#timeline .tl-check').forEach(function(c) {{ c.checked = selCb.checked; }});
                     updateExportBar();
                 }};
-                selRow.appendChild(selCb);
-                selAllContainer.appendChild(selRow);
+                var selLabel = document.createElement('label');
+                selLabel.className = 'tl-check-label';
+                selLabel.setAttribute('for', 'select-all-cb');
+                selCbWrap.appendChild(selCb);
+                selCbWrap.appendChild(selLabel);
+                var selText = document.createElement('span');
+                selText.className = 'select-all-label';
+                selText.textContent = 'Tout';
+                selRow.appendChild(selText);
+                selRow.appendChild(selCbWrap);
+                selContainer.appendChild(selRow);
             }}
         }}
 
-        // ── Export logic ──
         function updateExportBar() {{
-            var checked = document.querySelectorAll('.tl-check:checked');
+            var checked = document.querySelectorAll('#timeline .tl-check:checked');
             var bar = document.getElementById('export-bar');
-            var btn = document.getElementById('export-btn');
             if (checked.length > 0) {{
                 bar.classList.add('visible');
-                btn.disabled = false;
-                btn.textContent = 'Exporter ' + checked.length + ' planning' + (checked.length > 1 ? 's' : '');
+                document.getElementById('export-btn').textContent =
+                    'Exporter ' + checked.length + ' planning' + (checked.length > 1 ? 's' : '');
             }} else {{
                 bar.classList.remove('visible');
-                btn.disabled = true;
             }}
         }}
 
@@ -871,7 +1001,23 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 pad2(dt.getHours()) + pad2(dt.getMinutes()) + '00';
         }}
 
+        function icsEscape(str) {{
+            return str.replace(/\\\\/g, '\\\\\\\\').replace(/\\n/g, '\\\\n').replace(/,/g, '\\\\,').replace(/;/g, '\\\\;');
+        }}
+
         function generateICSForNames(names) {{
+            // Build notes description from NOTES_DATA
+            var noteDesc = '';
+            if (NOTES_DATA.comment) {{
+                noteDesc += '\\n---\\n' + NOTES_DATA.comment;
+            }}
+            (NOTES_DATA.updates || []).forEach(function(u) {{
+                if (u.text) {{
+                    var prefix = u.date ? ('MAJ ' + u.date + ': ') : 'MAJ: ';
+                    noteDesc += '\\n' + prefix + u.text;
+                }}
+            }});
+
             var lines = [
                 'BEGIN:VCALENDAR', 'VERSION:2.0',
                 'PRODID:-//Planning Urban 7D//FR',
@@ -885,12 +1031,13 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 emp.events.forEach(function(ev, i) {{
                     var s = new Date(ev.start);
                     var e = new Date(ev.end);
+                    var desc = ev.label + noteDesc;
                     lines.push('BEGIN:VEVENT');
                     lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
                     lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
                     lines.push('DTEND;TZID=Europe/Paris:' + toICSDate(e));
                     lines.push('SUMMARY:' + name + ' - ' + ev.label);
-                    lines.push('DESCRIPTION:' + ev.label);
+                    lines.push('DESCRIPTION:' + icsEscape(desc));
                     lines.push('END:VEVENT');
                 }});
             }});
@@ -899,11 +1046,10 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
 
         document.getElementById('export-btn').onclick = function() {{
-            var checked = document.querySelectorAll('.tl-check:checked');
+            var checked = document.querySelectorAll('#timeline .tl-check:checked');
             var names = [];
-            checked.forEach(function(cb) {{ names.push(cb.getAttribute('data-name')); }});
+            checked.forEach(function(c) {{ names.push(c.getAttribute('data-name')); }});
             if (names.length === 0) return;
-
             var ics = generateICSForNames(names);
             var blob = new Blob([ics], {{ type: 'text/calendar;charset=utf-8' }});
             var url = URL.createObjectURL(blob);
@@ -1015,11 +1161,319 @@ def generate_html(week_employees, week_num, year, all_weeks):
             btn.onclick = function() {{ openModal(btn.getAttribute('data-name')); }};
         }});
 
-        // ── Timeline name click also in day view ──
-        // (handled inline above)
+        // ── Notes de semaine (injectées depuis notes/SXX.json) ──
+        var REPO = 'OhLaPey/planning-urbansoccer';
+        var NOTES_PATH = 'notes/S{week_num}.json';
+        var TOKEN_KEY = 'planning-admin-token';
+        var notesEl = document.getElementById('week-notes');
+        var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
+        var notesDirty = false;
+
+        function getToken() {{ return localStorage.getItem(TOKEN_KEY) || ''; }}
+        function setToken(t) {{ localStorage.setItem(TOKEN_KEY, t); }}
+
+        function renderNotes() {{
+            var data = notesWork;
+            notesEl.innerHTML = '';
+
+            // Comment card
+            var card = document.createElement('div');
+            card.className = 'note-card comment';
+            var hdr = document.createElement('div');
+            hdr.className = 'note-header';
+            hdr.innerHTML = '<span class="note-label comment">Note de semaine</span>';
+            var editBtn = document.createElement('button');
+            editBtn.className = 'note-btn';
+            editBtn.innerHTML = '\u270e';
+            editBtn.title = '\u00c9diter';
+            hdr.appendChild(editBtn);
+            card.appendChild(hdr);
+            var txt = document.createElement('div');
+            txt.className = 'note-text';
+            txt.textContent = data.comment || '';
+            card.appendChild(txt);
+            notesEl.appendChild(card);
+
+            editBtn.onclick = function() {{
+                if (txt.contentEditable === 'true') {{
+                    txt.contentEditable = 'false';
+                    data.comment = txt.innerText;
+                    editBtn.innerHTML = '\u270e';
+                    notesDirty = true;
+                    renderNotes();
+                }} else {{
+                    txt.contentEditable = 'true';
+                    txt.focus();
+                    editBtn.innerHTML = '\u2714';
+                }}
+            }};
+
+            // Update cards
+            data.updates.forEach(function(u, idx) {{
+                var ucard = document.createElement('div');
+                ucard.className = 'note-card update';
+                var uhdr = document.createElement('div');
+                uhdr.className = 'note-header';
+                var dateLabel = u.date ? (' \u2014 ' + u.date) : '';
+                uhdr.innerHTML = '<span class="note-label update">Mise \u00e0 jour' + dateLabel + '</span>';
+                var uactions = document.createElement('div');
+                uactions.className = 'note-actions';
+                var uedit = document.createElement('button');
+                uedit.className = 'note-btn';
+                uedit.innerHTML = '\u270e';
+                uedit.title = '\u00c9diter';
+                var udel = document.createElement('button');
+                udel.className = 'note-btn del';
+                udel.innerHTML = '\u2716';
+                udel.title = 'Supprimer';
+                uactions.appendChild(uedit);
+                uactions.appendChild(udel);
+                uhdr.appendChild(uactions);
+                ucard.appendChild(uhdr);
+                var utxt = document.createElement('div');
+                utxt.className = 'note-text';
+                utxt.textContent = u.text || '';
+                ucard.appendChild(utxt);
+                notesEl.appendChild(ucard);
+
+                uedit.onclick = function() {{
+                    if (utxt.contentEditable === 'true') {{
+                        utxt.contentEditable = 'false';
+                        data.updates[idx].text = utxt.innerText;
+                        uedit.innerHTML = '\u270e';
+                        notesDirty = true;
+                        renderNotes();
+                    }} else {{
+                        utxt.contentEditable = 'true';
+                        utxt.focus();
+                        uedit.innerHTML = '\u2714';
+                    }}
+                }};
+                udel.onclick = function() {{
+                    data.updates.splice(idx, 1);
+                    notesDirty = true;
+                    renderNotes();
+                }};
+            }});
+
+            // Add update button
+            var addBtn = document.createElement('button');
+            addBtn.className = 'add-note-btn';
+            addBtn.textContent = '+ Ajouter une mise \u00e0 jour';
+            addBtn.onclick = function() {{
+                var today = new Date();
+                var ds = today.getFullYear() + '-' +
+                    (today.getMonth()+1).toString().padStart(2,'0') + '-' +
+                    today.getDate().toString().padStart(2,'0');
+                data.updates.push({{ date: ds, text: '' }});
+                notesDirty = true;
+                renderNotes();
+                var cards = notesEl.querySelectorAll('.note-card.update .note-text');
+                if (cards.length > 0) {{
+                    var last = cards[cards.length - 1];
+                    last.contentEditable = 'true';
+                    last.focus();
+                    var editBtns = notesEl.querySelectorAll('.note-card.update .note-btn:not(.del)');
+                    if (editBtns.length > 0) editBtns[editBtns.length - 1].innerHTML = '\u2714';
+                }}
+            }};
+            notesEl.appendChild(addBtn);
+
+            // Publish button (visible when changes exist or token not set)
+            var token = getToken();
+            if (!token) {{
+                // Admin setup: enter GitHub token
+                var setup = document.createElement('div');
+                setup.className = 'admin-setup';
+                var inp = document.createElement('input');
+                inp.className = 'admin-input';
+                inp.type = 'password';
+                inp.placeholder = 'Token GitHub (admin)';
+                var saveBtn = document.createElement('button');
+                saveBtn.className = 'admin-save-btn';
+                saveBtn.textContent = 'Enregistrer';
+                saveBtn.onclick = function() {{
+                    if (inp.value.trim()) {{
+                        setToken(inp.value.trim());
+                        renderNotes();
+                    }}
+                }};
+                setup.appendChild(inp);
+                setup.appendChild(saveBtn);
+                notesEl.appendChild(setup);
+                var hint = document.createElement('div');
+                hint.className = 'admin-hint';
+                hint.textContent = 'Token requis pour publier les notes (GitHub > Settings > Tokens > contents: write)';
+                notesEl.appendChild(hint);
+            }} else if (notesDirty) {{
+                var pubBtn = document.createElement('button');
+                pubBtn.className = 'publish-btn';
+                pubBtn.textContent = 'Publier les notes';
+                pubBtn.onclick = function() {{
+                    pubBtn.disabled = true;
+                    pubBtn.textContent = 'Publication en cours...';
+                    pushNotesToGitHub(data, pubBtn);
+                }};
+                notesEl.appendChild(pubBtn);
+            }}
+        }}
+
+        function pushNotesToGitHub(data, btn) {{
+            var token = getToken();
+            var content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\\n')));
+            var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + NOTES_PATH;
+
+            // First get the current file SHA (required for update)
+            fetch(apiUrl, {{
+                headers: {{ 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }}
+            }})
+            .then(function(r) {{ return r.ok ? r.json() : {{ sha: null }}; }})
+            .then(function(file) {{
+                var body = {{
+                    message: 'MAJ notes S{week_num} depuis la page',
+                    content: content,
+                    branch: 'main'
+                }};
+                if (file.sha) body.sha = file.sha;
+
+                return fetch(apiUrl, {{
+                    method: 'PUT',
+                    headers: {{
+                        'Authorization': 'Bearer ' + token,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    }},
+                    body: JSON.stringify(body)
+                }});
+            }})
+            .then(function(r) {{
+                if (r.ok) {{
+                    notesDirty = false;
+                    showRefreshCountdown(btn);
+                }} else {{
+                    return r.json().then(function(err) {{
+                        btn.disabled = false;
+                        btn.textContent = 'Erreur : ' + (err.message || 'v\u00e9rifier le token');
+                        btn.classList.remove('success');
+                    }});
+                }}
+            }})
+            .catch(function(e) {{
+                btn.disabled = false;
+                btn.textContent = 'Erreur r\u00e9seau, r\u00e9essayer';
+            }});
+        }}
+
+        function showRefreshCountdown(btn) {{
+            var seconds = 90;
+            btn.classList.add('success');
+            btn.disabled = true;
+
+            function tick() {{
+                if (seconds > 0) {{
+                    btn.textContent = 'Publi\u00e9 \u2714 En ligne dans ~' + seconds + 's \u2014 Rafra\u00eechir';
+                    seconds--;
+                    setTimeout(tick, 1000);
+                }} else {{
+                    btn.textContent = 'C\u0027est en ligne ! Rafra\u00eechir la page';
+                }}
+                btn.disabled = false;
+                btn.onclick = function() {{ location.reload(); }};
+            }}
+            tick();
+        }}
+
+        renderNotes();
 
         // Initial render
         renderTimeline();
+
+        // ── Notifications (Service Worker) ──
+        var notifBtn = document.getElementById('notif-btn');
+        var notifToast = document.getElementById('notif-toast');
+        var CHECK_INTERVAL = 30 * 60 * 1000; // 30 min
+        var checkTimer = null;
+
+        function showToast(msg, duration) {{
+            notifToast.textContent = msg;
+            notifToast.classList.add('show');
+            setTimeout(function() {{ notifToast.classList.remove('show'); }}, duration || 3000);
+        }}
+
+        function updateBellState() {{
+            if ('Notification' in window && Notification.permission === 'granted') {{
+                notifBtn.classList.add('active');
+                notifBtn.title = 'Notifications activ\u00e9es';
+            }} else {{
+                notifBtn.classList.remove('active');
+                notifBtn.title = 'Activer les notifications';
+            }}
+        }}
+
+        function startPeriodicCheck() {{
+            if (checkTimer) return;
+            checkTimer = setInterval(function() {{
+                if (navigator.serviceWorker && navigator.serviceWorker.controller) {{
+                    navigator.serviceWorker.controller.postMessage({{ type: 'CHECK_UPDATES' }});
+                }}
+            }}, CHECK_INTERVAL);
+            // First check after 5s
+            setTimeout(function() {{
+                if (navigator.serviceWorker && navigator.serviceWorker.controller) {{
+                    navigator.serviceWorker.controller.postMessage({{ type: 'CHECK_UPDATES' }});
+                }}
+            }}, 5000);
+        }}
+
+        function registerSW() {{
+            if ('serviceWorker' in navigator) {{
+                navigator.serviceWorker.register('sw.js').then(function(reg) {{
+                    console.log('SW registered');
+                    // Initialize the SW with current latest.json
+                    fetch('latest.json?_t=' + Date.now())
+                        .then(function(r) {{ return r.json(); }})
+                        .then(function(data) {{
+                            if (reg.active) {{
+                                reg.active.postMessage({{ type: 'INIT', data: JSON.stringify(data) }});
+                            }}
+                        }}).catch(function() {{}});
+                    if (Notification.permission === 'granted') {{
+                        startPeriodicCheck();
+                    }}
+                }}).catch(function(err) {{ console.log('SW error', err); }});
+            }}
+        }}
+
+        notifBtn.onclick = function() {{
+            if (!('Notification' in window)) {{
+                showToast('Notifications non support\u00e9es sur ce navigateur');
+                return;
+            }}
+            if (Notification.permission === 'granted') {{
+                showToast('Notifications d\u00e9j\u00e0 activ\u00e9es \u2714');
+                return;
+            }}
+            if (Notification.permission === 'denied') {{
+                showToast('Notifications bloqu\u00e9es. Active-les dans les param\u00e8tres du navigateur.');
+                return;
+            }}
+            Notification.requestPermission().then(function(perm) {{
+                updateBellState();
+                if (perm === 'granted') {{
+                    showToast('Notifications activ\u00e9es ! Tu seras pr\u00e9venu des nouveaux plannings.');
+                    registerSW();
+                    startPeriodicCheck();
+                }} else {{
+                    showToast('Notifications refus\u00e9es');
+                }}
+            }});
+        }};
+
+        updateBellState();
+        if ('Notification' in window && Notification.permission === 'granted') {{
+            registerSW();
+        }}
+
     }})();
     </script>
 </body>
@@ -1072,13 +1526,18 @@ def main():
                           f"{end_str} : {e['label']}")
         print(f"  \u2192 {active_count} employ\u00e9s actifs")
 
+    # ── Charger les notes par semaine ──
+    all_week_notes = {}
+    for wn in all_weeks:
+        all_week_notes[wn] = load_week_notes(wn)
+
     # ── Générer les fichiers ICS (cumulatifs, toutes semaines) ──
     os.makedirs("ics", exist_ok=True)
     ics_count = 0
     for name, events in all_employee_events.items():
         if events:
             events.sort(key=lambda e: e["start"])
-            ics_content = generate_ics(name, events)
+            ics_content = generate_ics(name, events, week_notes=all_week_notes)
             filename = f"ics/{slug(name)}.ics"
             with open(filename, "w", encoding="utf-8") as f:
                 f.write(ics_content)
@@ -1132,6 +1591,95 @@ def main():
             '</html>'
         )
     print(f"\u00c9crit : index.html \u2192 S{latest_week}.html")
+
+    # ── Générer le Service Worker (notifications) ──
+    sw_content = """\
+var CACHE_KEY = 'planning-urban7d-latest';
+var CHECK_INTERVAL = 30 * 60 * 1000; // 30 min
+
+self.addEventListener('install', function(e) { self.skipWaiting(); });
+self.addEventListener('activate', function(e) { e.waitUntil(self.clients.claim()); });
+
+// Messages from page
+self.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'CHECK_UPDATES') {
+    checkForUpdates();
+  }
+  if (e.data && e.data.type === 'INIT') {
+    // Store current state without notifying (first load)
+    self._lastKnown = e.data.data;
+  }
+});
+
+function checkForUpdates() {
+  fetch('latest.json?_t=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      // Compare with stored version
+      var stored = null;
+      try { stored = JSON.parse(self._lastKnown || 'null'); } catch(e) {}
+
+      if (stored && data.generatedAt !== stored.generatedAt) {
+        var newWeeks = data.weeks.filter(function(w) {
+          return stored.weeks.indexOf(w) === -1;
+        });
+        if (newWeeks.length > 0) {
+          showNotification(
+            'Nouveau planning disponible !',
+            'Semaine ' + newWeeks.join(', S') + ' ajoutée sur Planning Urban 7D'
+          );
+        } else {
+          showNotification(
+            'Planning mis à jour',
+            'Le planning S' + data.latestWeek + ' a été mis à jour'
+          );
+        }
+      }
+      self._lastKnown = JSON.stringify(data);
+    })
+    .catch(function() {});
+}
+
+function showNotification(title, body) {
+  self.registration.showNotification(title, {
+    body: body,
+    icon: 'data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text y=\".9em\" font-size=\"90\">⚽</text></svg>',
+    badge: 'data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text y=\".9em\" font-size=\"90\">⚽</text></svg>',
+    tag: 'planning-update',
+    renotify: true,
+    data: { url: './' }
+  });
+}
+
+self.addEventListener('notificationclick', function(e) {
+  e.notification.close();
+  e.waitUntil(
+    self.clients.matchAll({ type: 'window' }).then(function(clients) {
+      for (var i = 0; i < clients.length; i++) {
+        if (clients[i].url.indexOf('planning') !== -1 && 'focus' in clients[i]) {
+          return clients[i].focus();
+        }
+      }
+      if (self.clients.openWindow) {
+        return self.clients.openWindow(e.notification.data.url || './');
+      }
+    })
+  );
+});
+"""
+    with open("sw.js", "w", encoding="utf-8") as f:
+        f.write(sw_content)
+    print("Écrit : sw.js")
+
+    # ── Générer latest.json (pour les notifications push) ──
+    latest_data = {
+        "latestWeek": latest_week,
+        "weeks": sorted(list(all_weeks)),
+        "generatedAt": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+    }
+    with open("latest.json", "w", encoding="utf-8") as f:
+        json.dump(latest_data, f, ensure_ascii=False, indent=2)
+    print("Écrit : latest.json")
 
     print("\nTermin\u00e9 !")
     print("\n\u2500\u2500 Abonnement calendrier \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500")
