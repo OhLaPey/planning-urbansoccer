@@ -429,7 +429,32 @@ def generate_html(week_employees, week_num, year, all_weeks):
             min-height: 100vh;
             padding: 15px;
             color: #fff;
+            position: relative;
         }}
+        body::before {{
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image:
+                /* terrain central */
+                linear-gradient(to right, #fff 1px, transparent 1px),
+                linear-gradient(to bottom, #fff 1px, transparent 1px),
+                /* rond central */
+                radial-gradient(circle at 50% 50%, transparent 58px, #fff 58px, #fff 60px, transparent 60px),
+                /* ligne médiane */
+                linear-gradient(to right, transparent 49.8%, #fff 49.8%, #fff 50.2%, transparent 50.2%),
+                /* lignes de but */
+                linear-gradient(to bottom, transparent 30%, #fff 30%, #fff 30.3%, transparent 30.3%),
+                linear-gradient(to bottom, transparent 69.7%, #fff 69.7%, #fff 70%, transparent 70%),
+                linear-gradient(to right, transparent 25%, #fff 25%, #fff 25.3%, transparent 25.3%),
+                linear-gradient(to right, transparent 74.7%, #fff 74.7%, #fff 75%, transparent 75%);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }}
+        .container {{ position: relative; z-index: 1; }}
         .container {{ max-width: 600px; margin: 0 auto; }}
 
         /* ── Header ── */
@@ -544,6 +569,25 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
         .no-events {{ text-align: center; padding: 30px; color: #444; font-size: 13px; }}
 
+        /* ── Checkboxes export (vue Journée) ── */
+        .tl-check {{ flex-shrink: 0; width: 20px; height: 20px; margin-left: 8px;
+                     accent-color: #FF7832; cursor: pointer; }}
+        .export-bar {{ display: none; justify-content: center; gap: 10px; margin-top: 12px; }}
+        .export-bar.visible {{ display: flex; }}
+        .export-btn {{ display: inline-flex; align-items: center; gap: 6px;
+                       padding: 10px 22px; background: #FF7832; color: white;
+                       border: none; border-radius: 20px; font-size: 13px; font-weight: 600;
+                       cursor: pointer; font-family: inherit; transition: all 0.2s;
+                       box-shadow: 0 0 15px rgba(255,120,50,0.3); }}
+        .export-btn:hover {{ background: #ff9050;
+                             box-shadow: 0 0 25px rgba(255,120,50,0.5); transform: scale(1.02); }}
+        .export-btn:disabled {{ opacity: 0.4; cursor: default; transform: none;
+                                box-shadow: none; }}
+        .select-all-row {{ display: flex; justify-content: flex-end; align-items: center;
+                           gap: 6px; margin-bottom: 6px; font-size: 11px; color: #666; }}
+        .select-all-row label {{ cursor: pointer; }}
+        .select-all-row input {{ accent-color: #FF7832; cursor: pointer; }}
+
         /* ── Legend ── */
         .legend {{ display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
                    margin-bottom: 15px; }}
@@ -574,7 +618,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
         <div id="view-day">
             <div class="day-tabs" id="day-tabs"></div>
             <div class="legend" id="legend"></div>
+            <div id="select-all-container"></div>
             <div class="timeline" id="timeline"></div>
+            <div class="export-bar" id="export-bar">
+                <button class="export-btn" id="export-btn" disabled>Exporter la s\u00e9lection</button>
+            </div>
         </div>
 
         <!-- ── Vue Staff (liste) ── -->
@@ -594,9 +642,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
             </div>
             <div class="modal-body" id="modal-body"></div>
             <div class="modal-footer">
-                <a class="subscribe-btn" id="modal-subscribe" href="#">
-                    S'abonner au calendrier
-                </a>
+                <button class="subscribe-btn" id="modal-add-cal">
+                    Ajouter au calendrier
+                </button>
             </div>
         </div>
     </div>
@@ -716,7 +764,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
                 var nameEl = document.createElement('div');
                 nameEl.className = 'tl-name';
-                nameEl.textContent = name.split(' ')[0];
+                nameEl.textContent = name.split(' ').slice(1).join(' ') || name.split(' ')[0];
                 nameEl.title = name;
                 nameEl.onclick = function() {{ openModal(name); }};
                 row.appendChild(nameEl);
@@ -750,10 +798,103 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     barContainer.appendChild(bar);
                 }});
 
+                var cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.className = 'tl-check';
+                cb.setAttribute('data-name', name);
+                cb.onchange = updateExportBar;
+
                 row.appendChild(barContainer);
+                row.appendChild(cb);
                 tl.appendChild(row);
             }});
+
+            // Select-all row
+            var selAllContainer = document.getElementById('select-all-container');
+            selAllContainer.innerHTML = '';
+            if (nameOrder.length > 0) {{
+                var selRow = document.createElement('div');
+                selRow.className = 'select-all-row';
+                selRow.innerHTML = '<label for="select-all-cb">Tout s\u00e9lectionner</label>';
+                var selCb = document.createElement('input');
+                selCb.type = 'checkbox';
+                selCb.id = 'select-all-cb';
+                selCb.onchange = function() {{
+                    document.querySelectorAll('.tl-check').forEach(function(c) {{ c.checked = selCb.checked; }});
+                    updateExportBar();
+                }};
+                selRow.appendChild(selCb);
+                selAllContainer.appendChild(selRow);
+            }}
         }}
+
+        // ── Export logic ──
+        function updateExportBar() {{
+            var checked = document.querySelectorAll('.tl-check:checked');
+            var bar = document.getElementById('export-bar');
+            var btn = document.getElementById('export-btn');
+            if (checked.length > 0) {{
+                bar.classList.add('visible');
+                btn.disabled = false;
+                btn.textContent = 'Exporter ' + checked.length + ' planning' + (checked.length > 1 ? 's' : '');
+            }} else {{
+                bar.classList.remove('visible');
+                btn.disabled = true;
+            }}
+        }}
+
+        function pad2(n) {{ return n.toString().padStart(2, '0'); }}
+
+        function toICSDate(dt) {{
+            return dt.getFullYear().toString() +
+                pad2(dt.getMonth() + 1) + pad2(dt.getDate()) + 'T' +
+                pad2(dt.getHours()) + pad2(dt.getMinutes()) + '00';
+        }}
+
+        function generateICSForNames(names) {{
+            var lines = [
+                'BEGIN:VCALENDAR', 'VERSION:2.0',
+                'PRODID:-//Planning Urban 7D//FR',
+                'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+                'X-WR-CALNAME:Planning Urban 7D',
+                'X-WR-TIMEZONE:Europe/Paris'
+            ];
+            names.forEach(function(name) {{
+                var emp = DATA[name];
+                if (!emp) return;
+                emp.events.forEach(function(ev, i) {{
+                    var s = new Date(ev.start);
+                    var e = new Date(ev.end);
+                    lines.push('BEGIN:VEVENT');
+                    lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
+                    lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
+                    lines.push('DTEND;TZID=Europe/Paris:' + toICSDate(e));
+                    lines.push('SUMMARY:' + name + ' - ' + ev.label);
+                    lines.push('DESCRIPTION:' + ev.label);
+                    lines.push('END:VEVENT');
+                }});
+            }});
+            lines.push('END:VCALENDAR');
+            return lines.join('\\r\\n');
+        }}
+
+        document.getElementById('export-btn').onclick = function() {{
+            var checked = document.querySelectorAll('.tl-check:checked');
+            var names = [];
+            checked.forEach(function(cb) {{ names.push(cb.getAttribute('data-name')); }});
+            if (names.length === 0) return;
+
+            var ics = generateICSForNames(names);
+            var blob = new Blob([ics], {{ type: 'text/calendar;charset=utf-8' }});
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'planning-export.ics';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }};
 
         // ── View toggle ──
         document.querySelectorAll('.view-btn').forEach(function(btn) {{
@@ -831,16 +972,20 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
             }}
 
-            // Subscribe button
-            var subBtn = document.getElementById('modal-subscribe');
-            var icsPath = 'ics/' + emp.slug + '.ics';
-            if (window.location.protocol === 'https:' || window.location.protocol === 'http:') {{
-                var base = window.location.href.replace(/[^/]*$/, '');
-                var fullUrl = new URL(icsPath, base);
-                subBtn.href = 'webcal://' + fullUrl.host + fullUrl.pathname;
-            }} else {{
-                subBtn.href = icsPath;
-            }}
+            // Add to calendar button (download ICS)
+            var addBtn = document.getElementById('modal-add-cal');
+            addBtn.onclick = function() {{
+                var ics = generateICSForNames([name]);
+                var blob = new Blob([ics], {{ type: 'text/calendar;charset=utf-8' }});
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = emp.slug + '.ics';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }};
 
             modalEl.classList.add('open');
         }}
