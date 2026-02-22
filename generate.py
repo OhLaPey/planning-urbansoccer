@@ -825,7 +825,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     dayDiv.appendChild(evDiv);
                 }});
                 body.appendChild(dayDiv);
-            }});
+            }}
 
             if (!hasDays) {{
                 body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
