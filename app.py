@@ -133,12 +133,39 @@ def next_weekend_dates():
     # Samedi = 5, Dimanche = 6
     days_until_saturday = (5 - today.weekday()) % 7
     if days_until_saturday == 0 and today.weekday() == 5:
-        # On est samedi, prendre aujourd'hui
         saturday = today
+    elif today.weekday() == 6:
+        saturday = today - timedelta(days=1)
     else:
         saturday = today + timedelta(days=days_until_saturday or 7)
     sunday = saturday + timedelta(days=1)
     return saturday, sunday
+
+
+def weekend_for_date(date_str):
+    """Retourne (samedi, dimanche) pour le week-end contenant la date donnée."""
+    d = datetime.strptime(date_str, "%Y-%m-%d").date()
+    if d.weekday() == 6:  # Dimanche
+        saturday = d - timedelta(days=1)
+    elif d.weekday() == 5:  # Samedi
+        saturday = d
+    else:
+        days_until = (5 - d.weekday()) % 7
+        saturday = d + timedelta(days=days_until or 7)
+    sunday = saturday + timedelta(days=1)
+    return saturday.strftime("%Y-%m-%d"), sunday.strftime("%Y-%m-%d")
+
+
+def get_birthdays_for_dates(date_list):
+    """Retourne tous les anniversaires pour plusieurs dates."""
+    db = get_db()
+    placeholders = ",".join("?" for _ in date_list)
+    rows = db.execute(
+        f"SELECT * FROM birthdays WHERE date_anniv IN ({placeholders}) "
+        f"ORDER BY date_anniv, horaire, prenom",
+        date_list
+    ).fetchall()
+    return [dict(row) for row in rows]
 
 
 # ── Routes ────────────────────────────────────────────────────────────────────
@@ -295,6 +322,70 @@ def delete_birthday(birthday_id):
         return redirect(url_for("index", date=row["date_anniv"]))
     flash("Anniversaire introuvable.", "error")
     return redirect(url_for("index"))
+
+
+@app.route("/duplicate/<int:birthday_id>", methods=["POST"])
+def duplicate_birthday(birthday_id):
+    """Dupliquer un anniversaire existant."""
+    db = get_db()
+    row = db.execute("SELECT * FROM birthdays WHERE id=?", (birthday_id,)).fetchone()
+    if not row:
+        flash("Anniversaire introuvable.", "error")
+        return redirect(url_for("index"))
+
+    db.execute("""
+        INSERT INTO birthdays
+            (date_anniv, horaire, animateur, formule, nb_enfants,
+             prenom, boisson, cadeau, options, gateau, commentaires)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        row["date_anniv"], row["horaire"], row["animateur"], row["formule"],
+        row["nb_enfants"], row["prenom"] + " (copie)", row["boisson"],
+        row["cadeau"], row["options"], row["gateau"], row["commentaires"],
+    ))
+    db.commit()
+    flash(f"Copie de {row['prenom']} créée !", "success")
+    return redirect(url_for("index", date=row["date_anniv"]))
+
+
+# ── Vue week-end ─────────────────────────────────────────────────────────────
+
+@app.route("/weekend")
+def weekend_view():
+    """Vue combinée samedi + dimanche du week-end."""
+    selected_date = request.args.get("date")
+    if not selected_date:
+        sat, _ = next_weekend_dates()
+        selected_date = sat.strftime("%Y-%m-%d")
+
+    sat_str, sun_str = weekend_for_date(selected_date)
+    sat_birthdays = get_birthdays_for_date(sat_str)
+    sun_birthdays = get_birthdays_for_date(sun_str)
+    all_dates = get_dates_with_birthdays()
+
+    def compute_stats(birthdays):
+        fc = {}
+        te = 0
+        for b in birthdays:
+            fc[b["formule"]] = fc.get(b["formule"], 0) + 1
+            try:
+                te += int(b["nb_enfants"])
+            except (ValueError, TypeError):
+                pass
+        return fc, te
+
+    sat_fc, sat_te = compute_stats(sat_birthdays)
+    sun_fc, sun_te = compute_stats(sun_birthdays)
+
+    return render_template("weekend.html",
+                           sat_date=sat_str, sun_date=sun_str,
+                           sat_birthdays=sat_birthdays,
+                           sun_birthdays=sun_birthdays,
+                           sat_formule_counts=sat_fc, sun_formule_counts=sun_fc,
+                           sat_total_enfants=sat_te, sun_total_enfants=sun_te,
+                           all_dates=all_dates,
+                           format_date=format_date_display,
+                           formules=FORMULES)
 
 
 # ── Génération fichiers ──────────────────────────────────────────────────────
@@ -556,6 +647,245 @@ def generate_recap_pdf(date_str):
     filename = f"Recap_Anniversaires_{safe_name}.pdf"
 
     return send_file(buffer, as_attachment=True, download_name=filename,
+                     mimetype="application/pdf")
+
+
+# ── Génération week-end combiné ───────────────────────────────────────────────
+
+@app.route("/generate/weekend-posters/<date_str>")
+def generate_weekend_posters(date_str):
+    """Génère les affiches PPTX+PDF pour tout le week-end."""
+    sat_str, sun_str = weekend_for_date(date_str)
+    birthdays = get_birthdays_for_dates([sat_str, sun_str])
+    if not birthdays:
+        flash("Aucun anniversaire ce week-end.", "error")
+        return redirect(url_for("weekend_view", date=date_str))
+
+    entries = birthdays_to_entries(birthdays)
+    safe_name = sat_str.replace("-", ".")
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    pptx_path = os.path.join(OUTPUT_DIR, f"Affiches_WE_{safe_name}.pptx")
+
+    generate_pptx(entries, TEMPLATE_PATH, pptx_path)
+    pdf_path = convert_to_pdf(pptx_path)
+
+    out_path = pdf_path or pptx_path
+    return send_file(out_path, as_attachment=True,
+                     download_name=os.path.basename(out_path))
+
+
+@app.route("/generate/weekend-recap/<date_str>")
+def generate_weekend_recap(date_str):
+    """Génère le récap Excel week-end (un onglet par jour)."""
+    sat_str, sun_str = weekend_for_date(date_str)
+    sat_b = get_birthdays_for_date(sat_str)
+    sun_b = get_birthdays_for_date(sun_str)
+
+    if not sat_b and not sun_b:
+        flash("Aucun anniversaire ce week-end.", "error")
+        return redirect(url_for("weekend_view", date=date_str))
+
+    import openpyxl
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+
+    wb = openpyxl.Workbook()
+    # Supprimer la feuille par défaut
+    wb.remove(wb.active)
+
+    header_font = Font(name="Calibri", bold=True, color="FFFFFF", size=11)
+    header_fill = PatternFill(start_color="FF7832", end_color="FF7832",
+                              fill_type="solid")
+    header_align = Alignment(horizontal="center", vertical="center",
+                             wrap_text=True)
+    cell_align = Alignment(vertical="center", wrap_text=True)
+    thin_border = Border(
+        left=Side(style="thin", color="CCCCCC"),
+        right=Side(style="thin", color="CCCCCC"),
+        top=Side(style="thin", color="CCCCCC"),
+        bottom=Side(style="thin", color="CCCCCC"),
+    )
+    formule_fills = {
+        "Ligue 1":         PatternFill(start_color="FFF2E6", end_color="FFF2E6", fill_type="solid"),
+        "Champions League": PatternFill(start_color="E6F0FF", end_color="E6F0FF", fill_type="solid"),
+        "FFF":             PatternFill(start_color="E6FFE6", end_color="E6FFE6", fill_type="solid"),
+        "Bump":            PatternFill(start_color="F5E6FF", end_color="F5E6FF", fill_type="solid"),
+    }
+
+    headers = ["Horaire", "Animateur", "Formule", "Nb enfants",
+               "Prénom", "Boisson", "Cadeau", "Options", "Gâteau", "Commentaires"]
+    col_widths = [10, 14, 18, 12, 22, 12, 12, 14, 14, 25]
+    fields = ["horaire", "animateur", "formule", "nb_enfants",
+              "prenom", "boisson", "cadeau", "options", "gateau", "commentaires"]
+
+    for day_str, day_b in [(sat_str, sat_b), (sun_str, sun_b)]:
+        day_label = format_date_display(day_str)
+        ws = wb.create_sheet(title=day_label[:31])
+
+        # Titre
+        ws.merge_cells("A1:J1")
+        ws["A1"].value = f"ANNIVERSAIRES — {day_label}"
+        ws["A1"].font = Font(name="Calibri", bold=True, size=14, color="FF7832")
+        ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
+        ws.row_dimensions[1].height = 35
+
+        # Stats
+        fc = {}
+        te = 0
+        for b in day_b:
+            fc[b["formule"]] = fc.get(b["formule"], 0) + 1
+            try:
+                te += int(b["nb_enfants"])
+            except (ValueError, TypeError):
+                pass
+        parts = [f"{len(day_b)} anniv"]
+        for f, c in sorted(fc.items()):
+            parts.append(f"{c} {f}")
+        parts.append(f"{te} enfants")
+
+        ws.merge_cells("A2:J2")
+        ws["A2"].value = " | ".join(parts)
+        ws["A2"].font = Font(name="Calibri", size=10, color="666666")
+        ws["A2"].alignment = Alignment(horizontal="center")
+        ws.row_dimensions[2].height = 22
+        ws.row_dimensions[3].height = 8
+
+        # En-têtes
+        for ci, (h, w) in enumerate(zip(headers, col_widths), 1):
+            cell = ws.cell(row=4, column=ci, value=h)
+            cell.font = header_font
+            cell.fill = header_fill
+            cell.alignment = header_align
+            cell.border = thin_border
+            ws.column_dimensions[chr(64 + ci)].width = w
+        ws.row_dimensions[4].height = 30
+
+        # Données
+        for ri, b in enumerate(day_b, 5):
+            ff = formule_fills.get(b["formule"])
+            for ci, field in enumerate(fields, 1):
+                cell = ws.cell(row=ri, column=ci, value=b[field])
+                cell.alignment = cell_align
+                cell.border = thin_border
+                if ff:
+                    cell.fill = ff
+            ws.cell(row=ri, column=5).font = Font(name="Calibri", bold=True, size=11)
+            ws.row_dimensions[ri].height = 24
+
+        ws.freeze_panes = "A5"
+
+    buffer = io.BytesIO()
+    wb.save(buffer)
+    buffer.seek(0)
+
+    safe = sat_str.replace("-", ".")
+    return send_file(buffer, as_attachment=True,
+                     download_name=f"Recap_WeekEnd_{safe}.xlsx",
+                     mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+
+
+@app.route("/generate/weekend-recap-pdf/<date_str>")
+def generate_weekend_recap_pdf(date_str):
+    """Génère le récap PDF week-end (samedi + dimanche)."""
+    sat_str, sun_str = weekend_for_date(date_str)
+    sat_b = get_birthdays_for_date(sat_str)
+    sun_b = get_birthdays_for_date(sun_str)
+
+    if not sat_b and not sun_b:
+        flash("Aucun anniversaire ce week-end.", "error")
+        return redirect(url_for("weekend_view", date=date_str))
+
+    from reportlab.lib import colors
+    from reportlab.lib.pagesizes import A4, landscape
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+    from reportlab.lib.units import cm
+    from reportlab.platypus import (SimpleDocTemplate, Table, TableStyle,
+                                     Paragraph, Spacer, PageBreak)
+
+    buffer = io.BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=landscape(A4),
+                            leftMargin=1.5*cm, rightMargin=1.5*cm,
+                            topMargin=1.5*cm, bottomMargin=1.5*cm)
+
+    styles = getSampleStyleSheet()
+    title_style = ParagraphStyle("WETitle", parent=styles["Title"],
+                                  textColor=colors.HexColor("#FF7832"),
+                                  fontSize=18)
+    sub_style = ParagraphStyle("WESub", parent=styles["Normal"],
+                                textColor=colors.HexColor("#666666"),
+                                alignment=1)
+
+    formule_colors = {
+        "Ligue 1":          colors.HexColor("#FFF2E6"),
+        "Champions League":  colors.HexColor("#E6F0FF"),
+        "FFF":              colors.HexColor("#E6FFE6"),
+        "Bump":             colors.HexColor("#F5E6FF"),
+    }
+    col_widths = [2.2*cm, 3*cm, 3.5*cm, 2*cm, 4*cm,
+                  2.2*cm, 2.2*cm, 2.5*cm, 2.5*cm, 4*cm]
+    pdf_headers = ["Horaire", "Animateur", "Formule", "Enfants",
+                   "Prénom", "Boisson", "Cadeau", "Options", "Gâteau", "Commentaires"]
+
+    elements = []
+
+    for i, (day_str, day_b) in enumerate([(sat_str, sat_b), (sun_str, sun_b)]):
+        if i > 0:
+            elements.append(PageBreak())
+
+        day_label = format_date_display(day_str)
+        elements.append(Paragraph(f"ANNIVERSAIRES — {day_label}", title_style))
+        elements.append(Spacer(1, 0.3*cm))
+
+        fc = {}
+        te = 0
+        for b in day_b:
+            fc[b["formule"]] = fc.get(b["formule"], 0) + 1
+            try:
+                te += int(b["nb_enfants"])
+            except (ValueError, TypeError):
+                pass
+
+        stats = f"{len(day_b)} anniversaires | {te} enfants"
+        if fc:
+            stats += " | " + " | ".join(f"{c} {f}" for f, c in sorted(fc.items()))
+        elements.append(Paragraph(stats, sub_style))
+        elements.append(Spacer(1, 0.5*cm))
+
+        if day_b:
+            data = [pdf_headers]
+            for b in day_b:
+                data.append([
+                    b["horaire"], b["animateur"], b["formule"], b["nb_enfants"],
+                    b["prenom"], b["boisson"], b["cadeau"], b["options"],
+                    b["gateau"], b["commentaires"],
+                ])
+
+            table = Table(data, colWidths=col_widths, repeatRows=1)
+            style_cmds = [
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#FF7832")),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                ("FONTSIZE", (0, 0), (-1, 0), 9),
+                ("FONTSIZE", (0, 1), (-1, -1), 8),
+                ("ALIGN", (0, 0), (-1, 0), "CENTER"),
+                ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+                ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#CCCCCC")),
+                ("FONTNAME", (4, 1), (4, -1), "Helvetica-Bold"),
+            ]
+            for ri, b in enumerate(day_b, 1):
+                bg = formule_colors.get(b["formule"])
+                if bg:
+                    style_cmds.append(("BACKGROUND", (0, ri), (-1, ri), bg))
+            table.setStyle(TableStyle(style_cmds))
+            elements.append(table)
+        else:
+            elements.append(Paragraph("Aucun anniversaire.", sub_style))
+
+    doc.build(elements)
+    buffer.seek(0)
+
+    safe = sat_str.replace("-", ".")
+    return send_file(buffer, as_attachment=True,
+                     download_name=f"Recap_WeekEnd_{safe}.pdf",
                      mimetype="application/pdf")
 
 

@@ -5,11 +5,14 @@
 <!-- Date navigation -->
 <div class="card" style="padding: 12px;">
     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-        <form id="date-form" style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 200px;">
-            <input type="date" name="date" value="{{ selected_date }}"
-                   class="form-input" style="flex: 1; max-width: 200px;"
-                   onchange="window.location.href='/?date=' + this.value">
-        </form>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <form id="date-form" style="display: flex; align-items: center; gap: 8px;">
+                <input type="date" name="date" value="{{ selected_date }}"
+                       class="form-input" style="max-width: 180px;"
+                       onchange="window.location.href='/?date=' + this.value">
+            </form>
+            <a href="/weekend?date={{ selected_date }}" class="btn btn-secondary btn-sm">Vue week-end</a>
+        </div>
         <div class="date-nav" style="margin-bottom: 0;">
             {% for d in all_dates[:8] %}
             <a href="/?date={{ d }}"
@@ -67,6 +70,9 @@
             <span class="birthday-kids">{{ b.nb_enfants or '—' }}</span>
             <div class="birthday-actions">
                 <a href="/edit/{{ b.id }}" class="btn btn-secondary btn-sm">Modifier</a>
+                <form method="POST" action="/duplicate/{{ b.id }}" style="display:inline;">
+                    <button type="submit" class="btn btn-secondary btn-sm" title="Dupliquer">Copier</button>
+                </form>
                 <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ b.id }}, '{{ b.prenom }}')">Suppr</button>
             </div>
         </div>
