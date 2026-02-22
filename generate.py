@@ -62,8 +62,8 @@ CODE_COLORS = {
     "REU":   {"bg": "rgba(255,192,0,0.25)",   "border": "#ffc000",  "text": "#ffd060"},
     "EV-RE": {"bg": "rgba(100,220,60,0.20)",  "border": "#64dc3c",  "text": "#90ff70"},
     "AIDE":  {"bg": "rgba(0,176,240,0.25)",   "border": "#00b0f0",  "text": "#60d0ff"},
-    "P25M":  {"bg": "rgba(255,107,53,0.25)",  "border": "#ff6b35",  "text": "#ff9060"},
-    "PSG":   {"bg": "rgba(255,107,53,0.25)",  "border": "#ff6b35",  "text": "#ff9060"},
+    "P25M":  {"bg": "rgba(255,120,50,0.25)",  "border": "#ff7832",  "text": "#ff9850"},
+    "PSG":   {"bg": "rgba(255,120,50,0.25)",  "border": "#ff7832",  "text": "#ff9850"},
 }
 DEFAULT_COLOR = {"bg": "rgba(255,255,255,0.10)", "border": "#888888", "text": "#cccccc"}
 
@@ -416,15 +416,16 @@ def generate_html(week_employees, week_num, year, all_weeks):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planning Urban 7D - S{week_num}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Tahoma&display=swap" rel="stylesheet">
     <style>
+        @font-face {{ font-family: 'Heading'; src: local('GT Pressura Mono Bold'), local('Space Mono'); }}
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
         body {{
-            font-family: 'Inter', sans-serif;
-            background: #0a0a14;
+            font-family: Tahoma, 'Inter', sans-serif;
+            background: #1E1E1E;
             background-image:
-                radial-gradient(ellipse at 20% 50%, rgba(255,107,53,0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(100,230,255,0.04) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 50%, rgba(255,120,50,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,120,50,0.04) 0%, transparent 50%);
             min-height: 100vh;
             padding: 15px;
             color: #fff;
@@ -433,13 +434,15 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
         /* ── Header ── */
         .header {{ text-align: center; margin-bottom: 15px; padding: 15px 15px 10px; }}
-        h1 {{ color: #FF6B35; font-size: 24px; font-weight: 700; margin-bottom: 4px;
-              text-shadow: 0 0 30px rgba(255,107,53,0.3); }}
+        h1 {{ font-family: 'Space Mono', 'GT Pressura Mono Bold', monospace;
+              color: #FF7832; font-size: 22px; font-weight: 700; margin-bottom: 4px;
+              text-transform: uppercase; letter-spacing: 1px;
+              text-shadow: 0 0 30px rgba(255,120,50,0.3); }}
         .subtitle {{ color: #888; font-size: 13px; }}
-        .dates {{ color: #FF6B35; font-size: 16px; font-weight: 600;
-                  background: rgba(255,107,53,0.1); padding: 8px 18px;
+        .dates {{ color: #FF7832; font-size: 16px; font-weight: 600;
+                  background: rgba(255,120,50,0.1); padding: 8px 18px;
                   border-radius: 20px; display: inline-block; margin-top: 8px;
-                  border: 1px solid rgba(255,107,53,0.2); }}
+                  border: 1px solid rgba(255,120,50,0.2); }}
 
         /* ── Week selector ── */
         .week-selector {{ display: flex; justify-content: center; gap: 6px;
@@ -448,9 +451,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
                      border: 1px solid rgba(255,255,255,0.08); border-radius: 20px;
                      color: #666; text-decoration: none; font-weight: 500; font-size: 13px;
                      transition: all 0.2s; }}
-        .week-tab:hover {{ background: rgba(255,107,53,0.1); border-color: rgba(255,107,53,0.3); color: #FF6B35; }}
-        .week-tab.active {{ background: #FF6B35; border-color: #FF6B35; color: white;
-                            box-shadow: 0 0 15px rgba(255,107,53,0.4); }}
+        .week-tab:hover {{ background: rgba(255,120,50,0.1); border-color: rgba(255,120,50,0.3); color: #FF7832; }}
+        .week-tab.active {{ background: #FF7832; border-color: #FF7832; color: white;
+                            box-shadow: 0 0 15px rgba(255,120,50,0.4); }}
 
         /* ── View toggle ── */
         .view-toggle {{ display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
@@ -458,8 +461,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .view-btn {{ flex: 1; padding: 10px; border: none; background: transparent;
                      color: #666; font-size: 13px; font-weight: 600; cursor: pointer;
                      border-radius: 10px; transition: all 0.2s; font-family: inherit; }}
-        .view-btn.active {{ background: rgba(255,107,53,0.15); color: #FF6B35;
-                            box-shadow: 0 0 10px rgba(255,107,53,0.2); }}
+        .view-btn.active {{ background: rgba(255,120,50,0.15); color: #FF7832;
+                            box-shadow: 0 0 10px rgba(255,120,50,0.2); }}
 
         /* ── Day tabs ── */
         .day-tabs {{ display: flex; gap: 4px; margin-bottom: 12px; overflow-x: auto;
@@ -468,8 +471,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
                     color: #666; font-size: 11px; font-weight: 600; cursor: pointer;
                     white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }}
-        .day-tab.active {{ background: rgba(255,107,53,0.15); border-color: rgba(255,107,53,0.3);
-                           color: #FF6B35; }}
+        .day-tab.active {{ background: rgba(255,120,50,0.15); border-color: rgba(255,120,50,0.3);
+                           color: #FF7832; }}
 
         /* ── Timeline (vue Journée) ── */
         .timeline {{ position: relative; margin-bottom: 20px; }}
@@ -481,7 +484,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .tl-name {{ width: 90px; font-size: 11px; color: #888; font-weight: 500;
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
                     padding-right: 8px; cursor: pointer; transition: color 0.2s; }}
-        .tl-name:hover {{ color: #FF6B35; }}
+        .tl-name:hover {{ color: #FF7832; }}
         .tl-bar-container {{ flex: 1; position: relative; height: 28px;
                              background: rgba(255,255,255,0.02); border-radius: 6px; }}
         .tl-bar {{ position: absolute; height: 100%; border-radius: 6px;
@@ -500,7 +503,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                          border-radius: 10px; color: white; font-weight: 500; font-size: 14px;
                          border: 1px solid rgba(255,255,255,0.08); cursor: pointer;
                          transition: all 0.2s; font-family: inherit; width: 100%; text-align: left; }}
-        .employee-btn:hover {{ background: rgba(255,107,53,0.1); border-color: rgba(255,107,53,0.3);
+        .employee-btn:hover {{ background: rgba(255,120,50,0.1); border-color: rgba(255,120,50,0.3);
                                transform: translateX(4px); }}
         .employee-btn.repos {{ color: #444; cursor: default; pointer-events: none; }}
         .badge {{ font-size: 10px; padding: 3px 8px; background: rgba(255,255,255,0.06);
@@ -515,7 +518,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                   border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }}
         .modal-header {{ padding: 18px 20px; display: flex; justify-content: space-between;
                          align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); }}
-        .modal-header h2 {{ font-size: 18px; color: #FF6B35; font-weight: 700; }}
+        .modal-header h2 {{ font-size: 18px; color: #FF7832; font-weight: 700; }}
         .modal-close {{ background: none; border: none; color: #666; font-size: 24px;
                         cursor: pointer; padding: 0 5px; line-height: 1; }}
         .modal-close:hover {{ color: #fff; }}
@@ -531,13 +534,13 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .modal-footer {{ padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.06);
                          text-align: center; }}
         .subscribe-btn {{ display: inline-flex; align-items: center; gap: 8px;
-                          padding: 12px 28px; background: #FF6B35; color: white;
+                          padding: 12px 28px; background: #FF7832; color: white;
                           border: none; border-radius: 25px; font-size: 14px; font-weight: 600;
                           cursor: pointer; font-family: inherit; transition: all 0.2s;
                           text-decoration: none;
-                          box-shadow: 0 0 20px rgba(255,107,53,0.3); }}
-        .subscribe-btn:hover {{ background: #ff8555;
-                                box-shadow: 0 0 30px rgba(255,107,53,0.5); transform: scale(1.02); }}
+                          box-shadow: 0 0 20px rgba(255,120,50,0.3); }}
+        .subscribe-btn:hover {{ background: #ff9050;
+                                box-shadow: 0 0 30px rgba(255,120,50,0.5); transform: scale(1.02); }}
 
         .no-events {{ text-align: center; padding: 30px; color: #444; font-size: 13px; }}
 

@@ -2,8 +2,6 @@ name: Générer planning et publier sur GitHub Pages
 
 on:
   push:
-    paths:
-      - 'Plannings *.xlsx'
     branches:
       - main
       - master
