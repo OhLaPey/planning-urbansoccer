@@ -25,7 +25,7 @@ import os
 import re
 from datetime import datetime, timedelta
 
-# ── Mapping codes → noms lisibles ──────────────────────────────────────────
+# ── Mapping codes → noms lisibles + couleurs néon (basées sur l'Excel) ────
 
 CODE_NAMES = {
     "VDC":   "Vie de centre",
@@ -45,6 +45,27 @@ CODE_NAMES = {
     "P25M":  "P25M",
     "PSG":   "PSG Academy",
 }
+
+# Couleurs néon par code — inspirées de l'Excel avec effet glow
+CODE_COLORS = {
+    "VDC":   {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff",  "text": "#ffffff"},
+    "L-REG": {"bg": "rgba(180,100,255,0.20)", "border": "#b464ff",  "text": "#d4a0ff"},
+    "CUP-L": {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff",  "text": "#ffffff"},
+    "CUP-R": {"bg": "rgba(100,220,60,0.20)",  "border": "#64dc3c",  "text": "#90ff70"},
+    "STAGE": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff",  "text": "#a0f0ff"},
+    "STA-E": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff",  "text": "#a0f0ff"},
+    "C-PAD": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4",  "text": "#d0d0d0"},
+    "PAD-A": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4",  "text": "#d0d0d0"},
+    "ANNIV": {"bg": "rgba(0,176,240,0.25)",   "border": "#00b0f0",  "text": "#60d0ff"},
+    "INVEN": {"bg": "rgba(255,192,0,0.25)",   "border": "#ffc000",  "text": "#ffd060"},
+    "MAL":   {"bg": "rgba(255,80,80,0.20)",   "border": "#ff5050",  "text": "#ff8080"},
+    "REU":   {"bg": "rgba(255,192,0,0.25)",   "border": "#ffc000",  "text": "#ffd060"},
+    "EV-RE": {"bg": "rgba(100,220,60,0.20)",  "border": "#64dc3c",  "text": "#90ff70"},
+    "AIDE":  {"bg": "rgba(0,176,240,0.25)",   "border": "#00b0f0",  "text": "#60d0ff"},
+    "P25M":  {"bg": "rgba(255,107,53,0.25)",  "border": "#ff6b35",  "text": "#ff9060"},
+    "PSG":   {"bg": "rgba(255,107,53,0.25)",  "border": "#ff6b35",  "text": "#ff9060"},
+}
+DEFAULT_COLOR = {"bg": "rgba(255,255,255,0.10)", "border": "#888888", "text": "#cccccc"}
 
 COLS = ["B", "C", "D", "E", "F", "G", "H"]
 
@@ -336,29 +357,55 @@ def generate_ics(name, events):
 # ── Génération HTML ────────────────────────────────────────────────────────
 
 
+def build_events_json(week_employees):
+    """Construit les données JSON des événements pour injection dans le HTML."""
+    data = {}
+    for name, evts in week_employees.items():
+        data[name] = {
+            "slug": slug(name),
+            "events": [{
+                "code": e["code"],
+                "label": e["label"],
+                "start": e["start"].strftime("%Y-%m-%dT%H:%M"),
+                "end": e["end"].strftime("%Y-%m-%dT%H:%M"),
+                "day": e["start"].weekday(),
+            } for e in evts],
+        }
+    return json.dumps(data, ensure_ascii=False)
+
+
 def generate_html(week_employees, week_num, year, all_weeks):
-    """Génère la page HTML pour une semaine (avec liens d'abonnement)."""
-    active_names = [name for name, evts in week_employees.items() if len(evts) > 0]
+    """Génère la page HTML avec preview timeline + vue individuelle + abonnement."""
     date_range = format_date_range(year, week_num)
+    events_json = build_events_json(week_employees)
+    colors_json = json.dumps(CODE_COLORS, ensure_ascii=False)
+    default_color_json = json.dumps(DEFAULT_COLOR, ensure_ascii=False)
+
+    DAYS_FR = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+    monday = datetime.fromisocalendar(year, week_num, 1)
+    day_labels_json = json.dumps([
+        f"{DAYS_FR[i]} {(monday + timedelta(days=i)).day}/{(monday + timedelta(days=i)).month:02d}"
+        for i in range(7)
+    ], ensure_ascii=False)
 
     week_tabs = ""
     for w in sorted(all_weeks):
-        if w == week_num:
-            week_tabs += f'            <a href="#" class="week-tab active">S{w}</a>\n'
-        else:
-            week_tabs += f'            <a href="S{w}.html" class="week-tab">S{w}</a>\n'
+        cls = ' active' if w == week_num else ''
+        href = '#' if w == week_num else f'S{w}.html'
+        week_tabs += f'            <a href="{href}" class="week-tab{cls}">S{w}</a>\n'
 
-    employee_lines = ""
+    employee_buttons = ""
     for name in week_employees:
         s = slug(name)
-        if name in active_names:
-            employee_lines += (
-                f'            <a href="ics/{s}.ics" class="employee" '
-                f'data-ics="ics/{s}.ics">{name}</a>\n'
+        has_events = len(week_employees[name]) > 0
+        if has_events:
+            employee_buttons += (
+                f'            <button class="employee-btn" data-name="{name}" '
+                f'data-slug="{s}">{name}</button>\n'
             )
         else:
-            employee_lines += (
-                f'            <div class="employee repos">{name} '
+            employee_buttons += (
+                f'            <div class="employee-btn repos">{name} '
                 f'<span class="badge">Repos</span></div>\n'
             )
 
@@ -372,60 +419,440 @@ def generate_html(week_employees, week_num, year, all_weeks):
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{ font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; padding: 20px; }}
-        .container {{ max-width: 500px; margin: 0 auto; }}
-        .header {{ text-align: center; margin-bottom: 20px; padding: 20px; }}
-        .logo {{ font-size: 48px; margin-bottom: 10px; }}
-        h1 {{ color: #FF6B35; font-size: 28px; font-weight: 700; margin-bottom: 8px; }}
-        .subtitle {{ color: #888; font-size: 14px; margin-bottom: 5px; }}
-        .dates {{ color: #FF6B35; font-size: 18px; font-weight: 600; background: rgba(255, 107, 53, 0.1); padding: 10px 20px; border-radius: 20px; display: inline-block; margin-top: 10px; }}
-        .week-selector {{ display: flex; justify-content: center; gap: 8px; margin-bottom: 25px; flex-wrap: wrap; }}
-        .week-tab {{ padding: 10px 18px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 25px; color: #888; text-decoration: none; font-weight: 500; font-size: 14px; transition: all 0.2s ease; }}
-        .week-tab:hover {{ background: rgba(255, 107, 53, 0.1); border-color: rgba(255, 107, 53, 0.3); color: #FF6B35; }}
-        .week-tab.active {{ background: #FF6B35; border-color: #FF6B35; color: white; }}
-        .employees {{ display: flex; flex-direction: column; gap: 8px; }}
-        .employee {{ display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; color: white; text-decoration: none; font-weight: 500; transition: all 0.2s ease; border: 1px solid rgba(255, 255, 255, 0.1); }}
-        a.employee:hover {{ background: rgba(255, 107, 53, 0.2); border-color: #FF6B35; transform: translateX(5px); }}
-        a.employee::after {{ content: '\U0001F4C5'; font-size: 20px; }}
-        .employee.repos {{ color: #555; background: rgba(255, 255, 255, 0.02); border-color: rgba(255, 255, 255, 0.05); }}
-        .badge {{ font-size: 11px; padding: 4px 10px; background: rgba(255, 255, 255, 0.1); border-radius: 20px; color: #555; font-weight: 400; }}
-        .footer {{ text-align: center; margin-top: 30px; color: #666; font-size: 12px; line-height: 1.8; }}
-        .footer a {{ color: #FF6B35; text-decoration: none; }}
+        body {{
+            font-family: 'Inter', sans-serif;
+            background: #0a0a14;
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(255,107,53,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(100,230,255,0.04) 0%, transparent 50%);
+            min-height: 100vh;
+            padding: 15px;
+            color: #fff;
+        }}
+        .container {{ max-width: 600px; margin: 0 auto; }}
+
+        /* ── Header ── */
+        .header {{ text-align: center; margin-bottom: 15px; padding: 15px 15px 10px; }}
+        h1 {{ color: #FF6B35; font-size: 24px; font-weight: 700; margin-bottom: 4px;
+              text-shadow: 0 0 30px rgba(255,107,53,0.3); }}
+        .subtitle {{ color: #888; font-size: 13px; }}
+        .dates {{ color: #FF6B35; font-size: 16px; font-weight: 600;
+                  background: rgba(255,107,53,0.1); padding: 8px 18px;
+                  border-radius: 20px; display: inline-block; margin-top: 8px;
+                  border: 1px solid rgba(255,107,53,0.2); }}
+
+        /* ── Week selector ── */
+        .week-selector {{ display: flex; justify-content: center; gap: 6px;
+                          margin-bottom: 15px; flex-wrap: wrap; }}
+        .week-tab {{ padding: 8px 14px; background: rgba(255,255,255,0.04);
+                     border: 1px solid rgba(255,255,255,0.08); border-radius: 20px;
+                     color: #666; text-decoration: none; font-weight: 500; font-size: 13px;
+                     transition: all 0.2s; }}
+        .week-tab:hover {{ background: rgba(255,107,53,0.1); border-color: rgba(255,107,53,0.3); color: #FF6B35; }}
+        .week-tab.active {{ background: #FF6B35; border-color: #FF6B35; color: white;
+                            box-shadow: 0 0 15px rgba(255,107,53,0.4); }}
+
+        /* ── View toggle ── */
+        .view-toggle {{ display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
+                        background: rgba(255,255,255,0.04); border-radius: 12px; padding: 4px; }}
+        .view-btn {{ flex: 1; padding: 10px; border: none; background: transparent;
+                     color: #666; font-size: 13px; font-weight: 600; cursor: pointer;
+                     border-radius: 10px; transition: all 0.2s; font-family: inherit; }}
+        .view-btn.active {{ background: rgba(255,107,53,0.15); color: #FF6B35;
+                            box-shadow: 0 0 10px rgba(255,107,53,0.2); }}
+
+        /* ── Day tabs ── */
+        .day-tabs {{ display: flex; gap: 4px; margin-bottom: 12px; overflow-x: auto;
+                     padding-bottom: 4px; -webkit-overflow-scrolling: touch; }}
+        .day-tab {{ padding: 8px 12px; background: rgba(255,255,255,0.04);
+                    border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+                    color: #666; font-size: 11px; font-weight: 600; cursor: pointer;
+                    white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }}
+        .day-tab.active {{ background: rgba(255,107,53,0.15); border-color: rgba(255,107,53,0.3);
+                           color: #FF6B35; }}
+
+        /* ── Timeline (vue Journée) ── */
+        .timeline {{ position: relative; margin-bottom: 20px; }}
+        .time-grid {{ position: relative; min-height: 200px; }}
+        .time-markers {{ display: flex; justify-content: space-between; padding: 0 0 8px 0;
+                         border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 10px; }}
+        .time-marker {{ font-size: 10px; color: #444; font-weight: 500; }}
+        .timeline-row {{ display: flex; align-items: center; margin-bottom: 6px; }}
+        .tl-name {{ width: 90px; font-size: 11px; color: #888; font-weight: 500;
+                    flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+                    padding-right: 8px; cursor: pointer; transition: color 0.2s; }}
+        .tl-name:hover {{ color: #FF6B35; }}
+        .tl-bar-container {{ flex: 1; position: relative; height: 28px;
+                             background: rgba(255,255,255,0.02); border-radius: 6px; }}
+        .tl-bar {{ position: absolute; height: 100%; border-radius: 6px;
+                   display: flex; align-items: center; justify-content: center;
+                   font-size: 9px; font-weight: 600; overflow: hidden;
+                   border-left: 2px solid; transition: all 0.2s;
+                   cursor: default; }}
+        .tl-bar:hover {{ filter: brightness(1.3); z-index: 2;
+                         box-shadow: 0 0 12px var(--glow-color); }}
+        .tl-bar .bar-label {{ padding: 0 4px; white-space: nowrap; }}
+
+        /* ── Employee list (vue Staff) ── */
+        .employee-list {{ display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }}
+        .employee-btn {{ display: flex; align-items: center; justify-content: space-between;
+                         padding: 14px 16px; background: rgba(255,255,255,0.04);
+                         border-radius: 10px; color: white; font-weight: 500; font-size: 14px;
+                         border: 1px solid rgba(255,255,255,0.08); cursor: pointer;
+                         transition: all 0.2s; font-family: inherit; width: 100%; text-align: left; }}
+        .employee-btn:hover {{ background: rgba(255,107,53,0.1); border-color: rgba(255,107,53,0.3);
+                               transform: translateX(4px); }}
+        .employee-btn.repos {{ color: #444; cursor: default; pointer-events: none; }}
+        .badge {{ font-size: 10px; padding: 3px 8px; background: rgba(255,255,255,0.06);
+                  border-radius: 15px; color: #444; }}
+
+        /* ── Individual preview (modal) ── */
+        .modal-overlay {{ display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+                          z-index: 100; justify-content: center; align-items: flex-start;
+                          padding: 30px 15px; overflow-y: auto; }}
+        .modal-overlay.open {{ display: flex; }}
+        .modal {{ background: #12121e; border-radius: 16px; width: 100%; max-width: 500px;
+                  border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }}
+        .modal-header {{ padding: 18px 20px; display: flex; justify-content: space-between;
+                         align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); }}
+        .modal-header h2 {{ font-size: 18px; color: #FF6B35; font-weight: 700; }}
+        .modal-close {{ background: none; border: none; color: #666; font-size: 24px;
+                        cursor: pointer; padding: 0 5px; line-height: 1; }}
+        .modal-close:hover {{ color: #fff; }}
+        .modal-body {{ padding: 15px 20px; }}
+        .modal-day {{ margin-bottom: 14px; }}
+        .modal-day-title {{ font-size: 12px; color: #666; font-weight: 600;
+                            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }}
+        .modal-event {{ display: flex; align-items: center; gap: 10px; padding: 10px 12px;
+                        border-radius: 8px; margin-bottom: 4px; border-left: 3px solid; }}
+        .modal-event .ev-time {{ font-size: 12px; font-weight: 600; white-space: nowrap;
+                                 min-width: 90px; }}
+        .modal-event .ev-label {{ font-size: 13px; font-weight: 500; }}
+        .modal-footer {{ padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.06);
+                         text-align: center; }}
+        .subscribe-btn {{ display: inline-flex; align-items: center; gap: 8px;
+                          padding: 12px 28px; background: #FF6B35; color: white;
+                          border: none; border-radius: 25px; font-size: 14px; font-weight: 600;
+                          cursor: pointer; font-family: inherit; transition: all 0.2s;
+                          text-decoration: none;
+                          box-shadow: 0 0 20px rgba(255,107,53,0.3); }}
+        .subscribe-btn:hover {{ background: #ff8555;
+                                box-shadow: 0 0 30px rgba(255,107,53,0.5); transform: scale(1.02); }}
+
+        .no-events {{ text-align: center; padding: 30px; color: #444; font-size: 13px; }}
+
+        /* ── Legend ── */
+        .legend {{ display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+                   margin-bottom: 15px; }}
+        .legend-item {{ display: flex; align-items: center; gap: 4px; font-size: 10px;
+                        color: #666; padding: 3px 8px; background: rgba(255,255,255,0.03);
+                        border-radius: 6px; }}
+        .legend-dot {{ width: 8px; height: 8px; border-radius: 50%; }}
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">\u26bd</div>
             <h1>Planning Urban 7D</h1>
             <p class="subtitle">Semaine {week_num}</p>
             <div class="dates">{date_range}</div>
         </div>
+
         <div class="week-selector">
 {week_tabs.rstrip()}
         </div>
-        <div class="employees">
-{employee_lines.rstrip()}
+
+        <div class="view-toggle">
+            <button class="view-btn active" data-view="day">Vue Journ\u00e9e</button>
+            <button class="view-btn" data-view="staff">Vue Staff</button>
         </div>
-        <div class="footer">
-            <p>Cliquez sur votre nom pour vous abonner au calendrier</p>
-            <p style="margin-top: 4px; font-size: 11px; color: #555;">
-                L'abonnement se met \u00e0 jour automatiquement \u00e0 chaque nouvelle semaine
-            </p>
+
+        <!-- ── Vue Journée (timeline) ── -->
+        <div id="view-day">
+            <div class="day-tabs" id="day-tabs"></div>
+            <div class="legend" id="legend"></div>
+            <div class="timeline" id="timeline"></div>
+        </div>
+
+        <!-- ── Vue Staff (liste) ── -->
+        <div id="view-staff" style="display:none;">
+            <div class="employee-list">
+{employee_buttons.rstrip()}
+            </div>
         </div>
     </div>
+
+    <!-- ── Modal preview individuelle ── -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-name"></h2>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-footer">
+                <a class="subscribe-btn" id="modal-subscribe" href="#">
+                    S'abonner au calendrier
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Convertir les liens ICS en webcal:// pour l'abonnement calendrier.
-        // webcal:// ouvre directement l'app calendrier (iOS, macOS, Android, Outlook).
-        // En local (file://), on garde le lien direct pour le téléchargement.
-        if (window.location.protocol === 'https:' || window.location.protocol === 'http:') {{
-            document.querySelectorAll('a.employee[data-ics]').forEach(function(a) {{
-                var icsPath = a.getAttribute('data-ics');
-                var base = window.location.href.replace(/[^/]*$/, '');
-                var fullUrl = new URL(icsPath, base);
-                a.href = 'webcal://' + fullUrl.host + fullUrl.pathname;
+    (function() {{
+        var DATA = {events_json};
+        var COLORS = {colors_json};
+        var DEFAULT_C = {default_color_json};
+        var DAYS = {day_labels_json};
+        var currentDay = 0;
+        var currentView = 'day';
+
+        function getColor(code) {{ return COLORS[code] || DEFAULT_C; }}
+
+        // ── Day tabs ──
+        var dayTabsEl = document.getElementById('day-tabs');
+        DAYS.forEach(function(label, i) {{
+            var btn = document.createElement('div');
+            btn.className = 'day-tab' + (i === 0 ? ' active' : '');
+            btn.textContent = label;
+            btn.onclick = function() {{ selectDay(i); }};
+            dayTabsEl.appendChild(btn);
+        }});
+
+        function selectDay(i) {{
+            currentDay = i;
+            dayTabsEl.querySelectorAll('.day-tab').forEach(function(t, j) {{
+                t.classList.toggle('active', j === i);
+            }});
+            renderTimeline();
+        }}
+
+        // ── Legend ──
+        function renderLegend(codes) {{
+            var el = document.getElementById('legend');
+            el.innerHTML = '';
+            var seen = {{}};
+            codes.forEach(function(code) {{
+                if (seen[code]) return;
+                seen[code] = true;
+                var c = getColor(code);
+                var item = document.createElement('div');
+                item.className = 'legend-item';
+                item.innerHTML = '<div class="legend-dot" style="background:' + c.border +
+                    ';box-shadow:0 0 6px ' + c.border + '"></div>' +
+                    (DATA._codeNames && DATA._codeNames[code] || code);
+                el.appendChild(item);
             }});
         }}
+
+        // ── Timeline rendering ──
+        function renderTimeline() {{
+            var tl = document.getElementById('timeline');
+            tl.innerHTML = '';
+
+            // Collect events for this day
+            var dayEvents = [];
+            var allCodes = [];
+            Object.keys(DATA).forEach(function(name) {{
+                if (name === '_codeNames') return;
+                var emp = DATA[name];
+                emp.events.forEach(function(ev) {{
+                    if (ev.day === currentDay) {{
+                        dayEvents.push({{ name: name, ev: ev }});
+                        allCodes.push(ev.code);
+                    }}
+                }});
+            }});
+
+            if (dayEvents.length === 0) {{
+                tl.innerHTML = '<div class="no-events">Aucun cr\u00e9neau ce jour</div>';
+                renderLegend([]);
+                return;
+            }}
+
+            renderLegend(allCodes);
+
+            // Find time range
+            var minH = 24, maxH = 0;
+            dayEvents.forEach(function(d) {{
+                var s = new Date(d.ev.start);
+                var e = new Date(d.ev.end);
+                var sh = s.getHours() + s.getMinutes()/60;
+                var eh = e.getHours() + e.getMinutes()/60;
+                if (eh <= sh) eh = 24; // crosses midnight
+                if (sh < minH) minH = sh;
+                if (eh > maxH) maxH = eh;
+            }});
+            minH = Math.floor(minH);
+            maxH = Math.ceil(maxH);
+            if (maxH <= minH) maxH = minH + 1;
+            var range = maxH - minH;
+
+            // Time markers
+            var markers = document.createElement('div');
+            markers.className = 'time-markers';
+            for (var h = minH; h <= maxH; h++) {{
+                var m = document.createElement('span');
+                m.className = 'time-marker';
+                m.textContent = h + 'h';
+                markers.appendChild(m);
+            }}
+            tl.appendChild(markers);
+
+            // Group by employee
+            var byName = {{}};
+            var nameOrder = [];
+            dayEvents.forEach(function(d) {{
+                if (!byName[d.name]) {{ byName[d.name] = []; nameOrder.push(d.name); }}
+                byName[d.name].push(d.ev);
+            }});
+
+            nameOrder.forEach(function(name) {{
+                var row = document.createElement('div');
+                row.className = 'timeline-row';
+
+                var nameEl = document.createElement('div');
+                nameEl.className = 'tl-name';
+                nameEl.textContent = name.split(' ')[0];
+                nameEl.title = name;
+                nameEl.onclick = function() {{ openModal(name); }};
+                row.appendChild(nameEl);
+
+                var barContainer = document.createElement('div');
+                barContainer.className = 'tl-bar-container';
+
+                byName[name].forEach(function(ev) {{
+                    var s = new Date(ev.start);
+                    var e = new Date(ev.end);
+                    var sh = s.getHours() + s.getMinutes()/60;
+                    var eh = e.getHours() + e.getMinutes()/60;
+                    if (eh <= sh) eh = 24;
+
+                    var left = ((sh - minH) / range) * 100;
+                    var width = ((eh - sh) / range) * 100;
+                    if (left < 0) left = 0;
+                    if (left + width > 100) width = 100 - left;
+
+                    var c = getColor(ev.code);
+                    var bar = document.createElement('div');
+                    bar.className = 'tl-bar';
+                    bar.style.cssText = 'left:' + left + '%;width:' + width + '%;' +
+                        'background:' + c.bg + ';border-color:' + c.border + ';color:' + c.text +
+                        ';--glow-color:' + c.border + ';' +
+                        'box-shadow:inset 0 0 8px rgba(255,255,255,0.05), 0 0 4px ' + c.border + '40;';
+                    bar.innerHTML = '<span class="bar-label">' + ev.code + '</span>';
+                    bar.title = ev.label + '\\n' +
+                        s.getHours().toString().padStart(2,'0') + ':' + s.getMinutes().toString().padStart(2,'0') +
+                        ' - ' + e.getHours().toString().padStart(2,'0') + ':' + e.getMinutes().toString().padStart(2,'0');
+                    barContainer.appendChild(bar);
+                }});
+
+                row.appendChild(barContainer);
+                tl.appendChild(row);
+            }});
+        }}
+
+        // ── View toggle ──
+        document.querySelectorAll('.view-btn').forEach(function(btn) {{
+            btn.onclick = function() {{
+                currentView = btn.getAttribute('data-view');
+                document.querySelectorAll('.view-btn').forEach(function(b) {{
+                    b.classList.toggle('active', b === btn);
+                }});
+                document.getElementById('view-day').style.display = currentView === 'day' ? '' : 'none';
+                document.getElementById('view-staff').style.display = currentView === 'staff' ? '' : 'none';
+            }};
+        }});
+
+        // ── Modal ──
+        var modalEl = document.getElementById('modal');
+        document.getElementById('modal-close').onclick = closeModal;
+        modalEl.onclick = function(e) {{ if (e.target === modalEl) closeModal(); }};
+
+        function closeModal() {{ modalEl.classList.remove('open'); }}
+
+        function openModal(name) {{
+            var emp = DATA[name];
+            if (!emp) return;
+
+            document.getElementById('modal-name').textContent = name;
+            var body = document.getElementById('modal-body');
+            body.innerHTML = '';
+
+            // Group events by day
+            var byDay = {{}};
+            emp.events.forEach(function(ev) {{ if (!byDay[ev.day]) byDay[ev.day] = []; byDay[ev.day].push(ev); }});
+
+            var hasDays = false;
+            for (var d = 0; d < 7; d++) {{
+                if (!byDay[d] || byDay[d].length === 0) continue;
+                hasDays = true;
+                var dayDiv = document.createElement('div');
+                dayDiv.className = 'modal-day';
+
+                var title = document.createElement('div');
+                title.className = 'modal-day-title';
+                title.textContent = DAYS[d];
+                dayDiv.appendChild(title);
+
+                byDay[d].forEach(function(ev) {{
+                    var c = getColor(ev.code);
+                    var s = new Date(ev.start);
+                    var e = new Date(ev.end);
+                    var evDiv = document.createElement('div');
+                    evDiv.className = 'modal-event';
+                    evDiv.style.cssText = 'background:' + c.bg + ';border-color:' + c.border +
+                        ';box-shadow:0 0 8px ' + c.border + '30;';
+
+                    var timeSpan = document.createElement('span');
+                    timeSpan.className = 'ev-time';
+                    timeSpan.style.color = c.text;
+                    timeSpan.textContent = s.getHours().toString().padStart(2,'0') + ':' +
+                        s.getMinutes().toString().padStart(2,'0') + ' \u2192 ' +
+                        e.getHours().toString().padStart(2,'0') + ':' +
+                        e.getMinutes().toString().padStart(2,'0');
+
+                    var labelSpan = document.createElement('span');
+                    labelSpan.className = 'ev-label';
+                    labelSpan.style.color = c.text;
+                    labelSpan.textContent = ev.label;
+
+                    evDiv.appendChild(timeSpan);
+                    evDiv.appendChild(labelSpan);
+                    dayDiv.appendChild(evDiv);
+                }});
+                body.appendChild(dayDiv);
+            }});
+
+            if (!hasDays) {{
+                body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
+            }}
+
+            // Subscribe button
+            var subBtn = document.getElementById('modal-subscribe');
+            var icsPath = 'ics/' + emp.slug + '.ics';
+            if (window.location.protocol === 'https:' || window.location.protocol === 'http:') {{
+                var base = window.location.href.replace(/[^/]*$/, '');
+                var fullUrl = new URL(icsPath, base);
+                subBtn.href = 'webcal://' + fullUrl.host + fullUrl.pathname;
+            }} else {{
+                subBtn.href = icsPath;
+            }}
+
+            modalEl.classList.add('open');
+        }}
+
+        // ── Staff list click ──
+        document.querySelectorAll('.employee-btn[data-name]').forEach(function(btn) {{
+            btn.onclick = function() {{ openModal(btn.getAttribute('data-name')); }};
+        }});
+
+        // ── Timeline name click also in day view ──
+        // (handled inline above)
+
+        // Initial render
+        renderTimeline();
+    }})();
     </script>
 </body>
 </html>"""
