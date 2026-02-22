@@ -1348,10 +1348,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
             }})
             .then(function(r) {{
                 if (r.ok) {{
-                    btn.textContent = 'Publi\u00e9 ! Le site se met \u00e0 jour...';
-                    btn.classList.add('success');
                     notesDirty = false;
-                    setTimeout(function() {{ renderNotes(); }}, 3000);
+                    showRefreshCountdown(btn);
                 }} else {{
                     return r.json().then(function(err) {{
                         btn.disabled = false;
@@ -1364,6 +1362,25 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 btn.disabled = false;
                 btn.textContent = 'Erreur r\u00e9seau, r\u00e9essayer';
             }});
+        }}
+
+        function showRefreshCountdown(btn) {{
+            var seconds = 90;
+            btn.classList.add('success');
+            btn.disabled = true;
+
+            function tick() {{
+                if (seconds > 0) {{
+                    btn.textContent = 'Publi\u00e9 \u2714 En ligne dans ~' + seconds + 's \u2014 Rafra\u00eechir';
+                    seconds--;
+                    setTimeout(tick, 1000);
+                }} else {{
+                    btn.textContent = 'C\u0027est en ligne ! Rafra\u00eechir la page';
+                }}
+                btn.disabled = false;
+                btn.onclick = function() {{ location.reload(); }};
+            }}
+            tick();
         }}
 
         renderNotes();

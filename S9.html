@@ -920,10 +920,8 @@
             })
             .then(function(r) {
                 if (r.ok) {
-                    btn.textContent = 'Publié ! Le site se met à jour...';
-                    btn.classList.add('success');
                     notesDirty = false;
-                    setTimeout(function() { renderNotes(); }, 3000);
+                    showRefreshCountdown(btn);
                 } else {
                     return r.json().then(function(err) {
                         btn.disabled = false;
@@ -936,6 +934,25 @@
                 btn.disabled = false;
                 btn.textContent = 'Erreur réseau, réessayer';
             });
+        }
+
+        function showRefreshCountdown(btn) {
+            var seconds = 90;
+            btn.classList.add('success');
+            btn.disabled = true;
+
+            function tick() {
+                if (seconds > 0) {
+                    btn.textContent = 'Publié ✔ En ligne dans ~' + seconds + 's — Rafraîchir';
+                    seconds--;
+                    setTimeout(tick, 1000);
+                } else {
+                    btn.textContent = 'C'est en ligne ! Rafraîchir la page';
+                }
+                btn.disabled = false;
+                btn.onclick = function() { location.reload(); };
+            }
+            tick();
         }
 
         renderNotes();
