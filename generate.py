@@ -48,24 +48,24 @@ CODE_NAMES = {
 
 # Couleurs néon par code — inspirées de l'Excel avec effet glow
 CODE_COLORS = {
-    "VDC":   {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff",  "text": "#ffffff"},
-    "L-REG": {"bg": "rgba(180,100,255,0.20)", "border": "#b464ff",  "text": "#d4a0ff"},
-    "CUP-L": {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff",  "text": "#ffffff"},
-    "CUP-R": {"bg": "rgba(100,220,60,0.20)",  "border": "#64dc3c",  "text": "#90ff70"},
-    "STAGE": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff",  "text": "#a0f0ff"},
-    "STA-E": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff",  "text": "#a0f0ff"},
-    "C-PAD": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4",  "text": "#d0d0d0"},
-    "PAD-A": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4",  "text": "#d0d0d0"},
-    "ANNIV": {"bg": "rgba(0,176,240,0.25)",   "border": "#00b0f0",  "text": "#60d0ff"},
-    "INVEN": {"bg": "rgba(255,192,0,0.25)",   "border": "#ffc000",  "text": "#ffd060"},
-    "MAL":   {"bg": "rgba(255,80,80,0.20)",   "border": "#ff5050",  "text": "#ff8080"},
-    "REU":   {"bg": "rgba(255,192,0,0.25)",   "border": "#ffc000",  "text": "#ffd060"},
-    "EV-RE": {"bg": "rgba(100,220,60,0.20)",  "border": "#64dc3c",  "text": "#90ff70"},
-    "AIDE":  {"bg": "rgba(0,176,240,0.25)",   "border": "#00b0f0",  "text": "#60d0ff"},
-    "P25M":  {"bg": "rgba(255,120,50,0.25)",  "border": "#ff7832",  "text": "#ff9850"},
-    "PSG":   {"bg": "rgba(255,120,50,0.25)",  "border": "#ff7832",  "text": "#ff9850"},
+    "VDC":   {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff",  "text": "#ffffff"},
+    "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff",  "text": "#d4a0ff"},
+    "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff",  "text": "#ffffff"},
+    "CUP-R": {"bg": "rgba(100,220,60,0.35)",  "border": "#64dc3c",  "text": "#90ff70"},
+    "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff",  "text": "#a0f0ff"},
+    "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff",  "text": "#a0f0ff"},
+    "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4",  "text": "#d0d0d0"},
+    "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4",  "text": "#d0d0d0"},
+    "ANNIV": {"bg": "rgba(0,176,240,0.40)",   "border": "#00b0f0",  "text": "#60d0ff"},
+    "INVEN": {"bg": "rgba(255,192,0,0.40)",   "border": "#ffc000",  "text": "#ffd060"},
+    "MAL":   {"bg": "rgba(255,80,80,0.35)",   "border": "#ff5050",  "text": "#ff8080"},
+    "REU":   {"bg": "rgba(255,192,0,0.40)",   "border": "#ffc000",  "text": "#ffd060"},
+    "EV-RE": {"bg": "rgba(100,220,60,0.35)",  "border": "#64dc3c",  "text": "#90ff70"},
+    "AIDE":  {"bg": "rgba(0,176,240,0.40)",   "border": "#00b0f0",  "text": "#60d0ff"},
+    "P25M":  {"bg": "rgba(255,120,50,0.40)",  "border": "#ff7832",  "text": "#ff9850"},
+    "PSG":   {"bg": "rgba(255,120,50,0.40)",  "border": "#ff7832",  "text": "#ff9850"},
 }
-DEFAULT_COLOR = {"bg": "rgba(255,255,255,0.10)", "border": "#888888", "text": "#cccccc"}
+DEFAULT_COLOR = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"}
 
 COLS = ["B", "C", "D", "E", "F", "G", "H"]
 
@@ -423,7 +423,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
     DAYS_FULL = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
     monday = datetime.fromisocalendar(year, week_num, 1)
     day_labels_json = json.dumps([
-        f"{DAYS_SHORT[i]} {(monday + timedelta(days=i)).day:02d}/{(monday + timedelta(days=i)).month:02d}"
+        f"{DAYS_SHORT[i]} {(monday + timedelta(days=i)).day:02d}"
         for i in range(7)
     ], ensure_ascii=False)
     day_labels_full_json = json.dumps([
@@ -1087,15 +1087,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
             checked.forEach(function(c) {{ names.push(c.getAttribute('data-name')); }});
             if (names.length === 0) return;
             var ics = generateICSForNames(names);
-            var blob = new Blob([ics], {{ type: 'text/calendar;charset=utf-8' }});
-            var url = URL.createObjectURL(blob);
-            var a = document.createElement('a');
-            a.href = url;
-            a.download = 'planning-export.ics';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+            // Navigate to data URI so iOS/Android opens the Calendar app
+            window.location.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
         }};
 
         // ── View toggle ──
