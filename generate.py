@@ -675,23 +675,41 @@ def generate_html(week_employees, week_num, year, all_weeks):
                            white-space: nowrap; }}
         .admin-hint {{ font-size: 10px; color: #444; margin-top: 4px; }}
 
-        /* ── Notification bell ── */
-        .notif-btn {{ position: fixed; bottom: 20px; right: 20px; z-index: 50;
-                      width: 48px; height: 48px; border-radius: 50%; border: 2px solid rgba(255,120,50,0.3);
-                      background: rgba(30,30,30,0.95); color: #FF7832; font-size: 20px;
-                      cursor: pointer; display: flex; align-items: center; justify-content: center;
-                      transition: all 0.3s; box-shadow: 0 0 15px rgba(255,120,50,0.2); }}
-        .notif-btn:hover {{ border-color: #FF7832; box-shadow: 0 0 25px rgba(255,120,50,0.4);
-                            transform: scale(1.05); }}
-        .notif-btn.active {{ background: #FF7832; color: #fff; border-color: #FF7832;
-                             box-shadow: 0 0 20px rgba(255,120,50,0.5); }}
-        .notif-btn .bell {{ line-height: 1; }}
-        .notif-toast {{ position: fixed; bottom: 80px; right: 20px; z-index: 50;
-                        background: rgba(30,30,30,0.95); border: 1px solid rgba(255,120,50,0.3);
-                        border-radius: 10px; padding: 10px 14px; color: #ccc; font-size: 11px;
-                        max-width: 220px; opacity: 0; transform: translateY(10px);
-                        transition: all 0.3s; pointer-events: none; }}
-        .notif-toast.show {{ opacity: 1; transform: translateY(0); pointer-events: auto; }}
+        /* ── Admin edit mode ── */
+        .admin-toolbar {{ display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+                          padding: 8px 12px; background: rgba(255,120,50,0.08);
+                          border: 1px solid rgba(255,120,50,0.2); border-radius: 10px; }}
+        .edit-toggle {{ padding: 6px 14px; background: rgba(255,120,50,0.15);
+                        border: 1px solid rgba(255,120,50,0.3); border-radius: 8px;
+                        color: #FF7832; font-size: 11px; font-weight: 600; cursor: pointer;
+                        font-family: inherit; transition: all 0.2s; }}
+        .edit-toggle:hover {{ background: #FF7832; color: #fff; }}
+        .edit-toggle.active {{ background: #FF7832; color: #fff;
+                               box-shadow: 0 0 10px rgba(255,120,50,0.4); }}
+        .admin-toolbar .label {{ font-size: 11px; color: #888; }}
+        .tl-bar.editable {{ cursor: pointer; }}
+        .tl-bar.editable:hover {{ outline: 2px solid #FF7832; outline-offset: 1px; }}
+        .edit-popup {{ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                       z-index: 200; background: #1a1a2e; border: 1px solid rgba(255,120,50,0.3);
+                       border-radius: 12px; padding: 16px; min-width: 260px;
+                       box-shadow: 0 10px 40px rgba(0,0,0,0.6); }}
+        .edit-popup h3 {{ font-size: 13px; color: #FF7832; margin-bottom: 10px; }}
+        .edit-popup .field {{ display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }}
+        .edit-popup .field label {{ font-size: 11px; color: #888; min-width: 45px; }}
+        .edit-popup .field input {{ flex: 1; padding: 6px 8px; background: rgba(0,0,0,0.3);
+                                    border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+                                    color: #fff; font-size: 12px; font-family: inherit; outline: none; }}
+        .edit-popup .field input:focus {{ border-color: rgba(255,120,50,0.4); }}
+        .edit-popup .actions {{ display: flex; gap: 6px; margin-top: 10px; }}
+        .edit-popup .actions button {{ flex: 1; padding: 8px; border: none; border-radius: 8px;
+                                       font-size: 11px; font-weight: 600; cursor: pointer;
+                                       font-family: inherit; transition: all 0.2s; }}
+        .edit-popup .btn-save {{ background: #FF7832; color: #fff; }}
+        .edit-popup .btn-save:hover {{ background: #ff9050; }}
+        .edit-popup .btn-cancel {{ background: rgba(255,255,255,0.08); color: #888; }}
+        .edit-popup .btn-cancel:hover {{ background: rgba(255,255,255,0.15); color: #fff; }}
+        .edit-overlay {{ position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,0.5); }}
+        .edit-status {{ font-size: 10px; color: #64dc3c; margin-left: auto; }}
 
         /* ── Legend ── */
         .legend {{ display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
@@ -749,18 +767,12 @@ def generate_html(week_employees, week_num, year, all_weeks):
             </div>
             <div class="modal-body" id="modal-body"></div>
             <div class="modal-footer">
-                <button class="subscribe-btn" id="modal-add-cal">
-                    Ajouter au calendrier
-                </button>
+                <a class="subscribe-btn" id="modal-subscribe" href="#">
+                    S'abonner au calendrier
+                </a>
             </div>
         </div>
     </div>
-
-    <!-- Notification bell -->
-    <button class="notif-btn" id="notif-btn" title="Notifications">
-        <span class="bell">&#128276;</span>
-    </button>
-    <div class="notif-toast" id="notif-toast"></div>
 
     <script>
     (function() {{
@@ -1138,20 +1150,16 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
             }}
 
-            // Add to calendar button (download ICS)
-            var addBtn = document.getElementById('modal-add-cal');
-            addBtn.onclick = function() {{
-                var ics = generateICSForNames([name]);
-                var blob = new Blob([ics], {{ type: 'text/calendar;charset=utf-8' }});
-                var url = URL.createObjectURL(blob);
-                var a = document.createElement('a');
-                a.href = url;
-                a.download = emp.slug + '.ics';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            }};
+            // Subscribe button (webcal://)
+            var subBtn = document.getElementById('modal-subscribe');
+            var icsPath = 'ics/' + emp.slug + '.ics';
+            if (window.location.protocol === 'https:' || window.location.protocol === 'http:') {{
+                var base = window.location.href.replace(/[^/]*$/, '');
+                var fullUrl = new URL(icsPath, base);
+                subBtn.href = 'webcal://' + fullUrl.host + fullUrl.pathname;
+            }} else {{
+                subBtn.href = icsPath;
+            }}
 
             modalEl.classList.add('open');
         }}
@@ -1388,91 +1396,179 @@ def generate_html(week_employees, week_num, year, all_weeks):
         // Initial render
         renderTimeline();
 
-        // ── Notifications (Service Worker) ──
-        var notifBtn = document.getElementById('notif-btn');
-        var notifToast = document.getElementById('notif-toast');
-        var CHECK_INTERVAL = 30 * 60 * 1000; // 30 min
-        var checkTimer = null;
+        // ── Admin edit mode ──
+        var editMode = false;
+        var adminToolbarEl = null;
 
-        function showToast(msg, duration) {{
-            notifToast.textContent = msg;
-            notifToast.classList.add('show');
-            setTimeout(function() {{ notifToast.classList.remove('show'); }}, duration || 3000);
+        function initAdminToolbar() {{
+            if (!getToken()) return;
+            if (adminToolbarEl) return;
+            adminToolbarEl = document.createElement('div');
+            adminToolbarEl.className = 'admin-toolbar';
+            adminToolbarEl.innerHTML = '<span class="label">Admin</span>';
+            var toggleBtn = document.createElement('button');
+            toggleBtn.className = 'edit-toggle';
+            toggleBtn.textContent = 'Mode \u00e9dition';
+            toggleBtn.onclick = function() {{
+                editMode = !editMode;
+                toggleBtn.classList.toggle('active', editMode);
+                toggleBtn.textContent = editMode ? 'Quitter \u00e9dition' : 'Mode \u00e9dition';
+                renderTimeline();
+            }};
+            adminToolbarEl.appendChild(toggleBtn);
+            var statusEl = document.createElement('span');
+            statusEl.className = 'edit-status';
+            statusEl.id = 'edit-status';
+            adminToolbarEl.appendChild(statusEl);
+            var viewDay = document.getElementById('view-day');
+            viewDay.insertBefore(adminToolbarEl, viewDay.firstChild);
         }}
 
-        function updateBellState() {{
-            if ('Notification' in window && Notification.permission === 'granted') {{
-                notifBtn.classList.add('active');
-                notifBtn.title = 'Notifications activ\u00e9es';
-            }} else {{
-                notifBtn.classList.remove('active');
-                notifBtn.title = 'Activer les notifications';
-            }}
-        }}
-
-        function startPeriodicCheck() {{
-            if (checkTimer) return;
-            checkTimer = setInterval(function() {{
-                if (navigator.serviceWorker && navigator.serviceWorker.controller) {{
-                    navigator.serviceWorker.controller.postMessage({{ type: 'CHECK_UPDATES' }});
-                }}
-            }}, CHECK_INTERVAL);
-            // First check after 5s
-            setTimeout(function() {{
-                if (navigator.serviceWorker && navigator.serviceWorker.controller) {{
-                    navigator.serviceWorker.controller.postMessage({{ type: 'CHECK_UPDATES' }});
-                }}
-            }}, 5000);
-        }}
-
-        function registerSW() {{
-            if ('serviceWorker' in navigator) {{
-                navigator.serviceWorker.register('sw.js').then(function(reg) {{
-                    console.log('SW registered');
-                    // Initialize the SW with current latest.json
-                    fetch('latest.json?_t=' + Date.now())
-                        .then(function(r) {{ return r.json(); }})
-                        .then(function(data) {{
-                            if (reg.active) {{
-                                reg.active.postMessage({{ type: 'INIT', data: JSON.stringify(data) }});
-                            }}
-                        }}).catch(function() {{}});
-                    if (Notification.permission === 'granted') {{
-                        startPeriodicCheck();
-                    }}
-                }}).catch(function(err) {{ console.log('SW error', err); }});
-            }}
-        }}
-
-        notifBtn.onclick = function() {{
-            if (!('Notification' in window)) {{
-                showToast('Notifications non support\u00e9es sur ce navigateur');
-                return;
-            }}
-            if (Notification.permission === 'granted') {{
-                showToast('Notifications d\u00e9j\u00e0 activ\u00e9es \u2714');
-                return;
-            }}
-            if (Notification.permission === 'denied') {{
-                showToast('Notifications bloqu\u00e9es. Active-les dans les param\u00e8tres du navigateur.');
-                return;
-            }}
-            Notification.requestPermission().then(function(perm) {{
-                updateBellState();
-                if (perm === 'granted') {{
-                    showToast('Notifications activ\u00e9es ! Tu seras pr\u00e9venu des nouveaux plannings.');
-                    registerSW();
-                    startPeriodicCheck();
-                }} else {{
-                    showToast('Notifications refus\u00e9es');
-                }}
+        // Override renderTimeline to add editable class when editMode
+        var _origRenderTimeline = renderTimeline;
+        renderTimeline = function() {{
+            _origRenderTimeline();
+            if (!editMode) return;
+            document.querySelectorAll('#timeline .tl-bar').forEach(function(bar) {{
+                bar.classList.add('editable');
+            }});
+            // Add click handlers for editing
+            var rows = document.querySelectorAll('#timeline .timeline-row');
+            rows.forEach(function(row) {{
+                var nameEl = row.querySelector('.tl-name');
+                if (!nameEl || !nameEl.title) return;
+                var empName = nameEl.title;
+                row.querySelectorAll('.tl-bar').forEach(function(bar, idx) {{
+                    bar.onclick = function(e) {{
+                        if (!editMode) return;
+                        e.stopPropagation();
+                        var emp = DATA[empName];
+                        if (!emp) return;
+                        var dayEvts = emp.events.filter(function(ev) {{ return ev.day === currentDay; }});
+                        if (!dayEvts[idx]) return;
+                        openEditPopup(empName, dayEvts[idx], idx);
+                    }};
+                }});
             }});
         }};
 
-        updateBellState();
-        if ('Notification' in window && Notification.permission === 'granted') {{
-            registerSW();
+        function openEditPopup(empName, ev, evIdx) {{
+            // Remove existing popup
+            var old = document.getElementById('edit-overlay');
+            if (old) old.remove();
+            old = document.getElementById('edit-popup');
+            if (old) old.remove();
+
+            var s = new Date(ev.start);
+            var e = new Date(ev.end);
+            var sh = s.getHours().toString().padStart(2, '0') + ':' + s.getMinutes().toString().padStart(2, '0');
+            var eh = e.getHours().toString().padStart(2, '0') + ':' + e.getMinutes().toString().padStart(2, '0');
+
+            var overlay = document.createElement('div');
+            overlay.className = 'edit-overlay';
+            overlay.id = 'edit-overlay';
+            overlay.onclick = function() {{ closeEditPopup(); }};
+            document.body.appendChild(overlay);
+
+            var popup = document.createElement('div');
+            popup.className = 'edit-popup';
+            popup.id = 'edit-popup';
+            popup.innerHTML =
+                '<h3>' + empName + ' \u2014 ' + ev.label + '</h3>' +
+                '<div class="field"><label>D\u00e9but</label><input type="time" id="edit-start" value="' + sh + '"></div>' +
+                '<div class="field"><label>Fin</label><input type="time" id="edit-end" value="' + eh + '"></div>' +
+                '<div class="actions">' +
+                '<button class="btn-cancel" id="edit-cancel">Annuler</button>' +
+                '<button class="btn-save" id="edit-save">Enregistrer</button>' +
+                '</div>';
+            document.body.appendChild(popup);
+
+            document.getElementById('edit-cancel').onclick = closeEditPopup;
+            document.getElementById('edit-save').onclick = function() {{
+                var newStart = document.getElementById('edit-start').value;
+                var newEnd = document.getElementById('edit-end').value;
+                if (!newStart || !newEnd) return;
+                applyTimeEdit(empName, ev, newStart, newEnd);
+                closeEditPopup();
+            }};
         }}
+
+        function closeEditPopup() {{
+            var el = document.getElementById('edit-overlay');
+            if (el) el.remove();
+            el = document.getElementById('edit-popup');
+            if (el) el.remove();
+        }}
+
+        function applyTimeEdit(empName, ev, newStart, newEnd) {{
+            // Update the DATA object in memory
+            var dateStr = ev.start.substring(0, 11); // "2026-03-02T"
+            ev.start = dateStr + newStart;
+            ev.end = dateStr + newEnd;
+            renderTimeline();
+
+            // Show saving status
+            var statusEl = document.getElementById('edit-status');
+            if (statusEl) statusEl.textContent = 'Sauvegarde...';
+
+            // Push updated data to GitHub
+            pushDataToGitHub(function(ok) {{
+                if (statusEl) {{
+                    statusEl.textContent = ok ? 'Sauvegard\u00e9 \u2714' : 'Erreur !';
+                    setTimeout(function() {{ statusEl.textContent = ''; }}, 3000);
+                }}
+            }});
+        }}
+
+        function pushDataToGitHub(cb) {{
+            var token = getToken();
+            if (!token) {{ cb(false); return; }}
+
+            // Build the updated data JSON for this week
+            var weekData = {{}};
+            Object.keys(DATA).forEach(function(name) {{
+                if (name === '_codeNames') return;
+                weekData[name] = DATA[name];
+            }});
+            var content = btoa(unescape(encodeURIComponent(JSON.stringify(weekData, null, 2) + '\\n')));
+            var dataPath = 'data/S{week_num}-events.json';
+            var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + dataPath;
+
+            // Get current SHA
+            fetch(apiUrl, {{
+                headers: {{ 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }}
+            }})
+            .then(function(r) {{ return r.ok ? r.json() : {{ sha: null }}; }})
+            .then(function(file) {{
+                var body = {{
+                    message: 'MAJ cr\u00e9neaux S{week_num} depuis la page',
+                    content: content,
+                    branch: 'main'
+                }};
+                if (file.sha) body.sha = file.sha;
+
+                return fetch(apiUrl, {{
+                    method: 'PUT',
+                    headers: {{
+                        'Authorization': 'Bearer ' + token,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    }},
+                    body: JSON.stringify(body)
+                }});
+            }})
+            .then(function(r) {{ cb(r.ok); }})
+            .catch(function() {{ cb(false); }});
+        }}
+
+        // Init admin toolbar if token exists
+        initAdminToolbar();
+        // Re-init after token is saved in notes section
+        var _origSetToken = setToken;
+        setToken = function(t) {{
+            _origSetToken(t);
+            initAdminToolbar();
+        }};
 
     }})();
     </script>
@@ -1591,95 +1687,6 @@ def main():
             '</html>'
         )
     print(f"\u00c9crit : index.html \u2192 S{latest_week}.html")
-
-    # ── Générer le Service Worker (notifications) ──
-    sw_content = """\
-var CACHE_KEY = 'planning-urban7d-latest';
-var CHECK_INTERVAL = 30 * 60 * 1000; // 30 min
-
-self.addEventListener('install', function(e) { self.skipWaiting(); });
-self.addEventListener('activate', function(e) { e.waitUntil(self.clients.claim()); });
-
-// Messages from page
-self.addEventListener('message', function(e) {
-  if (e.data && e.data.type === 'CHECK_UPDATES') {
-    checkForUpdates();
-  }
-  if (e.data && e.data.type === 'INIT') {
-    // Store current state without notifying (first load)
-    self._lastKnown = e.data.data;
-  }
-});
-
-function checkForUpdates() {
-  fetch('latest.json?_t=' + Date.now())
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      // Compare with stored version
-      var stored = null;
-      try { stored = JSON.parse(self._lastKnown || 'null'); } catch(e) {}
-
-      if (stored && data.generatedAt !== stored.generatedAt) {
-        var newWeeks = data.weeks.filter(function(w) {
-          return stored.weeks.indexOf(w) === -1;
-        });
-        if (newWeeks.length > 0) {
-          showNotification(
-            'Nouveau planning disponible !',
-            'Semaine ' + newWeeks.join(', S') + ' ajoutée sur Planning Urban 7D'
-          );
-        } else {
-          showNotification(
-            'Planning mis à jour',
-            'Le planning S' + data.latestWeek + ' a été mis à jour'
-          );
-        }
-      }
-      self._lastKnown = JSON.stringify(data);
-    })
-    .catch(function() {});
-}
-
-function showNotification(title, body) {
-  self.registration.showNotification(title, {
-    body: body,
-    icon: 'data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text y=\".9em\" font-size=\"90\">⚽</text></svg>',
-    badge: 'data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text y=\".9em\" font-size=\"90\">⚽</text></svg>',
-    tag: 'planning-update',
-    renotify: true,
-    data: { url: './' }
-  });
-}
-
-self.addEventListener('notificationclick', function(e) {
-  e.notification.close();
-  e.waitUntil(
-    self.clients.matchAll({ type: 'window' }).then(function(clients) {
-      for (var i = 0; i < clients.length; i++) {
-        if (clients[i].url.indexOf('planning') !== -1 && 'focus' in clients[i]) {
-          return clients[i].focus();
-        }
-      }
-      if (self.clients.openWindow) {
-        return self.clients.openWindow(e.notification.data.url || './');
-      }
-    })
-  );
-});
-"""
-    with open("sw.js", "w", encoding="utf-8") as f:
-        f.write(sw_content)
-    print("Écrit : sw.js")
-
-    # ── Générer latest.json (pour les notifications push) ──
-    latest_data = {
-        "latestWeek": latest_week,
-        "weeks": sorted(list(all_weeks)),
-        "generatedAt": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-    }
-    with open("latest.json", "w", encoding="utf-8") as f:
-        json.dump(latest_data, f, ensure_ascii=False, indent=2)
-    print("Écrit : latest.json")
 
     print("\nTermin\u00e9 !")
     print("\n\u2500\u2500 Abonnement calendrier \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500")

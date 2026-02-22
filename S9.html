@@ -223,23 +223,41 @@
                            white-space: nowrap; }
         .admin-hint { font-size: 10px; color: #444; margin-top: 4px; }
 
-        /* ── Notification bell ── */
-        .notif-btn { position: fixed; bottom: 20px; right: 20px; z-index: 50;
-                      width: 48px; height: 48px; border-radius: 50%; border: 2px solid rgba(255,120,50,0.3);
-                      background: rgba(30,30,30,0.95); color: #FF7832; font-size: 20px;
-                      cursor: pointer; display: flex; align-items: center; justify-content: center;
-                      transition: all 0.3s; box-shadow: 0 0 15px rgba(255,120,50,0.2); }
-        .notif-btn:hover { border-color: #FF7832; box-shadow: 0 0 25px rgba(255,120,50,0.4);
-                            transform: scale(1.05); }
-        .notif-btn.active { background: #FF7832; color: #fff; border-color: #FF7832;
-                             box-shadow: 0 0 20px rgba(255,120,50,0.5); }
-        .notif-btn .bell { line-height: 1; }
-        .notif-toast { position: fixed; bottom: 80px; right: 20px; z-index: 50;
-                        background: rgba(30,30,30,0.95); border: 1px solid rgba(255,120,50,0.3);
-                        border-radius: 10px; padding: 10px 14px; color: #ccc; font-size: 11px;
-                        max-width: 220px; opacity: 0; transform: translateY(10px);
-                        transition: all 0.3s; pointer-events: none; }
-        .notif-toast.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        /* ── Admin edit mode ── */
+        .admin-toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+                          padding: 8px 12px; background: rgba(255,120,50,0.08);
+                          border: 1px solid rgba(255,120,50,0.2); border-radius: 10px; }
+        .edit-toggle { padding: 6px 14px; background: rgba(255,120,50,0.15);
+                        border: 1px solid rgba(255,120,50,0.3); border-radius: 8px;
+                        color: #FF7832; font-size: 11px; font-weight: 600; cursor: pointer;
+                        font-family: inherit; transition: all 0.2s; }
+        .edit-toggle:hover { background: #FF7832; color: #fff; }
+        .edit-toggle.active { background: #FF7832; color: #fff;
+                               box-shadow: 0 0 10px rgba(255,120,50,0.4); }
+        .admin-toolbar .label { font-size: 11px; color: #888; }
+        .tl-bar.editable { cursor: pointer; }
+        .tl-bar.editable:hover { outline: 2px solid #FF7832; outline-offset: 1px; }
+        .edit-popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                       z-index: 200; background: #1a1a2e; border: 1px solid rgba(255,120,50,0.3);
+                       border-radius: 12px; padding: 16px; min-width: 260px;
+                       box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .edit-popup h3 { font-size: 13px; color: #FF7832; margin-bottom: 10px; }
+        .edit-popup .field { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .edit-popup .field label { font-size: 11px; color: #888; min-width: 45px; }
+        .edit-popup .field input { flex: 1; padding: 6px 8px; background: rgba(0,0,0,0.3);
+                                    border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+                                    color: #fff; font-size: 12px; font-family: inherit; outline: none; }
+        .edit-popup .field input:focus { border-color: rgba(255,120,50,0.4); }
+        .edit-popup .actions { display: flex; gap: 6px; margin-top: 10px; }
+        .edit-popup .actions button { flex: 1; padding: 8px; border: none; border-radius: 8px;
+                                       font-size: 11px; font-weight: 600; cursor: pointer;
+                                       font-family: inherit; transition: all 0.2s; }
+        .edit-popup .btn-save { background: #FF7832; color: #fff; }
+        .edit-popup .btn-save:hover { background: #ff9050; }
+        .edit-popup .btn-cancel { background: rgba(255,255,255,0.08); color: #888; }
+        .edit-popup .btn-cancel:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        .edit-overlay { position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,0.5); }
+        .edit-status { font-size: 10px; color: #64dc3c; margin-left: auto; }
 
         /* ── Legend ── */
         .legend { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
@@ -321,18 +339,12 @@
             </div>
             <div class="modal-body" id="modal-body"></div>
             <div class="modal-footer">
-                <button class="subscribe-btn" id="modal-add-cal">
-                    Ajouter au calendrier
-                </button>
+                <a class="subscribe-btn" id="modal-subscribe" href="#">
+                    S'abonner au calendrier
+                </a>
             </div>
         </div>
     </div>
-
-    <!-- Notification bell -->
-    <button class="notif-btn" id="notif-btn" title="Notifications">
-        <span class="bell">&#128276;</span>
-    </button>
-    <div class="notif-toast" id="notif-toast"></div>
 
     <script>
     (function() {
@@ -710,20 +722,16 @@
                 body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
             }
 
-            // Add to calendar button (download ICS)
-            var addBtn = document.getElementById('modal-add-cal');
-            addBtn.onclick = function() {
-                var ics = generateICSForNames([name]);
-                var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-                var url = URL.createObjectURL(blob);
-                var a = document.createElement('a');
-                a.href = url;
-                a.download = emp.slug + '.ics';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            };
+            // Subscribe button (webcal://)
+            var subBtn = document.getElementById('modal-subscribe');
+            var icsPath = 'ics/' + emp.slug + '.ics';
+            if (window.location.protocol === 'https:' || window.location.protocol === 'http:') {
+                var base = window.location.href.replace(/[^/]*$/, '');
+                var fullUrl = new URL(icsPath, base);
+                subBtn.href = 'webcal://' + fullUrl.host + fullUrl.pathname;
+            } else {
+                subBtn.href = icsPath;
+            }
 
             modalEl.classList.add('open');
         }
@@ -960,91 +968,179 @@
         // Initial render
         renderTimeline();
 
-        // ── Notifications (Service Worker) ──
-        var notifBtn = document.getElementById('notif-btn');
-        var notifToast = document.getElementById('notif-toast');
-        var CHECK_INTERVAL = 30 * 60 * 1000; // 30 min
-        var checkTimer = null;
+        // ── Admin edit mode ──
+        var editMode = false;
+        var adminToolbarEl = null;
 
-        function showToast(msg, duration) {
-            notifToast.textContent = msg;
-            notifToast.classList.add('show');
-            setTimeout(function() { notifToast.classList.remove('show'); }, duration || 3000);
+        function initAdminToolbar() {
+            if (!getToken()) return;
+            if (adminToolbarEl) return;
+            adminToolbarEl = document.createElement('div');
+            adminToolbarEl.className = 'admin-toolbar';
+            adminToolbarEl.innerHTML = '<span class="label">Admin</span>';
+            var toggleBtn = document.createElement('button');
+            toggleBtn.className = 'edit-toggle';
+            toggleBtn.textContent = 'Mode édition';
+            toggleBtn.onclick = function() {
+                editMode = !editMode;
+                toggleBtn.classList.toggle('active', editMode);
+                toggleBtn.textContent = editMode ? 'Quitter édition' : 'Mode édition';
+                renderTimeline();
+            };
+            adminToolbarEl.appendChild(toggleBtn);
+            var statusEl = document.createElement('span');
+            statusEl.className = 'edit-status';
+            statusEl.id = 'edit-status';
+            adminToolbarEl.appendChild(statusEl);
+            var viewDay = document.getElementById('view-day');
+            viewDay.insertBefore(adminToolbarEl, viewDay.firstChild);
         }
 
-        function updateBellState() {
-            if ('Notification' in window && Notification.permission === 'granted') {
-                notifBtn.classList.add('active');
-                notifBtn.title = 'Notifications activées';
-            } else {
-                notifBtn.classList.remove('active');
-                notifBtn.title = 'Activer les notifications';
-            }
-        }
-
-        function startPeriodicCheck() {
-            if (checkTimer) return;
-            checkTimer = setInterval(function() {
-                if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-                    navigator.serviceWorker.controller.postMessage({ type: 'CHECK_UPDATES' });
-                }
-            }, CHECK_INTERVAL);
-            // First check after 5s
-            setTimeout(function() {
-                if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-                    navigator.serviceWorker.controller.postMessage({ type: 'CHECK_UPDATES' });
-                }
-            }, 5000);
-        }
-
-        function registerSW() {
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('sw.js').then(function(reg) {
-                    console.log('SW registered');
-                    // Initialize the SW with current latest.json
-                    fetch('latest.json?_t=' + Date.now())
-                        .then(function(r) { return r.json(); })
-                        .then(function(data) {
-                            if (reg.active) {
-                                reg.active.postMessage({ type: 'INIT', data: JSON.stringify(data) });
-                            }
-                        }).catch(function() {});
-                    if (Notification.permission === 'granted') {
-                        startPeriodicCheck();
-                    }
-                }).catch(function(err) { console.log('SW error', err); });
-            }
-        }
-
-        notifBtn.onclick = function() {
-            if (!('Notification' in window)) {
-                showToast('Notifications non supportées sur ce navigateur');
-                return;
-            }
-            if (Notification.permission === 'granted') {
-                showToast('Notifications déjà activées ✔');
-                return;
-            }
-            if (Notification.permission === 'denied') {
-                showToast('Notifications bloquées. Active-les dans les paramètres du navigateur.');
-                return;
-            }
-            Notification.requestPermission().then(function(perm) {
-                updateBellState();
-                if (perm === 'granted') {
-                    showToast('Notifications activées ! Tu seras prévenu des nouveaux plannings.');
-                    registerSW();
-                    startPeriodicCheck();
-                } else {
-                    showToast('Notifications refusées');
-                }
+        // Override renderTimeline to add editable class when editMode
+        var _origRenderTimeline = renderTimeline;
+        renderTimeline = function() {
+            _origRenderTimeline();
+            if (!editMode) return;
+            document.querySelectorAll('#timeline .tl-bar').forEach(function(bar) {
+                bar.classList.add('editable');
+            });
+            // Add click handlers for editing
+            var rows = document.querySelectorAll('#timeline .timeline-row');
+            rows.forEach(function(row) {
+                var nameEl = row.querySelector('.tl-name');
+                if (!nameEl || !nameEl.title) return;
+                var empName = nameEl.title;
+                row.querySelectorAll('.tl-bar').forEach(function(bar, idx) {
+                    bar.onclick = function(e) {
+                        if (!editMode) return;
+                        e.stopPropagation();
+                        var emp = DATA[empName];
+                        if (!emp) return;
+                        var dayEvts = emp.events.filter(function(ev) { return ev.day === currentDay; });
+                        if (!dayEvts[idx]) return;
+                        openEditPopup(empName, dayEvts[idx], idx);
+                    };
+                });
             });
         };
 
-        updateBellState();
-        if ('Notification' in window && Notification.permission === 'granted') {
-            registerSW();
+        function openEditPopup(empName, ev, evIdx) {
+            // Remove existing popup
+            var old = document.getElementById('edit-overlay');
+            if (old) old.remove();
+            old = document.getElementById('edit-popup');
+            if (old) old.remove();
+
+            var s = new Date(ev.start);
+            var e = new Date(ev.end);
+            var sh = s.getHours().toString().padStart(2, '0') + ':' + s.getMinutes().toString().padStart(2, '0');
+            var eh = e.getHours().toString().padStart(2, '0') + ':' + e.getMinutes().toString().padStart(2, '0');
+
+            var overlay = document.createElement('div');
+            overlay.className = 'edit-overlay';
+            overlay.id = 'edit-overlay';
+            overlay.onclick = function() { closeEditPopup(); };
+            document.body.appendChild(overlay);
+
+            var popup = document.createElement('div');
+            popup.className = 'edit-popup';
+            popup.id = 'edit-popup';
+            popup.innerHTML =
+                '<h3>' + empName + ' — ' + ev.label + '</h3>' +
+                '<div class="field"><label>Début</label><input type="time" id="edit-start" value="' + sh + '"></div>' +
+                '<div class="field"><label>Fin</label><input type="time" id="edit-end" value="' + eh + '"></div>' +
+                '<div class="actions">' +
+                '<button class="btn-cancel" id="edit-cancel">Annuler</button>' +
+                '<button class="btn-save" id="edit-save">Enregistrer</button>' +
+                '</div>';
+            document.body.appendChild(popup);
+
+            document.getElementById('edit-cancel').onclick = closeEditPopup;
+            document.getElementById('edit-save').onclick = function() {
+                var newStart = document.getElementById('edit-start').value;
+                var newEnd = document.getElementById('edit-end').value;
+                if (!newStart || !newEnd) return;
+                applyTimeEdit(empName, ev, newStart, newEnd);
+                closeEditPopup();
+            };
         }
+
+        function closeEditPopup() {
+            var el = document.getElementById('edit-overlay');
+            if (el) el.remove();
+            el = document.getElementById('edit-popup');
+            if (el) el.remove();
+        }
+
+        function applyTimeEdit(empName, ev, newStart, newEnd) {
+            // Update the DATA object in memory
+            var dateStr = ev.start.substring(0, 11); // "2026-03-02T"
+            ev.start = dateStr + newStart;
+            ev.end = dateStr + newEnd;
+            renderTimeline();
+
+            // Show saving status
+            var statusEl = document.getElementById('edit-status');
+            if (statusEl) statusEl.textContent = 'Sauvegarde...';
+
+            // Push updated data to GitHub
+            pushDataToGitHub(function(ok) {
+                if (statusEl) {
+                    statusEl.textContent = ok ? 'Sauvegardé ✔' : 'Erreur !';
+                    setTimeout(function() { statusEl.textContent = ''; }, 3000);
+                }
+            });
+        }
+
+        function pushDataToGitHub(cb) {
+            var token = getToken();
+            if (!token) { cb(false); return; }
+
+            // Build the updated data JSON for this week
+            var weekData = {};
+            Object.keys(DATA).forEach(function(name) {
+                if (name === '_codeNames') return;
+                weekData[name] = DATA[name];
+            });
+            var content = btoa(unescape(encodeURIComponent(JSON.stringify(weekData, null, 2) + '\n')));
+            var dataPath = 'data/S9-events.json';
+            var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + dataPath;
+
+            // Get current SHA
+            fetch(apiUrl, {
+                headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }
+            })
+            .then(function(r) { return r.ok ? r.json() : { sha: null }; })
+            .then(function(file) {
+                var body = {
+                    message: 'MAJ créneaux S9 depuis la page',
+                    content: content,
+                    branch: 'main'
+                };
+                if (file.sha) body.sha = file.sha;
+
+                return fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+            })
+            .then(function(r) { cb(r.ok); })
+            .catch(function() { cb(false); });
+        }
+
+        // Init admin toolbar if token exists
+        initAdminToolbar();
+        // Re-init after token is saved in notes section
+        var _origSetToken = setToken;
+        setToken = function(t) {
+            _origSetToken(t);
+            initAdminToolbar();
+        };
 
     })();
     </script>
