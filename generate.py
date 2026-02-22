@@ -85,7 +85,7 @@ def format_date_range(year, week):
 
 def discover_excel_files(directory="."):
     """Trouve tous les fichiers « Plannings YYYY SXX.xlsx »."""
-    pattern = re.compile(r"Plannings\s+(\d{4})\s+S(\d+)\.xlsx", re.IGNORECASE)
+    pattern = re.compile(r"Plannings\s+(\d{4})\s+S(\d+)(?:\s+v\d+)?\.xlsx", re.IGNORECASE)
     files = []
     for f in sorted(os.listdir(directory)):
         m = pattern.match(f)
