@@ -75,7 +75,26 @@ FRENCH_MONTHS = {
     9: "Septembre", 10: "Octobre", 11: "Novembre", 12: "Décembre",
 }
 
+FRENCH_MONTHS_LOWER = {
+    1: "janvier", 2: "février", 3: "mars", 4: "avril",
+    5: "mai", 6: "juin", 7: "juillet", 8: "août",
+    9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre",
+}
+
 # ── Utilitaires ────────────────────────────────────────────────────────────
+
+
+def format_note_date_fr(date_str):
+    """Formate '2026-02-20' ou '2026-02-20T14:30' en français."""
+    if not date_str:
+        return ""
+    if "T" in date_str:
+        date_part, time_part = date_str.split("T", 1)
+        y, m, d = date_part.split("-")
+        h, mi = time_part.split(":")[:2]
+        return f"{int(d)} {FRENCH_MONTHS_LOWER[int(m)]} {y} à {int(h)}h{mi}"
+    y, m, d = date_str.split("-")
+    return f"{int(d)} {FRENCH_MONTHS_LOWER[int(m)]} {y}"
 
 
 def slug(name):
@@ -350,7 +369,8 @@ def generate_ics(name, events, week_notes=None):
             upd_text = upd.get("text", "")
             upd_date = upd.get("date", "")
             if upd_text:
-                prefix = f"MAJ {upd_date}: " if upd_date else "MAJ: "
+                date_label = format_note_date_fr(upd_date) if upd_date else ""
+                prefix = f"MAJ {date_label}: " if date_label else "MAJ: "
                 extra_desc += "\\n" + prefix + upd_text
 
         for i, evt in enumerate(by_week[week_num], 1):
@@ -784,6 +804,20 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var DAYS_FULL = {day_labels_full_json};
         var currentDay = 0;
         var currentView = 'day';
+        var MOIS_FR = ['janvier','f\u00e9vrier','mars','avril','mai','juin','juillet','ao\u00fbt','septembre','octobre','novembre','d\u00e9cembre'];
+
+        function formatDateFR(dateStr) {{
+            if (!dateStr) return '';
+            var parts = dateStr.split('T');
+            var dp = parts[0].split('-');
+            var d = parseInt(dp[2]), m = parseInt(dp[1]) - 1, y = dp[0];
+            var result = d + ' ' + MOIS_FR[m] + ' ' + y;
+            if (parts[1]) {{
+                var tp = parts[1].split(':');
+                result += ' \u00e0 ' + parseInt(tp[0]) + 'h' + tp[1];
+            }}
+            return result;
+        }}
 
         function getColor(code) {{ return COLORS[code] || DEFAULT_C; }}
 
@@ -1025,7 +1059,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             }}
             (NOTES_DATA.updates || []).forEach(function(u) {{
                 if (u.text) {{
-                    var prefix = u.date ? ('MAJ ' + u.date + ': ') : 'MAJ: ';
+                    var prefix = u.date ? ('MAJ ' + formatDateFR(u.date) + ': ') : 'MAJ: ';
                     noteDesc += '\\n' + prefix + u.text;
                 }}
             }});
@@ -1222,7 +1256,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 ucard.className = 'note-card update';
                 var uhdr = document.createElement('div');
                 uhdr.className = 'note-header';
-                var dateLabel = u.date ? (' \u2014 ' + u.date) : '';
+                var dateLabel = u.date ? (' \u2014 ' + formatDateFR(u.date)) : '';
                 uhdr.innerHTML = '<span class="note-label update">Mise \u00e0 jour' + dateLabel + '</span>';
                 var uactions = document.createElement('div');
                 uactions.className = 'note-actions';
@@ -1272,7 +1306,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 var today = new Date();
                 var ds = today.getFullYear() + '-' +
                     (today.getMonth()+1).toString().padStart(2,'0') + '-' +
-                    today.getDate().toString().padStart(2,'0');
+                    today.getDate().toString().padStart(2,'0') + 'T' +
+                    today.getHours().toString().padStart(2,'0') + ':' +
+                    today.getMinutes().toString().padStart(2,'0');
                 data.updates.push({{ date: ds, text: '' }});
                 notesDirty = true;
                 renderNotes();
