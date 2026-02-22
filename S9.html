@@ -92,8 +92,12 @@
                     padding-right: 6px; cursor: pointer; transition: color 0.2s; }
         .tl-name:hover { color: #FF7832; }
         .tl-bar-container { flex: 1; position: relative; height: 26px;
-                             background: rgba(255,255,255,0.02); border-radius: 5px; }
-        .tl-bar { position: absolute; height: 100%; border-radius: 5px;
+                             background: rgba(255,255,255,0.02); border-radius: 5px; overflow: hidden; }
+        .tl-gridline { position: absolute; top: 0; bottom: 0; width: 1px; z-index: 0; pointer-events: none; }
+        .tl-gridline.full { background: rgba(255,255,255,0.12); }
+        .tl-gridline.half { background: repeating-linear-gradient(to bottom,
+            rgba(255,255,255,0.10) 0px, rgba(255,255,255,0.10) 2px, transparent 2px, transparent 5px); }
+        .tl-bar { position: absolute; height: 100%; border-radius: 5px; z-index: 1;
                    display: flex; align-items: center; justify-content: center;
                    font-size: 9px; font-weight: 600; overflow: hidden;
                    border-left: 2px solid; transition: all 0.2s;
@@ -486,6 +490,14 @@
 
                 var barContainer = document.createElement('div');
                 barContainer.className = 'tl-bar-container';
+
+                // Grid lines: solid for full hours, dashed for half hours
+                for (var gh = minH; gh <= maxH; gh += 0.5) {
+                    var gline = document.createElement('div');
+                    gline.className = 'tl-gridline ' + (gh % 1 === 0 ? 'full' : 'half');
+                    gline.style.left = ((gh - minH) / range * 100) + '%';
+                    barContainer.appendChild(gline);
+                }
 
                 byName[name].forEach(function(ev) {
                     var s = new Date(ev.start);
