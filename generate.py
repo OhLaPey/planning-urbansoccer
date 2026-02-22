@@ -1375,7 +1375,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     seconds--;
                     setTimeout(tick, 1000);
                 }} else {{
-                    btn.textContent = 'C\u0027est en ligne ! Rafra\u00eechir la page';
+                    btn.textContent = "C'est en ligne ! Rafra\u00eechir la page";
                 }}
                 btn.disabled = false;
                 btn.onclick = function() {{ location.reload(); }};
