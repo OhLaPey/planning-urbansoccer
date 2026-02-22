@@ -150,19 +150,59 @@
 
         .no-events { text-align: center; padding: 30px; color: #444; font-size: 13px; }
 
+        /* ── Custom checkbox (DA) ── */
+        .tl-check-wrap { flex-shrink: 0; margin-left: 6px; }
+        .tl-check { display: none; }
+        .tl-check-label { display: block; width: 20px; height: 20px; border-radius: 5px;
+                           border: 2px solid rgba(255,255,255,0.15); cursor: pointer;
+                           transition: all 0.2s; position: relative; }
+        .tl-check-label:hover { border-color: rgba(255,120,50,0.5); }
+        .tl-check:checked + .tl-check-label { background: #FF7832; border-color: #FF7832;
+                                                box-shadow: 0 0 8px rgba(255,120,50,0.4); }
+        .tl-check:checked + .tl-check-label::after { content: ''; position: absolute;
+            left: 5px; top: 2px; width: 5px; height: 9px;
+            border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+        .export-bar { display: none; justify-content: center; margin-top: 12px; }
+        .export-bar.visible { display: flex; }
+        .export-btn { display: inline-flex; align-items: center; gap: 6px;
+                       padding: 10px 22px; background: rgba(255,120,50,0.15); color: #FF7832;
+                       border: 1px solid rgba(255,120,50,0.3); border-radius: 20px;
+                       font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;
+                       transition: all 0.2s; }
+        .export-btn:hover { background: #FF7832; color: #fff;
+                             box-shadow: 0 0 20px rgba(255,120,50,0.4); }
+        .select-all-row { display: flex; justify-content: flex-end; align-items: center;
+                           gap: 6px; margin-bottom: 4px; padding-right: 2px; }
+        .select-all-label { font-size: 10px; color: #555; cursor: pointer; }
+
         /* ── Notes de semaine ── */
         .week-notes { margin-bottom: 15px; }
-        .week-notes:empty { display: none; }
         .note-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
                       border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }
         .note-card.comment { border-left: 3px solid #FF7832; }
         .note-card.update { border-left: 3px solid #ffc000; }
+        .note-header { display: flex; justify-content: space-between; align-items: center;
+                        margin-bottom: 6px; }
         .note-label { font-size: 10px; font-weight: 700; text-transform: uppercase;
-                       letter-spacing: 0.5px; margin-bottom: 6px; }
+                       letter-spacing: 0.5px; }
         .note-label.comment { color: #FF7832; }
         .note-label.update { color: #ffc000; }
         .note-text { font-size: 12px; color: #ccc; line-height: 1.6; white-space: pre-line; }
-        .note-date { font-size: 10px; color: #666; margin-bottom: 4px; }
+        .note-text:empty::before { content: 'Cliquer pour ajouter...'; color: #444; font-style: italic; }
+        .note-text[contenteditable=true] { outline: none; border: 1px solid rgba(255,120,50,0.2);
+                                            border-radius: 6px; padding: 8px; min-height: 40px;
+                                            background: rgba(0,0,0,0.2); }
+        .note-actions { display: flex; gap: 6px; }
+        .note-btn { background: none; border: none; color: #555; font-size: 14px;
+                     cursor: pointer; padding: 2px 4px; transition: color 0.2s; }
+        .note-btn:hover { color: #FF7832; }
+        .note-btn.del:hover { color: #ff5050; }
+        .add-note-btn { display: flex; align-items: center; justify-content: center; gap: 6px;
+                         padding: 8px; background: rgba(255,255,255,0.02);
+                         border: 1px dashed rgba(255,255,255,0.1); border-radius: 10px;
+                         color: #444; font-size: 11px; cursor: pointer; transition: all 0.2s;
+                         font-family: inherit; width: 100%; margin-bottom: 8px; }
+        .add-note-btn:hover { border-color: rgba(255,120,50,0.3); color: #FF7832; }
 
         /* ── Legend ── */
         .legend { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
@@ -197,7 +237,11 @@
         <div id="view-day">
             <div class="day-tabs" id="day-tabs"></div>
             <div class="legend" id="legend"></div>
+            <div id="select-all-container"></div>
             <div class="timeline" id="timeline"></div>
+            <div class="export-bar" id="export-bar">
+                <button class="export-btn" id="export-btn">Exporter la sélection</button>
+            </div>
         </div>
 
         <!-- ── Vue Staff (liste) ── -->
@@ -413,11 +457,68 @@
                     barContainer.appendChild(bar);
                 });
 
+                var cbWrap = document.createElement('div');
+                cbWrap.className = 'tl-check-wrap';
+                var cbId = 'cb-' + name.replace(/\s+/g, '-');
+                var cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.className = 'tl-check';
+                cb.id = cbId;
+                cb.setAttribute('data-name', name);
+                cb.onchange = updateExportBar;
+                var cbLabel = document.createElement('label');
+                cbLabel.className = 'tl-check-label';
+                cbLabel.setAttribute('for', cbId);
+                cbWrap.appendChild(cb);
+                cbWrap.appendChild(cbLabel);
+
                 row.appendChild(barContainer);
+                row.appendChild(cbWrap);
                 inner.appendChild(row);
             });
 
             tl.appendChild(inner);
+
+            // Select-all
+            var selContainer = document.getElementById('select-all-container');
+            selContainer.innerHTML = '';
+            if (nameOrder.length > 0) {
+                var selRow = document.createElement('div');
+                selRow.className = 'select-all-row';
+                var selCbWrap = document.createElement('div');
+                selCbWrap.className = 'tl-check-wrap';
+                var selCb = document.createElement('input');
+                selCb.type = 'checkbox';
+                selCb.className = 'tl-check';
+                selCb.id = 'select-all-cb';
+                selCb.onchange = function() {
+                    document.querySelectorAll('#timeline .tl-check').forEach(function(c) { c.checked = selCb.checked; });
+                    updateExportBar();
+                };
+                var selLabel = document.createElement('label');
+                selLabel.className = 'tl-check-label';
+                selLabel.setAttribute('for', 'select-all-cb');
+                selCbWrap.appendChild(selCb);
+                selCbWrap.appendChild(selLabel);
+                var selText = document.createElement('span');
+                selText.className = 'select-all-label';
+                selText.textContent = 'Tout';
+                selRow.appendChild(selText);
+                selRow.appendChild(selCbWrap);
+                selContainer.appendChild(selRow);
+            }
+        }
+
+        function updateExportBar() {
+            var checked = document.querySelectorAll('#timeline .tl-check:checked');
+            var bar = document.getElementById('export-bar');
+            if (checked.length > 0) {
+                bar.classList.add('visible');
+                document.getElementById('export-btn').textContent =
+                    'Exporter ' + checked.length + ' planning' + (checked.length > 1 ? 's' : '');
+            } else {
+                bar.classList.remove('visible');
+            }
         }
 
         function pad2(n) { return n.toString().padStart(2, '0'); }
@@ -454,6 +555,23 @@
             lines.push('END:VCALENDAR');
             return lines.join('\r\n');
         }
+
+        document.getElementById('export-btn').onclick = function() {
+            var checked = document.querySelectorAll('#timeline .tl-check:checked');
+            var names = [];
+            checked.forEach(function(c) { names.push(c.getAttribute('data-name')); });
+            if (names.length === 0) return;
+            var ics = generateICSForNames(names);
+            var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'planning-export.ics';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        };
 
         // ── View toggle ──
         document.querySelectorAll('.view-btn').forEach(function(btn) {
@@ -554,34 +672,125 @@
             btn.onclick = function() { openModal(btn.getAttribute('data-name')); };
         });
 
-        // ── Load weekly notes ──
-        (function() {
-            var notesEl = document.getElementById('week-notes');
-            fetch('notes/S10.json').then(function(r) {
-                if (!r.ok) return null;
-                return r.json();
-            }).then(function(data) {
-                if (!data) return;
-                if (data.comment) {
-                    var card = document.createElement('div');
-                    card.className = 'note-card comment';
-                    card.innerHTML = '<div class="note-label comment">Note de semaine</div>' +
-                        '<div class="note-text">' + data.comment.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
-                    notesEl.appendChild(card);
+        // ── Notes de semaine (localStorage) ──
+        var NOTES_KEY = 'planning-notes-S10';
+        var notesEl = document.getElementById('week-notes');
+
+        function loadNotes() {
+            var raw = localStorage.getItem(NOTES_KEY);
+            if (raw) {
+                try { return JSON.parse(raw); } catch(e) {}
+            }
+            return { comment: '', updates: [] };
+        }
+
+        function saveNotes(data) {
+            localStorage.setItem(NOTES_KEY, JSON.stringify(data));
+        }
+
+        function renderNotes() {
+            var data = loadNotes();
+            notesEl.innerHTML = '';
+
+            // Comment card
+            var card = document.createElement('div');
+            card.className = 'note-card comment';
+            var hdr = document.createElement('div');
+            hdr.className = 'note-header';
+            hdr.innerHTML = '<span class="note-label comment">Note de semaine</span>';
+            var editBtn = document.createElement('button');
+            editBtn.className = 'note-btn';
+            editBtn.innerHTML = '✎';
+            editBtn.title = 'Éditer';
+            hdr.appendChild(editBtn);
+            card.appendChild(hdr);
+            var txt = document.createElement('div');
+            txt.className = 'note-text';
+            txt.textContent = data.comment || '';
+            card.appendChild(txt);
+            notesEl.appendChild(card);
+
+            editBtn.onclick = function() {
+                if (txt.contentEditable === 'true') {
+                    txt.contentEditable = 'false';
+                    data.comment = txt.innerText;
+                    saveNotes(data);
+                    editBtn.innerHTML = '✎';
+                } else {
+                    txt.contentEditable = 'true';
+                    txt.focus();
+                    editBtn.innerHTML = '✔';
                 }
-                if (data.updates && data.updates.length > 0) {
-                    data.updates.forEach(function(u) {
-                        var card = document.createElement('div');
-                        card.className = 'note-card update';
-                        var dateStr = u.date ? '<div class="note-date">' + u.date + '</div>' : '';
-                        card.innerHTML = '<div class="note-label update">Mise à jour</div>' +
-                            dateStr +
-                            '<div class="note-text">' + u.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
-                        notesEl.appendChild(card);
-                    });
+            };
+
+            // Update cards
+            data.updates.forEach(function(u, idx) {
+                var ucard = document.createElement('div');
+                ucard.className = 'note-card update';
+                var uhdr = document.createElement('div');
+                uhdr.className = 'note-header';
+                uhdr.innerHTML = '<span class="note-label update">Mise à jour</span>';
+                var uactions = document.createElement('div');
+                uactions.className = 'note-actions';
+                var uedit = document.createElement('button');
+                uedit.className = 'note-btn';
+                uedit.innerHTML = '✎';
+                uedit.title = 'Éditer';
+                var udel = document.createElement('button');
+                udel.className = 'note-btn del';
+                udel.innerHTML = '✖';
+                udel.title = 'Supprimer';
+                uactions.appendChild(uedit);
+                uactions.appendChild(udel);
+                uhdr.appendChild(uactions);
+                ucard.appendChild(uhdr);
+                var utxt = document.createElement('div');
+                utxt.className = 'note-text';
+                utxt.textContent = u.text || '';
+                ucard.appendChild(utxt);
+                notesEl.appendChild(ucard);
+
+                uedit.onclick = function() {
+                    if (utxt.contentEditable === 'true') {
+                        utxt.contentEditable = 'false';
+                        data.updates[idx].text = utxt.innerText;
+                        saveNotes(data);
+                        uedit.innerHTML = '✎';
+                    } else {
+                        utxt.contentEditable = 'true';
+                        utxt.focus();
+                        uedit.innerHTML = '✔';
+                    }
+                };
+                udel.onclick = function() {
+                    data.updates.splice(idx, 1);
+                    saveNotes(data);
+                    renderNotes();
+                };
+            });
+
+            // Add update button
+            var addBtn = document.createElement('button');
+            addBtn.className = 'add-note-btn';
+            addBtn.textContent = '+ Ajouter une mise à jour';
+            addBtn.onclick = function() {
+                data.updates.push({ text: '' });
+                saveNotes(data);
+                renderNotes();
+                // Focus the last update card's text
+                var cards = notesEl.querySelectorAll('.note-card.update .note-text');
+                if (cards.length > 0) {
+                    var last = cards[cards.length - 1];
+                    last.contentEditable = 'true';
+                    last.focus();
+                    var editBtns = notesEl.querySelectorAll('.note-card.update .note-btn:not(.del)');
+                    if (editBtns.length > 0) editBtns[editBtns.length - 1].innerHTML = '✔';
                 }
-            }).catch(function() {});
-        })();
+            };
+            notesEl.appendChild(addBtn);
+        }
+
+        renderNotes();
 
         // Initial render
         renderTimeline();
