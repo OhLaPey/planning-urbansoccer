@@ -655,13 +655,25 @@ def generate_html(week_employees, week_num, year, all_weeks):
                          color: #444; font-size: 11px; cursor: pointer; transition: all 0.2s;
                          font-family: inherit; width: 100%; margin-bottom: 8px; }}
         .add-note-btn:hover {{ border-color: rgba(255,120,50,0.3); color: #FF7832; }}
-        .copy-json-btn {{ display: flex; align-items: center; justify-content: center; gap: 6px;
-                          padding: 6px 12px; background: rgba(255,255,255,0.04);
-                          border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
-                          color: #555; font-size: 10px; cursor: pointer; transition: all 0.2s;
-                          font-family: inherit; margin-top: 6px; }}
-        .copy-json-btn:hover {{ border-color: rgba(255,120,50,0.3); color: #FF7832; }}
-        .copy-json-btn.copied {{ border-color: #64dc3c; color: #64dc3c; }}
+        .publish-btn {{ display: flex; align-items: center; justify-content: center; gap: 6px;
+                        padding: 10px 16px; background: #FF7832; border: none; border-radius: 10px;
+                        color: #fff; font-size: 12px; font-weight: 600; cursor: pointer;
+                        transition: all 0.2s; font-family: inherit; width: 100%; margin-top: 8px;
+                        box-shadow: 0 0 15px rgba(255,120,50,0.3); }}
+        .publish-btn:hover {{ background: #ff9050; box-shadow: 0 0 25px rgba(255,120,50,0.5); }}
+        .publish-btn:disabled {{ background: #444; box-shadow: none; cursor: not-allowed; color: #888; }}
+        .publish-btn.success {{ background: #64dc3c; box-shadow: 0 0 15px rgba(100,220,60,0.3); }}
+        .admin-setup {{ display: flex; align-items: center; gap: 6px; margin-top: 8px; }}
+        .admin-input {{ flex: 1; padding: 8px 10px; background: rgba(0,0,0,0.3);
+                        border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+                        color: #ccc; font-size: 11px; font-family: inherit; outline: none; }}
+        .admin-input:focus {{ border-color: rgba(255,120,50,0.4); }}
+        .admin-input::placeholder {{ color: #444; }}
+        .admin-save-btn {{ padding: 8px 12px; background: rgba(255,120,50,0.15);
+                           border: 1px solid rgba(255,120,50,0.3); border-radius: 8px;
+                           color: #FF7832; font-size: 11px; cursor: pointer; font-family: inherit;
+                           white-space: nowrap; }}
+        .admin-hint {{ font-size: 10px; color: #444; margin-top: 4px; }}
 
         /* ── Notification bell ── */
         .notif-btn {{ position: fixed; bottom: 20px; right: 20px; z-index: 50;
@@ -1150,45 +1162,51 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }});
 
         // ── Notes de semaine (injectées depuis notes/SXX.json) ──
+        var REPO = 'OhLaPey/planning-urbansoccer';
+        var NOTES_PATH = 'notes/S{week_num}.json';
+        var TOKEN_KEY = 'planning-admin-token';
         var notesEl = document.getElementById('week-notes');
-        // Working copy for editing (starts from server data)
         var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
+        var notesDirty = false;
+
+        function getToken() {{ return localStorage.getItem(TOKEN_KEY) || ''; }}
+        function setToken(t) {{ localStorage.setItem(TOKEN_KEY, t); }}
 
         function renderNotes() {{
             var data = notesWork;
             notesEl.innerHTML = '';
 
-            // Comment card (only show if there's content or editing)
-            if (data.comment || true) {{
-                var card = document.createElement('div');
-                card.className = 'note-card comment';
-                var hdr = document.createElement('div');
-                hdr.className = 'note-header';
-                hdr.innerHTML = '<span class="note-label comment">Note de semaine</span>';
-                var editBtn = document.createElement('button');
-                editBtn.className = 'note-btn';
-                editBtn.innerHTML = '\u270e';
-                editBtn.title = '\u00c9diter';
-                hdr.appendChild(editBtn);
-                card.appendChild(hdr);
-                var txt = document.createElement('div');
-                txt.className = 'note-text';
-                txt.textContent = data.comment || '';
-                card.appendChild(txt);
-                notesEl.appendChild(card);
+            // Comment card
+            var card = document.createElement('div');
+            card.className = 'note-card comment';
+            var hdr = document.createElement('div');
+            hdr.className = 'note-header';
+            hdr.innerHTML = '<span class="note-label comment">Note de semaine</span>';
+            var editBtn = document.createElement('button');
+            editBtn.className = 'note-btn';
+            editBtn.innerHTML = '\u270e';
+            editBtn.title = '\u00c9diter';
+            hdr.appendChild(editBtn);
+            card.appendChild(hdr);
+            var txt = document.createElement('div');
+            txt.className = 'note-text';
+            txt.textContent = data.comment || '';
+            card.appendChild(txt);
+            notesEl.appendChild(card);
 
-                editBtn.onclick = function() {{
-                    if (txt.contentEditable === 'true') {{
-                        txt.contentEditable = 'false';
-                        data.comment = txt.innerText;
-                        editBtn.innerHTML = '\u270e';
-                    }} else {{
-                        txt.contentEditable = 'true';
-                        txt.focus();
-                        editBtn.innerHTML = '\u2714';
-                    }}
-                }};
-            }}
+            editBtn.onclick = function() {{
+                if (txt.contentEditable === 'true') {{
+                    txt.contentEditable = 'false';
+                    data.comment = txt.innerText;
+                    editBtn.innerHTML = '\u270e';
+                    notesDirty = true;
+                    renderNotes();
+                }} else {{
+                    txt.contentEditable = 'true';
+                    txt.focus();
+                    editBtn.innerHTML = '\u2714';
+                }}
+            }};
 
             // Update cards
             data.updates.forEach(function(u, idx) {{
@@ -1223,6 +1241,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
                         utxt.contentEditable = 'false';
                         data.updates[idx].text = utxt.innerText;
                         uedit.innerHTML = '\u270e';
+                        notesDirty = true;
+                        renderNotes();
                     }} else {{
                         utxt.contentEditable = 'true';
                         utxt.focus();
@@ -1231,6 +1251,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 }};
                 udel.onclick = function() {{
                     data.updates.splice(idx, 1);
+                    notesDirty = true;
                     renderNotes();
                 }};
             }});
@@ -1245,6 +1266,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     (today.getMonth()+1).toString().padStart(2,'0') + '-' +
                     today.getDate().toString().padStart(2,'0');
                 data.updates.push({{ date: ds, text: '' }});
+                notesDirty = true;
                 renderNotes();
                 var cards = notesEl.querySelectorAll('.note-card.update .note-text');
                 if (cards.length > 0) {{
@@ -1257,22 +1279,91 @@ def generate_html(week_employees, week_num, year, all_weeks):
             }};
             notesEl.appendChild(addBtn);
 
-            // Copy JSON button (for admin to paste into notes/SXX.json)
-            var copyBtn = document.createElement('button');
-            copyBtn.className = 'copy-json-btn';
-            copyBtn.textContent = 'Copier JSON (pour notes/S{week_num}.json)';
-            copyBtn.onclick = function() {{
-                var out = JSON.stringify(data, null, 2);
-                navigator.clipboard.writeText(out).then(function() {{
-                    copyBtn.textContent = 'Copi\u00e9 ! \u2714';
-                    copyBtn.classList.add('copied');
-                    setTimeout(function() {{
-                        copyBtn.textContent = 'Copier JSON (pour notes/S{week_num}.json)';
-                        copyBtn.classList.remove('copied');
-                    }}, 2000);
+            // Publish button (visible when changes exist or token not set)
+            var token = getToken();
+            if (!token) {{
+                // Admin setup: enter GitHub token
+                var setup = document.createElement('div');
+                setup.className = 'admin-setup';
+                var inp = document.createElement('input');
+                inp.className = 'admin-input';
+                inp.type = 'password';
+                inp.placeholder = 'Token GitHub (admin)';
+                var saveBtn = document.createElement('button');
+                saveBtn.className = 'admin-save-btn';
+                saveBtn.textContent = 'Enregistrer';
+                saveBtn.onclick = function() {{
+                    if (inp.value.trim()) {{
+                        setToken(inp.value.trim());
+                        renderNotes();
+                    }}
+                }};
+                setup.appendChild(inp);
+                setup.appendChild(saveBtn);
+                notesEl.appendChild(setup);
+                var hint = document.createElement('div');
+                hint.className = 'admin-hint';
+                hint.textContent = 'Token requis pour publier les notes (GitHub > Settings > Tokens > contents: write)';
+                notesEl.appendChild(hint);
+            }} else if (notesDirty) {{
+                var pubBtn = document.createElement('button');
+                pubBtn.className = 'publish-btn';
+                pubBtn.textContent = 'Publier les notes';
+                pubBtn.onclick = function() {{
+                    pubBtn.disabled = true;
+                    pubBtn.textContent = 'Publication en cours...';
+                    pushNotesToGitHub(data, pubBtn);
+                }};
+                notesEl.appendChild(pubBtn);
+            }}
+        }}
+
+        function pushNotesToGitHub(data, btn) {{
+            var token = getToken();
+            var content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\\n')));
+            var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + NOTES_PATH;
+
+            // First get the current file SHA (required for update)
+            fetch(apiUrl, {{
+                headers: {{ 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }}
+            }})
+            .then(function(r) {{ return r.ok ? r.json() : {{ sha: null }}; }})
+            .then(function(file) {{
+                var body = {{
+                    message: 'MAJ notes S{week_num} depuis la page',
+                    content: content,
+                    branch: 'main'
+                }};
+                if (file.sha) body.sha = file.sha;
+
+                return fetch(apiUrl, {{
+                    method: 'PUT',
+                    headers: {{
+                        'Authorization': 'Bearer ' + token,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    }},
+                    body: JSON.stringify(body)
                 }});
-            }};
-            notesEl.appendChild(copyBtn);
+            }})
+            .then(function(r) {{
+                if (r.ok) {{
+                    btn.textContent = 'Publi\u00e9 ! Le site se met \u00e0 jour...';
+                    btn.classList.add('success');
+                    notesDirty = false;
+                    setTimeout(function() {{ renderNotes(); }}, 3000);
+                }} else {{
+                    return r.json().then(function(err) {{
+                        btn.disabled = false;
+                        btn.textContent = 'Erreur : ' + (err.message || 'v\u00e9rifier le token');
+                        btn.classList.remove('success');
+                    }});
+                }}
+            }})
+            .catch(function(e) {{
+                btn.disabled = false;
+                btn.textContent = 'Erreur r\u00e9seau, r\u00e9essayer';
+            }});
         }}
 
         renderNotes();
