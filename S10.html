@@ -24,7 +24,7 @@
             z-index: 0;
             pointer-events: none;
             background: url('bg-team.jpg') center center / cover no-repeat;
-            opacity: 0.08;
+            opacity: 0.13;
         }
         .container { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
 
@@ -92,8 +92,12 @@
                     padding-right: 6px; cursor: pointer; transition: color 0.2s; }
         .tl-name:hover { color: #FF7832; }
         .tl-bar-container { flex: 1; position: relative; height: 26px;
-                             background: rgba(255,255,255,0.02); border-radius: 5px; }
-        .tl-bar { position: absolute; height: 100%; border-radius: 5px;
+                             background: rgba(255,255,255,0.02); border-radius: 5px; overflow: hidden; }
+        .tl-gridline { position: absolute; top: 0; bottom: 0; width: 1px; z-index: 0; pointer-events: none; }
+        .tl-gridline.full { background: rgba(255,255,255,0.12); }
+        .tl-gridline.half { background: repeating-linear-gradient(to bottom,
+            rgba(255,255,255,0.10) 0px, rgba(255,255,255,0.10) 2px, transparent 2px, transparent 5px); }
+        .tl-bar { position: absolute; height: 100%; border-radius: 5px; z-index: 1;
                    display: flex; align-items: center; justify-content: center;
                    font-size: 9px; font-weight: 600; overflow: hidden;
                    border-left: 2px solid; transition: all 0.2s;
@@ -348,14 +352,28 @@
 
     <script>
     (function() {
-        var NOTES_DATA = {"comment": "", "updates": []};
+        var NOTES_DATA = {"comment": "Test 1", "updates": []};
         var DATA = {"BONILLO Matthieu": {"slug": "bonillo-matthieu", "events": [{"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-08T13:45", "end": "2026-03-08T17:45", "day": 6}]}, "BOULARDET Lucas": {"slug": "boulardet-lucas", "events": []}, "CARRERE Peïo": {"slug": "carrere-peio", "events": [{"code": "INVEN", "label": "Inventaire", "start": "2026-03-02T08:00", "end": "2026-03-02T10:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-02T10:00", "end": "2026-03-02T15:00", "day": 0}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-03-02T19:00", "end": "2026-03-02T21:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-03T12:00", "end": "2026-03-03T19:30", "day": 1}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-03-03T19:30", "end": "2026-03-03T21:30", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-04T17:00", "end": "2026-03-04T20:00", "day": 2}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-03-04T20:00", "end": "2026-03-04T22:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-05T09:45", "end": "2026-03-05T14:00", "day": 3}, {"code": "EV-RE", "label": "Événement régisseur", "start": "2026-03-05T14:00", "end": "2026-03-05T18:00", "day": 3}]}, "CASTELLON Pascaline": {"slug": "castellon-pascaline", "events": []}, "COHAT Linda": {"slug": "cohat-linda", "events": []}, "CRUZEL Quentin": {"slug": "cruzel-quentin", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-03T20:00", "end": "2026-03-04T00:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-05T17:30", "end": "2026-03-06T00:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-06T17:30", "end": "2026-03-07T00:00", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-07T17:00", "end": "2026-03-07T22:20", "day": 5}]}, "DE NOUEL Maxime": {"slug": "de-nouel-maxime", "events": [{"code": "C-PAD", "label": "Cours Padel", "start": "2026-03-02T13:45", "end": "2026-03-02T17:15", "day": 0}, {"code": "PAD-A", "label": "Padel animation", "start": "2026-03-02T17:15", "end": "2026-03-02T18:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-02T18:00", "end": "2026-03-02T22:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-03T09:45", "end": "2026-03-03T12:00", "day": 1}, {"code": "PAD-A", "label": "Padel animation", "start": "2026-03-03T12:00", "end": "2026-03-03T13:15", "day": 1}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-03-03T13:15", "end": "2026-03-03T16:45", "day": 1}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-03-04T08:45", "end": "2026-03-04T12:15", "day": 2}, {"code": "CUP-L", "label": "Cup League", "start": "2026-03-04T12:15", "end": "2026-03-04T13:00", "day": 2}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-03-04T13:45", "end": "2026-03-04T17:15", "day": 2}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-03-06T14:45", "end": "2026-03-06T17:15", "day": 4}, {"code": "PAD-A", "label": "Padel animation", "start": "2026-03-06T17:15", "end": "2026-03-06T18:00", "day": 4}, {"code": "CUP-L", "label": "Cup League", "start": "2026-03-06T18:00", "end": "2026-03-06T19:00", "day": 4}, {"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-03-06T19:00", "end": "2026-03-07T00:30", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-08T08:45", "end": "2026-03-08T16:00", "day": 6}]}, "DIVIEN Yohan": {"slug": "divien-yohan", "events": [{"code": "STAGE", "label": "Stage", "start": "2026-03-02T09:00", "end": "2026-03-02T10:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-02T10:00", "end": "2026-03-02T12:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-03-02T12:00", "end": "2026-03-02T12:30", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-03-02T13:00", "end": "2026-03-02T14:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-02T14:00", "end": "2026-03-02T16:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-03-02T16:00", "end": "2026-03-02T17:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-03-03T09:00", "end": "2026-03-03T10:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-03T10:00", "end": "2026-03-03T12:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-03-03T12:00", "end": "2026-03-03T12:30", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-03-03T13:00", "end": "2026-03-03T14:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-03T14:00", "end": "2026-03-03T16:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-03-03T16:00", "end": "2026-03-03T17:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-03-04T09:45", "end": "2026-03-04T10:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-04T10:00", "end": "2026-03-04T12:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-03-04T12:00", "end": "2026-03-04T12:30", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-03-04T13:00", "end": "2026-03-04T14:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-04T14:00", "end": "2026-03-04T16:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-03-04T16:00", "end": "2026-03-04T17:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-03-05T09:00", "end": "2026-03-05T10:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-05T10:00", "end": "2026-03-05T12:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-03-05T12:00", "end": "2026-03-05T12:30", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-03-05T13:00", "end": "2026-03-05T14:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-05T14:00", "end": "2026-03-05T16:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-03-05T16:00", "end": "2026-03-05T18:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-03-06T09:45", "end": "2026-03-06T10:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-06T10:00", "end": "2026-03-06T12:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-03-06T12:00", "end": "2026-03-06T12:30", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-03-06T13:00", "end": "2026-03-06T14:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-06T14:00", "end": "2026-03-06T16:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-03-06T16:00", "end": "2026-03-06T17:00", "day": 4}]}, "DONAER Nicolas": {"slug": "donaer-nicolas", "events": [{"code": "STAGE", "label": "Stage", "start": "2026-03-02T09:00", "end": "2026-03-02T10:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-02T10:00", "end": "2026-03-02T12:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-03-02T12:30", "end": "2026-03-02T14:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-02T14:00", "end": "2026-03-02T16:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-03-02T16:00", "end": "2026-03-02T17:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-02T17:00", "end": "2026-03-02T18:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-03-03T09:00", "end": "2026-03-03T10:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-03T10:00", "end": "2026-03-03T12:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-03-03T12:30", "end": "2026-03-03T14:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-03T14:00", "end": "2026-03-03T16:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-03-03T16:00", "end": "2026-03-03T17:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-03T17:00", "end": "2026-03-03T18:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-03-04T09:00", "end": "2026-03-04T10:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-04T10:00", "end": "2026-03-04T12:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-03-04T12:30", "end": "2026-03-04T14:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-04T14:00", "end": "2026-03-04T16:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-03-04T16:00", "end": "2026-03-04T17:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-04T17:00", "end": "2026-03-04T18:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-03-05T09:00", "end": "2026-03-05T10:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-05T10:00", "end": "2026-03-05T12:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-03-05T12:30", "end": "2026-03-05T14:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-05T14:00", "end": "2026-03-05T16:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-03-05T16:00", "end": "2026-03-05T17:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-05T17:00", "end": "2026-03-05T18:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-03-05T18:00", "end": "2026-03-05T19:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-03-06T09:00", "end": "2026-03-06T10:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-06T10:00", "end": "2026-03-06T12:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-03-06T12:30", "end": "2026-03-06T14:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-03-06T14:00", "end": "2026-03-06T16:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-03-06T16:00", "end": "2026-03-06T17:00", "day": 4}]}, "DOVINA Théo": {"slug": "dovina-theo", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-05T20:00", "end": "2026-03-06T00:00", "day": 3}]}, "HEBERT Jean Baptiste": {"slug": "hebert-jean-baptiste", "events": []}, "JARGUEL Thomas": {"slug": "jarguel-thomas", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-08T16:00", "end": "2026-03-08T23:15", "day": 6}]}, "KABUNDA NDEKE Marvyn": {"slug": "kabunda-ndeke-marvyn", "events": []}, "LABEFODE Thomas": {"slug": "labefode-thomas", "events": []}, "MADIELE Henri": {"slug": "madiele-henri", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-02T09:00", "end": "2026-03-02T18:30", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-03T11:40", "end": "2026-03-03T18:30", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-05T11:30", "end": "2026-03-05T18:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-06T11:00", "end": "2026-03-06T17:30", "day": 4}]}, "MOSTEFA Yanis": {"slug": "mostefa-yanis", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-08T09:30", "end": "2026-03-08T10:15", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-08T10:15", "end": "2026-03-08T12:15", "day": 6}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-08T12:15", "end": "2026-03-08T12:45", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-08T13:45", "end": "2026-03-08T17:45", "day": 6}]}, "PEREZ Loic": {"slug": "perez-loic", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-02T18:00", "end": "2026-03-02T20:00", "day": 0}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-03-02T20:00", "end": "2026-03-02T22:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-02T22:00", "end": "2026-03-03T00:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-03T17:30", "end": "2026-03-03T20:30", "day": 1}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-03-03T20:30", "end": "2026-03-03T22:30", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-04T17:30", "end": "2026-03-05T00:00", "day": 2}]}, "PISTORE Remi": {"slug": "pistore-remi", "events": []}, "PUJOL Mathieu": {"slug": "pujol-mathieu", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-02T12:00", "end": "2026-03-02T18:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-03-04T09:00", "end": "2026-03-04T09:45", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-04T09:45", "end": "2026-03-04T17:30", "day": 2}, {"code": "REU", "label": "Réunion", "start": "2026-03-05T14:30", "end": "2026-03-05T15:30", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-05T15:30", "end": "2026-03-05T22:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-03-06T09:00", "end": "2026-03-06T09:45", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-06T09:45", "end": "2026-03-06T17:30", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-07T08:45", "end": "2026-03-07T17:00", "day": 5}]}, "RABII Mehdi": {"slug": "rabii-mehdi", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-02T20:00", "end": "2026-03-03T00:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-07T11:15", "end": "2026-03-07T13:45", "day": 5}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-07T13:45", "end": "2026-03-07T17:45", "day": 5}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-07T17:45", "end": "2026-03-07T21:15", "day": 5}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-08T10:45", "end": "2026-03-08T12:45", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-08T13:30", "end": "2026-03-08T15:15", "day": 6}, {"code": "AIDE", "label": "Aide", "start": "2026-03-08T15:15", "end": "2026-03-08T17:30", "day": 6}]}, "SANGARNE Enzo": {"slug": "sangarne-enzo", "events": []}, "SEIGNE Kevin": {"slug": "seigne-kevin", "events": []}, "TINGUY Florian": {"slug": "tinguy-florian", "events": []}, "TOPPAN Mattis": {"slug": "toppan-mattis", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-03T20:00", "end": "2026-03-04T00:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-04T20:00", "end": "2026-03-05T00:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-06T18:00", "end": "2026-03-07T00:00", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-08T16:00", "end": "2026-03-08T22:15", "day": 6}]}};
         var COLORS = {"VDC": {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff", "text": "#ffffff"}, "L-REG": {"bg": "rgba(180,100,255,0.20)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.20)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.25)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.25)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.20)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.25)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.20)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.25)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,120,50,0.25)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,120,50,0.25)", "border": "#ff7832", "text": "#ff9850"}};
         var DEFAULT_C = {"bg": "rgba(255,255,255,0.10)", "border": "#888888", "text": "#cccccc"};
-        var DAYS = ["Lun 2/03", "Mar 3/03", "Mer 4/03", "Jeu 5/03", "Ven 6/03", "Sam 7/03", "Dim 8/03"];
-        var DAYS_FULL = ["Lundi 2/03", "Mardi 3/03", "Mercredi 4/03", "Jeudi 5/03", "Vendredi 6/03", "Samedi 7/03", "Dimanche 8/03"];
+        var DAYS = ["Lun 02/03", "Mar 03/03", "Mer 04/03", "Jeu 05/03", "Ven 06/03", "Sam 07/03", "Dim 08/03"];
+        var DAYS_FULL = ["Lundi 02/03", "Mardi 03/03", "Mercredi 04/03", "Jeudi 05/03", "Vendredi 06/03", "Samedi 07/03", "Dimanche 08/03"];
         var currentDay = 0;
         var currentView = 'day';
+        var MOIS_FR = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+
+        function formatDateFR(dateStr) {
+            if (!dateStr) return '';
+            var parts = dateStr.split('T');
+            var dp = parts[0].split('-');
+            var d = parseInt(dp[2]), m = parseInt(dp[1]) - 1, y = dp[0];
+            var result = d + ' ' + MOIS_FR[m] + ' ' + y;
+            if (parts[1]) {
+                var tp = parts[1].split(':');
+                result += ' à ' + parseInt(tp[0]) + 'h' + tp[1];
+            }
+            return result;
+        }
 
         function getColor(code) { return COLORS[code] || DEFAULT_C; }
 
@@ -487,6 +505,14 @@
                 var barContainer = document.createElement('div');
                 barContainer.className = 'tl-bar-container';
 
+                // Grid lines: solid for full hours, dashed for half hours
+                for (var gh = minH; gh <= maxH; gh += 0.5) {
+                    var gline = document.createElement('div');
+                    gline.className = 'tl-gridline ' + (gh % 1 === 0 ? 'full' : 'half');
+                    gline.style.left = ((gh - minH) / range * 100) + '%';
+                    barContainer.appendChild(gline);
+                }
+
                 byName[name].forEach(function(ev) {
                     var s = new Date(ev.start);
                     var e = new Date(ev.end);
@@ -591,16 +617,17 @@
 
         function generateICSForNames(names) {
             // Build notes description from NOTES_DATA
-            var noteDesc = '';
+            var noteParts = [];
             if (NOTES_DATA.comment) {
-                noteDesc += '\n---\n' + NOTES_DATA.comment;
+                noteParts.push(NOTES_DATA.comment);
             }
             (NOTES_DATA.updates || []).forEach(function(u) {
                 if (u.text) {
-                    var prefix = u.date ? ('MAJ ' + u.date + ': ') : 'MAJ: ';
-                    noteDesc += '\n' + prefix + u.text;
+                    var prefix = u.date ? ('MAJ ' + formatDateFR(u.date) + ': ') : 'MAJ: ';
+                    noteParts.push(prefix + u.text);
                 }
             });
+            var noteDesc = noteParts.join('\n');
 
             var lines = [
                 'BEGIN:VCALENDAR', 'VERSION:2.0',
@@ -615,7 +642,7 @@
                 emp.events.forEach(function(ev, i) {
                     var s = new Date(ev.start);
                     var e = new Date(ev.end);
-                    var desc = ev.label + noteDesc;
+                    var desc = noteDesc;
                     lines.push('BEGIN:VEVENT');
                     lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
                     lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
@@ -794,7 +821,7 @@
                 ucard.className = 'note-card update';
                 var uhdr = document.createElement('div');
                 uhdr.className = 'note-header';
-                var dateLabel = u.date ? (' — ' + u.date) : '';
+                var dateLabel = u.date ? (' — ' + formatDateFR(u.date)) : '';
                 uhdr.innerHTML = '<span class="note-label update">Mise à jour' + dateLabel + '</span>';
                 var uactions = document.createElement('div');
                 uactions.className = 'note-actions';
@@ -844,7 +871,9 @@
                 var today = new Date();
                 var ds = today.getFullYear() + '-' +
                     (today.getMonth()+1).toString().padStart(2,'0') + '-' +
-                    today.getDate().toString().padStart(2,'0');
+                    today.getDate().toString().padStart(2,'0') + 'T' +
+                    today.getHours().toString().padStart(2,'0') + ':' +
+                    today.getMinutes().toString().padStart(2,'0');
                 data.updates.push({ date: ds, text: '' });
                 notesDirty = true;
                 renderNotes();

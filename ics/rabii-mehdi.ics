@@ -30,7 +30,7 @@ DTSTAMP:20260228T134500
 DTSTART;TZID=Europe/Paris:20260228T134500
 DTEND;TZID=Europe/Paris:20260228T174500
 SUMMARY:Anniversaire
-DESCRIPTION:Anniversaire\\n---\\nSemaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires\\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée
+DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires\\nMAJ 20 février 2026: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s9-2@urban7d
@@ -38,7 +38,7 @@ DTSTAMP:20260228T174500
 DTSTART;TZID=Europe/Paris:20260228T174500
 DTEND;TZID=Europe/Paris:20260228T211500
 SUMMARY:Vie de centre
-DESCRIPTION:Vie de centre\\n---\\nSemaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires\\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée
+DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires\\nMAJ 20 février 2026: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-1@urban7d
@@ -46,7 +46,7 @@ DTSTAMP:20260302T200000
 DTSTART;TZID=Europe/Paris:20260302T200000
 DTEND;TZID=Europe/Paris:20260303T000000
 SUMMARY:Vie de centre
-DESCRIPTION:Vie de centre
+DESCRIPTION:Test 1
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-2@urban7d
@@ -54,7 +54,7 @@ DTSTAMP:20260307T111500
 DTSTART;TZID=Europe/Paris:20260307T111500
 DTEND;TZID=Europe/Paris:20260307T134500
 SUMMARY:Vie de centre
-DESCRIPTION:Vie de centre
+DESCRIPTION:Test 1
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-3@urban7d
@@ -62,7 +62,7 @@ DTSTAMP:20260307T134500
 DTSTART;TZID=Europe/Paris:20260307T134500
 DTEND;TZID=Europe/Paris:20260307T174500
 SUMMARY:Anniversaire
-DESCRIPTION:Anniversaire
+DESCRIPTION:Test 1
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-4@urban7d
@@ -70,7 +70,7 @@ DTSTAMP:20260307T174500
 DTSTART;TZID=Europe/Paris:20260307T174500
 DTEND;TZID=Europe/Paris:20260307T211500
 SUMMARY:Vie de centre
-DESCRIPTION:Vie de centre
+DESCRIPTION:Test 1
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-5@urban7d
@@ -78,7 +78,7 @@ DTSTAMP:20260308T104500
 DTSTART;TZID=Europe/Paris:20260308T104500
 DTEND;TZID=Europe/Paris:20260308T124500
 SUMMARY:Anniversaire
-DESCRIPTION:Anniversaire
+DESCRIPTION:Test 1
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-6@urban7d
@@ -86,7 +86,7 @@ DTSTAMP:20260308T133000
 DTSTART;TZID=Europe/Paris:20260308T133000
 DTEND;TZID=Europe/Paris:20260308T151500
 SUMMARY:Anniversaire
-DESCRIPTION:Anniversaire
+DESCRIPTION:Test 1
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-7@urban7d
@@ -94,6 +94,6 @@ DTSTAMP:20260308T151500
 DTSTART;TZID=Europe/Paris:20260308T151500
 DTEND;TZID=Europe/Paris:20260308T173000
 SUMMARY:Aide
-DESCRIPTION:Aide
+DESCRIPTION:Test 1
 END:VEVENT
 END:VCALENDAR
