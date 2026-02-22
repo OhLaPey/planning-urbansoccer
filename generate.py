@@ -381,10 +381,15 @@ def generate_html(week_employees, week_num, year, all_weeks):
     colors_json = json.dumps(CODE_COLORS, ensure_ascii=False)
     default_color_json = json.dumps(DEFAULT_COLOR, ensure_ascii=False)
 
-    DAYS_FR = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+    DAYS_SHORT = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
+    DAYS_FULL = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
     monday = datetime.fromisocalendar(year, week_num, 1)
     day_labels_json = json.dumps([
-        f"{DAYS_FR[i]} {(monday + timedelta(days=i)).day}/{(monday + timedelta(days=i)).month:02d}"
+        f"{DAYS_SHORT[i]} {(monday + timedelta(days=i)).day}/{(monday + timedelta(days=i)).month:02d}"
+        for i in range(7)
+    ], ensure_ascii=False)
+    day_labels_full_json = json.dumps([
+        f"{DAYS_FULL[i]} {(monday + timedelta(days=i)).day}/{(monday + timedelta(days=i)).month:02d}"
         for i in range(7)
     ], ensure_ascii=False)
 
@@ -454,19 +459,18 @@ def generate_html(week_employees, week_num, year, all_weeks):
             background-size: 100% 100%;
             background-repeat: no-repeat;
         }}
-        .container {{ position: relative; z-index: 1; }}
-        .container {{ max-width: 600px; margin: 0 auto; }}
+        .container {{ position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }}
 
         /* ── Header ── */
-        .header {{ text-align: center; margin-bottom: 15px; padding: 15px 15px 10px; }}
+        .header {{ text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }}
         h1 {{ font-family: 'Space Mono', 'GT Pressura Mono Bold', monospace;
-              color: #FF7832; font-size: 22px; font-weight: 700; margin-bottom: 4px;
+              color: #FF7832; font-size: 18px; font-weight: 700; margin-bottom: 2px;
               text-transform: uppercase; letter-spacing: 1px;
               text-shadow: 0 0 30px rgba(255,120,50,0.3); }}
-        .subtitle {{ color: #888; font-size: 13px; }}
-        .dates {{ color: #FF7832; font-size: 16px; font-weight: 600;
-                  background: rgba(255,120,50,0.1); padding: 8px 18px;
-                  border-radius: 20px; display: inline-block; margin-top: 8px;
+        .subtitle {{ color: #888; font-size: 12px; }}
+        .dates {{ color: #FF7832; font-size: 14px; font-weight: 600;
+                  background: rgba(255,120,50,0.1); padding: 6px 14px;
+                  border-radius: 20px; display: inline-block; margin-top: 6px;
                   border: 1px solid rgba(255,120,50,0.2); }}
 
         /* ── Week selector ── */
@@ -483,49 +487,52 @@ def generate_html(week_employees, week_num, year, all_weeks):
         /* ── View toggle ── */
         .view-toggle {{ display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
                         background: rgba(255,255,255,0.04); border-radius: 12px; padding: 4px; }}
-        .view-btn {{ flex: 1; padding: 10px; border: none; background: transparent;
-                     color: #666; font-size: 13px; font-weight: 600; cursor: pointer;
+        .view-btn {{ flex: 1; padding: 8px; border: none; background: transparent;
+                     color: #666; font-size: 12px; font-weight: 600; cursor: pointer;
                      border-radius: 10px; transition: all 0.2s; font-family: inherit; }}
         .view-btn.active {{ background: rgba(255,120,50,0.15); color: #FF7832;
                             box-shadow: 0 0 10px rgba(255,120,50,0.2); }}
 
         /* ── Day tabs ── */
-        .day-tabs {{ display: flex; gap: 4px; margin-bottom: 12px; overflow-x: auto;
-                     padding-bottom: 4px; -webkit-overflow-scrolling: touch; }}
-        .day-tab {{ padding: 8px 12px; background: rgba(255,255,255,0.04);
-                    border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
-                    color: #666; font-size: 11px; font-weight: 600; cursor: pointer;
-                    white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }}
+        .day-tabs {{ display: flex; gap: 3px; margin-bottom: 12px; overflow-x: auto;
+                     padding-bottom: 4px; -webkit-overflow-scrolling: touch;
+                     scrollbar-width: none; }}
+        .day-tabs::-webkit-scrollbar {{ display: none; }}
+        .day-tab {{ padding: 6px 8px; background: rgba(255,255,255,0.04);
+                    border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
+                    color: #666; font-size: 10px; font-weight: 600; cursor: pointer;
+                    white-space: nowrap; transition: all 0.2s; flex: 1; min-width: 0;
+                    text-align: center; }}
         .day-tab.active {{ background: rgba(255,120,50,0.15); border-color: rgba(255,120,50,0.3);
                            color: #FF7832; }}
 
         /* ── Timeline (vue Journée) ── */
         .timeline {{ position: relative; margin-bottom: 20px; }}
         .time-grid {{ position: relative; min-height: 200px; }}
-        .time-markers {{ display: flex; justify-content: space-between; padding: 0 0 8px 0;
-                         border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 10px; }}
-        .time-marker {{ font-size: 10px; color: #444; font-weight: 500; }}
-        .timeline-row {{ display: flex; align-items: center; margin-bottom: 6px; }}
-        .tl-name {{ width: 90px; font-size: 11px; color: #888; font-weight: 500;
+        .time-markers {{ display: flex; justify-content: space-between; padding: 0 0 6px 0;
+                         border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }}
+        .time-marker {{ font-size: 9px; color: #444; font-weight: 500; }}
+        .timeline-row {{ display: flex; align-items: center; margin-bottom: 4px; }}
+        .tl-name {{ width: 65px; font-size: 10px; color: #888; font-weight: 500;
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-                    padding-right: 8px; cursor: pointer; transition: color 0.2s; }}
+                    padding-right: 6px; cursor: pointer; transition: color 0.2s; }}
         .tl-name:hover {{ color: #FF7832; }}
-        .tl-bar-container {{ flex: 1; position: relative; height: 28px;
-                             background: rgba(255,255,255,0.02); border-radius: 6px; }}
-        .tl-bar {{ position: absolute; height: 100%; border-radius: 6px;
+        .tl-bar-container {{ flex: 1; position: relative; height: 24px;
+                             background: rgba(255,255,255,0.02); border-radius: 5px; }}
+        .tl-bar {{ position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
-                   font-size: 9px; font-weight: 600; overflow: hidden;
+                   font-size: 8px; font-weight: 600; overflow: hidden;
                    border-left: 2px solid; transition: all 0.2s;
                    cursor: default; }}
         .tl-bar:hover {{ filter: brightness(1.3); z-index: 2;
                          box-shadow: 0 0 12px var(--glow-color); }}
-        .tl-bar .bar-label {{ padding: 0 4px; white-space: nowrap; }}
+        .tl-bar .bar-label {{ padding: 0 3px; white-space: nowrap; }}
 
         /* ── Employee list (vue Staff) ── */
         .employee-list {{ display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }}
         .employee-btn {{ display: flex; align-items: center; justify-content: space-between;
-                         padding: 14px 16px; background: rgba(255,255,255,0.04);
-                         border-radius: 10px; color: white; font-weight: 500; font-size: 14px;
+                         padding: 12px 14px; background: rgba(255,255,255,0.04);
+                         border-radius: 10px; color: white; font-weight: 500; font-size: 13px;
                          border: 1px solid rgba(255,255,255,0.08); cursor: pointer;
                          transition: all 0.2s; font-family: inherit; width: 100%; text-align: left; }}
         .employee-btn:hover {{ background: rgba(255,120,50,0.1); border-color: rgba(255,120,50,0.3);
@@ -537,30 +544,30 @@ def generate_html(week_employees, week_num, year, all_weeks):
         /* ── Individual preview (modal) ── */
         .modal-overlay {{ display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
                           z-index: 100; justify-content: center; align-items: flex-start;
-                          padding: 30px 15px; overflow-y: auto; }}
+                          padding: 15px 10px; overflow-y: auto; }}
         .modal-overlay.open {{ display: flex; }}
-        .modal {{ background: #12121e; border-radius: 16px; width: 100%; max-width: 500px;
+        .modal {{ background: #12121e; border-radius: 14px; width: 100%; max-width: 500px;
                   border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }}
-        .modal-header {{ padding: 18px 20px; display: flex; justify-content: space-between;
+        .modal-header {{ padding: 14px 16px; display: flex; justify-content: space-between;
                          align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); }}
-        .modal-header h2 {{ font-size: 18px; color: #FF7832; font-weight: 700; }}
+        .modal-header h2 {{ font-size: 16px; color: #FF7832; font-weight: 700; }}
         .modal-close {{ background: none; border: none; color: #666; font-size: 24px;
                         cursor: pointer; padding: 0 5px; line-height: 1; }}
         .modal-close:hover {{ color: #fff; }}
-        .modal-body {{ padding: 15px 20px; }}
-        .modal-day {{ margin-bottom: 14px; }}
-        .modal-day-title {{ font-size: 12px; color: #666; font-weight: 600;
-                            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }}
-        .modal-event {{ display: flex; align-items: center; gap: 10px; padding: 10px 12px;
-                        border-radius: 8px; margin-bottom: 4px; border-left: 3px solid; }}
-        .modal-event .ev-time {{ font-size: 12px; font-weight: 600; white-space: nowrap;
-                                 min-width: 90px; }}
-        .modal-event .ev-label {{ font-size: 13px; font-weight: 500; }}
-        .modal-footer {{ padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.06);
+        .modal-body {{ padding: 12px 14px; }}
+        .modal-day {{ margin-bottom: 12px; }}
+        .modal-day-title {{ font-size: 11px; color: #666; font-weight: 600;
+                            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }}
+        .modal-event {{ display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+                        border-radius: 8px; margin-bottom: 3px; border-left: 3px solid; }}
+        .modal-event .ev-time {{ font-size: 11px; font-weight: 600; white-space: nowrap;
+                                 min-width: 80px; }}
+        .modal-event .ev-label {{ font-size: 12px; font-weight: 500; }}
+        .modal-footer {{ padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.06);
                          text-align: center; }}
         .subscribe-btn {{ display: inline-flex; align-items: center; gap: 8px;
-                          padding: 12px 28px; background: #FF7832; color: white;
-                          border: none; border-radius: 25px; font-size: 14px; font-weight: 600;
+                          padding: 10px 24px; background: #FF7832; color: white;
+                          border: none; border-radius: 25px; font-size: 13px; font-weight: 600;
                           cursor: pointer; font-family: inherit; transition: all 0.2s;
                           text-decoration: none;
                           box-shadow: 0 0 20px rgba(255,120,50,0.3); }}
@@ -570,7 +577,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .no-events {{ text-align: center; padding: 30px; color: #444; font-size: 13px; }}
 
         /* ── Checkboxes export (vue Journée) ── */
-        .tl-check {{ flex-shrink: 0; width: 20px; height: 20px; margin-left: 8px;
+        .tl-check {{ flex-shrink: 0; width: 18px; height: 18px; margin-left: 6px;
                      accent-color: #FF7832; cursor: pointer; }}
         .export-bar {{ display: none; justify-content: center; gap: 10px; margin-top: 12px; }}
         .export-bar.visible {{ display: flex; }}
@@ -655,6 +662,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var COLORS = {colors_json};
         var DEFAULT_C = {default_color_json};
         var DAYS = {day_labels_json};
+        var DAYS_FULL = {day_labels_full_json};
         var currentDay = 0;
         var currentView = 'day';
 
@@ -739,16 +747,28 @@ def generate_html(week_employees, week_num, year, all_weeks):
             if (maxH <= minH) maxH = minH + 1;
             var range = maxH - minH;
 
-            // Time markers
+            // Time markers — aligned with bar containers
+            var markerRow = document.createElement('div');
+            markerRow.className = 'timeline-row';
+            var markerSpacer = document.createElement('div');
+            markerSpacer.className = 'tl-name';
+            markerSpacer.innerHTML = '&nbsp;';
+            markerRow.appendChild(markerSpacer);
             var markers = document.createElement('div');
             markers.className = 'time-markers';
+            markers.style.flex = '1';
             for (var h = minH; h <= maxH; h++) {{
                 var m = document.createElement('span');
                 m.className = 'time-marker';
                 m.textContent = h + 'h';
                 markers.appendChild(m);
             }}
-            tl.appendChild(markers);
+            markerRow.appendChild(markers);
+            var markerCbSpacer = document.createElement('div');
+            markerCbSpacer.style.width = '24px';
+            markerCbSpacer.style.flexShrink = '0';
+            markerRow.appendChild(markerCbSpacer);
+            tl.appendChild(markerRow);
 
             // Group by employee
             var byName = {{}};
@@ -936,7 +956,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
                 var title = document.createElement('div');
                 title.className = 'modal-day-title';
-                title.textContent = DAYS[d];
+                title.textContent = DAYS_FULL[d];
                 dayDiv.appendChild(title);
 
                 byDay[d].forEach(function(ev) {{

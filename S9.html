@@ -43,19 +43,18 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
         }
-        .container { position: relative; z-index: 1; }
-        .container { max-width: 600px; margin: 0 auto; }
+        .container { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
 
         /* ── Header ── */
-        .header { text-align: center; margin-bottom: 15px; padding: 15px 15px 10px; }
+        .header { text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }
         h1 { font-family: 'Space Mono', 'GT Pressura Mono Bold', monospace;
-              color: #FF7832; font-size: 22px; font-weight: 700; margin-bottom: 4px;
+              color: #FF7832; font-size: 18px; font-weight: 700; margin-bottom: 2px;
               text-transform: uppercase; letter-spacing: 1px;
               text-shadow: 0 0 30px rgba(255,120,50,0.3); }
-        .subtitle { color: #888; font-size: 13px; }
-        .dates { color: #FF7832; font-size: 16px; font-weight: 600;
-                  background: rgba(255,120,50,0.1); padding: 8px 18px;
-                  border-radius: 20px; display: inline-block; margin-top: 8px;
+        .subtitle { color: #888; font-size: 12px; }
+        .dates { color: #FF7832; font-size: 14px; font-weight: 600;
+                  background: rgba(255,120,50,0.1); padding: 6px 14px;
+                  border-radius: 20px; display: inline-block; margin-top: 6px;
                   border: 1px solid rgba(255,120,50,0.2); }
 
         /* ── Week selector ── */
@@ -72,49 +71,52 @@
         /* ── View toggle ── */
         .view-toggle { display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
                         background: rgba(255,255,255,0.04); border-radius: 12px; padding: 4px; }
-        .view-btn { flex: 1; padding: 10px; border: none; background: transparent;
-                     color: #666; font-size: 13px; font-weight: 600; cursor: pointer;
+        .view-btn { flex: 1; padding: 8px; border: none; background: transparent;
+                     color: #666; font-size: 12px; font-weight: 600; cursor: pointer;
                      border-radius: 10px; transition: all 0.2s; font-family: inherit; }
         .view-btn.active { background: rgba(255,120,50,0.15); color: #FF7832;
                             box-shadow: 0 0 10px rgba(255,120,50,0.2); }
 
         /* ── Day tabs ── */
-        .day-tabs { display: flex; gap: 4px; margin-bottom: 12px; overflow-x: auto;
-                     padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
-        .day-tab { padding: 8px 12px; background: rgba(255,255,255,0.04);
-                    border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
-                    color: #666; font-size: 11px; font-weight: 600; cursor: pointer;
-                    white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }
+        .day-tabs { display: flex; gap: 3px; margin-bottom: 12px; overflow-x: auto;
+                     padding-bottom: 4px; -webkit-overflow-scrolling: touch;
+                     scrollbar-width: none; }
+        .day-tabs::-webkit-scrollbar { display: none; }
+        .day-tab { padding: 6px 8px; background: rgba(255,255,255,0.04);
+                    border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
+                    color: #666; font-size: 10px; font-weight: 600; cursor: pointer;
+                    white-space: nowrap; transition: all 0.2s; flex: 1; min-width: 0;
+                    text-align: center; }
         .day-tab.active { background: rgba(255,120,50,0.15); border-color: rgba(255,120,50,0.3);
                            color: #FF7832; }
 
         /* ── Timeline (vue Journée) ── */
         .timeline { position: relative; margin-bottom: 20px; }
         .time-grid { position: relative; min-height: 200px; }
-        .time-markers { display: flex; justify-content: space-between; padding: 0 0 8px 0;
-                         border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 10px; }
-        .time-marker { font-size: 10px; color: #444; font-weight: 500; }
-        .timeline-row { display: flex; align-items: center; margin-bottom: 6px; }
-        .tl-name { width: 90px; font-size: 11px; color: #888; font-weight: 500;
+        .time-markers { display: flex; justify-content: space-between; padding: 0 0 6px 0;
+                         border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
+        .time-marker { font-size: 9px; color: #444; font-weight: 500; }
+        .timeline-row { display: flex; align-items: center; margin-bottom: 4px; }
+        .tl-name { width: 65px; font-size: 10px; color: #888; font-weight: 500;
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-                    padding-right: 8px; cursor: pointer; transition: color 0.2s; }
+                    padding-right: 6px; cursor: pointer; transition: color 0.2s; }
         .tl-name:hover { color: #FF7832; }
-        .tl-bar-container { flex: 1; position: relative; height: 28px;
-                             background: rgba(255,255,255,0.02); border-radius: 6px; }
-        .tl-bar { position: absolute; height: 100%; border-radius: 6px;
+        .tl-bar-container { flex: 1; position: relative; height: 24px;
+                             background: rgba(255,255,255,0.02); border-radius: 5px; }
+        .tl-bar { position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
-                   font-size: 9px; font-weight: 600; overflow: hidden;
+                   font-size: 8px; font-weight: 600; overflow: hidden;
                    border-left: 2px solid; transition: all 0.2s;
                    cursor: default; }
         .tl-bar:hover { filter: brightness(1.3); z-index: 2;
                          box-shadow: 0 0 12px var(--glow-color); }
-        .tl-bar .bar-label { padding: 0 4px; white-space: nowrap; }
+        .tl-bar .bar-label { padding: 0 3px; white-space: nowrap; }
 
         /* ── Employee list (vue Staff) ── */
         .employee-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
         .employee-btn { display: flex; align-items: center; justify-content: space-between;
-                         padding: 14px 16px; background: rgba(255,255,255,0.04);
-                         border-radius: 10px; color: white; font-weight: 500; font-size: 14px;
+                         padding: 12px 14px; background: rgba(255,255,255,0.04);
+                         border-radius: 10px; color: white; font-weight: 500; font-size: 13px;
                          border: 1px solid rgba(255,255,255,0.08); cursor: pointer;
                          transition: all 0.2s; font-family: inherit; width: 100%; text-align: left; }
         .employee-btn:hover { background: rgba(255,120,50,0.1); border-color: rgba(255,120,50,0.3);
@@ -126,30 +128,30 @@
         /* ── Individual preview (modal) ── */
         .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
                           z-index: 100; justify-content: center; align-items: flex-start;
-                          padding: 30px 15px; overflow-y: auto; }
+                          padding: 15px 10px; overflow-y: auto; }
         .modal-overlay.open { display: flex; }
-        .modal { background: #12121e; border-radius: 16px; width: 100%; max-width: 500px;
+        .modal { background: #12121e; border-radius: 14px; width: 100%; max-width: 500px;
                   border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
-        .modal-header { padding: 18px 20px; display: flex; justify-content: space-between;
+        .modal-header { padding: 14px 16px; display: flex; justify-content: space-between;
                          align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .modal-header h2 { font-size: 18px; color: #FF7832; font-weight: 700; }
+        .modal-header h2 { font-size: 16px; color: #FF7832; font-weight: 700; }
         .modal-close { background: none; border: none; color: #666; font-size: 24px;
                         cursor: pointer; padding: 0 5px; line-height: 1; }
         .modal-close:hover { color: #fff; }
-        .modal-body { padding: 15px 20px; }
-        .modal-day { margin-bottom: 14px; }
-        .modal-day-title { font-size: 12px; color: #666; font-weight: 600;
-                            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-        .modal-event { display: flex; align-items: center; gap: 10px; padding: 10px 12px;
-                        border-radius: 8px; margin-bottom: 4px; border-left: 3px solid; }
-        .modal-event .ev-time { font-size: 12px; font-weight: 600; white-space: nowrap;
-                                 min-width: 90px; }
-        .modal-event .ev-label { font-size: 13px; font-weight: 500; }
-        .modal-footer { padding: 15px 20px; border-top: 1px solid rgba(255,255,255,0.06);
+        .modal-body { padding: 12px 14px; }
+        .modal-day { margin-bottom: 12px; }
+        .modal-day-title { font-size: 11px; color: #666; font-weight: 600;
+                            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+        .modal-event { display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+                        border-radius: 8px; margin-bottom: 3px; border-left: 3px solid; }
+        .modal-event .ev-time { font-size: 11px; font-weight: 600; white-space: nowrap;
+                                 min-width: 80px; }
+        .modal-event .ev-label { font-size: 12px; font-weight: 500; }
+        .modal-footer { padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.06);
                          text-align: center; }
         .subscribe-btn { display: inline-flex; align-items: center; gap: 8px;
-                          padding: 12px 28px; background: #FF7832; color: white;
-                          border: none; border-radius: 25px; font-size: 14px; font-weight: 600;
+                          padding: 10px 24px; background: #FF7832; color: white;
+                          border: none; border-radius: 25px; font-size: 13px; font-weight: 600;
                           cursor: pointer; font-family: inherit; transition: all 0.2s;
                           text-decoration: none;
                           box-shadow: 0 0 20px rgba(255,120,50,0.3); }
@@ -159,7 +161,7 @@
         .no-events { text-align: center; padding: 30px; color: #444; font-size: 13px; }
 
         /* ── Checkboxes export (vue Journée) ── */
-        .tl-check { flex-shrink: 0; width: 20px; height: 20px; margin-left: 8px;
+        .tl-check { flex-shrink: 0; width: 18px; height: 18px; margin-left: 6px;
                      accent-color: #FF7832; cursor: pointer; }
         .export-bar { display: none; justify-content: center; gap: 10px; margin-top: 12px; }
         .export-bar.visible { display: flex; }
@@ -267,7 +269,8 @@
         var DATA = {"BONILLO Matthieu": {"slug": "bonillo-matthieu", "events": []}, "BOULARDET Lucas": {"slug": "boulardet-lucas", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T20:00", "end": "2026-02-25T00:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T17:30", "end": "2026-02-26T00:00", "day": 2}]}, "CARRERE Peïo": {"slug": "carrere-peio", "events": [{"code": "CUP-L", "label": "Cup League", "start": "2026-02-23T07:30", "end": "2026-02-23T09:45", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-23T09:45", "end": "2026-02-23T17:30", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T09:00", "end": "2026-02-24T09:45", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T09:45", "end": "2026-02-24T16:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T09:45", "end": "2026-02-25T13:30", "day": 2}, {"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-02-25T13:30", "end": "2026-02-25T17:30", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T17:30", "end": "2026-02-25T18:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T17:30", "end": "2026-02-26T20:15", "day": 3}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-02-26T20:15", "end": "2026-02-26T20:30", "day": 3}, {"code": "L-ARB", "label": "L-ARB", "start": "2026-02-26T20:30", "end": "2026-02-26T21:30", "day": 3}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-02-26T21:30", "end": "2026-02-26T21:45", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-28T11:30", "end": "2026-02-28T16:30", "day": 5}, {"code": "EV-RE", "label": "Événement régisseur", "start": "2026-02-28T16:30", "end": "2026-02-28T20:30", "day": 5}, {"code": "CUP-L", "label": "Cup League", "start": "2026-03-01T07:30", "end": "2026-03-01T08:45", "day": 6}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T08:45", "end": "2026-03-01T16:00", "day": 6}]}, "CASTELLON Pascaline": {"slug": "castellon-pascaline", "events": []}, "COHAT Linda": {"slug": "cohat-linda", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-23T18:30", "end": "2026-02-24T00:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T18:00", "end": "2026-02-26T22:00", "day": 3}]}, "CRUZEL Quentin": {"slug": "cruzel-quentin", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-23T17:30", "end": "2026-02-24T00:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T16:00", "end": "2026-02-25T00:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T13:30", "end": "2026-02-25T22:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-27T18:30", "end": "2026-02-28T00:00", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-28T17:00", "end": "2026-02-28T22:20", "day": 5}]}, "DE NOUEL Maxime": {"slug": "de-nouel-maxime", "events": [{"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-02-23T07:30", "end": "2026-02-23T13:00", "day": 0}, {"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-02-23T13:30", "end": "2026-02-23T19:00", "day": 0}, {"code": "STA-P", "label": "STA-P", "start": "2026-02-24T09:45", "end": "2026-02-24T12:15", "day": 1}, {"code": "STA-P", "label": "STA-P", "start": "2026-02-24T13:15", "end": "2026-02-24T15:45", "day": 1}, {"code": "CUP-L", "label": "Cup League", "start": "2026-02-24T15:45", "end": "2026-02-24T16:45", "day": 1}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-02-25T09:45", "end": "2026-02-25T12:15", "day": 2}, {"code": "PAD-A", "label": "Padel animation", "start": "2026-02-25T13:00", "end": "2026-02-25T14:45", "day": 2}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-02-25T14:45", "end": "2026-02-25T17:15", "day": 2}, {"code": "STA-P", "label": "STA-P", "start": "2026-02-27T09:45", "end": "2026-02-27T12:15", "day": 4}, {"code": "STA-P", "label": "STA-P", "start": "2026-02-27T13:15", "end": "2026-02-27T15:45", "day": 4}, {"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-03-01T07:30", "end": "2026-03-01T13:00", "day": 6}]}, "DIVIEN Yohan": {"slug": "divien-yohan", "events": []}, "DONAER Nicolas": {"slug": "donaer-nicolas", "events": []}, "DOVINA Théo": {"slug": "dovina-theo", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-25T20:00", "end": "2026-02-26T00:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T20:00", "end": "2026-02-27T00:00", "day": 3}]}, "HEBERT Jean Baptiste": {"slug": "hebert-jean-baptiste", "events": []}, "JARGUEL Thomas": {"slug": "jarguel-thomas", "events": [{"code": "STAGE", "label": "Stage", "start": "2026-02-23T09:00", "end": "2026-02-23T10:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T10:00", "end": "2026-02-23T12:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T12:00", "end": "2026-02-23T12:30", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T13:00", "end": "2026-02-23T14:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T09:00", "end": "2026-02-24T10:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T10:00", "end": "2026-02-24T12:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T12:00", "end": "2026-02-24T12:30", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T13:00", "end": "2026-02-24T14:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T14:00", "end": "2026-02-24T16:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T16:00", "end": "2026-02-24T17:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T17:00", "end": "2026-02-24T18:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T09:00", "end": "2026-02-25T10:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T10:00", "end": "2026-02-25T12:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T12:00", "end": "2026-02-25T12:30", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T13:00", "end": "2026-02-25T14:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T14:00", "end": "2026-02-25T16:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T16:00", "end": "2026-02-25T17:00", "day": 2}]}, "KABUNDA NDEKE Marvyn": {"slug": "kabunda-ndeke-marvyn", "events": []}, "LABEFODE Thomas": {"slug": "labefode-thomas", "events": []}, "MADIELE Henri": {"slug": "madiele-henri", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-23T09:00", "end": "2026-02-23T15:40", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T12:00", "end": "2026-02-24T14:30", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-24T15:00", "end": "2026-02-24T22:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T11:30", "end": "2026-02-26T18:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-27T11:30", "end": "2026-02-27T17:30", "day": 4}]}, "MOSTEFA Yanis": {"slug": "mostefa-yanis", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T09:30", "end": "2026-03-01T10:15", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-01T10:15", "end": "2026-03-01T12:15", "day": 6}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T12:15", "end": "2026-03-01T12:45", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-03-01T13:45", "end": "2026-03-01T17:45", "day": 6}]}, "PEREZ Loic": {"slug": "perez-loic", "events": [{"code": "STAGE", "label": "Stage", "start": "2026-02-23T09:00", "end": "2026-02-23T10:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T10:00", "end": "2026-02-23T12:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T12:30", "end": "2026-02-23T14:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T14:00", "end": "2026-02-23T16:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T16:00", "end": "2026-02-23T17:00", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T17:00", "end": "2026-02-23T18:00", "day": 0}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-02-23T19:15", "end": "2026-02-23T19:30", "day": 0}, {"code": "L-ARB", "label": "L-ARB", "start": "2026-02-23T19:30", "end": "2026-02-23T20:30", "day": 0}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-02-23T20:30", "end": "2026-02-23T20:45", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T09:45", "end": "2026-02-24T10:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T10:00", "end": "2026-02-24T12:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T12:30", "end": "2026-02-24T14:00", "day": 1}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-24T14:00", "end": "2026-02-24T16:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-24T16:00", "end": "2026-02-24T17:00", "day": 1}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T09:00", "end": "2026-02-25T10:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T10:00", "end": "2026-02-25T12:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T12:30", "end": "2026-02-25T14:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T14:00", "end": "2026-02-25T16:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-25T16:00", "end": "2026-02-25T17:00", "day": 2}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-25T17:00", "end": "2026-02-25T18:00", "day": 2}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T09:45", "end": "2026-02-26T10:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T10:00", "end": "2026-02-26T12:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T12:30", "end": "2026-02-26T14:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T14:00", "end": "2026-02-26T16:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T16:00", "end": "2026-02-26T17:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T17:00", "end": "2026-02-26T18:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T09:00", "end": "2026-02-27T10:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-27T10:00", "end": "2026-02-27T12:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T12:30", "end": "2026-02-27T14:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-27T14:00", "end": "2026-02-27T16:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T16:00", "end": "2026-02-27T17:00", "day": 4}]}, "PISTORE Remi": {"slug": "pistore-remi", "events": []}, "PUJOL Mathieu": {"slug": "pujol-mathieu", "events": [{"code": "STAGE", "label": "Stage", "start": "2026-02-26T09:00", "end": "2026-02-26T09:45", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T09:45", "end": "2026-02-26T18:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-27T09:45", "end": "2026-02-27T18:00", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-28T08:45", "end": "2026-02-28T17:00", "day": 5}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T15:00", "end": "2026-03-01T22:20", "day": 6}]}, "RABII Mehdi": {"slug": "rabii-mehdi", "events": [{"code": "ANNIV", "label": "Anniversaire", "start": "2026-02-28T13:45", "end": "2026-02-28T17:45", "day": 5}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-28T17:45", "end": "2026-02-28T21:15", "day": 5}]}, "SANGARNE Enzo": {"slug": "sangarne-enzo", "events": [{"code": "FORE", "label": "FORE", "start": "2026-02-23T08:30", "end": "2026-02-23T09:00", "day": 0}, {"code": "FORP", "label": "FORP", "start": "2026-02-23T09:00", "end": "2026-02-23T13:30", "day": 0}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-23T14:00", "end": "2026-02-23T16:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-23T16:00", "end": "2026-02-23T17:00", "day": 0}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T09:00", "end": "2026-02-26T10:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T10:00", "end": "2026-02-26T12:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T12:00", "end": "2026-02-26T12:30", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T13:00", "end": "2026-02-26T14:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T14:00", "end": "2026-02-26T16:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T16:00", "end": "2026-02-26T17:00", "day": 3}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-26T17:00", "end": "2026-02-26T18:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-26T18:00", "end": "2026-02-26T19:00", "day": 3}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T09:00", "end": "2026-02-27T10:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-27T10:00", "end": "2026-02-27T12:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T12:00", "end": "2026-02-27T12:30", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T13:00", "end": "2026-02-27T14:00", "day": 4}, {"code": "STA-E", "label": "Stage encadrement", "start": "2026-02-27T14:00", "end": "2026-02-27T16:00", "day": 4}, {"code": "STAGE", "label": "Stage", "start": "2026-02-27T16:00", "end": "2026-02-27T17:00", "day": 4}]}, "SEIGNE Kevin": {"slug": "seigne-kevin", "events": []}, "TINGUY Florian": {"slug": "tinguy-florian", "events": []}, "TOPPAN Mattis": {"slug": "toppan-mattis", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-02-26T20:00", "end": "2026-02-27T00:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-02-27T18:00", "end": "2026-02-28T00:00", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-03-01T16:00", "end": "2026-03-01T23:15", "day": 6}]}};
         var COLORS = {"VDC": {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff", "text": "#ffffff"}, "L-REG": {"bg": "rgba(180,100,255,0.20)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.12)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.20)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.15)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.15)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.25)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.25)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.20)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.25)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.20)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.25)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,120,50,0.25)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,120,50,0.25)", "border": "#ff7832", "text": "#ff9850"}};
         var DEFAULT_C = {"bg": "rgba(255,255,255,0.10)", "border": "#888888", "text": "#cccccc"};
-        var DAYS = ["Lundi 23/02", "Mardi 24/02", "Mercredi 25/02", "Jeudi 26/02", "Vendredi 27/02", "Samedi 28/02", "Dimanche 1/03"];
+        var DAYS = ["Lun 23/02", "Mar 24/02", "Mer 25/02", "Jeu 26/02", "Ven 27/02", "Sam 28/02", "Dim 1/03"];
+        var DAYS_FULL = ["Lundi 23/02", "Mardi 24/02", "Mercredi 25/02", "Jeudi 26/02", "Vendredi 27/02", "Samedi 28/02", "Dimanche 1/03"];
         var currentDay = 0;
         var currentView = 'day';
 
@@ -352,16 +355,28 @@
             if (maxH <= minH) maxH = minH + 1;
             var range = maxH - minH;
 
-            // Time markers
+            // Time markers — aligned with bar containers
+            var markerRow = document.createElement('div');
+            markerRow.className = 'timeline-row';
+            var markerSpacer = document.createElement('div');
+            markerSpacer.className = 'tl-name';
+            markerSpacer.innerHTML = '&nbsp;';
+            markerRow.appendChild(markerSpacer);
             var markers = document.createElement('div');
             markers.className = 'time-markers';
+            markers.style.flex = '1';
             for (var h = minH; h <= maxH; h++) {
                 var m = document.createElement('span');
                 m.className = 'time-marker';
                 m.textContent = h + 'h';
                 markers.appendChild(m);
             }
-            tl.appendChild(markers);
+            markerRow.appendChild(markers);
+            var markerCbSpacer = document.createElement('div');
+            markerCbSpacer.style.width = '24px';
+            markerCbSpacer.style.flexShrink = '0';
+            markerRow.appendChild(markerCbSpacer);
+            tl.appendChild(markerRow);
 
             // Group by employee
             var byName = {};
@@ -549,7 +564,7 @@
 
                 var title = document.createElement('div');
                 title.className = 'modal-day-title';
-                title.textContent = DAYS[d];
+                title.textContent = DAYS_FULL[d];
                 dayDiv.appendChild(title);
 
                 byDay[d].forEach(function(ev) {
