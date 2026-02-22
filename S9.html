@@ -360,6 +360,20 @@
         var DAYS_FULL = ["Lundi 23/02", "Mardi 24/02", "Mercredi 25/02", "Jeudi 26/02", "Vendredi 27/02", "Samedi 28/02", "Dimanche 01/03"];
         var currentDay = 0;
         var currentView = 'day';
+        var MOIS_FR = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+
+        function formatDateFR(dateStr) {
+            if (!dateStr) return '';
+            var parts = dateStr.split('T');
+            var dp = parts[0].split('-');
+            var d = parseInt(dp[2]), m = parseInt(dp[1]) - 1, y = dp[0];
+            var result = d + ' ' + MOIS_FR[m] + ' ' + y;
+            if (parts[1]) {
+                var tp = parts[1].split(':');
+                result += ' à ' + parseInt(tp[0]) + 'h' + tp[1];
+            }
+            return result;
+        }
 
         function getColor(code) { return COLORS[code] || DEFAULT_C; }
 
@@ -603,16 +617,17 @@
 
         function generateICSForNames(names) {
             // Build notes description from NOTES_DATA
-            var noteDesc = '';
+            var noteParts = [];
             if (NOTES_DATA.comment) {
-                noteDesc += '\n---\n' + NOTES_DATA.comment;
+                noteParts.push(NOTES_DATA.comment);
             }
             (NOTES_DATA.updates || []).forEach(function(u) {
                 if (u.text) {
-                    var prefix = u.date ? ('MAJ ' + u.date + ': ') : 'MAJ: ';
-                    noteDesc += '\n' + prefix + u.text;
+                    var prefix = u.date ? ('MAJ ' + formatDateFR(u.date) + ': ') : 'MAJ: ';
+                    noteParts.push(prefix + u.text);
                 }
             });
+            var noteDesc = noteParts.join('\n');
 
             var lines = [
                 'BEGIN:VCALENDAR', 'VERSION:2.0',
@@ -627,7 +642,7 @@
                 emp.events.forEach(function(ev, i) {
                     var s = new Date(ev.start);
                     var e = new Date(ev.end);
-                    var desc = ev.label + noteDesc;
+                    var desc = noteDesc;
                     lines.push('BEGIN:VEVENT');
                     lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
                     lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
@@ -806,7 +821,7 @@
                 ucard.className = 'note-card update';
                 var uhdr = document.createElement('div');
                 uhdr.className = 'note-header';
-                var dateLabel = u.date ? (' — ' + u.date) : '';
+                var dateLabel = u.date ? (' — ' + formatDateFR(u.date)) : '';
                 uhdr.innerHTML = '<span class="note-label update">Mise à jour' + dateLabel + '</span>';
                 var uactions = document.createElement('div');
                 uactions.className = 'note-actions';
@@ -856,7 +871,9 @@
                 var today = new Date();
                 var ds = today.getFullYear() + '-' +
                     (today.getMonth()+1).toString().padStart(2,'0') + '-' +
-                    today.getDate().toString().padStart(2,'0');
+                    today.getDate().toString().padStart(2,'0') + 'T' +
+                    today.getHours().toString().padStart(2,'0') + ':' +
+                    today.getMinutes().toString().padStart(2,'0');
                 data.updates.push({ date: ds, text: '' });
                 notesDirty = true;
                 renderNotes();

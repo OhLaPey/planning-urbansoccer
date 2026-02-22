@@ -362,24 +362,23 @@ def generate_ics(name, events, week_notes=None):
         wn = week_notes.get(week_num, {})
         week_comment = wn.get("comment", "")
         week_updates = wn.get("updates", [])
-        extra_desc = ""
+        notes_parts = []
         if week_comment:
-            extra_desc += "\\n---\\n" + week_comment
+            notes_parts.append(week_comment)
         for upd in week_updates:
             upd_text = upd.get("text", "")
             upd_date = upd.get("date", "")
             if upd_text:
                 date_label = format_note_date_fr(upd_date) if upd_date else ""
                 prefix = f"MAJ {date_label}: " if date_label else "MAJ: "
-                extra_desc += "\\n" + prefix + upd_text
+                notes_parts.append(prefix + upd_text)
+        notes_desc = "\\n".join(notes_parts)
 
         for i, evt in enumerate(by_week[week_num], 1):
             dt_start = evt["start"].strftime("%Y%m%dT%H%M%S")
             dt_end = evt["end"].strftime("%Y%m%dT%H%M%S")
-            # Escape for ICS DESCRIPTION
-            desc = evt['label']
-            if extra_desc:
-                desc += extra_desc
+            # Notes only (label already in SUMMARY)
+            desc = notes_desc
             desc_escaped = desc.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
             lines.extend([
                 "BEGIN:VEVENT",
@@ -1065,16 +1064,17 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
         function generateICSForNames(names) {{
             // Build notes description from NOTES_DATA
-            var noteDesc = '';
+            var noteParts = [];
             if (NOTES_DATA.comment) {{
-                noteDesc += '\\n---\\n' + NOTES_DATA.comment;
+                noteParts.push(NOTES_DATA.comment);
             }}
             (NOTES_DATA.updates || []).forEach(function(u) {{
                 if (u.text) {{
                     var prefix = u.date ? ('MAJ ' + formatDateFR(u.date) + ': ') : 'MAJ: ';
-                    noteDesc += '\\n' + prefix + u.text;
+                    noteParts.push(prefix + u.text);
                 }}
             }});
+            var noteDesc = noteParts.join('\\n');
 
             var lines = [
                 'BEGIN:VCALENDAR', 'VERSION:2.0',
@@ -1089,7 +1089,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 emp.events.forEach(function(ev, i) {{
                     var s = new Date(ev.start);
                     var e = new Date(ev.end);
-                    var desc = ev.label + noteDesc;
+                    var desc = noteDesc;
                     lines.push('BEGIN:VEVENT');
                     lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
                     lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
