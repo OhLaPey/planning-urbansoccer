@@ -1,0 +1,966 @@
+{
+  "BONILLO Matthieu": {
+    "slug": "bonillo-matthieu",
+    "events": []
+  },
+  "BOULARDET Lucas": {
+    "slug": "boulardet-lucas",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-24T20:00",
+        "end": "2026-02-25T00:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-25T17:30",
+        "end": "2026-02-26T00:00",
+        "day": 2
+      }
+    ]
+  },
+  "CARRERE Peïo": {
+    "slug": "carrere-peio",
+    "events": [
+      {
+        "code": "CUP-L",
+        "label": "Cup League",
+        "start": "2026-02-23T07:30",
+        "end": "2026-02-23T09:45",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-23T09:45",
+        "end": "2026-02-23T17:15",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-24T09:00",
+        "end": "2026-02-24T09:45",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-24T09:45",
+        "end": "2026-02-24T16:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-25T09:45",
+        "end": "2026-02-25T13:30",
+        "day": 2
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-02-25T13:30",
+        "end": "2026-02-25T17:30",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-25T17:30",
+        "end": "2026-02-25T18:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-26T17:30",
+        "end": "2026-02-26T20:15",
+        "day": 3
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-02-26T20:15",
+        "end": "2026-02-26T20:30",
+        "day": 3
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-02-26T20:30",
+        "end": "2026-02-26T21:30",
+        "day": 3
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-02-26T21:30",
+        "end": "2026-02-26T21:45",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-28T11:30",
+        "end": "2026-02-28T16:30",
+        "day": 5
+      },
+      {
+        "code": "EV-RE",
+        "label": "Événement régisseur",
+        "start": "2026-02-28T16:30",
+        "end": "2026-02-28T20:30",
+        "day": 5
+      },
+      {
+        "code": "CUP-L",
+        "label": "Cup League",
+        "start": "2026-03-01T07:30",
+        "end": "2026-03-01T08:45",
+        "day": 6
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-01T08:45",
+        "end": "2026-03-01T16:00",
+        "day": 6
+      }
+    ]
+  },
+  "CASTELLON Pascaline": {
+    "slug": "castellon-pascaline",
+    "events": []
+  },
+  "COHAT Linda": {
+    "slug": "cohat-linda",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-23T18:30",
+        "end": "2026-02-24T00:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-26T18:00",
+        "end": "2026-02-26T22:00",
+        "day": 3
+      }
+    ]
+  },
+  "CRUZEL Quentin": {
+    "slug": "cruzel-quentin",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-23T17:30",
+        "end": "2026-02-24T00:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-24T16:00",
+        "end": "2026-02-25T00:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-25T13:30",
+        "end": "2026-02-25T22:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-27T18:30",
+        "end": "2026-02-28T00:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-28T17:00",
+        "end": "2026-02-28T22:20",
+        "day": 5
+      }
+    ]
+  },
+  "DE NOUEL Maxime": {
+    "slug": "de-nouel-maxime",
+    "events": [
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-02-23T07:30",
+        "end": "2026-02-23T13:00",
+        "day": 0
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-02-23T13:30",
+        "end": "2026-02-23T19:00",
+        "day": 0
+      },
+      {
+        "code": "STA-P",
+        "label": "STA-P",
+        "start": "2026-02-24T09:45",
+        "end": "2026-02-24T12:15",
+        "day": 1
+      },
+      {
+        "code": "STA-P",
+        "label": "STA-P",
+        "start": "2026-02-24T13:15",
+        "end": "2026-02-24T15:45",
+        "day": 1
+      },
+      {
+        "code": "CUP-L",
+        "label": "Cup League",
+        "start": "2026-02-24T15:45",
+        "end": "2026-02-24T16:45",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-02-25T09:45",
+        "end": "2026-02-25T12:15",
+        "day": 2
+      },
+      {
+        "code": "PAD-A",
+        "label": "Padel animation",
+        "start": "2026-02-25T13:00",
+        "end": "2026-02-25T14:45",
+        "day": 2
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-02-25T14:45",
+        "end": "2026-02-25T17:15",
+        "day": 2
+      },
+      {
+        "code": "STA-P",
+        "label": "STA-P",
+        "start": "2026-02-27T09:45",
+        "end": "2026-02-27T12:15",
+        "day": 4
+      },
+      {
+        "code": "STA-P",
+        "label": "STA-P",
+        "start": "2026-02-27T13:15",
+        "end": "2026-02-27T15:45",
+        "day": 4
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-03-01T07:30",
+        "end": "2026-03-01T13:00",
+        "day": 6
+      }
+    ]
+  },
+  "DIVIEN Yohan": {
+    "slug": "divien-yohan",
+    "events": []
+  },
+  "DONAER Nicolas": {
+    "slug": "donaer-nicolas",
+    "events": []
+  },
+  "DOVINA Théo": {
+    "slug": "dovina-theo",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-25T20:00",
+        "end": "2026-02-26T00:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-26T20:00",
+        "end": "2026-02-27T00:00",
+        "day": 3
+      }
+    ]
+  },
+  "HEBERT Jean Baptiste": {
+    "slug": "hebert-jean-baptiste",
+    "events": []
+  },
+  "JARGUEL Thomas": {
+    "slug": "jarguel-thomas",
+    "events": [
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-23T09:00",
+        "end": "2026-02-23T10:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-23T10:00",
+        "end": "2026-02-23T12:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-23T12:00",
+        "end": "2026-02-23T12:30",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-23T13:00",
+        "end": "2026-02-23T14:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-24T09:00",
+        "end": "2026-02-24T10:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-24T10:00",
+        "end": "2026-02-24T12:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-24T12:00",
+        "end": "2026-02-24T12:30",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-24T13:00",
+        "end": "2026-02-24T14:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-24T14:00",
+        "end": "2026-02-24T16:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-24T16:00",
+        "end": "2026-02-24T17:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-24T17:00",
+        "end": "2026-02-24T18:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-25T09:00",
+        "end": "2026-02-25T10:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-25T10:00",
+        "end": "2026-02-25T12:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-25T12:00",
+        "end": "2026-02-25T12:30",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-25T13:00",
+        "end": "2026-02-25T14:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-25T14:00",
+        "end": "2026-02-25T16:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-25T16:00",
+        "end": "2026-02-25T17:00",
+        "day": 2
+      }
+    ]
+  },
+  "KABUNDA NDEKE Marvyn": {
+    "slug": "kabunda-ndeke-marvyn",
+    "events": []
+  },
+  "LABEFODE Thomas": {
+    "slug": "labefode-thomas",
+    "events": []
+  },
+  "MADIELE Henri": {
+    "slug": "madiele-henri",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-23T09:00",
+        "end": "2026-02-23T15:40",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-24T12:00",
+        "end": "2026-02-24T14:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-24T15:00",
+        "end": "2026-02-24T22:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-26T11:30",
+        "end": "2026-02-26T18:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-27T11:30",
+        "end": "2026-02-27T17:30",
+        "day": 4
+      }
+    ]
+  },
+  "MOSTEFA Yanis": {
+    "slug": "mostefa-yanis",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-01T09:30",
+        "end": "2026-03-01T10:15",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-01T10:15",
+        "end": "2026-03-01T12:15",
+        "day": 6
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-01T12:15",
+        "end": "2026-03-01T12:45",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-01T13:45",
+        "end": "2026-03-01T17:45",
+        "day": 6
+      }
+    ]
+  },
+  "PEREZ Loic": {
+    "slug": "perez-loic",
+    "events": [
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-23T09:00",
+        "end": "2026-02-23T10:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-23T10:00",
+        "end": "2026-02-23T12:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-23T12:30",
+        "end": "2026-02-23T14:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-23T14:00",
+        "end": "2026-02-23T16:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-23T16:00",
+        "end": "2026-02-23T17:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-23T17:00",
+        "end": "2026-02-23T18:00",
+        "day": 0
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-02-23T19:15",
+        "end": "2026-02-23T19:30",
+        "day": 0
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-02-23T19:30",
+        "end": "2026-02-23T20:30",
+        "day": 0
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-02-23T20:30",
+        "end": "2026-02-23T20:45",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-24T09:45",
+        "end": "2026-02-24T10:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-24T10:00",
+        "end": "2026-02-24T12:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-24T12:30",
+        "end": "2026-02-24T14:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-24T14:00",
+        "end": "2026-02-24T16:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-24T16:00",
+        "end": "2026-02-24T17:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-25T09:00",
+        "end": "2026-02-25T10:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-25T10:00",
+        "end": "2026-02-25T12:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-25T12:30",
+        "end": "2026-02-25T14:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-25T14:00",
+        "end": "2026-02-25T16:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-25T16:00",
+        "end": "2026-02-25T17:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-25T17:00",
+        "end": "2026-02-25T18:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T09:45",
+        "end": "2026-02-26T10:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-26T10:00",
+        "end": "2026-02-26T12:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T12:30",
+        "end": "2026-02-26T14:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-26T14:00",
+        "end": "2026-02-26T16:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T16:00",
+        "end": "2026-02-26T17:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T17:00",
+        "end": "2026-02-26T18:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-27T09:00",
+        "end": "2026-02-27T10:00",
+        "day": 4
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-27T10:00",
+        "end": "2026-02-27T12:00",
+        "day": 4
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-27T12:30",
+        "end": "2026-02-27T14:00",
+        "day": 4
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-27T14:00",
+        "end": "2026-02-27T16:00",
+        "day": 4
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-27T16:00",
+        "end": "2026-02-27T17:00",
+        "day": 4
+      }
+    ]
+  },
+  "PISTORE Remi": {
+    "slug": "pistore-remi",
+    "events": []
+  },
+  "PUJOL Mathieu": {
+    "slug": "pujol-mathieu",
+    "events": [
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T09:00",
+        "end": "2026-02-26T09:45",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-26T09:45",
+        "end": "2026-02-26T18:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-27T09:45",
+        "end": "2026-02-27T18:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-28T08:45",
+        "end": "2026-02-28T17:00",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-01T15:00",
+        "end": "2026-03-01T22:20",
+        "day": 6
+      }
+    ]
+  },
+  "RABII Mehdi": {
+    "slug": "rabii-mehdi",
+    "events": [
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-02-28T13:45",
+        "end": "2026-02-28T17:45",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-28T17:45",
+        "end": "2026-02-28T21:15",
+        "day": 5
+      }
+    ]
+  },
+  "SANGARNE Enzo": {
+    "slug": "sangarne-enzo",
+    "events": [
+      {
+        "code": "FORE",
+        "label": "FORE",
+        "start": "2026-02-23T08:30",
+        "end": "2026-02-23T09:00",
+        "day": 0
+      },
+      {
+        "code": "FORP",
+        "label": "FORP",
+        "start": "2026-02-23T09:00",
+        "end": "2026-02-23T13:30",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-23T14:00",
+        "end": "2026-02-23T16:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-23T16:00",
+        "end": "2026-02-23T17:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T09:00",
+        "end": "2026-02-26T10:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-26T10:00",
+        "end": "2026-02-26T12:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T12:00",
+        "end": "2026-02-26T12:30",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T13:00",
+        "end": "2026-02-26T14:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-26T14:00",
+        "end": "2026-02-26T16:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T16:00",
+        "end": "2026-02-26T17:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-26T17:00",
+        "end": "2026-02-26T18:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-26T18:00",
+        "end": "2026-02-26T19:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-27T09:00",
+        "end": "2026-02-27T10:00",
+        "day": 4
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-27T10:00",
+        "end": "2026-02-27T12:00",
+        "day": 4
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-27T12:00",
+        "end": "2026-02-27T12:30",
+        "day": 4
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-27T13:00",
+        "end": "2026-02-27T14:00",
+        "day": 4
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-02-27T14:00",
+        "end": "2026-02-27T16:00",
+        "day": 4
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-02-27T16:00",
+        "end": "2026-02-27T17:00",
+        "day": 4
+      }
+    ]
+  },
+  "SEIGNE Kevin": {
+    "slug": "seigne-kevin",
+    "events": []
+  },
+  "TINGUY Florian": {
+    "slug": "tinguy-florian",
+    "events": []
+  },
+  "TOPPAN Mattis": {
+    "slug": "toppan-mattis",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-26T20:00",
+        "end": "2026-02-27T00:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-02-27T18:00",
+        "end": "2026-02-28T00:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-01T16:00",
+        "end": "2026-03-01T23:15",
+        "day": 6
+      }
+    ]
+  }
+}
