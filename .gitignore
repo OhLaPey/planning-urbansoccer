@@ -4,3 +4,8 @@ __pycache__/
 # Generated birthday posters
 Anniversaires/output/*.pptx
 Anniversaires/output/*.pdf
+
+# SQLite database
+Anniversaires/*.db
+Anniversaires/*.db-wal
+Anniversaires/*.db-shm

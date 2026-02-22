@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Anniversaires{% endblock %} — UrbanSoccer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Tahoma, 'Inter', sans-serif;
+            background: #1E1E1E;
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(255,120,50,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,120,50,0.04) 0%, transparent 50%);
+            min-height: 100vh;
+            padding: 15px;
+            color: #fff;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(to right, #fff 1px, transparent 1px),
+                linear-gradient(to bottom, #fff 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, transparent 58px, #fff 58px, #fff 60px, transparent 60px),
+                linear-gradient(to right, transparent 49.8%, #fff 49.8%, #fff 50.2%, transparent 50.2%),
+                linear-gradient(to bottom, transparent 30%, #fff 30%, #fff 30.3%, transparent 30.3%),
+                linear-gradient(to bottom, transparent 69.7%, #fff 69.7%, #fff 70%, transparent 70%),
+                linear-gradient(to right, transparent 25%, #fff 25%, #fff 25.3%, transparent 25.3%),
+                linear-gradient(to right, transparent 74.7%, #fff 74.7%, #fff 75%, transparent 75%);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .container { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+
+        /* ── Header ── */
+        .header { text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }
+        h1 { font-family: 'Space Mono', monospace;
+              color: #FF7832; font-size: 18px; font-weight: 700; margin-bottom: 2px;
+              text-transform: uppercase; letter-spacing: 1px;
+              text-shadow: 0 0 30px rgba(255,120,50,0.3); }
+        .subtitle { color: #888; font-size: 12px; }
+
+        /* ── Flash messages ── */
+        .flash { padding: 10px 16px; border-radius: 8px; margin-bottom: 12px; font-size: 13px; }
+        .flash.success { background: rgba(76,175,80,0.15); border: 1px solid rgba(76,175,80,0.3); color: #81C784; }
+        .flash.error { background: rgba(244,67,54,0.15); border: 1px solid rgba(244,67,54,0.3); color: #E57373; }
+
+        /* ── Cards ── */
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        .card-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 12px;
+        }
+        .card-title {
+            font-family: 'Space Mono', monospace;
+            color: #FF7832; font-size: 13px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* ── Buttons ── */
+        .btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border: none; border-radius: 8px;
+            font-size: 12px; font-weight: 600; cursor: pointer;
+            text-decoration: none; transition: all 0.2s; font-family: inherit;
+        }
+        .btn-primary {
+            background: #FF7832; color: white;
+            box-shadow: 0 0 15px rgba(255,120,50,0.3);
+        }
+        .btn-primary:hover { background: #FF8F4C; box-shadow: 0 0 20px rgba(255,120,50,0.5); }
+        .btn-secondary {
+            background: rgba(255,255,255,0.08); color: #aaa;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.12); color: #fff; }
+        .btn-danger {
+            background: rgba(244,67,54,0.15); color: #E57373;
+            border: 1px solid rgba(244,67,54,0.2);
+        }
+        .btn-danger:hover { background: rgba(244,67,54,0.25); }
+        .btn-sm { padding: 5px 10px; font-size: 11px; }
+
+        /* ── Forms ── */
+        .form-group { margin-bottom: 12px; }
+        .form-label {
+            display: block; font-size: 11px; font-weight: 600;
+            color: #888; text-transform: uppercase; letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .form-input, .form-select {
+            width: 100%; padding: 10px 12px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px; color: #fff;
+            font-size: 14px; font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus, .form-select:focus {
+            outline: none; border-color: #FF7832;
+            box-shadow: 0 0 10px rgba(255,120,50,0.2);
+        }
+        .form-input::placeholder { color: #555; }
+        .form-select option { background: #2a2a2a; color: #fff; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+        textarea.form-input { resize: vertical; min-height: 60px; }
+
+        /* ── Date selector ── */
+        .date-nav {
+            display: flex; justify-content: center; align-items: center;
+            gap: 8px; margin-bottom: 15px; flex-wrap: wrap;
+        }
+        .date-chip {
+            padding: 6px 14px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            color: #666; text-decoration: none;
+            font-weight: 500; font-size: 12px;
+            transition: all 0.2s;
+        }
+        .date-chip:hover { background: rgba(255,120,50,0.1); border-color: rgba(255,120,50,0.3); color: #FF7832; }
+        .date-chip.active {
+            background: #FF7832; border-color: #FF7832; color: white;
+            box-shadow: 0 0 15px rgba(255,120,50,0.4);
+        }
+
+        /* ── Stats badges ── */
+        .stats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; justify-content: center; }
+        .stat-badge {
+            padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600;
+        }
+        .stat-total { background: rgba(255,120,50,0.15); color: #FF7832; border: 1px solid rgba(255,120,50,0.3); }
+        .stat-ligue1 { background: rgba(255,165,0,0.12); color: #FFA500; }
+        .stat-cl { background: rgba(100,149,237,0.15); color: #6495ED; }
+        .stat-fff { background: rgba(76,175,80,0.15); color: #66BB6A; }
+        .stat-bump { background: rgba(186,85,211,0.15); color: #BA55D3; }
+
+        /* ── Birthday table ── */
+        .birthday-list { width: 100%; }
+        .birthday-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 130px 60px auto;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: background 0.15s;
+        }
+        .birthday-row:hover { background: rgba(255,255,255,0.03); }
+        .birthday-row:last-child { border-bottom: none; }
+        .birthday-time { color: #888; font-size: 13px; font-family: 'Space Mono', monospace; }
+        .birthday-name { font-weight: 700; font-size: 15px; }
+        .birthday-details { color: #666; font-size: 11px; }
+        .birthday-formule {
+            font-size: 11px; font-weight: 600; padding: 3px 10px;
+            border-radius: 12px; text-align: center; white-space: nowrap;
+        }
+        .formule-ligue1 { background: rgba(255,165,0,0.12); color: #FFA500; }
+        .formule-cl { background: rgba(100,149,237,0.15); color: #6495ED; }
+        .formule-fff { background: rgba(76,175,80,0.15); color: #66BB6A; }
+        .formule-bump { background: rgba(186,85,211,0.15); color: #BA55D3; }
+        .birthday-kids { color: #888; font-size: 12px; text-align: center; }
+        .birthday-actions { display: flex; gap: 4px; justify-content: flex-end; }
+
+        /* ── Download bar ── */
+        .download-bar {
+            display: flex; gap: 8px; justify-content: center;
+            flex-wrap: wrap; margin-top: 12px; padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* ── Empty state ── */
+        .empty-state {
+            text-align: center; padding: 40px 20px; color: #555;
+        }
+        .empty-state p { margin-bottom: 16px; font-size: 14px; }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .birthday-row { grid-template-columns: 50px 1fr auto; }
+            .birthday-formule, .birthday-kids { display: none; }
+            .form-row, .form-row-3 { grid-template-columns: 1fr; }
+            .container { padding: 0 4px; }
+        }
+
+        /* ── Confirm dialog ── */
+        .confirm-overlay {
+            display: none; position: fixed; inset: 0; z-index: 100;
+            background: rgba(0,0,0,0.7); align-items: center; justify-content: center;
+        }
+        .confirm-overlay.active { display: flex; }
+        .confirm-box {
+            background: #2a2a2a; border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; padding: 24px; max-width: 360px; text-align: center;
+        }
+        .confirm-box p { margin-bottom: 16px; font-size: 14px; }
+        .confirm-box .btn { margin: 0 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Anniversaires UrbanSoccer</h1>
+            <div class="subtitle">Gestion des affiches & suivi week-end</div>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %}{{ format_date(selected_date) }}{% endblock %}
+
+{% block content %}
+<!-- Date navigation -->
+<div class="card" style="padding: 12px;">
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+        <form id="date-form" style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 200px;">
+            <input type="date" name="date" value="{{ selected_date }}"
+                   class="form-input" style="flex: 1; max-width: 200px;"
+                   onchange="window.location.href='/?date=' + this.value">
+        </form>
+        <div class="date-nav" style="margin-bottom: 0;">
+            {% for d in all_dates[:8] %}
+            <a href="/?date={{ d }}"
+               class="date-chip {{ 'active' if d == selected_date }}">
+                {{ format_date(d).split(' ')[0][:3] }} {{ format_date(d).split(' ')[1] }}/{{ format_date(d).split(' ')[2][:3] }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Stats -->
+{% if birthdays %}
+<div class="stats">
+    <span class="stat-badge stat-total">{{ birthdays|length }} anniv · {{ total_enfants }} enfants</span>
+    {% if formule_counts.get("Ligue 1") %}
+    <span class="stat-badge stat-ligue1">{{ formule_counts["Ligue 1"] }} Ligue 1</span>
+    {% endif %}
+    {% if formule_counts.get("Champions League") %}
+    <span class="stat-badge stat-cl">{{ formule_counts["Champions League"] }} CL</span>
+    {% endif %}
+    {% if formule_counts.get("FFF") %}
+    <span class="stat-badge stat-fff">{{ formule_counts["FFF"] }} FFF</span>
+    {% endif %}
+    {% if formule_counts.get("Bump") %}
+    <span class="stat-badge stat-bump">{{ formule_counts["Bump"] }} Bump</span>
+    {% endif %}
+</div>
+{% endif %}
+
+<!-- Birthday list -->
+<div class="card">
+    <div class="card-header">
+        <span class="card-title">{{ format_date(selected_date) }}</span>
+        <a href="/add?date={{ selected_date }}" class="btn btn-primary btn-sm">+ Ajouter</a>
+    </div>
+
+    {% if birthdays %}
+    <div class="birthday-list">
+        {% for b in birthdays %}
+        <div class="birthday-row">
+            <span class="birthday-time">{{ b.horaire or '—' }}</span>
+            <div>
+                <div class="birthday-name">{{ b.prenom }}</div>
+                {% if b.animateur %}
+                <div class="birthday-details">{{ b.animateur }}{% if b.commentaires %} · {{ b.commentaires }}{% endif %}</div>
+                {% endif %}
+            </div>
+            <span class="birthday-formule
+                {% if b.formule == 'Ligue 1' %}formule-ligue1
+                {% elif b.formule == 'Champions League' %}formule-cl
+                {% elif b.formule == 'FFF' %}formule-fff
+                {% elif b.formule == 'Bump' %}formule-bump
+                {% endif %}">{{ b.formule }}</span>
+            <span class="birthday-kids">{{ b.nb_enfants or '—' }}</span>
+            <div class="birthday-actions">
+                <a href="/edit/{{ b.id }}" class="btn btn-secondary btn-sm">Modifier</a>
+                <button class="btn btn-danger btn-sm" onclick="confirmDelete({{ b.id }}, '{{ b.prenom }}')">Suppr</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Downloads -->
+    <div class="download-bar">
+        <a href="/generate/posters/{{ selected_date }}" class="btn btn-primary btn-sm">Affiches PDF</a>
+        <a href="/generate/recap/{{ selected_date }}" class="btn btn-secondary btn-sm">Recap Excel</a>
+        <a href="/generate/recap-pdf/{{ selected_date }}" class="btn btn-secondary btn-sm">Recap PDF</a>
+    </div>
+
+    {% else %}
+    <div class="empty-state">
+        <p>Aucun anniversaire pour cette date.</p>
+        <a href="/add?date={{ selected_date }}" class="btn btn-primary">Ajouter un anniversaire</a>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Confirm delete dialog -->
+<div class="confirm-overlay" id="confirm-dialog">
+    <div class="confirm-box">
+        <p>Supprimer l'anniversaire de <strong id="confirm-name"></strong> ?</p>
+        <form id="delete-form" method="POST" style="display: inline;">
+            <button type="button" class="btn btn-secondary" onclick="closeConfirm()">Annuler</button>
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function confirmDelete(id, name) {
+    document.getElementById('confirm-name').textContent = name;
+    document.getElementById('delete-form').action = '/delete/' + id;
+    document.getElementById('confirm-dialog').classList.add('active');
+}
+function closeConfirm() {
+    document.getElementById('confirm-dialog').classList.remove('active');
+}
+document.getElementById('confirm-dialog').addEventListener('click', function(e) {
+    if (e.target === this) closeConfirm();
+});
+</script>
+{% endblock %}
