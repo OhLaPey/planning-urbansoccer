@@ -620,6 +620,24 @@ def generate_html(week_employees, week_num, year, all_weeks):
                          font-family: inherit; width: 100%; margin-bottom: 8px; }}
         .add-note-btn:hover {{ border-color: rgba(255,120,50,0.3); color: #FF7832; }}
 
+        /* ── Notification bell ── */
+        .notif-btn {{ position: fixed; bottom: 20px; right: 20px; z-index: 50;
+                      width: 48px; height: 48px; border-radius: 50%; border: 2px solid rgba(255,120,50,0.3);
+                      background: rgba(30,30,30,0.95); color: #FF7832; font-size: 20px;
+                      cursor: pointer; display: flex; align-items: center; justify-content: center;
+                      transition: all 0.3s; box-shadow: 0 0 15px rgba(255,120,50,0.2); }}
+        .notif-btn:hover {{ border-color: #FF7832; box-shadow: 0 0 25px rgba(255,120,50,0.4);
+                            transform: scale(1.05); }}
+        .notif-btn.active {{ background: #FF7832; color: #fff; border-color: #FF7832;
+                             box-shadow: 0 0 20px rgba(255,120,50,0.5); }}
+        .notif-btn .bell {{ line-height: 1; }}
+        .notif-toast {{ position: fixed; bottom: 80px; right: 20px; z-index: 50;
+                        background: rgba(30,30,30,0.95); border: 1px solid rgba(255,120,50,0.3);
+                        border-radius: 10px; padding: 10px 14px; color: #ccc; font-size: 11px;
+                        max-width: 220px; opacity: 0; transform: translateY(10px);
+                        transition: all 0.3s; pointer-events: none; }}
+        .notif-toast.show {{ opacity: 1; transform: translateY(0); pointer-events: auto; }}
+
         /* ── Legend ── */
         .legend {{ display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
                    margin-bottom: 15px; }}
@@ -682,6 +700,12 @@ def generate_html(week_employees, week_num, year, all_weeks):
             </div>
         </div>
     </div>
+
+    <!-- Notification bell -->
+    <button class="notif-btn" id="notif-btn" title="Notifications">
+        <span class="bell">&#128276;</span>
+    </button>
+    <div class="notif-toast" id="notif-toast"></div>
 
     <script>
     (function() {{
@@ -1186,6 +1210,93 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
         // Initial render
         renderTimeline();
+
+        // ── Notifications (Service Worker) ──
+        var notifBtn = document.getElementById('notif-btn');
+        var notifToast = document.getElementById('notif-toast');
+        var CHECK_INTERVAL = 30 * 60 * 1000; // 30 min
+        var checkTimer = null;
+
+        function showToast(msg, duration) {{
+            notifToast.textContent = msg;
+            notifToast.classList.add('show');
+            setTimeout(function() {{ notifToast.classList.remove('show'); }}, duration || 3000);
+        }}
+
+        function updateBellState() {{
+            if ('Notification' in window && Notification.permission === 'granted') {{
+                notifBtn.classList.add('active');
+                notifBtn.title = 'Notifications activ\u00e9es';
+            }} else {{
+                notifBtn.classList.remove('active');
+                notifBtn.title = 'Activer les notifications';
+            }}
+        }}
+
+        function startPeriodicCheck() {{
+            if (checkTimer) return;
+            checkTimer = setInterval(function() {{
+                if (navigator.serviceWorker && navigator.serviceWorker.controller) {{
+                    navigator.serviceWorker.controller.postMessage({{ type: 'CHECK_UPDATES' }});
+                }}
+            }}, CHECK_INTERVAL);
+            // First check after 5s
+            setTimeout(function() {{
+                if (navigator.serviceWorker && navigator.serviceWorker.controller) {{
+                    navigator.serviceWorker.controller.postMessage({{ type: 'CHECK_UPDATES' }});
+                }}
+            }}, 5000);
+        }}
+
+        function registerSW() {{
+            if ('serviceWorker' in navigator) {{
+                navigator.serviceWorker.register('sw.js').then(function(reg) {{
+                    console.log('SW registered');
+                    // Initialize the SW with current latest.json
+                    fetch('latest.json?_t=' + Date.now())
+                        .then(function(r) {{ return r.json(); }})
+                        .then(function(data) {{
+                            if (reg.active) {{
+                                reg.active.postMessage({{ type: 'INIT', data: JSON.stringify(data) }});
+                            }}
+                        }}).catch(function() {{}});
+                    if (Notification.permission === 'granted') {{
+                        startPeriodicCheck();
+                    }}
+                }}).catch(function(err) {{ console.log('SW error', err); }});
+            }}
+        }}
+
+        notifBtn.onclick = function() {{
+            if (!('Notification' in window)) {{
+                showToast('Notifications non support\u00e9es sur ce navigateur');
+                return;
+            }}
+            if (Notification.permission === 'granted') {{
+                showToast('Notifications d\u00e9j\u00e0 activ\u00e9es \u2714');
+                return;
+            }}
+            if (Notification.permission === 'denied') {{
+                showToast('Notifications bloqu\u00e9es. Active-les dans les param\u00e8tres du navigateur.');
+                return;
+            }}
+            Notification.requestPermission().then(function(perm) {{
+                updateBellState();
+                if (perm === 'granted') {{
+                    showToast('Notifications activ\u00e9es ! Tu seras pr\u00e9venu des nouveaux plannings.');
+                    registerSW();
+                    startPeriodicCheck();
+                }} else {{
+                    showToast('Notifications refus\u00e9es');
+                }}
+            }});
+        }};
+
+        updateBellState();
+        if ('Notification' in window && Notification.permission === 'granted') {{
+            registerSW();
+        }}
+
     }})();
     </script>
 </body>
@@ -1298,6 +1409,95 @@ def main():
             '</html>'
         )
     print(f"\u00c9crit : index.html \u2192 S{latest_week}.html")
+
+    # ── Générer le Service Worker (notifications) ──
+    sw_content = """\
+var CACHE_KEY = 'planning-urban7d-latest';
+var CHECK_INTERVAL = 30 * 60 * 1000; // 30 min
+
+self.addEventListener('install', function(e) { self.skipWaiting(); });
+self.addEventListener('activate', function(e) { e.waitUntil(self.clients.claim()); });
+
+// Messages from page
+self.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'CHECK_UPDATES') {
+    checkForUpdates();
+  }
+  if (e.data && e.data.type === 'INIT') {
+    // Store current state without notifying (first load)
+    self._lastKnown = e.data.data;
+  }
+});
+
+function checkForUpdates() {
+  fetch('latest.json?_t=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      // Compare with stored version
+      var stored = null;
+      try { stored = JSON.parse(self._lastKnown || 'null'); } catch(e) {}
+
+      if (stored && data.generatedAt !== stored.generatedAt) {
+        var newWeeks = data.weeks.filter(function(w) {
+          return stored.weeks.indexOf(w) === -1;
+        });
+        if (newWeeks.length > 0) {
+          showNotification(
+            'Nouveau planning disponible !',
+            'Semaine ' + newWeeks.join(', S') + ' ajoutée sur Planning Urban 7D'
+          );
+        } else {
+          showNotification(
+            'Planning mis à jour',
+            'Le planning S' + data.latestWeek + ' a été mis à jour'
+          );
+        }
+      }
+      self._lastKnown = JSON.stringify(data);
+    })
+    .catch(function() {});
+}
+
+function showNotification(title, body) {
+  self.registration.showNotification(title, {
+    body: body,
+    icon: 'data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text y=\".9em\" font-size=\"90\">⚽</text></svg>',
+    badge: 'data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text y=\".9em\" font-size=\"90\">⚽</text></svg>',
+    tag: 'planning-update',
+    renotify: true,
+    data: { url: './' }
+  });
+}
+
+self.addEventListener('notificationclick', function(e) {
+  e.notification.close();
+  e.waitUntil(
+    self.clients.matchAll({ type: 'window' }).then(function(clients) {
+      for (var i = 0; i < clients.length; i++) {
+        if (clients[i].url.indexOf('planning') !== -1 && 'focus' in clients[i]) {
+          return clients[i].focus();
+        }
+      }
+      if (self.clients.openWindow) {
+        return self.clients.openWindow(e.notification.data.url || './');
+      }
+    })
+  );
+});
+"""
+    with open("sw.js", "w", encoding="utf-8") as f:
+        f.write(sw_content)
+    print("Écrit : sw.js")
+
+    # ── Générer latest.json (pour les notifications push) ──
+    latest_data = {
+        "latestWeek": latest_week,
+        "weeks": sorted(list(all_weeks)),
+        "generatedAt": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+    }
+    with open("latest.json", "w", encoding="utf-8") as f:
+        json.dump(latest_data, f, ensure_ascii=False, indent=2)
+    print("Écrit : latest.json")
 
     print("\nTermin\u00e9 !")
     print("\n\u2500\u2500 Abonnement calendrier \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500")
