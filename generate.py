@@ -290,12 +290,15 @@ def parse_shifts(ws, rows, dates, week_num, employee_name=""):
 # ── Génération ICS (abonnement calendrier) ─────────────────────────────────
 
 
-def generate_ics(name, events):
+def generate_ics(name, events, week_notes=None):
     """Génère le contenu ICS pour un employé (toutes semaines confondues).
 
     Chaque fichier ICS contient TOUS les événements de l'employé, ce qui
     permet à l'abonnement calendrier de rester à jour automatiquement.
+    week_notes: dict {week_num: notes_data} pour ajouter les commentaires.
     """
+    if week_notes is None:
+        week_notes = {}
     s = slug(name)
     lines = [
         "BEGIN:VCALENDAR",
@@ -336,9 +339,28 @@ def generate_ics(name, events):
         by_week[w].append(evt)
 
     for week_num in sorted(by_week.keys()):
+        # Build description with weekly notes if available
+        wn = week_notes.get(week_num, {})
+        week_comment = wn.get("comment", "")
+        week_updates = wn.get("updates", [])
+        extra_desc = ""
+        if week_comment:
+            extra_desc += "\\n---\\n" + week_comment
+        for upd in week_updates:
+            upd_text = upd.get("text", "")
+            upd_date = upd.get("date", "")
+            if upd_text:
+                prefix = f"MAJ {upd_date}: " if upd_date else "MAJ: "
+                extra_desc += "\\n" + prefix + upd_text
+
         for i, evt in enumerate(by_week[week_num], 1):
             dt_start = evt["start"].strftime("%Y%m%dT%H%M%S")
             dt_end = evt["end"].strftime("%Y%m%dT%H%M%S")
+            # Escape for ICS DESCRIPTION
+            desc = evt['label']
+            if extra_desc:
+                desc += extra_desc
+            desc_escaped = desc.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
             lines.extend([
                 "BEGIN:VEVENT",
                 f"UID:{s}-s{week_num}-{i}@urban7d",
@@ -346,7 +368,7 @@ def generate_ics(name, events):
                 f"DTSTART;TZID=Europe/Paris:{dt_start}",
                 f"DTEND;TZID=Europe/Paris:{dt_end}",
                 f"SUMMARY:{evt['label']}",
-                f"DESCRIPTION:{evt['label']}",
+                f"DESCRIPTION:{desc_escaped}",
                 "END:VEVENT",
             ])
 
@@ -374,12 +396,26 @@ def build_events_json(week_employees):
     return json.dumps(data, ensure_ascii=False)
 
 
+def load_week_notes(week_num):
+    """Charge les notes de semaine depuis notes/SXX.json."""
+    path = f"notes/S{week_num}.json"
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            pass
+    return {"comment": "", "updates": []}
+
+
 def generate_html(week_employees, week_num, year, all_weeks):
     """Génère la page HTML avec preview timeline + vue individuelle + abonnement."""
     date_range = format_date_range(year, week_num)
     events_json = build_events_json(week_employees)
     colors_json = json.dumps(CODE_COLORS, ensure_ascii=False)
     default_color_json = json.dumps(DEFAULT_COLOR, ensure_ascii=False)
+    notes_data = load_week_notes(week_num)
+    notes_json = json.dumps(notes_data, ensure_ascii=False)
 
     DAYS_SHORT = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
     DAYS_FULL = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
@@ -619,6 +655,13 @@ def generate_html(week_employees, week_num, year, all_weeks):
                          color: #444; font-size: 11px; cursor: pointer; transition: all 0.2s;
                          font-family: inherit; width: 100%; margin-bottom: 8px; }}
         .add-note-btn:hover {{ border-color: rgba(255,120,50,0.3); color: #FF7832; }}
+        .copy-json-btn {{ display: flex; align-items: center; justify-content: center; gap: 6px;
+                          padding: 6px 12px; background: rgba(255,255,255,0.04);
+                          border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+                          color: #555; font-size: 10px; cursor: pointer; transition: all 0.2s;
+                          font-family: inherit; margin-top: 6px; }}
+        .copy-json-btn:hover {{ border-color: rgba(255,120,50,0.3); color: #FF7832; }}
+        .copy-json-btn.copied {{ border-color: #64dc3c; color: #64dc3c; }}
 
         /* ── Notification bell ── */
         .notif-btn {{ position: fixed; bottom: 20px; right: 20px; z-index: 50;
@@ -709,6 +752,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
     <script>
     (function() {{
+        var NOTES_DATA = {notes_json};
         var DATA = {events_json};
         var COLORS = {colors_json};
         var DEFAULT_C = {default_color_json};
@@ -945,7 +989,23 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 pad2(dt.getHours()) + pad2(dt.getMinutes()) + '00';
         }}
 
+        function icsEscape(str) {{
+            return str.replace(/\\\\/g, '\\\\\\\\').replace(/\\n/g, '\\\\n').replace(/,/g, '\\\\,').replace(/;/g, '\\\\;');
+        }}
+
         function generateICSForNames(names) {{
+            // Build notes description from NOTES_DATA
+            var noteDesc = '';
+            if (NOTES_DATA.comment) {{
+                noteDesc += '\\n---\\n' + NOTES_DATA.comment;
+            }}
+            (NOTES_DATA.updates || []).forEach(function(u) {{
+                if (u.text) {{
+                    var prefix = u.date ? ('MAJ ' + u.date + ': ') : 'MAJ: ';
+                    noteDesc += '\\n' + prefix + u.text;
+                }}
+            }});
+
             var lines = [
                 'BEGIN:VCALENDAR', 'VERSION:2.0',
                 'PRODID:-//Planning Urban 7D//FR',
@@ -959,12 +1019,13 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 emp.events.forEach(function(ev, i) {{
                     var s = new Date(ev.start);
                     var e = new Date(ev.end);
+                    var desc = ev.label + noteDesc;
                     lines.push('BEGIN:VEVENT');
                     lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
                     lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
                     lines.push('DTEND;TZID=Europe/Paris:' + toICSDate(e));
                     lines.push('SUMMARY:' + name + ' - ' + ev.label);
-                    lines.push('DESCRIPTION:' + ev.label);
+                    lines.push('DESCRIPTION:' + icsEscape(desc));
                     lines.push('END:VEVENT');
                 }});
             }});
@@ -1088,56 +1149,46 @@ def generate_html(week_employees, week_num, year, all_weeks):
             btn.onclick = function() {{ openModal(btn.getAttribute('data-name')); }};
         }});
 
-        // ── Notes de semaine (localStorage) ──
-        var NOTES_KEY = 'planning-notes-S{week_num}';
+        // ── Notes de semaine (injectées depuis notes/SXX.json) ──
         var notesEl = document.getElementById('week-notes');
-
-        function loadNotes() {{
-            var raw = localStorage.getItem(NOTES_KEY);
-            if (raw) {{
-                try {{ return JSON.parse(raw); }} catch(e) {{}}
-            }}
-            return {{ comment: '', updates: [] }};
-        }}
-
-        function saveNotes(data) {{
-            localStorage.setItem(NOTES_KEY, JSON.stringify(data));
-        }}
+        // Working copy for editing (starts from server data)
+        var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
 
         function renderNotes() {{
-            var data = loadNotes();
+            var data = notesWork;
             notesEl.innerHTML = '';
 
-            // Comment card
-            var card = document.createElement('div');
-            card.className = 'note-card comment';
-            var hdr = document.createElement('div');
-            hdr.className = 'note-header';
-            hdr.innerHTML = '<span class="note-label comment">Note de semaine</span>';
-            var editBtn = document.createElement('button');
-            editBtn.className = 'note-btn';
-            editBtn.innerHTML = '\u270e';
-            editBtn.title = '\u00c9diter';
-            hdr.appendChild(editBtn);
-            card.appendChild(hdr);
-            var txt = document.createElement('div');
-            txt.className = 'note-text';
-            txt.textContent = data.comment || '';
-            card.appendChild(txt);
-            notesEl.appendChild(card);
+            // Comment card (only show if there's content or editing)
+            if (data.comment || true) {{
+                var card = document.createElement('div');
+                card.className = 'note-card comment';
+                var hdr = document.createElement('div');
+                hdr.className = 'note-header';
+                hdr.innerHTML = '<span class="note-label comment">Note de semaine</span>';
+                var editBtn = document.createElement('button');
+                editBtn.className = 'note-btn';
+                editBtn.innerHTML = '\u270e';
+                editBtn.title = '\u00c9diter';
+                hdr.appendChild(editBtn);
+                card.appendChild(hdr);
+                var txt = document.createElement('div');
+                txt.className = 'note-text';
+                txt.textContent = data.comment || '';
+                card.appendChild(txt);
+                notesEl.appendChild(card);
 
-            editBtn.onclick = function() {{
-                if (txt.contentEditable === 'true') {{
-                    txt.contentEditable = 'false';
-                    data.comment = txt.innerText;
-                    saveNotes(data);
-                    editBtn.innerHTML = '\u270e';
-                }} else {{
-                    txt.contentEditable = 'true';
-                    txt.focus();
-                    editBtn.innerHTML = '\u2714';
-                }}
-            }};
+                editBtn.onclick = function() {{
+                    if (txt.contentEditable === 'true') {{
+                        txt.contentEditable = 'false';
+                        data.comment = txt.innerText;
+                        editBtn.innerHTML = '\u270e';
+                    }} else {{
+                        txt.contentEditable = 'true';
+                        txt.focus();
+                        editBtn.innerHTML = '\u2714';
+                    }}
+                }};
+            }}
 
             // Update cards
             data.updates.forEach(function(u, idx) {{
@@ -1145,7 +1196,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 ucard.className = 'note-card update';
                 var uhdr = document.createElement('div');
                 uhdr.className = 'note-header';
-                uhdr.innerHTML = '<span class="note-label update">Mise \u00e0 jour</span>';
+                var dateLabel = u.date ? (' \u2014 ' + u.date) : '';
+                uhdr.innerHTML = '<span class="note-label update">Mise \u00e0 jour' + dateLabel + '</span>';
                 var uactions = document.createElement('div');
                 uactions.className = 'note-actions';
                 var uedit = document.createElement('button');
@@ -1170,7 +1222,6 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     if (utxt.contentEditable === 'true') {{
                         utxt.contentEditable = 'false';
                         data.updates[idx].text = utxt.innerText;
-                        saveNotes(data);
                         uedit.innerHTML = '\u270e';
                     }} else {{
                         utxt.contentEditable = 'true';
@@ -1180,7 +1231,6 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 }};
                 udel.onclick = function() {{
                     data.updates.splice(idx, 1);
-                    saveNotes(data);
                     renderNotes();
                 }};
             }});
@@ -1190,10 +1240,12 @@ def generate_html(week_employees, week_num, year, all_weeks):
             addBtn.className = 'add-note-btn';
             addBtn.textContent = '+ Ajouter une mise \u00e0 jour';
             addBtn.onclick = function() {{
-                data.updates.push({{ text: '' }});
-                saveNotes(data);
+                var today = new Date();
+                var ds = today.getFullYear() + '-' +
+                    (today.getMonth()+1).toString().padStart(2,'0') + '-' +
+                    today.getDate().toString().padStart(2,'0');
+                data.updates.push({{ date: ds, text: '' }});
                 renderNotes();
-                // Focus the last update card's text
                 var cards = notesEl.querySelectorAll('.note-card.update .note-text');
                 if (cards.length > 0) {{
                     var last = cards[cards.length - 1];
@@ -1204,6 +1256,23 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 }}
             }};
             notesEl.appendChild(addBtn);
+
+            // Copy JSON button (for admin to paste into notes/SXX.json)
+            var copyBtn = document.createElement('button');
+            copyBtn.className = 'copy-json-btn';
+            copyBtn.textContent = 'Copier JSON (pour notes/S{week_num}.json)';
+            copyBtn.onclick = function() {{
+                var out = JSON.stringify(data, null, 2);
+                navigator.clipboard.writeText(out).then(function() {{
+                    copyBtn.textContent = 'Copi\u00e9 ! \u2714';
+                    copyBtn.classList.add('copied');
+                    setTimeout(function() {{
+                        copyBtn.textContent = 'Copier JSON (pour notes/S{week_num}.json)';
+                        copyBtn.classList.remove('copied');
+                    }}, 2000);
+                }});
+            }};
+            notesEl.appendChild(copyBtn);
         }}
 
         renderNotes();
@@ -1349,13 +1418,18 @@ def main():
                           f"{end_str} : {e['label']}")
         print(f"  \u2192 {active_count} employ\u00e9s actifs")
 
+    # ── Charger les notes par semaine ──
+    all_week_notes = {}
+    for wn in all_weeks:
+        all_week_notes[wn] = load_week_notes(wn)
+
     # ── Générer les fichiers ICS (cumulatifs, toutes semaines) ──
     os.makedirs("ics", exist_ok=True)
     ics_count = 0
     for name, events in all_employee_events.items():
         if events:
             events.sort(key=lambda e: e["start"])
-            ics_content = generate_ics(name, events)
+            ics_content = generate_ics(name, events, week_notes=all_week_notes)
             filename = f"ics/{slug(name)}.ics"
             with open(filename, "w", encoding="utf-8") as f:
                 f.write(ics_content)
