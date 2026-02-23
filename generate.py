@@ -48,7 +48,7 @@ CODE_NAMES = {
 
 # Couleurs néon par code — inspirées de l'Excel avec effet glow
 CODE_COLORS = {
-    "VDC":   {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff",  "text": "#ffffff"},
+    "VDC":   {"bg": "rgba(255,120,50,0.35)", "border": "#ff7832",  "text": "#ffb080"},
     "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff",  "text": "#d4a0ff"},
     "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff",  "text": "#ffffff"},
     "CUP-R": {"bg": "rgba(100,220,60,0.35)",  "border": "#64dc3c",  "text": "#90ff70"},
@@ -64,6 +64,7 @@ CODE_COLORS = {
     "AIDE":  {"bg": "rgba(0,176,240,0.40)",   "border": "#00b0f0",  "text": "#60d0ff"},
     "P25M":  {"bg": "rgba(255,120,50,0.40)",  "border": "#ff7832",  "text": "#ff9850"},
     "PSG":   {"bg": "rgba(255,120,50,0.40)",  "border": "#ff7832",  "text": "#ff9850"},
+    "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff",  "text": "#d4a0ff"},
 }
 DEFAULT_COLOR = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"}
 
@@ -450,15 +451,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
     for name in week_employees:
         s = slug(name)
         has_events = len(week_employees[name]) > 0
-        fn = first_name(name)
         if has_events:
             employee_buttons += (
                 f'            <button class="employee-btn" data-name="{name}" '
-                f'data-slug="{s}">{fn}</button>\n'
+                f'data-slug="{s}">{name}</button>\n'
             )
         else:
             employee_buttons += (
-                f'            <div class="employee-btn repos">{fn} '
+                f'            <div class="employee-btn repos">{name} '
                 f'<span class="badge">Repos</span></div>\n'
             )
 
@@ -555,7 +555,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .timeline-row {{ display: flex; align-items: center; margin-bottom: 4px; }}
         .tl-name {{ width: 70px; font-size: 10px; color: #aaa; font-weight: 500;
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-                    padding-right: 6px; cursor: pointer; transition: color 0.2s; }}
+                    padding-right: 6px; cursor: pointer; transition: color 0.2s;
+                    position: sticky; left: 0; z-index: 2; background: rgba(10,10,25,0.95); }}
         .tl-name:hover {{ color: #FF7832; }}
         .tl-bar-container {{ flex: 1; position: relative; height: 26px;
                              background: rgba(255,255,255,0.02); border-radius: 5px; }}
@@ -776,8 +777,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
         <div class="week-notes" id="week-notes"></div>
 
         <div class="view-toggle">
-            <button class="view-btn active" data-view="day">Vue Journ\u00e9e</button>
-            <button class="view-btn" data-view="staff">Vue Staff</button>
+            <button class="view-btn active" data-view="day">Vue quotidienne</button>
+            <button class="view-btn" data-view="staff">Vue hebdo par staff</button>
         </div>
 
         <!-- ── Vue Journée (timeline) ── -->
@@ -804,14 +805,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
         <div class="modal">
             <div class="modal-header">
                 <h2 id="modal-name"></h2>
-                <button class="modal-close" id="modal-close">&times;</button>
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <button class="subscribe-btn" id="modal-subscribe" style="padding:6px 14px;font-size:11px;">
+                        S'abonner
+                    </button>
+                    <button class="modal-close" id="modal-close">&times;</button>
+                </div>
             </div>
             <div class="modal-body" id="modal-body"></div>
-            <div class="modal-footer">
-                <button class="subscribe-btn" id="modal-subscribe">
-                    S'abonner au calendrier
-                </button>
-            </div>
         </div>
     </div>
 
@@ -1089,32 +1090,21 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
             tl.appendChild(inner);
 
-            // Select-all
+            // Export day button
             var selContainer = document.getElementById('select-all-container');
             selContainer.innerHTML = '';
             if (nameOrder.length > 0) {{
                 var selRow = document.createElement('div');
                 selRow.className = 'select-all-row';
-                var selCbWrap = document.createElement('div');
-                selCbWrap.className = 'tl-check-wrap';
-                var selCb = document.createElement('input');
-                selCb.type = 'checkbox';
-                selCb.className = 'tl-check';
-                selCb.id = 'select-all-cb';
-                selCb.onchange = function() {{
-                    document.querySelectorAll('#timeline .tl-check').forEach(function(c) {{ c.checked = selCb.checked; }});
+                var exportDayBtn = document.createElement('button');
+                exportDayBtn.className = 'export-btn';
+                exportDayBtn.textContent = 'Exporter la journ\u00e9e';
+                exportDayBtn.onclick = function() {{
+                    document.querySelectorAll('#timeline .tl-check').forEach(function(c) {{ c.checked = true; }});
                     updateExportBar();
+                    document.getElementById('export-btn').click();
                 }};
-                var selLabel = document.createElement('label');
-                selLabel.className = 'tl-check-label';
-                selLabel.setAttribute('for', 'select-all-cb');
-                selCbWrap.appendChild(selCb);
-                selCbWrap.appendChild(selLabel);
-                var selText = document.createElement('span');
-                selText.className = 'select-all-label';
-                selText.textContent = 'Tout';
-                selRow.appendChild(selText);
-                selRow.appendChild(selCbWrap);
+                selRow.appendChild(exportDayBtn);
                 selContainer.appendChild(selRow);
             }}
         }}
@@ -1390,7 +1380,16 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 ucard.className = 'note-card update';
                 var uhdr = document.createElement('div');
                 uhdr.className = 'note-header';
-                var dateLabel = u.date ? (' \u2014 ' + u.date) : '';
+                var dateLabel = '';
+                if (u.date) {{
+                    var _dp = u.date.split(/[\\-T ]/);
+                    var _dd = new Date(parseInt(_dp[0]), parseInt(_dp[1])-1, parseInt(_dp[2]),
+                        _dp.length > 3 ? parseInt(_dp[3]) : 0, _dp.length > 4 ? parseInt(_dp[4]) : 0);
+                    var _jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+                    var _mois = ['janvier','f\u00e9vrier','mars','avril','mai','juin','juillet','ao\u00fbt','septembre','octobre','novembre','d\u00e9cembre'];
+                    var _timePart = (_dp.length > 3) ? ' \u00e0 ' + _dp[3] + 'h' + (_dp[4] || '00') : '';
+                    dateLabel = ' \u2014 ' + _jours[_dd.getDay()] + ' ' + _dd.getDate() + ' ' + _mois[_dd.getMonth()] + _timePart;
+                }}
                 uhdr.innerHTML = '<span class="note-label update">Mise \u00e0 jour' + dateLabel + '</span>';
                 var uactions = document.createElement('div');
                 uactions.className = 'note-actions';
