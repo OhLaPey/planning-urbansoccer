@@ -478,9 +478,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
             z-index: 0;
             pointer-events: none;
             background: url('bg-team.jpg') center center / cover no-repeat;
-            opacity: 0.12;
+            opacity: 0.22;
         }}
-        .container {{ position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }}
+        .container {{ position: relative; z-index: 1; max-width: 600px; margin: 0 auto;
+                      background: rgba(10,10,25,0.92); border-radius: 16px;
+                      padding: 2px 6px; margin-top: 6px; margin-bottom: 6px; }}
 
         /* ── Header ── */
         .header {{ text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }}
