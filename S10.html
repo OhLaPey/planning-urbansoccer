@@ -92,7 +92,9 @@
         .tl-name { width: 70px; font-size: 10px; color: #aaa; font-weight: 500;
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
                     padding-right: 6px; cursor: pointer; transition: color 0.2s;
-                    position: sticky; left: 0; z-index: 2; background: rgba(10,10,25,0.95); }
+                    position: sticky; left: 0; z-index: 2;
+                    background: linear-gradient(90deg, #1e1e1e 80%, transparent);
+                    padding-right: 10px; }
         .tl-name:hover { color: #FF7832; }
         .tl-bar-container { flex: 1; position: relative; height: 26px;
                              background: rgba(255,255,255,0.02); border-radius: 5px; }
@@ -445,7 +447,7 @@
             } catch(e) {}
             return embedded;
         })();
-        var COLORS = {"VDC": {"bg": "rgba(255,120,50,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}};
+        var COLORS = {"VDC": {"bg": "rgba(255,120,50,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}, "FOR-E": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FOR-P": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}, "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}};
         var DEFAULT_C = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"};
         var DAYS = ["Lun 02", "Mar 03", "Mer 04", "Jeu 05", "Ven 06", "Sam 07", "Dim 08"];
         var DAYS_FULL = ["Lundi 02/03", "Mardi 03/03", "Mercredi 04/03", "Jeudi 05/03", "Vendredi 06/03", "Samedi 07/03", "Dimanche 08/03"];
@@ -473,7 +475,14 @@
             renderTimeline();
         }
 
-        // ── Legend ──
+        // ── Legend ── Build code-to-label map from all events
+        var CODE_LABELS = {};
+        Object.keys(DATA).forEach(function(n) {
+            if (n === '_codeNames') return;
+            DATA[n].events.forEach(function(ev) {
+                if (ev.label && ev.label !== ev.code) CODE_LABELS[ev.code] = ev.label;
+            });
+        });
         function renderLegend(codes) {
             var el = document.getElementById('legend');
             el.innerHTML = '';
@@ -484,9 +493,9 @@
                 var c = getColor(code);
                 var item = document.createElement('div');
                 item.className = 'legend-item';
+                var displayName = CODE_LABELS[code] || (DATA._codeNames && DATA._codeNames[code]) || code;
                 item.innerHTML = '<div class="legend-dot" style="background:' + c.border +
-                    ';box-shadow:0 0 6px ' + c.border + '"></div>' +
-                    (DATA._codeNames && DATA._codeNames[code] || code);
+                    ';box-shadow:0 0 6px ' + c.border + '"></div>' + displayName;
                 el.appendChild(item);
             });
         }
@@ -506,6 +515,7 @@
                     if (ev.day === currentDay) {
                         dayEvents.push({ name: name, ev: ev });
                         allCodes.push(ev.code);
+                        if (ev.label && ev.label !== ev.code) CODE_LABELS[ev.code] = ev.label;
                     }
                 });
             });
