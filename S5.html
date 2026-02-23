@@ -170,6 +170,13 @@
                     <div class="cal-desc">Télécharger et ouvrir manuellement</div>
                 </div>
             </a>
+            <div class="cal-option" id="cal-copy" style="cursor:pointer;">
+                <span class="cal-icon">~</span>
+                <div class="cal-info">
+                    <div class="cal-name">Copier le lien</div>
+                    <div class="cal-desc">Pour coller dans Google Agenda > Paramètres > Ajouter par URL</div>
+                </div>
+            </div>
             <button class="cal-chooser-cancel" id="cal-cancel">Annuler</button>
         </div>
     </div>
@@ -185,12 +192,13 @@
 
             document.getElementById('cal-chooser-name').textContent = displayName;
             document.getElementById('cal-google').href =
-                'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcalUrl);
+                'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(fullUrl);
             document.getElementById('cal-apple').href = webcalUrl;
             document.getElementById('cal-outlook').href =
                 'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(fullUrl) + '&name=' + calName;
             document.getElementById('cal-download').href = icsPath;
             document.getElementById('cal-download').setAttribute('download', slug + '.ics');
+            document.getElementById('cal-copy').setAttribute('data-url', fullUrl);
 
             document.getElementById('cal-chooser').classList.add('open');
         }
@@ -207,6 +215,18 @@
                 setTimeout(closeCalendarChooser, 300);
             });
         });
+        document.getElementById('cal-copy').onclick = function() {
+            var url = this.getAttribute('data-url');
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function() {
+                    var el = document.querySelector('#cal-copy .cal-name');
+                    el.textContent = 'Lien copié !';
+                    setTimeout(function() { el.textContent = 'Copier le lien'; }, 2000);
+                });
+            } else {
+                prompt('Copier ce lien :', url);
+            }
+        };
 
         document.querySelectorAll('a.employee[href$=".ics"]').forEach(function(a) {
             a.addEventListener('click', function(e) {
