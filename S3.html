@@ -68,5 +68,13 @@
         </div>
         <div class="footer"><p>Cliquez sur votre nom pour ajouter le planning à votre calendrier</p></div>
     </div>
+    <script>
+    // Android: add download attribute to .ics links (webcal:// not supported by Chrome)
+    if (/Android/i.test(navigator.userAgent)) {
+        document.querySelectorAll('a.employee[href$=".ics"]').forEach(function(a) {
+            a.setAttribute('download', a.getAttribute('href').split('/').pop());
+        });
+    }
+    </script>
 </body>
 </html>

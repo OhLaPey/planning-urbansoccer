@@ -675,23 +675,34 @@
             return lines.join('\r\n');
         }
 
+        var isAndroid = /Android/i.test(navigator.userAgent);
+
         document.getElementById('export-btn').onclick = function() {
             var checked = document.querySelectorAll('#timeline .tl-check:checked');
             var names = [];
             checked.forEach(function(c) { names.push(c.getAttribute('data-name')); });
             if (names.length === 0) return;
-            // Use webcal:// to open Calendar app (same method as staff subscribe button)
             var base = window.location.href.replace(/[^/]*$/, '');
             names.forEach(function(name, idx) {
                 var emp = DATA[name];
                 if (!emp) return;
                 var icsPath = 'ics/' + emp.slug + '.ics';
-                var fullUrl = new URL(icsPath, base);
-                var webcalUrl = 'webcal://' + fullUrl.host + fullUrl.pathname;
-                if (idx === 0) {
-                    window.location.href = webcalUrl;
+                if (isAndroid) {
+                    // Android: direct download (webcal:// not supported by Chrome)
+                    var a = document.createElement('a');
+                    a.href = icsPath;
+                    a.download = emp.slug + '.ics';
+                    document.body.appendChild(a);
+                    setTimeout(function() { a.click(); document.body.removeChild(a); }, idx * 400);
                 } else {
-                    setTimeout(function() { window.open(webcalUrl); }, idx * 600);
+                    // iOS/Desktop: webcal:// for calendar subscription
+                    var fullUrl = new URL(icsPath, base);
+                    var webcalUrl = 'webcal://' + fullUrl.host + fullUrl.pathname;
+                    if (idx === 0) {
+                        window.location.href = webcalUrl;
+                    } else {
+                        setTimeout(function() { window.open(webcalUrl); }, idx * 600);
+                    }
                 }
             });
         };
@@ -772,15 +783,32 @@
                 body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
             }
 
-            // Subscribe button (webcal://)
+            // Subscribe button
             var subBtn = document.getElementById('modal-subscribe');
             var icsPath = 'ics/' + emp.slug + '.ics';
-            if (window.location.protocol === 'https:' || window.location.protocol === 'http:') {
-                var base = window.location.href.replace(/[^/]*$/, '');
-                var fullUrl = new URL(icsPath, base);
-                subBtn.href = 'webcal://' + fullUrl.host + fullUrl.pathname;
+            var base = window.location.href.replace(/[^/]*$/, '');
+            var fullHttpsUrl = new URL(icsPath, base).href;
+            if (isAndroid) {
+                // Android: copy HTTPS URL (webcal:// not supported by Chrome)
+                subBtn.href = '#';
+                subBtn.textContent = "Copier l'URL du calendrier";
+                subBtn.onclick = function(e) {
+                    e.preventDefault();
+                    navigator.clipboard.writeText(fullHttpsUrl).then(function() {
+                        subBtn.textContent = 'URL copiée ! Collez-la dans Google Agenda > Autres agendas > URL';
+                        setTimeout(function() { subBtn.textContent = "Copier l'URL du calendrier"; }, 3000);
+                    }).catch(function() {
+                        prompt("Copiez cette URL, puis dans Google Agenda :\nAutres agendas > Via l'URL", fullHttpsUrl);
+                    });
+                };
+            } else if (window.location.protocol === 'https:' || window.location.protocol === 'http:') {
+                subBtn.href = 'webcal://' + new URL(icsPath, base).host + new URL(icsPath, base).pathname;
+                subBtn.textContent = "S'abonner au calendrier";
+                subBtn.onclick = null;
             } else {
                 subBtn.href = icsPath;
+                subBtn.textContent = "S'abonner au calendrier";
+                subBtn.onclick = null;
             }
 
             modalEl.classList.add('open');
