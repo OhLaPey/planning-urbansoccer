@@ -1089,8 +1089,16 @@ def generate_html(week_employees, week_num, year, all_weeks):
             checked.forEach(function(c) {{ names.push(c.getAttribute('data-name')); }});
             if (names.length === 0) return;
             var ics = generateICSForNames(names);
-            // Navigate to data URI so iOS/Android opens the Calendar app
-            window.location.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+            // Create a blob and open it without download attribute so iOS opens Calendar app
+            var blob = new Blob([ics], {{ type: 'text/calendar;charset=utf-8' }});
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            // No a.download — lets the browser handle text/calendar natively (opens Calendar app)
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(function() {{ URL.revokeObjectURL(url); }}, 5000);
         }};
 
         // ── View toggle ──
