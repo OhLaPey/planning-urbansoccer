@@ -69,10 +69,11 @@
         <div class="footer"><p>Cliquez sur votre nom pour ajouter le planning à votre calendrier</p></div>
     </div>
     <script>
-    // Android: add download attribute to .ics links (webcal:// not supported by Chrome)
+    // Android: redirect .ics links to Google Calendar deep link (webcal:// not supported by Chrome)
     if (/Android/i.test(navigator.userAgent)) {
         document.querySelectorAll('a.employee[href$=".ics"]').forEach(function(a) {
-            a.setAttribute('download', a.getAttribute('href').split('/').pop());
+            var fullUrl = new URL(a.getAttribute('href'), window.location.href).href;
+            a.href = 'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(fullUrl);
         });
     }
     </script>
