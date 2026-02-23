@@ -31,6 +31,10 @@ jobs:
 
       - name: Générer les fichiers (ICS, HTML, JSON)
         run: python generate.py
+        continue-on-error: true
+
+      - name: Régénérer les ICS depuis les données JSON
+        run: python regen_ics.py
 
       - name: Préparer les fichiers pour Pages
         run: |

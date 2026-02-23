@@ -617,6 +617,30 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .subscribe-btn:hover {{ background: #ff9050;
                                 box-shadow: 0 0 30px rgba(255,120,50,0.5); transform: scale(1.02); }}
 
+        /* ── Calendar chooser (bottom sheet) ── */
+        .cal-chooser-overlay {{ display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85);
+                                z-index:200; justify-content:center; align-items:flex-end; }}
+        .cal-chooser-overlay.open {{ display:flex; }}
+        .cal-chooser {{ background:#12121e; border-radius:16px 16px 0 0; width:100%; max-width:500px;
+                        padding:20px 16px 30px; animation: slideUp 0.25s ease-out; }}
+        @keyframes slideUp {{ from {{ transform:translateY(100%); }} to {{ transform:translateY(0); }} }}
+        .cal-chooser h3 {{ color:#FF7832; font-size:15px; font-weight:700; margin-bottom:4px; text-align:center; }}
+        .cal-chooser .cal-sub {{ color:#666; font-size:11px; text-align:center; margin-bottom:16px; }}
+        .cal-option {{ display:flex; align-items:center; gap:12px; padding:14px;
+                       background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+                       border-radius:12px; margin-bottom:8px; text-decoration:none; color:white;
+                       transition:all 0.2s; cursor:pointer; }}
+        .cal-option:hover {{ background:rgba(255,120,50,0.1); border-color:rgba(255,120,50,0.3); }}
+        .cal-option .cal-icon {{ font-size:22px; width:36px; text-align:center; flex-shrink:0; }}
+        .cal-option .cal-info {{ flex:1; }}
+        .cal-option .cal-name {{ font-weight:600; font-size:13px; }}
+        .cal-option .cal-desc {{ font-size:10px; color:#888; margin-top:2px; }}
+        .cal-chooser-cancel {{ display:block; width:100%; padding:12px; background:none;
+                               border:1px solid rgba(255,255,255,0.1); border-radius:12px;
+                               color:#888; font-size:13px; cursor:pointer; margin-top:4px;
+                               font-family:inherit; transition: all 0.2s; }}
+        .cal-chooser-cancel:hover {{ color:#fff; border-color:rgba(255,255,255,0.3); }}
+
         .no-events {{ text-align: center; padding: 30px; color: #444; font-size: 13px; }}
 
         /* ── Custom checkbox (DA) ── */
@@ -784,10 +808,47 @@ def generate_html(week_employees, week_num, year, all_weeks):
             </div>
             <div class="modal-body" id="modal-body"></div>
             <div class="modal-footer">
-                <a class="subscribe-btn" id="modal-subscribe" href="#">
+                <button class="subscribe-btn" id="modal-subscribe">
                     S'abonner au calendrier
-                </a>
+                </button>
             </div>
+        </div>
+    </div>
+
+    <!-- ── Choix application calendrier ── -->
+    <div class="cal-chooser-overlay" id="cal-chooser">
+        <div class="cal-chooser">
+            <h3>Ajouter au calendrier</h3>
+            <div class="cal-sub" id="cal-chooser-name"></div>
+            <a class="cal-option" id="cal-google" target="_blank" rel="noopener">
+                <span class="cal-icon">G</span>
+                <div class="cal-info">
+                    <div class="cal-name">Google Agenda</div>
+                    <div class="cal-desc">S'abonner via Google Calendar (Android, Web)</div>
+                </div>
+            </a>
+            <a class="cal-option" id="cal-apple">
+                <span class="cal-icon">A</span>
+                <div class="cal-info">
+                    <div class="cal-name">Apple Calendar</div>
+                    <div class="cal-desc">iPhone, iPad, Mac</div>
+                </div>
+            </a>
+            <a class="cal-option" id="cal-outlook" target="_blank" rel="noopener">
+                <span class="cal-icon">O</span>
+                <div class="cal-info">
+                    <div class="cal-name">Outlook</div>
+                    <div class="cal-desc">Outlook.com / Office 365</div>
+                </div>
+            </a>
+            <a class="cal-option" id="cal-download">
+                <span class="cal-icon">+</span>
+                <div class="cal-info">
+                    <div class="cal-name">Autre / Télécharger .ics</div>
+                    <div class="cal-desc">Télécharger et ouvrir manuellement</div>
+                </div>
+            </a>
+            <button class="cal-chooser-cancel" id="cal-cancel">Annuler</button>
         </div>
     </div>
 
@@ -1115,25 +1176,51 @@ def generate_html(week_employees, week_num, year, all_weeks):
             return lines.join('\\r\\n');
         }}
 
+        // ── Calendar chooser (universel tous navigateurs / OS) ──
+        function openCalendarChooser(slug, displayName) {{
+            var base = window.location.href.replace(/[^/]*$/, '');
+            var icsPath = 'ics/' + slug + '.ics';
+            var fullUrl = new URL(icsPath, base).href;
+            var webcalUrl = 'webcal://' + new URL(icsPath, base).host + new URL(icsPath, base).pathname;
+            var calName = encodeURIComponent('Planning ' + displayName);
+
+            document.getElementById('cal-chooser-name').textContent = displayName;
+            document.getElementById('cal-google').href =
+                'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcalUrl);
+            document.getElementById('cal-apple').href = webcalUrl;
+            document.getElementById('cal-outlook').href =
+                'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(fullUrl) + '&name=' + calName;
+            document.getElementById('cal-download').href = icsPath;
+            document.getElementById('cal-download').setAttribute('download', slug + '.ics');
+
+            document.getElementById('cal-chooser').classList.add('open');
+        }}
+
+        function closeCalendarChooser() {{
+            document.getElementById('cal-chooser').classList.remove('open');
+        }}
+        document.getElementById('cal-cancel').onclick = closeCalendarChooser;
+        document.getElementById('cal-chooser').onclick = function(e) {{
+            if (e.target === this) closeCalendarChooser();
+        }};
+        document.querySelectorAll('.cal-option').forEach(function(opt) {{
+            opt.addEventListener('click', function() {{
+                setTimeout(closeCalendarChooser, 300);
+            }});
+        }});
+
         document.getElementById('export-btn').onclick = function() {{
             var checked = document.querySelectorAll('#timeline .tl-check:checked');
             var names = [];
             checked.forEach(function(c) {{ names.push(c.getAttribute('data-name')); }});
             if (names.length === 0) return;
-            // Use webcal:// to open Calendar app (same method as staff subscribe button)
-            var base = window.location.href.replace(/[^/]*$/, '');
-            names.forEach(function(name, idx) {{
-                var emp = DATA[name];
-                if (!emp) return;
-                var icsPath = 'ics/' + emp.slug + '.ics';
-                var fullUrl = new URL(icsPath, base);
-                var webcalUrl = 'webcal://' + fullUrl.host + fullUrl.pathname;
-                if (idx === 0) {{
-                    window.location.href = webcalUrl;
-                }} else {{
-                    setTimeout(function() {{ window.open(webcalUrl); }}, idx * 600);
-                }}
-            }});
+            if (names.length === 1) {{
+                var emp = DATA[names[0]];
+                if (emp) openCalendarChooser(emp.slug, getFirstName(names[0]));
+                return;
+            }}
+            var first = DATA[names[0]];
+            if (first) openCalendarChooser(first.slug, names.length + ' employés');
         }};
 
         // ── View toggle ──
@@ -1212,16 +1299,12 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
             }}
 
-            // Subscribe button (webcal://)
+            // Subscribe button → opens calendar chooser
             var subBtn = document.getElementById('modal-subscribe');
-            var icsPath = 'ics/' + emp.slug + '.ics';
-            if (window.location.protocol === 'https:' || window.location.protocol === 'http:') {{
-                var base = window.location.href.replace(/[^/]*$/, '');
-                var fullUrl = new URL(icsPath, base);
-                subBtn.href = 'webcal://' + fullUrl.host + fullUrl.pathname;
-            }} else {{
-                subBtn.href = icsPath;
-            }}
+            subBtn.onclick = function(e) {{
+                e.preventDefault();
+                openCalendarChooser(emp.slug, getFirstName(name));
+            }};
 
             modalEl.classList.add('open');
         }}
