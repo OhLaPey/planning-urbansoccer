@@ -1088,17 +1088,20 @@ def generate_html(week_employees, week_num, year, all_weeks):
             var names = [];
             checked.forEach(function(c) {{ names.push(c.getAttribute('data-name')); }});
             if (names.length === 0) return;
-            var ics = generateICSForNames(names);
-            // Create a blob and open it without download attribute so iOS opens Calendar app
-            var blob = new Blob([ics], {{ type: 'text/calendar;charset=utf-8' }});
-            var url = URL.createObjectURL(blob);
-            var a = document.createElement('a');
-            a.href = url;
-            // No a.download — lets the browser handle text/calendar natively (opens Calendar app)
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            setTimeout(function() {{ URL.revokeObjectURL(url); }}, 5000);
+            // Use webcal:// to open Calendar app (same method as staff subscribe button)
+            var base = window.location.href.replace(/[^/]*$/, '');
+            names.forEach(function(name, idx) {{
+                var emp = DATA[name];
+                if (!emp) return;
+                var icsPath = 'ics/' + emp.slug + '.ics';
+                var fullUrl = new URL(icsPath, base);
+                var webcalUrl = 'webcal://' + fullUrl.host + fullUrl.pathname;
+                if (idx === 0) {{
+                    window.location.href = webcalUrl;
+                }} else {{
+                    setTimeout(function() {{ window.open(webcalUrl); }}, idx * 600);
+                }}
+            }});
         }};
 
         // ── View toggle ──
