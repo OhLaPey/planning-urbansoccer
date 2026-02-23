@@ -44,6 +44,9 @@ CODE_NAMES = {
     "AIDE":  "Aide",
     "P25M":  "P25M",
     "PSG":   "PSG Academy",
+    "FOR-E": "Formation théorique",
+    "FOR-P": "Formation pratique",
+    "STA-P": "Stage Padel",
 }
 
 # Couleurs néon par code — inspirées de l'Excel avec effet glow
@@ -65,6 +68,9 @@ CODE_COLORS = {
     "P25M":  {"bg": "rgba(255,120,50,0.40)",  "border": "#ff7832",  "text": "#ff9850"},
     "PSG":   {"bg": "rgba(255,120,50,0.40)",  "border": "#ff7832",  "text": "#ff9850"},
     "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff",  "text": "#d4a0ff"},
+    "FOR-E": {"bg": "rgba(255,200,50,0.35)",  "border": "#ffc832",  "text": "#ffe080"},
+    "FOR-P": {"bg": "rgba(50,200,120,0.35)",  "border": "#32c878",  "text": "#80ffb0"},
+    "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff",  "text": "#a0f0ff"},
 }
 DEFAULT_COLOR = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"}
 
@@ -556,7 +562,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .tl-name {{ width: 70px; font-size: 10px; color: #aaa; font-weight: 500;
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
                     padding-right: 6px; cursor: pointer; transition: color 0.2s;
-                    position: sticky; left: 0; z-index: 2; background: rgba(10,10,25,0.95); }}
+                    position: sticky; left: 0; z-index: 2;
+                    background: linear-gradient(90deg, #1e1e1e 80%, transparent);
+                    padding-right: 10px; }}
         .tl-name:hover {{ color: #FF7832; }}
         .tl-bar-container {{ flex: 1; position: relative; height: 26px;
                              background: rgba(255,255,255,0.02); border-radius: 5px; }}
@@ -913,7 +921,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
             renderTimeline();
         }}
 
-        // ── Legend ──
+        // ── Legend ── Build code-to-label map from all events
+        var CODE_LABELS = {{}};
+        Object.keys(DATA).forEach(function(n) {{
+            if (n === '_codeNames') return;
+            DATA[n].events.forEach(function(ev) {{
+                if (ev.label && ev.label !== ev.code) CODE_LABELS[ev.code] = ev.label;
+            }});
+        }});
         function renderLegend(codes) {{
             var el = document.getElementById('legend');
             el.innerHTML = '';
@@ -924,9 +939,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 var c = getColor(code);
                 var item = document.createElement('div');
                 item.className = 'legend-item';
+                var displayName = CODE_LABELS[code] || (DATA._codeNames && DATA._codeNames[code]) || code;
                 item.innerHTML = '<div class="legend-dot" style="background:' + c.border +
-                    ';box-shadow:0 0 6px ' + c.border + '"></div>' +
-                    (DATA._codeNames && DATA._codeNames[code] || code);
+                    ';box-shadow:0 0 6px ' + c.border + '"></div>' + displayName;
                 el.appendChild(item);
             }});
         }}
