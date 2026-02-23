@@ -78,6 +78,15 @@ FRENCH_MONTHS = {
 # ── Utilitaires ────────────────────────────────────────────────────────────
 
 
+def first_name(name):
+    """DE NOUEL Maxime -> Maxime, HEBERT Jean Baptiste -> Jean Baptiste"""
+    parts = name.split()
+    for i, p in enumerate(parts):
+        if p != p.upper():
+            return ' '.join(parts[i:])
+    return parts[-1]
+
+
 def slug(name):
     """BONILLO Matthieu -> bonillo-matthieu"""
     s = name.lower()
@@ -441,14 +450,15 @@ def generate_html(week_employees, week_num, year, all_weeks):
     for name in week_employees:
         s = slug(name)
         has_events = len(week_employees[name]) > 0
+        fn = first_name(name)
         if has_events:
             employee_buttons += (
                 f'            <button class="employee-btn" data-name="{name}" '
-                f'data-slug="{s}">{name}</button>\n'
+                f'data-slug="{s}">{fn}</button>\n'
             )
         else:
             employee_buttons += (
-                f'            <div class="employee-btn repos">{name} '
+                f'            <div class="employee-btn repos">{fn} '
                 f'<span class="badge">Repos</span></div>\n'
             )
 
@@ -783,8 +793,29 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
     <script>
     (function() {{
-        var NOTES_DATA = {notes_json};
-        var DATA = {events_json};
+        var NOTES_DATA = (function() {{
+            var embedded = {notes_json};
+            try {{
+                var saved = localStorage.getItem('planning-notes-S{week_num}');
+                if (saved) return JSON.parse(saved);
+            }} catch(e) {{}}
+            return embedded;
+        }})();
+        var DATA = (function() {{
+            var embedded = {events_json};
+            try {{
+                var saved = localStorage.getItem('planning-edits-S{week_num}');
+                if (saved) {{
+                    var edits = JSON.parse(saved);
+                    Object.keys(edits).forEach(function(name) {{
+                        if (embedded[name]) {{
+                            embedded[name].events = edits[name].events;
+                        }}
+                    }});
+                }}
+            }} catch(e) {{}}
+            return embedded;
+        }})();
         var COLORS = {colors_json};
         var DEFAULT_C = {default_color_json};
         var DAYS = {day_labels_json};
@@ -793,6 +824,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var currentView = 'day';
 
         function getColor(code) {{ return COLORS[code] || DEFAULT_C; }}
+        function getFirstName(n) {{ var p=n.split(' '); for(var i=0;i<p.length;i++){{ if(p[i]!==p[i].toUpperCase()) return p.slice(i).join(' '); }} return p[p.length-1]; }}
 
         // ── Day tabs ──
         var dayTabsEl = document.getElementById('day-tabs');
@@ -925,7 +957,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
                 var nameEl = document.createElement('div');
                 nameEl.className = 'tl-name';
-                nameEl.textContent = name.split(' ').slice(1).join(' ') || name.split(' ')[0];
+                nameEl.textContent = getFirstName(name);
                 nameEl.title = name;
                 nameEl.onclick = function() {{ openModal(name); }};
                 row.appendChild(nameEl);
@@ -1074,7 +1106,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
                     lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
                     lines.push('DTEND;TZID=Europe/Paris:' + toICSDate(e));
-                    lines.push('SUMMARY:' + name + ' - ' + ev.label);
+                    lines.push('SUMMARY:' + getFirstName(name) + ' - ' + ev.label);
                     if (noteDesc) lines.push('DESCRIPTION:' + icsEscape(noteDesc));
                     lines.push('END:VEVENT');
                 }});
@@ -1127,7 +1159,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             var emp = DATA[name];
             if (!emp) return;
 
-            document.getElementById('modal-name').textContent = name;
+            document.getElementById('modal-name').textContent = getFirstName(name);
             var body = document.getElementById('modal-body');
             body.innerHTML = '';
 
@@ -1206,6 +1238,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var notesEl = document.getElementById('week-notes');
         var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
         var notesDirty = false;
+        function saveNotesLocal() {{
+            try {{ localStorage.setItem('planning-notes-S{week_num}', JSON.stringify(notesWork)); }} catch(e) {{}}
+        }}
 
         function getToken() {{ return localStorage.getItem(TOKEN_KEY) || ''; }}
         function setToken(t) {{ localStorage.setItem(TOKEN_KEY, t); }}
@@ -1237,7 +1272,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     txt.contentEditable = 'false';
                     data.comment = txt.innerText;
                     editBtn.innerHTML = '\u270e';
-                    notesDirty = true;
+                    notesDirty = true; saveNotesLocal();
                     renderNotes();
                 }} else {{
                     txt.contentEditable = 'true';
@@ -1279,7 +1314,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                         utxt.contentEditable = 'false';
                         data.updates[idx].text = utxt.innerText;
                         uedit.innerHTML = '\u270e';
-                        notesDirty = true;
+                        notesDirty = true; saveNotesLocal();
                         renderNotes();
                     }} else {{
                         utxt.contentEditable = 'true';
@@ -1289,7 +1324,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 }};
                 udel.onclick = function() {{
                     data.updates.splice(idx, 1);
-                    notesDirty = true;
+                    notesDirty = true; saveNotesLocal();
                     renderNotes();
                 }};
             }});
@@ -1304,7 +1339,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     (today.getMonth()+1).toString().padStart(2,'0') + '-' +
                     today.getDate().toString().padStart(2,'0');
                 data.updates.push({{ date: ds, text: '' }});
-                notesDirty = true;
+                notesDirty = true; saveNotesLocal();
                 renderNotes();
                 var cards = notesEl.querySelectorAll('.note-card.update .note-text');
                 if (cards.length > 0) {{
@@ -1317,33 +1352,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
             }};
             notesEl.appendChild(addBtn);
 
-            // Publish button (visible when changes exist or token not set)
+            // Publish button (only if admin token is set and notes changed)
             var token = getToken();
-            if (!token) {{
-                // Admin setup: enter GitHub token
-                var setup = document.createElement('div');
-                setup.className = 'admin-setup';
-                var inp = document.createElement('input');
-                inp.className = 'admin-input';
-                inp.type = 'password';
-                inp.placeholder = 'Token GitHub (admin)';
-                var saveBtn = document.createElement('button');
-                saveBtn.className = 'admin-save-btn';
-                saveBtn.textContent = 'Enregistrer';
-                saveBtn.onclick = function() {{
-                    if (inp.value.trim()) {{
-                        setToken(inp.value.trim());
-                        renderNotes();
-                    }}
-                }};
-                setup.appendChild(inp);
-                setup.appendChild(saveBtn);
-                notesEl.appendChild(setup);
-                var hint = document.createElement('div');
-                hint.className = 'admin-hint';
-                hint.textContent = 'Token requis pour publier les notes (GitHub > Settings > Tokens > contents: write)';
-                notesEl.appendChild(hint);
-            }} else if (notesDirty) {{
+            if (token && notesDirty) {{
                 var pubBtn = document.createElement('button');
                 pubBtn.className = 'publish-btn';
                 pubBtn.textContent = 'Publier les notes';
@@ -1504,7 +1515,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             popup.className = 'edit-popup';
             popup.id = 'edit-popup';
             popup.innerHTML =
-                '<h3>' + empName + ' \u2014 ' + ev.label + '</h3>' +
+                '<h3>' + getFirstName(empName) + ' \u2014 ' + ev.label + '</h3>' +
                 '<div class="field"><label>D\u00e9but</label><input type="time" id="edit-start" value="' + sh + '"></div>' +
                 '<div class="field"><label>Fin</label><input type="time" id="edit-end" value="' + eh + '"></div>' +
                 '<div class="actions">' +
@@ -1530,12 +1541,24 @@ def generate_html(week_employees, week_num, year, all_weeks):
             if (el) el.remove();
         }}
 
+        function saveEditsToLocal() {{
+            try {{
+                var edits = {{}};
+                Object.keys(DATA).forEach(function(name) {{
+                    if (name === '_codeNames') return;
+                    edits[name] = {{ events: DATA[name].events }};
+                }});
+                localStorage.setItem('planning-edits-S{week_num}', JSON.stringify(edits));
+            }} catch(e) {{}}
+        }}
+
         function applyTimeEdit(empName, ev, newStart, newEnd) {{
             // Update the DATA object in memory
             var dateStr = ev.start.substring(0, 11); // "2026-03-02T"
             ev.start = dateStr + newStart;
             ev.end = dateStr + newEnd;
             renderTimeline();
+            saveEditsToLocal();
 
             // Show saving status
             var statusEl = document.getElementById('edit-status');
@@ -1593,12 +1616,24 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
         // Init admin toolbar if token exists
         initAdminToolbar();
-        // Re-init after token is saved in notes section
-        var _origSetToken = setToken;
-        setToken = function(t) {{
-            _origSetToken(t);
-            initAdminToolbar();
-        }};
+
+        // Admin link at bottom to enter token
+        if (!getToken()) {{
+            var adminLink = document.createElement('div');
+            adminLink.style.cssText = 'text-align:center;margin:20px 0;';
+            adminLink.innerHTML = '<a href="#" style="color:#444;font-size:11px;text-decoration:none;">Admin</a>';
+            adminLink.querySelector('a').onclick = function(e) {{
+                e.preventDefault();
+                var t = prompt('Token GitHub (admin):');
+                if (t && t.trim()) {{
+                    setToken(t.trim());
+                    adminLink.remove();
+                    initAdminToolbar();
+                    renderNotes();
+                }}
+            }};
+            document.querySelector('.container').appendChild(adminLink);
+        }}
 
     }})();
     </script>
