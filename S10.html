@@ -101,6 +101,12 @@
         .tl-grid-line { position: absolute; top: 0; bottom: 0; width: 1px; pointer-events: none; z-index: 0; }
         .tl-grid-line.hour { background: rgba(255,255,255,0.10); }
         .tl-grid-line.half { background: rgba(255,255,255,0.05); border-left: 1px dashed rgba(255,255,255,0.08); width: 0; }
+        .tl-now-line { position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
+                        border-left: 2px dashed #ffd700;
+                        filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 12px rgba(255,215,0,0.6)); }
+        .tl-now-marker { position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
+                          border-left: 2px dashed #ffd700;
+                          filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 12px rgba(255,215,0,0.6)); }
         .tl-bar { position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
                    font-size: 9px; font-weight: 600; overflow: hidden;
@@ -669,12 +675,30 @@
 
             tl.appendChild(inner);
 
-            // Auto-scroll to current hour if viewing today
+            // Auto-scroll to current hour if viewing today + draw now-line
             var _now = new Date();
             var _today = _now.getFullYear() + '-' + String(_now.getMonth()+1).padStart(2,'0') + '-' + String(_now.getDate()).padStart(2,'0');
             if (WEEK_DATES[currentDay] === _today) {
                 var currentH = _now.getHours() + _now.getMinutes() / 60;
                 if (currentH >= minH && currentH <= maxH) {
+                    // Draw now-line on each bar container
+                    var nowPct = ((currentH - minH) / range) * 100;
+                    inner.querySelectorAll('.tl-bar-container').forEach(function(bc) {
+                        var nl = document.createElement('div');
+                        nl.className = 'tl-now-line';
+                        nl.style.left = nowPct + '%';
+                        bc.appendChild(nl);
+                    });
+                    // Draw now-line on time markers row
+                    var tmRow = inner.querySelector('.time-markers');
+                    if (tmRow) {
+                        tmRow.style.position = 'relative';
+                        var nm = document.createElement('div');
+                        nm.className = 'tl-now-marker';
+                        nm.style.left = nowPct + '%';
+                        tmRow.appendChild(nm);
+                    }
+
                     setTimeout(function() {
                         var scrollPct = (currentH - minH) / range;
                         var nameColWidth = 70;
@@ -685,6 +709,14 @@
                 }
             }
         }
+
+        // Auto-update now-line every 60 seconds
+        setInterval(function() {
+            var view = document.getElementById('view-day');
+            if (view && view.style.display !== 'none') {
+                renderTimeline();
+            }
+        }, 60000);
 
         function pad2(n) { return n.toString().padStart(2, '0'); }
 
