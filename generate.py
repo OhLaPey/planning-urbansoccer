@@ -567,7 +567,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
                     padding-right: 6px; cursor: pointer; transition: color 0.2s;
                     position: sticky; left: 0; z-index: 2;
-                    background: linear-gradient(90deg, #1e1e1e 80%, transparent);
+                    background: linear-gradient(90deg, rgba(10,10,25,0.98) 80%, transparent);
                     padding-right: 10px; }}
         .tl-name:hover {{ color: #FF7832; }}
         .tl-bar-container {{ flex: 1; position: relative; height: 26px;
@@ -747,6 +747,46 @@ def generate_html(week_employees, week_num, year, all_weeks):
                         color: #666; padding: 3px 8px; background: rgba(255,255,255,0.03);
                         border-radius: 6px; }}
         .legend-dot {{ width: 8px; height: 8px; border-radius: 50%; }}
+
+        /* ── Desktop : planning agrandi ── */
+        @media (min-width: 900px) {{
+            body {{ padding: 24px 40px; }}
+            .container {{ max-width: 1100px; padding: 8px 18px; }}
+            h1 {{ font-size: 24px; letter-spacing: 2px; }}
+            .subtitle {{ font-size: 14px; }}
+            .dates {{ font-size: 16px; padding: 8px 20px; }}
+            .week-selector {{ gap: 8px; }}
+            .week-tab {{ font-size: 14px; padding: 10px 18px; }}
+            .view-toggle {{ max-width: 500px; margin-left: auto; margin-right: auto; }}
+            .view-btn {{ font-size: 14px; padding: 10px; }}
+            .day-tabs {{ gap: 6px; margin-bottom: 16px; }}
+            .day-tab {{ font-size: 13px; padding: 10px 14px; border-radius: 10px; }}
+            .timeline {{ margin-bottom: 28px; }}
+            .timeline-row {{ margin-bottom: 6px; }}
+            .tl-name {{ width: 130px; font-size: 13px; padding-right: 14px; }}
+            .tl-bar-container {{ height: 36px; border-radius: 7px; }}
+            .tl-bar {{ border-radius: 7px; font-size: 11px; border-left-width: 3px; }}
+            .tl-bar .bar-label {{ padding: 0 6px; }}
+            .time-marker {{ font-size: 12px; }}
+            .legend {{ gap: 10px; margin-bottom: 20px; }}
+            .legend-item {{ font-size: 12px; padding: 4px 10px; }}
+            .legend-dot {{ width: 10px; height: 10px; }}
+            .employee-list {{ gap: 8px; }}
+            .employee-btn {{ font-size: 15px; padding: 14px 18px; }}
+            .badge {{ font-size: 12px; padding: 4px 10px; }}
+            .modal {{ max-width: 650px; }}
+            .modal-header h2 {{ font-size: 18px; }}
+            .modal-event .ev-time {{ font-size: 13px; min-width: 100px; }}
+            .modal-event .ev-label {{ font-size: 14px; }}
+            .cal-chooser {{ max-width: 550px; }}
+        }}
+        @media (min-width: 1300px) {{
+            .container {{ max-width: 1400px; padding: 10px 24px; }}
+            .tl-name {{ width: 150px; font-size: 14px; }}
+            .tl-bar-container {{ height: 40px; }}
+            .tl-bar {{ font-size: 12px; }}
+            .time-marker {{ font-size: 13px; }}
+        }}
     </style>
 </head>
 <body>
@@ -981,9 +1021,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
             if (maxH <= minH) maxH = minH + 1;
             var range = maxH - minH;
 
-            // Set inner width: 40px per hour for comfortable reading
-            var pxPerHour = 40;
-            inner.style.minWidth = (70 + range * pxPerHour) + 'px';
+            // Set inner width: wider on desktop for comfort
+            var isDesktop = window.innerWidth >= 900;
+            var pxPerHour = isDesktop ? 80 : 40;
+            var nameW = isDesktop ? 150 : 70;
+            inner.style.minWidth = (nameW + range * pxPerHour) + 'px';
 
             // Grid line positions for bar containers
             var gridLines = [];
