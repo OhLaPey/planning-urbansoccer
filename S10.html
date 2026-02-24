@@ -182,7 +182,6 @@
 
         .no-events { text-align: center; padding: 30px; color: #444; font-size: 13px; }
 
-
         /* ── Notes de semaine ── */
         .week-notes { margin-bottom: 15px; }
         .note-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
@@ -419,11 +418,11 @@
             } catch(e) {}
             return embedded;
         })();
-        var COLORS = {"VDC": {"bg": "rgba(255,120,50,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}, "FOR-E": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FOR-P": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}, "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}};
+        var COLORS = {"VDC": {"bg": "rgba(255,120,50,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FOR-E": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FOR-P": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}, "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}};
         var DEFAULT_C = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"};
         var DAYS = ["Lun 02", "Mar 03", "Mer 04", "Jeu 05", "Ven 06", "Sam 07", "Dim 08"];
         var DAYS_FULL = ["Lundi 02/03", "Mardi 03/03", "Mercredi 04/03", "Jeudi 05/03", "Vendredi 06/03", "Samedi 07/03", "Dimanche 08/03"];
-        var WEEK_DATES = ['2026-03-02','2026-03-03','2026-03-04','2026-03-05','2026-03-06','2026-03-07','2026-03-08'];
+        var WEEK_DATES = ["2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08"];
         var currentDay = 0;
         (function() {
             var now = new Date();
@@ -500,7 +499,6 @@
                     if (ev.day === currentDay) {
                         dayEvents.push({ name: name, ev: ev });
                         allCodes.push(ev.code);
-                        if (ev.label && ev.label !== ev.code) CODE_LABELS[ev.code] = ev.label;
                     }
                 });
             });
@@ -893,16 +891,13 @@
                 uhdr.className = 'note-header';
                 var dateLabel = '';
                 if (u.date) {
-                    var d = new Date(u.date);
-                    var jours = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-                    var mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
-                    dateLabel = ' — ' + jours[d.getDay()] + ' ' + d.getDate() + ' ' + mois[d.getMonth()];
-                    if (u.date.length > 10) {
-                        dateLabel += ' à ' + u.date.substring(11, 16);
-                    } else {
-                        var now = new Date();
-                        dateLabel += ' à ' + now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
-                    }
+                    var _dp = u.date.split(/[\-T ]/);
+                    var _dd = new Date(parseInt(_dp[0]), parseInt(_dp[1])-1, parseInt(_dp[2]),
+                        _dp.length > 3 ? parseInt(_dp[3]) : 0, _dp.length > 4 ? parseInt(_dp[4]) : 0);
+                    var _jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+                    var _mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+                    var _timePart = (_dp.length > 3) ? ' à ' + _dp[3] + 'h' + (_dp[4] || '00') : '';
+                    dateLabel = ' — ' + _jours[_dd.getDay()] + ' ' + _dd.getDate() + ' ' + _mois[_dd.getMonth()] + _timePart;
                 }
                 uhdr.innerHTML = '<span class="note-label update">Mise à jour' + dateLabel + '</span>';
                 var uactions = document.createElement('div');
