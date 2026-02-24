@@ -446,6 +446,10 @@ def generate_html(week_employees, week_num, year, all_weeks):
         f"{DAYS_FULL[i]} {(monday + timedelta(days=i)).day:02d}/{(monday + timedelta(days=i)).month:02d}"
         for i in range(7)
     ], ensure_ascii=False)
+    week_dates_json = json.dumps([
+        (monday + timedelta(days=i)).strftime('%Y-%m-%d')
+        for i in range(7)
+    ])
 
     week_tabs = ""
     for w in sorted(all_weeks):
@@ -563,7 +567,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
                     padding-right: 6px; cursor: pointer; transition: color 0.2s;
                     position: sticky; left: 0; z-index: 2;
-                    background: linear-gradient(90deg, #1e1e1e 80%, transparent);
+                    background: linear-gradient(90deg, rgba(10,10,25,0.98) 80%, transparent);
                     padding-right: 10px; }}
         .tl-name:hover {{ color: #FF7832; }}
         .tl-bar-container {{ flex: 1; position: relative; height: 26px;
@@ -651,31 +655,6 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .cal-chooser-cancel:hover {{ color:#fff; border-color:rgba(255,255,255,0.3); }}
 
         .no-events {{ text-align: center; padding: 30px; color: #444; font-size: 13px; }}
-
-        /* ── Custom checkbox (DA) ── */
-        .tl-check-wrap {{ flex-shrink: 0; margin-left: 6px; }}
-        .tl-check {{ display: none; }}
-        .tl-check-label {{ display: block; width: 20px; height: 20px; border-radius: 5px;
-                           border: 2px solid rgba(255,255,255,0.15); cursor: pointer;
-                           transition: all 0.2s; position: relative; }}
-        .tl-check-label:hover {{ border-color: rgba(255,120,50,0.5); }}
-        .tl-check:checked + .tl-check-label {{ background: #FF7832; border-color: #FF7832;
-                                                box-shadow: 0 0 8px rgba(255,120,50,0.4); }}
-        .tl-check:checked + .tl-check-label::after {{ content: ''; position: absolute;
-            left: 5px; top: 2px; width: 5px; height: 9px;
-            border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }}
-        .export-bar {{ display: none; justify-content: center; margin-top: 12px; }}
-        .export-bar.visible {{ display: flex; }}
-        .export-btn {{ display: inline-flex; align-items: center; gap: 6px;
-                       padding: 10px 22px; background: rgba(255,120,50,0.15); color: #FF7832;
-                       border: 1px solid rgba(255,120,50,0.3); border-radius: 20px;
-                       font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;
-                       transition: all 0.2s; }}
-        .export-btn:hover {{ background: #FF7832; color: #fff;
-                             box-shadow: 0 0 20px rgba(255,120,50,0.4); }}
-        .select-all-row {{ display: flex; justify-content: flex-end; align-items: center;
-                           gap: 6px; margin-bottom: 4px; padding-right: 2px; }}
-        .select-all-label {{ font-size: 10px; color: #555; cursor: pointer; }}
 
         /* ── Notes de semaine ── */
         .week-notes {{ margin-bottom: 15px; }}
@@ -768,6 +747,46 @@ def generate_html(week_employees, week_num, year, all_weeks):
                         color: #666; padding: 3px 8px; background: rgba(255,255,255,0.03);
                         border-radius: 6px; }}
         .legend-dot {{ width: 8px; height: 8px; border-radius: 50%; }}
+
+        /* ── Desktop : planning agrandi ── */
+        @media (min-width: 900px) {{
+            body {{ padding: 24px 40px; }}
+            .container {{ max-width: 1100px; padding: 8px 18px; }}
+            h1 {{ font-size: 24px; letter-spacing: 2px; }}
+            .subtitle {{ font-size: 14px; }}
+            .dates {{ font-size: 16px; padding: 8px 20px; }}
+            .week-selector {{ gap: 8px; }}
+            .week-tab {{ font-size: 14px; padding: 10px 18px; }}
+            .view-toggle {{ max-width: 500px; margin-left: auto; margin-right: auto; }}
+            .view-btn {{ font-size: 14px; padding: 10px; }}
+            .day-tabs {{ gap: 6px; margin-bottom: 16px; }}
+            .day-tab {{ font-size: 13px; padding: 10px 14px; border-radius: 10px; }}
+            .timeline {{ margin-bottom: 28px; }}
+            .timeline-row {{ margin-bottom: 6px; }}
+            .tl-name {{ width: 130px; font-size: 13px; padding-right: 14px; }}
+            .tl-bar-container {{ height: 36px; border-radius: 7px; }}
+            .tl-bar {{ border-radius: 7px; font-size: 11px; border-left-width: 3px; }}
+            .tl-bar .bar-label {{ padding: 0 6px; }}
+            .time-marker {{ font-size: 12px; }}
+            .legend {{ gap: 10px; margin-bottom: 20px; }}
+            .legend-item {{ font-size: 12px; padding: 4px 10px; }}
+            .legend-dot {{ width: 10px; height: 10px; }}
+            .employee-list {{ gap: 8px; }}
+            .employee-btn {{ font-size: 15px; padding: 14px 18px; }}
+            .badge {{ font-size: 12px; padding: 4px 10px; }}
+            .modal {{ max-width: 650px; }}
+            .modal-header h2 {{ font-size: 18px; }}
+            .modal-event .ev-time {{ font-size: 13px; min-width: 100px; }}
+            .modal-event .ev-label {{ font-size: 14px; }}
+            .cal-chooser {{ max-width: 550px; }}
+        }}
+        @media (min-width: 1300px) {{
+            .container {{ max-width: 1400px; padding: 10px 24px; }}
+            .tl-name {{ width: 150px; font-size: 14px; }}
+            .tl-bar-container {{ height: 40px; }}
+            .tl-bar {{ font-size: 12px; }}
+            .time-marker {{ font-size: 13px; }}
+        }}
     </style>
 </head>
 <body>
@@ -793,11 +812,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         <div id="view-day">
             <div class="day-tabs" id="day-tabs"></div>
             <div class="legend" id="legend"></div>
-            <div id="select-all-container"></div>
             <div class="timeline" id="timeline"></div>
-            <div class="export-bar" id="export-bar">
-                <button class="export-btn" id="export-btn">Exporter la s\u00e9lection</button>
-            </div>
         </div>
 
         <!-- ── Vue Staff (liste) ── -->
@@ -897,7 +912,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var DEFAULT_C = {default_color_json};
         var DAYS = {day_labels_json};
         var DAYS_FULL = {day_labels_full_json};
+        var WEEK_DATES = {week_dates_json};
         var currentDay = 0;
+        (function() {{
+            var now = new Date();
+            var today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+            var idx = WEEK_DATES.indexOf(today);
+            if (idx !== -1) currentDay = idx;
+        }})();
         var currentView = 'day';
 
         function getColor(code) {{ return COLORS[code] || DEFAULT_C; }}
@@ -907,7 +929,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var dayTabsEl = document.getElementById('day-tabs');
         DAYS.forEach(function(label, i) {{
             var btn = document.createElement('div');
-            btn.className = 'day-tab' + (i === 0 ? ' active' : '');
+            btn.className = 'day-tab' + (i === currentDay ? ' active' : '');
             btn.textContent = label;
             btn.onclick = function() {{ selectDay(i); }};
             dayTabsEl.appendChild(btn);
@@ -920,6 +942,12 @@ def generate_html(week_employees, week_num, year, all_weeks):
             }});
             renderTimeline();
         }}
+
+        // Scroll active day tab into view
+        setTimeout(function() {{
+            var activeTab = dayTabsEl.querySelector('.day-tab.active');
+            if (activeTab) activeTab.scrollIntoView({{ inline: 'center', block: 'nearest' }});
+        }}, 0);
 
         // ── Legend ── Build code-to-label map from all events
         var CODE_LABELS = {{}};
@@ -993,9 +1021,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
             if (maxH <= minH) maxH = minH + 1;
             var range = maxH - minH;
 
-            // Set inner width: 40px per hour for comfortable reading
-            var pxPerHour = 40;
-            inner.style.minWidth = (70 + range * pxPerHour) + 'px';
+            // Set inner width: wider on desktop for comfort
+            var isDesktop = window.innerWidth >= 900;
+            var pxPerHour = isDesktop ? 80 : 40;
+            var nameW = isDesktop ? 150 : 70;
+            inner.style.minWidth = (nameW + range * pxPerHour) + 'px';
 
             // Grid line positions for bar containers
             var gridLines = [];
@@ -1083,56 +1113,26 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     barContainer.appendChild(bar);
                 }});
 
-                var cbWrap = document.createElement('div');
-                cbWrap.className = 'tl-check-wrap';
-                var cbId = 'cb-' + name.replace(/\\s+/g, '-');
-                var cb = document.createElement('input');
-                cb.type = 'checkbox';
-                cb.className = 'tl-check';
-                cb.id = cbId;
-                cb.setAttribute('data-name', name);
-                cb.onchange = updateExportBar;
-                var cbLabel = document.createElement('label');
-                cbLabel.className = 'tl-check-label';
-                cbLabel.setAttribute('for', cbId);
-                cbWrap.appendChild(cb);
-                cbWrap.appendChild(cbLabel);
-
                 row.appendChild(barContainer);
-                row.appendChild(cbWrap);
                 inner.appendChild(row);
             }});
 
             tl.appendChild(inner);
 
-            // Export day button
-            var selContainer = document.getElementById('select-all-container');
-            selContainer.innerHTML = '';
-            if (nameOrder.length > 0) {{
-                var selRow = document.createElement('div');
-                selRow.className = 'select-all-row';
-                var exportDayBtn = document.createElement('button');
-                exportDayBtn.className = 'export-btn';
-                exportDayBtn.textContent = 'Exporter la journ\u00e9e';
-                exportDayBtn.onclick = function() {{
-                    document.querySelectorAll('#timeline .tl-check').forEach(function(c) {{ c.checked = true; }});
-                    updateExportBar();
-                    document.getElementById('export-btn').click();
-                }};
-                selRow.appendChild(exportDayBtn);
-                selContainer.appendChild(selRow);
-            }}
-        }}
-
-        function updateExportBar() {{
-            var checked = document.querySelectorAll('#timeline .tl-check:checked');
-            var bar = document.getElementById('export-bar');
-            if (checked.length > 0) {{
-                bar.classList.add('visible');
-                document.getElementById('export-btn').textContent =
-                    'Exporter ' + checked.length + ' planning' + (checked.length > 1 ? 's' : '');
-            }} else {{
-                bar.classList.remove('visible');
+            // Auto-scroll to current hour if viewing today
+            var _now = new Date();
+            var _today = _now.getFullYear() + '-' + String(_now.getMonth()+1).padStart(2,'0') + '-' + String(_now.getDate()).padStart(2,'0');
+            if (WEEK_DATES[currentDay] === _today) {{
+                var currentH = _now.getHours() + _now.getMinutes() / 60;
+                if (currentH >= minH && currentH <= maxH) {{
+                    setTimeout(function() {{
+                        var scrollPct = (currentH - minH) / range;
+                        var nameColWidth = 70;
+                        var scrollableWidth = inner.scrollWidth - nameColWidth;
+                        var scrollTarget = nameColWidth + scrollPct * scrollableWidth - tl.clientWidth / 2;
+                        tl.scrollLeft = Math.max(0, scrollTarget);
+                    }}, 0);
+                }}
             }}
         }}
 
@@ -1232,20 +1232,6 @@ def generate_html(week_employees, week_num, year, all_weeks):
             }} else {{
                 prompt('Copier ce lien :', url);
             }}
-        }};
-
-        document.getElementById('export-btn').onclick = function() {{
-            var checked = document.querySelectorAll('#timeline .tl-check:checked');
-            var names = [];
-            checked.forEach(function(c) {{ names.push(c.getAttribute('data-name')); }});
-            if (names.length === 0) return;
-            if (names.length === 1) {{
-                var emp = DATA[names[0]];
-                if (emp) openCalendarChooser(emp.slug, getFirstName(names[0]));
-                return;
-            }}
-            var first = DATA[names[0]];
-            if (first) openCalendarChooser(first.slug, names.length + ' employés');
         }};
 
         // ── View toggle ──
