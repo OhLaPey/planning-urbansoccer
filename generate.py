@@ -387,7 +387,7 @@ def generate_ics(name, events, week_notes=None):
                 f"DTSTAMP:{dtstamp_utc}",
                 f"DTSTART;TZID=Europe/Paris:{dt_start}",
                 f"DTEND;TZID=Europe/Paris:{dt_end}",
-                f"SUMMARY:{evt['label']}",
+                f"SUMMARY:{evt['label'].replace(chr(92), chr(92)+chr(92)).replace(',', chr(92)+',').replace(';', chr(92)+';')}",
             ]
             if desc_escaped:
                 vevent.append(f"DESCRIPTION:{desc_escaped}")
@@ -395,7 +395,33 @@ def generate_ics(name, events, week_notes=None):
             lines.extend(vevent)
 
     lines.append("END:VCALENDAR")
-    return "\r\n".join(lines)
+    # RFC 5545 §3.1: content lines MUST NOT exceed 75 octets – fold long lines
+    folded = []
+    for line in lines:
+        encoded = line.encode("utf-8")
+        if len(encoded) <= 75:
+            folded.append(line)
+        else:
+            # First chunk: max 75 octets, continuations: space + max 74 octets
+            chunks = []
+            while len(encoded) > 75:
+                # Find a safe cut point (don't split multi-byte UTF-8 chars)
+                cut = 75 if not chunks else 74
+                pos = cut
+                while pos > 0 and (encoded[pos] & 0xC0) == 0x80:
+                    pos -= 1
+                if pos == 0:
+                    pos = cut  # fallback
+                if chunks:
+                    chunks.append(" " + encoded[:pos].decode("utf-8", errors="replace"))
+                else:
+                    chunks.append(encoded[:pos].decode("utf-8", errors="replace"))
+                encoded = encoded[pos:]
+            if encoded:
+                rest = encoded.decode("utf-8", errors="replace")
+                chunks.append((" " + rest) if chunks else rest)
+            folded.extend(chunks)
+    return "\r\n".join(folded) + "\r\n"
 
 
 # ── Génération HTML ────────────────────────────────────────────────────────
@@ -579,12 +605,16 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .tl-grid-line {{ position: absolute; top: 0; bottom: 0; width: 1px; pointer-events: none; z-index: 0; }}
         .tl-grid-line.hour {{ background: rgba(255,255,255,0.10); }}
         .tl-grid-line.half {{ background: rgba(255,255,255,0.05); border-left: 1px dashed rgba(255,255,255,0.08); width: 0; }}
+        @keyframes nowPulse {{
+            0%, 100% {{ filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 8px rgba(255,215,0,0.4)); opacity: 0.7; }}
+            50% {{ filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px rgba(255,215,0,0.8)); opacity: 1; }}
+        }}
         .tl-now-line {{ position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
                         border-left: 2px dashed #ffd700;
-                        filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 12px rgba(255,215,0,0.6)); }}
+                        animation: nowPulse 2s ease-in-out infinite; }}
         .tl-now-marker {{ position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
                           border-left: 2px dashed #ffd700;
-                          filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 12px rgba(255,215,0,0.6)); }}
+                          animation: nowPulse 2s ease-in-out infinite; }}
         .tl-bar {{ position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
                    font-size: 9px; font-weight: 600; overflow: hidden;

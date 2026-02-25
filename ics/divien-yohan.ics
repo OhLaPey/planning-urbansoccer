@@ -26,242 +26,362 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:divien-yohan-s10-1@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260302T090000
 DTEND;TZID=Europe/Paris:20260302T100000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-2@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260302T100000
 DTEND;TZID=Europe/Paris:20260302T120000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-3@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260302T120000
 DTEND;TZID=Europe/Paris:20260302T123000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-4@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260302T130000
 DTEND;TZID=Europe/Paris:20260302T140000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-5@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260302T140000
 DTEND;TZID=Europe/Paris:20260302T160000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-6@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260302T160000
 DTEND;TZID=Europe/Paris:20260302T170000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-7@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260303T090000
 DTEND;TZID=Europe/Paris:20260303T100000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-8@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260303T100000
 DTEND;TZID=Europe/Paris:20260303T120000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-9@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260303T120000
 DTEND;TZID=Europe/Paris:20260303T123000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-10@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260303T130000
 DTEND;TZID=Europe/Paris:20260303T140000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-11@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260303T140000
 DTEND;TZID=Europe/Paris:20260303T160000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-12@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260303T160000
 DTEND;TZID=Europe/Paris:20260303T170000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-13@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260304T094500
 DTEND;TZID=Europe/Paris:20260304T100000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-14@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260304T100000
 DTEND;TZID=Europe/Paris:20260304T120000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-15@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260304T120000
 DTEND;TZID=Europe/Paris:20260304T123000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-16@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260304T130000
 DTEND;TZID=Europe/Paris:20260304T140000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-17@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260304T140000
 DTEND;TZID=Europe/Paris:20260304T160000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-18@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260304T160000
 DTEND;TZID=Europe/Paris:20260304T170000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-19@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260305T090000
 DTEND;TZID=Europe/Paris:20260305T100000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-20@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260305T100000
 DTEND;TZID=Europe/Paris:20260305T120000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-21@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260305T120000
 DTEND;TZID=Europe/Paris:20260305T123000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-22@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260305T130000
 DTEND;TZID=Europe/Paris:20260305T140000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-23@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260305T140000
 DTEND;TZID=Europe/Paris:20260305T160000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-24@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260305T160000
 DTEND;TZID=Europe/Paris:20260305T180000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-25@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260306T094500
 DTEND;TZID=Europe/Paris:20260306T100000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-26@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260306T100000
 DTEND;TZID=Europe/Paris:20260306T120000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-27@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260306T120000
 DTEND;TZID=Europe/Paris:20260306T123000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-28@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260306T130000
 DTEND;TZID=Europe/Paris:20260306T140000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-29@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260306T140000
 DTEND;TZID=Europe/Paris:20260306T160000
 SUMMARY:Stage encadrement
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-30@urban7d
-DTSTAMP:20260225T231036Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260306T160000
 DTEND;TZID=Europe/Paris:20260306T170000
 SUMMARY:Stage
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 END:VCALENDAR
