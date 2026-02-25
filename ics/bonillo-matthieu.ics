@@ -26,10 +26,14 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:bonillo-matthieu-s10-1@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260308T134500
 DTEND;TZID=Europe/Paris:20260308T174500
 SUMMARY:Anniversaire
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 END:VCALENDAR

@@ -387,7 +387,7 @@ def generate_ics(name, events, week_notes=None):
                 f"DTSTAMP:{dtstamp_utc}",
                 f"DTSTART;TZID=Europe/Paris:{dt_start}",
                 f"DTEND;TZID=Europe/Paris:{dt_end}",
-                f"SUMMARY:{evt['label']}",
+                f"SUMMARY:{evt['label'].replace(chr(92), chr(92)+chr(92)).replace(',', chr(92)+',').replace(';', chr(92)+';')}",
             ]
             if desc_escaped:
                 vevent.append(f"DESCRIPTION:{desc_escaped}")
@@ -395,7 +395,33 @@ def generate_ics(name, events, week_notes=None):
             lines.extend(vevent)
 
     lines.append("END:VCALENDAR")
-    return "\r\n".join(lines)
+    # RFC 5545 §3.1: content lines MUST NOT exceed 75 octets – fold long lines
+    folded = []
+    for line in lines:
+        encoded = line.encode("utf-8")
+        if len(encoded) <= 75:
+            folded.append(line)
+        else:
+            # First chunk: max 75 octets, continuations: space + max 74 octets
+            chunks = []
+            while len(encoded) > 75:
+                # Find a safe cut point (don't split multi-byte UTF-8 chars)
+                cut = 75 if not chunks else 74
+                pos = cut
+                while pos > 0 and (encoded[pos] & 0xC0) == 0x80:
+                    pos -= 1
+                if pos == 0:
+                    pos = cut  # fallback
+                if chunks:
+                    chunks.append(" " + encoded[:pos].decode("utf-8", errors="replace"))
+                else:
+                    chunks.append(encoded[:pos].decode("utf-8", errors="replace"))
+                encoded = encoded[pos:]
+            if encoded:
+                rest = encoded.decode("utf-8", errors="replace")
+                chunks.append((" " + rest) if chunks else rest)
+            folded.extend(chunks)
+    return "\r\n".join(folded) + "\r\n"
 
 
 # ── Génération HTML ────────────────────────────────────────────────────────

@@ -26,74 +26,150 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:madiele-henri-s9-1@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260223T090000
 DTEND;TZID=Europe/Paris:20260223T154000
 SUMMARY:Vie de centre
-DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dorian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade) est remplacé par Medhi (qui viendra à 19h)\n
+DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
+  et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche mati
+ n\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi a
+ prem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran v
+ iendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samed
+ i pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés surtout avec les vacances scolai
+ res\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniver
+ saire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement
+  un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le 
+ reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dor
+ ian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade)
+  est remplacé par Medhi (qui viendra à 19h)\n
 END:VEVENT
 BEGIN:VEVENT
 UID:madiele-henri-s9-2@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260224T120000
 DTEND;TZID=Europe/Paris:20260224T143000
 SUMMARY:Vie de centre
-DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dorian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade) est remplacé par Medhi (qui viendra à 19h)\n
+DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
+  et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche mati
+ n\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi a
+ prem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran v
+ iendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samed
+ i pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés surtout avec les vacances scolai
+ res\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniver
+ saire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement
+  un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le 
+ reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dor
+ ian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade)
+  est remplacé par Medhi (qui viendra à 19h)\n
 END:VEVENT
 BEGIN:VEVENT
 UID:madiele-henri-s9-3@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260224T150000
 DTEND;TZID=Europe/Paris:20260224T220000
 SUMMARY:Vie de centre
-DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dorian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade) est remplacé par Medhi (qui viendra à 19h)\n
+DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
+  et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche mati
+ n\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi a
+ prem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran v
+ iendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samed
+ i pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés surtout avec les vacances scolai
+ res\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniver
+ saire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement
+  un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le 
+ reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dor
+ ian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade)
+  est remplacé par Medhi (qui viendra à 19h)\n
 END:VEVENT
 BEGIN:VEVENT
 UID:madiele-henri-s9-4@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260226T113000
 DTEND;TZID=Europe/Paris:20260226T180000
 SUMMARY:Vie de centre
-DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dorian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade) est remplacé par Medhi (qui viendra à 19h)\n
+DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
+  et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche mati
+ n\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi a
+ prem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran v
+ iendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samed
+ i pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés surtout avec les vacances scolai
+ res\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniver
+ saire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement
+  un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le 
+ reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dor
+ ian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade)
+  est remplacé par Medhi (qui viendra à 19h)\n
 END:VEVENT
 BEGIN:VEVENT
 UID:madiele-henri-s9-5@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260227T113000
 DTEND;TZID=Europe/Paris:20260227T173000
 SUMMARY:Vie de centre
-DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dorian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade) est remplacé par Medhi (qui viendra à 19h)\n
+DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
+  et Enzo\n🏆 P250H lundi matin\, P25H lundi aprem et P100H dimanche mati
+ n\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi a
+ prem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran v
+ iendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samed
+ i pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés surtout avec les vacances scolai
+ res\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniver
+ saire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement
+  un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le 
+ reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dor
+ ian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade)
+  est remplacé par Medhi (qui viendra à 19h)\n
 END:VEVENT
 BEGIN:VEVENT
 UID:madiele-henri-s10-1@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260302T090000
 DTEND;TZID=Europe/Paris:20260302T183000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:madiele-henri-s10-2@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260303T114000
 DTEND;TZID=Europe/Paris:20260303T183000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:madiele-henri-s10-3@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260305T113000
 DTEND;TZID=Europe/Paris:20260305T180000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
 UID:madiele-henri-s10-4@urban7d
-DTSTAMP:20260225T232718Z
+DTSTAMP:20260225T233556Z
 DTSTART;TZID=Europe/Paris:20260306T110000
 DTEND;TZID=Europe/Paris:20260306T173000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaires\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendredi soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
+ s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
+  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
+ i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés surtout avec les vacances scolaires
 END:VEVENT
 END:VCALENDAR
