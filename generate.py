@@ -354,6 +354,10 @@ def generate_ics(name, events, week_notes=None):
             by_week[w] = []
         by_week[w].append(evt)
 
+    # DTSTAMP must be UTC per RFC 5545
+    from datetime import datetime as _dt, timezone as _tz
+    dtstamp_utc = _dt.now(_tz.utc).strftime("%Y%m%dT%H%M%SZ")
+
     for week_num in sorted(by_week.keys()):
         # Build description with weekly notes if available
         wn = week_notes.get(week_num, {})
@@ -380,7 +384,7 @@ def generate_ics(name, events, week_notes=None):
             vevent = [
                 "BEGIN:VEVENT",
                 f"UID:{s}-s{week_num}-{i}@urban7d",
-                f"DTSTAMP:{dt_start}",
+                f"DTSTAMP:{dtstamp_utc}",
                 f"DTSTART;TZID=Europe/Paris:{dt_start}",
                 f"DTEND;TZID=Europe/Paris:{dt_end}",
                 f"SUMMARY:{evt['label']}",
@@ -575,6 +579,12 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .tl-grid-line {{ position: absolute; top: 0; bottom: 0; width: 1px; pointer-events: none; z-index: 0; }}
         .tl-grid-line.hour {{ background: rgba(255,255,255,0.10); }}
         .tl-grid-line.half {{ background: rgba(255,255,255,0.05); border-left: 1px dashed rgba(255,255,255,0.08); width: 0; }}
+        .tl-now-line {{ position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
+                        border-left: 2px dashed #ffd700;
+                        filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 12px rgba(255,215,0,0.6)); }}
+        .tl-now-marker {{ position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
+                          border-left: 2px dashed #ffd700;
+                          filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 12px rgba(255,215,0,0.6)); }}
         .tl-bar {{ position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
                    font-size: 9px; font-weight: 600; overflow: hidden;
@@ -596,6 +606,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .employee-btn.repos {{ color: #444; cursor: default; pointer-events: none; }}
         .badge {{ font-size: 10px; padding: 3px 8px; background: rgba(255,255,255,0.06);
                   border-radius: 15px; color: #444; }}
+        .hours-badge {{ background: rgba(255,120,50,0.15); color: #FF7832; font-weight: 600; }}
 
         /* ── Individual preview (modal) ── */
         .modal-overlay {{ display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
@@ -621,6 +632,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .modal-event .ev-label {{ font-size: 12px; font-weight: 500; }}
         .modal-footer {{ padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.06);
                          text-align: center; }}
+        .modal-hours-total {{ margin-top: 12px; padding: 10px 14px; text-align: right;
+                              font-size: 13px; color: #FF7832; font-weight: 500;
+                              border-top: 1px solid rgba(255,255,255,0.06); }}
         .subscribe-btn {{ display: inline-flex; align-items: center; gap: 8px;
                           padding: 10px 24px; background: #FF7832; color: white;
                           border: none; border-radius: 25px; font-size: 13px; font-weight: 600;
@@ -1119,12 +1133,30 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
             tl.appendChild(inner);
 
-            // Auto-scroll to current hour if viewing today
+            // Auto-scroll to current hour if viewing today + draw now-line
             var _now = new Date();
             var _today = _now.getFullYear() + '-' + String(_now.getMonth()+1).padStart(2,'0') + '-' + String(_now.getDate()).padStart(2,'0');
             if (WEEK_DATES[currentDay] === _today) {{
                 var currentH = _now.getHours() + _now.getMinutes() / 60;
                 if (currentH >= minH && currentH <= maxH) {{
+                    // Draw now-line on each bar container
+                    var nowPct = ((currentH - minH) / range) * 100;
+                    inner.querySelectorAll('.tl-bar-container').forEach(function(bc) {{
+                        var nl = document.createElement('div');
+                        nl.className = 'tl-now-line';
+                        nl.style.left = nowPct + '%';
+                        bc.appendChild(nl);
+                    }});
+                    // Draw now-line on time markers row
+                    var tmRow = inner.querySelector('.time-markers');
+                    if (tmRow) {{
+                        tmRow.style.position = 'relative';
+                        var nm = document.createElement('div');
+                        nm.className = 'tl-now-marker';
+                        nm.style.left = nowPct + '%';
+                        tmRow.appendChild(nm);
+                    }}
+
                     setTimeout(function() {{
                         var scrollPct = (currentH - minH) / range;
                         var nameColWidth = 70;
@@ -1135,6 +1167,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 }}
             }}
         }}
+
+        // Auto-update now-line every 60 seconds
+        setInterval(function() {{
+            var view = document.getElementById('view-day');
+            if (view && view.style.display !== 'none') {{
+                renderTimeline();
+            }}
+        }}, 60000);
 
         function pad2(n) {{ return n.toString().padStart(2, '0'); }}
 
@@ -1198,7 +1238,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
             document.getElementById('cal-chooser-name').textContent = displayName;
             document.getElementById('cal-google').href =
-                'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(fullUrl);
+                'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(webcalUrl);
             document.getElementById('cal-apple').href = webcalUrl;
             document.getElementById('cal-outlook').href =
                 'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(fullUrl) + '&name=' + calName;
@@ -1308,6 +1348,13 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
             if (!hasDays) {{
                 body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
+            }} else {{
+                // Total weekly hours footer
+                var totalH = computeWeeklyHours(emp);
+                var footer = document.createElement('div');
+                footer.className = 'modal-hours-total';
+                footer.innerHTML = 'Total semaine : <strong>' + formatHours(totalH) + '</strong>';
+                body.appendChild(footer);
             }}
 
             // Subscribe button → opens calendar chooser
@@ -1319,6 +1366,32 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
             modalEl.classList.add('open');
         }}
+
+        // ── Compute weekly hours per employee and display badges ──
+        function computeWeeklyHours(emp) {{
+            var total = 0;
+            emp.events.forEach(function(ev) {{
+                var s = new Date(ev.start);
+                var e = new Date(ev.end);
+                total += (e - s) / (1000 * 60 * 60);
+            }});
+            return total;
+        }}
+        function formatHours(h) {{
+            var hrs = Math.floor(h);
+            var mins = Math.round((h - hrs) * 60);
+            return mins > 0 ? hrs + 'h' + (mins < 10 ? '0' : '') + mins : hrs + 'h';
+        }}
+        document.querySelectorAll('.employee-btn[data-name]').forEach(function(btn) {{
+            var emp = DATA[btn.getAttribute('data-name')];
+            if (emp) {{
+                var hours = computeWeeklyHours(emp);
+                var badge = document.createElement('span');
+                badge.className = 'badge hours-badge';
+                badge.textContent = formatHours(hours);
+                btn.appendChild(badge);
+            }}
+        }});
 
         // ── Staff list click ──
         document.querySelectorAll('.employee-btn[data-name]').forEach(function(btn) {{
