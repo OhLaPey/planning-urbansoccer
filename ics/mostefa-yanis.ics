@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-1@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260227T235538Z
 DTSTART;TZID=Europe/Paris:20260301T093000
 DTEND;TZID=Europe/Paris:20260301T101500
 SUMMARY:Vie de centre
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-2@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260227T235538Z
 DTSTART;TZID=Europe/Paris:20260301T101500
 DTEND;TZID=Europe/Paris:20260301T121500
 SUMMARY:Anniversaire
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-3@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260227T235538Z
 DTSTART;TZID=Europe/Paris:20260301T121500
 DTEND;TZID=Europe/Paris:20260301T124500
 SUMMARY:Vie de centre
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-4@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260227T235538Z
 DTSTART;TZID=Europe/Paris:20260301T134500
 DTEND;TZID=Europe/Paris:20260301T174500
 SUMMARY:Anniversaire
@@ -106,7 +106,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-1@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260227T235538Z
 DTSTART;TZID=Europe/Paris:20260308T093000
 DTEND;TZID=Europe/Paris:20260308T101500
 SUMMARY:Vie de centre
@@ -122,7 +122,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-2@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260227T235538Z
 DTSTART;TZID=Europe/Paris:20260308T101500
 DTEND;TZID=Europe/Paris:20260308T121500
 SUMMARY:Anniversaire
@@ -138,7 +138,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-3@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260227T235538Z
 DTSTART;TZID=Europe/Paris:20260308T121500
 DTEND;TZID=Europe/Paris:20260308T124500
 SUMMARY:Vie de centre
@@ -154,7 +154,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-4@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260227T235538Z
 DTSTART;TZID=Europe/Paris:20260308T134500
 DTEND;TZID=Europe/Paris:20260308T174500
 SUMMARY:Anniversaire
@@ -167,5 +167,70 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
   \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
   Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
  tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s11-1@urban7d
+DTSTAMP:20260227T235538Z
+DTSTART;TZID=Europe/Paris:20260314T131500
+DTEND;TZID=Europe/Paris:20260314T171500
+SUMMARY:Anniversaire
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s11-2@urban7d
+DTSTAMP:20260227T235538Z
+DTSTART;TZID=Europe/Paris:20260315T093000
+DTEND;TZID=Europe/Paris:20260315T101500
+SUMMARY:Vie de centre
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s11-3@urban7d
+DTSTAMP:20260227T235538Z
+DTSTART;TZID=Europe/Paris:20260315T101500
+DTEND;TZID=Europe/Paris:20260315T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s11-4@urban7d
+DTSTAMP:20260227T235538Z
+DTSTART;TZID=Europe/Paris:20260315T121500
+DTEND;TZID=Europe/Paris:20260315T124500
+SUMMARY:Vie de centre
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s11-5@urban7d
+DTSTAMP:20260227T235538Z
+DTSTART;TZID=Europe/Paris:20260315T131500
+DTEND;TZID=Europe/Paris:20260315T151500
+SUMMARY:Anniversaire
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
 END:VEVENT
 END:VCALENDAR

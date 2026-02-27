@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//Planning Urban 7D//FR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Planning BONILLO Matthieu
+X-WR-CALNAME:Planning VASSANT Tiffany
 X-WR-TIMEZONE:Europe/Paris
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
@@ -25,26 +25,23 @@ RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
 END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:bonillo-matthieu-s10-1@urban7d
+UID:vassant-tiffany-s11-1@urban7d
 DTSTAMP:20260227T235538Z
-DTSTART;TZID=Europe/Paris:20260308T134500
-DTEND;TZID=Europe/Paris:20260308T174500
-SUMMARY:Anniversaire
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DTSTART;TZID=Europe/Paris:20260311T130000
+DTEND;TZID=Europe/Paris:20260311T134500
+SUMMARY:FORE
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
 END:VEVENT
 BEGIN:VEVENT
-UID:bonillo-matthieu-s11-1@urban7d
+UID:vassant-tiffany-s11-2@urban7d
 DTSTAMP:20260227T235538Z
-DTSTART;TZID=Europe/Paris:20260314T090000
-DTEND;TZID=Europe/Paris:20260314T130000
+DTSTART;TZID=Europe/Paris:20260311T134500
+DTEND;TZID=Europe/Paris:20260311T173000
 SUMMARY:EDF-C
 DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
   les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
