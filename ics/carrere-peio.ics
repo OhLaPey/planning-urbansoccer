@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:carrere-peio-s9-1@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260223T073000
 DTEND;TZID=Europe/Paris:20260223T094500
 SUMMARY:Cup League
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-2@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260223T094500
 DTEND;TZID=Europe/Paris:20260223T173000
 SUMMARY:Vie de centre
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-3@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260224T090000
 DTEND;TZID=Europe/Paris:20260224T094500
 SUMMARY:Stage
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-4@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260224T094500
 DTEND;TZID=Europe/Paris:20260224T160000
 SUMMARY:Vie de centre
@@ -106,7 +106,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-5@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260225T094500
 DTEND;TZID=Europe/Paris:20260225T133000
 SUMMARY:Vie de centre
@@ -126,7 +126,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-6@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260225T133000
 DTEND;TZID=Europe/Paris:20260225T173000
 SUMMARY:Cup Régisseur
@@ -146,7 +146,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-7@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260225T173000
 DTEND;TZID=Europe/Paris:20260225T180000
 SUMMARY:Vie de centre
@@ -166,7 +166,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-8@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260226T173000
 DTEND;TZID=Europe/Paris:20260226T201500
 SUMMARY:Vie de centre
@@ -186,7 +186,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-9@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260226T201500
 DTEND;TZID=Europe/Paris:20260226T203000
 SUMMARY:Régisseur League
@@ -206,7 +206,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-10@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260226T203000
 DTEND;TZID=Europe/Paris:20260226T213000
 SUMMARY:L-ARB
@@ -226,7 +226,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-11@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260226T213000
 DTEND;TZID=Europe/Paris:20260226T214500
 SUMMARY:Régisseur League
@@ -246,7 +246,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-12@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260228T113000
 DTEND;TZID=Europe/Paris:20260228T163000
 SUMMARY:Vie de centre
@@ -266,7 +266,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-13@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260228T163000
 DTEND;TZID=Europe/Paris:20260228T203000
 SUMMARY:Événement régisseur
@@ -286,7 +286,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-14@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260301T073000
 DTEND;TZID=Europe/Paris:20260301T084500
 SUMMARY:Cup League
@@ -306,7 +306,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-15@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260301T084500
 DTEND;TZID=Europe/Paris:20260301T160000
 SUMMARY:Vie de centre
@@ -326,7 +326,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-1@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260302T080000
 DTEND;TZID=Europe/Paris:20260302T100000
 SUMMARY:Inventaire
@@ -334,11 +334,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-2@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260302T100000
 DTEND;TZID=Europe/Paris:20260302T150000
 SUMMARY:Vie de centre
@@ -346,11 +350,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-3@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260302T190000
 DTEND;TZID=Europe/Paris:20260302T210000
 SUMMARY:Régisseur League
@@ -358,11 +366,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-4@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260303T120000
 DTEND;TZID=Europe/Paris:20260303T193000
 SUMMARY:Vie de centre
@@ -370,11 +382,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-5@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260303T193000
 DTEND;TZID=Europe/Paris:20260303T213000
 SUMMARY:Régisseur League
@@ -382,11 +398,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-6@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260304T170000
 DTEND;TZID=Europe/Paris:20260304T200000
 SUMMARY:Vie de centre
@@ -394,11 +414,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-7@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260304T200000
 DTEND;TZID=Europe/Paris:20260304T220000
 SUMMARY:Régisseur League
@@ -406,11 +430,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-8@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260305T094500
 DTEND;TZID=Europe/Paris:20260305T140000
 SUMMARY:Vie de centre
@@ -418,11 +446,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-9@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260305T140000
 DTEND;TZID=Europe/Paris:20260305T180000
 SUMMARY:Événement régisseur
@@ -430,6 +462,10 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 END:VCALENDAR
