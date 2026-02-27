@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-1@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260226T090000
 DTEND;TZID=Europe/Paris:20260226T094500
 SUMMARY:Stage
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-2@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260226T094500
 DTEND;TZID=Europe/Paris:20260226T180000
 SUMMARY:Vie de centre
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-3@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260227T094500
 DTEND;TZID=Europe/Paris:20260227T180000
 SUMMARY:Vie de centre
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-4@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260228T084500
 DTEND;TZID=Europe/Paris:20260228T170000
 SUMMARY:Vie de centre
@@ -106,7 +106,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-5@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260301T150000
 DTEND;TZID=Europe/Paris:20260301T222000
 SUMMARY:Vie de centre
@@ -126,7 +126,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-1@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260302T120000
 DTEND;TZID=Europe/Paris:20260302T180000
 SUMMARY:Vie de centre
@@ -134,11 +134,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-2@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260304T090000
 DTEND;TZID=Europe/Paris:20260304T094500
 SUMMARY:Stage
@@ -146,11 +150,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-3@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260304T094500
 DTEND;TZID=Europe/Paris:20260304T173000
 SUMMARY:Vie de centre
@@ -158,11 +166,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-4@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260305T143000
 DTEND;TZID=Europe/Paris:20260305T153000
 SUMMARY:Réunion
@@ -170,11 +182,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-5@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260305T153000
 DTEND;TZID=Europe/Paris:20260305T220000
 SUMMARY:Vie de centre
@@ -182,11 +198,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-6@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260306T090000
 DTEND;TZID=Europe/Paris:20260306T094500
 SUMMARY:Stage
@@ -194,11 +214,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-7@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260306T094500
 DTEND;TZID=Europe/Paris:20260306T173000
 SUMMARY:Vie de centre
@@ -206,11 +230,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-8@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260307T084500
 DTEND;TZID=Europe/Paris:20260307T170000
 SUMMARY:Vie de centre
@@ -218,6 +246,10 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 END:VCALENDAR

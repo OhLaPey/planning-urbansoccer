@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:rabii-mehdi-s9-1@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260228T134500
 DTEND;TZID=Europe/Paris:20260228T174500
 SUMMARY:Anniversaire
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s9-2@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260228T174500
 DTEND;TZID=Europe/Paris:20260228T211500
 SUMMARY:Vie de centre
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-1@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260302T200000
 DTEND;TZID=Europe/Paris:20260303T000000
 SUMMARY:Vie de centre
@@ -74,11 +74,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-2@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260307T111500
 DTEND;TZID=Europe/Paris:20260307T134500
 SUMMARY:Vie de centre
@@ -86,11 +90,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-3@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260307T134500
 DTEND;TZID=Europe/Paris:20260307T174500
 SUMMARY:Anniversaire
@@ -98,11 +106,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-4@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260307T174500
 DTEND;TZID=Europe/Paris:20260307T211500
 SUMMARY:Vie de centre
@@ -110,11 +122,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-5@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260308T104500
 DTEND;TZID=Europe/Paris:20260308T124500
 SUMMARY:Anniversaire
@@ -122,11 +138,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-6@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260308T133000
 DTEND;TZID=Europe/Paris:20260308T151500
 SUMMARY:Anniversaire
@@ -134,11 +154,15 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s10-7@urban7d
-DTSTAMP:20260225T233556Z
+DTSTAMP:20260227T233849Z
 DTSTART;TZID=Europe/Paris:20260308T151500
 DTEND;TZID=Europe/Paris:20260308T173000
 SUMMARY:Aide
@@ -146,6 +170,10 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
  s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
   mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
  i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires
+  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
+  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
+  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
+  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
+ tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
 END:VEVENT
 END:VCALENDAR

@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
-"""Regenerate ICS files from JSON event data (S9, S10)."""
+"""Regenerate ICS files from HTML event data (all weeks, auto-discovered)."""
 
+import glob
 import json
 import os
 import re
+from datetime import datetime, timezone
+
 
 ICS_DIR = "ics"
 NOTES_DIR = "notes"
+
 
 def slug(name):
     s = name.lower()
@@ -16,8 +20,10 @@ def slug(name):
         s = s.replace(old, new)
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
+
 def ics_escape(text):
     return text.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
+
 
 def fold_line(line, max_len=75):
     """Fold long lines per RFC 5545 (max 75 octets per line)."""
@@ -26,7 +32,6 @@ def fold_line(line, max_len=75):
         return line
     parts = []
     while len(encoded) > max_len:
-        # Find a safe cut point (don't split multi-byte chars)
         cut = max_len if not parts else max_len - 1  # -1 for leading space
         while cut > 0 and (encoded[cut] & 0xC0) == 0x80:
             cut -= 1
@@ -36,6 +41,7 @@ def fold_line(line, max_len=75):
         parts.append(encoded.decode('utf-8'))
     return ("\r\n ").join(parts)
 
+
 def load_notes(week_num):
     path = os.path.join(NOTES_DIR, f"S{week_num}.json")
     if not os.path.exists(path):
@@ -43,37 +49,41 @@ def load_notes(week_num):
     with open(path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def load_events_from_json(path):
-    """Load events from a data/SXX-events.json file."""
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
 
 def extract_events_from_html(path):
-    """Extract embedded DATA from SXX.html."""
+    """Extract embedded event DATA from SXX.html."""
     with open(path, 'r', encoding='utf-8') as f:
         content = f.read()
-    # Find the SECOND "var embedded = " (first is notes, second is event data)
+    # Find "var embedded = " that contains employee event data (has "slug" and "events" keys)
     start_marker = 'var embedded = '
-    first = content.find(start_marker)
-    if first == -1:
-        return {}
-    idx = content.find(start_marker, first + 1)
-    if idx == -1:
-        idx = first  # fallback to first if only one
-    idx += len(start_marker)
-    # Find matching closing brace
-    depth = 0
-    end_idx = idx
-    for i in range(idx, len(content)):
-        if content[i] == '{':
-            depth += 1
-        elif content[i] == '}':
-            depth -= 1
-            if depth == 0:
-                end_idx = i + 1
-                break
-    json_str = content[idx:end_idx]
-    return json.loads(json_str)
+    pos = 0
+    while True:
+        idx = content.find(start_marker, pos)
+        if idx == -1:
+            return {}
+        idx += len(start_marker)
+        # Find matching closing brace
+        depth = 0
+        end_idx = idx
+        for i in range(idx, len(content)):
+            if content[i] == '{':
+                depth += 1
+            elif content[i] == '}':
+                depth -= 1
+                if depth == 0:
+                    end_idx = i + 1
+                    break
+        json_str = content[idx:end_idx]
+        try:
+            data = json.loads(json_str)
+            # Check if this looks like event data (has employee names with "slug" and "events")
+            first_val = next(iter(data.values()), None)
+            if isinstance(first_val, dict) and "events" in first_val:
+                return data
+        except (json.JSONDecodeError, StopIteration):
+            pass
+        pos = idx
+
 
 def build_description(notes):
     """Build description text from notes."""
@@ -90,7 +100,8 @@ def build_description(notes):
             desc += prefix + upd_text
     return desc
 
-def generate_ics(name, all_events, all_notes):
+
+def generate_ics(name, all_events, all_notes, dtstamp_utc):
     """Generate ICS content for one employee across all weeks."""
     s = slug(name)
     lines = [
@@ -122,70 +133,81 @@ def generate_ics(name, all_events, all_notes):
         "END:VTIMEZONE",
     ]
 
-    for week_num, events in sorted(all_events.items()):
+    for week_num in sorted(all_events.keys()):
+        events = all_events[week_num]
         desc_raw = build_description(all_notes.get(week_num, {}))
         desc_escaped = ics_escape(desc_raw) if desc_raw else ""
 
         for i, evt in enumerate(events, 1):
-            start_str = evt["start"].replace("-", "").replace(":", "").replace("T", "T")
+            start_str = evt["start"].replace("-", "").replace(":", "")
+            end_str = evt["end"].replace("-", "").replace(":", "")
             # Ensure format is YYYYMMDDTHHMMSS
             if len(start_str.split("T")[1]) == 4:
                 start_str += "00"
-            end_str = evt["end"].replace("-", "").replace(":", "").replace("T", "T")
             if len(end_str.split("T")[1]) == 4:
                 end_str += "00"
 
+            summary = evt['label'].replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;")
+
             lines.append("BEGIN:VEVENT")
             lines.append(f"UID:{s}-s{week_num}-{i}@urban7d")
-            lines.append(f"DTSTAMP:{start_str}")
+            lines.append(f"DTSTAMP:{dtstamp_utc}")
             lines.append(f"DTSTART;TZID=Europe/Paris:{start_str}")
             lines.append(f"DTEND;TZID=Europe/Paris:{end_str}")
-            lines.append(fold_line(f"SUMMARY:{evt['label']}"))
+            lines.append(fold_line(f"SUMMARY:{summary}"))
             if desc_escaped:
                 lines.append(fold_line(f"DESCRIPTION:{desc_escaped}"))
             lines.append("END:VEVENT")
 
     lines.append("END:VCALENDAR")
-    return "\r\n".join(lines)
+    return "\r\n".join(lines) + "\r\n"
 
 
 def main():
+    # DTSTAMP must be UTC per RFC 5545
+    dtstamp_utc = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+
+    # Auto-discover all week HTML files (S3.html, S5.html, S9.html, S10.html, ...)
+    html_files = sorted(glob.glob("S*.html"))
+    print(f"Found {len(html_files)} week files: {', '.join(html_files)}")
+
     # Collect all event data per employee per week
     # Structure: {employee_name: {week_num: [events]}}
     employees = {}
     all_notes = {}
 
-    # Load S9 from JSON
-    s9_path = "data/S9-events.json"
-    if os.path.exists(s9_path):
-        s9_data = load_events_from_json(s9_path)
-        all_notes[9] = load_notes(9)
-        for name, emp_data in s9_data.items():
-            if emp_data.get("events"):
-                if name not in employees:
-                    employees[name] = {"slug": emp_data.get("slug", slug(name))}
-                if "weeks" not in employees[name]:
-                    employees[name]["weeks"] = {}
-                employees[name]["weeks"][9] = emp_data["events"]
+    for html_file in html_files:
+        # Extract week number from filename (S9.html -> 9, S10.html -> 10)
+        match = re.match(r"S(\d+)\.html", html_file)
+        if not match:
+            continue
+        week_num = int(match.group(1))
 
-    # Load S10 from embedded HTML
-    s10_html = "S10.html"
-    if os.path.exists(s10_html):
-        s10_data = extract_events_from_html(s10_html)
-        all_notes[10] = load_notes(10)
-        for name, emp_data in s10_data.items():
-            if emp_data.get("events"):
-                if name not in employees:
-                    employees[name] = {"slug": emp_data.get("slug", slug(name))}
-                if "weeks" not in employees[name]:
-                    employees[name]["weeks"] = {}
-                employees[name]["weeks"][10] = emp_data["events"]
+        data = extract_events_from_html(html_file)
+        if not data:
+            print(f"  {html_file}: no event data found, skipping")
+            continue
+
+        all_notes[week_num] = load_notes(week_num)
+        emp_count = 0
+
+        for name, emp_data in data.items():
+            events = emp_data.get("events", [])
+            if not events:
+                continue
+            if name not in employees:
+                employees[name] = {"slug": emp_data.get("slug", slug(name)), "weeks": {}}
+            employees[name]["weeks"][week_num] = events
+            emp_count += 1
+
+        print(f"  {html_file}: week {week_num}, {emp_count} employees with events")
 
     # Generate ICS files
     os.makedirs(ICS_DIR, exist_ok=True)
     count = 0
-    for name, emp_data in sorted(employees.items()):
-        s = emp_data.get("slug", slug(name))
+    for name in sorted(employees.keys()):
+        emp_data = employees[name]
+        s = emp_data["slug"]
         weeks = emp_data.get("weeks", {})
         if not weeks:
             continue
@@ -194,12 +216,13 @@ def main():
         if total_events == 0:
             continue
 
-        ics_content = generate_ics(name, weeks, all_notes)
+        ics_content = generate_ics(name, weeks, all_notes, dtstamp_utc)
         ics_path = os.path.join(ICS_DIR, f"{s}.ics")
         with open(ics_path, 'w', encoding='utf-8', newline='') as f:
             f.write(ics_content)
         count += 1
-        print(f"  {s}.ics ({total_events} events)")
+        week_list = ",".join(f"S{w}" for w in sorted(weeks.keys()))
+        print(f"  {s}.ics ({total_events} events, weeks: {week_list})")
 
     print(f"\n{count} ICS files generated.")
 
