@@ -28,7 +28,7 @@
       {
         "code": "CUP-L",
         "label": "Cup League",
-        "start": "2026-02-23T07:56",
+        "start": "2026-02-23T07:30",
         "end": "2026-02-23T09:45",
         "day": 0
       },
@@ -113,7 +113,7 @@
         "code": "EV-RE",
         "label": "Événement régisseur",
         "start": "2026-02-28T16:30",
-        "end": "2026-02-28T20:30",
+        "end": "2026-02-28T20:00",
         "day": 5
       },
       {
@@ -214,14 +214,14 @@
       },
       {
         "code": "STA-P",
-        "label": "STA-P",
+        "label": "Stage Padel",
         "start": "2026-02-24T09:45",
         "end": "2026-02-24T12:15",
         "day": 1
       },
       {
         "code": "STA-P",
-        "label": "STA-P",
+        "label": "Stage Padel",
         "start": "2026-02-24T13:15",
         "end": "2026-02-24T15:45",
         "day": 1
@@ -256,14 +256,14 @@
       },
       {
         "code": "STA-P",
-        "label": "STA-P",
+        "label": "Stage Padel",
         "start": "2026-02-27T09:45",
         "end": "2026-02-27T12:15",
         "day": 4
       },
       {
         "code": "STA-P",
-        "label": "STA-P",
+        "label": "Stage Padel",
         "start": "2026-02-27T13:15",
         "end": "2026-02-27T15:45",
         "day": 4
