@@ -1375,6 +1375,34 @@
                 timeRow.appendChild(endInput);
                 formBody.appendChild(timeRow);
 
+                // Auto-fill time range from replaced person's schedule
+                function autoFillTimes() {
+                    var selName = outSel.value;
+                    var selDate = dateSel.value;
+                    if (!selName || !selDate || !DATA[selName]) return;
+                    var emp = DATA[selName];
+                    var dayIdx = WEEK_DATES.indexOf(selDate);
+                    if (dayIdx < 0) return;
+                    // Find earliest start and latest end for this person on this day
+                    var earliest = null, latest = null;
+                    emp.events.forEach(function(ev) {
+                        if (ev.day !== dayIdx) return;
+                        var s = new Date(ev.start);
+                        var e = new Date(ev.end);
+                        var sStr = s.getHours().toString().padStart(2,'0') + ':' + s.getMinutes().toString().padStart(2,'0');
+                        var eStr = e.getHours().toString().padStart(2,'0') + ':' + e.getMinutes().toString().padStart(2,'0');
+                        if (eStr === '00:00') eStr = '23:59';
+                        if (!earliest || sStr < earliest) earliest = sStr;
+                        if (!latest || eStr > latest) latest = eStr;
+                    });
+                    if (earliest && latest) {
+                        startInput.value = earliest;
+                        endInput.value = latest;
+                    }
+                }
+                outSel.addEventListener('change', autoFillTimes);
+                dateSel.addEventListener('change', autoFillTimes);
+
                 // Submit
                 var submitBtn = document.createElement('button');
                 submitBtn.className = 'repl-add-btn';
