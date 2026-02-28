@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-1@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260223T073000
 DTEND;TZID=Europe/Paris:20260223T130000
 SUMMARY:Cup Régisseur
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-2@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260223T133000
 DTEND;TZID=Europe/Paris:20260223T190000
 SUMMARY:Cup Régisseur
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-3@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260224T094500
 DTEND;TZID=Europe/Paris:20260224T121500
 SUMMARY:Stage Padel
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-4@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260224T131500
 DTEND;TZID=Europe/Paris:20260224T154500
 SUMMARY:Stage Padel
@@ -106,7 +106,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-5@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260224T154500
 DTEND;TZID=Europe/Paris:20260224T164500
 SUMMARY:Cup League
@@ -126,7 +126,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-6@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260225T094500
 DTEND;TZID=Europe/Paris:20260225T121500
 SUMMARY:Cours Padel
@@ -146,7 +146,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-7@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260225T130000
 DTEND;TZID=Europe/Paris:20260225T144500
 SUMMARY:Padel animation
@@ -166,7 +166,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-8@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260225T144500
 DTEND;TZID=Europe/Paris:20260225T171500
 SUMMARY:Cours Padel
@@ -186,7 +186,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-9@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260227T094500
 DTEND;TZID=Europe/Paris:20260227T121500
 SUMMARY:Stage Padel
@@ -206,7 +206,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-10@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260227T131500
 DTEND;TZID=Europe/Paris:20260227T154500
 SUMMARY:Stage Padel
@@ -226,7 +226,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s9-11@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260301T073000
 DTEND;TZID=Europe/Paris:20260301T130000
 SUMMARY:Cup Régisseur
@@ -246,7 +246,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-1@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260302T134500
 DTEND;TZID=Europe/Paris:20260302T171500
 SUMMARY:Cours Padel
@@ -262,7 +262,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-2@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260302T171500
 DTEND;TZID=Europe/Paris:20260302T180000
 SUMMARY:Padel animation
@@ -278,7 +278,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-3@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260302T180000
 DTEND;TZID=Europe/Paris:20260302T220000
 SUMMARY:Vie de centre
@@ -294,7 +294,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-4@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260303T094500
 DTEND;TZID=Europe/Paris:20260303T120000
 SUMMARY:Vie de centre
@@ -310,7 +310,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-5@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260303T120000
 DTEND;TZID=Europe/Paris:20260303T131500
 SUMMARY:Padel animation
@@ -326,7 +326,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-6@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260303T131500
 DTEND;TZID=Europe/Paris:20260303T164500
 SUMMARY:Cours Padel
@@ -342,7 +342,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-7@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260304T084500
 DTEND;TZID=Europe/Paris:20260304T121500
 SUMMARY:Cours Padel
@@ -358,7 +358,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-8@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260304T121500
 DTEND;TZID=Europe/Paris:20260304T130000
 SUMMARY:Cup League
@@ -374,7 +374,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-9@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260304T134500
 DTEND;TZID=Europe/Paris:20260304T171500
 SUMMARY:Cours Padel
@@ -390,7 +390,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-10@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260306T144500
 DTEND;TZID=Europe/Paris:20260306T171500
 SUMMARY:Cours Padel
@@ -406,7 +406,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-11@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260306T171500
 DTEND;TZID=Europe/Paris:20260306T180000
 SUMMARY:Padel animation
@@ -422,7 +422,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-12@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260306T180000
 DTEND;TZID=Europe/Paris:20260306T190000
 SUMMARY:Cup League
@@ -438,7 +438,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-13@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260306T190000
 DTEND;TZID=Europe/Paris:20260307T003000
 SUMMARY:Cup Régisseur
@@ -454,7 +454,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s10-14@urban7d
-DTSTAMP:20260227T233849Z
+DTSTAMP:20260228T000221Z
 DTSTART;TZID=Europe/Paris:20260308T084500
 DTEND;TZID=Europe/Paris:20260308T160000
 SUMMARY:Vie de centre
@@ -467,5 +467,226 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
   \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
   Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
  tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-1@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260309T110000
+DTEND;TZID=Europe/Paris:20260309T120000
+SUMMARY:Cup League
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-2@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260309T120000
+DTEND;TZID=Europe/Paris:20260309T130000
+SUMMARY:Vie de centre
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-3@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260309T130000
+DTEND;TZID=Europe/Paris:20260309T180000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-4@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260309T180000
+DTEND;TZID=Europe/Paris:20260309T211500
+SUMMARY:Cours Padel
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-5@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260310T103000
+DTEND;TZID=Europe/Paris:20260310T120000
+SUMMARY:Cup League
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-6@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260310T120000
+DTEND;TZID=Europe/Paris:20260310T123000
+SUMMARY:Vie de centre
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-7@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260310T131500
+DTEND;TZID=Europe/Paris:20260310T154500
+SUMMARY:Cours Padel
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-8@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260310T154500
+DTEND;TZID=Europe/Paris:20260310T163000
+SUMMARY:Réunion
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-9@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260310T163000
+DTEND;TZID=Europe/Paris:20260310T174500
+SUMMARY:Padel animation
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-10@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260310T174500
+DTEND;TZID=Europe/Paris:20260310T211500
+SUMMARY:Cours Padel
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-11@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260311T114500
+DTEND;TZID=Europe/Paris:20260311T131500
+SUMMARY:Cours Padel
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-12@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260311T141500
+DTEND;TZID=Europe/Paris:20260311T154500
+SUMMARY:Cours Padel
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-13@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260311T154500
+DTEND;TZID=Europe/Paris:20260311T170000
+SUMMARY:Padel animation
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-14@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260311T170000
+DTEND;TZID=Europe/Paris:20260311T203000
+SUMMARY:Cours Padel
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-15@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260313T094500
+DTEND;TZID=Europe/Paris:20260313T121500
+SUMMARY:Cours Padel
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-16@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260313T130000
+DTEND;TZID=Europe/Paris:20260313T190000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s11-17@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260314T073000
+DTEND;TZID=Europe/Paris:20260314T130000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
 END:VEVENT
 END:VCALENDAR

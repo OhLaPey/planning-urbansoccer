@@ -1,0 +1,79 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Planning Urban 7D//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planning ORDONEZ GOMEZ Oceane
+X-WR-TIMEZONE:Europe/Paris
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/Paris
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:ordonez-gomez-oceane-s11-1@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260309T190000
+DTEND;TZID=Europe/Paris:20260309T193000
+SUMMARY:FORE
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:ordonez-gomez-oceane-s11-2@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260309T193000
+DTEND;TZID=Europe/Paris:20260309T223000
+SUMMARY:L-ARB
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:ordonez-gomez-oceane-s11-3@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260310T183000
+DTEND;TZID=Europe/Paris:20260310T223000
+SUMMARY:L-ARB
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:ordonez-gomez-oceane-s11-4@urban7d
+DTSTAMP:20260228T000221Z
+DTSTART;TZID=Europe/Paris:20260311T193000
+DTEND;TZID=Europe/Paris:20260311T223000
+SUMMARY:L-ARB
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
+  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
+ siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
+ matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
+ nniversaires sont prévus sur les anniversaires. On verra si les créneaux
+  sont réservés surtout avec les vacances scolaires
+END:VEVENT
+END:VCALENDAR

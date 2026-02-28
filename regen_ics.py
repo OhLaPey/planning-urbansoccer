@@ -135,8 +135,10 @@ def generate_ics(name, all_events, all_notes, dtstamp_utc):
 
     for week_num in sorted(all_events.keys()):
         events = all_events[week_num]
-        desc_raw = build_description(all_notes.get(week_num, {}))
+        week_notes_data = all_notes.get(week_num, {})
+        desc_raw = build_description(week_notes_data)
         desc_escaped = ics_escape(desc_raw) if desc_raw else ""
+        week_repls = week_notes_data.get("replacements", [])
 
         for i, evt in enumerate(events, 1):
             start_str = evt["start"].replace("-", "").replace(":", "")
@@ -147,7 +149,43 @@ def generate_ics(name, all_events, all_notes, dtstamp_utc):
             if len(end_str.split("T")[1]) == 4:
                 end_str += "00"
 
-            summary = evt['label'].replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;")
+            # Extract date and hours for replacement matching
+            evt_date = evt["start"][:10]  # "2026-03-03"
+            t_parts = evt["start"].split("T")[1].split(":")
+            evt_sh = int(t_parts[0]) + int(t_parts[1]) / 60
+            t_parts = evt["end"].split("T")[1].split(":")
+            evt_eh = int(t_parts[0]) + int(t_parts[1]) / 60
+            if evt_eh <= evt_sh:
+                evt_eh = 24
+
+            # Check replacements
+            summary_label = evt['label']
+            repl_note = ""
+            for r in week_repls:
+                if r.get("date") != evt_date:
+                    continue
+                r_parts = r.get("start", "0:0").split(":")
+                r_start = int(r_parts[0]) + int(r_parts[1] if len(r_parts) > 1 else 0) / 60
+                r_parts = r.get("end", "0:0").split(":")
+                r_end = int(r_parts[0]) + int(r_parts[1] if len(r_parts) > 1 else 0) / 60
+                if evt_sh < r_end and evt_eh > r_start:
+                    if name == r.get("out"):
+                        in_name = r.get("in", "")
+                        in_first = in_name.split()[-1] if in_name else ""
+                        summary_label = f"[Remplacé par {in_first}] " + summary_label
+                        repl_note = f"Remplacé par {in_name}"
+                    elif name == r.get("in"):
+                        out_name = r.get("out", "")
+                        out_first = out_name.split()[-1] if out_name else ""
+                        summary_label = f"[Remplace {out_first}] " + summary_label
+                        repl_note = f"Remplace {out_name}"
+
+            evt_desc = desc_raw
+            if repl_note:
+                evt_desc = repl_note + ("\n" + evt_desc if evt_desc else "")
+            evt_desc_escaped = ics_escape(evt_desc) if evt_desc else ""
+
+            summary = summary_label.replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;")
 
             lines.append("BEGIN:VEVENT")
             lines.append(f"UID:{s}-s{week_num}-{i}@urban7d")
@@ -155,8 +193,8 @@ def generate_ics(name, all_events, all_notes, dtstamp_utc):
             lines.append(f"DTSTART;TZID=Europe/Paris:{start_str}")
             lines.append(f"DTEND;TZID=Europe/Paris:{end_str}")
             lines.append(fold_line(f"SUMMARY:{summary}"))
-            if desc_escaped:
-                lines.append(fold_line(f"DESCRIPTION:{desc_escaped}"))
+            if evt_desc_escaped:
+                lines.append(fold_line(f"DESCRIPTION:{evt_desc_escaped}"))
             lines.append("END:VEVENT")
 
     lines.append("END:VCALENDAR")

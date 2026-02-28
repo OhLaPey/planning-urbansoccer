@@ -375,19 +375,54 @@ def generate_ics(name, events, week_notes=None):
                     extra_desc += "\n"
                 extra_desc += prefix + upd_text
 
+        # Build replacement lookup for this week
+        week_repls = wn.get("replacements", [])
+
         for i, evt in enumerate(by_week[week_num], 1):
             dt_start = evt["start"].strftime("%Y%m%dT%H%M%S")
             dt_end = evt["end"].strftime("%Y%m%dT%H%M%S")
-            # Escape for ICS DESCRIPTION (notes only, label is in SUMMARY)
+            evt_date = evt["start"].strftime("%Y-%m-%d")
+            evt_sh = evt["start"].hour + evt["start"].minute / 60
+            evt_eh = evt["end"].hour + evt["end"].minute / 60
+            if evt_eh <= evt_sh:
+                evt_eh = 24
+
+            # Check if this event is affected by a replacement
+            summary = evt['label']
+            repl_note = ""
+            for r in week_repls:
+                if r.get("date") != evt_date:
+                    continue
+                r_parts = r.get("start", "0:0").split(":")
+                r_start = int(r_parts[0]) + int(r_parts[1] if len(r_parts) > 1 else 0) / 60
+                r_parts = r.get("end", "0:0").split(":")
+                r_end = int(r_parts[0]) + int(r_parts[1] if len(r_parts) > 1 else 0) / 60
+                if evt_sh < r_end and evt_eh > r_start:
+                    if name == r.get("out"):
+                        # Get first name of replacer
+                        in_name = r.get("in", "")
+                        in_first = in_name.split()[-1] if in_name else ""
+                        summary = f"[Remplacé par {in_first}] " + summary
+                        repl_note = f"Remplacé par {in_name}"
+                    elif name == r.get("in"):
+                        out_name = r.get("out", "")
+                        out_first = out_name.split()[-1] if out_name else ""
+                        summary = f"[Remplace {out_first}] " + summary
+                        repl_note = f"Remplace {out_name}"
+
+            # Escape for ICS
             desc = extra_desc
+            if repl_note:
+                desc = repl_note + ("\n" + desc if desc else "")
             desc_escaped = desc.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
+            summary_escaped = summary.replace(chr(92), chr(92)+chr(92)).replace(',', chr(92)+',').replace(';', chr(92)+';')
             vevent = [
                 "BEGIN:VEVENT",
                 f"UID:{s}-s{week_num}-{i}@urban7d",
                 f"DTSTAMP:{dtstamp_utc}",
                 f"DTSTART;TZID=Europe/Paris:{dt_start}",
                 f"DTEND;TZID=Europe/Paris:{dt_end}",
-                f"SUMMARY:{evt['label'].replace(chr(92), chr(92)+chr(92)).replace(',', chr(92)+',').replace(';', chr(92)+';')}",
+                f"SUMMARY:{summary_escaped}",
             ]
             if desc_escaped:
                 vevent.append(f"DESCRIPTION:{desc_escaped}")
@@ -623,6 +658,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .tl-bar:hover {{ filter: brightness(1.3); z-index: 2;
                          box-shadow: 0 0 12px var(--glow-color); }}
         .tl-bar .bar-label {{ padding: 0 4px; white-space: nowrap; }}
+        .tl-bar.replaced {{ position: relative; opacity: 0.7; }}
+        .tl-bar.replaced::after {{ content: ''; position: absolute; inset: 0; border-radius: inherit;
+            background: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255,60,60,0.35) 3px, rgba(255,60,60,0.35) 5px);
+            pointer-events: none; }}
+        .tl-bar.replacer {{ position: relative; }}
+        .tl-bar.replacer::after {{ content: ''; position: absolute; inset: 0; border-radius: inherit;
+            background: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(60,220,80,0.35) 3px, rgba(60,220,80,0.35) 5px);
+            pointer-events: none; }}
 
         /* ── Employee list (vue Staff) ── */
         .employee-list {{ display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }}
@@ -747,6 +790,33 @@ def generate_html(week_employees, week_num, year, all_weeks):
                            color: #FF7832; font-size: 11px; cursor: pointer; font-family: inherit;
                            white-space: nowrap; }}
         .admin-hint {{ font-size: 10px; color: #444; margin-top: 4px; }}
+
+        /* ── Remplacements ── */
+        .note-card.replacement {{ border-left: 3px solid #ff5050; }}
+        .note-label.replacement {{ color: #ff5050; }}
+        .repl-summary {{ font-size: 12px; color: #ccc; line-height: 1.6; }}
+        .repl-out {{ color: #ff6b6b; font-weight: 600; }}
+        .repl-in {{ color: #64dc3c; font-weight: 600; }}
+        .repl-form {{ display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }}
+        .repl-form select, .repl-form input {{ padding: 7px 10px; background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+            color: #ccc; font-size: 11px; font-family: inherit; outline: none; }}
+        .repl-form select:focus, .repl-form input:focus {{ border-color: rgba(255,120,50,0.4); }}
+        .repl-form select option {{ background: #1a1a2e; color: #ccc; }}
+        .repl-row {{ display: flex; gap: 6px; align-items: center; }}
+        .repl-row label {{ font-size: 10px; color: #666; min-width: 55px; text-align: right; }}
+        .repl-row select, .repl-row input {{ flex: 1; }}
+        .repl-add-btn {{ padding: 7px 14px; background: rgba(255,80,80,0.15);
+            border: 1px solid rgba(255,80,80,0.3); border-radius: 8px;
+            color: #ff5050; font-size: 11px; cursor: pointer; font-family: inherit;
+            transition: all 0.2s; align-self: flex-end; }}
+        .repl-add-btn:hover {{ background: rgba(255,80,80,0.25); }}
+        .add-repl-btn {{ display: flex; align-items: center; justify-content: center; gap: 6px;
+                         padding: 8px; background: rgba(255,80,80,0.02);
+                         border: 1px dashed rgba(255,80,80,0.15); border-radius: 10px;
+                         color: #ff5050; font-size: 11px; cursor: pointer; transition: all 0.2s;
+                         font-family: inherit; width: 100%; margin-bottom: 8px; opacity: 0.6; }}
+        .add-repl-btn:hover {{ border-color: rgba(255,80,80,0.4); opacity: 1; }}
 
         /* ── Admin edit mode ── */
         .admin-toolbar {{ display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
@@ -969,6 +1039,26 @@ def generate_html(week_employees, week_num, year, all_weeks):
         function getColor(code) {{ return COLORS[code] || DEFAULT_C; }}
         function getFirstName(n) {{ var p=n.split(' '); for(var i=0;i<p.length;i++){{ if(p[i]!==p[i].toUpperCase()) return p.slice(i).join(' '); }} return p[p.length-1]; }}
 
+        // ── Replacement matching ──
+        function getReplacements() {{
+            return (notesWork && notesWork.replacements) || [];
+        }}
+        function getReplacementStatus(fullName, dateStr, startH, endH) {{
+            var repls = getReplacements();
+            for (var i = 0; i < repls.length; i++) {{
+                var r = repls[i];
+                if (r.date !== dateStr) continue;
+                var rStart = parseFloat(r.start.split(':')[0]) + parseFloat(r.start.split(':')[1] || 0) / 60;
+                var rEnd = parseFloat(r.end.split(':')[0]) + parseFloat(r.end.split(':')[1] || 0) / 60;
+                // Check overlap: bar overlaps with replacement window
+                if (startH < rEnd && endH > rStart) {{
+                    if (fullName === r.out) return 'out';
+                    if (fullName === r.in) return 'in';
+                }}
+            }}
+            return null;
+        }}
+
         // ── Day tabs ──
         var dayTabsEl = document.getElementById('day-tabs');
         DAYS.forEach(function(label, i) {{
@@ -1022,6 +1112,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         function renderTimeline() {{
             var tl = document.getElementById('timeline');
             tl.innerHTML = '';
+            var dateStr = WEEK_DATES[currentDay] || '';
 
             // Collect events for this day
             var dayEvents = [];
@@ -1044,6 +1135,20 @@ def generate_html(week_employees, week_num, year, all_weeks):
             }}
 
             renderLegend(allCodes);
+
+            // Add replacement legend if any replacements exist for this day
+            var dayRepls = getReplacements().filter(function(r) {{ return r.date === dateStr; }});
+            if (dayRepls.length > 0) {{
+                var legendEl = document.getElementById('legend');
+                var replOut = document.createElement('div');
+                replOut.className = 'legend-item';
+                replOut.innerHTML = '<div class="legend-dot" style="background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,60,60,0.5) 2px,rgba(255,60,60,0.5) 3px);border:1px solid #ff3c3c"></div>Remplac\u00e9(e)';
+                legendEl.appendChild(replOut);
+                var replIn = document.createElement('div');
+                replIn.className = 'legend-item';
+                replIn.innerHTML = '<div class="legend-dot" style="background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(60,220,80,0.5) 2px,rgba(60,220,80,0.5) 3px);border:1px solid #3cdc50"></div>Rempla\u00e7ant(e)';
+                legendEl.appendChild(replIn);
+            }}
 
             // Scrollable inner wrapper
             var inner = document.createElement('div');
@@ -1146,14 +1251,22 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     var c = getColor(ev.code);
                     var bar = document.createElement('div');
                     bar.className = 'tl-bar';
+
+                    // Check replacement status for this bar
+                    var replStatus = getReplacementStatus(name, dateStr, sh, eh);
+                    if (replStatus === 'out') bar.className += ' replaced';
+                    if (replStatus === 'in') bar.className += ' replacer';
+
                     bar.style.cssText = 'left:' + left + '%;width:' + width + '%;' +
                         'background:' + c.bg + ';border-color:' + c.border + ';color:' + c.text +
                         ';--glow-color:' + c.border + ';' +
                         'box-shadow:inset 0 0 8px rgba(255,255,255,0.05), 0 0 4px ' + c.border + '40;';
                     bar.innerHTML = '<span class="bar-label">' + ev.code + '</span>';
-                    bar.title = ev.label + '\\n' +
-                        s.getHours().toString().padStart(2,'0') + ':' + s.getMinutes().toString().padStart(2,'0') +
+                    var timeStr = s.getHours().toString().padStart(2,'0') + ':' + s.getMinutes().toString().padStart(2,'0') +
                         ' - ' + e.getHours().toString().padStart(2,'0') + ':' + e.getMinutes().toString().padStart(2,'0');
+                    bar.title = ev.label + '\\n' + timeStr;
+                    if (replStatus === 'out') bar.title += '\\nRemplacé(e)';
+                    if (replStatus === 'in') bar.title += '\\nRemplaçant(e)';
                     barContainer.appendChild(bar);
                 }});
 
@@ -1534,6 +1647,151 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     renderNotes();
                 }};
             }});
+
+            // ── Replacement cards ──
+            var repls = data.replacements || [];
+            repls.forEach(function(r, idx) {{
+                var rcard = document.createElement('div');
+                rcard.className = 'note-card replacement';
+                var rhdr = document.createElement('div');
+                rhdr.className = 'note-header';
+                var rDateLabel = '';
+                if (r.date) {{
+                    var _rp = r.date.split('-');
+                    var _rd = new Date(parseInt(_rp[0]), parseInt(_rp[1])-1, parseInt(_rp[2]));
+                    var _rjours = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+                    rDateLabel = ' \u2014 ' + _rjours[_rd.getDay()] + ' ' + _rd.getDate() + '/' + _rp[1];
+                }}
+                rhdr.innerHTML = '<span class="note-label replacement">Remplacement' + rDateLabel + '</span>';
+                var ractions = document.createElement('div');
+                ractions.className = 'note-actions';
+                var rdel = document.createElement('button');
+                rdel.className = 'note-btn del';
+                rdel.innerHTML = '\u2716';
+                rdel.title = 'Supprimer';
+                ractions.appendChild(rdel);
+                rhdr.appendChild(ractions);
+                rcard.appendChild(rhdr);
+                var rsummary = document.createElement('div');
+                rsummary.className = 'repl-summary';
+                rsummary.innerHTML = '<span class="repl-out">' + getFirstName(r.out) + '</span> \u2192 <span class="repl-in">' + getFirstName(r.in) + '</span>' +
+                    '  <span style="color:#666;font-size:10px">' + (r.start || '') + ' \u2013 ' + (r.end || '') + '</span>';
+                rcard.appendChild(rsummary);
+                notesEl.appendChild(rcard);
+
+                rdel.onclick = function() {{
+                    data.replacements.splice(idx, 1);
+                    notesDirty = true; saveNotesLocal();
+                    renderNotes();
+                    renderTimeline();
+                }};
+            }});
+
+            // Add replacement button
+            var addReplBtn = document.createElement('button');
+            addReplBtn.className = 'add-repl-btn';
+            addReplBtn.textContent = '+ Ajouter un remplacement';
+            addReplBtn.onclick = function() {{
+                // Build employee list from DATA
+                var names = Object.keys(DATA).filter(function(n) {{ return n !== '_codeNames'; }}).sort();
+                var form = document.createElement('div');
+                form.className = 'note-card replacement';
+                form.innerHTML = '<div class="note-header"><span class="note-label replacement">Nouveau remplacement</span></div>';
+                var formBody = document.createElement('div');
+                formBody.className = 'repl-form';
+
+                // Date row
+                var dateRow = document.createElement('div');
+                dateRow.className = 'repl-row';
+                dateRow.innerHTML = '<label>Jour</label>';
+                var dateSel = document.createElement('select');
+                WEEK_DATES.forEach(function(d, i) {{
+                    var opt = document.createElement('option');
+                    opt.value = d;
+                    var _jrs = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+                    var _dp = d.split('-');
+                    var _dt = new Date(parseInt(_dp[0]), parseInt(_dp[1])-1, parseInt(_dp[2]));
+                    opt.textContent = _jrs[_dt.getDay()] + ' ' + _dt.getDate() + '/' + _dp[1];
+                    if (i === currentDay) opt.selected = true;
+                    dateSel.appendChild(opt);
+                }});
+                dateRow.appendChild(dateSel);
+                formBody.appendChild(dateRow);
+
+                // "Out" row
+                var outRow = document.createElement('div');
+                outRow.className = 'repl-row';
+                outRow.innerHTML = '<label>Sort</label>';
+                var outSel = document.createElement('select');
+                var outDef = document.createElement('option');
+                outDef.value = ''; outDef.textContent = 'Personne remplac\u00e9e...';
+                outSel.appendChild(outDef);
+                names.forEach(function(n) {{
+                    var opt = document.createElement('option');
+                    opt.value = n; opt.textContent = n;
+                    outSel.appendChild(opt);
+                }});
+                outRow.appendChild(outSel);
+                formBody.appendChild(outRow);
+
+                // "In" row
+                var inRow = document.createElement('div');
+                inRow.className = 'repl-row';
+                inRow.innerHTML = '<label>Entre</label>';
+                var inSel = document.createElement('select');
+                var inDef = document.createElement('option');
+                inDef.value = ''; inDef.textContent = 'Rempla\u00e7ant(e)...';
+                inSel.appendChild(inDef);
+                names.forEach(function(n) {{
+                    var opt = document.createElement('option');
+                    opt.value = n; opt.textContent = n;
+                    inSel.appendChild(opt);
+                }});
+                inRow.appendChild(inSel);
+                formBody.appendChild(inRow);
+
+                // Time range row
+                var timeRow = document.createElement('div');
+                timeRow.className = 'repl-row';
+                timeRow.innerHTML = '<label>Cr\u00e9neau</label>';
+                var startInput = document.createElement('input');
+                startInput.type = 'time'; startInput.value = '18:00';
+                startInput.style.flex = '1';
+                var sep = document.createElement('span');
+                sep.textContent = ' \u2192 '; sep.style.color = '#666';
+                var endInput = document.createElement('input');
+                endInput.type = 'time'; endInput.value = '23:00';
+                endInput.style.flex = '1';
+                timeRow.appendChild(startInput);
+                timeRow.appendChild(sep);
+                timeRow.appendChild(endInput);
+                formBody.appendChild(timeRow);
+
+                // Submit
+                var submitBtn = document.createElement('button');
+                submitBtn.className = 'repl-add-btn';
+                submitBtn.textContent = 'Valider';
+                submitBtn.onclick = function() {{
+                    if (!outSel.value || !inSel.value) return;
+                    if (!data.replacements) data.replacements = [];
+                    data.replacements.push({{
+                        date: dateSel.value,
+                        out: outSel.value,
+                        in: inSel.value,
+                        start: startInput.value,
+                        end: endInput.value
+                    }});
+                    notesDirty = true; saveNotesLocal();
+                    renderNotes();
+                    renderTimeline();
+                }};
+                formBody.appendChild(submitBtn);
+                form.appendChild(formBody);
+
+                // Replace button with form
+                addReplBtn.replaceWith(form);
+            }};
+            notesEl.appendChild(addReplBtn);
 
             // Add update button
             var addBtn = document.createElement('button');
