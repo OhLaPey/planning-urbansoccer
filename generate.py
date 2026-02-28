@@ -703,6 +703,15 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .modal-event .ev-time {{ font-size: 11px; font-weight: 600; white-space: nowrap;
                                  min-width: 80px; }}
         .modal-event .ev-label {{ font-size: 12px; font-weight: 500; }}
+        .modal-event .ev-repl {{ font-size: 10px; font-weight: 600; margin-left: auto; white-space: nowrap; }}
+        .modal-event.replaced {{ position: relative; opacity: 0.7; }}
+        .modal-event.replaced::after {{ content: ''; position: absolute; inset: 0; border-radius: inherit;
+            background: repeating-linear-gradient(45deg, transparent, transparent 3px,
+            rgba(255,60,60,0.25) 3px, rgba(255,60,60,0.25) 5px); pointer-events: none; }}
+        .modal-event.replacer {{ position: relative; }}
+        .modal-event.replacer::after {{ content: ''; position: absolute; inset: 0; border-radius: inherit;
+            background: repeating-linear-gradient(45deg, transparent, transparent 3px,
+            rgba(60,220,80,0.25) 3px, rgba(60,220,80,0.25) 5px); pointer-events: none; }}
         .modal-footer {{ padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.06);
                          text-align: center; }}
         .modal-hours-total {{ margin-top: 12px; padding: 10px 14px; text-align: right;
@@ -1052,8 +1061,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 var rEnd = parseFloat(r.end.split(':')[0]) + parseFloat(r.end.split(':')[1] || 0) / 60;
                 // Check overlap: bar overlaps with replacement window
                 if (startH < rEnd && endH > rStart) {{
-                    if (fullName === r.out) return 'out';
-                    if (fullName === r.in) return 'in';
+                    if (fullName === r.out) return {{status: 'out', other: r['in']}};
+                    if (fullName === r['in']) return {{status: 'in', other: r.out}};
                 }}
             }}
             return null;
@@ -1253,9 +1262,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     bar.className = 'tl-bar';
 
                     // Check replacement status for this bar
-                    var replStatus = getReplacementStatus(name, dateStr, sh, eh);
-                    if (replStatus === 'out') bar.className += ' replaced';
-                    if (replStatus === 'in') bar.className += ' replacer';
+                    var replInfo = getReplacementStatus(name, dateStr, sh, eh);
+                    if (replInfo && replInfo.status === 'out') bar.className += ' replaced';
+                    if (replInfo && replInfo.status === 'in') bar.className += ' replacer';
 
                     bar.style.cssText = 'left:' + left + '%;width:' + width + '%;' +
                         'background:' + c.bg + ';border-color:' + c.border + ';color:' + c.text +
@@ -1265,8 +1274,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     var timeStr = s.getHours().toString().padStart(2,'0') + ':' + s.getMinutes().toString().padStart(2,'0') +
                         ' - ' + e.getHours().toString().padStart(2,'0') + ':' + e.getMinutes().toString().padStart(2,'0');
                     bar.title = ev.label + '\\n' + timeStr;
-                    if (replStatus === 'out') bar.title += '\\nRemplacé(e)';
-                    if (replStatus === 'in') bar.title += '\\nRemplaçant(e)';
+                    if (replInfo && replInfo.status === 'out') bar.title += '\\nRemplacé par ' + getFirstName(replInfo.other);
+                    if (replInfo && replInfo.status === 'in') bar.title += '\\nRemplace ' + getFirstName(replInfo.other);
                     barContainer.appendChild(bar);
                 }});
 
@@ -1464,8 +1473,19 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     var c = getColor(ev.code);
                     var s = new Date(ev.start);
                     var e = new Date(ev.end);
+                    var sh = s.getHours() + s.getMinutes()/60;
+                    var eh = e.getHours() + e.getMinutes()/60;
+                    if (eh <= sh) eh = 24;
+                    var evDateStr = ev.start.substring(0, 10);
+
                     var evDiv = document.createElement('div');
                     evDiv.className = 'modal-event';
+
+                    // Check replacement status
+                    var replInfo = getReplacementStatus(name, evDateStr, sh, eh);
+                    if (replInfo && replInfo.status === 'out') evDiv.className += ' replaced';
+                    if (replInfo && replInfo.status === 'in') evDiv.className += ' replacer';
+
                     evDiv.style.cssText = 'background:' + c.bg + ';border-color:' + c.border +
                         ';box-shadow:0 0 8px ' + c.border + '30;';
 
@@ -1484,6 +1504,21 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
                     evDiv.appendChild(timeSpan);
                     evDiv.appendChild(labelSpan);
+
+                    // Add replacement annotation text
+                    if (replInfo) {{
+                        var replSpan = document.createElement('span');
+                        replSpan.className = 'ev-repl';
+                        if (replInfo.status === 'out') {{
+                            replSpan.textContent = '\u2194 ' + getFirstName(replInfo.other);
+                            replSpan.style.color = '#ff6b6b';
+                        }} else {{
+                            replSpan.textContent = '\u2194 ' + getFirstName(replInfo.other);
+                            replSpan.style.color = '#51cf66';
+                        }}
+                        evDiv.appendChild(replSpan);
+                    }}
+
                     dayDiv.appendChild(evDiv);
                 }});
                 body.appendChild(dayDiv);
