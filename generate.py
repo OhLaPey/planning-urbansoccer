@@ -375,19 +375,54 @@ def generate_ics(name, events, week_notes=None):
                     extra_desc += "\n"
                 extra_desc += prefix + upd_text
 
+        # Build replacement lookup for this week
+        week_repls = wn.get("replacements", [])
+
         for i, evt in enumerate(by_week[week_num], 1):
             dt_start = evt["start"].strftime("%Y%m%dT%H%M%S")
             dt_end = evt["end"].strftime("%Y%m%dT%H%M%S")
-            # Escape for ICS DESCRIPTION (notes only, label is in SUMMARY)
+            evt_date = evt["start"].strftime("%Y-%m-%d")
+            evt_sh = evt["start"].hour + evt["start"].minute / 60
+            evt_eh = evt["end"].hour + evt["end"].minute / 60
+            if evt_eh <= evt_sh:
+                evt_eh = 24
+
+            # Check if this event is affected by a replacement
+            summary = evt['label']
+            repl_note = ""
+            for r in week_repls:
+                if r.get("date") != evt_date:
+                    continue
+                r_parts = r.get("start", "0:0").split(":")
+                r_start = int(r_parts[0]) + int(r_parts[1] if len(r_parts) > 1 else 0) / 60
+                r_parts = r.get("end", "0:0").split(":")
+                r_end = int(r_parts[0]) + int(r_parts[1] if len(r_parts) > 1 else 0) / 60
+                if evt_sh < r_end and evt_eh > r_start:
+                    if name == r.get("out"):
+                        # Get first name of replacer
+                        in_name = r.get("in", "")
+                        in_first = in_name.split()[-1] if in_name else ""
+                        summary = f"[Remplacé par {in_first}] " + summary
+                        repl_note = f"Remplacé par {in_name}"
+                    elif name == r.get("in"):
+                        out_name = r.get("out", "")
+                        out_first = out_name.split()[-1] if out_name else ""
+                        summary = f"[Remplace {out_first}] " + summary
+                        repl_note = f"Remplace {out_name}"
+
+            # Escape for ICS
             desc = extra_desc
+            if repl_note:
+                desc = repl_note + ("\n" + desc if desc else "")
             desc_escaped = desc.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
+            summary_escaped = summary.replace(chr(92), chr(92)+chr(92)).replace(',', chr(92)+',').replace(';', chr(92)+';')
             vevent = [
                 "BEGIN:VEVENT",
                 f"UID:{s}-s{week_num}-{i}@urban7d",
                 f"DTSTAMP:{dtstamp_utc}",
                 f"DTSTART;TZID=Europe/Paris:{dt_start}",
                 f"DTEND;TZID=Europe/Paris:{dt_end}",
-                f"SUMMARY:{evt['label'].replace(chr(92), chr(92)+chr(92)).replace(',', chr(92)+',').replace(';', chr(92)+';')}",
+                f"SUMMARY:{summary_escaped}",
             ]
             if desc_escaped:
                 vevent.append(f"DESCRIPTION:{desc_escaped}")
