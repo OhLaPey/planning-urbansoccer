@@ -240,6 +240,52 @@ def main():
 
         print(f"  {html_file}: week {week_num}, {emp_count} employees with events")
 
+    # Inject synthetic events for replacers with no events on the replacement day
+    for week_num, notes in all_notes.items():
+        week_repls = notes.get("replacements", [])
+        for r in week_repls:
+            in_name = r.get("in", "")
+            out_name = r.get("out", "")
+            if not in_name:
+                continue
+            repl_date = r.get("date", "")
+            r_parts_s = r.get("start", "0:00").split(":")
+            r_parts_e = r.get("end", "0:00").split(":")
+            r_start_h = int(r_parts_s[0])
+            r_start_m = int(r_parts_s[1] if len(r_parts_s) > 1 else 0)
+            r_end_h = int(r_parts_e[0])
+            r_end_m = int(r_parts_e[1] if len(r_parts_e) > 1 else 0)
+            # Check if replacer has events on this date
+            replacer_evts = employees.get(in_name, {}).get("weeks", {}).get(week_num, [])
+            has_on_date = any(evt["start"][:10] == repl_date for evt in replacer_evts)
+            if has_on_date:
+                continue
+            # Find code/label from replaced person's events
+            ref_label = "Vie de centre"
+            out_evts = employees.get(out_name, {}).get("weeks", {}).get(week_num, [])
+            r_sh = r_start_h + r_start_m / 60
+            r_eh = r_end_h + r_end_m / 60
+            for oev in out_evts:
+                if oev["start"][:10] != repl_date:
+                    continue
+                ot = oev["start"].split("T")[1].split(":")
+                osh = int(ot[0]) + int(ot[1]) / 60
+                ot2 = oev["end"].split("T")[1].split(":")
+                oeh = int(ot2[0]) + int(ot2[1]) / 60
+                if oeh <= osh:
+                    oeh = 24
+                if osh < r_eh and oeh > r_sh:
+                    ref_label = oev.get("label", ref_label)
+                    break
+            synth_start = f"{repl_date}T{r_start_h:02d}:{r_start_m:02d}"
+            synth_end = f"{repl_date}T{r_end_h:02d}:{r_end_m:02d}"
+            synth_evt = {"label": ref_label, "start": synth_start, "end": synth_end}
+            if in_name not in employees:
+                employees[in_name] = {"slug": slug(in_name), "weeks": {}}
+            if week_num not in employees[in_name]["weeks"]:
+                employees[in_name]["weeks"][week_num] = []
+            employees[in_name]["weeks"][week_num].append(synth_evt)
+
     # Generate ICS files
     os.makedirs(ICS_DIR, exist_ok=True)
     count = 0

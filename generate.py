@@ -1137,6 +1137,50 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 }});
             }});
 
+            // Inject virtual events for replacers not already present this day
+            var dayRepls = getReplacements().filter(function(r) {{ return r.date === dateStr; }});
+            dayRepls.forEach(function(r) {{
+                var replacerName = r['in'];
+                if (!replacerName || !DATA[replacerName]) return;
+                // Check if replacer already has events this day
+                var hasEvents = dayEvents.some(function(d) {{ return d.name === replacerName; }});
+                // Find the replaced person's event(s) overlapping the replacement window to get code/label
+                var rStart = parseFloat(r.start.split(':')[0]) + parseFloat(r.start.split(':')[1] || 0) / 60;
+                var rEnd = parseFloat(r.end.split(':')[0]) + parseFloat(r.end.split(':')[1] || 0) / 60;
+                var outName = r.out;
+                var refCode = 'VDC';
+                var refLabel = 'Vie de centre';
+                if (outName && DATA[outName]) {{
+                    DATA[outName].events.forEach(function(ev) {{
+                        if (ev.day !== currentDay) return;
+                        var s2 = new Date(ev.start);
+                        var e2 = new Date(ev.end);
+                        var sh2 = s2.getHours() + s2.getMinutes()/60;
+                        var eh2 = e2.getHours() + e2.getMinutes()/60;
+                        if (eh2 <= sh2) eh2 = 24;
+                        if (sh2 < rEnd && eh2 > rStart) {{
+                            refCode = ev.code;
+                            refLabel = ev.label;
+                        }}
+                    }});
+                }}
+                if (!hasEvents) {{
+                    // Build synthetic ISO dates for the replacement window
+                    var synthStart = dateStr + 'T' + r.start.split(':')[0].padStart(2,'0') + ':' + (r.start.split(':')[1] || '00').padStart(2,'0');
+                    var synthEnd = dateStr + 'T' + r.end.split(':')[0].padStart(2,'0') + ':' + (r.end.split(':')[1] || '00').padStart(2,'0');
+                    var synthEv = {{
+                        code: refCode,
+                        label: refLabel,
+                        start: synthStart,
+                        end: synthEnd,
+                        day: currentDay,
+                        _synthetic: true
+                    }};
+                    dayEvents.push({{ name: replacerName, ev: synthEv }});
+                    allCodes.push(refCode);
+                }}
+            }});
+
             if (dayEvents.length === 0) {{
                 tl.innerHTML = '<div class="no-events">Aucun cr\u00e9neau ce jour</div>';
                 renderLegend([]);
@@ -1456,6 +1500,48 @@ def generate_html(week_employees, week_num, year, all_weeks):
             // Group events by day
             var byDay = {{}};
             emp.events.forEach(function(ev) {{ if (!byDay[ev.day]) byDay[ev.day] = []; byDay[ev.day].push(ev); }});
+
+            // Inject virtual events for days where this person is a replacer but has no events
+            var repls = getReplacements();
+            repls.forEach(function(r) {{
+                if (r['in'] !== name) return;
+                // Find the day index for this replacement date
+                var dayIdx = WEEK_DATES.indexOf(r.date);
+                if (dayIdx < 0) return;
+                var hasEventsThisDay = byDay[dayIdx] && byDay[dayIdx].length > 0;
+                if (hasEventsThisDay) return;
+                // Find code/label from replaced person's event
+                var outName = r.out;
+                var refCode = 'VDC';
+                var refLabel = 'Vie de centre';
+                var rStart = parseFloat(r.start.split(':')[0]) + parseFloat(r.start.split(':')[1] || 0) / 60;
+                var rEnd = parseFloat(r.end.split(':')[0]) + parseFloat(r.end.split(':')[1] || 0) / 60;
+                if (outName && DATA[outName]) {{
+                    DATA[outName].events.forEach(function(ev) {{
+                        if (ev.day !== dayIdx) return;
+                        var s2 = new Date(ev.start);
+                        var e2 = new Date(ev.end);
+                        var sh2 = s2.getHours() + s2.getMinutes()/60;
+                        var eh2 = e2.getHours() + e2.getMinutes()/60;
+                        if (eh2 <= sh2) eh2 = 24;
+                        if (sh2 < rEnd && eh2 > rStart) {{
+                            refCode = ev.code;
+                            refLabel = ev.label;
+                        }}
+                    }});
+                }}
+                var synthStart = r.date + 'T' + r.start.split(':')[0].padStart(2,'0') + ':' + (r.start.split(':')[1] || '00').padStart(2,'0');
+                var synthEnd = r.date + 'T' + r.end.split(':')[0].padStart(2,'0') + ':' + (r.end.split(':')[1] || '00').padStart(2,'0');
+                if (!byDay[dayIdx]) byDay[dayIdx] = [];
+                byDay[dayIdx].push({{
+                    code: refCode,
+                    label: refLabel,
+                    start: synthStart,
+                    end: synthEnd,
+                    day: dayIdx,
+                    _synthetic: true
+                }});
+            }});
 
             var hasDays = false;
             for (var d = 0; d < 7; d++) {{
@@ -2190,6 +2276,53 @@ def main():
     all_week_notes = {}
     for wn in all_weeks:
         all_week_notes[wn] = load_week_notes(wn)
+
+    # ── Injecter les créneaux virtuels pour les remplaçants sans événement ce jour ──
+    for wn in all_weeks:
+        notes = all_week_notes.get(wn, {})
+        for r in notes.get("replacements", []):
+            in_name = r.get("in", "")
+            out_name = r.get("out", "")
+            if not in_name:
+                continue
+            repl_date_str = r.get("date", "")
+            r_parts_s = r.get("start", "0:00").split(":")
+            r_parts_e = r.get("end", "0:00").split(":")
+            r_sh = int(r_parts_s[0]) + int(r_parts_s[1] if len(r_parts_s) > 1 else 0) / 60
+            r_eh = int(r_parts_e[0]) + int(r_parts_e[1] if len(r_parts_e) > 1 else 0) / 60
+            # Check if replacer already has events on this date
+            in_evts = all_employee_events.get(in_name, [])
+            has_on_date = any(e["start"].strftime("%Y-%m-%d") == repl_date_str for e in in_evts)
+            if has_on_date:
+                continue
+            # Find code/label from replaced person's events
+            ref_code = "VDC"
+            ref_label = "Vie de centre"
+            out_evts = all_employee_events.get(out_name, [])
+            for oev in out_evts:
+                if oev["start"].strftime("%Y-%m-%d") != repl_date_str:
+                    continue
+                o_sh = oev["start"].hour + oev["start"].minute / 60
+                o_eh = oev["end"].hour + oev["end"].minute / 60
+                if o_eh <= o_sh:
+                    o_eh = 24
+                if o_sh < r_eh and o_eh > r_sh:
+                    ref_code = oev.get("code", ref_code)
+                    ref_label = oev.get("label", ref_label)
+                    break
+            from datetime import datetime as _dt2
+            synth_start = _dt2.strptime(f"{repl_date_str} {int(r_parts_s[0]):02d}:{int(r_parts_s[1] if len(r_parts_s)>1 else 0):02d}", "%Y-%m-%d %H:%M")
+            synth_end = _dt2.strptime(f"{repl_date_str} {int(r_parts_e[0]):02d}:{int(r_parts_e[1] if len(r_parts_e)>1 else 0):02d}", "%Y-%m-%d %H:%M")
+            synth_evt = {
+                "code": ref_code,
+                "label": ref_label,
+                "start": synth_start,
+                "end": synth_end,
+                "week": wn,
+            }
+            if in_name not in all_employee_events:
+                all_employee_events[in_name] = []
+            all_employee_events[in_name].append(synth_evt)
 
     # ── Générer les fichiers ICS (cumulatifs, toutes semaines) ──
     os.makedirs("ics", exist_ok=True)
