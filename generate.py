@@ -646,10 +646,10 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
         .tl-now-line {{ position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
                         border-left: 2px dashed #ffd700;
-                        animation: nowPulse 2s ease-in-out infinite; }}
+                        filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 8px rgba(255,215,0,0.4)); opacity: 0.8; }}
         .tl-now-marker {{ position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
                           border-left: 2px dashed #ffd700;
-                          animation: nowPulse 2s ease-in-out infinite; }}
+                          filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 8px rgba(255,215,0,0.4)); opacity: 0.8; }}
         .tl-bar {{ position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
                    font-size: 9px; font-weight: 600; overflow: hidden;
@@ -1008,29 +1008,12 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
     <script>
     (function() {{
-        var NOTES_DATA = (function() {{
-            var embedded = {notes_json};
-            try {{
-                var saved = localStorage.getItem('planning-notes-S{week_num}');
-                if (saved) return JSON.parse(saved);
-            }} catch(e) {{}}
-            return embedded;
-        }})();
-        var DATA = (function() {{
-            var embedded = {events_json};
-            try {{
-                var saved = localStorage.getItem('planning-edits-S{week_num}');
-                if (saved) {{
-                    var edits = JSON.parse(saved);
-                    Object.keys(edits).forEach(function(name) {{
-                        if (embedded[name]) {{
-                            embedded[name].events = edits[name].events;
-                        }}
-                    }});
-                }}
-            }} catch(e) {{}}
-            return embedded;
-        }})();
+        var NOTES_DATA = {notes_json};
+        // Nettoyage des anciennes données localStorage (source de désync entre appareils)
+        try {{ localStorage.removeItem('planning-notes-S{week_num}'); }} catch(e) {{}}
+        var DATA = {events_json};
+        // Nettoyage des anciennes données localStorage
+        try {{ localStorage.removeItem('planning-edits-S{week_num}'); }} catch(e) {{}}
         var COLORS = {colors_json};
         var DEFAULT_C = {default_color_json};
         var DAYS = {day_labels_json};
@@ -1670,7 +1653,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
         var notesDirty = false;
         function saveNotesLocal() {{
-            try {{ localStorage.setItem('planning-notes-S{week_num}', JSON.stringify(notesWork)); }} catch(e) {{}}
+            // Plus de localStorage — les notes sont en mémoire et persistées via "Publier"
         }}
 
         function getToken() {{ return localStorage.getItem(TOKEN_KEY) || ''; }}
