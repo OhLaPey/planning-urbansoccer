@@ -1694,11 +1694,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
             var totalPause = 0; // in hours
             Object.keys(byDay).forEach(function(d) {{
                 var intervals = byDay[d].slice().sort(function(a,b) {{ return a.s - b.s; }});
-                // Merge overlapping / adjacent intervals (gap <= 30min treated as continuous)
+                // Merge strictly consecutive intervals (fin == début du suivant)
                 var merged = [intervals[0]];
                 for (var i = 1; i < intervals.length; i++) {{
                     var last = merged[merged.length - 1];
-                    if (intervals[i].s <= last.e + 30*60*1000) {{
+                    if (intervals[i].s <= last.e) {{
                         last.e = Math.max(last.e, intervals[i].e);
                     }} else {{
                         merged.push({{ s: intervals[i].s, e: intervals[i].e }});
