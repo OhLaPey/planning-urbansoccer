@@ -343,6 +343,16 @@
                                 padding-bottom: 8px; margin-bottom: 4px; }
         .day-check.all-check span { font-weight: 600; color: #FF7832; }
         .edit-overlay { position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,0.5); }
+        .save-edits-btn { display: none; padding: 6px 16px; border: none; border-radius: 8px;
+                           font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;
+                           transition: all 0.2s; margin-left: 8px; }
+        .save-edits-btn.dirty { display: inline-block; background: #FF7832; color: #fff;
+                                  animation: pulse-save 1.5s ease-in-out infinite; }
+        .save-edits-btn.saving { background: #666; color: #fff; cursor: wait; }
+        .save-edits-btn.saved { display: inline-block; background: #2a6e2a; color: #64dc3c; }
+        .save-edits-btn.error { display: inline-block; background: #6e2a2a; color: #ff6666; }
+        @keyframes pulse-save { 0%,100% { box-shadow: 0 0 4px rgba(255,120,50,0.3); }
+                                 50% { box-shadow: 0 0 14px rgba(255,120,50,0.6); } }
         .edit-status { font-size: 10px; color: #64dc3c; margin-left: auto; }
 
         /* ── Drag-resize handles ── */
@@ -1640,12 +1650,24 @@
             toggleBtn.className = 'edit-toggle';
             toggleBtn.textContent = 'Mode édition';
             toggleBtn.onclick = function() {
+                if (editMode && _editsDirty) {
+                    if (!confirm('Modifications non enregistrées. Quitter sans enregistrer ?')) return;
+                    _editsDirty = false;
+                    updateSaveButton();
+                }
                 editMode = !editMode;
                 toggleBtn.classList.toggle('active', editMode);
                 toggleBtn.textContent = editMode ? 'Quitter édition' : 'Mode édition';
                 renderTimeline();
             };
             adminToolbarEl.appendChild(toggleBtn);
+            var saveBtn = document.createElement('button');
+            saveBtn.className = 'save-edits-btn';
+            saveBtn.id = 'save-edits-btn';
+            saveBtn.textContent = 'Enregistrer';
+            saveBtn.style.display = 'none';
+            saveBtn.onclick = function() { publishAllEdits(); };
+            adminToolbarEl.appendChild(saveBtn);
             var statusEl = document.createElement('span');
             statusEl.className = 'edit-status';
             statusEl.id = 'edit-status';
@@ -2112,13 +2134,49 @@
             };
         }
 
+        var _editsDirty = false;
+
         function pushDataAfterEdit() {
+            _editsDirty = true;
+            updateSaveButton();
+        }
+
+        function updateSaveButton() {
+            var btn = document.getElementById('save-edits-btn');
+            if (!btn) return;
+            if (_editsDirty) {
+                btn.style.display = '';
+                btn.disabled = false;
+                btn.textContent = 'Enregistrer';
+                btn.className = 'save-edits-btn dirty';
+            } else {
+                btn.className = 'save-edits-btn';
+                btn.style.display = 'none';
+            }
+        }
+
+        function publishAllEdits() {
+            var btn = document.getElementById('save-edits-btn');
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = 'Sauvegarde...';
+                btn.className = 'save-edits-btn saving';
+            }
             var statusEl = document.getElementById('edit-status');
-            if (statusEl) statusEl.textContent = 'Sauvegarde...';
             pushDataToGitHub(function(ok) {
-                if (statusEl) {
-                    statusEl.textContent = ok ? 'Sauvegardé ✔' : 'Erreur !';
-                    setTimeout(function() { statusEl.textContent = ''; }, 3000);
+                if (ok) {
+                    _editsDirty = false;
+                    if (btn) {
+                        btn.textContent = 'Sauvegardé ✔';
+                        btn.className = 'save-edits-btn saved';
+                        setTimeout(function() { updateSaveButton(); }, 2000);
+                    }
+                } else {
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.textContent = 'Erreur — Réessayer';
+                        btn.className = 'save-edits-btn error';
+                    }
                 }
             });
         }
