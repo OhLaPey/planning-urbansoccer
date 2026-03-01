@@ -42,8 +42,8 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-03T10:00",
-        "end": "2026-03-03T15:00",
+        "start": "2026-03-03T12:00",
+        "end": "2026-03-03T19:30",
         "day": 1
       },
       {
@@ -104,8 +104,8 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-05T14:30",
-        "end": "2026-03-05T24:00",
+        "start": "2026-03-05T17:30",
+        "end": "2026-03-06T00:00",
         "day": 3
       },
       {
@@ -693,39 +693,6 @@
     "slug": "labefode-thomas",
     "events": []
   },
-  "MADIELE Henri": {
-    "slug": "madiele-henri",
-    "events": [
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-02T09:00",
-        "end": "2026-03-02T18:30",
-        "day": 0
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-03T11:40",
-        "end": "2026-03-03T18:30",
-        "day": 1
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-05T17:45",
-        "end": "2026-03-05T18:00",
-        "day": 3
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-06T11:00",
-        "end": "2026-03-06T17:30",
-        "day": 4
-      }
-    ]
-  },
   "MOSTEFA Yanis": {
     "slug": "mostefa-yanis",
     "events": [
@@ -786,7 +753,7 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-03T15:00",
+        "start": "2026-03-03T17:30",
         "end": "2026-03-03T20:30",
         "day": 1
       },
