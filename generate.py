@@ -872,7 +872,26 @@ def generate_html(week_employees, week_num, year, all_weeks):
                               border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
                               color: #fff; font-size: 12px; font-family: inherit; outline: none; }}
         .edit-popup select:focus {{ border-color: rgba(255,120,50,0.4); }}
+        .day-check {{ display: flex; align-items: center; gap: 8px; padding: 5px 8px;
+                      border-radius: 6px; cursor: pointer; font-size: 12px; color: #ccc;
+                      transition: background 0.15s; }}
+        .day-check:hover {{ background: rgba(255,255,255,0.05); }}
+        .day-check em {{ color: #666; font-style: normal; font-size: 10px; }}
+        .day-check input[type="checkbox"] {{ accent-color: #FF7832; width: 16px; height: 16px; cursor: pointer; }}
+        .day-check.all-check {{ border-bottom: 1px solid rgba(255,255,255,0.06);
+                                padding-bottom: 8px; margin-bottom: 4px; }}
+        .day-check.all-check span {{ font-weight: 600; color: #FF7832; }}
         .edit-overlay {{ position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,0.5); }}
+        .save-edits-btn {{ display: none; padding: 6px 16px; border: none; border-radius: 8px;
+                           font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;
+                           transition: all 0.2s; margin-left: 8px; }}
+        .save-edits-btn.dirty {{ display: inline-block; background: #FF7832; color: #fff;
+                                  animation: pulse-save 1.5s ease-in-out infinite; }}
+        .save-edits-btn.saving {{ background: #666; color: #fff; cursor: wait; }}
+        .save-edits-btn.saved {{ display: inline-block; background: #2a6e2a; color: #64dc3c; }}
+        .save-edits-btn.error {{ display: inline-block; background: #6e2a2a; color: #ff6666; }}
+        @keyframes pulse-save {{ 0%,100% {{ box-shadow: 0 0 4px rgba(255,120,50,0.3); }}
+                                 50% {{ box-shadow: 0 0 14px rgba(255,120,50,0.6); }} }}
         .edit-status {{ font-size: 10px; color: #64dc3c; margin-left: auto; }}
 
         /* ── Drag-resize handles ── */
@@ -2145,12 +2164,24 @@ def generate_html(week_employees, week_num, year, all_weeks):
             toggleBtn.className = 'edit-toggle';
             toggleBtn.textContent = 'Mode \u00e9dition';
             toggleBtn.onclick = function() {{
+                if (editMode && _editsDirty) {{
+                    if (!confirm('Modifications non enregistr\u00e9es. Quitter sans enregistrer ?')) return;
+                    _editsDirty = false;
+                    updateSaveButton();
+                }}
                 editMode = !editMode;
                 toggleBtn.classList.toggle('active', editMode);
                 toggleBtn.textContent = editMode ? 'Quitter \u00e9dition' : 'Mode \u00e9dition';
                 renderTimeline();
             }};
             adminToolbarEl.appendChild(toggleBtn);
+            var saveBtn = document.createElement('button');
+            saveBtn.className = 'save-edits-btn';
+            saveBtn.id = 'save-edits-btn';
+            saveBtn.textContent = 'Enregistrer';
+            saveBtn.style.display = 'none';
+            saveBtn.onclick = function() {{ publishAllEdits(); }};
+            adminToolbarEl.appendChild(saveBtn);
             var statusEl = document.createElement('span');
             statusEl.className = 'edit-status';
             statusEl.id = 'edit-status';
@@ -2427,14 +2458,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             if (idx !== -1) emp.events.splice(idx, 1);
             renderTimeline();
             updateHoursBadges();
-            var statusEl = document.getElementById('edit-status');
-            if (statusEl) statusEl.textContent = 'Sauvegarde...';
-            pushDataToGitHub(function(ok) {{
-                if (statusEl) {{
-                    statusEl.textContent = ok ? 'Sauvegard\u00e9 \u2714' : 'Erreur !';
-                    setTimeout(function() {{ statusEl.textContent = ''; }}, 3000);
-                }}
-            }});
+            pushDataAfterEdit();
         }}
 
         function openAddEventPopup(empName, defaultHour) {{
@@ -2487,14 +2511,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 renderTimeline();
                 updateHoursBadges();
                 closeEditPopup();
-                var statusEl = document.getElementById('edit-status');
-                if (statusEl) statusEl.textContent = 'Sauvegarde...';
-                pushDataToGitHub(function(ok) {{
-                    if (statusEl) {{
-                        statusEl.textContent = ok ? 'Sauvegard\u00e9 \u2714' : 'Erreur !';
-                        setTimeout(function() {{ statusEl.textContent = ''; }}, 3000);
-                    }}
-                }});
+                pushDataAfterEdit();
             }};
         }}
 
@@ -2532,28 +2549,148 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 renderTimeline();
                 updateHoursBadges();
                 closeEditPopup();
-                var statusEl = document.getElementById('edit-status');
-                if (statusEl) statusEl.textContent = 'Sauvegarde...';
-                pushDataToGitHub(function(ok) {{
-                    if (statusEl) {{
-                        statusEl.textContent = ok ? 'Sauvegard\u00e9 \u2714' : 'Erreur !';
-                        setTimeout(function() {{ statusEl.textContent = ''; }}, 3000);
-                    }}
-                }});
+                pushDataAfterEdit();
             }};
         }}
 
         function deleteStaff(empName) {{
-            if (!confirm('Supprimer ' + empName + ' et tous ses cr\u00e9neaux de cette semaine ?')) return;
-            delete DATA[empName];
-            renderTimeline();
-            updateHoursBadges();
+            var emp = DATA[empName];
+            if (!emp) return;
+            closeEditPopup();
+
+            // Find which days this employee has events
+            var daySet = {{}};
+            emp.events.forEach(function(ev) {{ daySet[ev.day] = true; }});
+            var daysWithEvents = Object.keys(daySet).map(Number).sort(function(a,b){{ return a-b; }});
+
+            // If no events, just delete the empty entry
+            if (daysWithEvents.length === 0) {{
+                if (!confirm('Supprimer ' + empName + ' (aucun cr\u00e9neau) ?')) return;
+                delete DATA[empName];
+                renderTimeline();
+                updateHoursBadges();
+                pushDataAfterEdit();
+                return;
+            }}
+
+            var overlay = document.createElement('div');
+            overlay.className = 'edit-overlay';
+            overlay.id = 'edit-overlay';
+            overlay.onclick = function() {{ closeEditPopup(); }};
+            document.body.appendChild(overlay);
+
+            var popup = document.createElement('div');
+            popup.className = 'edit-popup';
+            popup.id = 'edit-popup';
+
+            var html = '<h3>Supprimer ' + getFirstName(empName) + '</h3>';
+            html += '<p style="font-size:11px;color:#888;margin-bottom:10px;">S\u00e9lectionner les jours \u00e0 supprimer :</p>';
+
+            // "Select all" checkbox
+            html += '<label class="day-check all-check"><input type="checkbox" id="del-all"> <span>Toute la semaine</span></label>';
+
+            // One checkbox per day
+            for (var i = 0; i < 7; i++) {{
+                var hasEvts = daySet[i];
+                var count = emp.events.filter(function(ev) {{ return ev.day === i; }}).length;
+                var label = DAYS_FULL[i] + ' ' + (WEEK_DATES[i] || '').substring(8,10) + '/' + (WEEK_DATES[i] || '').substring(5,7);
+                if (hasEvts) {{
+                    html += '<label class="day-check"><input type="checkbox" value="' + i + '" class="del-day-cb"' +
+                        (daysWithEvents.length === 1 ? ' checked' : '') +
+                        '> <span>' + label + ' <em>(' + count + ' cr\u00e9neau' + (count > 1 ? 'x' : '') + ')</em></span></label>';
+                }}
+            }}
+
+            html += '<div class="actions" style="margin-top:12px;">' +
+                '<button class="btn-cancel" id="edit-cancel">Annuler</button>' +
+                '<button class="btn-delete" id="del-confirm" style="flex:1;">Supprimer</button>' +
+                '</div>';
+
+            popup.innerHTML = html;
+            document.body.appendChild(popup);
+
+            // "Select all" toggles all checkboxes
+            document.getElementById('del-all').onchange = function() {{
+                var checked = this.checked;
+                popup.querySelectorAll('.del-day-cb').forEach(function(cb) {{ cb.checked = checked; }});
+            }};
+            // If all individual checkboxes are checked, check "select all" too
+            popup.querySelectorAll('.del-day-cb').forEach(function(cb) {{
+                cb.onchange = function() {{
+                    var allCbs = popup.querySelectorAll('.del-day-cb');
+                    var allChecked = true;
+                    allCbs.forEach(function(c) {{ if (!c.checked) allChecked = false; }});
+                    document.getElementById('del-all').checked = allChecked;
+                }};
+            }});
+
+            document.getElementById('edit-cancel').onclick = closeEditPopup;
+            document.getElementById('del-confirm').onclick = function() {{
+                var selectedDays = [];
+                popup.querySelectorAll('.del-day-cb:checked').forEach(function(cb) {{
+                    selectedDays.push(parseInt(cb.value));
+                }});
+                if (selectedDays.length === 0) return;
+
+                // If all days selected, remove employee entirely
+                if (selectedDays.length === daysWithEvents.length) {{
+                    delete DATA[empName];
+                }} else {{
+                    // Remove only events from selected days
+                    emp.events = emp.events.filter(function(ev) {{
+                        return selectedDays.indexOf(ev.day) === -1;
+                    }});
+                }}
+                renderTimeline();
+                updateHoursBadges();
+                closeEditPopup();
+                pushDataAfterEdit();
+            }};
+        }}
+
+        var _editsDirty = false;
+
+        function pushDataAfterEdit() {{
+            _editsDirty = true;
+            updateSaveButton();
+        }}
+
+        function updateSaveButton() {{
+            var btn = document.getElementById('save-edits-btn');
+            if (!btn) return;
+            if (_editsDirty) {{
+                btn.style.display = '';
+                btn.disabled = false;
+                btn.textContent = 'Enregistrer';
+                btn.className = 'save-edits-btn dirty';
+            }} else {{
+                btn.className = 'save-edits-btn';
+                btn.style.display = 'none';
+            }}
+        }}
+
+        function publishAllEdits() {{
+            var btn = document.getElementById('save-edits-btn');
+            if (btn) {{
+                btn.disabled = true;
+                btn.textContent = 'Sauvegarde...';
+                btn.className = 'save-edits-btn saving';
+            }}
             var statusEl = document.getElementById('edit-status');
-            if (statusEl) statusEl.textContent = 'Sauvegarde...';
             pushDataToGitHub(function(ok) {{
-                if (statusEl) {{
-                    statusEl.textContent = ok ? 'Sauvegard\u00e9 \u2714' : 'Erreur !';
-                    setTimeout(function() {{ statusEl.textContent = ''; }}, 3000);
+                if (ok) {{
+                    _editsDirty = false;
+                    if (btn) {{
+                        btn.textContent = 'Sauvegard\u00e9 \u2714';
+                        btn.className = 'save-edits-btn saved';
+                        setTimeout(function() {{ updateSaveButton(); }}, 2000);
+                    }}
+                }} else {{
+                    if (btn) {{
+                        btn.disabled = false;
+                        btn.textContent = 'Erreur \u2014 R\u00e9essayer';
+                        btn.className = 'save-edits-btn error';
+                    }}
                 }}
             }});
         }}
@@ -2566,24 +2703,12 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
 
         function applyTimeEdit(empName, ev, newStart, newEnd) {{
-            // Update the DATA object in memory
-            var dateStr = ev.start.substring(0, 11); // "2026-03-02T"
+            var dateStr = ev.start.substring(0, 11);
             ev.start = dateStr + newStart;
             ev.end = dateStr + newEnd;
             renderTimeline();
             updateHoursBadges();
-
-            // Show saving status
-            var statusEl = document.getElementById('edit-status');
-            if (statusEl) statusEl.textContent = 'Sauvegarde...';
-
-            // Push updated data to GitHub
-            pushDataToGitHub(function(ok) {{
-                if (statusEl) {{
-                    statusEl.textContent = ok ? 'Sauvegard\u00e9 \u2714' : 'Erreur !';
-                    setTimeout(function() {{ statusEl.textContent = ''; }}, 3000);
-                }}
-            }});
+            pushDataAfterEdit();
         }}
 
         function pushDataToGitHub(cb) {{
