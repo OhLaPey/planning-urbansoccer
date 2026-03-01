@@ -324,6 +324,30 @@
         .edit-overlay { position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,0.5); }
         .edit-status { font-size: 10px; color: #64dc3c; margin-left: auto; }
 
+        /* ── Drag-resize handles ── */
+        .tl-bar.editable .drag-handle {
+            position: absolute; top: 0; bottom: 0; width: 8px;
+            cursor: ew-resize; z-index: 10; opacity: 0;
+            transition: opacity 0.15s;
+        }
+        .tl-bar.editable:hover .drag-handle,
+        .tl-bar.editable .drag-handle.active { opacity: 1; }
+        .drag-handle.left { left: -2px; border-radius: 4px 0 0 4px; background: linear-gradient(90deg, rgba(255,120,50,0.7), transparent); }
+        .drag-handle.right { right: -2px; border-radius: 0 4px 4px 0; background: linear-gradient(270deg, rgba(255,120,50,0.7), transparent); }
+        .drag-handle::after {
+            content: ''; position: absolute; top: 50%; transform: translateY(-50%);
+            width: 2px; height: 12px; background: rgba(255,255,255,0.7); border-radius: 1px;
+        }
+        .drag-handle.left::after { left: 2px; }
+        .drag-handle.right::after { right: 2px; }
+        .drag-tooltip {
+            position: fixed; z-index: 300; padding: 3px 8px;
+            background: #1a1a2e; border: 1px solid rgba(255,120,50,0.5);
+            border-radius: 6px; font-size: 11px; font-weight: 600;
+            color: #FF7832; pointer-events: none; white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
         /* ── Legend ── */
         .legend { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
                    margin-bottom: 15px; }
@@ -749,6 +773,8 @@
 
                 var barContainer = document.createElement('div');
                 barContainer.className = 'tl-bar-container';
+                barContainer.dataset.minH = minH;
+                barContainer.dataset.range = range;
 
                 // Add grid lines
                 gridLines.forEach(function(gl) {
@@ -1549,28 +1575,149 @@
 
         // Override renderTimeline to add editable class when editMode
         var _origRenderTimeline = renderTimeline;
+        var _dragState = null;
+
+        // Snap a decimal hour to the nearest 15-min increment
+        function snapHour(h) { return Math.round(h * 4) / 4; }
+        function hourToStr(h) {
+            var hh = Math.floor(h); var mm = Math.round((h - hh) * 60);
+            if (mm === 60) { hh++; mm = 0; }
+            return hh.toString().padStart(2,'0') + ':' + mm.toString().padStart(2,'0');
+        }
+
+        function startDrag(e, bar, side, empName, ev, container) {
+            e.preventDefault(); e.stopPropagation();
+            var rect = container.getBoundingClientRect();
+            // Compute current timeline range from rendered grid
+            var tl = document.getElementById('timeline');
+            var inner = tl.querySelector('.timeline-inner');
+            // Read minH / range from container data attributes
+            var minH = parseFloat(container.dataset.minH);
+            var range = parseFloat(container.dataset.range);
+
+            _dragState = { bar: bar, side: side, empName: empName, ev: ev,
+                            rect: rect, minH: minH, range: range };
+            bar.querySelector('.drag-handle.' + side).classList.add('active');
+
+            // Create tooltip
+            var tip = document.createElement('div');
+            tip.className = 'drag-tooltip';
+            tip.id = 'drag-tooltip';
+            document.body.appendChild(tip);
+            updateDrag(e);
+        }
+
+        function updateDrag(e) {
+            if (!_dragState) return;
+            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            var ds = _dragState;
+            var pct = ((clientX - ds.rect.left) / ds.rect.width) * 100;
+            pct = Math.max(0, Math.min(100, pct));
+            var newH = snapHour(ds.minH + (pct / 100) * ds.range);
+
+            var s = new Date(ds.ev.start);
+            var eDate = new Date(ds.ev.end);
+            var sh = s.getHours() + s.getMinutes() / 60;
+            var eh = eDate.getHours() + eDate.getMinutes() / 60;
+            if (eh <= sh) eh = 24;
+
+            if (ds.side === 'left') {
+                newH = Math.min(newH, eh - 0.25);  // min 15 min
+                var newLeft = ((newH - ds.minH) / ds.range) * 100;
+                var newWidth = ((eh - newH) / ds.range) * 100;
+                ds.bar.style.left = newLeft + '%';
+                ds.bar.style.width = newWidth + '%';
+                ds.currentH = newH;
+            } else {
+                newH = Math.max(newH, sh + 0.25);
+                var origLeft = ((sh - ds.minH) / ds.range) * 100;
+                var newWidth = ((newH - sh) / ds.range) * 100;
+                ds.bar.style.width = newWidth + '%';
+                ds.currentH = newH;
+            }
+
+            var tip = document.getElementById('drag-tooltip');
+            if (tip) {
+                tip.textContent = hourToStr(newH);
+                tip.style.left = (clientX + 12) + 'px';
+                tip.style.top = (clientY - 28) + 'px';
+            }
+        }
+
+        function endDrag() {
+            if (!_dragState) return;
+            var ds = _dragState;
+            var s = new Date(ds.ev.start);
+            var eDate = new Date(ds.ev.end);
+            var sh = s.getHours() + s.getMinutes() / 60;
+            var eh = eDate.getHours() + eDate.getMinutes() / 60;
+            if (eh <= sh) eh = 24;
+
+            var newStart, newEnd;
+            if (ds.side === 'left') {
+                newStart = hourToStr(ds.currentH);
+                newEnd = hourToStr(eh);
+            } else {
+                newStart = hourToStr(sh);
+                newEnd = hourToStr(ds.currentH);
+            }
+
+            _dragState = null;
+            var tip = document.getElementById('drag-tooltip');
+            if (tip) tip.remove();
+
+            applyTimeEdit(ds.empName, ds.ev, newStart, newEnd);
+        }
+
+        document.addEventListener('mousemove', function(e) { updateDrag(e); });
+        document.addEventListener('mouseup', function() { endDrag(); });
+        document.addEventListener('touchmove', function(e) { if (_dragState) { e.preventDefault(); updateDrag(e); } }, { passive: false });
+        document.addEventListener('touchend', function() { endDrag(); });
+
         renderTimeline = function() {
             _origRenderTimeline();
             if (!editMode) return;
+
             document.querySelectorAll('#timeline .tl-bar').forEach(function(bar) {
                 bar.classList.add('editable');
+                // Add drag handles
+                if (!bar.querySelector('.drag-handle')) {
+                    var handleL = document.createElement('div');
+                    handleL.className = 'drag-handle left';
+                    var handleR = document.createElement('div');
+                    handleR.className = 'drag-handle right';
+                    bar.appendChild(handleL);
+                    bar.appendChild(handleR);
+                }
             });
-            // Add click handlers for editing
+
+            // Add click + drag handlers
             var rows = document.querySelectorAll('#timeline .timeline-row');
             rows.forEach(function(row) {
                 var nameEl = row.querySelector('.tl-name');
                 if (!nameEl || !nameEl.title) return;
                 var empName = nameEl.title;
+                var container = row.querySelector('.tl-bar-container');
                 row.querySelectorAll('.tl-bar').forEach(function(bar, idx) {
+                    var emp = DATA[empName];
+                    if (!emp) return;
+                    var dayEvts = emp.events.filter(function(ev) { return ev.day === currentDay; });
+                    if (!dayEvts[idx]) return;
+                    var ev = dayEvts[idx];
+
                     bar.onclick = function(e) {
-                        if (!editMode) return;
+                        if (!editMode || _dragState) return;
+                        // Don't open popup if click was on a drag handle
+                        if (e.target.classList.contains('drag-handle')) return;
                         e.stopPropagation();
-                        var emp = DATA[empName];
-                        if (!emp) return;
-                        var dayEvts = emp.events.filter(function(ev) { return ev.day === currentDay; });
-                        if (!dayEvts[idx]) return;
-                        openEditPopup(empName, dayEvts[idx], idx);
+                        openEditPopup(empName, ev, idx);
                     };
+
+                    bar.querySelector('.drag-handle.left').onmousedown = function(e) { startDrag(e, bar, 'left', empName, ev, container); };
+                    bar.querySelector('.drag-handle.right').onmousedown = function(e) { startDrag(e, bar, 'right', empName, ev, container); };
+                    bar.querySelector('.drag-handle.left').ontouchstart = function(e) { startDrag(e, bar, 'left', empName, ev, container); };
+                    bar.querySelector('.drag-handle.right').ontouchstart = function(e) { startDrag(e, bar, 'right', empName, ev, container); };
                 });
             });
         };
@@ -1623,24 +1770,12 @@
             if (el) el.remove();
         }
 
-        function saveEditsToLocal() {
-            try {
-                var edits = {};
-                Object.keys(DATA).forEach(function(name) {
-                    if (name === '_codeNames') return;
-                    edits[name] = { events: DATA[name].events };
-                });
-                localStorage.setItem('planning-edits-S10', JSON.stringify(edits));
-            } catch(e) {}
-        }
-
         function applyTimeEdit(empName, ev, newStart, newEnd) {
             // Update the DATA object in memory
             var dateStr = ev.start.substring(0, 11); // "2026-03-02T"
             ev.start = dateStr + newStart;
             ev.end = dateStr + newEnd;
             renderTimeline();
-            saveEditsToLocal();
 
             // Show saving status
             var statusEl = document.getElementById('edit-status');
