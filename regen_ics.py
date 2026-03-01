@@ -54,35 +54,36 @@ def extract_events_from_html(path):
     """Extract embedded event DATA from SXX.html."""
     with open(path, 'r', encoding='utf-8') as f:
         content = f.read()
-    # Find "var embedded = " that contains employee event data (has "slug" and "events" keys)
-    start_marker = 'var embedded = '
-    pos = 0
-    while True:
-        idx = content.find(start_marker, pos)
-        if idx == -1:
-            return {}
-        idx += len(start_marker)
-        # Find matching closing brace
-        depth = 0
-        end_idx = idx
-        for i in range(idx, len(content)):
-            if content[i] == '{':
-                depth += 1
-            elif content[i] == '}':
-                depth -= 1
-                if depth == 0:
-                    end_idx = i + 1
-                    break
-        json_str = content[idx:end_idx]
-        try:
-            data = json.loads(json_str)
-            # Check if this looks like event data (has employee names with "slug" and "events")
-            first_val = next(iter(data.values()), None)
-            if isinstance(first_val, dict) and "events" in first_val:
-                return data
-        except (json.JSONDecodeError, StopIteration):
-            pass
-        pos = idx
+    # Find employee event data (either "var DATA = " or legacy "var embedded = ")
+    for start_marker in ['var DATA = ', 'var embedded = ']:
+        pos = 0
+        while True:
+            idx = content.find(start_marker, pos)
+            if idx == -1:
+                break
+            idx += len(start_marker)
+            # Find matching closing brace
+            depth = 0
+            end_idx = idx
+            for i in range(idx, len(content)):
+                if content[i] == '{':
+                    depth += 1
+                elif content[i] == '}':
+                    depth -= 1
+                    if depth == 0:
+                        end_idx = i + 1
+                        break
+            json_str = content[idx:end_idx]
+            try:
+                data = json.loads(json_str)
+                # Check if this looks like event data (has employee names with "slug" and "events")
+                first_val = next(iter(data.values()), None)
+                if isinstance(first_val, dict) and "events" in first_val:
+                    return data
+            except (json.JSONDecodeError, StopIteration):
+                pass
+            pos = idx
+    return {}
 
 
 def build_description(notes):

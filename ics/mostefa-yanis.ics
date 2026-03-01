@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-1@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260301T093000
 DTEND;TZID=Europe/Paris:20260301T101500
 SUMMARY:Vie de centre
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-2@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260301T101500
 DTEND;TZID=Europe/Paris:20260301T121500
 SUMMARY:Anniversaire
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-3@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260301T121500
 DTEND;TZID=Europe/Paris:20260301T124500
 SUMMARY:Vie de centre
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-4@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260301T134500
 DTEND;TZID=Europe/Paris:20260301T174500
 SUMMARY:Anniversaire
@@ -105,8 +105,29 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
   est remplacé par Medhi (qui viendra à 19h)\n
 END:VEVENT
 BEGIN:VEVENT
+UID:mostefa-yanis-s9-5@urban7d
+DTSTAMP:20260301T070324Z
+DTSTART;TZID=Europe/Paris:20260224T200000
+DTEND;TZID=Europe/Paris:20260224T235900
+SUMMARY:[Remplace Lucas] Vie de centre
+DESCRIPTION:Remplace BOULARDET Lucas\nSemaine de vacances scolaires\n⚽ St
+ age foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin\, P25H lundi ap
+ rem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽
+ 🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laq
+ uelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tourno
+ i étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont pr
+ évus sur les anniversaires. On verra si les créneaux sont réservés sur
+ tout avec les vacances scolaires\nMAJ 2026-02-20: MAJ Anniversaire :\n🎂
+  Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n
+ 🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu 
+ pourras aider Péïo au bar le reste de la journée\nMAJ 2026-02-23: Event
+  ITEP de dernière minute : Dorian de Montaudran pour le gérer\nRemplacem
+ ent : mardi soir Lucas (malade) est remplacé par Medhi (qui viendra à 19
+ h)\n
+END:VEVENT
+BEGIN:VEVENT
 UID:mostefa-yanis-s10-1@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260308T093000
 DTEND;TZID=Europe/Paris:20260308T101500
 SUMMARY:Vie de centre
@@ -122,7 +143,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-2@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260308T101500
 DTEND;TZID=Europe/Paris:20260308T121500
 SUMMARY:Anniversaire
@@ -138,7 +159,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-3@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260308T121500
 DTEND;TZID=Europe/Paris:20260308T124500
 SUMMARY:Vie de centre
@@ -154,7 +175,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-4@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260308T134500
 DTEND;TZID=Europe/Paris:20260308T174500
 SUMMARY:Anniversaire
@@ -170,7 +191,7 @@ DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-1@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260314T131500
 DTEND;TZID=Europe/Paris:20260314T171500
 SUMMARY:Anniversaire
@@ -183,7 +204,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-2@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260315T093000
 DTEND;TZID=Europe/Paris:20260315T101500
 SUMMARY:Vie de centre
@@ -196,7 +217,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-3@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260315T101500
 DTEND;TZID=Europe/Paris:20260315T121500
 SUMMARY:Anniversaire
@@ -209,7 +230,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-4@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260315T121500
 DTEND;TZID=Europe/Paris:20260315T124500
 SUMMARY:Vie de centre
@@ -222,7 +243,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-5@urban7d
-DTSTAMP:20260301T065535Z
+DTSTAMP:20260301T070324Z
 DTSTART;TZID=Europe/Paris:20260315T131500
 DTEND;TZID=Europe/Paris:20260315T151500
 SUMMARY:Anniversaire
