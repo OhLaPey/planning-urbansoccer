@@ -494,7 +494,15 @@ def load_week_notes(week_num):
 def generate_html(week_employees, week_num, year, all_weeks):
     """Génère la page HTML avec preview timeline + vue individuelle + abonnement."""
     date_range = format_date_range(year, week_num)
-    events_json = build_events_json(week_employees)
+
+    # Si un fichier events.json existe (modifié depuis la page web), l'utiliser
+    # comme source de vérité à la place des données Excel.
+    events_path = f"data/S{week_num}-events.json"
+    if os.path.exists(events_path):
+        with open(events_path, "r", encoding="utf-8") as f:
+            events_json = f.read().strip()
+    else:
+        events_json = build_events_json(week_employees)
     colors_json = json.dumps(CODE_COLORS, ensure_ascii=False)
     default_color_json = json.dumps(DEFAULT_COLOR, ensure_ascii=False)
     notes_data = load_week_notes(week_num)
@@ -2912,6 +2920,16 @@ def main():
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(json_data, f, ensure_ascii=False, indent=2)
         print(f"\u00c9crit : {json_path}")
+
+        # Events JSON — écrire seulement s'il n'existe pas encore
+        # (s'il existe, il a été modifié depuis la page web et fait foi)
+        events_path = f"data/S{week_num}-events.json"
+        if not os.path.exists(events_path):
+            events_data = json.loads(build_events_json(employees))
+            with open(events_path, "w", encoding="utf-8") as f:
+                json.dump(events_data, f, ensure_ascii=False, indent=2)
+                f.write("\n")
+            print(f"\u00c9crit : {events_path}")
 
         # HTML
         html_content = generate_html(employees, week_num, year, all_weeks)

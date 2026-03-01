@@ -1,0 +1,794 @@
+{
+  "BONILLO Matthieu": {
+    "slug": "bonillo-matthieu",
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-14T09:00",
+        "end": "2026-03-14T13:00",
+        "day": 5
+      }
+    ]
+  },
+  "BOULARDET Lucas": {
+    "slug": "boulardet-lucas",
+    "events": []
+  },
+  "CARRERE Peïo": {
+    "slug": "carrere-peio",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-09T15:00",
+        "end": "2026-03-10T00:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-10T15:30",
+        "end": "2026-03-10T18:15",
+        "day": 1
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-03-10T18:15",
+        "end": "2026-03-10T20:45",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-10T20:45",
+        "end": "2026-03-10T22:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-11T16:45",
+        "end": "2026-03-11T19:15",
+        "day": 2
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-03-11T19:15",
+        "end": "2026-03-11T21:45",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-12T09:45",
+        "end": "2026-03-12T16:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-14T10:30",
+        "end": "2026-03-14T15:00",
+        "day": 5
+      },
+      {
+        "code": "EV-RE",
+        "label": "Événement régisseur",
+        "start": "2026-03-14T15:00",
+        "end": "2026-03-14T19:00",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-15T08:45",
+        "end": "2026-03-15T16:00",
+        "day": 6
+      }
+    ]
+  },
+  "CASTELLON Pascaline": {
+    "slug": "castellon-pascaline",
+    "events": [
+      {
+        "code": "FORP",
+        "label": "FORP",
+        "start": "2026-03-09T13:00",
+        "end": "2026-03-09T19:00",
+        "day": 0
+      }
+    ]
+  },
+  "COHAT Linda": {
+    "slug": "cohat-linda",
+    "events": []
+  },
+  "CRUZEL Quentin": {
+    "slug": "cruzel-quentin",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-10T18:00",
+        "end": "2026-03-11T00:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-12T20:00",
+        "end": "2026-03-13T00:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-15T16:00",
+        "end": "2026-03-15T22:20",
+        "day": 6
+      }
+    ]
+  },
+  "DE NOUEL Maxime": {
+    "slug": "de-nouel-maxime",
+    "events": [
+      {
+        "code": "CUP-L",
+        "label": "Cup League",
+        "start": "2026-03-09T11:00",
+        "end": "2026-03-09T12:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-09T12:00",
+        "end": "2026-03-09T13:00",
+        "day": 0
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-03-09T13:00",
+        "end": "2026-03-09T18:00",
+        "day": 0
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-09T18:00",
+        "end": "2026-03-09T21:15",
+        "day": 0
+      },
+      {
+        "code": "CUP-L",
+        "label": "Cup League",
+        "start": "2026-03-10T10:30",
+        "end": "2026-03-10T12:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-10T12:00",
+        "end": "2026-03-10T12:30",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-10T13:15",
+        "end": "2026-03-10T15:45",
+        "day": 1
+      },
+      {
+        "code": "REU",
+        "label": "Réunion",
+        "start": "2026-03-10T15:45",
+        "end": "2026-03-10T16:30",
+        "day": 1
+      },
+      {
+        "code": "PAD-A",
+        "label": "Padel animation",
+        "start": "2026-03-10T16:30",
+        "end": "2026-03-10T17:45",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-10T17:45",
+        "end": "2026-03-10T21:15",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-11T11:45",
+        "end": "2026-03-11T13:15",
+        "day": 2
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-11T14:15",
+        "end": "2026-03-11T15:45",
+        "day": 2
+      },
+      {
+        "code": "PAD-A",
+        "label": "Padel animation",
+        "start": "2026-03-11T15:45",
+        "end": "2026-03-11T17:00",
+        "day": 2
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-11T17:00",
+        "end": "2026-03-11T20:30",
+        "day": 2
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-13T09:45",
+        "end": "2026-03-13T12:15",
+        "day": 4
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-03-13T13:00",
+        "end": "2026-03-13T19:00",
+        "day": 4
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-03-14T07:30",
+        "end": "2026-03-14T13:00",
+        "day": 5
+      }
+    ]
+  },
+  "DIVIEN Yohan": {
+    "slug": "divien-yohan",
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-14T09:00",
+        "end": "2026-03-14T13:00",
+        "day": 5
+      }
+    ]
+  },
+  "DONAER Nicolas": {
+    "slug": "donaer-nicolas",
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-09T17:15",
+        "end": "2026-03-09T19:15",
+        "day": 0
+      },
+      {
+        "code": "EV-LO",
+        "label": "EV-LO",
+        "start": "2026-03-09T19:15",
+        "end": "2026-03-09T23:30",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-11T12:00",
+        "end": "2026-03-11T14:15",
+        "day": 2
+      },
+      {
+        "code": "EDF-B",
+        "label": "EDF-B",
+        "start": "2026-03-11T14:15",
+        "end": "2026-03-11T15:45",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-11T15:45",
+        "end": "2026-03-11T17:15",
+        "day": 2
+      },
+      {
+        "code": "EDF-B",
+        "label": "EDF-B",
+        "start": "2026-03-11T17:15",
+        "end": "2026-03-11T18:45",
+        "day": 2
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-11T19:30",
+        "end": "2026-03-11T21:30",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-13T11:45",
+        "end": "2026-03-13T14:00",
+        "day": 4
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-13T17:15",
+        "end": "2026-03-13T19:15",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-13T19:15",
+        "end": "2026-03-14T00:30",
+        "day": 4
+      },
+      {
+        "code": "AIDE",
+        "label": "Aide",
+        "start": "2026-03-15T13:30",
+        "end": "2026-03-15T15:15",
+        "day": 6
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-15T15:15",
+        "end": "2026-03-15T23:25",
+        "day": 6
+      }
+    ]
+  },
+  "DOVINA Théo": {
+    "slug": "dovina-theo",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-11T20:00",
+        "end": "2026-03-12T00:00",
+        "day": 2
+      }
+    ]
+  },
+  "HEBERT Jean Baptiste": {
+    "slug": "hebert-jean-baptiste",
+    "events": []
+  },
+  "JARGUEL Thomas": {
+    "slug": "jarguel-thomas",
+    "events": []
+  },
+  "KABUNDA NDEKE Marvyn": {
+    "slug": "kabunda-ndeke-marvyn",
+    "events": [
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-15T13:45",
+        "end": "2026-03-15T17:45",
+        "day": 6
+      }
+    ]
+  },
+  "LABEFODE Thomas": {
+    "slug": "labefode-thomas",
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-13T17:15",
+        "end": "2026-03-13T19:15",
+        "day": 4
+      }
+    ]
+  },
+  "MOSTEFA Yanis": {
+    "slug": "mostefa-yanis",
+    "events": [
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-14T13:15",
+        "end": "2026-03-14T17:15",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-15T09:30",
+        "end": "2026-03-15T10:15",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-15T10:15",
+        "end": "2026-03-15T12:15",
+        "day": 6
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-15T12:15",
+        "end": "2026-03-15T12:45",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-15T13:15",
+        "end": "2026-03-15T15:15",
+        "day": 6
+      }
+    ]
+  },
+  "ORDONEZ GOMEZ Oceane": {
+    "slug": "ordonez-gomez-oceane",
+    "events": [
+      {
+        "code": "FORE",
+        "label": "FORE",
+        "start": "2026-03-09T19:00",
+        "end": "2026-03-09T19:30",
+        "day": 0
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-09T19:30",
+        "end": "2026-03-09T22:30",
+        "day": 0
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-10T18:30",
+        "end": "2026-03-10T22:30",
+        "day": 1
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-11T19:30",
+        "end": "2026-03-11T22:30",
+        "day": 2
+      }
+    ]
+  },
+  "PEREZ Loic": {
+    "slug": "perez-loic",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-09T18:00",
+        "end": "2026-03-10T00:00",
+        "day": 0
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-10T17:15",
+        "end": "2026-03-10T19:15",
+        "day": 1
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-10T19:30",
+        "end": "2026-03-10T22:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-11T09:45",
+        "end": "2026-03-11T20:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-12T17:30",
+        "end": "2026-03-13T00:00",
+        "day": 3
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-14T09:00",
+        "end": "2026-03-14T09:30",
+        "day": 5
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-14T09:30",
+        "end": "2026-03-14T12:30",
+        "day": 5
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-14T13:45",
+        "end": "2026-03-14T15:45",
+        "day": 5
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-14T15:45",
+        "end": "2026-03-14T17:45",
+        "day": 5
+      }
+    ]
+  },
+  "PISTORE Remi": {
+    "slug": "pistore-remi",
+    "events": []
+  },
+  "PUJOL Mathieu": {
+    "slug": "pujol-mathieu",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-09T09:45",
+        "end": "2026-03-09T15:30",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-10T09:45",
+        "end": "2026-03-10T15:30",
+        "day": 1
+      },
+      {
+        "code": "REU",
+        "label": "Réunion",
+        "start": "2026-03-10T15:30",
+        "end": "2026-03-10T16:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-10T17:30",
+        "end": "2026-03-10T19:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-12T14:00",
+        "end": "2026-03-12T15:00",
+        "day": 3
+      },
+      {
+        "code": "REU",
+        "label": "Réunion",
+        "start": "2026-03-12T15:00",
+        "end": "2026-03-12T16:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-12T16:00",
+        "end": "2026-03-12T22:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-13T09:45",
+        "end": "2026-03-13T19:00",
+        "day": 4
+      },
+      {
+        "code": "CUP-L",
+        "label": "Cup League",
+        "start": "2026-03-14T07:30",
+        "end": "2026-03-14T10:00",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-14T10:00",
+        "end": "2026-03-14T17:30",
+        "day": 5
+      }
+    ]
+  },
+  "RABII Mehdi": {
+    "slug": "rabii-mehdi",
+    "events": [
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-09T19:30",
+        "end": "2026-03-09T22:30",
+        "day": 0
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-14T13:45",
+        "end": "2026-03-14T17:45",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-14T17:45",
+        "end": "2026-03-14T21:15",
+        "day": 5
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-15T10:45",
+        "end": "2026-03-15T12:45",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-15T13:30",
+        "end": "2026-03-15T15:15",
+        "day": 6
+      },
+      {
+        "code": "AIDE",
+        "label": "Aide",
+        "start": "2026-03-15T15:15",
+        "end": "2026-03-15T17:30",
+        "day": 6
+      }
+    ]
+  },
+  "SANGARNE Enzo": {
+    "slug": "sangarne-enzo",
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-11T13:45",
+        "end": "2026-03-11T17:30",
+        "day": 2
+      }
+    ]
+  },
+  "SEIGNE Kevin": {
+    "slug": "seigne-kevin",
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-14T09:00",
+        "end": "2026-03-14T13:00",
+        "day": 5
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-14T13:45",
+        "end": "2026-03-14T17:45",
+        "day": 5
+      }
+    ]
+  },
+  "TINGUY Florian": {
+    "slug": "tinguy-florian",
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-10T17:15",
+        "end": "2026-03-10T19:15",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-10T19:15",
+        "end": "2026-03-11T00:00",
+        "day": 1
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-11T13:45",
+        "end": "2026-03-11T17:30",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-12T11:45",
+        "end": "2026-03-12T14:15",
+        "day": 3
+      },
+      {
+        "code": "VIS-M",
+        "label": "VIS-M",
+        "start": "2026-03-12T14:15",
+        "end": "2026-03-12T15:15",
+        "day": 3
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-13T17:15",
+        "end": "2026-03-13T19:15",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-14T15:00",
+        "end": "2026-03-14T22:20",
+        "day": 5
+      }
+    ]
+  },
+  "TOPPAN Mattis": {
+    "slug": "toppan-mattis",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-11T19:15",
+        "end": "2026-03-12T00:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-13T17:30",
+        "end": "2026-03-14T00:30",
+        "day": 4
+      }
+    ]
+  },
+  "VASSANT Tiffany": {
+    "slug": "vassant-tiffany",
+    "events": [
+      {
+        "code": "FORE",
+        "label": "FORE",
+        "start": "2026-03-11T13:00",
+        "end": "2026-03-11T13:45",
+        "day": 2
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-11T13:45",
+        "end": "2026-03-11T17:30",
+        "day": 2
+      }
+    ]
+  }
+}
