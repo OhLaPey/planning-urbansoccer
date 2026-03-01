@@ -646,10 +646,10 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
         .tl-now-line {{ position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
                         border-left: 2px dashed #ffd700;
-                        animation: nowPulse 2s ease-in-out infinite; }}
+                        filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 8px rgba(255,215,0,0.4)); opacity: 0.8; }}
         .tl-now-marker {{ position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
                           border-left: 2px dashed #ffd700;
-                          animation: nowPulse 2s ease-in-out infinite; }}
+                          filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 8px rgba(255,215,0,0.4)); opacity: 0.8; }}
         .tl-bar {{ position: absolute; height: 100%; border-radius: 5px;
                    display: flex; align-items: center; justify-content: center;
                    font-size: 9px; font-weight: 600; overflow: hidden;
