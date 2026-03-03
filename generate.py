@@ -2938,23 +2938,57 @@ def main():
             f.write(html_content)
         print(f"\u00c9crit : {html_path}")
 
-    # ── Mettre à jour index.html → dernière semaine ──
+    # ── Mettre à jour index.html → redirection intelligente vers la bonne semaine ──
     latest_week = max(all_weeks)
+
+    # Construire la table des semaines avec leurs dates de début
+    weeks_info = []
+    for wn in sorted(all_weeks):
+        wd = week_data[wn]
+        y = wd["year"]
+        mon = datetime.fromisocalendar(y, wn, 1)
+        sun = mon + timedelta(days=6)
+        weeks_info.append({
+            "week": wn,
+            "start": mon.strftime("%Y-%m-%d"),
+            "end": sun.strftime("%Y-%m-%d"),
+        })
+    weeks_json = json.dumps(weeks_info)
+
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(
             '<!DOCTYPE html>\n'
             '<html lang="fr">\n'
             '<head>\n'
             '    <meta charset="UTF-8">\n'
-            f'    <meta http-equiv="refresh" content="0;url=S{latest_week}.html">\n'
+            '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
             '    <title>Planning Urban 7D</title>\n'
+            '    <script>\n'
+            '    (function() {\n'
+            f'        var weeks = {weeks_json};\n'
+            '        var today = new Date();\n'
+            '        var yyyy = today.getFullYear();\n'
+            '        var mm = String(today.getMonth()+1).padStart(2,"0");\n'
+            '        var dd = String(today.getDate()).padStart(2,"0");\n'
+            '        var todayStr = yyyy + "-" + mm + "-" + dd;\n'
+            '        var target = null;\n'
+            '        for (var i = 0; i < weeks.length; i++) {\n'
+            '            if (todayStr >= weeks[i].start && todayStr <= weeks[i].end) {\n'
+            '                target = weeks[i].week; break;\n'
+            '            }\n'
+            '        }\n'
+            '        if (!target) target = weeks[weeks.length - 1].week;\n'
+            '        window.location.replace("S" + target + ".html");\n'
+            '    })();\n'
+            '    </script>\n'
+            f'    <noscript><meta http-equiv="refresh" content="0;url=S{latest_week}.html"></noscript>\n'
             '</head>\n'
             '<body>\n'
-            f'    <p>Redirection vers <a href="S{latest_week}.html">S{latest_week}</a>...</p>\n'
+            f'    <p>Redirection vers <a href="S{latest_week}.html">le planning</a>...</p>\n'
             '</body>\n'
             '</html>'
         )
-    print(f"\u00c9crit : index.html \u2192 S{latest_week}.html")
+    print(f"\u00c9crit : index.html (semaines : {', '.join(f'S{w}' for w in sorted(all_weeks))})")
 
     print("\nTermin\u00e9 !")
     print("\n\u2500\u2500 Abonnement calendrier \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500")
