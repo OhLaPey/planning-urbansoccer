@@ -1487,15 +1487,17 @@ def generate_html(week_employees, week_num, year, all_weeks):
             var base = window.location.href.replace(/[^/]*$/, '');
             var icsPath = 'ics/' + slug + '.ics';
             var fullUrl = new URL(icsPath, base).href;
+            var httpsUrl = fullUrl;
             var webcalUrl = 'webcal://' + new URL(icsPath, base).host + new URL(icsPath, base).pathname;
             var calName = encodeURIComponent('Planning ' + displayName);
 
             document.getElementById('cal-chooser-name').textContent = displayName;
+            // Google Calendar : URL https non encodée dans cid (webcal ne fonctionne pas sur mobile)
             document.getElementById('cal-google').href =
-                'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(webcalUrl);
+                'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(httpsUrl);
             document.getElementById('cal-apple').href = webcalUrl;
             document.getElementById('cal-outlook').href =
-                'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(fullUrl) + '&name=' + calName;
+                'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(httpsUrl) + '&name=' + calName;
             document.getElementById('cal-download').href = icsPath;
             document.getElementById('cal-download').setAttribute('download', slug + '.ics');
             document.getElementById('cal-copy').setAttribute('data-url', fullUrl);
