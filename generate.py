@@ -1861,16 +1861,26 @@ def generate_html(week_employees, week_num, year, all_weeks):
             // Plus de localStorage — les notes sont en mémoire et persistées via "Publier"
         }}
 
+        var STAFF_CODE = '1937';
+        var STAFF_KEY = 'planning-staff-ok';
         var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
-        function getToken() {{ return localStorage.getItem(TOKEN_KEY) || atob(_p.join('')); }}
+        function isStaffVerified() {{ return sessionStorage.getItem(STAFF_KEY) === '1'; }}
+        function verifyStaff() {{
+            if (isStaffVerified()) return true;
+            var code = prompt('Code staff requis :');
+            if (code && code.trim() === STAFF_CODE) {{ sessionStorage.setItem(STAFF_KEY, '1'); return true; }}
+            alert('Code staff incorrect.'); return false;
+        }}
+        function getToken() {{
+            if (!isStaffVerified()) return '';
+            return localStorage.getItem(TOKEN_KEY) || atob(_p.join(''));
+        }}
         function setToken(t) {{ localStorage.setItem(TOKEN_KEY, t); }}
-        function isAdminUnlocked() {{ return sessionStorage.getItem(ADMIN_KEY) === '1' || !!getToken(); }}
+        function isAdminUnlocked() {{ return sessionStorage.getItem(ADMIN_KEY) === '1' || isStaffVerified(); }}
         function unlockAdmin() {{ sessionStorage.setItem(ADMIN_KEY, '1'); }}
         function ensureToken() {{
-            if (getToken()) return getToken();
-            var t = prompt('Token GitHub requis pour publier :');
-            if (t && t.trim()) {{ setToken(t.trim()); return t.trim(); }}
-            return '';
+            if (!verifyStaff()) return '';
+            return getToken();
         }}
 
         function renderNotes() {{
