@@ -1852,7 +1852,6 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var REPO = 'OhLaPey/planning-urbansoccer';
         var NOTES_PATH = 'notes/S{week_num}.json';
         var TOKEN_KEY = 'planning-admin-token';
-        var ADMIN_PWD = 'urban2026';
         var ADMIN_KEY = 'planning-admin-unlocked';
         var notesEl = document.getElementById('week-notes');
         var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
@@ -2046,19 +2045,32 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 dateRow.appendChild(dateSel);
                 formBody.appendChild(dateRow);
 
-                // "Out" row
+                // "Out" row – only people working on the selected day
                 var outRow = document.createElement('div');
                 outRow.className = 'repl-row';
                 outRow.innerHTML = '<label>Sort</label>';
                 var outSel = document.createElement('select');
-                var outDef = document.createElement('option');
-                outDef.value = ''; outDef.textContent = 'Personne remplac\u00e9e...';
-                outSel.appendChild(outDef);
-                names.forEach(function(n) {{
-                    var opt = document.createElement('option');
-                    opt.value = n; opt.textContent = n;
-                    outSel.appendChild(opt);
-                }});
+                function refreshOutOptions() {{
+                    var prev = outSel.value;
+                    outSel.innerHTML = '';
+                    var outDef = document.createElement('option');
+                    outDef.value = ''; outDef.textContent = 'Personne remplac\u00e9e...';
+                    outSel.appendChild(outDef);
+                    var dayIdx = WEEK_DATES.indexOf(dateSel.value);
+                    names.forEach(function(n) {{
+                        if (dayIdx < 0) return;
+                        var emp = DATA[n];
+                        if (!emp || !emp.events) return;
+                        var works = emp.events.some(function(ev) {{ return ev.day === dayIdx; }});
+                        if (!works) return;
+                        var opt = document.createElement('option');
+                        opt.value = n; opt.textContent = n;
+                        if (n === prev) opt.selected = true;
+                        outSel.appendChild(opt);
+                    }});
+                }}
+                refreshOutOptions();
+                dateSel.addEventListener('change', refreshOutOptions);
                 outRow.appendChild(outSel);
                 formBody.appendChild(outRow);
 
@@ -2870,14 +2882,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
             adminLink.innerHTML = '<a href="#" style="color:#444;font-size:11px;text-decoration:none;">Admin</a>';
             adminLink.querySelector('a').onclick = function(e) {{
                 e.preventDefault();
-                var pwd = prompt('Mot de passe admin :');
-                if (pwd && pwd.trim() === ADMIN_PWD) {{
+                if (verifyStaff()) {{
                     unlockAdmin();
                     adminLink.remove();
                     initAdminToolbar();
                     renderNotes();
-                }} else if (pwd !== null) {{
-                    alert('Mot de passe incorrect.');
                 }}
             }};
             document.querySelector('.container').appendChild(adminLink);

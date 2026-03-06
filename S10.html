@@ -2473,19 +2473,32 @@
                 dateRow.appendChild(dateSel);
                 formBody.appendChild(dateRow);
 
-                // "Out" row
+                // "Out" row – only people working on the selected day
                 var outRow = document.createElement('div');
                 outRow.className = 'repl-row';
                 outRow.innerHTML = '<label>Sort</label>';
                 var outSel = document.createElement('select');
-                var outDef = document.createElement('option');
-                outDef.value = ''; outDef.textContent = 'Personne remplacée...';
-                outSel.appendChild(outDef);
-                names.forEach(function(n) {
-                    var opt = document.createElement('option');
-                    opt.value = n; opt.textContent = n;
-                    outSel.appendChild(opt);
-                });
+                function refreshOutOptions() {
+                    var prev = outSel.value;
+                    outSel.innerHTML = '';
+                    var outDef = document.createElement('option');
+                    outDef.value = ''; outDef.textContent = 'Personne remplacée...';
+                    outSel.appendChild(outDef);
+                    var dayIdx = WEEK_DATES.indexOf(dateSel.value);
+                    names.forEach(function(n) {
+                        if (dayIdx < 0) return;
+                        var emp = DATA[n];
+                        if (!emp || !emp.events) return;
+                        var works = emp.events.some(function(ev) { return ev.day === dayIdx; });
+                        if (!works) return;
+                        var opt = document.createElement('option');
+                        opt.value = n; opt.textContent = n;
+                        if (n === prev) opt.selected = true;
+                        outSel.appendChild(opt);
+                    });
+                }
+                refreshOutOptions();
+                dateSel.addEventListener('change', refreshOutOptions);
                 outRow.appendChild(outSel);
                 formBody.appendChild(outRow);
 
@@ -3290,15 +3303,13 @@
         initAdminToolbar();
 
         // Admin link at bottom to enter token
-        if (!getToken()) {
+        if (!isStaffVerified()) {
             var adminLink = document.createElement('div');
             adminLink.style.cssText = 'text-align:center;margin:20px 0;';
             adminLink.innerHTML = '<a href="#" style="color:#444;font-size:11px;text-decoration:none;">Admin</a>';
             adminLink.querySelector('a').onclick = function(e) {
                 e.preventDefault();
-                var t = prompt('Token GitHub (admin):');
-                if (t && t.trim()) {
-                    setToken(t.trim());
+                if (verifyStaff()) {
                     adminLink.remove();
                     initAdminToolbar();
                     renderNotes();
