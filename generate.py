@@ -762,6 +762,27 @@ def generate_html(week_employees, week_num, year, all_weeks):
                                color:#888; font-size:13px; cursor:pointer; margin-top:4px;
                                font-family:inherit; transition: all 0.2s; }}
         .cal-chooser-cancel:hover {{ color:#fff; border-color:rgba(255,255,255,0.3); }}
+        .google-steps {{ padding: 0 4px; }}
+        .step-url {{ background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+                     border-radius: 8px; padding: 10px 12px; font-size: 10px; color: #FF7832;
+                     word-break: break-all; margin-bottom: 10px; font-family: monospace; }}
+        .copy-url-btn {{ width: 100%; padding: 10px; background: #FF7832; color: #fff; border: none;
+                         border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer;
+                         font-family: inherit; transition: all 0.2s; }}
+        .copy-url-btn.copied {{ background: #2a6e2a; color: #64dc3c; }}
+        .step-divider {{ height: 1px; background: rgba(255,255,255,0.08); margin: 14px 0; }}
+        .step-title {{ font-size: 12px; color: #aaa; font-weight: 600; margin-bottom: 6px; }}
+        .step-list {{ font-size: 12px; color: #ccc; padding-left: 20px; margin: 0; }}
+        .step-list li {{ margin-bottom: 6px; }}
+        .step-link {{ color: #4a9eff; text-decoration: none; }}
+        .step-link:hover {{ text-decoration: underline; }}
+        .step-note {{ font-size: 10px; color: #64dc3c; margin-top: 10px; text-align: center; }}
+        .email-btn {{ display: flex; align-items: center; justify-content: center; gap: 8px;
+                      width: 100%; padding: 10px; background: rgba(255,255,255,0.06);
+                      border: 1px solid rgba(255,255,255,0.12); border-radius: 10px;
+                      font-size: 12px; color: #ccc; cursor: pointer; font-family: inherit;
+                      text-decoration: none; margin-top: 8px; transition: all 0.2s; }}
+        .email-btn:hover {{ background: rgba(255,255,255,0.1); color: #fff; }}
 
         .no-events {{ text-align: center; padding: 30px; color: #444; font-size: 13px; }}
 
@@ -1040,18 +1061,18 @@ def generate_html(week_employees, week_num, year, all_weeks):
         <div class="cal-chooser">
             <h3>Ajouter au calendrier</h3>
             <div class="cal-sub" id="cal-chooser-name"></div>
-            <a class="cal-option" id="cal-google" target="_blank" rel="noopener">
+            <div class="cal-option" id="cal-google" style="cursor:pointer;">
                 <span class="cal-icon">G</span>
                 <div class="cal-info">
                     <div class="cal-name">Google Agenda</div>
-                    <div class="cal-desc">S'abonner via Google Calendar (Android, Web)</div>
+                    <div class="cal-desc">S'abonner (mise \u00e0 jour auto)</div>
                 </div>
-            </a>
+            </div>
             <a class="cal-option" id="cal-apple">
-                <span class="cal-icon">A</span>
+                <span class="cal-icon">\uf8ff</span>
                 <div class="cal-info">
                     <div class="cal-name">Apple Calendar</div>
-                    <div class="cal-desc">iPhone, iPad, Mac</div>
+                    <div class="cal-desc">iPhone, iPad, Mac (mise \u00e0 jour auto)</div>
                 </div>
             </a>
             <a class="cal-option" id="cal-outlook" target="_blank" rel="noopener">
@@ -1062,20 +1083,34 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 </div>
             </a>
             <a class="cal-option" id="cal-download">
-                <span class="cal-icon">+</span>
+                <span class="cal-icon">\u2b07</span>
                 <div class="cal-info">
-                    <div class="cal-name">Autre / Télécharger .ics</div>
-                    <div class="cal-desc">Télécharger et ouvrir manuellement</div>
+                    <div class="cal-name">T\u00e9l\u00e9charger .ics</div>
+                    <div class="cal-desc">Import ponctuel (ne se met pas \u00e0 jour)</div>
                 </div>
             </a>
-            <div class="cal-option" id="cal-copy" style="cursor:pointer;">
-                <span class="cal-icon">~</span>
-                <div class="cal-info">
-                    <div class="cal-name">Copier le lien</div>
-                    <div class="cal-desc">Pour coller dans Google Agenda > Paramètres > Ajouter par URL</div>
-                </div>
-            </div>
             <button class="cal-chooser-cancel" id="cal-cancel">Annuler</button>
+        </div>
+    </div>
+
+    <!-- ── Instructions Google Agenda ── -->
+    <div class="cal-chooser-overlay" id="google-instructions" style="display:none;">
+        <div class="cal-chooser">
+            <h3>Google Agenda</h3>
+            <div class="google-steps">
+                <div class="step-url" id="google-url-box"></div>
+                <button class="copy-url-btn" id="google-copy-btn">Copier le lien</button>
+                <div class="step-divider"></div>
+                <p class="step-title">Ensuite :</p>
+                <ol class="step-list">
+                    <li>Ouvrir <a href="https://calendar.google.com/calendar/r/settings/addbyurl" target="_blank" rel="noopener" class="step-link">Google Agenda &gt; Ajouter par URL</a></li>
+                    <li>Coller le lien copi\u00e9</li>
+                    <li>Cliquer sur <strong>Ajouter l'agenda</strong></li>
+                </ol>
+                <p class="step-note">L'agenda se mettra \u00e0 jour automatiquement.</p>
+                <a class="email-btn" id="google-email">Envoyer les instructions par email</a>
+            </div>
+            <button class="cal-chooser-cancel" id="google-back">Retour</button>
         </div>
     </div>
 
@@ -1483,51 +1518,92 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
 
         // ── Calendar chooser (universel tous navigateurs / OS) ──
+        var _currentIcsUrl = '';
+
         function openCalendarChooser(slug, displayName) {{
             var base = window.location.href.replace(/[^/]*$/, '');
             var icsPath = 'ics/' + slug + '.ics';
             var fullUrl = new URL(icsPath, base).href;
-            var httpsUrl = fullUrl;
             var webcalUrl = 'webcal://' + new URL(icsPath, base).host + new URL(icsPath, base).pathname;
             var calName = encodeURIComponent('Planning ' + displayName);
+            _currentIcsUrl = fullUrl;
 
             document.getElementById('cal-chooser-name').textContent = displayName;
-            // Google Calendar : URL https non encodée dans cid (webcal ne fonctionne pas sur mobile)
-            document.getElementById('cal-google').href =
-                'https://calendar.google.com/calendar/r?cid=' + encodeURIComponent(httpsUrl);
             document.getElementById('cal-apple').href = webcalUrl;
             document.getElementById('cal-outlook').href =
-                'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(httpsUrl) + '&name=' + calName;
+                'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(fullUrl) + '&name=' + calName;
             document.getElementById('cal-download').href = icsPath;
             document.getElementById('cal-download').setAttribute('download', slug + '.ics');
-            document.getElementById('cal-copy').setAttribute('data-url', fullUrl);
+            document.getElementById('google-url-box').textContent = fullUrl;
 
+            document.getElementById('cal-chooser').style.display = '';
             document.getElementById('cal-chooser').classList.add('open');
         }}
 
         function closeCalendarChooser() {{
             document.getElementById('cal-chooser').classList.remove('open');
+            document.getElementById('cal-chooser').style.display = '';
+            document.getElementById('google-instructions').style.display = 'none';
         }}
         document.getElementById('cal-cancel').onclick = closeCalendarChooser;
         document.getElementById('cal-chooser').onclick = function(e) {{
             if (e.target === this) closeCalendarChooser();
         }};
-        document.querySelectorAll('.cal-option').forEach(function(opt) {{
-            opt.addEventListener('click', function() {{
-                setTimeout(closeCalendarChooser, 300);
-            }});
-        }});
-        document.getElementById('cal-copy').onclick = function() {{
-            var url = this.getAttribute('data-url');
+
+        // Google Agenda : ouvre le panneau d'instructions
+        document.getElementById('cal-google').onclick = function() {{
+            document.getElementById('cal-chooser').style.display = 'none';
+            document.getElementById('cal-chooser').classList.remove('open');
+            document.getElementById('google-instructions').style.display = '';
+            // Copie auto du lien
             if (navigator.clipboard) {{
-                navigator.clipboard.writeText(url).then(function() {{
-                    var el = document.querySelector('#cal-copy .cal-name');
-                    el.textContent = 'Lien copié !';
-                    setTimeout(function() {{ el.textContent = 'Copier le lien'; }}, 2000);
+                navigator.clipboard.writeText(_currentIcsUrl).then(function() {{
+                    var btn = document.getElementById('google-copy-btn');
+                    btn.textContent = 'Lien copi\u00e9 !';
+                    btn.classList.add('copied');
+                    setTimeout(function() {{ btn.textContent = 'Copier le lien'; btn.classList.remove('copied'); }}, 3000);
+                }});
+            }}
+        }};
+        document.getElementById('google-copy-btn').onclick = function() {{
+            var btn = this;
+            if (navigator.clipboard) {{
+                navigator.clipboard.writeText(_currentIcsUrl).then(function() {{
+                    btn.textContent = 'Lien copi\u00e9 !';
+                    btn.classList.add('copied');
+                    setTimeout(function() {{ btn.textContent = 'Copier le lien'; btn.classList.remove('copied'); }}, 3000);
                 }});
             }} else {{
-                prompt('Copier ce lien :', url);
+                prompt('Copier ce lien :', _currentIcsUrl);
             }}
+        }};
+        document.getElementById('google-back').onclick = function() {{
+            document.getElementById('google-instructions').style.display = 'none';
+            document.getElementById('cal-chooser').style.display = '';
+            document.getElementById('cal-chooser').classList.add('open');
+        }};
+        document.getElementById('google-instructions').onclick = function(e) {{
+            if (e.target === this) closeCalendarChooser();
+        }};
+
+        // Bouton email : ouvre un mailto avec instructions
+        var _currentDisplayName = '';
+        var _origOpenChooser = openCalendarChooser;
+        openCalendarChooser = function(slug, displayName) {{
+            _currentDisplayName = displayName;
+            _origOpenChooser(slug, displayName);
+        }};
+        document.getElementById('google-email').onclick = function(e) {{
+            e.preventDefault();
+            var addUrl = 'https://calendar.google.com/calendar/r/settings/addbyurl';
+            var subject = 'Planning Urban 7D - ' + _currentDisplayName;
+            var body = 'Salut ' + _currentDisplayName + ' !\\n\\n'
+                + 'Pour ajouter ton planning dans Google Agenda :\\n\\n'
+                + '1. Copie ce lien :\\n' + _currentIcsUrl + '\\n\\n'
+                + '2. Ouvre cette page (depuis un ordi ou navigateur web) :\\n' + addUrl + '\\n\\n'
+                + '3. Colle le lien et clique "Ajouter l\\'agenda"\\n\\n'
+                + 'Ton planning se mettra \u00e0 jour automatiquement !';
+            window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         }};
 
         // ── View toggle ──
@@ -1776,6 +1852,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var REPO = 'OhLaPey/planning-urbansoccer';
         var NOTES_PATH = 'notes/S{week_num}.json';
         var TOKEN_KEY = 'planning-admin-token';
+        var ADMIN_PWD = 'urban2026';
+        var ADMIN_KEY = 'planning-admin-unlocked';
         var notesEl = document.getElementById('week-notes');
         var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
         var notesDirty = false;
@@ -1783,8 +1861,27 @@ def generate_html(week_employees, week_num, year, all_weeks):
             // Plus de localStorage — les notes sont en mémoire et persistées via "Publier"
         }}
 
-        function getToken() {{ return localStorage.getItem(TOKEN_KEY) || ''; }}
+        var STAFF_CODE = '1937';
+        var STAFF_KEY = 'planning-staff-ok';
+        var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
+        function isStaffVerified() {{ return sessionStorage.getItem(STAFF_KEY) === '1'; }}
+        function verifyStaff() {{
+            if (isStaffVerified()) return true;
+            var code = prompt('Code staff requis :');
+            if (code && code.trim() === STAFF_CODE) {{ sessionStorage.setItem(STAFF_KEY, '1'); return true; }}
+            alert('Code staff incorrect.'); return false;
+        }}
+        function getToken() {{
+            if (!isStaffVerified()) return '';
+            return localStorage.getItem(TOKEN_KEY) || atob(_p.join(''));
+        }}
         function setToken(t) {{ localStorage.setItem(TOKEN_KEY, t); }}
+        function isAdminUnlocked() {{ return sessionStorage.getItem(ADMIN_KEY) === '1' || isStaffVerified(); }}
+        function unlockAdmin() {{ sessionStorage.setItem(ADMIN_KEY, '1'); }}
+        function ensureToken() {{
+            if (!verifyStaff()) return '';
+            return getToken();
+        }}
 
         function renderNotes() {{
             var data = notesWork;
@@ -2091,7 +2188,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
 
         function pushNotesToGitHub(data, btn) {{
-            var token = getToken();
+            var token = ensureToken();
+            if (!token) {{ btn.textContent = 'Token requis pour publier'; btn.disabled = false; return; }}
             var content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\\n')));
             var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + NOTES_PATH;
 
@@ -2165,7 +2263,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var adminToolbarEl = null;
 
         function initAdminToolbar() {{
-            if (!getToken()) return;
+            if (!isAdminUnlocked()) return;
             if (adminToolbarEl) return;
             adminToolbarEl = document.createElement('div');
             adminToolbarEl.className = 'admin-toolbar';
@@ -2722,7 +2820,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
 
         function pushDataToGitHub(cb) {{
-            var token = getToken();
+            var token = ensureToken();
             if (!token) {{ cb(false); return; }}
 
             // Build the updated data JSON for this week
@@ -2765,19 +2863,21 @@ def generate_html(week_employees, week_num, year, all_weeks):
         // Init admin toolbar if token exists
         initAdminToolbar();
 
-        // Admin link at bottom to enter token
-        if (!getToken()) {{
+        // Admin link at bottom to enter password
+        if (!isAdminUnlocked()) {{
             var adminLink = document.createElement('div');
             adminLink.style.cssText = 'text-align:center;margin:20px 0;';
             adminLink.innerHTML = '<a href="#" style="color:#444;font-size:11px;text-decoration:none;">Admin</a>';
             adminLink.querySelector('a').onclick = function(e) {{
                 e.preventDefault();
-                var t = prompt('Token GitHub (admin):');
-                if (t && t.trim()) {{
-                    setToken(t.trim());
+                var pwd = prompt('Mot de passe admin :');
+                if (pwd && pwd.trim() === ADMIN_PWD) {{
+                    unlockAdmin();
                     adminLink.remove();
                     initAdminToolbar();
                     renderNotes();
+                }} else if (pwd !== null) {{
+                    alert('Mot de passe incorrect.');
                 }}
             }};
             document.querySelector('.container').appendChild(adminLink);
