@@ -1852,6 +1852,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var REPO = 'OhLaPey/planning-urbansoccer';
         var NOTES_PATH = 'notes/S{week_num}.json';
         var TOKEN_KEY = 'planning-admin-token';
+        var ADMIN_PWD = 'urban2026';
+        var ADMIN_KEY = 'planning-admin-unlocked';
         var notesEl = document.getElementById('week-notes');
         var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
         var notesDirty = false;
@@ -1861,6 +1863,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
         function getToken() {{ return localStorage.getItem(TOKEN_KEY) || ''; }}
         function setToken(t) {{ localStorage.setItem(TOKEN_KEY, t); }}
+        function isAdminUnlocked() {{ return sessionStorage.getItem(ADMIN_KEY) === '1' || !!getToken(); }}
+        function unlockAdmin() {{ sessionStorage.setItem(ADMIN_KEY, '1'); }}
+        function ensureToken() {{
+            if (getToken()) return getToken();
+            var t = prompt('Token GitHub requis pour publier :');
+            if (t && t.trim()) {{ setToken(t.trim()); return t.trim(); }}
+            return '';
+        }}
 
         function renderNotes() {{
             var data = notesWork;
@@ -2167,7 +2177,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
 
         function pushNotesToGitHub(data, btn) {{
-            var token = getToken();
+            var token = ensureToken();
+            if (!token) {{ btn.textContent = 'Token requis pour publier'; btn.disabled = false; return; }}
             var content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\\n')));
             var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + NOTES_PATH;
 
@@ -2241,7 +2252,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var adminToolbarEl = null;
 
         function initAdminToolbar() {{
-            if (!getToken()) return;
+            if (!isAdminUnlocked()) return;
             if (adminToolbarEl) return;
             adminToolbarEl = document.createElement('div');
             adminToolbarEl.className = 'admin-toolbar';
@@ -2798,7 +2809,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         }}
 
         function pushDataToGitHub(cb) {{
-            var token = getToken();
+            var token = ensureToken();
             if (!token) {{ cb(false); return; }}
 
             // Build the updated data JSON for this week
@@ -2841,19 +2852,21 @@ def generate_html(week_employees, week_num, year, all_weeks):
         // Init admin toolbar if token exists
         initAdminToolbar();
 
-        // Admin link at bottom to enter token
-        if (!getToken()) {{
+        // Admin link at bottom to enter password
+        if (!isAdminUnlocked()) {{
             var adminLink = document.createElement('div');
             adminLink.style.cssText = 'text-align:center;margin:20px 0;';
             adminLink.innerHTML = '<a href="#" style="color:#444;font-size:11px;text-decoration:none;">Admin</a>';
             adminLink.querySelector('a').onclick = function(e) {{
                 e.preventDefault();
-                var t = prompt('Token GitHub (admin):');
-                if (t && t.trim()) {{
-                    setToken(t.trim());
+                var pwd = prompt('Mot de passe admin :');
+                if (pwd && pwd.trim() === ADMIN_PWD) {{
+                    unlockAdmin();
                     adminLink.remove();
                     initAdminToolbar();
                     renderNotes();
+                }} else if (pwd !== null) {{
+                    alert('Mot de passe incorrect.');
                 }}
             }};
             document.querySelector('.container').appendChild(adminLink);
