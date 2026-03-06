@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planning Urban 7D - S9</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Tahoma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        @font-face { font-family: 'Heading'; src: local('GT Pressura Mono Bold'), local('Space Mono'); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: Tahoma, 'Inter', sans-serif;
-            background: #1E1E1E;
+            font-family: 'Montserrat', sans-serif;
+            background: #1A1A1A;
             min-height: 100vh;
             padding: 15px;
             color: #fff;
@@ -27,40 +26,47 @@
             opacity: 0.22;
         }
         .container { position: relative; z-index: 1; max-width: 600px; margin: 0 auto;
-                      background: rgba(10,10,25,0.92); border-radius: 16px;
-                      padding: 2px 6px; margin-top: 6px; margin-bottom: 6px; }
+                      background: rgba(26,26,26,0.95); border-radius: 8px;
+                      padding: 2px 6px; margin-top: 6px; margin-bottom: 6px;
+                      border-top: 4px solid #FF6600; overflow: hidden; }
+        .container::after { content: '\276F\276F\276F\276F'; position: absolute;
+                             top: 12px; right: -2px; font-size: 28px; font-weight: 900;
+                             color: rgba(255,102,0,0.08); letter-spacing: -4px;
+                             pointer-events: none; z-index: 0; }
 
         /* ── Header ── */
-        .header { text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }
-        h1 { font-family: 'Space Mono', 'GT Pressura Mono Bold', monospace;
-              color: #FF7832; font-size: 18px; font-weight: 700; margin-bottom: 2px;
-              text-transform: uppercase; letter-spacing: 1px;
-              text-shadow: 0 0 30px rgba(255,120,50,0.3); }
-        .subtitle { color: #888; font-size: 12px; }
-        .dates { color: #FF7832; font-size: 14px; font-weight: 600;
-                  background: rgba(255,120,50,0.1); padding: 6px 14px;
-                  border-radius: 20px; display: inline-block; margin-top: 6px;
-                  border: 1px solid rgba(255,120,50,0.2); }
+        .header { text-align: center; margin-bottom: 12px; padding: 14px 10px 8px; }
+        h1 { font-family: 'Montserrat', sans-serif;
+              color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px;
+              text-transform: uppercase; letter-spacing: 2px;
+              text-shadow: 0 0 30px rgba(255,102,0,0.3); }
+        .subtitle { color: #FF6600; font-size: 11px; font-weight: 700; text-transform: uppercase;
+                     letter-spacing: 3px; }
+        .dates { color: #FF6600; font-size: 14px; font-weight: 700;
+                  background: rgba(255,102,0,0.1); padding: 6px 14px;
+                  border-radius: 6px; display: inline-block; margin-top: 6px;
+                  border: 1px solid rgba(255,102,0,0.2); }
 
         /* ── Week selector ── */
         .week-selector { display: flex; justify-content: center; gap: 6px;
                           margin-bottom: 15px; flex-wrap: wrap; }
         .week-tab { padding: 8px 14px; background: rgba(255,255,255,0.04);
-                     border: 1px solid rgba(255,255,255,0.08); border-radius: 20px;
-                     color: #666; text-decoration: none; font-weight: 500; font-size: 13px;
-                     transition: all 0.2s; }
-        .week-tab:hover { background: rgba(255,120,50,0.1); border-color: rgba(255,120,50,0.3); color: #FF7832; }
-        .week-tab.active { background: #FF7832; border-color: #FF7832; color: white;
-                            box-shadow: 0 0 15px rgba(255,120,50,0.4); }
+                     border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
+                     color: #666; text-decoration: none; font-weight: 600; font-size: 13px;
+                     transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .week-tab:hover { background: rgba(255,102,0,0.1); border-color: rgba(255,102,0,0.3); color: #FF6600; }
+        .week-tab.active { background: #FF6600; border-color: #FF6600; color: white;
+                            box-shadow: 0 0 15px rgba(255,102,0,0.4); }
 
         /* ── View toggle ── */
         .view-toggle { display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
-                        background: rgba(255,255,255,0.04); border-radius: 12px; padding: 4px; }
+                        background: rgba(255,255,255,0.04); border-radius: 6px; padding: 4px; }
         .view-btn { flex: 1; padding: 8px; border: none; background: transparent;
-                     color: #666; font-size: 12px; font-weight: 600; cursor: pointer;
-                     border-radius: 10px; transition: all 0.2s; font-family: inherit; }
-        .view-btn.active { background: rgba(255,120,50,0.15); color: #FF7832;
-                            box-shadow: 0 0 10px rgba(255,120,50,0.2); }
+                     color: #666; font-size: 12px; font-weight: 700; cursor: pointer;
+                     border-radius: 4px; transition: all 0.2s; font-family: inherit;
+                     text-transform: uppercase; letter-spacing: 0.5px; }
+        .view-btn.active { background: rgba(255,102,0,0.15); color: #FF6600;
+                            box-shadow: 0 0 10px rgba(255,102,0,0.2); }
 
         /* ── Day tabs ── */
         .day-tabs { display: flex; gap: 3px; margin-bottom: 12px; overflow-x: auto;
@@ -68,12 +74,12 @@
                      scrollbar-width: none; }
         .day-tabs::-webkit-scrollbar { display: none; }
         .day-tab { padding: 6px 8px; background: rgba(255,255,255,0.04);
-                    border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
-                    color: #666; font-size: 10px; font-weight: 600; cursor: pointer;
+                    border: 1px solid rgba(255,255,255,0.08); border-radius: 4px;
+                    color: #666; font-size: 10px; font-weight: 700; cursor: pointer;
                     white-space: nowrap; transition: all 0.2s; flex: 1; min-width: 0;
-                    text-align: center; }
-        .day-tab.active { background: rgba(255,120,50,0.15); border-color: rgba(255,120,50,0.3);
-                           color: #FF7832; }
+                    text-align: center; text-transform: uppercase; }
+        .day-tab.active { background: rgba(255,102,0,0.15); border-color: rgba(255,102,0,0.3);
+                           color: #FF6600; }
 
         /* ── Timeline (vue Journée) ── */
         .timeline { position: relative; margin-bottom: 20px;
@@ -81,9 +87,9 @@
         /* ── Scrollbar orange néon ── */
         .timeline::-webkit-scrollbar { height: 6px; }
         .timeline::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 3px; }
-        .timeline::-webkit-scrollbar-thumb { background: #FF7832; border-radius: 3px;
-                                              box-shadow: 0 0 8px rgba(255,120,50,0.6); }
-        .timeline { scrollbar-width: thin; scrollbar-color: #FF7832 rgba(255,255,255,0.04); }
+        .timeline::-webkit-scrollbar-thumb { background: #FF6600; border-radius: 2px;
+                                              box-shadow: 0 0 8px rgba(255,102,0,0.6); }
+        .timeline { scrollbar-width: thin; scrollbar-color: #FF6600 rgba(255,255,255,0.04); }
         .timeline-inner { min-width: 500px; }
         .time-markers { display: flex; justify-content: space-between; padding: 0 0 6px 0;
                          border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
@@ -93,11 +99,11 @@
                     flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
                     padding-right: 6px; cursor: pointer; transition: color 0.2s;
                     position: sticky; left: 0; z-index: 2;
-                    background: linear-gradient(90deg, rgba(10,10,25,0.98) 80%, transparent);
+                    background: linear-gradient(90deg, rgba(26,26,26,0.98) 80%, transparent);
                     padding-right: 10px; }
-        .tl-name:hover { color: #FF7832; }
+        .tl-name:hover { color: #FF6600; }
         .tl-bar-container { flex: 1; position: relative; height: 26px;
-                             background: rgba(255,255,255,0.02); border-radius: 5px; }
+                             background: rgba(255,255,255,0.02); border-radius: 4px; }
         .tl-grid-line { position: absolute; top: 0; bottom: 0; width: 1px; pointer-events: none; z-index: 0; }
         .tl-grid-line.hour { background: rgba(255,255,255,0.10); }
         .tl-grid-line.half { background: rgba(255,255,255,0.05); border-left: 1px dashed rgba(255,255,255,0.08); width: 0; }
@@ -111,7 +117,7 @@
         .tl-now-marker { position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
                           border-left: 2px dashed #ffd700;
                           filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 8px rgba(255,215,0,0.4)); opacity: 0.8; }
-        .tl-bar { position: absolute; height: 100%; border-radius: 5px;
+        .tl-bar { position: absolute; height: 100%; border-radius: 4px;
                    display: flex; align-items: center; justify-content: center;
                    font-size: 9px; font-weight: 600; overflow: hidden;
                    border-left: 2px solid; transition: all 0.2s;
@@ -132,26 +138,26 @@
         .employee-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
         .employee-btn { display: flex; align-items: center; justify-content: space-between;
                          padding: 12px 14px; background: rgba(255,255,255,0.04);
-                         border-radius: 10px; color: white; font-weight: 500; font-size: 13px;
+                         border-radius: 6px; color: white; font-weight: 600; font-size: 13px;
                          border: 1px solid rgba(255,255,255,0.08); cursor: pointer;
                          transition: all 0.2s; font-family: inherit; width: 100%; text-align: left; }
-        .employee-btn:hover { background: rgba(255,120,50,0.1); border-color: rgba(255,120,50,0.3);
+        .employee-btn:hover { background: rgba(255,102,0,0.1); border-color: rgba(255,102,0,0.3);
                                transform: translateX(4px); }
         .employee-btn.repos { color: #444; cursor: default; pointer-events: none; }
         .badge { font-size: 10px; padding: 3px 8px; background: rgba(255,255,255,0.06);
-                  border-radius: 15px; color: #444; }
-        .hours-badge { background: rgba(255,120,50,0.15); color: #FF7832; font-weight: 600; }
+                  border-radius: 4px; color: #444; font-weight: 600; text-transform: uppercase; }
+        .hours-badge { background: rgba(255,102,0,0.15); color: #FF6600; font-weight: 700; }
 
         /* ── Individual preview (modal) ── */
         .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
                           z-index: 100; justify-content: center; align-items: flex-start;
                           padding: 15px 10px; overflow-y: auto; }
         .modal-overlay.open { display: flex; }
-        .modal { background: #12121e; border-radius: 14px; width: 100%; max-width: 500px;
+        .modal { background: #1f1f1f; border-radius: 8px; width: 100%; max-width: 500px;
                   border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
         .modal-header { padding: 14px 16px; display: flex; justify-content: space-between;
                          align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .modal-header h2 { font-size: 16px; color: #FF7832; font-weight: 700; }
+        .modal-header h2 { font-size: 16px; color: #FF6600; font-weight: 700; }
         .modal-close { background: none; border: none; color: #666; font-size: 24px;
                         cursor: pointer; padding: 0 5px; line-height: 1; }
         .modal-close:hover { color: #fff; }
@@ -160,7 +166,7 @@
         .modal-day-title { font-size: 11px; color: #666; font-weight: 600;
                             text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
         .modal-event { display: flex; align-items: center; gap: 8px; padding: 8px 10px;
-                        border-radius: 8px; margin-bottom: 3px; border-left: 3px solid; }
+                        border-radius: 4px; margin-bottom: 3px; border-left: 3px solid; }
         .modal-event .ev-time { font-size: 11px; font-weight: 600; white-space: nowrap;
                                  min-width: 80px; }
         .modal-event .ev-label { font-size: 12px; font-weight: 500; }
@@ -176,7 +182,7 @@
         .modal-footer { padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.06);
                          text-align: center; }
         .modal-hours-total { margin-top: 12px; padding: 10px 14px; text-align: right;
-                              font-size: 13px; color: #FF7832; font-weight: 500;
+                              font-size: 13px; color: #FF6600; font-weight: 500;
                               border-top: 1px solid rgba(255,255,255,0.06); }
         .hours-line { padding: 2px 0; }
         .hours-line.pause { color: #888; font-size: 11px; }
@@ -184,43 +190,43 @@
                            padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); }
         .hours-brut { color: #666; font-weight: 400; font-size: 9px; }
         .subscribe-btn { display: inline-flex; align-items: center; gap: 8px;
-                          padding: 10px 24px; background: #FF7832; color: white;
-                          border: none; border-radius: 25px; font-size: 13px; font-weight: 600;
+                          padding: 10px 24px; background: #FF6600; color: white;
+                          border: none; border-radius: 6px; font-size: 13px; font-weight: 700;
                           cursor: pointer; font-family: inherit; transition: all 0.2s;
-                          text-decoration: none;
-                          box-shadow: 0 0 20px rgba(255,120,50,0.3); }
+                          text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+                          box-shadow: 0 0 20px rgba(255,102,0,0.3); }
         .subscribe-btn:hover { background: #ff9050;
-                                box-shadow: 0 0 30px rgba(255,120,50,0.5); transform: scale(1.02); }
+                                box-shadow: 0 0 30px rgba(255,102,0,0.5); transform: scale(1.02); }
 
         /* ── Calendar chooser (bottom sheet) ── */
         .cal-chooser-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85);
                                 z-index:200; justify-content:center; align-items:flex-end; }
         .cal-chooser-overlay.open { display:flex; }
-        .cal-chooser { background:#12121e; border-radius:16px 16px 0 0; width:100%; max-width:500px;
+        .cal-chooser { background:#1f1f1f; border-radius:8px 8px 0 0; width:100%; max-width:500px;
                         padding:20px 16px 30px; animation: slideUp 0.25s ease-out; }
         @keyframes slideUp { from { transform:translateY(100%); } to { transform:translateY(0); } }
-        .cal-chooser h3 { color:#FF7832; font-size:15px; font-weight:700; margin-bottom:4px; text-align:center; }
+        .cal-chooser h3 { color:#FF6600; font-size:15px; font-weight:700; margin-bottom:4px; text-align:center; }
         .cal-chooser .cal-sub { color:#666; font-size:11px; text-align:center; margin-bottom:16px; }
         .cal-option { display:flex; align-items:center; gap:12px; padding:14px;
                        background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
-                       border-radius:12px; margin-bottom:8px; text-decoration:none; color:white;
+                       border-radius:6px; margin-bottom:8px; text-decoration:none; color:white;
                        transition:all 0.2s; cursor:pointer; }
-        .cal-option:hover { background:rgba(255,120,50,0.1); border-color:rgba(255,120,50,0.3); }
+        .cal-option:hover { background:rgba(255,102,0,0.1); border-color:rgba(255,102,0,0.3); }
         .cal-option .cal-icon { font-size:22px; width:36px; text-align:center; flex-shrink:0; }
         .cal-option .cal-info { flex:1; }
         .cal-option .cal-name { font-weight:600; font-size:13px; }
         .cal-option .cal-desc { font-size:10px; color:#888; margin-top:2px; }
         .cal-chooser-cancel { display:block; width:100%; padding:12px; background:none;
-                               border:1px solid rgba(255,255,255,0.1); border-radius:12px;
+                               border:1px solid rgba(255,255,255,0.1); border-radius:6px;
                                color:#888; font-size:13px; cursor:pointer; margin-top:4px;
                                font-family:inherit; transition: all 0.2s; }
         .cal-chooser-cancel:hover { color:#fff; border-color:rgba(255,255,255,0.3); }
         .google-steps { padding: 0 4px; }
         .step-url { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
-                     border-radius: 8px; padding: 10px 12px; font-size: 10px; color: #FF7832;
+                     border-radius: 4px; padding: 10px 12px; font-size: 10px; color: #FF6600;
                      word-break: break-all; margin-bottom: 10px; font-family: monospace; }
-        .copy-url-btn { width: 100%; padding: 10px; background: #FF7832; color: #fff; border: none;
-                         border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer;
+        .copy-url-btn { width: 100%; padding: 10px; background: #FF6600; color: #fff; border: none;
+                         border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer;
                          font-family: inherit; transition: all 0.2s; }
         .copy-url-btn.copied { background: #2a6e2a; color: #64dc3c; }
         .step-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 14px 0; }
@@ -232,7 +238,7 @@
         .step-note { font-size: 10px; color: #64dc3c; margin-top: 10px; text-align: center; }
         .email-btn { display: flex; align-items: center; justify-content: center; gap: 8px;
                       width: 100%; padding: 10px; background: rgba(255,255,255,0.06);
-                      border: 1px solid rgba(255,255,255,0.12); border-radius: 10px;
+                      border: 1px solid rgba(255,255,255,0.12); border-radius: 6px;
                       font-size: 12px; color: #ccc; cursor: pointer; font-family: inherit;
                       text-decoration: none; margin-top: 8px; transition: all 0.2s; }
         .email-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
@@ -242,48 +248,48 @@
         /* ── Notes de semaine ── */
         .week-notes { margin-bottom: 15px; }
         .note-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-                      border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }
-        .note-card.comment { border-left: 3px solid #FF7832; }
+                      border-radius: 6px; padding: 12px 14px; margin-bottom: 8px; }
+        .note-card.comment { border-left: 3px solid #FF6600; }
         .note-card.update { border-left: 3px solid #ffc000; }
         .note-header { display: flex; justify-content: space-between; align-items: center;
                         margin-bottom: 6px; }
         .note-label { font-size: 10px; font-weight: 700; text-transform: uppercase;
                        letter-spacing: 0.5px; }
-        .note-label.comment { color: #FF7832; }
+        .note-label.comment { color: #FF6600; }
         .note-label.update { color: #ffc000; }
         .note-text { font-size: 12px; color: #ccc; line-height: 1.6; white-space: pre-line; }
         .note-text:empty::before { content: 'Cliquer pour ajouter...'; color: #444; font-style: italic; }
-        .note-text[contenteditable=true] { outline: none; border: 1px solid rgba(255,120,50,0.2);
+        .note-text[contenteditable=true] { outline: none; border: 1px solid rgba(255,102,0,0.2);
                                             border-radius: 6px; padding: 8px; min-height: 40px;
                                             background: rgba(0,0,0,0.2); }
         .note-actions { display: flex; gap: 6px; }
         .note-btn { background: none; border: none; color: #555; font-size: 14px;
                      cursor: pointer; padding: 2px 4px; transition: color 0.2s; }
-        .note-btn:hover { color: #FF7832; }
+        .note-btn:hover { color: #FF6600; }
         .note-btn.del:hover { color: #ff5050; }
         .add-note-btn { display: flex; align-items: center; justify-content: center; gap: 6px;
                          padding: 8px; background: rgba(255,255,255,0.02);
-                         border: 1px dashed rgba(255,255,255,0.1); border-radius: 10px;
+                         border: 1px dashed rgba(255,255,255,0.1); border-radius: 6px;
                          color: #444; font-size: 11px; cursor: pointer; transition: all 0.2s;
                          font-family: inherit; width: 100%; margin-bottom: 8px; }
-        .add-note-btn:hover { border-color: rgba(255,120,50,0.3); color: #FF7832; }
+        .add-note-btn:hover { border-color: rgba(255,102,0,0.3); color: #FF6600; }
         .publish-btn { display: flex; align-items: center; justify-content: center; gap: 6px;
-                        padding: 10px 16px; background: #FF7832; border: none; border-radius: 10px;
+                        padding: 10px 16px; background: #FF6600; border: none; border-radius: 6px;
                         color: #fff; font-size: 12px; font-weight: 600; cursor: pointer;
                         transition: all 0.2s; font-family: inherit; width: 100%; margin-top: 8px;
-                        box-shadow: 0 0 15px rgba(255,120,50,0.3); }
-        .publish-btn:hover { background: #ff9050; box-shadow: 0 0 25px rgba(255,120,50,0.5); }
+                        box-shadow: 0 0 15px rgba(255,102,0,0.3); }
+        .publish-btn:hover { background: #ff9050; box-shadow: 0 0 25px rgba(255,102,0,0.5); }
         .publish-btn:disabled { background: #444; box-shadow: none; cursor: not-allowed; color: #888; }
         .publish-btn.success { background: #64dc3c; box-shadow: 0 0 15px rgba(100,220,60,0.3); }
         .admin-setup { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
         .admin-input { flex: 1; padding: 8px 10px; background: rgba(0,0,0,0.3);
-                        border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+                        border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;
                         color: #ccc; font-size: 11px; font-family: inherit; outline: none; }
-        .admin-input:focus { border-color: rgba(255,120,50,0.4); }
+        .admin-input:focus { border-color: rgba(255,102,0,0.4); }
         .admin-input::placeholder { color: #444; }
-        .admin-save-btn { padding: 8px 12px; background: rgba(255,120,50,0.15);
-                           border: 1px solid rgba(255,120,50,0.3); border-radius: 8px;
-                           color: #FF7832; font-size: 11px; cursor: pointer; font-family: inherit;
+        .admin-save-btn { padding: 8px 12px; background: rgba(255,102,0,0.15);
+                           border: 1px solid rgba(255,102,0,0.3); border-radius: 4px;
+                           color: #FF6600; font-size: 11px; cursor: pointer; font-family: inherit;
                            white-space: nowrap; }
         .admin-hint { font-size: 10px; color: #444; margin-top: 4px; }
 
@@ -295,56 +301,56 @@
         .repl-in { color: #64dc3c; font-weight: 600; }
         .repl-form { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
         .repl-form select, .repl-form input { padding: 7px 10px; background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;
             color: #ccc; font-size: 11px; font-family: inherit; outline: none; }
-        .repl-form select:focus, .repl-form input:focus { border-color: rgba(255,120,50,0.4); }
-        .repl-form select option { background: #1a1a2e; color: #ccc; }
+        .repl-form select:focus, .repl-form input:focus { border-color: rgba(255,102,0,0.4); }
+        .repl-form select option { background: #1f1f1f; color: #ccc; }
         .repl-row { display: flex; gap: 6px; align-items: center; }
         .repl-row label { font-size: 10px; color: #666; min-width: 55px; text-align: right; }
         .repl-row select, .repl-row input { flex: 1; }
         .repl-add-btn { padding: 7px 14px; background: rgba(255,80,80,0.15);
-            border: 1px solid rgba(255,80,80,0.3); border-radius: 8px;
+            border: 1px solid rgba(255,80,80,0.3); border-radius: 4px;
             color: #ff5050; font-size: 11px; cursor: pointer; font-family: inherit;
             transition: all 0.2s; align-self: flex-end; }
         .repl-add-btn:hover { background: rgba(255,80,80,0.25); }
         .add-repl-btn { display: flex; align-items: center; justify-content: center; gap: 6px;
                          padding: 8px; background: rgba(255,80,80,0.02);
-                         border: 1px dashed rgba(255,80,80,0.15); border-radius: 10px;
+                         border: 1px dashed rgba(255,80,80,0.15); border-radius: 6px;
                          color: #ff5050; font-size: 11px; cursor: pointer; transition: all 0.2s;
                          font-family: inherit; width: 100%; margin-bottom: 8px; opacity: 0.6; }
         .add-repl-btn:hover { border-color: rgba(255,80,80,0.4); opacity: 1; }
 
         /* ── Admin edit mode ── */
         .admin-toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
-                          padding: 8px 12px; background: rgba(255,120,50,0.08);
-                          border: 1px solid rgba(255,120,50,0.2); border-radius: 10px; }
-        .edit-toggle { padding: 6px 14px; background: rgba(255,120,50,0.15);
-                        border: 1px solid rgba(255,120,50,0.3); border-radius: 8px;
-                        color: #FF7832; font-size: 11px; font-weight: 600; cursor: pointer;
+                          padding: 8px 12px; background: rgba(255,102,0,0.08);
+                          border: 1px solid rgba(255,102,0,0.2); border-radius: 10px; }
+        .edit-toggle { padding: 6px 14px; background: rgba(255,102,0,0.15);
+                        border: 1px solid rgba(255,102,0,0.3); border-radius: 8px;
+                        color: #FF6600; font-size: 11px; font-weight: 600; cursor: pointer;
                         font-family: inherit; transition: all 0.2s; }
-        .edit-toggle:hover { background: #FF7832; color: #fff; }
-        .edit-toggle.active { background: #FF7832; color: #fff;
-                               box-shadow: 0 0 10px rgba(255,120,50,0.4); }
+        .edit-toggle:hover { background: #FF6600; color: #fff; }
+        .edit-toggle.active { background: #FF6600; color: #fff;
+                               box-shadow: 0 0 10px rgba(255,102,0,0.4); }
         .admin-toolbar .label { font-size: 11px; color: #888; }
         .tl-bar.editable { cursor: pointer; }
-        .tl-bar.editable:hover { outline: 2px solid #FF7832; outline-offset: 1px; }
+        .tl-bar.editable:hover { outline: 2px solid #FF6600; outline-offset: 1px; }
         .edit-popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                       z-index: 200; background: #1a1a2e; border: 1px solid rgba(255,120,50,0.3);
+                       z-index: 200; background: #1a1a2e; border: 1px solid rgba(255,102,0,0.3);
                        border-radius: 12px; padding: 16px; min-width: 260px;
                        box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
-        .edit-popup h3 { font-size: 13px; color: #FF7832; margin-bottom: 10px; }
+        .edit-popup h3 { font-size: 13px; color: #FF6600; margin-bottom: 10px; }
         .edit-popup .field { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
         .edit-popup .field label { font-size: 11px; color: #888; min-width: 45px; }
         .edit-popup .field input, .edit-popup .field input[type="text"] {
             flex: 1; padding: 6px 8px; background: rgba(0,0,0,0.3);
             border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
             color: #fff; font-size: 12px; font-family: inherit; outline: none; }
-        .edit-popup .field input:focus { border-color: rgba(255,120,50,0.4); }
+        .edit-popup .field input:focus { border-color: rgba(255,102,0,0.4); }
         .edit-popup .actions { display: flex; gap: 6px; margin-top: 10px; }
         .edit-popup .actions button { flex: 1; padding: 8px; border: none; border-radius: 8px;
                                        font-size: 11px; font-weight: 600; cursor: pointer;
                                        font-family: inherit; transition: all 0.2s; }
-        .edit-popup .btn-save { background: #FF7832; color: #fff; }
+        .edit-popup .btn-save { background: #FF6600; color: #fff; }
         .edit-popup .btn-save:hover { background: #ff9050; }
         .edit-popup .btn-cancel { background: rgba(255,255,255,0.08); color: #888; }
         .edit-popup .btn-cancel:hover { background: rgba(255,255,255,0.15); color: #fff; }
@@ -353,27 +359,27 @@
         .edit-popup select { flex: 1; padding: 6px 8px; background: rgba(0,0,0,0.3);
                               border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
                               color: #fff; font-size: 12px; font-family: inherit; outline: none; }
-        .edit-popup select:focus { border-color: rgba(255,120,50,0.4); }
+        .edit-popup select:focus { border-color: rgba(255,102,0,0.4); }
         .day-check { display: flex; align-items: center; gap: 8px; padding: 5px 8px;
                       border-radius: 6px; cursor: pointer; font-size: 12px; color: #ccc;
                       transition: background 0.15s; }
         .day-check:hover { background: rgba(255,255,255,0.05); }
         .day-check em { color: #666; font-style: normal; font-size: 10px; }
-        .day-check input[type="checkbox"] { accent-color: #FF7832; width: 16px; height: 16px; cursor: pointer; }
+        .day-check input[type="checkbox"] { accent-color: #FF6600; width: 16px; height: 16px; cursor: pointer; }
         .day-check.all-check { border-bottom: 1px solid rgba(255,255,255,0.06);
                                 padding-bottom: 8px; margin-bottom: 4px; }
-        .day-check.all-check span { font-weight: 600; color: #FF7832; }
+        .day-check.all-check span { font-weight: 600; color: #FF6600; }
         .edit-overlay { position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,0.5); }
         .save-edits-btn { display: none; padding: 6px 16px; border: none; border-radius: 8px;
                            font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;
                            transition: all 0.2s; margin-left: 8px; }
-        .save-edits-btn.dirty { display: inline-block; background: #FF7832; color: #fff;
+        .save-edits-btn.dirty { display: inline-block; background: #FF6600; color: #fff;
                                   animation: pulse-save 1.5s ease-in-out infinite; }
         .save-edits-btn.saving { background: #666; color: #fff; cursor: wait; }
         .save-edits-btn.saved { display: inline-block; background: #2a6e2a; color: #64dc3c; }
         .save-edits-btn.error { display: inline-block; background: #6e2a2a; color: #ff6666; }
-        @keyframes pulse-save { 0%,100% { box-shadow: 0 0 4px rgba(255,120,50,0.3); }
-                                 50% { box-shadow: 0 0 14px rgba(255,120,50,0.6); } }
+        @keyframes pulse-save { 0%,100% { box-shadow: 0 0 4px rgba(255,102,0,0.3); }
+                                 50% { box-shadow: 0 0 14px rgba(255,102,0,0.6); } }
         .edit-status { font-size: 10px; color: #64dc3c; margin-left: auto; }
 
         /* ── Drag-resize handles ── */
@@ -384,8 +390,8 @@
         }
         .tl-bar.editable:hover .drag-handle,
         .tl-bar.editable .drag-handle.active { opacity: 1; }
-        .drag-handle.left { left: -2px; border-radius: 4px 0 0 4px; background: linear-gradient(90deg, rgba(255,120,50,0.7), transparent); }
-        .drag-handle.right { right: -2px; border-radius: 0 4px 4px 0; background: linear-gradient(270deg, rgba(255,120,50,0.7), transparent); }
+        .drag-handle.left { left: -2px; border-radius: 4px 0 0 4px; background: linear-gradient(90deg, rgba(255,102,0,0.7), transparent); }
+        .drag-handle.right { right: -2px; border-radius: 0 4px 4px 0; background: linear-gradient(270deg, rgba(255,102,0,0.7), transparent); }
         .drag-handle::after {
             content: ''; position: absolute; top: 50%; transform: translateY(-50%);
             width: 2px; height: 12px; background: rgba(255,255,255,0.7); border-radius: 1px;
@@ -394,19 +400,19 @@
         .drag-handle.right::after { right: 2px; }
         .tl-bar-container { cursor: default; }
         .add-staff-row { display: flex; justify-content: center; padding: 8px 0; }
-        .add-staff-btn { background: rgba(255,120,50,0.1); border: 1px dashed rgba(255,120,50,0.3);
-                          color: #FF7832; font-size: 12px; font-weight: 600; padding: 6px 18px;
+        .add-staff-btn { background: rgba(255,102,0,0.1); border: 1px dashed rgba(255,102,0,0.3);
+                          color: #FF6600; font-size: 12px; font-weight: 600; padding: 6px 18px;
                           border-radius: 8px; cursor: pointer; font-family: inherit; transition: all 0.2s; }
-        .add-staff-btn:hover { background: rgba(255,120,50,0.2); border-color: #FF7832; }
+        .add-staff-btn:hover { background: rgba(255,102,0,0.2); border-color: #FF6600; }
         .del-staff { display: inline-block; margin-left: 4px; color: #e55; font-size: 14px;
                       font-weight: 700; cursor: pointer; opacity: 0.5; transition: opacity 0.15s;
                       line-height: 1; vertical-align: middle; }
         .del-staff:hover { opacity: 1; }
         .drag-tooltip {
             position: fixed; z-index: 300; padding: 3px 8px;
-            background: #1a1a2e; border: 1px solid rgba(255,120,50,0.5);
+            background: #1a1a2e; border: 1px solid rgba(255,102,0,0.5);
             border-radius: 6px; font-size: 11px; font-weight: 600;
-            color: #FF7832; pointer-events: none; white-space: nowrap;
+            color: #FF6600; pointer-events: none; white-space: nowrap;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
 
@@ -1565,7 +1571,7 @@
 };
         // Nettoyage des anciennes données localStorage
         try { localStorage.removeItem('planning-edits-S9'); } catch(e) {}
-        var COLORS = {"VDC": {"bg": "rgba(255,120,50,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,120,50,0.40)", "border": "#ff7832", "text": "#ff9850"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FOR-E": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FOR-P": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}, "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}};
+        var COLORS = {"VDC": {"bg": "rgba(255,102,0,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FOR-E": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FOR-P": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}, "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}};
         var DEFAULT_C = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"};
         var DAYS = ["Lun 23", "Mar 24", "Mer 25", "Jeu 26", "Ven 27", "Sam 28", "Dim 01"];
         var DAYS_FULL = ["Lundi 23/02", "Mardi 24/02", "Mercredi 25/02", "Jeudi 26/02", "Vendredi 27/02", "Samedi 28/02", "Dimanche 01/03"];
@@ -2295,6 +2301,7 @@
         var REPO = 'OhLaPey/planning-urbansoccer';
         var NOTES_PATH = 'notes/S9.json';
         var TOKEN_KEY = 'planning-admin-token';
+        var ADMIN_KEY = 'planning-admin-unlocked';
         var notesEl = document.getElementById('week-notes');
         var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
         var notesDirty = false;
@@ -2317,6 +2324,8 @@
             return localStorage.getItem(TOKEN_KEY) || atob(_p.join(''));
         }
         function setToken(t) { localStorage.setItem(TOKEN_KEY, t); }
+        function isAdminUnlocked() { return sessionStorage.getItem(ADMIN_KEY) === '1' || isStaffVerified(); }
+        function unlockAdmin() { sessionStorage.setItem(ADMIN_KEY, '1'); }
         function ensureToken() {
             if (!verifyStaff()) return '';
             return getToken();
@@ -2640,7 +2649,8 @@
         }
 
         function pushNotesToGitHub(data, btn) {
-            var token = getToken();
+            var token = ensureToken();
+            if (!token) { btn.textContent = 'Token requis pour publier'; btn.disabled = false; return; }
             var content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\n')));
             var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + NOTES_PATH;
 
@@ -2714,7 +2724,7 @@
         var adminToolbarEl = null;
 
         function initAdminToolbar() {
-            if (!getToken()) return;
+            if (!isAdminUnlocked()) return;
             if (adminToolbarEl) return;
             adminToolbarEl = document.createElement('div');
             adminToolbarEl.className = 'admin-toolbar';
@@ -3271,7 +3281,7 @@
         }
 
         function pushDataToGitHub(cb) {
-            var token = getToken();
+            var token = ensureToken();
             if (!token) { cb(false); return; }
 
             // Build the updated data JSON for this week
@@ -3314,14 +3324,15 @@
         // Init admin toolbar if token exists
         initAdminToolbar();
 
-        // Admin link at bottom to enter token
-        if (!isStaffVerified()) {
+        // Admin link at bottom to enter password
+        if (!isAdminUnlocked()) {
             var adminLink = document.createElement('div');
             adminLink.style.cssText = 'text-align:center;margin:20px 0;';
             adminLink.innerHTML = '<a href="#" style="color:#444;font-size:11px;text-decoration:none;">Admin</a>';
             adminLink.querySelector('a').onclick = function(e) {
                 e.preventDefault();
                 if (verifyStaff()) {
+                    unlockAdmin();
                     adminLink.remove();
                     initAdminToolbar();
                     renderNotes();
