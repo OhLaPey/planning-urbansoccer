@@ -3074,6 +3074,61 @@
 
         function openAddStaffPopup() {
             closeEditPopup();
+            // Find staff who have NO events on the current day (repos)
+            var reposStaff = [];
+            Object.keys(DATA).forEach(function(name) {
+                if (name === '_codeNames') return;
+                var hasEventToday = DATA[name].events.some(function(ev) { return ev.day === currentDay; });
+                if (!hasEventToday) reposStaff.push(name);
+            });
+
+            if (reposStaff.length === 0) {
+                alert('Tous les employés travaillent déjà ce jour.');
+                return;
+            }
+
+            reposStaff.sort();
+
+            var overlay = document.createElement('div');
+            overlay.className = 'edit-overlay';
+            overlay.id = 'edit-overlay';
+            overlay.onclick = function() { closeEditPopup(); };
+            document.body.appendChild(overlay);
+
+            var popup = document.createElement('div');
+            popup.className = 'edit-popup';
+            popup.id = 'edit-popup';
+
+            var listHtml = '<h3>Ajouter un employé en repos</h3>';
+            listHtml += '<p style="font-size:11px;color:#888;margin-bottom:10px;">Sélectionnez l\'employé à ajouter pour ' + DAYS_FULL[currentDay] + ' :</p>';
+            listHtml += '<div style="max-height:250px;overflow-y:auto;">';
+            reposStaff.forEach(function(name, idx) {
+                listHtml += '<button class="btn-save" id="pick-staff-' + idx + '" style="display:block;width:100%;margin-bottom:6px;text-align:left;padding:8px 12px;font-size:13px;">' + name + '</button>';
+            });
+            listHtml += '</div>';
+            listHtml += '<div class="actions" style="margin-top:12px;">';
+            listHtml += '<button class="btn-cancel" id="edit-cancel">Annuler</button>';
+            listHtml += '</div>';
+            popup.innerHTML = listHtml;
+            document.body.appendChild(popup);
+
+            document.getElementById('edit-cancel').onclick = closeEditPopup;
+            reposStaff.forEach(function(name, idx) {
+                document.getElementById('pick-staff-' + idx).onclick = function() {
+                    closeEditPopup();
+                    openAddEventForReposStaff(name);
+                };
+            });
+        }
+
+        function openAddEventForReposStaff(empName) {
+            var dateStr = WEEK_DATES[currentDay];
+            var codes = buildCodeOptions();
+            var codeOpts = '';
+            Object.keys(codes).sort().forEach(function(c) {
+                codeOpts += '<option value="' + c + '">' + c + ' — ' + codes[c] + '</option>';
+            });
+
             var overlay = document.createElement('div');
             overlay.className = 'edit-overlay';
             overlay.id = 'edit-overlay';
@@ -3084,9 +3139,10 @@
             popup.className = 'edit-popup';
             popup.id = 'edit-popup';
             popup.innerHTML =
-                '<h3>Ajouter un employé</h3>' +
-                '<div class="field"><label>Nom</label><input type="text" id="add-staff-last" placeholder="NOM" style="text-transform:uppercase;"></div>' +
-                '<div class="field"><label>Prénom</label><input type="text" id="add-staff-first" placeholder="Prénom"></div>' +
+                '<h3>Créneau — ' + getFirstName(empName) + '</h3>' +
+                '<div class="field"><label>Activité</label><select id="edit-code">' + codeOpts + '</select></div>' +
+                '<div class="field"><label>Début</label><input type="time" id="edit-start" value="09:00"></div>' +
+                '<div class="field"><label>Fin</label><input type="time" id="edit-end" value="17:00"></div>' +
                 '<div class="actions">' +
                 '<button class="btn-cancel" id="edit-cancel">Annuler</button>' +
                 '<button class="btn-save" id="edit-save">Ajouter</button>' +
@@ -3095,14 +3151,19 @@
 
             document.getElementById('edit-cancel').onclick = closeEditPopup;
             document.getElementById('edit-save').onclick = function() {
-                var last = document.getElementById('add-staff-last').value.trim().toUpperCase();
-                var first = document.getElementById('add-staff-first').value.trim();
-                if (!last || !first) return;
-                var fullName = last + ' ' + first;
-                if (DATA[fullName]) { alert('Cet employé existe déjà.'); return; }
-                var slug = (last + '-' + first).toLowerCase().normalize('NFD')
-                    .replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-');
-                DATA[fullName] = { slug: slug, events: [] };
+                var newStart = document.getElementById('edit-start').value;
+                var newEnd = document.getElementById('edit-end').value;
+                var newCode = document.getElementById('edit-code').value;
+                if (!newStart || !newEnd) return;
+                var codes = buildCodeOptions();
+                var newEv = {
+                    code: newCode,
+                    label: codes[newCode] || newCode,
+                    start: dateStr + 'T' + newStart,
+                    end: dateStr + 'T' + newEnd,
+                    day: currentDay
+                };
+                DATA[empName].events.push(newEv);
                 renderTimeline();
                 updateHoursBadges();
                 closeEditPopup();
