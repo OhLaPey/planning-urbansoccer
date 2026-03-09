@@ -54,13 +54,6 @@
         "day": 2
       },
       {
-        "code": "L-REG",
-        "label": "Régisseur League",
-        "start": "2026-03-11T19:15",
-        "end": "2026-03-11T21:45",
-        "day": 2
-      },
-      {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-12T09:45",
@@ -314,13 +307,6 @@
         "day": 2
       },
       {
-        "code": "L-ARB",
-        "label": "L-ARB",
-        "start": "2026-03-11T19:30",
-        "end": "2026-03-11T21:30",
-        "day": 2
-      },
-      {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-13T11:45",
@@ -457,13 +443,6 @@
         "start": "2026-03-09T19:30",
         "end": "2026-03-09T22:30",
         "day": 0
-      },
-      {
-        "code": "L-ARB",
-        "label": "L-ARB",
-        "start": "2026-03-10T18:30",
-        "end": "2026-03-10T22:30",
-        "day": 1
       },
       {
         "code": "L-ARB",
