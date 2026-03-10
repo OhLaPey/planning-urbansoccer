@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Présences PSG Academy{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-bottom: 16px;">
+    <a href="/" class="btn btn-secondary btn-sm" style="margin-bottom: 8px;">← Anniversaires</a>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <span class="card-title">PSG Academy — Présences</span>
+    </div>
+
+    {% if not data.file %}
+    <div class="empty-state">
+        <p>Aucun fichier Excel de présences trouvé.</p>
+        <p style="font-size: 12px; color: #666;">
+            Placez le fichier Excel PSG Academy (avec des onglets « …Présence »)
+            dans le dossier de l'application.
+        </p>
+    </div>
+    {% elif not data.creneaux %}
+    <div class="empty-state">
+        <p>Aucun onglet de présence trouvé dans le fichier.</p>
+        <p style="font-size: 12px; color: #666;">
+            Les onglets doivent contenir « Présence » dans leur nom.
+        </p>
+    </div>
+    {% else %}
+    <div class="creneau-list">
+        {% for c in data.creneaux %}
+        <a href="/presences/{{ c.slug }}" class="creneau-item">
+            <div class="creneau-info">
+                <span class="creneau-name">{{ c.title }}</span>
+                <span class="creneau-meta">
+                    {{ c.groups|length }} groupe{{ 's' if c.groups|length > 1 }}
+                    · {{ c.groups|sum(attribute='kids'|length) if false else namespace(total=0) }}
+                    {% set ns = namespace(total=0) %}
+                    {% for g in c.groups %}{% set ns.total = ns.total + g.kids|length %}{% endfor %}
+                    {{ ns.total }} enfant{{ 's' if ns.total > 1 }}
+                    · {{ c.sessions|rejectattr('is_vacation')|list|length }} séances
+                </span>
+            </div>
+            <span class="creneau-arrow">›</span>
+        </a>
+        {% endfor %}
+    </div>
+
+    <div style="text-align: center; margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+        <span style="font-size: 11px; color: #555;">
+            Fichier : {{ data.file.split('/')[-1] }}
+        </span>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+    .creneau-list { display: flex; flex-direction: column; gap: 2px; }
+    .creneau-item {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 14px 16px; text-decoration: none; color: #fff;
+        border-radius: 8px; transition: background 0.15s;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .creneau-item:hover { background: rgba(255,120,50,0.08); }
+    .creneau-item:active { background: rgba(255,120,50,0.15); }
+    .creneau-info { display: flex; flex-direction: column; gap: 3px; }
+    .creneau-name { font-weight: 700; font-size: 15px; }
+    .creneau-meta { font-size: 12px; color: #888; }
+    .creneau-arrow { font-size: 24px; color: #FF7832; font-weight: 300; }
+</style>
+{% endblock %}

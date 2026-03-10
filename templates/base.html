@@ -217,8 +217,22 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Anniversaires UrbanSoccer</h1>
+            <h1>UrbanSoccer</h1>
             <div class="subtitle">Gestion des affiches & suivi week-end</div>
+            <nav style="margin-top: 8px; display: flex; gap: 6px; justify-content: center;">
+                <a href="/" style="padding: 4px 12px; border-radius: 16px; font-size: 11px; font-weight: 600;
+                    text-decoration: none; color: #888; background: rgba(255,255,255,0.04);
+                    border: 1px solid rgba(255,255,255,0.08); transition: all 0.15s;"
+                    onmouseover="this.style.color='#FF7832';this.style.borderColor='rgba(255,120,50,0.3)'"
+                    onmouseout="this.style.color='#888';this.style.borderColor='rgba(255,255,255,0.08)'"
+                    >Anniversaires</a>
+                <a href="/presences" style="padding: 4px 12px; border-radius: 16px; font-size: 11px; font-weight: 600;
+                    text-decoration: none; color: #888; background: rgba(255,255,255,0.04);
+                    border: 1px solid rgba(255,255,255,0.08); transition: all 0.15s;"
+                    onmouseover="this.style.color='#FF7832';this.style.borderColor='rgba(255,120,50,0.3)'"
+                    onmouseout="this.style.color='#888';this.style.borderColor='rgba(255,255,255,0.08)'"
+                    >Présences PSG</a>
+            </nav>
         </div>
 
         {% with messages = get_flashed_messages(with_categories=true) %}

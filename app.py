@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Application web UrbanSoccer — Gestion des anniversaires.
+Application web UrbanSoccer — Gestion des anniversaires + Suivi présences PSG Academy.
 
-Interface web (Flask + SQLite) qui remplace le fichier Excel d'entrée.
-Permet de saisir les anniversaires et de générer :
-  - Un récapitulatif Excel + PDF pour le suivi week-end
-  - Les affiches prénoms (PPTX + PDF) à imprimer pour les tables
+Interface web (Flask + SQLite) qui remplace les fichiers Excel d'entrée.
+Permet de :
+  - Saisir les anniversaires et générer affiches + récaps
+  - Suivre les présences PSG Academy depuis le téléphone des coachs
 
 Usage :
     python app.py                # lance le serveur sur http://localhost:5000
@@ -26,6 +26,12 @@ from generate_birthday_posters import (
     FORMULE_MAP, TEMPLATE_PATH, OUTPUT_DIR, TEMPLATE_ORANGE,
     TEMPLATE_FFF_BIENVENUE, TEMPLATE_FFF_CERTIFICAT, TEMPLATE_BUMP,
     split_prenoms, generate_pptx, convert_to_pdf,
+)
+
+# Import du module de présences PSG Academy
+from attendance import (
+    find_attendance_file, parse_attendance, save_attendance,
+    get_current_session, get_session_col,
 )
 
 # ── Config ────────────────────────────────────────────────────────────────────
@@ -896,6 +902,80 @@ def api_birthdays(date_str):
     """Retourne les anniversaires en JSON."""
     birthdays = get_birthdays_for_date(date_str)
     return jsonify(birthdays)
+
+
+# ── Présences PSG Academy ────────────────────────────────────────────────────
+
+@app.route("/presences")
+def presences_home():
+    """Page d'accueil présences : liste des créneaux."""
+    data = parse_attendance()
+    return render_template("presences.html", data=data)
+
+
+@app.route("/presences/<slug>")
+def presences_creneau(slug):
+    """Vue d'un créneau : liste des enfants avec présences."""
+    data = parse_attendance()
+    creneau = None
+    for c in data["creneaux"]:
+        if c["slug"] == slug:
+            creneau = c
+            break
+    if not creneau:
+        flash("Créneau introuvable.", "error")
+        return redirect(url_for("presences_home"))
+
+    # Déterminer la séance sélectionnée
+    selected = request.args.get("session")
+    if not selected:
+        selected = get_current_session(creneau["sessions"])
+
+    return render_template("presences_creneau.html",
+                           data=data, creneau=creneau,
+                           selected_session=selected)
+
+
+@app.route("/api/presences/save", methods=["POST"])
+def api_presences_save():
+    """Sauvegarde les présences via AJAX."""
+    payload = request.get_json()
+    if not payload:
+        return jsonify({"error": "Données manquantes"}), 400
+
+    sheet_name = payload.get("sheet_name")
+    updates = payload.get("updates", [])
+    filepath = find_attendance_file()
+
+    if not filepath:
+        return jsonify({"error": "Fichier Excel introuvable"}), 404
+    if not sheet_name:
+        return jsonify({"error": "Onglet non spécifié"}), 400
+    if not updates:
+        return jsonify({"error": "Aucune modification"}), 400
+
+    try:
+        save_attendance(filepath, sheet_name, updates)
+        return jsonify({"ok": True, "count": len(updates)})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/presences/<slug>/history")
+def presences_history(slug):
+    """Vue historique : tableau complet de toutes les séances."""
+    data = parse_attendance()
+    creneau = None
+    for c in data["creneaux"]:
+        if c["slug"] == slug:
+            creneau = c
+            break
+    if not creneau:
+        flash("Créneau introuvable.", "error")
+        return redirect(url_for("presences_home"))
+
+    return render_template("presences_history.html",
+                           data=data, creneau=creneau)
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────

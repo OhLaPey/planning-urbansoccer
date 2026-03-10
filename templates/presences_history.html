@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}{{ creneau.title }} — Historique{% endblock %}
+
+{% block content %}
+<!-- Nav -->
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+    <a href="/presences/{{ creneau.slug }}" class="btn btn-secondary btn-sm">← Séance</a>
+    <a href="/presences" class="btn btn-secondary btn-sm">Créneaux</a>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <span class="card-title">{{ creneau.title }} — Historique</span>
+    </div>
+
+    {% for group in creneau.groups %}
+    <div style="margin-bottom: 20px;">
+        <div style="font-size: 12px; font-weight: 700; color: #FF7832; text-transform: uppercase;
+                    letter-spacing: 0.5px; margin-bottom: 8px; padding: 0 4px;">
+            {{ group.name }}
+        </div>
+
+        <div class="history-table-wrap">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th class="sticky-col">Nom</th>
+                        <th class="sticky-col2">Cat.</th>
+                        {% for sess in creneau.sessions %}
+                        {% if not sess.is_vacation %}
+                        <th class="sess-col" title="{{ sess.date or '' }}">
+                            {{ sess.label }}
+                            {% if sess.date %}
+                            <span class="sess-date">{{ sess.date }}</span>
+                            {% endif %}
+                        </th>
+                        {% endif %}
+                        {% endfor %}
+                        <th class="total-col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for kid in group.kids %}
+                    <tr>
+                        <td class="sticky-col kid-name-cell">{{ kid.name }}</td>
+                        <td class="sticky-col2">{{ kid.category }}</td>
+                        {% set ns = namespace(total=0, count=0) %}
+                        {% for sess in creneau.sessions %}
+                        {% if not sess.is_vacation %}
+                        {% set val = kid.attendance.get(sess.label) %}
+                        <td class="att-cell {{ 'att-present' if val == 1 else ('att-absent' if val == 0 else '') }}">
+                            {% if val == 1 %}1{% elif val == 0 %}0{% else %}—{% endif %}
+                        </td>
+                        {% if val == 1 %}{% set ns.total = ns.total + 1 %}{% endif %}
+                        {% if val is not none %}{% set ns.count = ns.count + 1 %}{% endif %}
+                        {% endif %}
+                        {% endfor %}
+                        <td class="total-col">
+                            <strong>{{ ns.total }}</strong>
+                            {% if ns.count > 0 %}
+                            <span style="font-size: 10px; color: #888;">/{{ ns.count }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<style>
+    .history-table-wrap {
+        overflow-x: auto; -webkit-overflow-scrolling: touch;
+        border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);
+    }
+    .history-table {
+        width: max-content; min-width: 100%; border-collapse: collapse;
+        font-size: 12px;
+    }
+    .history-table th, .history-table td {
+        padding: 6px 8px; text-align: center; white-space: nowrap;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .history-table thead th {
+        background: rgba(255,255,255,0.06); color: #888;
+        font-size: 11px; font-weight: 600; position: sticky; top: 0; z-index: 2;
+    }
+    .sticky-col {
+        position: sticky; left: 0; z-index: 3;
+        background: #1e1e1e; text-align: left !important; min-width: 140px;
+        border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .sticky-col2 {
+        position: sticky; left: 140px; z-index: 3;
+        background: #1e1e1e; min-width: 40px;
+        border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    thead .sticky-col, thead .sticky-col2 {
+        background: rgba(40,40,40,1); z-index: 4;
+    }
+    .kid-name-cell { font-weight: 600; font-size: 13px; }
+    .sess-col { min-width: 36px; }
+    .sess-date { display: block; font-size: 9px; color: #666; font-weight: 400; }
+    .total-col {
+        min-width: 50px; font-weight: 700;
+        border-left: 1px solid rgba(255,255,255,0.08);
+    }
+    .att-cell { font-family: 'Space Mono', monospace; font-size: 11px; }
+    .att-present { background: rgba(76,175,80,0.12); color: #81C784; }
+    .att-absent { background: rgba(244,67,54,0.08); color: #E57373; }
+
+    @media (max-width: 600px) {
+        .sticky-col { min-width: 110px; }
+        .sticky-col2 { left: 110px; }
+        .history-table { font-size: 11px; }
+    }
+</style>
+{% endblock %}

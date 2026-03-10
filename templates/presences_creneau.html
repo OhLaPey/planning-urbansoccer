@@ -1,0 +1,331 @@
+{% extends "base.html" %}
+{% block title %}{{ creneau.title }} — Présences{% endblock %}
+
+{% block content %}
+<!-- Nav -->
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+    <a href="/presences" class="btn btn-secondary btn-sm">← Créneaux</a>
+    <a href="/presences/{{ creneau.slug }}/history" class="btn btn-secondary btn-sm">Historique</a>
+</div>
+
+<!-- Session selector -->
+<div class="card" style="padding: 10px;">
+    <div class="session-nav">
+        {% for sess in creneau.sessions %}
+        {% if not sess.is_vacation %}
+        <a href="/presences/{{ creneau.slug }}?session={{ sess.label }}"
+           class="session-chip {{ 'active' if sess.label == selected_session }}"
+           title="{{ sess.date or '' }}">
+            {{ sess.label }}
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% set current_sess = creneau.sessions|selectattr('label', 'equalto', selected_session)|first %}
+    {% if current_sess and current_sess.date %}
+    <div style="text-align: center; margin-top: 6px; font-size: 11px; color: #888;">
+        {{ current_sess.date }}
+    </div>
+    {% endif %}
+</div>
+
+<!-- Attendance form -->
+{% set sess_col = none %}
+{% for sess in creneau.sessions %}
+    {% if sess.label == selected_session %}
+        {% set sess_col = sess.col %}
+    {% endif %}
+{% endfor %}
+
+{% for group in creneau.groups %}
+<div class="card">
+    <div class="card-header">
+        <span class="card-title">{{ group.name }}</span>
+        <span style="font-size: 12px; color: #888;">
+            <span class="group-present-count" data-group="{{ loop.index0 }}">—</span>
+            / {{ group.kids|length }}
+        </span>
+    </div>
+
+    <div class="kids-list" data-group="{{ loop.index0 }}">
+        {% for kid in group.kids %}
+        {% set val = kid.attendance.get(selected_session) %}
+        <div class="kid-row {{ 'present' if val == 1 else ('absent' if val == 0 else '') }}"
+             data-row="{{ kid.row }}"
+             data-current="{{ val if val is not none else '' }}">
+            <div class="kid-info">
+                <span class="kid-num">{{ kid.num }}</span>
+                <span class="kid-name">{{ kid.name }}</span>
+                <span class="kid-cat">{{ kid.category }}</span>
+            </div>
+            <div class="kid-toggle">
+                <button class="toggle-btn toggle-present {{ 'active' if val == 1 }}"
+                        onclick="setAttendance(this, 1)" title="Présent">P</button>
+                <button class="toggle-btn toggle-absent {{ 'active' if val == 0 }}"
+                        onclick="setAttendance(this, 0)" title="Absent">A</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+
+<!-- Save bar -->
+<div class="save-bar" id="save-bar">
+    <div class="save-bar-inner">
+        <span class="save-count" id="save-count">0 modification(s)</span>
+        <button class="btn btn-primary" id="save-btn" onclick="saveAll()">
+            Enregistrer
+        </button>
+    </div>
+</div>
+
+<style>
+    /* Session nav */
+    .session-nav {
+        display: flex; gap: 4px; flex-wrap: wrap; justify-content: center;
+        overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+    .session-chip {
+        padding: 5px 10px; border-radius: 16px; font-size: 12px; font-weight: 600;
+        background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+        color: #666; text-decoration: none; transition: all 0.15s;
+        white-space: nowrap;
+    }
+    .session-chip:hover { background: rgba(255,120,50,0.1); color: #FF7832; }
+    .session-chip.active {
+        background: #FF7832; border-color: #FF7832; color: white;
+        box-shadow: 0 0 12px rgba(255,120,50,0.4);
+    }
+
+    /* Kids list */
+    .kids-list { display: flex; flex-direction: column; }
+    .kid-row {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.04);
+        transition: background 0.2s; border-radius: 6px; margin: 1px 0;
+    }
+    .kid-row:last-child { border-bottom: none; }
+    .kid-row.present { background: rgba(76,175,80,0.08); }
+    .kid-row.absent { background: rgba(244,67,54,0.06); }
+    .kid-row.changed { box-shadow: inset 3px 0 0 #FF7832; }
+    .kid-info { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+    .kid-num {
+        font-family: 'Space Mono', monospace; font-size: 11px; color: #555;
+        min-width: 20px; text-align: right;
+    }
+    .kid-name {
+        font-weight: 600; font-size: 14px; white-space: nowrap;
+        overflow: hidden; text-overflow: ellipsis;
+    }
+    .kid-cat {
+        font-size: 11px; padding: 2px 8px; border-radius: 10px;
+        background: rgba(255,255,255,0.06); color: #888; white-space: nowrap;
+    }
+
+    /* Toggle buttons */
+    .kid-toggle { display: flex; gap: 4px; flex-shrink: 0; }
+    .toggle-btn {
+        width: 38px; height: 38px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.04); color: #555;
+        font-size: 14px; font-weight: 700; cursor: pointer;
+        transition: all 0.15s; display: flex; align-items: center; justify-content: center;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .toggle-btn:active { transform: scale(0.92); }
+    .toggle-present.active {
+        background: rgba(76,175,80,0.2); border-color: #4CAF50; color: #81C784;
+        box-shadow: 0 0 8px rgba(76,175,80,0.3);
+    }
+    .toggle-absent.active {
+        background: rgba(244,67,54,0.15); border-color: #F44336; color: #E57373;
+        box-shadow: 0 0 8px rgba(244,67,54,0.2);
+    }
+
+    /* Save bar */
+    .save-bar {
+        position: fixed; bottom: 0; left: 0; right: 0;
+        background: rgba(30,30,30,0.95); backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,120,50,0.3);
+        padding: 10px 16px; z-index: 50;
+        transform: translateY(100%); transition: transform 0.3s ease;
+    }
+    .save-bar.visible { transform: translateY(0); }
+    .save-bar-inner {
+        max-width: 900px; margin: 0 auto;
+        display: flex; align-items: center; justify-content: space-between;
+    }
+    .save-count { font-size: 13px; color: #FF7832; font-weight: 600; }
+    .save-bar .btn { padding: 10px 24px; font-size: 14px; }
+
+    /* Toast notification */
+    .toast {
+        position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+        background: #4CAF50; color: white; padding: 10px 20px;
+        border-radius: 8px; font-size: 13px; font-weight: 600;
+        z-index: 100; opacity: 0; transition: opacity 0.3s;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .toast.show { opacity: 1; }
+    .toast.error { background: #F44336; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        .kid-name { font-size: 13px; }
+        .kid-cat { display: none; }
+        .toggle-btn { width: 44px; height: 44px; font-size: 16px; }
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const SHEET_NAME = {{ creneau.sheet_name|tojson }};
+const SESSION_LABEL = {{ selected_session|tojson }};
+// Build col lookup from sessions data
+const SESSIONS = {{ creneau.sessions|tojson }};
+const SESSION_COL = (function() {
+    for (let s of SESSIONS) {
+        if (s.label === SESSION_LABEL) return s.col;
+    }
+    return null;
+})();
+
+let changes = {};  // key: "row" → {row, col, value}
+
+function setAttendance(btn, value) {
+    const row = btn.closest('.kid-row');
+    const rowNum = parseInt(row.dataset.row);
+    const original = row.dataset.current;
+
+    // Toggle: if already active, deactivate
+    const isActive = btn.classList.contains('active');
+
+    // Clear both buttons
+    row.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    row.classList.remove('present', 'absent');
+
+    if (isActive) {
+        // Deactivate — revert to original or null
+        if (original !== '') {
+            const origVal = parseInt(original);
+            if (origVal === 1) {
+                row.querySelector('.toggle-present').classList.add('active');
+                row.classList.add('present');
+            } else {
+                row.querySelector('.toggle-absent').classList.add('active');
+                row.classList.add('absent');
+            }
+            delete changes[rowNum];
+        } else {
+            delete changes[rowNum];
+        }
+    } else {
+        // Activate
+        btn.classList.add('active');
+        if (value === 1) {
+            row.classList.add('present');
+        } else {
+            row.classList.add('absent');
+        }
+
+        // Check if this is actually a change from original
+        if (original !== '' && parseInt(original) === value) {
+            delete changes[rowNum];
+        } else {
+            changes[rowNum] = {row: rowNum, col: SESSION_COL, value: value};
+        }
+    }
+
+    // Update change indicator
+    row.classList.toggle('changed', rowNum in changes);
+
+    updateUI();
+}
+
+function updateUI() {
+    const count = Object.keys(changes).length;
+    const bar = document.getElementById('save-bar');
+    const countEl = document.getElementById('save-count');
+
+    if (count > 0) {
+        bar.classList.add('visible');
+        countEl.textContent = count + ' modification' + (count > 1 ? 's' : '');
+    } else {
+        bar.classList.remove('visible');
+    }
+
+    // Update group present counts
+    document.querySelectorAll('.kids-list').forEach(list => {
+        const groupIdx = list.dataset.group;
+        const rows = list.querySelectorAll('.kid-row');
+        let present = 0;
+        rows.forEach(r => { if (r.classList.contains('present')) present++; });
+        const counter = document.querySelector(`.group-present-count[data-group="${groupIdx}"]`);
+        if (counter) counter.textContent = present;
+    });
+}
+
+function saveAll() {
+    const updates = Object.values(changes);
+    if (updates.length === 0) return;
+
+    const btn = document.getElementById('save-btn');
+    btn.disabled = true;
+    btn.textContent = 'Enregistrement…';
+
+    fetch('/api/presences/save', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            sheet_name: SHEET_NAME,
+            updates: updates
+        })
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.ok) {
+            // Update originals
+            for (const key in changes) {
+                const row = document.querySelector(`.kid-row[data-row="${key}"]`);
+                if (row) {
+                    const val = changes[key].value;
+                    row.dataset.current = val.toString();
+                    row.classList.remove('changed');
+                }
+            }
+            changes = {};
+            updateUI();
+            showToast(`${data.count} présence(s) enregistrée(s)`);
+        } else {
+            showToast(data.error || 'Erreur', true);
+        }
+    })
+    .catch(err => {
+        showToast('Erreur réseau : ' + err.message, true);
+    })
+    .finally(() => {
+        btn.disabled = false;
+        btn.textContent = 'Enregistrer';
+    });
+}
+
+function showToast(msg, isError) {
+    // Remove existing
+    document.querySelectorAll('.toast').forEach(t => t.remove());
+
+    const toast = document.createElement('div');
+    toast.className = 'toast' + (isError ? ' error' : '');
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 2500);
+}
+
+// Init: update counts on load
+updateUI();
+</script>
+{% endblock %}
