@@ -1067,11 +1067,18 @@ def generate_html(week_employees, week_num, year, all_weeks):
         <div class="cal-chooser">
             <h3>Ajouter au calendrier</h3>
             <div class="cal-sub" id="cal-chooser-name"></div>
-            <div class="cal-option" id="cal-google" style="cursor:pointer;">
+            <a class="cal-option" id="cal-google" target="_blank" rel="noopener">
                 <span class="cal-icon">G</span>
                 <div class="cal-info">
                     <div class="cal-name">Google Agenda</div>
                     <div class="cal-desc">S'abonner (mise \u00e0 jour auto)</div>
+                </div>
+            </a>
+            <div class="cal-option cal-option-small" id="cal-google-manual" style="cursor:pointer;">
+                <span class="cal-icon" style="font-size:0.8em;">\u2139</span>
+                <div class="cal-info">
+                    <div class="cal-name" style="font-size:0.85em;">Google Agenda (manuel)</div>
+                    <div class="cal-desc">Si le bouton ci-dessus ouvre l'appli au lieu du navigateur</div>
                 </div>
             </div>
             <a class="cal-option" id="cal-apple">
@@ -1535,6 +1542,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
             _currentIcsUrl = fullUrl;
 
             document.getElementById('cal-chooser-name').textContent = displayName;
+            document.getElementById('cal-google').href =
+                'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcalUrl);
             document.getElementById('cal-apple').href = webcalUrl;
             document.getElementById('cal-outlook').href =
                 'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(fullUrl) + '&name=' + calName;
@@ -1556,8 +1565,8 @@ def generate_html(week_employees, week_num, year, all_weeks):
             if (e.target === this) closeCalendarChooser();
         }};
 
-        // Google Agenda : ouvre le panneau d'instructions
-        document.getElementById('cal-google').onclick = function() {{
+        // Google Agenda (manuel) : ouvre le panneau d'instructions
+        document.getElementById('cal-google-manual').onclick = function() {{
             document.getElementById('cal-chooser').style.display = 'none';
             document.getElementById('cal-chooser').classList.remove('open');
             document.getElementById('google-instructions').style.display = '';
