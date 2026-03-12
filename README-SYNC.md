@@ -202,13 +202,11 @@ Aucune licence Premium requise. Utilise la synchronisation OneDrive
 ### Prérequis
 
 1. **Git** installé sur votre PC (avec `git push` fonctionnel)
-2. **Repo cloné** localement :
-   ```bash
-   git clone https://github.com/OhLaPey/planning-urbansoccer.git
-   ```
-3. **Dossier SharePoint synchronisé** via OneDrive :
+2. **Dossier SharePoint synchronisé** via OneDrive :
    - Dans SharePoint, cliquez sur **"Ajouter un raccourci vers OneDrive"**
    - Le dossier `Plannings` apparaît dans votre Explorateur de fichiers
+
+> Le repo Git sera cloné automatiquement par le script s'il n'est pas trouvé.
 
 ### Lancement rapide
 

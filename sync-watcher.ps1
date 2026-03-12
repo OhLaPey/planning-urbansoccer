@@ -102,6 +102,20 @@ function Find-GitRepo {
     return $null
 }
 
+function Install-GitRepo {
+    <# Clone le repo automatiquement si absent #>
+    $defaultPath = Join-Path $env:USERPROFILE "planning-urbansoccer"
+    Write-Host ""
+    Write-Host "  Le repo n'a pas ete trouve. Clonage automatique..." -ForegroundColor Yellow
+    & git clone "https://github.com/OhLaPey/planning-urbansoccer.git" $defaultPath 2>&1
+    if ($LASTEXITCODE -eq 0 -and (Test-Path (Join-Path $defaultPath ".git"))) {
+        Write-Host "  Clone dans : $defaultPath" -ForegroundColor Green
+        return $defaultPath
+    }
+    Write-Host "  Echec du clonage." -ForegroundColor Red
+    return $null
+}
+
 function Test-IsTemporaryFile {
     param([string]$FileName)
     return ($FileName.StartsWith("~`$") -or $FileName.StartsWith(".~") -or $FileName.EndsWith(".tmp"))
@@ -357,9 +371,11 @@ if (-not $RepoPath) {
         }
     }
     else {
-        Write-Host "  Repo non trouve. Clonez-le d'abord :" -ForegroundColor Red
-        Write-Host "  git clone https://github.com/OhLaPey/planning-urbansoccer.git" -ForegroundColor Yellow
-        $RepoPath = Read-Host "  Entrez le chemin du repo Git"
+        Write-Host "  Repo non trouve. Clonage automatique..." -ForegroundColor Yellow
+        $RepoPath = Install-GitRepo
+        if (-not $RepoPath) {
+            $RepoPath = Read-Host "  Entrez le chemin du repo Git manuellement"
+        }
     }
 }
 
