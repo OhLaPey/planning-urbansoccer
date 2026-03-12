@@ -8,15 +8,21 @@ SharePoint `Documents > 02. USP - TOS - General > RH > Plannings` vers ce repo G
 ```
 SharePoint (Plannings/*.xlsx)
         │
-        ├──── Option A : Power Automate (recommandé)
-        │         └─► GitHub (commit via API)
+        ├──── Option A : Power Automate (nécessite licence Premium)
+        │         └─► GitHub (commit via HTTP connector)
         │
-        └──── Option B : GitHub Actions (cron)
-                  └─► Microsoft Graph API → télécharge → commit
+        ├──── Option B : GitHub Actions + Microsoft Graph API
+        │         └─► Cron → télécharge → commit
+        │
+        └──── Option C : OneDrive Sync + Script local (recommandé ⭐)
+                  └─► FileSystemWatcher → git commit → git push
 ```
 
-Les deux options déclenchent ensuite le workflow `generate.yml` existant
+Les trois options déclenchent ensuite le workflow `generate.yml` existant
 qui génère les ICS/HTML et déploie sur GitHub Pages.
+
+> **Note** : L'Option A nécessite une licence Power Automate Premium (connecteur HTTP).
+> L'Option C est recommandée car elle fonctionne sans licence supplémentaire.
 
 ---
 
@@ -188,15 +194,70 @@ python sync_sharepoint.py
 
 ---
 
+## Option C : OneDrive Sync + Script local (recommandé ⭐)
+
+Aucune licence Premium requise. Utilise la synchronisation OneDrive
+(déjà disponible) + un script PowerShell qui surveille le dossier.
+
+### Prérequis
+
+1. **Git** installé sur votre PC (avec `git push` fonctionnel)
+2. **Repo cloné** localement :
+   ```bash
+   git clone https://github.com/OhLaPey/planning-urbansoccer.git
+   ```
+3. **Dossier SharePoint synchronisé** via OneDrive :
+   - Dans SharePoint, cliquez sur **"Ajouter un raccourci vers OneDrive"**
+   - Le dossier `Plannings` apparaît dans votre Explorateur de fichiers
+
+### Lancement rapide
+
+```powershell
+# Lancer le script (il détecte automatiquement les dossiers)
+.\sync-watcher.ps1
+```
+
+Le script :
+1. Cherche automatiquement le dossier OneDrive synchronisé
+2. Cherche le repo Git local
+3. Surveille les modifications en temps réel
+4. Copie, commit et push automatiquement chaque planning modifié
+
+### Installation au démarrage de Windows
+
+```powershell
+# Installe une tâche planifiée qui démarre le watcher à la connexion
+.\sync-watcher.ps1 -Install
+
+# Pour désinstaller
+.\sync-watcher.ps1 -Uninstall
+```
+
+### Options avancées
+
+```powershell
+# Chemins explicites
+.\sync-watcher.ps1 -OneDrivePath "C:\Users\peio\OneDrive\...\Plannings" -RepoPath "C:\Users\peio\planning-urbansoccer"
+
+# Changer le délai de debounce (défaut: 10 secondes)
+.\sync-watcher.ps1 -Debounce 5
+```
+
+### Logs
+
+Le fichier `sync-watcher.log` dans le repo contient l'historique des syncs.
+
+---
+
 ## Comparatif
 
-| | Power Automate | GitHub Actions |
-|---|---|---|
-| **Facilité** | ⭐⭐⭐ Très simple | ⭐⭐ Config Azure AD |
-| **Délai** | < 5 min | Toutes les heures |
-| **Coût** | Inclus dans M365 | Gratuit (GitHub) |
-| **Fiabilité** | Haute | Haute |
-| **Contrôle** | Limité | Total |
+| | Power Automate | GitHub Actions | OneDrive + Script |
+|---|---|---|---|
+| **Facilité** | ⭐⭐⭐ Simple | ⭐⭐ Config Azure | ⭐⭐⭐ Simple |
+| **Délai** | < 5 min | Toutes les heures | < 15 secondes |
+| **Coût** | Licence Premium | Gratuit | Gratuit |
+| **Fiabilité** | Haute | Haute | Haute (PC allumé) |
+| **Contrôle** | Limité | Total | Total |
 
-**Recommandation** : Commencez par Power Automate (Option A). Si vous avez
-besoin de plus de contrôle, passez à l'Option B.
+**Recommandation** : Utilisez l'Option C (OneDrive + Script). C'est la plus
+rapide, gratuite, et ne nécessite aucune configuration admin.
