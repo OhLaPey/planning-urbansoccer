@@ -1,0 +1,71 @@
+name: Sync plannings depuis SharePoint
+
+# Exécution automatique toutes les heures (lun-ven) + déclenchement manuel
+on:
+  schedule:
+    # Toutes les heures, du lundi au vendredi, 7h-19h (UTC+1 → 6h-18h UTC)
+    - cron: '0 6-18 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      pattern:
+        description: 'Filtrer par semaine (ex: S11)'
+        required: false
+        type: string
+      dry_run:
+        description: 'Mode aperçu (sans téléchargement)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer les dépendances
+        run: pip install requests openpyxl
+
+      - name: Synchroniser depuis SharePoint
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          SHAREPOINT_SITE_URL: ${{ secrets.SHAREPOINT_SITE_URL }}
+          SHAREPOINT_FOLDER_PATH: ${{ secrets.SHAREPOINT_FOLDER_PATH || 'General/RH/Plannings' }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          if [ -n "${{ inputs.pattern }}" ]; then
+            ARGS="$ARGS --pattern ${{ inputs.pattern }}"
+          fi
+          python sync_sharepoint.py --no-push $ARGS
+
+      - name: Régénérer les plannings (ICS, HTML, JSON)
+        if: inputs.dry_run != true
+        run: |
+          python generate.py || true
+          python regen_ics.py
+
+      - name: Commit et push des changements
+        if: inputs.dry_run != true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Aucun changement à committer."
+          else
+            WEEK_FILES=$(git diff --cached --name-only | grep -oP 'S\d+' | sort -u | tr '\n' ', ' | sed 's/,$//')
+            git commit -m "📅 Sync SharePoint : plannings ${WEEK_FILES:-mis à jour}"
+            git push
+          fi
