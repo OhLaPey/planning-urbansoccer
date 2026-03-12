@@ -9,3 +9,4 @@ Anniversaires/output/*.pdf
 Anniversaires/*.db
 Anniversaires/*.db-wal
 Anniversaires/*.db-shm
+sync-watcher.log
