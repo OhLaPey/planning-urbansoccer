@@ -928,6 +928,47 @@ def generate_html(week_employees, week_num, year, all_weeks):
                                  50% {{ box-shadow: 0 0 14px rgba(255,102,0,0.6); }} }}
         .edit-status {{ font-size: 10px; color: #64dc3c; margin-left: auto; }}
 
+        /* ── Unsaved changes banner ── */
+        .unsaved-banner {{ position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+                           background: linear-gradient(135deg, #cc5500, #FF6600);
+                           color: #fff; padding: 10px 16px; display: flex; align-items: center;
+                           justify-content: center; gap: 12px; font-size: 13px; font-weight: 600;
+                           box-shadow: 0 2px 12px rgba(255,102,0,0.4);
+                           animation: slideDown 0.3s ease-out; }}
+        .unsaved-banner .unsaved-icon {{ font-size: 18px; animation: pulse-icon 1.5s ease-in-out infinite; }}
+        .unsaved-banner .unsaved-btn {{ padding: 5px 14px; border: 2px solid #fff; border-radius: 6px;
+                                        background: transparent; color: #fff; font-size: 12px;
+                                        font-weight: 700; cursor: pointer; font-family: inherit;
+                                        transition: all 0.2s; }}
+        .unsaved-banner .unsaved-btn:hover {{ background: #fff; color: #FF6600; }}
+        .unsaved-banner .unsaved-btn.btn-discard {{ border-color: rgba(255,255,255,0.4);
+                                                     color: rgba(255,255,255,0.8); font-weight: 500; }}
+        .unsaved-banner .unsaved-btn.btn-discard:hover {{ background: rgba(255,255,255,0.15); color: #fff; }}
+        @keyframes slideDown {{ from {{ transform: translateY(-100%); }} to {{ transform: translateY(0); }} }}
+        @keyframes pulse-icon {{ 0%,100% {{ opacity: 1; }} 50% {{ opacity: 0.5; }} }}
+        body.has-unsaved-banner {{ padding-top: 46px; }}
+
+        /* ── Confirm modal (replaces native confirm) ── */
+        .confirm-overlay {{ position: fixed; inset: 0; z-index: 10000;
+                            background: rgba(0,0,0,0.7); display: flex; align-items: center;
+                            justify-content: center; animation: fadeIn 0.15s ease-out; }}
+        .confirm-dialog {{ background: #1a1a2e; border: 1px solid rgba(255,102,0,0.3);
+                           border-radius: 12px; padding: 24px; min-width: 300px; max-width: 400px;
+                           box-shadow: 0 10px 40px rgba(0,0,0,0.6); text-align: center; }}
+        .confirm-dialog .confirm-icon {{ font-size: 36px; margin-bottom: 12px; }}
+        .confirm-dialog .confirm-msg {{ font-size: 14px; color: #ddd; margin-bottom: 20px; line-height: 1.5; }}
+        .confirm-dialog .confirm-actions {{ display: flex; gap: 10px; }}
+        .confirm-dialog .confirm-actions button {{ flex: 1; padding: 10px; border: none; border-radius: 8px;
+                                                    font-size: 13px; font-weight: 600; cursor: pointer;
+                                                    font-family: inherit; transition: all 0.2s; }}
+        .confirm-dialog .btn-confirm-save {{ background: #FF6600; color: #fff; }}
+        .confirm-dialog .btn-confirm-save:hover {{ background: #ff9050; }}
+        .confirm-dialog .btn-confirm-discard {{ background: rgba(220,50,50,0.15); color: #e55; }}
+        .confirm-dialog .btn-confirm-discard:hover {{ background: rgba(220,50,50,0.3); color: #ff6666; }}
+        .confirm-dialog .btn-confirm-cancel {{ background: rgba(255,255,255,0.08); color: #888; }}
+        .confirm-dialog .btn-confirm-cancel:hover {{ background: rgba(255,255,255,0.15); color: #fff; }}
+        @keyframes fadeIn {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
+
         /* ── Drag-resize handles ── */
         .tl-bar.editable .drag-handle {{
             position: absolute; top: 0; bottom: 0; width: 8px;
@@ -1872,6 +1913,60 @@ def generate_html(week_employees, week_num, year, all_weeks):
         var notesDirty = false;
         function saveNotesLocal() {{
             // Plus de localStorage — les notes sont en mémoire et persistées via "Publier"
+            updateUnsavedBanner();
+        }}
+
+        // ── Unsaved changes banner ──
+        var _unsavedBannerEl = null;
+        function hasUnsavedChanges() {{ return notesDirty || _editsDirty; }}
+        function updateUnsavedBanner() {{
+            if (hasUnsavedChanges()) {{
+                if (!_unsavedBannerEl) {{
+                    _unsavedBannerEl = document.createElement('div');
+                    _unsavedBannerEl.className = 'unsaved-banner';
+                    _unsavedBannerEl.innerHTML =
+                        '<span class="unsaved-icon">⚠</span>' +
+                        '<span>Modifications non enregistrées</span>';
+                    document.body.prepend(_unsavedBannerEl);
+                    document.body.classList.add('has-unsaved-banner');
+                }}
+            }} else {{
+                if (_unsavedBannerEl) {{
+                    _unsavedBannerEl.remove();
+                    _unsavedBannerEl = null;
+                    document.body.classList.remove('has-unsaved-banner');
+                }}
+            }}
+        }}
+        // ── beforeunload protection ──
+        window.addEventListener('beforeunload', function(e) {{
+            if (hasUnsavedChanges()) {{ e.preventDefault(); e.returnValue = ''; }}
+        }});
+        // ── Custom confirm dialog (replaces native confirm) ──
+        function showConfirmDialog(msg, onSave, onDiscard) {{
+            var overlay = document.createElement('div');
+            overlay.className = 'confirm-overlay';
+            overlay.innerHTML =
+                '<div class="confirm-dialog">' +
+                    '<div class="confirm-icon">⚠️</div>' +
+                    '<div class="confirm-msg">' + msg + '</div>' +
+                    '<div class="confirm-actions">' +
+                        '<button class="btn-confirm-save">Enregistrer</button>' +
+                        '<button class="btn-confirm-discard">Quitter sans sauver</button>' +
+                        '<button class="btn-confirm-cancel">Annuler</button>' +
+                    '</div>' +
+                '</div>';
+            document.body.appendChild(overlay);
+            overlay.querySelector('.btn-confirm-save').onclick = function() {{
+                overlay.remove(); if (onSave) onSave();
+            }};
+            overlay.querySelector('.btn-confirm-discard').onclick = function() {{
+                overlay.remove(); if (onDiscard) onDiscard();
+            }};
+            overlay.querySelector('.btn-confirm-cancel').onclick = function() {{
+                overlay.remove();
+            }};
+            overlay.onclick = function(e) {{ if (e.target === overlay) overlay.remove(); }};
         }}
 
         var STAFF_CODE = '1937';
@@ -2247,6 +2342,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             .then(function(r) {{
                 if (r.ok) {{
                     notesDirty = false;
+                    updateUnsavedBanner();
                     showRefreshCountdown(btn);
                 }} else {{
                     return r.json().then(function(err) {{
@@ -2301,13 +2397,24 @@ def generate_html(week_employees, week_num, year, all_weeks):
             toggleBtn.textContent = 'Mode \u00e9dition';
             toggleBtn.onclick = function() {{
                 if (editMode && _editsDirty) {{
-                    if (!confirm('Modifications non enregistr\u00e9es. Quitter sans enregistrer ?')) return;
-                    _editsDirty = false;
-                    updateSaveButton();
+                    showConfirmDialog(
+                        'Vous avez des modifications non enregistrées.<br>Que souhaitez-vous faire ?',
+                        function() {{ publishAllEdits(); }},
+                        function() {{
+                            _editsDirty = false;
+                            updateSaveButton();
+                            updateUnsavedBanner();
+                            editMode = false;
+                            toggleBtn.classList.remove('active');
+                            toggleBtn.textContent = 'Mode édition';
+                            renderTimeline();
+                        }}
+                    );
+                    return;
                 }}
                 editMode = !editMode;
                 toggleBtn.classList.toggle('active', editMode);
-                toggleBtn.textContent = editMode ? 'Quitter \u00e9dition' : 'Mode \u00e9dition';
+                toggleBtn.textContent = editMode ? 'Quitter édition' : 'Mode édition';
                 renderTimeline();
             }};
             adminToolbarEl.appendChild(toggleBtn);
@@ -2850,6 +2957,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
         function pushDataAfterEdit() {{
             _editsDirty = true;
             updateSaveButton();
+            updateUnsavedBanner();
         }}
 
         function updateSaveButton() {{
@@ -2877,6 +2985,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             pushDataToGitHub(function(ok) {{
                 if (ok) {{
                     _editsDirty = false;
+                    updateUnsavedBanner();
                     if (btn) {{
                         btn.textContent = 'Sauvegard\u00e9 \u2714';
                         btn.className = 'save-edits-btn saved';
