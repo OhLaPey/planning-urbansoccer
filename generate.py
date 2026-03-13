@@ -878,7 +878,6 @@ def generate_html(week_employees, week_num, year, all_weeks):
         .edit-toggle:hover {{ background: #FF6600; color: #fff; }}
         .edit-toggle.active {{ background: #FF6600; color: #fff;
                                box-shadow: 0 0 10px rgba(255,102,0,0.4); }}
-        .admin-toolbar .label {{ font-size: 11px; color: #888; }}
         .tl-bar.editable {{ cursor: pointer; }}
         .tl-bar.editable:hover {{ outline: 2px solid #FF6600; outline-offset: 1px; }}
         .edit-popup {{ position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -1941,7 +1940,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 uhdr.className = 'note-header';
                 var dateLabel = '';
                 if (u.date) {{
-                    var _dp = u.date.split(/[\\-T ]/);
+                    var _dp = u.date.split(/[\\-T :]/);
                     var _dd = new Date(parseInt(_dp[0]), parseInt(_dp[1])-1, parseInt(_dp[2]),
                         _dp.length > 3 ? parseInt(_dp[3]) : 0, _dp.length > 4 ? parseInt(_dp[4]) : 0);
                     var _jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
@@ -2184,7 +2183,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 var today = new Date();
                 var ds = today.getFullYear() + '-' +
                     (today.getMonth()+1).toString().padStart(2,'0') + '-' +
-                    today.getDate().toString().padStart(2,'0');
+                    today.getDate().toString().padStart(2,'0') + ' ' +
+                    today.getHours().toString().padStart(2,'0') + ':' +
+                    today.getMinutes().toString().padStart(2,'0');
                 data.updates.push({{ date: ds, text: '' }});
                 notesDirty = true; saveNotesLocal();
                 renderNotes();
@@ -2294,7 +2295,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             if (adminToolbarEl) return;
             adminToolbarEl = document.createElement('div');
             adminToolbarEl.className = 'admin-toolbar';
-            adminToolbarEl.innerHTML = '<span class="label">Admin</span>';
+            adminToolbarEl.innerHTML = '';
             var toggleBtn = document.createElement('button');
             toggleBtn.className = 'edit-toggle';
             toggleBtn.textContent = 'Mode \u00e9dition';
@@ -2948,14 +2949,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
             .catch(function() {{ cb(false); }});
         }}
 
-        // Init admin toolbar if token exists
+        // Init admin toolbar if already unlocked
         initAdminToolbar();
 
-        // Admin link at bottom to enter password
+        // Single "Mode édition" link at the bottom (combines auth + edit toggle)
         if (!isAdminUnlocked()) {{
             var adminLink = document.createElement('div');
             adminLink.style.cssText = 'text-align:center;margin:20px 0;';
-            adminLink.innerHTML = '<a href="#" style="color:#444;font-size:11px;text-decoration:none;">Admin</a>';
+            adminLink.innerHTML = '<a href="#" style="color:#444;font-size:11px;text-decoration:none;">Mode \u00e9dition</a>';
             adminLink.querySelector('a').onclick = function(e) {{
                 e.preventDefault();
                 if (verifyStaff()) {{
@@ -2963,6 +2964,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
                     adminLink.remove();
                     initAdminToolbar();
                     renderNotes();
+                    // Auto-activate edit mode
+                    var toggleBtn = adminToolbarEl.querySelector('.edit-toggle');
+                    if (toggleBtn) toggleBtn.click();
                 }}
             }};
             document.querySelector('.container').appendChild(adminLink);
