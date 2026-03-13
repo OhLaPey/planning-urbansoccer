@@ -2,9 +2,6 @@ name: Sync plannings depuis SharePoint
 
 # Exécution automatique toutes les heures (lun-ven) + déclenchement manuel
 on:
-  schedule:
-    # Toutes les heures, du lundi au vendredi, 7h-19h (UTC+1 → 6h-18h UTC)
-    - cron: '0 6-18 * * 1-5'
   workflow_dispatch:
     inputs:
       pattern:
