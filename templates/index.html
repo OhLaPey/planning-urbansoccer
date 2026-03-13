@@ -56,9 +56,12 @@
         <div class="birthday-row">
             <span class="birthday-time">{{ b.horaire or '—' }}</span>
             <div>
-                <div class="birthday-name">{{ b.prenom }}</div>
+                <a href="/edit/{{ b.id }}" class="birthday-name" style="text-decoration: none; color: inherit;">{{ b.prenom }}</a>
                 {% if b.animateur %}
                 <div class="birthday-details">{{ b.animateur }}{% if b.commentaires %} · {{ b.commentaires }}{% endif %}</div>
+                {% endif %}
+                {% if b.updated_at %}
+                <div class="birthday-details" style="font-size: 10px; color: #555;">Modifié {{ b.updated_at }}</div>
                 {% endif %}
             </div>
             <span class="birthday-formule
@@ -69,7 +72,6 @@
                 {% endif %}">{{ b.formule }}</span>
             <span class="birthday-kids">{{ b.nb_enfants or '—' }}</span>
             <div class="birthday-actions">
-                <a href="/edit/{{ b.id }}" class="btn btn-secondary btn-sm">Modifier</a>
                 <form method="POST" action="/duplicate/{{ b.id }}" style="display:inline;">
                     <button type="submit" class="btn btn-secondary btn-sm" title="Dupliquer">Copier</button>
                 </form>
