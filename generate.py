@@ -1941,7 +1941,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 uhdr.className = 'note-header';
                 var dateLabel = '';
                 if (u.date) {{
-                    var _dp = u.date.split(/[\\-T ]/);
+                    var _dp = u.date.split(/[\\-T :]/);
                     var _dd = new Date(parseInt(_dp[0]), parseInt(_dp[1])-1, parseInt(_dp[2]),
                         _dp.length > 3 ? parseInt(_dp[3]) : 0, _dp.length > 4 ? parseInt(_dp[4]) : 0);
                     var _jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
@@ -2184,7 +2184,9 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 var today = new Date();
                 var ds = today.getFullYear() + '-' +
                     (today.getMonth()+1).toString().padStart(2,'0') + '-' +
-                    today.getDate().toString().padStart(2,'0');
+                    today.getDate().toString().padStart(2,'0') + ' ' +
+                    today.getHours().toString().padStart(2,'0') + ':' +
+                    today.getMinutes().toString().padStart(2,'0');
                 data.updates.push({{ date: ds, text: '' }});
                 notesDirty = true; saveNotesLocal();
                 renderNotes();
@@ -2294,7 +2296,7 @@ def generate_html(week_employees, week_num, year, all_weeks):
             if (adminToolbarEl) return;
             adminToolbarEl = document.createElement('div');
             adminToolbarEl.className = 'admin-toolbar';
-            adminToolbarEl.innerHTML = '<span class="label">Admin</span>';
+            adminToolbarEl.innerHTML = '';
             var toggleBtn = document.createElement('button');
             toggleBtn.className = 'edit-toggle';
             toggleBtn.textContent = 'Mode \u00e9dition';
