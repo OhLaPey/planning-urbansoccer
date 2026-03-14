@@ -398,13 +398,6 @@
     "slug": "mostefa-yanis",
     "events": [
       {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-03-14T13:15",
-        "end": "2026-03-14T17:15",
-        "day": 5
-      },
-      {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-15T09:30",
@@ -735,6 +728,13 @@
         "label": "Vie de centre",
         "start": "2026-03-14T17:45",
         "end": "2026-03-14T22:20",
+        "day": 5
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-14T13:45",
+        "end": "2026-03-14T17:45",
         "day": 5
       }
     ]
