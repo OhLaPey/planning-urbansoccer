@@ -47,13 +47,6 @@
         "day": 3
       },
       {
-        "code": "EV-RE",
-        "label": "Événement régisseur",
-        "start": "2026-03-14T15:00",
-        "end": "2026-03-14T19:00",
-        "day": 5
-      },
-      {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-15T08:45",
@@ -71,7 +64,7 @@
         "code": "EV-RE",
         "label": "Événement régisseur",
         "start": "2026-03-14T12:30",
-        "end": "2026-03-14T15:00",
+        "end": "2026-03-14T15:30",
         "day": 5
       },
       {
@@ -87,6 +80,13 @@
         "start": "2026-03-10T20:30",
         "end": "2026-03-10T22:45",
         "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-14T15:30",
+        "end": "2026-03-14T18:00",
+        "day": 5
       }
     ]
   },
@@ -733,7 +733,7 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-14T15:00",
+        "start": "2026-03-14T17:45",
         "end": "2026-03-14T22:20",
         "day": 5
       }
