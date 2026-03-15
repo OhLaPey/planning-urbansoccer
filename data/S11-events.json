@@ -400,21 +400,7 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-15T09:30",
-        "end": "2026-03-15T10:15",
-        "day": 6
-      },
-      {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-03-15T10:15",
-        "end": "2026-03-15T12:15",
-        "day": 6
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-15T12:15",
+        "start": "2026-03-15T10:30",
         "end": "2026-03-15T12:45",
         "day": 6
       },
