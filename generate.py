@@ -1263,7 +1263,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         // ── Legend ── Build code-to-label map from all events
         var CODE_LABELS = {{}};
         Object.keys(DATA).forEach(function(n) {{
-            if (n === '_codeNames') return;
+            if (n === '_codeNames' || n === '_meta') return;
             DATA[n].events.forEach(function(ev) {{
                 if (ev.label && ev.label !== ev.code) CODE_LABELS[ev.code] = ev.label;
             }});
@@ -1295,7 +1295,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             var dayEvents = [];
             var allCodes = [];
             Object.keys(DATA).forEach(function(name) {{
-                if (name === '_codeNames') return;
+                if (name === '_codeNames' || name === '_meta') return;
                 var emp = DATA[name];
                 emp.events.forEach(function(ev) {{
                     if (ev.day === currentDay) {{
@@ -2645,7 +2645,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         function buildCodeOptions() {{
             var codes = {{}};
             Object.keys(DATA).forEach(function(n) {{
-                if (n === '_codeNames') return;
+                if (n === '_codeNames' || n === '_meta') return;
                 DATA[n].events.forEach(function(ev) {{
                     if (!codes[ev.code]) codes[ev.code] = ev.label || ev.code;
                 }});
@@ -2787,7 +2787,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             // Find staff who have NO events on the current day (repos)
             var reposStaff = [];
             Object.keys(DATA).forEach(function(name) {{
-                if (name === '_codeNames') return;
+                if (name === '_codeNames' || name === '_meta') return;
                 var hasEventToday = DATA[name].events.some(function(ev) {{ return ev.day === currentDay; }});
                 if (!hasEventToday) reposStaff.push(name);
             }});
