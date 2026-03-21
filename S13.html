@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planning Urban 7D - S9</title>
+    <title>Planning Urban 7D - S13</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -513,16 +513,16 @@
     <div class="container">
         <div class="header">
             <h1>Planning Urban 7D</h1>
-            <p class="subtitle">Semaine 9</p>
-            <div class="dates">23 Février → 1 Mars</div>
+            <p class="subtitle">Semaine 13</p>
+            <div class="dates">23 → 29 Mars</div>
         </div>
 
         <div class="week-selector">
-            <a href="#" class="week-tab active">S9</a>
+            <a href="S9.html" class="week-tab">S9</a>
             <a href="S10.html" class="week-tab">S10</a>
             <a href="S11.html" class="week-tab">S11</a>
             <a href="S12.html" class="week-tab">S12</a>
-            <a href="S13.html" class="week-tab">S13</a>
+            <a href="#" class="week-tab active">S13</a>
             <a href="S14.html" class="week-tab">S14</a>
         </div>
 
@@ -543,30 +543,31 @@
         <!-- ── Vue Staff (liste) ── -->
         <div id="view-staff" style="display:none;">
             <div class="employee-list">
-            <div class="employee-btn repos">BONILLO Matthieu <span class="badge">Repos</span></div>
-            <button class="employee-btn" data-name="BOULARDET Lucas" data-slug="boulardet-lucas">BOULARDET Lucas</button>
+            <button class="employee-btn" data-name="BONILLO Matthieu" data-slug="bonillo-matthieu">BONILLO Matthieu</button>
+            <div class="employee-btn repos">BOULARDET Lucas <span class="badge">Repos</span></div>
             <button class="employee-btn" data-name="CARRERE Peïo" data-slug="carrere-peio">CARRERE Peïo</button>
-            <div class="employee-btn repos">CASTELLON Pascaline <span class="badge">Repos</span></div>
-            <button class="employee-btn" data-name="COHAT Linda" data-slug="cohat-linda">COHAT Linda</button>
+            <button class="employee-btn" data-name="CASTELLON Pascaline" data-slug="castellon-pascaline">CASTELLON Pascaline</button>
+            <div class="employee-btn repos">COHAT Linda <span class="badge">Repos</span></div>
             <button class="employee-btn" data-name="CRUZEL Quentin" data-slug="cruzel-quentin">CRUZEL Quentin</button>
             <button class="employee-btn" data-name="DE NOUEL Maxime" data-slug="de-nouel-maxime">DE NOUEL Maxime</button>
-            <div class="employee-btn repos">DIVIEN Yohan <span class="badge">Repos</span></div>
-            <div class="employee-btn repos">DONAER Nicolas <span class="badge">Repos</span></div>
-            <button class="employee-btn" data-name="DOVINA Théo" data-slug="dovina-theo">DOVINA Théo</button>
+            <button class="employee-btn" data-name="DIVIEN Yohan" data-slug="divien-yohan">DIVIEN Yohan</button>
+            <button class="employee-btn" data-name="DONAER Nicolas" data-slug="donaer-nicolas">DONAER Nicolas</button>
+            <div class="employee-btn repos">DOVINA Théo <span class="badge">Repos</span></div>
             <div class="employee-btn repos">HEBERT Jean Baptiste <span class="badge">Repos</span></div>
             <button class="employee-btn" data-name="JARGUEL Thomas" data-slug="jarguel-thomas">JARGUEL Thomas</button>
             <div class="employee-btn repos">KABUNDA NDEKE Marvyn <span class="badge">Repos</span></div>
-            <div class="employee-btn repos">LABEFODE Thomas <span class="badge">Repos</span></div>
-            <button class="employee-btn" data-name="MADIELE Henri" data-slug="madiele-henri">MADIELE Henri</button>
-            <button class="employee-btn" data-name="MOSTEFA Yanis" data-slug="mostefa-yanis">MOSTEFA Yanis</button>
+            <button class="employee-btn" data-name="LABEFODE Thomas" data-slug="labefode-thomas">LABEFODE Thomas</button>
+            <div class="employee-btn repos">MOSTEFA Yanis <span class="badge">Repos</span></div>
+            <button class="employee-btn" data-name="ORDONEZ GOMEZ Oceane" data-slug="ordonez-gomez-oceane">ORDONEZ GOMEZ Oceane</button>
             <button class="employee-btn" data-name="PEREZ Loic" data-slug="perez-loic">PEREZ Loic</button>
-            <div class="employee-btn repos">PISTORE Remi <span class="badge">Repos</span></div>
+            <button class="employee-btn" data-name="PISTORE Remi" data-slug="pistore-remi">PISTORE Remi</button>
             <button class="employee-btn" data-name="PUJOL Mathieu" data-slug="pujol-mathieu">PUJOL Mathieu</button>
             <button class="employee-btn" data-name="RABII Mehdi" data-slug="rabii-mehdi">RABII Mehdi</button>
             <button class="employee-btn" data-name="SANGARNE Enzo" data-slug="sangarne-enzo">SANGARNE Enzo</button>
-            <div class="employee-btn repos">SEIGNE Kevin <span class="badge">Repos</span></div>
-            <div class="employee-btn repos">TINGUY Florian <span class="badge">Repos</span></div>
+            <button class="employee-btn" data-name="SEIGNE Kevin" data-slug="seigne-kevin">SEIGNE Kevin</button>
+            <button class="employee-btn" data-name="TINGUY Florian" data-slug="tinguy-florian">TINGUY Florian</button>
             <button class="employee-btn" data-name="TOPPAN Mattis" data-slug="toppan-mattis">TOPPAN Mattis</button>
+            <button class="employee-btn" data-name="VASSANT Tiffany" data-slug="vassant-tiffany">VASSANT Tiffany</button>
             </div>
         </div>
     </div>
@@ -654,165 +655,109 @@
 
     <script>
     (function() {
-        var NOTES_DATA = {"comment": "Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas et Enzo\n🏆 P250H lundi matin, P25H lundi aprem et P100H dimanche matin\n⚽🏆 Business League lundi et jeudi\n⚽🏆 Pokémon Cup mercredi aprem\nInitiation padel vendredi aprem pour laquelle Benoit de Montaudran viendra nous prêter main forte\n⚽🏆 Tournoi étudiant Social Hub samedi pour Péïo\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec les vacances scolaires", "updates": [{"date": "2026-02-20", "text": "MAJ Anniversaire :\n🎂 Samedi 28/02 : pas d'anniversaire donc tu peux venir pour 16h30 Mehdi\n🎂 Dimanche 01/03 : seulement un anniversaire à 16h pour Yanis donc tu pourras aider Péïo au bar le reste de la journée"}, {"date": "2026-02-23", "text": "Event ITEP de dernière minute : Dorian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade) est remplacé par Medhi (qui viendra à 19h)\n"}], "replacements": [{"date": "2026-02-24", "out": "BOULARDET Lucas", "in": "MOSTEFA Yanis", "start": "20:00", "end": "23:59"}]};
+        var NOTES_DATA = {"comment": "", "updates": []};
         // Nettoyage des anciennes données localStorage (source de désync entre appareils)
-        try { localStorage.removeItem('planning-notes-S9'); } catch(e) {}
+        try { localStorage.removeItem('planning-notes-S13'); } catch(e) {}
         var DATA = {
   "BONILLO Matthieu": {
     "slug": "bonillo-matthieu",
-    "events": []
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-28T09:00",
+        "end": "2026-03-28T13:00",
+        "day": 5
+      }
+    ]
   },
   "BOULARDET Lucas": {
     "slug": "boulardet-lucas",
-    "events": [
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-24T20:00",
-        "end": "2026-02-25T00:00",
-        "day": 1
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-25T17:30",
-        "end": "2026-02-26T00:00",
-        "day": 2
-      }
-    ]
+    "events": []
   },
   "CARRERE Peïo": {
     "slug": "carrere-peio",
     "events": [
       {
-        "code": "CUP-L",
-        "label": "Cup League",
-        "start": "2026-02-23T07:56",
-        "end": "2026-02-23T09:45",
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-23T11:45",
+        "end": "2026-03-23T19:15",
+        "day": 0
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-03-23T19:15",
+        "end": "2026-03-23T21:45",
         "day": 0
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-23T09:45",
-        "end": "2026-02-23T17:30",
-        "day": 0
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-24T09:00",
-        "end": "2026-02-24T09:45",
+        "start": "2026-03-24T11:45",
+        "end": "2026-03-24T22:00",
         "day": 1
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-24T09:45",
-        "end": "2026-02-24T16:00",
-        "day": 1
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-25T09:45",
-        "end": "2026-02-25T13:30",
-        "day": 2
-      },
-      {
-        "code": "CUP-R",
-        "label": "Cup Régisseur",
-        "start": "2026-02-25T13:30",
-        "end": "2026-02-25T17:30",
-        "day": 2
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-25T17:30",
-        "end": "2026-02-25T18:00",
-        "day": 2
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-26T17:30",
-        "end": "2026-02-26T20:15",
-        "day": 3
       },
       {
         "code": "L-REG",
         "label": "Régisseur League",
-        "start": "2026-02-26T20:15",
-        "end": "2026-02-26T20:30",
-        "day": 3
-      },
-      {
-        "code": "L-ARB",
-        "label": "L-ARB",
-        "start": "2026-02-26T20:30",
-        "end": "2026-02-26T21:30",
-        "day": 3
-      },
-      {
-        "code": "L-REG",
-        "label": "Régisseur League",
-        "start": "2026-02-26T21:30",
-        "end": "2026-02-26T21:45",
-        "day": 3
+        "start": "2026-03-25T18:15",
+        "end": "2026-03-25T21:45",
+        "day": 2
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-28T11:30",
-        "end": "2026-02-28T16:30",
-        "day": 5
-      },
-      {
-        "code": "EV-RE",
-        "label": "Événement régisseur",
-        "start": "2026-02-28T16:30",
-        "end": "2026-02-28T20:30",
-        "day": 5
+        "start": "2026-03-26T09:45",
+        "end": "2026-03-26T15:00",
+        "day": 3
       },
       {
         "code": "CUP-L",
         "label": "Cup League",
-        "start": "2026-03-01T07:30",
-        "end": "2026-03-01T08:45",
-        "day": 6
+        "start": "2026-03-27T07:30",
+        "end": "2026-03-27T10:00",
+        "day": 4
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-01T08:45",
-        "end": "2026-03-01T16:00",
-        "day": 6
+        "start": "2026-03-27T10:00",
+        "end": "2026-03-27T14:00",
+        "day": 4
+      },
+      {
+        "code": "EDF-A",
+        "label": "EDF-A",
+        "start": "2026-03-28T08:45",
+        "end": "2026-03-28T09:45",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-28T09:45",
+        "end": "2026-03-28T17:30",
+        "day": 5
       }
     ]
   },
   "CASTELLON Pascaline": {
     "slug": "castellon-pascaline",
-    "events": []
-  },
-  "COHAT Linda": {
-    "slug": "cohat-linda",
     "events": [
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-23T18:30",
-        "end": "2026-02-24T00:00",
-        "day": 0
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-26T18:00",
-        "end": "2026-02-26T22:00",
-        "day": 3
+        "start": "2026-03-24T20:00",
+        "end": "2026-03-25T00:00",
+        "day": 1
       }
     ]
+  },
+  "COHAT Linda": {
+    "slug": "cohat-linda",
+    "events": []
   },
   "CRUZEL Quentin": {
     "slug": "cruzel-quentin",
@@ -820,36 +765,22 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-23T17:30",
-        "end": "2026-02-24T00:00",
-        "day": 0
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-24T16:00",
-        "end": "2026-02-25T00:00",
-        "day": 1
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-25T13:30",
-        "end": "2026-02-25T22:00",
+        "start": "2026-03-25T20:00",
+        "end": "2026-03-26T00:00",
         "day": 2
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-27T18:30",
-        "end": "2026-02-28T00:00",
-        "day": 4
+        "start": "2026-03-26T20:00",
+        "end": "2026-03-27T00:00",
+        "day": 3
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-28T17:00",
-        "end": "2026-02-28T22:20",
+        "start": "2026-03-28T15:00",
+        "end": "2026-03-28T22:20",
         "day": 5
       }
     ]
@@ -858,110 +789,230 @@
     "slug": "de-nouel-maxime",
     "events": [
       {
-        "code": "CUP-R",
-        "label": "Cup Régisseur",
-        "start": "2026-02-23T07:30",
-        "end": "2026-02-23T13:00",
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-23T13:45",
+        "end": "2026-03-23T17:15",
         "day": 0
       },
       {
-        "code": "CUP-R",
-        "label": "Cup Régisseur",
-        "start": "2026-02-23T13:30",
-        "end": "2026-02-23T19:00",
+        "code": "PAD-A",
+        "label": "Padel animation",
+        "start": "2026-03-23T17:15",
+        "end": "2026-03-23T17:45",
         "day": 0
       },
       {
-        "code": "STA-P",
-        "label": "STA-P",
-        "start": "2026-02-24T09:45",
-        "end": "2026-02-24T12:15",
-        "day": 1
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-23T17:45",
+        "end": "2026-03-23T21:15",
+        "day": 0
       },
       {
-        "code": "STA-P",
-        "label": "STA-P",
-        "start": "2026-02-24T13:15",
-        "end": "2026-02-24T15:45",
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-24T10:45",
+        "end": "2026-03-24T12:15",
         "day": 1
       },
       {
         "code": "CUP-L",
         "label": "Cup League",
-        "start": "2026-02-24T15:45",
-        "end": "2026-02-24T16:45",
+        "start": "2026-03-24T13:00",
+        "end": "2026-03-24T14:15",
         "day": 1
       },
       {
         "code": "C-PAD",
         "label": "Cours Padel",
-        "start": "2026-02-25T09:45",
-        "end": "2026-02-25T12:15",
-        "day": 2
+        "start": "2026-03-24T14:15",
+        "end": "2026-03-24T16:45",
+        "day": 1
       },
       {
         "code": "PAD-A",
         "label": "Padel animation",
-        "start": "2026-02-25T13:00",
-        "end": "2026-02-25T14:45",
+        "start": "2026-03-24T16:45",
+        "end": "2026-03-24T17:45",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-24T17:45",
+        "end": "2026-03-24T21:15",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-25T11:45",
+        "end": "2026-03-25T13:15",
         "day": 2
       },
       {
         "code": "C-PAD",
         "label": "Cours Padel",
-        "start": "2026-02-25T14:45",
-        "end": "2026-02-25T17:15",
+        "start": "2026-03-25T14:15",
+        "end": "2026-03-25T15:45",
         "day": 2
       },
       {
-        "code": "STA-P",
-        "label": "STA-P",
-        "start": "2026-02-27T09:45",
-        "end": "2026-02-27T12:15",
-        "day": 4
+        "code": "PAD-A",
+        "label": "Padel animation",
+        "start": "2026-03-25T15:45",
+        "end": "2026-03-25T17:00",
+        "day": 2
       },
       {
-        "code": "STA-P",
-        "label": "STA-P",
-        "start": "2026-02-27T13:15",
-        "end": "2026-02-27T15:45",
-        "day": 4
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-25T17:00",
+        "end": "2026-03-25T20:30",
+        "day": 2
       },
       {
         "code": "CUP-R",
         "label": "Cup Régisseur",
-        "start": "2026-03-01T07:30",
-        "end": "2026-03-01T13:00",
+        "start": "2026-03-27T07:30",
+        "end": "2026-03-27T13:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-29T08:45",
+        "end": "2026-03-29T15:15",
+        "day": 6
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-03-29T15:15",
+        "end": "2026-03-29T17:15",
         "day": 6
       }
     ]
   },
   "DIVIEN Yohan": {
     "slug": "divien-yohan",
-    "events": []
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-28T09:00",
+        "end": "2026-03-28T13:00",
+        "day": 5
+      }
+    ]
   },
   "DONAER Nicolas": {
     "slug": "donaer-nicolas",
-    "events": []
-  },
-  "DOVINA Théo": {
-    "slug": "dovina-theo",
     "events": [
       {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-25T20:00",
-        "end": "2026-02-26T00:00",
-        "day": 2
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-23T17:15",
+        "end": "2026-03-23T19:15",
+        "day": 0
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-23T20:00",
+        "end": "2026-03-23T21:00",
+        "day": 0
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-26T20:00",
-        "end": "2026-02-27T00:00",
-        "day": 3
+        "start": "2026-03-24T11:45",
+        "end": "2026-03-24T13:00",
+        "day": 1
+      },
+      {
+        "code": "COMMD",
+        "label": "COMMD",
+        "start": "2026-03-24T13:00",
+        "end": "2026-03-24T14:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-24T17:30",
+        "end": "2026-03-25T00:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-25T12:00",
+        "end": "2026-03-25T13:45",
+        "day": 2
+      },
+      {
+        "code": "COMMD",
+        "label": "COMMD",
+        "start": "2026-03-25T13:45",
+        "end": "2026-03-25T14:15",
+        "day": 2
+      },
+      {
+        "code": "EDF-B",
+        "label": "EDF-B",
+        "start": "2026-03-25T14:15",
+        "end": "2026-03-25T15:45",
+        "day": 2
+      },
+      {
+        "code": "COMMD",
+        "label": "COMMD",
+        "start": "2026-03-25T15:45",
+        "end": "2026-03-25T17:15",
+        "day": 2
+      },
+      {
+        "code": "EDF-B",
+        "label": "EDF-B",
+        "start": "2026-03-25T17:15",
+        "end": "2026-03-25T18:45",
+        "day": 2
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-25T19:30",
+        "end": "2026-03-25T22:30",
+        "day": 2
+      },
+      {
+        "code": "COMMD",
+        "label": "COMMD",
+        "start": "2026-03-27T16:15",
+        "end": "2026-03-27T17:15",
+        "day": 4
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-27T17:15",
+        "end": "2026-03-27T19:15",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-27T19:15",
+        "end": "2026-03-28T00:30",
+        "day": 4
       }
     ]
+  },
+  "DOVINA Théo": {
+    "slug": "dovina-theo",
+    "events": []
   },
   "HEBERT Jean Baptiste": {
     "slug": "hebert-jean-baptiste",
@@ -971,123 +1022,11 @@
     "slug": "jarguel-thomas",
     "events": [
       {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-23T09:00",
-        "end": "2026-02-23T10:00",
-        "day": 0
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-23T10:00",
-        "end": "2026-02-23T12:00",
-        "day": 0
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-23T12:00",
-        "end": "2026-02-23T12:30",
-        "day": 0
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-23T13:00",
-        "end": "2026-02-23T14:00",
-        "day": 0
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-24T09:00",
-        "end": "2026-02-24T10:00",
-        "day": 1
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-24T10:00",
-        "end": "2026-02-24T12:00",
-        "day": 1
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-24T12:00",
-        "end": "2026-02-24T12:30",
-        "day": 1
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-24T13:00",
-        "end": "2026-02-24T14:00",
-        "day": 1
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-24T14:00",
-        "end": "2026-02-24T16:00",
-        "day": 1
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-24T16:00",
-        "end": "2026-02-24T17:00",
-        "day": 1
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-24T17:00",
-        "end": "2026-02-24T18:00",
-        "day": 1
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-25T09:00",
-        "end": "2026-02-25T10:00",
-        "day": 2
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-25T10:00",
-        "end": "2026-02-25T12:00",
-        "day": 2
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-25T12:00",
-        "end": "2026-02-25T12:30",
-        "day": 2
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-25T13:00",
-        "end": "2026-02-25T14:00",
-        "day": 2
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-25T14:00",
-        "end": "2026-02-25T16:00",
-        "day": 2
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-25T16:00",
-        "end": "2026-02-25T17:00",
-        "day": 2
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-29T15:15",
+        "end": "2026-03-29T23:30",
+        "day": 6
       }
     ]
   },
@@ -1097,78 +1036,43 @@
   },
   "LABEFODE Thomas": {
     "slug": "labefode-thomas",
-    "events": []
-  },
-  "MADIELE Henri": {
-    "slug": "madiele-henri",
     "events": [
       {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-23T09:00",
-        "end": "2026-02-23T15:40",
-        "day": 0
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-24T12:00",
-        "end": "2026-02-24T14:30",
-        "day": 1
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-24T15:00",
-        "end": "2026-02-24T22:00",
-        "day": 1
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-26T11:30",
-        "end": "2026-02-26T18:00",
-        "day": 3
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-27T11:30",
-        "end": "2026-02-27T17:30",
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-27T17:15",
+        "end": "2026-03-27T19:15",
         "day": 4
       }
     ]
   },
   "MOSTEFA Yanis": {
     "slug": "mostefa-yanis",
+    "events": []
+  },
+  "ORDONEZ GOMEZ Oceane": {
+    "slug": "ordonez-gomez-oceane",
     "events": [
       {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-01T09:30",
-        "end": "2026-03-01T10:15",
-        "day": 6
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-23T19:30",
+        "end": "2026-03-23T22:30",
+        "day": 0
       },
       {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-03-01T10:15",
-        "end": "2026-03-01T12:15",
-        "day": 6
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-24T20:30",
+        "end": "2026-03-24T22:30",
+        "day": 1
       },
       {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-01T12:15",
-        "end": "2026-03-01T12:45",
-        "day": 6
-      },
-      {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-03-01T13:45",
-        "end": "2026-03-01T17:45",
-        "day": 6
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-25T18:30",
+        "end": "2026-03-25T22:30",
+        "day": 2
       }
     ]
   },
@@ -1176,264 +1080,146 @@
     "slug": "perez-loic",
     "events": [
       {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-23T09:00",
-        "end": "2026-02-23T10:00",
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-23T18:00",
+        "end": "2026-03-24T00:00",
         "day": 0
       },
       {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-23T10:00",
-        "end": "2026-02-23T12:00",
-        "day": 0
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-23T12:30",
-        "end": "2026-02-23T14:00",
-        "day": 0
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-23T14:00",
-        "end": "2026-02-23T16:00",
-        "day": 0
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-23T16:00",
-        "end": "2026-02-23T17:00",
-        "day": 0
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-23T17:00",
-        "end": "2026-02-23T18:00",
-        "day": 0
-      },
-      {
-        "code": "L-REG",
-        "label": "Régisseur League",
-        "start": "2026-02-23T19:15",
-        "end": "2026-02-23T19:30",
-        "day": 0
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-24T17:15",
+        "end": "2026-03-24T19:15",
+        "day": 1
       },
       {
         "code": "L-ARB",
         "label": "L-ARB",
-        "start": "2026-02-23T19:30",
-        "end": "2026-02-23T20:30",
-        "day": 0
-      },
-      {
-        "code": "L-REG",
-        "label": "Régisseur League",
-        "start": "2026-02-23T20:30",
-        "end": "2026-02-23T20:45",
-        "day": 0
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-24T09:45",
-        "end": "2026-02-24T10:00",
+        "start": "2026-03-24T19:30",
+        "end": "2026-03-24T22:30",
         "day": 1
       },
       {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-24T10:00",
-        "end": "2026-02-24T12:00",
-        "day": 1
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-24T12:30",
-        "end": "2026-02-24T14:00",
-        "day": 1
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-24T14:00",
-        "end": "2026-02-24T16:00",
-        "day": 1
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-24T16:00",
-        "end": "2026-02-24T17:00",
-        "day": 1
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-25T09:00",
-        "end": "2026-02-25T10:00",
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-25T17:30",
+        "end": "2026-03-26T00:00",
         "day": 2
       },
       {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-25T10:00",
-        "end": "2026-02-25T12:00",
-        "day": 2
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-25T12:30",
-        "end": "2026-02-25T14:00",
-        "day": 2
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-25T14:00",
-        "end": "2026-02-25T16:00",
-        "day": 2
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-25T16:00",
-        "end": "2026-02-25T17:00",
-        "day": 2
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-25T17:00",
-        "end": "2026-02-25T18:00",
-        "day": 2
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T09:45",
-        "end": "2026-02-26T10:00",
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-26T17:30",
+        "end": "2026-03-27T00:00",
         "day": 3
       },
       {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-26T10:00",
-        "end": "2026-02-26T12:00",
-        "day": 3
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-28T09:00",
+        "end": "2026-03-28T09:30",
+        "day": 5
       },
       {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T12:30",
-        "end": "2026-02-26T14:00",
-        "day": 3
+        "code": "EDF-B",
+        "label": "EDF-B",
+        "start": "2026-03-28T09:30",
+        "end": "2026-03-28T12:30",
+        "day": 5
       },
       {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-26T14:00",
-        "end": "2026-02-26T16:00",
-        "day": 3
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-28T13:45",
+        "end": "2026-03-28T15:45",
+        "day": 5
       },
       {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T16:00",
-        "end": "2026-02-26T17:00",
-        "day": 3
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T17:00",
-        "end": "2026-02-26T18:00",
-        "day": 3
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-27T09:00",
-        "end": "2026-02-27T10:00",
-        "day": 4
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-27T10:00",
-        "end": "2026-02-27T12:00",
-        "day": 4
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-27T12:30",
-        "end": "2026-02-27T14:00",
-        "day": 4
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-27T14:00",
-        "end": "2026-02-27T16:00",
-        "day": 4
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-27T16:00",
-        "end": "2026-02-27T17:00",
-        "day": 4
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-28T15:45",
+        "end": "2026-03-28T17:45",
+        "day": 5
       }
     ]
   },
   "PISTORE Remi": {
     "slug": "pistore-remi",
-    "events": []
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-24T17:15",
+        "end": "2026-03-24T19:15",
+        "day": 1
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-27T17:15",
+        "end": "2026-03-27T19:15",
+        "day": 4
+      }
+    ]
   },
   "PUJOL Mathieu": {
     "slug": "pujol-mathieu",
     "events": [
       {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T09:00",
-        "end": "2026-02-26T09:45",
+        "code": "CUP-L",
+        "label": "Cup League",
+        "start": "2026-03-23T07:30",
+        "end": "2026-03-23T10:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-23T10:00",
+        "end": "2026-03-23T15:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-24T09:45",
+        "end": "2026-03-24T15:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-25T09:45",
+        "end": "2026-03-25T18:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-26T11:45",
+        "end": "2026-03-26T22:00",
         "day": 3
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-26T09:45",
-        "end": "2026-02-26T18:00",
-        "day": 3
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-27T09:45",
-        "end": "2026-02-27T18:00",
+        "start": "2026-03-27T11:45",
+        "end": "2026-03-27T19:00",
         "day": 4
       },
       {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-02-28T08:45",
-        "end": "2026-02-28T17:00",
-        "day": 5
+        "code": "AIDE",
+        "label": "Aide",
+        "start": "2026-03-29T15:00",
+        "end": "2026-03-29T17:00",
+        "day": 6
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-01T15:00",
-        "end": "2026-03-01T22:20",
+        "start": "2026-03-29T17:00",
+        "end": "2026-03-29T22:20",
         "day": 6
       }
     ]
@@ -1442,18 +1228,39 @@
     "slug": "rabii-mehdi",
     "events": [
       {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-23T19:30",
+        "end": "2026-03-23T22:30",
+        "day": 0
+      },
+      {
         "code": "ANNIV",
         "label": "Anniversaire",
-        "start": "2026-02-28T13:45",
-        "end": "2026-02-28T17:45",
+        "start": "2026-03-28T13:45",
+        "end": "2026-03-28T17:45",
         "day": 5
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-28T17:45",
-        "end": "2026-02-28T21:15",
+        "start": "2026-03-28T17:45",
+        "end": "2026-03-28T21:15",
         "day": 5
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-29T10:45",
+        "end": "2026-03-29T12:45",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-29T13:45",
+        "end": "2026-03-29T17:45",
+        "day": 6
       }
     ]
   },
@@ -1461,140 +1268,100 @@
     "slug": "sangarne-enzo",
     "events": [
       {
-        "code": "FORE",
-        "label": "FORE",
-        "start": "2026-02-23T08:30",
-        "end": "2026-02-23T09:00",
-        "day": 0
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-25T13:45",
+        "end": "2026-03-25T17:30",
+        "day": 2
       },
       {
-        "code": "FORP",
-        "label": "FORP",
-        "start": "2026-02-23T09:00",
-        "end": "2026-02-23T13:30",
-        "day": 0
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-23T14:00",
-        "end": "2026-02-23T16:00",
-        "day": 0
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-23T16:00",
-        "end": "2026-02-23T17:00",
-        "day": 0
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T09:00",
-        "end": "2026-02-26T10:00",
-        "day": 3
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-26T10:00",
-        "end": "2026-02-26T12:00",
-        "day": 3
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T12:00",
-        "end": "2026-02-26T12:30",
-        "day": 3
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T13:00",
-        "end": "2026-02-26T14:00",
-        "day": 3
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-26T14:00",
-        "end": "2026-02-26T16:00",
-        "day": 3
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T16:00",
-        "end": "2026-02-26T17:00",
-        "day": 3
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-26T17:00",
-        "end": "2026-02-26T18:00",
-        "day": 3
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-26T18:00",
-        "end": "2026-02-26T19:00",
-        "day": 3
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-27T09:00",
-        "end": "2026-02-27T10:00",
-        "day": 4
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-27T10:00",
-        "end": "2026-02-27T12:00",
-        "day": 4
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-27T12:00",
-        "end": "2026-02-27T12:30",
-        "day": 4
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-27T13:00",
-        "end": "2026-02-27T14:00",
-        "day": 4
-      },
-      {
-        "code": "STA-E",
-        "label": "Stage encadrement",
-        "start": "2026-02-27T14:00",
-        "end": "2026-02-27T16:00",
-        "day": 4
-      },
-      {
-        "code": "STAGE",
-        "label": "Stage",
-        "start": "2026-02-27T16:00",
-        "end": "2026-02-27T17:00",
-        "day": 4
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-29T13:15",
+        "end": "2026-03-29T17:15",
+        "day": 6
       }
     ]
   },
   "SEIGNE Kevin": {
     "slug": "seigne-kevin",
-    "events": []
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-28T09:00",
+        "end": "2026-03-28T13:00",
+        "day": 5
+      },
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-28T13:45",
+        "end": "2026-03-28T17:45",
+        "day": 5
+      }
+    ]
   },
   "TINGUY Florian": {
     "slug": "tinguy-florian",
-    "events": []
+    "events": [
+      {
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-25T13:45",
+        "end": "2026-03-25T17:30",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-25T18:00",
+        "end": "2026-03-25T22:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-28T11:00",
+        "end": "2026-03-28T13:00",
+        "day": 5
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-28T13:30",
+        "end": "2026-03-28T17:30",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-29T09:30",
+        "end": "2026-03-29T10:15",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-29T10:15",
+        "end": "2026-03-29T12:15",
+        "day": 6
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-29T12:15",
+        "end": "2026-03-29T12:45",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-29T13:15",
+        "end": "2026-03-29T15:15",
+        "day": 6
+      }
+    ]
   },
   "TOPPAN Mattis": {
     "slug": "toppan-mattis",
@@ -1602,38 +1369,43 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-26T20:00",
-        "end": "2026-02-27T00:00",
-        "day": 3
+        "start": "2026-03-23T19:15",
+        "end": "2026-03-24T00:00",
+        "day": 0
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-02-27T18:00",
-        "end": "2026-02-28T00:00",
+        "start": "2026-03-27T17:30",
+        "end": "2026-03-28T00:30",
         "day": 4
-      },
+      }
+    ]
+  },
+  "VASSANT Tiffany": {
+    "slug": "vassant-tiffany",
+    "events": [
       {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-01T16:00",
-        "end": "2026-03-01T23:15",
-        "day": 6
+        "code": "EDF-C",
+        "label": "EDF-C",
+        "start": "2026-03-25T13:45",
+        "end": "2026-03-25T17:30",
+        "day": 2
       }
     ]
   },
   "_meta": {
-    "source": "Excel v2",
-    "updated_at": "2026-03-21 10:56"
+    "source": "Excel",
+    "updated_at": "2026-03-21 11:13"
   }
 };
         // Nettoyage des anciennes données localStorage
-        try { localStorage.removeItem('planning-edits-S9'); } catch(e) {}
+        try { localStorage.removeItem('planning-edits-S13'); } catch(e) {}
         var COLORS = {"VDC": {"bg": "rgba(255,102,0,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FOR-E": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FOR-P": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}, "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}};
         var DEFAULT_C = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"};
-        var DAYS = ["Lun 23", "Mar 24", "Mer 25", "Jeu 26", "Ven 27", "Sam 28", "Dim 01"];
-        var DAYS_FULL = ["Lundi 23/02", "Mardi 24/02", "Mercredi 25/02", "Jeudi 26/02", "Vendredi 27/02", "Samedi 28/02", "Dimanche 01/03"];
-        var WEEK_DATES = ["2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01"];
+        var DAYS = ["Lun 23", "Mar 24", "Mer 25", "Jeu 26", "Ven 27", "Sam 28", "Dim 29"];
+        var DAYS_FULL = ["Lundi 23/03", "Mardi 24/03", "Mercredi 25/03", "Jeudi 26/03", "Vendredi 27/03", "Samedi 28/03", "Dimanche 29/03"];
+        var WEEK_DATES = ["2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-28", "2026-03-29"];
         var currentDay = 0;
         (function() {
             var now = new Date();
@@ -2359,7 +2131,7 @@
 
         // ── Notes de semaine (injectées depuis notes/SXX.json) ──
         var REPO = 'OhLaPey/planning-urbansoccer';
-        var NOTES_PATH = 'notes/S9.json';
+        var NOTES_PATH = 'notes/S13.json';
         var TOKEN_KEY = 'planning-admin-token';
         var ADMIN_KEY = 'planning-admin-unlocked';
         var notesEl = document.getElementById('week-notes');
@@ -2777,7 +2549,7 @@
             .then(function(r) { return r.ok ? r.json() : { sha: null }; })
             .then(function(file) {
                 var body = {
-                    message: 'MAJ notes S9 depuis la page',
+                    message: 'MAJ notes S13 depuis la page',
                     content: content,
                     branch: 'main'
                 };
@@ -3495,7 +3267,7 @@
                 updated_at: now.getFullYear() + '-' + pad(now.getMonth()+1) + '-' + pad(now.getDate()) + ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes())
             };
             var content = btoa(unescape(encodeURIComponent(JSON.stringify(weekData, null, 2) + '\n')));
-            var dataPath = 'data/S9-events.json';
+            var dataPath = 'data/S13-events.json';
             var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + dataPath;
 
             // Get current SHA
@@ -3505,7 +3277,7 @@
             .then(function(r) { return r.ok ? r.json() : { sha: null }; })
             .then(function(file) {
                 var body = {
-                    message: 'MAJ créneaux S9 depuis la page',
+                    message: 'MAJ créneaux S13 depuis la page',
                     content: content,
                     branch: 'main'
                 };
@@ -3529,7 +3301,7 @@
         initAdminToolbar();
 
         // ── Note discrète : dernière MAJ + source ──
-        var _meta = {"source": "Excel v2", "updated_at": "2026-03-21 10:56"};
+        var _meta = {"source": "Excel", "updated_at": "2026-03-21 11:13"};
         (function() {
             if (!_meta.updated_at) return;
             var sourceLabels = {

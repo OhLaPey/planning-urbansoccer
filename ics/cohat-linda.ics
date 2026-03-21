@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:cohat-linda-s9-1@urban7d
-DTSTAMP:20260321T105631Z
+DTSTAMP:20260321T111334Z
 DTSTART;TZID=Europe/Paris:20260223T183000
 DTEND;TZID=Europe/Paris:20260224T000000
 SUMMARY:Vie de centre
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s9-2@urban7d
-DTSTAMP:20260321T105631Z
+DTSTAMP:20260321T111334Z
 DTSTART;TZID=Europe/Paris:20260226T180000
 DTEND;TZID=Europe/Paris:20260226T220000
 SUMMARY:Vie de centre
@@ -63,5 +63,12 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
  reste de la journée\nMAJ 2026-02-23: Event ITEP de dernière minute : Dor
  ian de Montaudran pour le gérer\nRemplacement : mardi soir Lucas (malade)
   est remplacé par Medhi (qui viendra à 19h)\n
+END:VEVENT
+BEGIN:VEVENT
+UID:cohat-linda-s12-1@urban7d
+DTSTAMP:20260321T111334Z
+DTSTART;TZID=Europe/Paris:20260317T180000
+DTEND;TZID=Europe/Paris:20260318T000000
+SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR
