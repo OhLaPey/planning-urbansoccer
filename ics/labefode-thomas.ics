@@ -26,43 +26,65 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:labefode-thomas-s11-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260313T171500
 DTEND;TZID=Europe/Paris:20260313T191500
 SUMMARY:EDF-C
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:labefode-thomas-s12-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260318T134500
 DTEND;TZID=Europe/Paris:20260318T173000
 SUMMARY:EDF-C
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 BEGIN:VEVENT
 UID:labefode-thomas-s12-2@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260320T171500
 DTEND;TZID=Europe/Paris:20260320T191500
 SUMMARY:EDF-C
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 BEGIN:VEVENT
 UID:labefode-thomas-s13-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260327T171500
 DTEND;TZID=Europe/Paris:20260327T191500
 SUMMARY:EDF-C
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:labefode-thomas-s14-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260403T171500
 DTEND;TZID=Europe/Paris:20260403T191500
 SUMMARY:EDF-C
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 END:VCALENDAR
