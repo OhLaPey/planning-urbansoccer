@@ -1071,7 +1071,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             .time-marker {{ font-size: 13px; }}
         }}
         .meta-note {{
-            text-align: center; color: #555; font-size: 10px;
+            text-align: center; color: #FF6600; font-size: 10px;
             margin: 16px 0 4px; letter-spacing: 0.5px;
         }}
     </style>
@@ -3013,7 +3013,11 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
                     // Mettre à jour la note de source
                     var metaEl = document.querySelector('.meta-note');
                     if (metaEl) {{
-                        metaEl.innerHTML = 'MAJ ' + weekData._meta.updated_at + ' \u00b7 Modif admin';
+                        var raw = weekData._meta.updated_at;
+                        var fmt = raw;
+                        var m2 = raw.match(/^(\d{{4}})-(\d{{2}})-(\d{{2}})\s+(\d{{2}}:\d{{2}})$/);
+                        if (m2) fmt = m2[3] + '/' + m2[2] + '/' + m2[1] + ' \u00e0 ' + m2[4];
+                        metaEl.innerHTML = 'S{week_num} \u00b7 MAJ ' + fmt + ' \u00b7 Modif admin';
                     }}
                     if (btn) {{
                         btn.textContent = 'Sauvegard\u00e9 \u2714';
@@ -3102,16 +3106,15 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         var _meta = {meta_json};
         (function() {{
             if (!_meta.updated_at) return;
-            var sourceLabels = {{
-                'Excel': 'Excel',
-                'Modif admin': 'Modif admin',
-            }};
             var src = _meta.source || 'Excel';
-            // Afficher "Excel v2" tel quel, sinon chercher dans les labels
-            var label = sourceLabels[src] || src;
+            // Formater la date en français (DD/MM/YYYY à HH:MM)
+            var raw = _meta.updated_at;
+            var formatted = raw;
+            var m = raw.match(/^(\d{{4}})-(\d{{2}})-(\d{{2}})\s+(\d{{2}}:\d{{2}})$/);
+            if (m) formatted = m[3] + '/' + m[2] + '/' + m[1] + ' à ' + m[4];
             var note = document.createElement('div');
             note.className = 'meta-note';
-            note.innerHTML = 'MAJ ' + _meta.updated_at + ' · ' + label;
+            note.innerHTML = 'S{week_num} · MAJ ' + formatted + ' · ' + src;
             document.querySelector('.container').appendChild(note);
         }})();
 
