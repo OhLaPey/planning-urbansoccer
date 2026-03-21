@@ -26,15 +26,16 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s11-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260315T134500
 DTEND;TZID=Europe/Paris:20260315T174500
 SUMMARY:Anniversaire
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 END:VCALENDAR

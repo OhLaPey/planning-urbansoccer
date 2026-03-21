@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:cohat-linda-s9-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260223T183000
 DTEND;TZID=Europe/Paris:20260224T000000
 SUMMARY:Vie de centre
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s9-2@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260226T180000
 DTEND;TZID=Europe/Paris:20260226T220000
 SUMMARY:Vie de centre
@@ -66,9 +66,14 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s12-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260317T180000
 DTEND;TZID=Europe/Paris:20260318T000000
 SUMMARY:Vie de centre
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 END:VCALENDAR

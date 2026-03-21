@@ -656,7 +656,7 @@
 
     <script>
     (function() {
-        var NOTES_DATA = {"comment": "", "updates": []};
+        var NOTES_DATA = {"comment": "⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️Betsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Event Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés", "updates": []};
         // Nettoyage des anciennes données localStorage (source de désync entre appareils)
         try { localStorage.removeItem('planning-notes-S12'); } catch(e) {}
         var DATA = {
@@ -708,7 +708,7 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-18T09:45",
-        "end": "2026-03-18T15:00",
+        "end": "2026-03-18T15:15",
         "day": 2
       },
       {
@@ -729,8 +729,15 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-21T09:45",
-        "end": "2026-03-21T17:30",
+        "end": "2026-03-21T16:15",
         "day": 5
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-18T15:15",
+        "end": "2026-03-18T17:15",
+        "day": 2
       }
     ]
   },
@@ -743,6 +750,13 @@
         "start": "2026-03-21T13:00",
         "end": "2026-03-21T19:00",
         "day": 5
+      },
+      {
+        "code": "PAD-A",
+        "label": "Padel animation",
+        "start": "2026-03-19T13:00",
+        "end": "2026-03-19T17:00",
+        "day": 3
       }
     ]
   },
@@ -1127,7 +1141,7 @@
         "code": "L-ARB",
         "label": "L-ARB",
         "start": "2026-03-18T19:30",
-        "end": "2026-03-18T21:30",
+        "end": "2026-03-18T22:30",
         "day": 2
       }
     ]
@@ -1430,7 +1444,7 @@
   },
   "_meta": {
     "source": "Excel",
-    "updated_at": "2026-03-21 11:13"
+    "updated_at": "2026-03-21 12:28"
   }
 };
         // Nettoyage des anciennes données localStorage
@@ -3335,7 +3349,7 @@
         initAdminToolbar();
 
         // ── Note discrète : dernière MAJ + source ──
-        var _meta = {"source": "Excel", "updated_at": "2026-03-21 11:13"};
+        var _meta = {"source": "Excel", "updated_at": "2026-03-21 12:28"};
         (function() {
             if (!_meta.updated_at) return;
             var sourceLabels = {

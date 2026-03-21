@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:carrere-peio-s9-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260223T073000
 DTEND;TZID=Europe/Paris:20260223T094500
 SUMMARY:Cup League
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-2@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260223T094500
 DTEND;TZID=Europe/Paris:20260223T173000
 SUMMARY:Vie de centre
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-3@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260224T090000
 DTEND;TZID=Europe/Paris:20260224T094500
 SUMMARY:Stage
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-4@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260224T094500
 DTEND;TZID=Europe/Paris:20260224T160000
 SUMMARY:Vie de centre
@@ -106,7 +106,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-5@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260225T094500
 DTEND;TZID=Europe/Paris:20260225T133000
 SUMMARY:Vie de centre
@@ -126,7 +126,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-6@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260225T133000
 DTEND;TZID=Europe/Paris:20260225T173000
 SUMMARY:Cup Régisseur
@@ -146,7 +146,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-7@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260225T173000
 DTEND;TZID=Europe/Paris:20260225T180000
 SUMMARY:Vie de centre
@@ -166,7 +166,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-8@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260226T173000
 DTEND;TZID=Europe/Paris:20260226T201500
 SUMMARY:Vie de centre
@@ -186,7 +186,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-9@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260226T201500
 DTEND;TZID=Europe/Paris:20260226T203000
 SUMMARY:Régisseur League
@@ -206,7 +206,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-10@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260226T203000
 DTEND;TZID=Europe/Paris:20260226T213000
 SUMMARY:L-ARB
@@ -226,7 +226,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-11@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260226T213000
 DTEND;TZID=Europe/Paris:20260226T214500
 SUMMARY:Régisseur League
@@ -246,7 +246,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-12@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260228T113000
 DTEND;TZID=Europe/Paris:20260228T163000
 SUMMARY:Vie de centre
@@ -266,7 +266,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-13@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260228T163000
 DTEND;TZID=Europe/Paris:20260228T203000
 SUMMARY:Événement régisseur
@@ -286,7 +286,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-14@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260301T073000
 DTEND;TZID=Europe/Paris:20260301T084500
 SUMMARY:Cup League
@@ -306,7 +306,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-15@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260301T084500
 DTEND;TZID=Europe/Paris:20260301T160000
 SUMMARY:Vie de centre
@@ -326,458 +326,626 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260302T080000
 DTEND;TZID=Europe/Paris:20260302T100000
 SUMMARY:Inventaire
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
+  les jours habituels\n🏆⚽️ Reprise de la Betsson League\, on continu
+ e la Business League\n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P
+ 100H samedi matin\n⚽️🍻 Razel Bec lundi soir\n🏆⚽️ Event So Ac
+ te samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires
+ . On verra si les créneaux sont réservés surtout avec les vacances scol
+ aires\nMAJ 2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la
+  semaine : \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début 
+ à 15h pour Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h3
+ 0 pour Quentin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Matt
+ is\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-2@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260302T100000
 DTEND;TZID=Europe/Paris:20260302T150000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
+  les jours habituels\n🏆⚽️ Reprise de la Betsson League\, on continu
+ e la Business League\n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P
+ 100H samedi matin\n⚽️🍻 Razel Bec lundi soir\n🏆⚽️ Event So Ac
+ te samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires
+ . On verra si les créneaux sont réservés surtout avec les vacances scol
+ aires\nMAJ 2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la
+  semaine : \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début 
+ à 15h pour Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h3
+ 0 pour Quentin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Matt
+ is\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-3@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260302T190000
 DTEND;TZID=Europe/Paris:20260302T210000
 SUMMARY:Régisseur League
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
+  les jours habituels\n🏆⚽️ Reprise de la Betsson League\, on continu
+ e la Business League\n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P
+ 100H samedi matin\n⚽️🍻 Razel Bec lundi soir\n🏆⚽️ Event So Ac
+ te samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires
+ . On verra si les créneaux sont réservés surtout avec les vacances scol
+ aires\nMAJ 2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la
+  semaine : \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début 
+ à 15h pour Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h3
+ 0 pour Quentin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Matt
+ is\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-4@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260303T120000
 DTEND;TZID=Europe/Paris:20260303T193000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
+  les jours habituels\n🏆⚽️ Reprise de la Betsson League\, on continu
+ e la Business League\n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P
+ 100H samedi matin\n⚽️🍻 Razel Bec lundi soir\n🏆⚽️ Event So Ac
+ te samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires
+ . On verra si les créneaux sont réservés surtout avec les vacances scol
+ aires\nMAJ 2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la
+  semaine : \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début 
+ à 15h pour Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h3
+ 0 pour Quentin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Matt
+ is\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-5@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260303T193000
 DTEND;TZID=Europe/Paris:20260303T213000
 SUMMARY:Régisseur League
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
+  les jours habituels\n🏆⚽️ Reprise de la Betsson League\, on continu
+ e la Business League\n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P
+ 100H samedi matin\n⚽️🍻 Razel Bec lundi soir\n🏆⚽️ Event So Ac
+ te samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires
+ . On verra si les créneaux sont réservés surtout avec les vacances scol
+ aires\nMAJ 2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la
+  semaine : \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début 
+ à 15h pour Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h3
+ 0 pour Quentin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Matt
+ is\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-6@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260304T170000
 DTEND;TZID=Europe/Paris:20260304T200000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
+  les jours habituels\n🏆⚽️ Reprise de la Betsson League\, on continu
+ e la Business League\n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P
+ 100H samedi matin\n⚽️🍻 Razel Bec lundi soir\n🏆⚽️ Event So Ac
+ te samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires
+ . On verra si les créneaux sont réservés surtout avec les vacances scol
+ aires\nMAJ 2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la
+  semaine : \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début 
+ à 15h pour Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h3
+ 0 pour Quentin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Matt
+ is\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-7@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260304T200000
 DTEND;TZID=Europe/Paris:20260304T220000
 SUMMARY:Régisseur League
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
+  les jours habituels\n🏆⚽️ Reprise de la Betsson League\, on continu
+ e la Business League\n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P
+ 100H samedi matin\n⚽️🍻 Razel Bec lundi soir\n🏆⚽️ Event So Ac
+ te samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires
+ . On verra si les créneaux sont réservés surtout avec les vacances scol
+ aires\nMAJ 2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la
+  semaine : \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début 
+ à 15h pour Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h3
+ 0 pour Quentin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Matt
+ is\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-8@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260305T094500
 DTEND;TZID=Europe/Paris:20260305T140000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
+  les jours habituels\n🏆⚽️ Reprise de la Betsson League\, on continu
+ e la Business League\n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P
+ 100H samedi matin\n⚽️🍻 Razel Bec lundi soir\n🏆⚽️ Event So Ac
+ te samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires
+ . On verra si les créneaux sont réservés surtout avec les vacances scol
+ aires\nMAJ 2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la
+  semaine : \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début 
+ à 15h pour Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h3
+ 0 pour Quentin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Matt
+ is\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-9@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260305T140000
 DTEND;TZID=Europe/Paris:20260305T180000
 SUMMARY:Événement régisseur
-DESCRIPTION:Planning 02/03 au 08/03\nDeuxième semaine de vacances scolaire
- s\n\n Stage foot pour Nicolas et Yohan\n\n J0 des Leagues de lundi à
-  mardi\n\n Tournoi géré par Péïo jeudi aprem\n\n P25 mixte vendred
- i soir\n\n Des anniversaires sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés surtout avec les vacances scolaires\nMAJ
-  2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la semaine :
-  \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début à 15h pour
-  Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h30 pour Quen
- tin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Mattis\n
+DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
+  les jours habituels\n🏆⚽️ Reprise de la Betsson League\, on continu
+ e la Business League\n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P
+ 100H samedi matin\n⚽️🍻 Razel Bec lundi soir\n🏆⚽️ Event So Ac
+ te samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversaires
+ . On verra si les créneaux sont réservés surtout avec les vacances scol
+ aires\nMAJ 2026-02-27: MAJ du planning vu que Henri ne sera pas là sur la
+  semaine : \n▶️ Mardi 03/03 : 10h-15h puis J0 pour Péïo et début 
+ à 15h pour Loïc \n▶️ Jeudi 05/03 : début à 11h45 pour Mat et 14h3
+ 0 pour Quentin \n▶️ Vendredi 06/03 : 11h45-15h puis 18h-24h pour Matt
+ is\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260309T150000
 DTEND;TZID=Europe/Paris:20260310T000000
 SUMMARY:Vie de centre
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-2@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260310T153000
 DTEND;TZID=Europe/Paris:20260310T181500
 SUMMARY:Vie de centre
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-3@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260310T181500
 DTEND;TZID=Europe/Paris:20260310T204500
 SUMMARY:Régisseur League
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-4@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260310T204500
 DTEND;TZID=Europe/Paris:20260310T220000
 SUMMARY:Vie de centre
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-5@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260311T164500
 DTEND;TZID=Europe/Paris:20260311T191500
 SUMMARY:Vie de centre
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-6@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260311T191500
 DTEND;TZID=Europe/Paris:20260311T214500
 SUMMARY:Régisseur League
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-7@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260312T094500
 DTEND;TZID=Europe/Paris:20260312T160000
 SUMMARY:Vie de centre
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-8@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260314T103000
 DTEND;TZID=Europe/Paris:20260314T150000
 SUMMARY:Vie de centre
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-9@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260314T150000
 DTEND;TZID=Europe/Paris:20260314T190000
 SUMMARY:Événement régisseur
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-10@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260315T084500
 DTEND;TZID=Europe/Paris:20260315T160000
 SUMMARY:Vie de centre
-DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
-  les jours habituels\n\n Reprise de la Betsson League\, on continue la Bu
- siness League\n\n P50H lundi aprem\, P25H vendredi aprem et P100H samedi 
- matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
- nniversaires sont prévus sur les anniversaires. On verra si les créneaux
-  sont réservés surtout avec les vacances scolaires
+DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
+ rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
+ usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
+  samedi matin \n⚽️🍻 Razel Bec lundi soir \n🏆⚽️ Event So Ac
+ te samedi aprem \n🎂 Des animateurs sont prévus sur les anniversaires.
+  On verra si les créneaux sont réservés surtout avec les vacances scola
+ ires\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260316T120000
 DTEND;TZID=Europe/Paris:20260316T191500
 SUMMARY:Vie de centre
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-2@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260316T191500
 DTEND;TZID=Europe/Paris:20260316T214500
 SUMMARY:Régisseur League
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-3@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260317T094500
 DTEND;TZID=Europe/Paris:20260317T180000
 SUMMARY:Vie de centre
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-4@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260318T094500
 DTEND;TZID=Europe/Paris:20260318T150000
 SUMMARY:Vie de centre
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-5@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260319T094500
 DTEND;TZID=Europe/Paris:20260319T180000
 SUMMARY:Vie de centre
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-6@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260321T084500
 DTEND;TZID=Europe/Paris:20260321T094500
 SUMMARY:EDF-A
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-7@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260321T094500
 DTEND;TZID=Europe/Paris:20260321T173000
 SUMMARY:Vie de centre
+DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
+ etsson League et Business League de lundi à mercredi\n🎉🥎⚽️ Even
+ t Un maillot pour la vie mercredi soir\n🏆🥎Cup padel vendredi soir et
+  P100F samedi aprem\n🎂 Des anniversaires sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260323T114500
 DTEND;TZID=Europe/Paris:20260323T191500
 SUMMARY:Vie de centre
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-2@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260323T191500
 DTEND;TZID=Europe/Paris:20260323T214500
 SUMMARY:Régisseur League
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-3@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260324T114500
 DTEND;TZID=Europe/Paris:20260324T220000
 SUMMARY:Vie de centre
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-4@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260325T181500
 DTEND;TZID=Europe/Paris:20260325T214500
 SUMMARY:Régisseur League
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-5@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260326T094500
 DTEND;TZID=Europe/Paris:20260326T150000
 SUMMARY:Vie de centre
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-6@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260327T073000
 DTEND;TZID=Europe/Paris:20260327T100000
 SUMMARY:Cup League
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-7@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260327T100000
 DTEND;TZID=Europe/Paris:20260327T140000
 SUMMARY:Vie de centre
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-8@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260328T084500
 DTEND;TZID=Europe/Paris:20260328T094500
 SUMMARY:EDF-A
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-9@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260328T094500
 DTEND;TZID=Europe/Paris:20260328T173000
 SUMMARY:Vie de centre
+DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
+ ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
+ n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
+ ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
+ s sont prévus sur les anniversaires
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260330T173000
 DTEND;TZID=Europe/Paris:20260330T201500
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-2@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260330T201500
 DTEND;TZID=Europe/Paris:20260330T213000
 SUMMARY:Régisseur League
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-3@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260330T213000
 DTEND;TZID=Europe/Paris:20260330T223000
 SUMMARY:L-ARB
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-4@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260331T094500
 DTEND;TZID=Europe/Paris:20260331T160000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-5@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260402T094500
 DTEND;TZID=Europe/Paris:20260402T153000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-6@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260402T163000
 DTEND;TZID=Europe/Paris:20260402T181500
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-7@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260402T181500
 DTEND;TZID=Europe/Paris:20260402T204500
 SUMMARY:Régisseur League
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-8@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260403T094500
 DTEND;TZID=Europe/Paris:20260403T114500
 SUMMARY:ENT-M
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-9@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260403T114500
 DTEND;TZID=Europe/Paris:20260403T190000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-10@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260405T084500
 DTEND;TZID=Europe/Paris:20260405T173000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 END:VCALENDAR

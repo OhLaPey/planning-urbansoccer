@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:boulardet-lucas-s9-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260224T200000
 DTEND;TZID=Europe/Paris:20260225T000000
 SUMMARY:[Remplacé par Yanis] Vie de centre
@@ -47,7 +47,7 @@ DESCRIPTION:Remplacé par MOSTEFA Yanis\nSemaine de vacances scolaires\n⚽
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s9-2@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260225T173000
 DTEND;TZID=Europe/Paris:20260226T000000
 SUMMARY:Vie de centre
@@ -67,9 +67,15 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s14-1@urban7d
-DTSTAMP:20260321T111334Z
+DTSTAMP:20260321T122809Z
 DTSTART;TZID=Europe/Paris:20260401T180000
 DTEND;TZID=Europe/Paris:20260401T220000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels 
+ et on rattrape les cours de padel reportés\n⚽ Betsson League et Busines
+ s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
+ amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
+ ont prévus sur les anniversaires. On verra si les créneaux sont réserv
+ és
 END:VEVENT
 END:VCALENDAR
