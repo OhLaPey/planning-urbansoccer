@@ -2337,7 +2337,8 @@
             var actions = [];
             var lines = text.split('\n');
             lines.forEach(function(line) {
-                var lower = line.toLowerCase().trim();
+                var trimmed = line.trim();
+                var lower = trimmed.toLowerCase();
                 if (!lower) return;
 
                 // 1) Remplacement : "X remplacé par Y" / "Y remplace X"
@@ -2356,35 +2357,54 @@
                             dayIdx: dayIdx,
                             start: times ? times[0] : null,
                             end: times ? times[1] : null,
-                            raw: line.trim()
+                            raw: trimmed
                         });
-                        return; // skip schedule detection for this line
+                        return;
                     }
                 }
 
-                // 2) Modification horaire : ligne contenant un nom de staff + horaire
-                var foundStaff = null;
-                var words = lower.replace(/[^a-zà-ÿ\s]/g, ' ').split(/\s+/);
-                for (var w = 0; w < words.length; w++) {
-                    var s = _findStaff(words[w]);
-                    if (s) { foundStaff = s; break; }
+                // 2) Format multi-staff : "Jour DD/MM : Staff1 XXh-XXh en CODE, Staff2 XXh-XXh en CODE"
+                //    Détecte un préfixe jour puis split par virgule
+                var lineDay = _detectDay(lower);
+                var colonIdx = trimmed.indexOf(':');
+                var parts;
+                if (lineDay !== null && colonIdx > 0 && colonIdx < 30) {
+                    // Le jour est dans le préfixe avant le ":"
+                    parts = trimmed.substring(colonIdx + 1).split(',');
+                } else {
+                    parts = [trimmed];
                 }
-                if (foundStaff) {
-                    var times2 = _detectTimes(lower);
-                    var dayIdx2 = _detectDay(lower);
-                    var code = _detectCode(lower);
-                    if (times2 || code) {
+
+                parts.forEach(function(part) {
+                    var partLower = part.toLowerCase().trim();
+                    if (!partLower) return;
+                    // Chercher un nom de staff dans ce segment
+                    var foundStaff = null;
+                    var partWords = partLower.replace(/[^a-zà-ÿ\s]/g, ' ').split(/\s+/);
+                    for (var w = 0; w < partWords.length; w++) {
+                        var s = _findStaff(partWords[w]);
+                        if (s) { foundStaff = s; break; }
+                    }
+                    if (!foundStaff) return;
+                    // Détecter horaires et code dans ce segment
+                    var segTimes = _detectTimes(partLower);
+                    var segDay = _detectDay(partLower);
+                    if (segDay === null) segDay = lineDay; // hériter du jour de la ligne
+                    var segCode = _detectCode(partLower);
+                    // Ignorer les "RAS" (rien à signaler)
+                    if (partLower.indexOf('ras') >= 0 && !segTimes && !segCode) return;
+                    if (segTimes || segCode) {
                         actions.push({
                             type: 'schedule',
                             staff: foundStaff,
-                            dayIdx: dayIdx2,
-                            start: times2 ? times2[0] : null,
-                            end: times2 ? times2[1] : null,
-                            code: code || 'VDC',
-                            raw: line.trim()
+                            dayIdx: segDay,
+                            start: segTimes ? segTimes[0] : null,
+                            end: segTimes ? segTimes[1] : null,
+                            code: segCode || 'VDC',
+                            raw: part.trim()
                         });
                     }
-                }
+                });
             });
             return actions;
         }
@@ -2568,6 +2588,47 @@
             return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
         }
 
+        // ── Appliquer les actions validées (remplacements + horaires) ──
+        function applySmartActions(selectedActions) {
+            if (!selectedActions || selectedActions.length === 0) return;
+            var data = notesWork;
+            if (!data.replacements) data.replacements = [];
+            var hasTimelineChanges = false;
+            selectedActions.forEach(function(a) {
+                var dayIdx = (a.dayIdx !== null && a.dayIdx !== undefined) ? a.dayIdx : currentDay;
+                var dateStr = WEEK_DATES[dayIdx] || WEEK_DATES[currentDay];
+                if (a.type === 'replacement') {
+                    data.replacements.push({
+                        date: dateStr,
+                        out: a.out,
+                        'in': a['in'],
+                        start: a.start || '09:00',
+                        end: a.end || '17:00'
+                    });
+                    hasTimelineChanges = true;
+                } else if (a.type === 'schedule') {
+                    var staff = a.staff;
+                    if (DATA[staff]) {
+                        var startISO = dateStr + 'T' + (a.start || '09:00');
+                        var endISO = dateStr + 'T' + (a.end || '17:00');
+                        DATA[staff].events.push({
+                            code: a.code || 'VDC',
+                            label: CODE_LABELS[a.code] || a.code || 'VDC',
+                            start: startISO,
+                            end: endISO,
+                            day: dayIdx
+                        });
+                        _editsDirty = true;
+                        hasTimelineChanges = true;
+                    }
+                }
+            });
+            if (hasTimelineChanges) {
+                updateSaveButton();
+                renderTimeline();
+            }
+        }
+
         var STAFF_CODE = '1937';
         var STAFF_KEY = 'planning-staff-ok';
         var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
@@ -2633,54 +2694,15 @@
                 if (!pasted || !pasted.trim()) return;
                 var oldText = data.comment || '';
                 var newText = pasted.trim();
-                // Si le texte est identique, laisser le comportement par défaut
                 if (oldText.trim() === newText) return;
                 e.preventDefault();
-                // Parser les actions intelligentes (remplacements, etc.)
                 var smartActions = parseSmartActions(newText);
                 showDiffPopup(oldText, newText, smartActions, function(accepted, selectedActions) {
                     if (accepted) {
                         data.comment = newText;
-                        var hasTimelineChanges = false;
-                        if (selectedActions && selectedActions.length > 0) {
-                            if (!data.replacements) data.replacements = [];
-                            selectedActions.forEach(function(a) {
-                                var dayIdx = (a.dayIdx !== null && a.dayIdx !== undefined) ? a.dayIdx : currentDay;
-                                var dateStr = WEEK_DATES[dayIdx] || WEEK_DATES[currentDay];
-                                if (a.type === 'replacement') {
-                                    data.replacements.push({
-                                        date: dateStr,
-                                        out: a.out,
-                                        'in': a['in'],
-                                        start: a.start || '09:00',
-                                        end: a.end || '17:00'
-                                    });
-                                    hasTimelineChanges = true;
-                                } else if (a.type === 'schedule') {
-                                    // Modifier/ajouter un créneau dans DATA
-                                    var staff = a.staff;
-                                    if (DATA[staff]) {
-                                        var startISO = dateStr + 'T' + (a.start || '09:00');
-                                        var endISO = dateStr + 'T' + (a.end || '17:00');
-                                        DATA[staff].events.push({
-                                            code: a.code || 'VDC',
-                                            label: CODE_LABELS[a.code] || a.code || 'VDC',
-                                            start: startISO,
-                                            end: endISO,
-                                            day: dayIdx
-                                        });
-                                        _editsDirty = true;
-                                        hasTimelineChanges = true;
-                                    }
-                                }
-                            });
-                        }
+                        applySmartActions(selectedActions);
                         notesDirty = true; saveNotesLocal();
                         renderNotes();
-                        if (hasTimelineChanges) {
-                            updateSaveButton();
-                            renderTimeline();
-                        }
                     }
                 });
             });
@@ -2735,6 +2757,26 @@
                         uedit.innerHTML = '✔';
                     }
                 };
+
+                // ── Collage intelligent sur les mises à jour ──
+                utxt.addEventListener('paste', function(e) {
+                    if (utxt.contentEditable !== 'true') return;
+                    var pasted = (e.clipboardData || window.clipboardData).getData('text');
+                    if (!pasted || !pasted.trim()) return;
+                    var smartActions = parseSmartActions(pasted.trim());
+                    if (smartActions.length === 0) return; // pas d'action détectée → collage normal
+                    e.preventDefault();
+                    var oldText = data.updates[idx].text || '';
+                    showDiffPopup(oldText, pasted.trim(), smartActions, function(accepted, selectedActions) {
+                        if (accepted) {
+                            data.updates[idx].text = pasted.trim();
+                            applySmartActions(selectedActions);
+                            notesDirty = true; saveNotesLocal();
+                            renderNotes();
+                        }
+                    });
+                });
+
                 udel.onclick = function() {
                     data.updates.splice(idx, 1);
                     notesDirty = true; saveNotesLocal();
