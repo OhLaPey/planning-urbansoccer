@@ -121,17 +121,29 @@ def format_date_range(year, week):
 
 
 def discover_excel_files(directory="."):
-    """Trouve tous les fichiers « Plannings YYYY SXX.xlsx »."""
-    pattern = re.compile(r"Plannings\s+(\d{4})\s+S(\d+)(?:\s+v\d+)?\.xlsx", re.IGNORECASE)
-    files = []
+    """Trouve tous les fichiers « Plannings YYYY SXX.xlsx ».
+
+    Si plusieurs versions existent pour la même semaine (ex: S14.xlsx et S14 v2.xlsx),
+    seule la version la plus récente (v2 > v1 > sans version) est conservée.
+    """
+    pattern = re.compile(r"Plannings\s+(\d{4})\s+S(\d+)(?:\s+v(\d+))?\.xlsx", re.IGNORECASE)
+    # Garder la meilleure version par (year, week)
+    best = {}  # (year, week) -> {filename, year, week, version}
     for f in sorted(os.listdir(directory)):
         m = pattern.match(f)
         if m:
-            files.append({
-                "filename": os.path.join(directory, f) if directory != "." else f,
-                "year": int(m.group(1)),
-                "week": int(m.group(2)),
-            })
+            year = int(m.group(1))
+            week = int(m.group(2))
+            version = int(m.group(3)) if m.group(3) else 0
+            key = (year, week)
+            if key not in best or version > best[key]["version"]:
+                best[key] = {
+                    "filename": os.path.join(directory, f) if directory != "." else f,
+                    "year": year,
+                    "week": week,
+                    "version": version,
+                }
+    files = list(best.values())
     files.sort(key=lambda x: (x["year"], x["week"]))
     return files
 
