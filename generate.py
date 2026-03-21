@@ -1074,6 +1074,28 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             text-align: center; color: #FF6600; font-size: 10px;
             margin: 16px 0 4px; letter-spacing: 0.5px;
         }}
+        /* ── Diff popup (collage intelligent) ── */
+        .diff-overlay {{ position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+                         z-index: 300; display: flex; align-items: center; justify-content: center; }}
+        .diff-popup {{ background: #1a1a2e; border: 1px solid rgba(255,102,0,0.3);
+                       border-radius: 12px; padding: 16px; max-width: 500px; width: 90%;
+                       max-height: 80vh; overflow-y: auto;
+                       box-shadow: 0 10px 40px rgba(0,0,0,0.6); }}
+        .diff-popup h3 {{ font-size: 13px; color: #FF6600; margin-bottom: 12px; }}
+        .diff-lines {{ font-size: 11px; line-height: 1.6; margin-bottom: 12px; }}
+        .diff-line {{ padding: 2px 6px; border-radius: 3px; margin-bottom: 2px;
+                      white-space: pre-wrap; word-break: break-word; }}
+        .diff-line.removed {{ background: rgba(220,50,50,0.15); color: #e88; text-decoration: line-through; }}
+        .diff-line.added {{ background: rgba(50,180,50,0.15); color: #8e8; }}
+        .diff-line.same {{ color: #666; }}
+        .diff-actions {{ display: flex; gap: 8px; }}
+        .diff-actions button {{ flex: 1; padding: 10px; border: none; border-radius: 8px;
+                                font-size: 12px; font-weight: 600; cursor: pointer;
+                                font-family: inherit; transition: all 0.2s; }}
+        .diff-btn-apply {{ background: #FF6600; color: #fff; }}
+        .diff-btn-apply:hover {{ background: #ff9050; }}
+        .diff-btn-cancel {{ background: rgba(255,255,255,0.08); color: #888; }}
+        .diff-btn-cancel:hover {{ background: rgba(255,255,255,0.15); color: #fff; }}
     </style>
 </head>
 <body>
@@ -1993,6 +2015,71 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             overlay.onclick = function(e) {{ if (e.target === overlay) overlay.remove(); }};
         }}
 
+        // ── Diff popup : comparaison visuelle avant/après collage ──
+        function showDiffPopup(oldText, newText, callback) {{
+            var oldLines = oldText.split('\\n');
+            var newLines = newText.split('\\n');
+            // Simple line-based diff
+            var maxLen = Math.max(oldLines.length, newLines.length);
+            var html = '';
+            var hasChanges = false;
+            // Build maps for better matching
+            var oldSet = {{}};
+            oldLines.forEach(function(l) {{ oldSet[l.trim()] = true; }});
+            var newSet = {{}};
+            newLines.forEach(function(l) {{ newSet[l.trim()] = true; }});
+            // Show removed lines (in old but not in new)
+            var diffHtml = '';
+            oldLines.forEach(function(line) {{
+                if (!line.trim()) return;
+                if (!newSet[line.trim()]) {{
+                    diffHtml += '<div class="diff-line removed">\u2212 ' + escHtml(line) + '</div>';
+                    hasChanges = true;
+                }}
+            }});
+            // Show added lines (in new but not in old)
+            newLines.forEach(function(line) {{
+                if (!line.trim()) return;
+                if (!oldSet[line.trim()]) {{
+                    diffHtml += '<div class="diff-line added">+ ' + escHtml(line) + '</div>';
+                    hasChanges = true;
+                }}
+            }});
+            // Show unchanged lines
+            newLines.forEach(function(line) {{
+                if (!line.trim()) return;
+                if (oldSet[line.trim()]) {{
+                    diffHtml += '<div class="diff-line same">&nbsp; ' + escHtml(line) + '</div>';
+                }}
+            }});
+            if (!hasChanges) {{
+                callback(true);
+                return;
+            }}
+            var overlay = document.createElement('div');
+            overlay.className = 'diff-overlay';
+            overlay.innerHTML =
+                '<div class="diff-popup">' +
+                    '<h3>Modifications d\u00e9tect\u00e9es</h3>' +
+                    '<div class="diff-lines">' + diffHtml + '</div>' +
+                    '<div class="diff-actions">' +
+                        '<button class="diff-btn-cancel">Annuler</button>' +
+                        '<button class="diff-btn-apply">Appliquer</button>' +
+                    '</div>' +
+                '</div>';
+            document.body.appendChild(overlay);
+            overlay.querySelector('.diff-btn-apply').onclick = function() {{
+                overlay.remove(); callback(true);
+            }};
+            overlay.querySelector('.diff-btn-cancel').onclick = function() {{
+                overlay.remove(); callback(false);
+            }};
+            overlay.onclick = function(e) {{ if (e.target === overlay) {{ overlay.remove(); callback(false); }} }};
+        }}
+        function escHtml(s) {{
+            return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }}
+
         var STAFF_CODE = '1937';
         var STAFF_KEY = 'planning-staff-ok';
         var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
@@ -2050,6 +2137,25 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
                     editBtn.innerHTML = '\u2714';
                 }}
             }};
+
+            // ── Collage intelligent : détecter les changements et demander confirmation ──
+            txt.addEventListener('paste', function(e) {{
+                if (txt.contentEditable !== 'true') return;
+                var pasted = (e.clipboardData || window.clipboardData).getData('text');
+                if (!pasted || !pasted.trim()) return;
+                var oldText = data.comment || '';
+                var newText = pasted.trim();
+                // Si le texte est identique, laisser le comportement par défaut
+                if (oldText.trim() === newText) return;
+                e.preventDefault();
+                showDiffPopup(oldText, newText, function(accepted) {{
+                    if (accepted) {{
+                        data.comment = newText;
+                        notesDirty = true; saveNotesLocal();
+                        renderNotes();
+                    }}
+                }});
+            }});
 
             // Update cards
             data.updates.forEach(function(u, idx) {{
