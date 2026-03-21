@@ -507,6 +507,47 @@
             text-align: center; color: #FF6600; font-size: 10px;
             margin: 16px 0 4px; letter-spacing: 0.5px;
         }
+        /* ── Diff popup (collage intelligent) ── */
+        .diff-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+                         z-index: 300; display: flex; align-items: center; justify-content: center; }
+        .diff-popup { background: #1a1a2e; border: 1px solid rgba(255,102,0,0.3);
+                       border-radius: 12px; padding: 16px; max-width: 520px; width: 92%;
+                       max-height: 85vh; overflow-y: auto;
+                       box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .diff-popup h3 { font-size: 13px; color: #FF6600; margin-bottom: 12px; }
+        .diff-lines { font-size: 11px; line-height: 1.6; margin-bottom: 12px; }
+        .diff-line { padding: 2px 6px; border-radius: 3px; margin-bottom: 2px;
+                      white-space: pre-wrap; word-break: break-word; }
+        .diff-line.removed { background: rgba(220,50,50,0.15); color: #e88; text-decoration: line-through; }
+        .diff-line.added { background: rgba(50,180,50,0.15); color: #8e8; }
+        .diff-line.same { color: #666; }
+        .diff-actions { display: flex; gap: 8px; margin-top: 12px; }
+        .diff-actions button { flex: 1; padding: 10px; border: none; border-radius: 8px;
+                                font-size: 12px; font-weight: 600; cursor: pointer;
+                                font-family: inherit; transition: all 0.2s; }
+        .diff-btn-apply { background: #FF6600; color: #fff; }
+        .diff-btn-apply:hover { background: #ff9050; }
+        .diff-btn-cancel { background: rgba(255,255,255,0.08); color: #888; }
+        .diff-btn-cancel:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        /* ── Action cards dans le popup ── */
+        .smart-actions { margin-top: 12px; border-top: 1px solid rgba(255,102,0,0.2); padding-top: 10px; }
+        .smart-actions-title { font-size: 12px; color: #FF6600; font-weight: 600; margin-bottom: 8px; }
+        .action-card { background: rgba(255,102,0,0.06); border: 1px solid rgba(255,102,0,0.15);
+                        border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; }
+        .action-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+        .action-card-header input[type="checkbox"] { accent-color: #FF6600; width: 16px; height: 16px; }
+        .action-card-header .action-type { font-size: 10px; font-weight: 700; text-transform: uppercase;
+                                            letter-spacing: 0.5px; padding: 2px 6px; border-radius: 4px; }
+        .action-type-repl { background: rgba(255,102,0,0.2); color: #FF6600; }
+        .action-type-sched { background: rgba(50,180,50,0.2); color: #8e8; }
+        .action-card-raw { font-size: 9px; color: #555; margin-bottom: 6px; font-style: italic; }
+        .action-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
+        .action-field { display: flex; flex-direction: column; gap: 2px; }
+        .action-field label { font-size: 9px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+        .action-field select, .action-field input {
+            padding: 5px 6px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 5px; color: #fff; font-size: 11px; font-family: inherit; outline: none; }
+        .action-field select:focus, .action-field input:focus { border-color: rgba(255,102,0,0.4); }
     </style>
 </head>
 <body>
@@ -2224,6 +2265,290 @@
             overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
         }
 
+        // ── Parsing intelligent du texte collé ──
+        var _staffNames = Object.keys(DATA).filter(function(n) { return n !== '_codeNames' && n !== '_meta'; }).sort();
+        var _nameMap = {};
+        _staffNames.forEach(function(full) {
+            var parts = full.split(' ');
+            parts.forEach(function(p) { if (p.length > 2) _nameMap[p.toLowerCase()] = full; });
+            if (parts.length > 2) _nameMap[parts.slice(1).join(' ').toLowerCase()] = full;
+        });
+        var _dayMap = { 'lundi': 0, 'mardi': 1, 'mercredi': 2, 'jeudi': 3,
+                         'vendredi': 4, 'samedi': 5, 'dimanche': 6 };
+        var _dayLabelsShort = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+        var _codeList = Object.keys(COLORS);
+
+        function _findStaff(word) { return _nameMap[word.toLowerCase()] || null; }
+
+        function _detectDay(str) {
+            var dm = str.match(/\b(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\b/i);
+            if (dm) return _dayMap[dm[1].toLowerCase()];
+            var ddm = str.match(/(\d{1,2})[/](\d{1,2})/);
+            if (ddm) {
+                var dd = ddm[1].padStart(2,'0'), mm = ddm[2].padStart(2,'0');
+                for (var i = 0; i < WEEK_DATES.length; i++) {
+                    if (WEEK_DATES[i].endsWith('-' + mm + '-' + dd)) return i;
+                }
+            }
+            return null;
+        }
+
+        function _detectTimes(str) {
+            var m = str.match(/(\d{1,2})[hH:](\d{0,2})\s*[-–à]\s*(\d{1,2})[hH:](\d{0,2})/);
+            if (m) return [m[1].padStart(2,'0') + ':' + (m[2]||'00').padStart(2,'0'),
+                           m[3].padStart(2,'0') + ':' + (m[4]||'00').padStart(2,'0')];
+            return null;
+        }
+
+        function _detectCode(str) {
+            var upper = str.toUpperCase();
+            for (var i = 0; i < _codeList.length; i++) {
+                if (upper.indexOf(_codeList[i]) >= 0) return _codeList[i];
+            }
+            // Fuzzy match common words
+            var fuzzy = {'vie de centre':'VDC','edf':'EDF-C','stage':'STAGE','padel':'C-PAD',
+                         'cours padel':'C-PAD','anniversaire':'ANNIV','maladie':'MAL','réunion':'REU',
+                         'cup':'CUP-L','régisseur':'L-REG','formation':'FOR-E','inventaire':'INVEN'};
+            var lower = str.toLowerCase();
+            for (var key in fuzzy) { if (lower.indexOf(key) >= 0) return fuzzy[key]; }
+            return null;
+        }
+
+        function parseSmartActions(text) {
+            var actions = [];
+            var lines = text.split('\n');
+            lines.forEach(function(line) {
+                var lower = line.toLowerCase().trim();
+                if (!lower) return;
+
+                // 1) Remplacement : "X remplacé par Y" / "Y remplace X"
+                var rm = lower.match(/(\w+)\s+remplac[eé]e?\s+par\s+(\w+)/i) ||
+                         lower.match(/(\w+)\s+remplace\s+(\w+)/i);
+                if (rm) {
+                    var n1 = _findStaff(rm[1]), n2 = _findStaff(rm[2]);
+                    if (n1 && n2 && n1 !== n2) {
+                        var isPassive = lower.indexOf('remplacé') >= 0;
+                        var dayIdx = _detectDay(lower);
+                        var times = _detectTimes(lower);
+                        actions.push({
+                            type: 'replacement',
+                            out: isPassive ? n1 : n2,
+                            'in': isPassive ? n2 : n1,
+                            dayIdx: dayIdx,
+                            start: times ? times[0] : null,
+                            end: times ? times[1] : null,
+                            raw: line.trim()
+                        });
+                        return; // skip schedule detection for this line
+                    }
+                }
+
+                // 2) Modification horaire : ligne contenant un nom de staff + horaire
+                var foundStaff = null;
+                var words = lower.replace(/[^a-zà-ÿ\s]/g, ' ').split(/\s+/);
+                for (var w = 0; w < words.length; w++) {
+                    var s = _findStaff(words[w]);
+                    if (s) { foundStaff = s; break; }
+                }
+                if (foundStaff) {
+                    var times2 = _detectTimes(lower);
+                    var dayIdx2 = _detectDay(lower);
+                    var code = _detectCode(lower);
+                    if (times2 || code) {
+                        actions.push({
+                            type: 'schedule',
+                            staff: foundStaff,
+                            dayIdx: dayIdx2,
+                            start: times2 ? times2[0] : null,
+                            end: times2 ? times2[1] : null,
+                            code: code || 'VDC',
+                            raw: line.trim()
+                        });
+                    }
+                }
+            });
+            return actions;
+        }
+
+        // ── Diff popup : comparaison visuelle + actions éditables ──
+        function showDiffPopup(oldText, newText, smartActions, callback) {
+            var oldLines = oldText.split('\n');
+            var newLines = newText.split('\n');
+            var oldSet = {};
+            oldLines.forEach(function(l) { if (l.trim()) oldSet[l.trim()] = true; });
+            var newSet = {};
+            newLines.forEach(function(l) { if (l.trim()) newSet[l.trim()] = true; });
+            var diffHtml = '';
+            var hasChanges = false;
+            oldLines.forEach(function(line) {
+                if (!line.trim()) return;
+                if (!newSet[line.trim()]) {
+                    diffHtml += '<div class="diff-line removed">− ' + escHtml(line) + '</div>';
+                    hasChanges = true;
+                }
+            });
+            newLines.forEach(function(line) {
+                if (!line.trim()) return;
+                if (!oldSet[line.trim()]) {
+                    diffHtml += '<div class="diff-line added">+ ' + escHtml(line) + '</div>';
+                    hasChanges = true;
+                }
+            });
+            newLines.forEach(function(line) {
+                if (!line.trim()) return;
+                if (oldSet[line.trim()]) {
+                    diffHtml += '<div class="diff-line same">&nbsp; ' + escHtml(line) + '</div>';
+                }
+            });
+            if (!hasChanges && (!smartActions || smartActions.length === 0)) {
+                callback(true, []);
+                return;
+            }
+
+            // Build staff <option> list
+            var staffOpts = '';
+            _staffNames.forEach(function(n) {
+                staffOpts += '<option value="' + escHtml(n) + '">' + escHtml(n) + '</option>';
+            });
+            // Build day <option> list
+            var dayOpts = '<option value="">--</option>';
+            WEEK_DATES.forEach(function(d, i) {
+                dayOpts += '<option value="' + i + '">' + _dayLabelsShort[i] + ' ' + d.split('-')[2] + '</option>';
+            });
+            // Build code <option> list
+            var codeOpts = '';
+            _codeList.forEach(function(c) {
+                codeOpts += '<option value="' + c + '">' + c + '</option>';
+            });
+
+            var overlay = document.createElement('div');
+            overlay.className = 'diff-overlay';
+            var popupEl = document.createElement('div');
+            popupEl.className = 'diff-popup';
+
+            // Title
+            popupEl.innerHTML = '<h3>Modifications détectées</h3>';
+
+            // Diff section
+            if (hasChanges) {
+                var diffDiv = document.createElement('div');
+                diffDiv.className = 'diff-lines';
+                diffDiv.innerHTML = diffHtml;
+                popupEl.appendChild(diffDiv);
+            }
+
+            // Smart actions section (editable cards)
+            var actionCards = [];
+            if (smartActions && smartActions.length > 0) {
+                var actDiv = document.createElement('div');
+                actDiv.className = 'smart-actions';
+                actDiv.innerHTML = '<div class="smart-actions-title">🔄 Actions détectées</div>';
+
+                smartActions.forEach(function(a, idx) {
+                    var card = document.createElement('div');
+                    card.className = 'action-card';
+                    card.dataset.idx = idx;
+
+                    // Header with checkbox + type badge
+                    var hdr = document.createElement('div');
+                    hdr.className = 'action-card-header';
+                    var cb = document.createElement('input');
+                    cb.type = 'checkbox'; cb.checked = true; cb.dataset.actionIdx = idx;
+                    hdr.appendChild(cb);
+                    var badge = document.createElement('span');
+                    badge.className = 'action-type ' + (a.type === 'replacement' ? 'action-type-repl' : 'action-type-sched');
+                    badge.textContent = a.type === 'replacement' ? 'Remplacement' : 'Horaire';
+                    hdr.appendChild(badge);
+                    card.appendChild(hdr);
+
+                    // Raw text (source)
+                    var rawDiv = document.createElement('div');
+                    rawDiv.className = 'action-card-raw';
+                    rawDiv.textContent = '« ' + a.raw + ' »';
+                    card.appendChild(rawDiv);
+
+                    // Editable fields
+                    var fields = document.createElement('div');
+                    fields.className = 'action-fields';
+
+                    if (a.type === 'replacement') {
+                        // Staff out
+                        fields.innerHTML +=
+                            '<div class="action-field"><label>Sort</label>' +
+                            '<select data-field="out">' + staffOpts.replace('value="' + escHtml(a.out) + '"', 'value="' + escHtml(a.out) + '" selected') + '</select></div>';
+                        // Staff in
+                        fields.innerHTML +=
+                            '<div class="action-field"><label>Entre</label>' +
+                            '<select data-field="in">' + staffOpts.replace('value="' + escHtml(a['in']) + '"', 'value="' + escHtml(a['in']) + '" selected') + '</select></div>';
+                    } else {
+                        // Staff
+                        fields.innerHTML +=
+                            '<div class="action-field"><label>Staff</label>' +
+                            '<select data-field="staff">' + staffOpts.replace('value="' + escHtml(a.staff) + '"', 'value="' + escHtml(a.staff) + '" selected') + '</select></div>';
+                        // Code
+                        fields.innerHTML +=
+                            '<div class="action-field"><label>Activité</label>' +
+                            '<select data-field="code">' + codeOpts.replace('value="' + (a.code||'VDC') + '"', 'value="' + (a.code||'VDC') + '" selected') + '</select></div>';
+                    }
+                    // Day
+                    var selDay = (a.dayIdx !== null && a.dayIdx !== undefined) ? a.dayIdx.toString() : '';
+                    fields.innerHTML +=
+                        '<div class="action-field"><label>Jour</label>' +
+                        '<select data-field="dayIdx">' + dayOpts.replace('value="' + selDay + '">', 'value="' + selDay + '" selected>') + '</select></div>';
+                    // Times
+                    fields.innerHTML +=
+                        '<div class="action-field"><label>Horaires</label>' +
+                        '<div style="display:flex;gap:4px;align-items:center;">' +
+                        '<input type="time" data-field="start" value="' + (a.start || '09:00') + '" style="flex:1;">' +
+                        '<span style="color:#666;">-</span>' +
+                        '<input type="time" data-field="end" value="' + (a.end || '17:00') + '" style="flex:1;">' +
+                        '</div></div>';
+
+                    card.appendChild(fields);
+                    actDiv.appendChild(card);
+                    actionCards.push(card);
+                });
+                popupEl.appendChild(actDiv);
+            }
+
+            // Action buttons
+            var btns = document.createElement('div');
+            btns.className = 'diff-actions';
+            btns.innerHTML = '<button class="diff-btn-cancel">Annuler</button><button class="diff-btn-apply">Appliquer</button>';
+            popupEl.appendChild(btns);
+
+            overlay.appendChild(popupEl);
+            document.body.appendChild(overlay);
+
+            // Collect edited values on apply
+            btns.querySelector('.diff-btn-apply').onclick = function() {
+                var selected = [];
+                actionCards.forEach(function(card, idx) {
+                    var cb = card.querySelector('input[type="checkbox"]');
+                    if (!cb.checked) return;
+                    var a = JSON.parse(JSON.stringify(smartActions[idx]));
+                    // Read edited values from form fields
+                    card.querySelectorAll('[data-field]').forEach(function(el) {
+                        var field = el.dataset.field;
+                        if (field === 'dayIdx') {
+                            a.dayIdx = el.value !== '' ? parseInt(el.value) : null;
+                        } else {
+                            a[field] = el.value;
+                        }
+                    });
+                    selected.push(a);
+                });
+                overlay.remove(); callback(true, selected);
+            };
+            btns.querySelector('.diff-btn-cancel').onclick = function() {
+                overlay.remove(); callback(false, []);
+            };
+            overlay.onclick = function(e) { if (e.target === overlay) { overlay.remove(); callback(false, []); } };
+        }
+        function escHtml(s) {
+            return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }
+
         var STAFF_CODE = '1937';
         var STAFF_KEY = 'planning-staff-ok';
         var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
@@ -2281,6 +2606,65 @@
                     editBtn.innerHTML = '✔';
                 }
             };
+
+            // ── Collage intelligent : détecter les changements et demander confirmation ──
+            txt.addEventListener('paste', function(e) {
+                if (txt.contentEditable !== 'true') return;
+                var pasted = (e.clipboardData || window.clipboardData).getData('text');
+                if (!pasted || !pasted.trim()) return;
+                var oldText = data.comment || '';
+                var newText = pasted.trim();
+                // Si le texte est identique, laisser le comportement par défaut
+                if (oldText.trim() === newText) return;
+                e.preventDefault();
+                // Parser les actions intelligentes (remplacements, etc.)
+                var smartActions = parseSmartActions(newText);
+                showDiffPopup(oldText, newText, smartActions, function(accepted, selectedActions) {
+                    if (accepted) {
+                        data.comment = newText;
+                        var hasTimelineChanges = false;
+                        if (selectedActions && selectedActions.length > 0) {
+                            if (!data.replacements) data.replacements = [];
+                            selectedActions.forEach(function(a) {
+                                var dayIdx = (a.dayIdx !== null && a.dayIdx !== undefined) ? a.dayIdx : currentDay;
+                                var dateStr = WEEK_DATES[dayIdx] || WEEK_DATES[currentDay];
+                                if (a.type === 'replacement') {
+                                    data.replacements.push({
+                                        date: dateStr,
+                                        out: a.out,
+                                        'in': a['in'],
+                                        start: a.start || '09:00',
+                                        end: a.end || '17:00'
+                                    });
+                                    hasTimelineChanges = true;
+                                } else if (a.type === 'schedule') {
+                                    // Modifier/ajouter un créneau dans DATA
+                                    var staff = a.staff;
+                                    if (DATA[staff]) {
+                                        var startISO = dateStr + 'T' + (a.start || '09:00');
+                                        var endISO = dateStr + 'T' + (a.end || '17:00');
+                                        DATA[staff].events.push({
+                                            code: a.code || 'VDC',
+                                            label: CODE_LABELS[a.code] || a.code || 'VDC',
+                                            start: startISO,
+                                            end: endISO,
+                                            day: dayIdx
+                                        });
+                                        _editsDirty = true;
+                                        hasTimelineChanges = true;
+                                    }
+                                }
+                            });
+                        }
+                        notesDirty = true; saveNotesLocal();
+                        renderNotes();
+                        if (hasTimelineChanges) {
+                            updateSaveButton();
+                            renderTimeline();
+                        }
+                    }
+                });
+            });
 
             // Update cards
             data.updates.forEach(function(u, idx) {
