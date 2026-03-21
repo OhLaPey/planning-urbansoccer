@@ -84,13 +84,6 @@
     "slug": "castellon-pascaline",
     "events": [
       {
-        "code": "CUP-R",
-        "label": "Cup Régisseur",
-        "start": "2026-03-21T13:00",
-        "end": "2026-03-21T19:00",
-        "day": 5
-      },
-      {
         "code": "PAD-A",
         "label": "Padel animation",
         "start": "2026-03-19T13:00",
@@ -782,7 +775,7 @@
     ]
   },
   "_meta": {
-    "source": "Excel",
-    "updated_at": "2026-03-21 12:28"
+    "source": "Modif admin",
+    "updated_at": "2026-03-21 14:41"
   }
 }
