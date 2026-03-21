@@ -2015,21 +2015,91 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             overlay.onclick = function(e) {{ if (e.target === overlay) overlay.remove(); }};
         }}
 
-        // ── Diff popup : comparaison visuelle avant/après collage ──
-        function showDiffPopup(oldText, newText, callback) {{
+        // ── Parsing intelligent du texte collé ──
+        function parseSmartActions(text) {{
+            var actions = [];
+            var staffNames = Object.keys(DATA).filter(function(n) {{ return n !== '_codeNames' && n !== '_meta'; }});
+            // Build lookup: prénom/nom → nom complet
+            var nameMap = {{}};
+            staffNames.forEach(function(full) {{
+                var parts = full.split(' ');
+                parts.forEach(function(p) {{
+                    if (p.length > 2) nameMap[p.toLowerCase()] = full;
+                }});
+                // Also map combined first name (e.g. "De Nouel" → full)
+                if (parts.length > 2) {{
+                    nameMap[parts.slice(1).join(' ').toLowerCase()] = full;
+                }}
+            }});
+            var dayMap = {{ 'lundi': 0, 'mardi': 1, 'mercredi': 2, 'jeudi': 3,
+                           'vendredi': 4, 'samedi': 5, 'dimanche': 6 }};
+
+            function findStaff(word) {{
+                return nameMap[word.toLowerCase()] || null;
+            }}
+
+            var lines = text.split('\\n');
+            lines.forEach(function(line) {{
+                var lower = line.toLowerCase().trim();
+                if (!lower) return;
+
+                // Pattern: "X remplacé par Y" / "X remplace Y" / "Y remplace X"
+                var m = lower.match(/(\\w+)\\s+remplac[eé]e?\\s+par\\s+(\\w+)/i) ||
+                        lower.match(/(\\w+)\\s+remplace\\s+(\\w+)/i);
+                if (m) {{
+                    var n1 = findStaff(m[1]);
+                    var n2 = findStaff(m[2]);
+                    if (n1 && n2 && n1 !== n2) {{
+                        // "X remplacé par Y" → out=X, in=Y
+                        // "Y remplace X" → out=X, in=Y
+                        var isPassive = lower.indexOf('remplac\u00e9') >= 0 || lower.indexOf('remplacee') >= 0;
+                        var outName = isPassive ? n1 : n2;
+                        var inName = isPassive ? n2 : n1;
+                        var dayMatch = lower.match(/\\b(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\\b/);
+                        var dateMatch = lower.match(/(\\d{{1,2}})[/](\\d{{1,2}})/);
+                        var timeMatch = lower.match(/(\\d{{1,2}})[hH:](\\d{{0,2}})\\s*[-\u2013\u00e0]\\s*(\\d{{1,2}})[hH:](\\d{{0,2}})/);
+                        var dayIdx = null;
+                        var dateStr = null;
+                        if (dayMatch) {{
+                            dayIdx = dayMap[dayMatch[1].toLowerCase()];
+                            dateStr = WEEK_DATES[dayIdx] || null;
+                        }} else if (dateMatch) {{
+                            // Try to match DD/MM against WEEK_DATES
+                            var dd = dateMatch[1].padStart(2,'0');
+                            var mm = dateMatch[2].padStart(2,'0');
+                            for (var wi = 0; wi < WEEK_DATES.length; wi++) {{
+                                if (WEEK_DATES[wi].endsWith('-' + mm + '-' + dd)) {{
+                                    dayIdx = wi; dateStr = WEEK_DATES[wi]; break;
+                                }}
+                            }}
+                        }}
+                        actions.push({{
+                            type: 'replacement',
+                            out: outName,
+                            'in': inName,
+                            date: dateStr,
+                            dayIdx: dayIdx,
+                            start: timeMatch ? timeMatch[1].padStart(2,'0') + ':' + (timeMatch[2] || '00').padStart(2,'0') : null,
+                            end: timeMatch ? timeMatch[3].padStart(2,'0') + ':' + (timeMatch[4] || '00').padStart(2,'0') : null,
+                            raw: line.trim()
+                        }});
+                    }}
+                }}
+            }});
+            return actions;
+        }}
+
+        // ── Diff popup : comparaison visuelle + actions détectées ──
+        function showDiffPopup(oldText, newText, smartActions, callback) {{
             var oldLines = oldText.split('\\n');
             var newLines = newText.split('\\n');
-            // Simple line-based diff
-            var maxLen = Math.max(oldLines.length, newLines.length);
-            var html = '';
-            var hasChanges = false;
-            // Build maps for better matching
             var oldSet = {{}};
-            oldLines.forEach(function(l) {{ oldSet[l.trim()] = true; }});
+            oldLines.forEach(function(l) {{ if (l.trim()) oldSet[l.trim()] = true; }});
             var newSet = {{}};
-            newLines.forEach(function(l) {{ newSet[l.trim()] = true; }});
-            // Show removed lines (in old but not in new)
+            newLines.forEach(function(l) {{ if (l.trim()) newSet[l.trim()] = true; }});
             var diffHtml = '';
+            var hasChanges = false;
+            // Removed lines
             oldLines.forEach(function(line) {{
                 if (!line.trim()) return;
                 if (!newSet[line.trim()]) {{
@@ -2037,7 +2107,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
                     hasChanges = true;
                 }}
             }});
-            // Show added lines (in new but not in old)
+            // Added lines
             newLines.forEach(function(line) {{
                 if (!line.trim()) return;
                 if (!oldSet[line.trim()]) {{
@@ -2045,23 +2115,46 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
                     hasChanges = true;
                 }}
             }});
-            // Show unchanged lines
+            // Unchanged lines
             newLines.forEach(function(line) {{
                 if (!line.trim()) return;
                 if (oldSet[line.trim()]) {{
                     diffHtml += '<div class="diff-line same">&nbsp; ' + escHtml(line) + '</div>';
                 }}
             }});
-            if (!hasChanges) {{
-                callback(true);
+            if (!hasChanges && (!smartActions || smartActions.length === 0)) {{
+                callback(true, []);
                 return;
             }}
+
+            // Build actions section
+            var actionsHtml = '';
+            if (smartActions && smartActions.length > 0) {{
+                actionsHtml += '<div style="margin-top:12px;border-top:1px solid rgba(255,102,0,0.2);padding-top:10px;">';
+                actionsHtml += '<div style="font-size:12px;color:#FF6600;font-weight:600;margin-bottom:8px;">\U0001f504 Actions d\u00e9tect\u00e9es</div>';
+                smartActions.forEach(function(a, i) {{
+                    if (a.type === 'replacement') {{
+                        var desc = '<strong>' + getFirstName(a.out) + '</strong> \u2192 <strong>' + getFirstName(a['in']) + '</strong>';
+                        var jours = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+                        if (a.dayIdx !== null) desc += ' ' + jours[a.dayIdx];
+                        if (a.start && a.end) desc += ' ' + a.start + '-' + a.end;
+                        actionsHtml += '<label style="display:flex;align-items:center;gap:8px;margin-bottom:6px;' +
+                            'font-size:11px;color:#ccc;cursor:pointer;padding:4px 6px;border-radius:6px;' +
+                            'background:rgba(255,102,0,0.06);border:1px solid rgba(255,102,0,0.15);">' +
+                            '<input type="checkbox" checked data-action-idx="' + i + '" style="accent-color:#FF6600;width:16px;height:16px;">' +
+                            '<span>Remplacement : ' + desc + '</span></label>';
+                    }}
+                }});
+                actionsHtml += '</div>';
+            }}
+
             var overlay = document.createElement('div');
             overlay.className = 'diff-overlay';
             overlay.innerHTML =
                 '<div class="diff-popup">' +
                     '<h3>Modifications d\u00e9tect\u00e9es</h3>' +
-                    '<div class="diff-lines">' + diffHtml + '</div>' +
+                    (hasChanges ? '<div class="diff-lines">' + diffHtml + '</div>' : '') +
+                    actionsHtml +
                     '<div class="diff-actions">' +
                         '<button class="diff-btn-cancel">Annuler</button>' +
                         '<button class="diff-btn-apply">Appliquer</button>' +
@@ -2069,12 +2162,18 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
                 '</div>';
             document.body.appendChild(overlay);
             overlay.querySelector('.diff-btn-apply').onclick = function() {{
-                overlay.remove(); callback(true);
+                var selected = [];
+                if (smartActions && smartActions.length > 0) {{
+                    overlay.querySelectorAll('input[data-action-idx]').forEach(function(cb) {{
+                        if (cb.checked) selected.push(smartActions[parseInt(cb.getAttribute('data-action-idx'))]);
+                    }});
+                }}
+                overlay.remove(); callback(true, selected);
             }};
             overlay.querySelector('.diff-btn-cancel').onclick = function() {{
-                overlay.remove(); callback(false);
+                overlay.remove(); callback(false, []);
             }};
-            overlay.onclick = function(e) {{ if (e.target === overlay) {{ overlay.remove(); callback(false); }} }};
+            overlay.onclick = function(e) {{ if (e.target === overlay) {{ overlay.remove(); callback(false, []); }} }};
         }}
         function escHtml(s) {{
             return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -2148,11 +2247,29 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
                 // Si le texte est identique, laisser le comportement par défaut
                 if (oldText.trim() === newText) return;
                 e.preventDefault();
-                showDiffPopup(oldText, newText, function(accepted) {{
+                // Parser les actions intelligentes (remplacements, etc.)
+                var smartActions = parseSmartActions(newText);
+                showDiffPopup(oldText, newText, smartActions, function(accepted, selectedActions) {{
                     if (accepted) {{
                         data.comment = newText;
+                        // Appliquer les actions sélectionnées
+                        if (selectedActions && selectedActions.length > 0) {{
+                            if (!data.replacements) data.replacements = [];
+                            selectedActions.forEach(function(a) {{
+                                if (a.type === 'replacement') {{
+                                    data.replacements.push({{
+                                        date: a.date || WEEK_DATES[currentDay],
+                                        out: a.out,
+                                        'in': a['in'],
+                                        start: a.start || '09:00',
+                                        end: a.end || '17:00'
+                                    }});
+                                }}
+                            }});
+                        }}
                         notesDirty = true; saveNotesLocal();
                         renderNotes();
+                        if (selectedActions && selectedActions.length > 0) renderTimeline();
                     }}
                 }});
             }});
