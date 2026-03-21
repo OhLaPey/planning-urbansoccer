@@ -503,7 +503,7 @@ def load_week_notes(week_num):
     return {"comment": "", "updates": []}
 
 
-def generate_html(week_employees, week_num, year, all_weeks):
+def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
     """Génère la page HTML avec preview timeline + vue individuelle + abonnement."""
     date_range = format_date_range(year, week_num)
 
@@ -515,6 +515,14 @@ def generate_html(week_employees, week_num, year, all_weeks):
             events_json = f.read().strip()
     else:
         events_json = build_events_json(week_employees)
+
+    # Lire les métadonnées _meta depuis le JSON (si présent)
+    try:
+        parsed = json.loads(events_json)
+        meta = parsed.get("_meta", {})
+    except (json.JSONDecodeError, AttributeError):
+        meta = {}
+    meta_json = json.dumps(meta, ensure_ascii=False)
     colors_json = json.dumps(CODE_COLORS, ensure_ascii=False)
     default_color_json = json.dumps(DEFAULT_COLOR, ensure_ascii=False)
     notes_data = load_week_notes(week_num)
@@ -1061,6 +1069,10 @@ def generate_html(week_employees, week_num, year, all_weeks):
             .tl-bar-container {{ height: 40px; }}
             .tl-bar {{ font-size: 12px; }}
             .time-marker {{ font-size: 13px; }}
+        }}
+        .meta-note {{
+            text-align: center; color: #555; font-size: 10px;
+            margin: 16px 0 4px; letter-spacing: 0.5px;
         }}
     </style>
 </head>
@@ -2998,6 +3010,11 @@ def generate_html(week_employees, week_num, year, all_weeks):
                 if (ok) {{
                     _editsDirty = false;
                     updateUnsavedBanner();
+                    // Mettre à jour la note de source
+                    var metaEl = document.querySelector('.meta-note');
+                    if (metaEl) {{
+                        metaEl.innerHTML = 'MAJ ' + weekData._meta.updated_at + ' \u00b7 Modif admin';
+                    }}
                     if (btn) {{
                         btn.textContent = 'Sauvegard\u00e9 \u2714';
                         btn.className = 'save-edits-btn saved';
@@ -3037,8 +3054,16 @@ def generate_html(week_employees, week_num, year, all_weeks):
             var weekData = {{}};
             Object.keys(DATA).forEach(function(name) {{
                 if (name === '_codeNames') return;
+                if (name === '_meta') return;
                 weekData[name] = DATA[name];
             }});
+            // Ajouter _meta avec source et timestamp
+            var now = new Date();
+            var pad = function(n) {{ return n < 10 ? '0' + n : '' + n; }};
+            weekData._meta = {{
+                source: 'Modif admin',
+                updated_at: now.getFullYear() + '-' + pad(now.getMonth()+1) + '-' + pad(now.getDate()) + ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes())
+            }};
             var content = btoa(unescape(encodeURIComponent(JSON.stringify(weekData, null, 2) + '\\n')));
             var dataPath = 'data/S{week_num}-events.json';
             var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + dataPath;
@@ -3072,6 +3097,23 @@ def generate_html(week_employees, week_num, year, all_weeks):
 
         // Init admin toolbar if already unlocked
         initAdminToolbar();
+
+        // ── Note discrète : dernière MAJ + source ──
+        var _meta = {meta_json};
+        (function() {{
+            if (!_meta.updated_at) return;
+            var sourceLabels = {{
+                'Excel': 'Excel',
+                'Modif admin': 'Modif admin',
+            }};
+            var src = _meta.source || 'Excel';
+            // Afficher "Excel v2" tel quel, sinon chercher dans les labels
+            var label = sourceLabels[src] || src;
+            var note = document.createElement('div');
+            note.className = 'meta-note';
+            note.innerHTML = 'MAJ ' + _meta.updated_at + ' · ' + label;
+            document.querySelector('.container').appendChild(note);
+        }})();
 
         // Single "Mode édition" link at the bottom (combines auth + edit toggle)
         if (!isAdminUnlocked()) {{
@@ -3236,15 +3278,43 @@ def main():
         # Events JSON — écrire seulement s'il n'existe pas encore
         # (s'il existe, il a été modifié depuis la page web et fait foi)
         events_path = f"data/S{week_num}-events.json"
+        ef_info = next((e for e in excel_files if e["week"] == week_num), None)
+        excel_ver = ef_info["version"] if ef_info else 0
         if not os.path.exists(events_path):
             events_data = json.loads(build_events_json(employees))
+            source = f"Excel v{excel_ver}" if excel_ver > 0 else "Excel"
+            events_data["_meta"] = {
+                "source": source,
+                "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+            }
             with open(events_path, "w", encoding="utf-8") as f:
                 json.dump(events_data, f, ensure_ascii=False, indent=2)
                 f.write("\n")
             print(f"\u00c9crit : {events_path}")
+        else:
+            # Ajouter ou mettre à jour _meta
+            with open(events_path, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+            meta = existing.get("_meta", {})
+            new_source = f"Excel v{excel_ver}" if excel_ver > 0 else "Excel"
+            need_write = False
+            if not meta:
+                # Pas de _meta : en créer un (fichier pré-existant)
+                meta = {"source": new_source, "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M")}
+                need_write = True
+            elif meta.get("source", "").startswith("Excel") and meta.get("source") != new_source:
+                meta["source"] = new_source
+                meta["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+                need_write = True
+            if need_write:
+                existing["_meta"] = meta
+                with open(events_path, "w", encoding="utf-8") as f:
+                    json.dump(existing, f, ensure_ascii=False, indent=2)
+                    f.write("\n")
+                print(f"MAJ meta : {events_path} → {meta['source']}")
 
         # HTML
-        html_content = generate_html(employees, week_num, year, all_weeks)
+        html_content = generate_html(employees, week_num, year, all_weeks, excel_version=excel_ver)
         html_path = f"S{week_num}.html"
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(html_content)
