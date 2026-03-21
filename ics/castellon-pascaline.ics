@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:castellon-pascaline-s11-1@urban7d
-DTSTAMP:20260321T105631Z
+DTSTAMP:20260321T111334Z
 DTSTART;TZID=Europe/Paris:20260309T130000
 DTEND;TZID=Europe/Paris:20260309T190000
 SUMMARY:FORP
@@ -36,5 +36,33 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n\n EDF et cours padel sur
  matin\n\n Razel Bec lundi soir\n\n Event So Acte samedi aprem\n\n Des a
  nniversaires sont prévus sur les anniversaires. On verra si les créneaux
   sont réservés surtout avec les vacances scolaires
+END:VEVENT
+BEGIN:VEVENT
+UID:castellon-pascaline-s12-1@urban7d
+DTSTAMP:20260321T111334Z
+DTSTART;TZID=Europe/Paris:20260321T130000
+DTEND;TZID=Europe/Paris:20260321T190000
+SUMMARY:Cup Régisseur
+END:VEVENT
+BEGIN:VEVENT
+UID:castellon-pascaline-s13-1@urban7d
+DTSTAMP:20260321T111334Z
+DTSTART;TZID=Europe/Paris:20260324T200000
+DTEND;TZID=Europe/Paris:20260325T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:castellon-pascaline-s14-1@urban7d
+DTSTAMP:20260321T111334Z
+DTSTART;TZID=Europe/Paris:20260331T200000
+DTEND;TZID=Europe/Paris:20260401T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:castellon-pascaline-s14-2@urban7d
+DTSTAMP:20260321T111334Z
+DTSTART;TZID=Europe/Paris:20260401T200000
+DTEND;TZID=Europe/Paris:20260402T000000
+SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR

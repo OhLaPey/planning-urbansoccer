@@ -1,0 +1,28 @@
+{
+  "semaine": 12,
+  "annee": 2026,
+  "date_debut": "16 Mars",
+  "date_fin": "22 Mars",
+  "employesActifs": [
+    "BONILLO Matthieu",
+    "CARRERE Peïo",
+    "CASTELLON Pascaline",
+    "COHAT Linda",
+    "CRUZEL Quentin",
+    "DE NOUEL Maxime",
+    "DIVIEN Yohan",
+    "DONAER Nicolas",
+    "DOVINA Théo",
+    "LABEFODE Thomas",
+    "MOSTEFA Yanis",
+    "ORDONEZ GOMEZ Oceane",
+    "PEREZ Loic",
+    "PISTORE Remi",
+    "PUJOL Mathieu",
+    "RABII Mehdi",
+    "SANGARNE Enzo",
+    "SEIGNE Kevin",
+    "TINGUY Florian",
+    "VASSANT Tiffany"
+  ]
+}
