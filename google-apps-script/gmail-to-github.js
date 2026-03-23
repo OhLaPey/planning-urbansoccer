@@ -97,6 +97,7 @@ function checkEmails() {
 
   for (const thread of threads) {
     const messages = thread.getMessages();
+    let allSuccess = true;
 
     for (const message of messages) {
       const attachments = message.getAttachments();
@@ -115,20 +116,31 @@ function checkEmails() {
         // Récupérer le contenu en base64
         const content = Utilities.base64Encode(attachment.getBytes());
 
-        // Pousser vers GitHub
-        const success = pushToGitHub(fileName, content);
+        // Pousser vers GitHub (avec retry)
+        let success = pushToGitHub(fileName, content);
+        if (!success) {
+          // Retry une fois — le SHA a pu changer entre le GET et le PUT
+          Logger.log(`Retry : ${fileName}`);
+          Utilities.sleep(2000);
+          success = pushToGitHub(fileName, content);
+        }
 
         if (success) {
           Logger.log(`Poussé vers GitHub : ${fileName}`);
         } else {
           Logger.log(`ERREUR push GitHub : ${fileName}`);
+          allSuccess = false;
         }
       }
     }
 
-    // Marquer le thread comme traité
-    thread.addLabel(label);
-    thread.markRead();
+    // Marquer le thread comme traité SEULEMENT si tous les fichiers ont été poussés
+    if (allSuccess) {
+      thread.addLabel(label);
+      thread.markRead();
+    } else {
+      Logger.log(`Thread non marqué (erreurs) — sera retraité au prochain cycle.`);
+    }
   }
 }
 
