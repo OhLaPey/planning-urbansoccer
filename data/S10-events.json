@@ -42,8 +42,8 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-03T10:00",
-        "end": "2026-03-03T16:00",
+        "start": "2026-03-03T12:00",
+        "end": "2026-03-03T19:30",
         "day": 1
       },
       {
@@ -80,19 +80,20 @@
         "start": "2026-03-05T14:00",
         "end": "2026-03-05T18:00",
         "day": 3
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-03T18:30",
-        "end": "2026-03-03T19:30",
-        "day": 1
       }
     ]
   },
   "CASTELLON Pascaline": {
     "slug": "castellon-pascaline",
-    "events": []
+    "events": [
+      {
+        "code": "MAL",
+        "label": "Maladie",
+        "start": "2026-03-02T00:00",
+        "end": "2026-03-02T23:59",
+        "day": 0
+      }
+    ]
   },
   "COHAT Linda": {
     "slug": "cohat-linda",
@@ -111,8 +112,8 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-05T14:30",
-        "end": "2026-03-05T24:00",
+        "start": "2026-03-05T17:30",
+        "end": "2026-03-06T00:00",
         "day": 3
       },
       {
@@ -700,6 +701,39 @@
     "slug": "labefode-thomas",
     "events": []
   },
+  "MADIELE Henri": {
+    "slug": "madiele-henri",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-02T09:00",
+        "end": "2026-03-02T18:30",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-03T11:40",
+        "end": "2026-03-03T18:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-05T11:30",
+        "end": "2026-03-05T18:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-06T11:00",
+        "end": "2026-03-06T17:30",
+        "day": 4
+      }
+    ]
+  },
   "MOSTEFA Yanis": {
     "slug": "mostefa-yanis",
     "events": [
@@ -739,7 +773,7 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-02T15:00",
+        "start": "2026-03-02T18:00",
         "end": "2026-03-02T20:00",
         "day": 0
       },
@@ -760,7 +794,7 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-03T15:00",
+        "start": "2026-03-03T17:30",
         "end": "2026-03-03T20:30",
         "day": 1
       },
@@ -842,13 +876,6 @@
         "start": "2026-03-07T08:45",
         "end": "2026-03-07T17:00",
         "day": 5
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-05T11:45",
-        "end": "2026-03-05T14:30",
-        "day": 3
       }
     ]
   },
@@ -948,18 +975,11 @@
         "start": "2026-03-08T16:00",
         "end": "2026-03-08T22:15",
         "day": 6
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-06T11:45",
-        "end": "2026-03-06T15:00",
-        "day": 4
       }
     ]
   },
   "_meta": {
     "source": "Excel",
-    "updated_at": "2026-03-21 10:56"
+    "updated_at": "2026-03-23 14:12"
   }
 }

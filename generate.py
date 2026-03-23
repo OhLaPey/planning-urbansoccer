@@ -299,10 +299,24 @@ def parse_shifts(ws, rows, dates, week_num, employee_name=""):
                                 "week": week_num,
                             })
                     else:
-                        warnings.append(
-                            f"  /!\\ {employee_name} ligne {row} col {col} : "
-                            f"code \u00ab {code} \u00bb sans horaire trouv\u00e9"
-                        )
+                        # Codes journée entière (MAL, CP, etc.) : pas d'horaire
+                        FULL_DAY_CODES = {"MAL", "CP", "RTT", "ABS", "FOR-E", "FOR-P"}
+                        if code in FULL_DAY_CODES:
+                            label = CODE_NAMES.get(code, code)
+                            day_date = dates[col]
+                            events.append({
+                                "code": code,
+                                "label": label,
+                                "start": day_date.replace(hour=0, minute=0),
+                                "end": day_date.replace(hour=23, minute=59),
+                                "week": week_num,
+                                "all_day": True,
+                            })
+                        else:
+                            warnings.append(
+                                f"  /!\\ {employee_name} ligne {row} col {col} : "
+                                f"code \u00ab {code} \u00bb sans horaire trouv\u00e9"
+                            )
 
             i += 2
         else:
@@ -312,7 +326,27 @@ def parse_shifts(ws, rows, dates, week_num, employee_name=""):
         print(w)
 
     events.sort(key=lambda e: e["start"])
-    return events
+
+    # Résoudre les chevauchements : un staff ne peut pas avoir deux items en même temps.
+    # Si deux events se chevauchent, on tronque la fin du premier au début du suivant.
+    resolved = []
+    for ev in events:
+        if resolved:
+            prev = resolved[-1]
+            if ev["start"] < prev["end"]:
+                print(
+                    f"  /!\\ {employee_name} : chevauchement détecté entre "
+                    f"«{prev['code']}» (fin {prev['end'].strftime('%H:%M')}) et "
+                    f"«{ev['code']}» (début {ev['start'].strftime('%H:%M')}) — "
+                    f"troncature de «{prev['code']}»"
+                )
+                prev["end"] = ev["start"]
+                # Si le précédent a une durée nulle ou négative, le supprimer
+                if prev["end"] <= prev["start"]:
+                    resolved.pop()
+        resolved.append(ev)
+
+    return resolved
 
 
 # ── Génération ICS (abonnement calendrier) ─────────────────────────────────
@@ -507,14 +541,8 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
     """Génère la page HTML avec preview timeline + vue individuelle + abonnement."""
     date_range = format_date_range(year, week_num)
 
-    # Si un fichier events.json existe (modifié depuis la page web), l'utiliser
-    # comme source de vérité à la place des données Excel.
-    events_path = f"data/S{week_num}-events.json"
-    if os.path.exists(events_path):
-        with open(events_path, "r", encoding="utf-8") as f:
-            events_json = f.read().strip()
-    else:
-        events_json = build_events_json(week_employees)
+    # Toujours utiliser les données fraîchement parsées de l'Excel
+    events_json = build_events_json(week_employees)
 
     # Lire les métadonnées _meta depuis le JSON (si présent)
     try:
@@ -3704,43 +3732,21 @@ def main():
             json.dump(json_data, f, ensure_ascii=False, indent=2)
         print(f"\u00c9crit : {json_path}")
 
-        # Events JSON — écrire seulement s'il n'existe pas encore
-        # (s'il existe, il a été modifié depuis la page web et fait foi)
+        # Events JSON — toujours régénérer depuis l'Excel (source de vérité)
         events_path = f"data/S{week_num}-events.json"
         ef_info = next((e for e in excel_files if e["week"] == week_num), None)
         excel_ver = ef_info["version"] if ef_info else 0
-        if not os.path.exists(events_path):
-            events_data = json.loads(build_events_json(employees))
-            source = f"Excel v{excel_ver}" if excel_ver > 0 else "Excel"
-            events_data["_meta"] = {
-                "source": source,
-                "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
-            }
-            with open(events_path, "w", encoding="utf-8") as f:
-                json.dump(events_data, f, ensure_ascii=False, indent=2)
-                f.write("\n")
-            print(f"\u00c9crit : {events_path}")
-        else:
-            # Ajouter ou mettre à jour _meta
-            with open(events_path, "r", encoding="utf-8") as f:
-                existing = json.load(f)
-            meta = existing.get("_meta", {})
-            new_source = f"Excel v{excel_ver}" if excel_ver > 0 else "Excel"
-            need_write = False
-            if not meta:
-                # Pas de _meta : en créer un (fichier pré-existant)
-                meta = {"source": new_source, "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M")}
-                need_write = True
-            elif meta.get("source", "").startswith("Excel") and meta.get("source") != new_source:
-                meta["source"] = new_source
-                meta["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M")
-                need_write = True
-            if need_write:
-                existing["_meta"] = meta
-                with open(events_path, "w", encoding="utf-8") as f:
-                    json.dump(existing, f, ensure_ascii=False, indent=2)
-                    f.write("\n")
-                print(f"MAJ meta : {events_path} → {meta['source']}")
+        events_data = json.loads(build_events_json(employees))
+        source = f"Excel v{excel_ver}" if excel_ver > 0 else "Excel"
+        events_data["_meta"] = {
+            "source": source,
+            "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        }
+        with open(events_path, "w", encoding="utf-8") as f:
+            json.dump(events_data, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        print(f"Écrit : {events_path}")
+
 
         # HTML
         html_content = generate_html(employees, week_num, year, all_weeks, excel_version=excel_ver)
