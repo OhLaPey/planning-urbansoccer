@@ -326,7 +326,27 @@ def parse_shifts(ws, rows, dates, week_num, employee_name=""):
         print(w)
 
     events.sort(key=lambda e: e["start"])
-    return events
+
+    # Résoudre les chevauchements : un staff ne peut pas avoir deux items en même temps.
+    # Si deux events se chevauchent, on tronque la fin du premier au début du suivant.
+    resolved = []
+    for ev in events:
+        if resolved:
+            prev = resolved[-1]
+            if ev["start"] < prev["end"]:
+                print(
+                    f"  /!\\ {employee_name} : chevauchement détecté entre "
+                    f"«{prev['code']}» (fin {prev['end'].strftime('%H:%M')}) et "
+                    f"«{ev['code']}» (début {ev['start'].strftime('%H:%M')}) — "
+                    f"troncature de «{prev['code']}»"
+                )
+                prev["end"] = ev["start"]
+                # Si le précédent a une durée nulle ou négative, le supprimer
+                if prev["end"] <= prev["start"]:
+                    resolved.pop()
+        resolved.append(ev)
+
+    return resolved
 
 
 # ── Génération ICS (abonnement calendrier) ─────────────────────────────────
