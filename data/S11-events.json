@@ -95,7 +95,7 @@
     "events": [
       {
         "code": "FORP",
-        "label": "FORP",
+        "label": "Formation pratique",
         "start": "2026-03-09T13:00",
         "end": "2026-03-09T19:00",
         "day": 0
@@ -280,7 +280,7 @@
       },
       {
         "code": "EV-LO",
-        "label": "EV-LO",
+        "label": "Événement logistique",
         "start": "2026-03-09T19:15",
         "end": "2026-03-09T23:30",
         "day": 0
@@ -446,7 +446,7 @@
     "events": [
       {
         "code": "FORE",
-        "label": "FORE",
+        "label": "Formation",
         "start": "2026-03-09T19:00",
         "end": "2026-03-09T19:30",
         "day": 0
@@ -732,7 +732,7 @@
       },
       {
         "code": "VIS-M",
-        "label": "VIS-M",
+        "label": "Visite mystère",
         "start": "2026-03-12T14:15",
         "end": "2026-03-12T15:15",
         "day": 3
@@ -777,7 +777,7 @@
     "events": [
       {
         "code": "FORE",
-        "label": "FORE",
+        "label": "Formation",
         "start": "2026-03-11T13:00",
         "end": "2026-03-11T13:45",
         "day": 2
@@ -793,6 +793,6 @@
   },
   "_meta": {
     "source": "Excel",
-    "updated_at": "2026-03-23 14:20"
+    "updated_at": "2026-03-23 14:25"
   }
 }

@@ -320,7 +320,7 @@
       },
       {
         "code": "EV-LO",
-        "label": "EV-LO",
+        "label": "Événement logistique",
         "start": "2026-03-18T19:00",
         "end": "2026-03-18T23:00",
         "day": 2
@@ -504,7 +504,7 @@
       },
       {
         "code": "EV-LO",
-        "label": "EV-LO",
+        "label": "Événement logistique",
         "start": "2026-03-18T18:30",
         "end": "2026-03-18T22:00",
         "day": 2
@@ -591,7 +591,7 @@
       },
       {
         "code": "EV-LO",
-        "label": "EV-LO",
+        "label": "Événement logistique",
         "start": "2026-03-18T15:00",
         "end": "2026-03-18T15:30",
         "day": 2
@@ -605,7 +605,7 @@
       },
       {
         "code": "EV-LO",
-        "label": "EV-LO",
+        "label": "Événement logistique",
         "start": "2026-03-18T19:00",
         "end": "2026-03-18T23:30",
         "day": 2
@@ -769,6 +769,6 @@
   },
   "_meta": {
     "source": "Excel",
-    "updated_at": "2026-03-23 14:20"
+    "updated_at": "2026-03-23 14:25"
   }
 }
