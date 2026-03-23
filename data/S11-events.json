@@ -29,22 +29,57 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-10T15:30",
-        "end": "2026-03-10T19:30",
+        "end": "2026-03-10T18:15",
+        "day": 1
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-03-10T18:15",
+        "end": "2026-03-10T20:45",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-10T20:45",
+        "end": "2026-03-10T22:00",
         "day": 1
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-11T16:45",
-        "end": "2026-03-11T21:30",
+        "end": "2026-03-11T19:15",
+        "day": 2
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-03-11T19:15",
+        "end": "2026-03-11T21:45",
         "day": 2
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-12T09:45",
-        "end": "2026-03-12T17:00",
+        "end": "2026-03-12T16:00",
         "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-14T10:30",
+        "end": "2026-03-14T15:00",
+        "day": 5
+      },
+      {
+        "code": "EV-RE",
+        "label": "Événement régisseur",
+        "start": "2026-03-14T15:00",
+        "end": "2026-03-14T19:00",
+        "day": 5
       },
       {
         "code": "VDC",
@@ -52,41 +87,6 @@
         "start": "2026-03-15T08:45",
         "end": "2026-03-15T16:00",
         "day": 6
-      },
-      {
-        "code": "L-ARB",
-        "label": "L-ARB",
-        "start": "2026-03-10T19:30",
-        "end": "2026-03-10T20:30",
-        "day": 1
-      },
-      {
-        "code": "EV-RE",
-        "label": "Événement régisseur",
-        "start": "2026-03-14T12:30",
-        "end": "2026-03-14T15:30",
-        "day": 5
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-14T10:30",
-        "end": "2026-03-14T12:30",
-        "day": 5
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-10T20:30",
-        "end": "2026-03-10T22:45",
-        "day": 1
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-14T15:30",
-        "end": "2026-03-14T17:15",
-        "day": 5
       }
     ]
   },
@@ -314,6 +314,13 @@
         "day": 2
       },
       {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-03-11T19:30",
+        "end": "2026-03-11T21:30",
+        "day": 2
+      },
+      {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-13T11:45",
@@ -398,9 +405,30 @@
     "slug": "mostefa-yanis",
     "events": [
       {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-14T13:15",
+        "end": "2026-03-14T17:15",
+        "day": 5
+      },
+      {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-15T10:30",
+        "start": "2026-03-15T09:30",
+        "end": "2026-03-15T10:15",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-15T10:15",
+        "end": "2026-03-15T12:15",
+        "day": 6
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-03-15T12:15",
         "end": "2026-03-15T12:45",
         "day": 6
       },
@@ -433,8 +461,15 @@
       {
         "code": "L-ARB",
         "label": "L-ARB",
+        "start": "2026-03-10T18:30",
+        "end": "2026-03-10T22:30",
+        "day": 1
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
         "start": "2026-03-11T19:30",
-        "end": "2026-03-11T21:30",
+        "end": "2026-03-11T22:30",
         "day": 2
       }
     ]
@@ -712,15 +747,8 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-14T17:15",
+        "start": "2026-03-14T15:00",
         "end": "2026-03-14T22:20",
-        "day": 5
-      },
-      {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-03-14T13:15",
-        "end": "2026-03-14T17:15",
         "day": 5
       }
     ]
@@ -765,6 +793,6 @@
   },
   "_meta": {
     "source": "Excel",
-    "updated_at": "2026-03-21 10:56"
+    "updated_at": "2026-03-23 13:12"
   }
 }
