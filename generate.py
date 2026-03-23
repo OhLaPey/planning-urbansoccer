@@ -53,7 +53,7 @@ CODE_NAMES = {
     "EDF-C": "EDF-C",
     "COMMD": "Commercialisation",
     "EV-LO": "Événement logistique",
-    "VIS-M": "Visite mystère",
+    "VIS-M": "Visite médicale",
     "FORE":  "Formation",
     "FORP":  "Formation pratique",
 }

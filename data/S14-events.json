@@ -574,7 +574,7 @@
       },
       {
         "code": "VIS-M",
-        "label": "Visite mystère",
+        "label": "Visite médicale",
         "start": "2026-04-02T14:30",
         "end": "2026-04-02T15:30",
         "day": 3
@@ -825,6 +825,6 @@
   },
   "_meta": {
     "source": "Excel",
-    "updated_at": "2026-03-23 14:25"
+    "updated_at": "2026-03-23 14:26"
   }
 }
