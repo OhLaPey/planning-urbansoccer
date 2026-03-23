@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:castellon-pascaline-s10-1@urban7d
-DTSTAMP:20260323T141214Z
+DTSTAMP:20260323T142650Z
 DTSTART;TZID=Europe/Paris:20260302T000000
 DTEND;TZID=Europe/Paris:20260302T235900
 SUMMARY:Maladie
@@ -44,10 +44,10 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s11-1@urban7d
-DTSTAMP:20260323T141214Z
+DTSTAMP:20260323T142650Z
 DTSTART;TZID=Europe/Paris:20260309T130000
 DTEND;TZID=Europe/Paris:20260309T190000
-SUMMARY:FORP
+SUMMARY:Formation pratique
 DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
  rs habituels \n🏆⚽️ Reprise de la Betsson League\, on continue la B
  usiness League \n🏆🥎 P50H lundi aprem\, P25H vendredi aprem et P100H
@@ -58,7 +58,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s12-1@urban7d
-DTSTAMP:20260323T141214Z
+DTSTAMP:20260323T142650Z
 DTSTART;TZID=Europe/Paris:20260321T130000
 DTEND;TZID=Europe/Paris:20260321T190000
 SUMMARY:Cup Régisseur
@@ -70,7 +70,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s13-1@urban7d
-DTSTAMP:20260323T141214Z
+DTSTAMP:20260323T142650Z
 DTSTART;TZID=Europe/Paris:20260324T200000
 DTEND;TZID=Europe/Paris:20260325T000000
 SUMMARY:Vie de centre
@@ -82,7 +82,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s14-1@urban7d
-DTSTAMP:20260323T141214Z
+DTSTAMP:20260323T142650Z
 DTSTART;TZID=Europe/Paris:20260331T200000
 DTEND;TZID=Europe/Paris:20260401T000000
 SUMMARY:Vie de centre
@@ -95,7 +95,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s14-2@urban7d
-DTSTAMP:20260323T141214Z
+DTSTAMP:20260323T142650Z
 DTSTART;TZID=Europe/Paris:20260401T200000
 DTEND;TZID=Europe/Paris:20260402T000000
 SUMMARY:Vie de centre

@@ -47,6 +47,15 @@ CODE_NAMES = {
     "FOR-E": "Formation théorique",
     "FOR-P": "Formation pratique",
     "STA-P": "Stage Padel",
+    "ENT-M": "Entretien Ménage",
+    "EDF-A": "EDF-A",
+    "EDF-B": "EDF-B",
+    "EDF-C": "EDF-C",
+    "COMMD": "Commercialisation",
+    "EV-LO": "Événement logistique",
+    "VIS-M": "Visite médicale",
+    "FORE":  "Formation",
+    "FORP":  "Formation pratique",
 }
 
 # Couleurs néon par code — inspirées de l'Excel avec effet glow
@@ -71,6 +80,15 @@ CODE_COLORS = {
     "FOR-E": {"bg": "rgba(255,200,50,0.35)",  "border": "#ffc832",  "text": "#ffe080"},
     "FOR-P": {"bg": "rgba(50,200,120,0.35)",  "border": "#32c878",  "text": "#80ffb0"},
     "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff",  "text": "#a0f0ff"},
+    "ENT-M": {"bg": "rgba(255,192,0,0.40)",   "border": "#ffc000",  "text": "#ffd060"},
+    "EDF-A": {"bg": "rgba(0,112,192,0.40)",   "border": "#0070c0",  "text": "#60b0ff"},
+    "EDF-B": {"bg": "rgba(0,112,192,0.40)",   "border": "#0070c0",  "text": "#60b0ff"},
+    "EDF-C": {"bg": "rgba(0,112,192,0.40)",   "border": "#0070c0",  "text": "#60b0ff"},
+    "COMMD": {"bg": "rgba(255,192,0,0.40)",   "border": "#ffc000",  "text": "#ffd060"},
+    "EV-LO": {"bg": "rgba(100,220,60,0.35)",  "border": "#64dc3c",  "text": "#90ff70"},
+    "VIS-M": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff",  "text": "#d4a0ff"},
+    "FORE":  {"bg": "rgba(255,200,50,0.35)",  "border": "#ffc832",  "text": "#ffe080"},
+    "FORP":  {"bg": "rgba(50,200,120,0.35)",  "border": "#32c878",  "text": "#80ffb0"},
 }
 DEFAULT_COLOR = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"}
 
