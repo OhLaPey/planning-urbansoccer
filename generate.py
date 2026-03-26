@@ -680,6 +680,19 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         .week-tab.past {{ opacity: 0.4; }}
         .week-tab.past:hover {{ opacity: 0.7; }}
 
+        /* ── App toggle (Planning / Présences) ── */
+        .app-toggle {{ display: flex; justify-content: center; gap: 4px; margin-bottom: 12px;
+                        background: rgba(255,255,255,0.06); border-radius: 6px; padding: 4px;
+                        border: 1px solid rgba(255,255,255,0.08); }}
+        .app-btn {{ flex: 1; padding: 9px; background: transparent;
+                     color: #666; font-size: 12px; font-weight: 700;
+                     border-radius: 4px; transition: all 0.2s;
+                     text-transform: uppercase; letter-spacing: 0.5px;
+                     text-decoration: none; text-align: center; }}
+        .app-btn.active {{ background: rgba(255,102,0,0.15); color: #FF6600;
+                            box-shadow: 0 0 10px rgba(255,102,0,0.2); }}
+        .app-btn:hover:not(.active) {{ color: #aaa; }}
+
         /* ── View toggle ── */
         .view-toggle {{ display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
                         background: rgba(255,255,255,0.04); border-radius: 6px; padding: 4px; }}
@@ -1095,6 +1108,8 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             .dates {{ font-size: 16px; padding: 8px 20px; }}
             .week-selector {{ gap: 8px; }}
             .week-tab {{ font-size: 14px; padding: 10px 18px; }}
+            .app-toggle {{ max-width: 500px; margin-left: auto; margin-right: auto; }}
+            .app-btn {{ font-size: 14px; padding: 10px; }}
             .view-toggle {{ max-width: 500px; margin-left: auto; margin-right: auto; }}
             .view-btn {{ font-size: 14px; padding: 10px; }}
             .day-tabs {{ gap: 6px; margin-bottom: 16px; }}
@@ -1178,6 +1193,11 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             <h1>Planning Urban 7D</h1>
             <p class="subtitle">Semaine {week_num}</p>
             <div class="dates">{date_range}</div>
+        </div>
+
+        <div class="app-toggle">
+            <a href="S{week_num}.html" class="app-btn active">Planning</a>
+            <a href="/presences" class="app-btn">Présences</a>
         </div>
 
         <div class="week-selector">
