@@ -680,18 +680,20 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         .week-tab.past {{ opacity: 0.4; }}
         .week-tab.past:hover {{ opacity: 0.7; }}
 
-        /* ── App toggle (Planning / Présences) ── */
-        .app-toggle {{ display: flex; justify-content: center; gap: 4px; margin-bottom: 12px;
-                        background: rgba(255,255,255,0.06); border-radius: 6px; padding: 4px;
-                        border: 1px solid rgba(255,255,255,0.08); }}
-        .app-btn {{ flex: 1; padding: 9px; background: transparent;
-                     color: #666; font-size: 12px; font-weight: 700;
-                     border-radius: 4px; transition: all 0.2s;
-                     text-transform: uppercase; letter-spacing: 0.5px;
-                     text-decoration: none; text-align: center; }}
-        .app-btn.active {{ background: rgba(255,102,0,0.15); color: #FF6600;
-                            box-shadow: 0 0 10px rgba(255,102,0,0.2); }}
-        .app-btn:hover:not(.active) {{ color: #aaa; }}
+        /* ── Corner buttons ── */
+        .corner-btn {{
+            position: fixed; z-index: 90; padding: 8px 12px;
+            background: rgba(26,26,26,0.85); backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+            color: #666; font-size: 10px; font-weight: 700; cursor: pointer;
+            text-decoration: none; transition: all 0.25s;
+            font-family: 'Montserrat', sans-serif; text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }}
+        .corner-btn:hover {{ color: #FF6600; border-color: rgba(255,102,0,0.4);
+                              background: rgba(26,26,26,0.95); }}
+        .corner-btn-left {{ top: 10px; left: 10px; }}
+        .corner-btn-right {{ top: 10px; right: 10px; }}
 
         /* ── View toggle ── */
         .view-toggle {{ display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
@@ -1108,8 +1110,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             .dates {{ font-size: 16px; padding: 8px 20px; }}
             .week-selector {{ gap: 8px; }}
             .week-tab {{ font-size: 14px; padding: 10px 18px; }}
-            .app-toggle {{ max-width: 500px; margin-left: auto; margin-right: auto; }}
-            .app-btn {{ font-size: 14px; padding: 10px; }}
+            .corner-btn {{ font-size: 11px; padding: 10px 16px; }}
             .view-toggle {{ max-width: 500px; margin-left: auto; margin-right: auto; }}
             .view-btn {{ font-size: 14px; padding: 10px; }}
             .day-tabs {{ gap: 6px; margin-bottom: 16px; }}
@@ -1188,16 +1189,15 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
     </style>
 </head>
 <body>
+    <!-- Corner buttons -->
+    <button class="corner-btn corner-btn-left" onclick="if(typeof verifyStaff==='function'){{verifyStaff();initAdminToolbar();}}" title="Mode admin">Admin</button>
+    <a href="/presences" class="corner-btn corner-btn-right" title="Suivi des présences EDF">Présences</a>
+
     <div class="container">
         <div class="header">
             <h1>Planning Urban 7D</h1>
             <p class="subtitle">Semaine {week_num}</p>
             <div class="dates">{date_range}</div>
-        </div>
-
-        <div class="app-toggle">
-            <a href="S{week_num}.html" class="app-btn active">Planning</a>
-            <a href="/presences" class="app-btn">Présences</a>
         </div>
 
         <div class="week-selector">
