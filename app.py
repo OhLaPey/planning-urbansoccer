@@ -19,7 +19,7 @@ import sqlite3
 from datetime import datetime, date, timedelta
 
 from flask import (Flask, render_template, request, redirect, url_for,
-                   flash, send_file, jsonify, g)
+                   flash, send_file, jsonify, g, send_from_directory)
 
 # Import du générateur d'affiches existant
 from generate_birthday_posters import (
@@ -902,6 +902,14 @@ def api_birthdays(date_str):
     """Retourne les anniversaires en JSON."""
     birthdays = get_birthdays_for_date(date_str)
     return jsonify(birthdays)
+
+
+# ── Fichiers racine (images de fond, etc.) ───────────────────────────────────
+
+@app.route("/bg-psg.jpg")
+def bg_psg():
+    """Sert l'image de fond PSG Academy."""
+    return send_from_directory(SCRIPT_DIR, "bg-psg.jpg")
 
 
 # ── Présences PSG Academy ────────────────────────────────────────────────────
