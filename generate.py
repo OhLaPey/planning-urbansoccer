@@ -655,7 +655,12 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
                              pointer-events: none; z-index: 0; }}
 
         /* ── Header ── */
-        .header {{ text-align: center; margin-bottom: 12px; padding: 14px 10px 8px; }}
+        .header {{ text-align: center; margin-bottom: 12px; padding: 14px 10px 8px; position: relative; }}
+        .admin-btn {{ position: absolute; top: 10px; right: 10px; background: none; border: none;
+                      color: #444; font-size: 18px; cursor: pointer; padding: 4px 8px;
+                      transition: color 0.2s; opacity: 0.5; }}
+        .admin-btn:hover {{ color: #FF6600; opacity: 1; }}
+        .admin-btn.unlocked {{ color: #FF6600; opacity: 1; }}
         h1 {{ font-family: 'Montserrat', sans-serif;
               color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px;
               text-transform: uppercase; letter-spacing: 2px;
@@ -1199,6 +1204,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             <h1>Planning Urban 7D</h1>
             <p class="subtitle">Semaine {week_num}</p>
             <div class="dates">{date_range}</div>
+            <button class="admin-btn" id="admin-btn" title="Mode \u00e9dition">\u2699</button>
         </div>
 
         <div class="week-selector">
@@ -3633,25 +3639,27 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             document.querySelector('.container').appendChild(note);
         }})();
 
-        // Single "Mode édition" link at the bottom (combines auth + edit toggle)
-        if (!isAdminUnlocked()) {{
-            var adminLink = document.createElement('div');
-            adminLink.style.cssText = 'text-align:center;margin:20px 0;';
-            adminLink.innerHTML = '<a href="#" style="color:#444;font-size:11px;text-decoration:none;">Mode \u00e9dition</a>';
-            adminLink.querySelector('a').onclick = function(e) {{
-                e.preventDefault();
+        // Admin button in header (combines auth + edit toggle)
+        var adminBtnEl = document.getElementById('admin-btn');
+        if (isAdminUnlocked()) {{
+            adminBtnEl.classList.add('unlocked');
+        }}
+        adminBtnEl.onclick = function() {{
+            if (!isAdminUnlocked()) {{
                 if (verifyStaff()) {{
                     unlockAdmin();
-                    adminLink.remove();
+                    adminBtnEl.classList.add('unlocked');
                     initAdminToolbar();
                     renderNotes();
-                    // Auto-activate edit mode
                     var toggleBtn = adminToolbarEl.querySelector('.edit-toggle');
                     if (toggleBtn) toggleBtn.click();
                 }}
-            }};
-            document.querySelector('.container').appendChild(adminLink);
-        }}
+            }} else {{
+                // Already unlocked — toggle edit mode
+                var toggleBtn = adminToolbarEl ? adminToolbarEl.querySelector('.edit-toggle') : null;
+                if (toggleBtn) toggleBtn.click();
+            }}
+        }};
 
     }})();
     </script>
