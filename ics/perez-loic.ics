@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:perez-loic-s9-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260223T090000
 DTEND;TZID=Europe/Paris:20260223T100000
 SUMMARY:Stage
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260223T100000
 DTEND;TZID=Europe/Paris:20260223T120000
 SUMMARY:Stage encadrement
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-3@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260223T123000
 DTEND;TZID=Europe/Paris:20260223T140000
 SUMMARY:Stage
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-4@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260223T140000
 DTEND;TZID=Europe/Paris:20260223T160000
 SUMMARY:Stage encadrement
@@ -106,7 +106,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-5@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260223T160000
 DTEND;TZID=Europe/Paris:20260223T170000
 SUMMARY:Stage
@@ -126,7 +126,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-6@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260223T170000
 DTEND;TZID=Europe/Paris:20260223T180000
 SUMMARY:Stage encadrement
@@ -146,7 +146,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-7@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260223T191500
 DTEND;TZID=Europe/Paris:20260223T193000
 SUMMARY:Régisseur League
@@ -166,7 +166,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-8@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260223T193000
 DTEND;TZID=Europe/Paris:20260223T203000
 SUMMARY:L-ARB
@@ -186,7 +186,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-9@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260223T203000
 DTEND;TZID=Europe/Paris:20260223T204500
 SUMMARY:Régisseur League
@@ -206,7 +206,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-10@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260224T094500
 DTEND;TZID=Europe/Paris:20260224T100000
 SUMMARY:Stage
@@ -226,7 +226,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-11@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260224T100000
 DTEND;TZID=Europe/Paris:20260224T120000
 SUMMARY:Stage encadrement
@@ -246,7 +246,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-12@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260224T123000
 DTEND;TZID=Europe/Paris:20260224T140000
 SUMMARY:Stage
@@ -266,7 +266,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-13@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260224T140000
 DTEND;TZID=Europe/Paris:20260224T160000
 SUMMARY:Stage encadrement
@@ -286,7 +286,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-14@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260224T160000
 DTEND;TZID=Europe/Paris:20260224T170000
 SUMMARY:Stage
@@ -306,7 +306,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-15@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260225T090000
 DTEND;TZID=Europe/Paris:20260225T100000
 SUMMARY:Stage
@@ -326,7 +326,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-16@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260225T100000
 DTEND;TZID=Europe/Paris:20260225T120000
 SUMMARY:Stage encadrement
@@ -346,7 +346,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-17@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260225T123000
 DTEND;TZID=Europe/Paris:20260225T140000
 SUMMARY:Stage
@@ -366,7 +366,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-18@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260225T140000
 DTEND;TZID=Europe/Paris:20260225T160000
 SUMMARY:Stage encadrement
@@ -386,7 +386,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-19@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260225T160000
 DTEND;TZID=Europe/Paris:20260225T170000
 SUMMARY:Stage
@@ -406,7 +406,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-20@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260225T170000
 DTEND;TZID=Europe/Paris:20260225T180000
 SUMMARY:Stage encadrement
@@ -426,7 +426,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-21@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260226T094500
 DTEND;TZID=Europe/Paris:20260226T100000
 SUMMARY:Stage
@@ -446,7 +446,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-22@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260226T100000
 DTEND;TZID=Europe/Paris:20260226T120000
 SUMMARY:Stage encadrement
@@ -466,7 +466,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-23@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260226T123000
 DTEND;TZID=Europe/Paris:20260226T140000
 SUMMARY:Stage
@@ -486,7 +486,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-24@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260226T140000
 DTEND;TZID=Europe/Paris:20260226T160000
 SUMMARY:Stage encadrement
@@ -506,7 +506,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-25@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260226T160000
 DTEND;TZID=Europe/Paris:20260226T170000
 SUMMARY:Stage
@@ -526,7 +526,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-26@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260226T170000
 DTEND;TZID=Europe/Paris:20260226T180000
 SUMMARY:Stage
@@ -546,7 +546,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-27@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260227T090000
 DTEND;TZID=Europe/Paris:20260227T100000
 SUMMARY:Stage
@@ -566,7 +566,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-28@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260227T100000
 DTEND;TZID=Europe/Paris:20260227T120000
 SUMMARY:Stage encadrement
@@ -586,7 +586,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-29@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260227T123000
 DTEND;TZID=Europe/Paris:20260227T140000
 SUMMARY:Stage
@@ -606,7 +606,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-30@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260227T140000
 DTEND;TZID=Europe/Paris:20260227T160000
 SUMMARY:Stage encadrement
@@ -626,7 +626,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s9-31@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260227T160000
 DTEND;TZID=Europe/Paris:20260227T170000
 SUMMARY:Stage
@@ -646,7 +646,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s10-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260302T180000
 DTEND;TZID=Europe/Paris:20260302T200000
 SUMMARY:Vie de centre
@@ -664,7 +664,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s10-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260302T200000
 DTEND;TZID=Europe/Paris:20260302T220000
 SUMMARY:Régisseur League
@@ -682,7 +682,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s10-3@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260302T220000
 DTEND;TZID=Europe/Paris:20260303T000000
 SUMMARY:Vie de centre
@@ -700,7 +700,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s10-4@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260303T173000
 DTEND;TZID=Europe/Paris:20260303T203000
 SUMMARY:Vie de centre
@@ -718,7 +718,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s10-5@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260303T203000
 DTEND;TZID=Europe/Paris:20260303T223000
 SUMMARY:Régisseur League
@@ -736,7 +736,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s10-6@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260304T173000
 DTEND;TZID=Europe/Paris:20260305T000000
 SUMMARY:Vie de centre
@@ -754,7 +754,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s11-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260309T180000
 DTEND;TZID=Europe/Paris:20260310T000000
 SUMMARY:Vie de centre
@@ -768,7 +768,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s11-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260310T171500
 DTEND;TZID=Europe/Paris:20260310T191500
 SUMMARY:EDF-C
@@ -782,7 +782,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s11-3@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260310T193000
 DTEND;TZID=Europe/Paris:20260310T223000
 SUMMARY:L-ARB
@@ -796,7 +796,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s11-4@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260311T094500
 DTEND;TZID=Europe/Paris:20260311T200000
 SUMMARY:Vie de centre
@@ -810,7 +810,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s11-5@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260312T173000
 DTEND;TZID=Europe/Paris:20260313T000000
 SUMMARY:Vie de centre
@@ -824,7 +824,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s11-6@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260314T090000
 DTEND;TZID=Europe/Paris:20260314T093000
 SUMMARY:EDF-C
@@ -838,7 +838,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s11-7@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260314T093000
 DTEND;TZID=Europe/Paris:20260314T123000
 SUMMARY:EDF-C
@@ -852,7 +852,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s11-8@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260314T134500
 DTEND;TZID=Europe/Paris:20260314T154500
 SUMMARY:EDF-C
@@ -866,7 +866,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s11-9@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260314T154500
 DTEND;TZID=Europe/Paris:20260314T174500
 SUMMARY:Anniversaire
@@ -880,7 +880,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260316T180000
 DTEND;TZID=Europe/Paris:20260317T000000
 SUMMARY:Vie de centre
@@ -892,7 +892,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260317T171500
 DTEND;TZID=Europe/Paris:20260317T191500
 SUMMARY:EDF-C
@@ -904,7 +904,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-3@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260317T193000
 DTEND;TZID=Europe/Paris:20260317T223000
 SUMMARY:L-ARB
@@ -916,7 +916,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-4@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260318T120000
 DTEND;TZID=Europe/Paris:20260318T183000
 SUMMARY:Vie de centre
@@ -928,7 +928,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-5@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260318T183000
 DTEND;TZID=Europe/Paris:20260318T220000
 SUMMARY:Événement logistique
@@ -940,7 +940,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-6@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260319T114500
 DTEND;TZID=Europe/Paris:20260319T133000
 SUMMARY:Vie de centre
@@ -952,7 +952,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-7@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260319T173000
 DTEND;TZID=Europe/Paris:20260320T000000
 SUMMARY:Vie de centre
@@ -964,7 +964,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-8@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260321T090000
 DTEND;TZID=Europe/Paris:20260321T123000
 SUMMARY:EDF-C
@@ -976,7 +976,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-9@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260321T134500
 DTEND;TZID=Europe/Paris:20260321T154500
 SUMMARY:EDF-C
@@ -988,7 +988,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s12-10@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260321T154500
 DTEND;TZID=Europe/Paris:20260321T174500
 SUMMARY:Anniversaire
@@ -1000,7 +1000,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s13-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260323T180000
 DTEND;TZID=Europe/Paris:20260324T000000
 SUMMARY:Vie de centre
@@ -1008,11 +1008,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s13-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260324T171500
 DTEND;TZID=Europe/Paris:20260324T191500
 SUMMARY:EDF-C
@@ -1020,11 +1023,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s13-3@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260324T193000
 DTEND;TZID=Europe/Paris:20260324T223000
 SUMMARY:L-ARB
@@ -1032,11 +1038,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s13-4@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260325T173000
 DTEND;TZID=Europe/Paris:20260326T000000
 SUMMARY:Vie de centre
@@ -1044,11 +1053,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s13-5@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260326T173000
 DTEND;TZID=Europe/Paris:20260327T000000
 SUMMARY:Vie de centre
@@ -1056,11 +1068,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s13-6@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260328T090000
 DTEND;TZID=Europe/Paris:20260328T093000
 SUMMARY:EDF-C
@@ -1068,11 +1083,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s13-7@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260328T093000
 DTEND;TZID=Europe/Paris:20260328T123000
 SUMMARY:EDF-B
@@ -1080,11 +1098,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s13-8@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260328T134500
 DTEND;TZID=Europe/Paris:20260328T154500
 SUMMARY:EDF-C
@@ -1092,11 +1113,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s13-9@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260328T154500
 DTEND;TZID=Europe/Paris:20260328T174500
 SUMMARY:Anniversaire
@@ -1104,11 +1128,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260330T180000
 DTEND;TZID=Europe/Paris:20260331T000000
 SUMMARY:Vie de centre
@@ -1121,7 +1148,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260331T140000
 DTEND;TZID=Europe/Paris:20260331T160000
 SUMMARY:Entretien Ménage
@@ -1134,7 +1161,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-3@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260331T160000
 DTEND;TZID=Europe/Paris:20260331T171500
 SUMMARY:Vie de centre
@@ -1147,7 +1174,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-4@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260331T171500
 DTEND;TZID=Europe/Paris:20260331T191500
 SUMMARY:EDF-C
@@ -1160,7 +1187,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-5@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260331T193000
 DTEND;TZID=Europe/Paris:20260331T223000
 SUMMARY:L-ARB
@@ -1173,7 +1200,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-6@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260331T223000
 DTEND;TZID=Europe/Paris:20260401T000000
 SUMMARY:Vie de centre
@@ -1186,7 +1213,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-7@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260401T134500
 DTEND;TZID=Europe/Paris:20260401T174500
 SUMMARY:EDF-C
@@ -1199,7 +1226,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-8@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260401T174500
 DTEND;TZID=Europe/Paris:20260401T201500
 SUMMARY:Vie de centre
@@ -1212,7 +1239,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-9@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260401T201500
 DTEND;TZID=Europe/Paris:20260401T214500
 SUMMARY:Régisseur League
@@ -1225,7 +1252,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-10@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260402T143000
 DTEND;TZID=Europe/Paris:20260402T153000
 SUMMARY:Visite médicale
@@ -1238,7 +1265,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-11@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260402T153000
 DTEND;TZID=Europe/Paris:20260402T163000
 SUMMARY:Vie de centre
@@ -1251,7 +1278,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-12@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260402T163000
 DTEND;TZID=Europe/Paris:20260402T210000
 SUMMARY:Événement régisseur
@@ -1264,7 +1291,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-13@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260402T210000
 DTEND;TZID=Europe/Paris:20260403T000000
 SUMMARY:Vie de centre
@@ -1277,7 +1304,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-14@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260403T171500
 DTEND;TZID=Europe/Paris:20260403T191500
 SUMMARY:EDF-C
@@ -1290,7 +1317,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-15@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260404T090000
 DTEND;TZID=Europe/Paris:20260404T093000
 SUMMARY:EDF-C
@@ -1303,7 +1330,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-16@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260404T093000
 DTEND;TZID=Europe/Paris:20260404T123000
 SUMMARY:EDF-B
@@ -1316,7 +1343,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-17@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260404T134500
 DTEND;TZID=Europe/Paris:20260404T154500
 SUMMARY:EDF-C
@@ -1329,7 +1356,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:perez-loic-s14-18@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260404T154500
 DTEND;TZID=Europe/Paris:20260404T174500
 SUMMARY:Anniversaire

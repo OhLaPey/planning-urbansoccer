@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:toppan-mattis-s9-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260226T200000
 DTEND;TZID=Europe/Paris:20260227T000000
 SUMMARY:Vie de centre
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s9-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260227T180000
 DTEND;TZID=Europe/Paris:20260228T000000
 SUMMARY:Vie de centre
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s9-3@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260301T160000
 DTEND;TZID=Europe/Paris:20260301T231500
 SUMMARY:Vie de centre
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s10-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260303T200000
 DTEND;TZID=Europe/Paris:20260304T000000
 SUMMARY:Vie de centre
@@ -104,7 +104,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s10-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260304T200000
 DTEND;TZID=Europe/Paris:20260305T000000
 SUMMARY:Vie de centre
@@ -122,7 +122,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s10-3@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260306T180000
 DTEND;TZID=Europe/Paris:20260307T000000
 SUMMARY:Vie de centre
@@ -140,7 +140,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s10-4@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260308T160000
 DTEND;TZID=Europe/Paris:20260308T221500
 SUMMARY:Vie de centre
@@ -158,7 +158,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s11-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260311T191500
 DTEND;TZID=Europe/Paris:20260312T000000
 SUMMARY:Vie de centre
@@ -172,7 +172,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s11-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260313T173000
 DTEND;TZID=Europe/Paris:20260314T003000
 SUMMARY:Vie de centre
@@ -186,7 +186,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s12-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260322T150000
 DTEND;TZID=Europe/Paris:20260322T222000
 SUMMARY:[Remplace Mathieu] Vie de centre
@@ -198,7 +198,7 @@ DESCRIPTION:Remplace PUJOL Mathieu\n⚽🥎 EDF et cours padel sur les jour
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s13-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260323T191500
 DTEND;TZID=Europe/Paris:20260324T000000
 SUMMARY:Vie de centre
@@ -206,11 +206,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s13-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260327T173000
 DTEND;TZID=Europe/Paris:20260328T003000
 SUMMARY:Vie de centre
@@ -218,11 +221,14 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  ituels\n🏆⚽️ Betsson League et Business League de lundi à mercredi\
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
- s sont prévus sur les anniversaires
+ s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
+ -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
+  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s14-1@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260401T200000
 DTEND;TZID=Europe/Paris:20260402T000000
 SUMMARY:Vie de centre
@@ -235,7 +241,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s14-2@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260403T173000
 DTEND;TZID=Europe/Paris:20260404T003000
 SUMMARY:Vie de centre
@@ -248,7 +254,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s14-3@urban7d
-DTSTAMP:20260326T081635Z
+DTSTAMP:20260326T101622Z
 DTSTART;TZID=Europe/Paris:20260405T150000
 DTEND;TZID=Europe/Paris:20260405T222000
 SUMMARY:Vie de centre
