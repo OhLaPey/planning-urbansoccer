@@ -13,6 +13,11 @@ on:
         required: false
         type: boolean
         default: false
+      with_presences:
+        description: 'Inclure le fichier de présences PSG Academy'
+        required: false
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -44,6 +49,9 @@ jobs:
           fi
           if [ -n "${{ inputs.pattern }}" ]; then
             ARGS="$ARGS --pattern ${{ inputs.pattern }}"
+          fi
+          if [ "${{ inputs.with_presences }}" != "false" ]; then
+            ARGS="$ARGS --with-presences"
           fi
           python sync_sharepoint.py --no-push $ARGS
 
