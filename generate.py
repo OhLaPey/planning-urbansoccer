@@ -3871,18 +3871,32 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
         .creneau-tab.active {{ background: #E30613; border-color: #E30613; color: white;
                                 box-shadow: 0 0 15px rgba(227,6,19,0.4); }}
 
-        /* ── Session selector ── */
-        .session-selector {{
-            display: flex; align-items: center; gap: 10px;
-            justify-content: center; margin-bottom: 15px; flex-wrap: wrap;
+        /* ── Session navigation ── */
+        .session-nav {{
+            display: flex; align-items: center; gap: 8px;
+            justify-content: center; margin-bottom: 15px;
         }}
-        .session-selector label {{ font-size: 12px; font-weight: 700; color: #aaa; text-transform: uppercase; }}
-        .session-selector select {{
-            padding: 8px 12px; background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.15); border-radius: 6px;
-            color: #fff; font-size: 13px; font-family: inherit; font-weight: 600;
+        .session-nav-btn {{
+            background: none; border: 1px solid rgba(255,255,255,0.2);
+            color: #aaa; font-size: 18px; cursor: pointer; padding: 6px 12px;
+            border-radius: 6px; font-family: inherit; font-weight: 700;
+            transition: all 0.2s; line-height: 1;
         }}
-        .session-selector select:focus {{ border-color: #E30613; outline: none; }}
+        .session-nav-btn:hover {{ color: #E30613; border-color: #E30613; }}
+        .session-nav-btn:disabled {{ opacity: 0.3; cursor: not-allowed; }}
+        .session-nav-info {{
+            font-size: 13px; font-weight: 700; color: #fff;
+            text-align: center; min-width: 140px;
+        }}
+        .session-nav-info small {{ display: block; font-size: 10px; color: #888; font-weight: 500; }}
+
+        /* ── Current session column highlight ── */
+        .session-col.current-session, .session-cell.current-session {{
+            background: rgba(227,6,19,0.15);
+        }}
+        .session-col.current-session {{
+            color: #E30613 !important; font-weight: 900;
+        }}
 
         /* ── Tables ── */
         .group-section {{ margin-bottom: 20px; }}
@@ -3981,9 +3995,10 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             <p class="subtitle">{title}</p>
         </div>
 
-        <div class="session-selector">
-            <label>Séance :</label>
-            <select id="session-select"></select>
+        <div class="session-nav">
+            <button class="session-nav-btn" id="nav-prev" title="Séances précédentes">&larr;</button>
+            <div class="session-nav-info" id="nav-info"></div>
+            <button class="session-nav-btn" id="nav-next" title="Séances suivantes">&rarr;</button>
         </div>
 
         <div class="table-wrapper">
@@ -4001,6 +4016,7 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
         var JSON_PATH = 'data/presences-{slug}.json';
         var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
 
+        var VISIBLE_SESSIONS = 5;
         var pendingChanges = {{}};
         var saveTimer = null;
         var saving = false;
@@ -4009,16 +4025,15 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             return localStorage.getItem('planning-admin-token') || atob(_p.join(''));
         }}
 
-        // ── Session selector ──
-        var sessionSelect = document.getElementById('session-select');
+        // ── Sessions (non-vacation only) ──
         var sessions = DATA.sessions.filter(function(s) {{ return !s.is_vacation; }});
 
-        // Determine current session
+        // Determine current session index
         var today = new Date();
         var todayStr = today.getFullYear() + '-' +
             String(today.getMonth()+1).padStart(2,'0') + '-' +
             String(today.getDate()).padStart(2,'0');
-        var currentSession = sessions.length > 0 ? sessions[sessions.length - 1].label : null;
+        var currentIdx = sessions.length - 1;
         for (var i = 0; i < sessions.length; i++) {{
             if (sessions[i].date) {{
                 var parts = sessions[i].date.split('/');
@@ -4026,42 +4041,82 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
                     var yr = parseInt(parts[2]);
                     if (yr < 100) yr += 2000;
                     var sDate = yr + '-' + parts[1].padStart(2,'0') + '-' + parts[0].padStart(2,'0');
-                    if (sDate >= todayStr) {{ currentSession = sessions[i].label; break; }}
+                    if (sDate >= todayStr) {{ currentIdx = i; break; }}
                 }}
             }}
         }}
 
-        // Populate select
-        sessions.forEach(function(s) {{
-            var opt = document.createElement('option');
-            opt.value = s.label;
-            opt.textContent = s.label + (s.date ? ' (' + s.date + ')' : '');
-            if (s.label === currentSession) opt.selected = true;
-            sessionSelect.appendChild(opt);
-        }});
+        // Window position: show 5 sessions ending at currentIdx
+        var windowEnd = currentIdx;
+        var windowStart = Math.max(0, windowEnd - VISIBLE_SESSIONS + 1);
 
-        function getSelectedSession() {{ return sessionSelect.value; }}
+        var navPrev = document.getElementById('nav-prev');
+        var navNext = document.getElementById('nav-next');
+        var navInfo = document.getElementById('nav-info');
+
+        function getVisibleLabels() {{
+            var labels = [];
+            for (var i = windowStart; i <= Math.min(windowEnd, sessions.length - 1); i++) {{
+                labels.push(sessions[i].label);
+            }}
+            return labels;
+        }}
+
+        function updateNav() {{
+            var visible = getVisibleLabels();
+            var first = visible[0] || '';
+            var last = visible[visible.length - 1] || '';
+            var firstDate = '', lastDate = '';
+            sessions.forEach(function(s) {{
+                if (s.label === first && s.date) firstDate = s.date;
+                if (s.label === last && s.date) lastDate = s.date;
+            }});
+            navInfo.innerHTML = '<strong>' + first + ' — ' + last + '</strong>' +
+                '<small>' + firstDate + ' → ' + lastDate + '</small>';
+            navPrev.disabled = windowStart <= 0;
+            navNext.disabled = windowEnd >= sessions.length - 1;
+        }}
 
         function highlightSession() {{
-            var sel = getSelectedSession();
+            var visible = getVisibleLabels();
+            var currentLabel = sessions[currentIdx] ? sessions[currentIdx].label : '';
+            // Show/hide columns
             document.querySelectorAll('.session-col, .session-cell').forEach(function(el) {{
                 var label = el.getAttribute('data-label');
-                el.style.display = (label === sel) ? '' : 'none';
+                var show = visible.indexOf(label) !== -1;
+                el.style.display = show ? '' : 'none';
+                // Highlight current session column
+                el.classList.toggle('current-session', label === currentLabel);
             }});
-            // Enable checkboxes for selected session
+            // Enable checkboxes only for the current (latest) session
             document.querySelectorAll('.att-cb').forEach(function(cb) {{
                 var label = cb.getAttribute('data-label');
-                cb.disabled = label !== sel;
-                if (label === sel) cb.classList.add('editable');
-                else cb.classList.remove('editable');
+                var isCurrent = label === currentLabel;
+                cb.disabled = !isCurrent;
+                cb.classList.toggle('editable', isCurrent);
             }});
+            updateNav();
             updateTotals();
         }}
 
-        sessionSelect.addEventListener('change', highlightSession);
+        navPrev.addEventListener('click', function() {{
+            if (windowStart > 0) {{
+                windowStart--;
+                windowEnd--;
+                highlightSession();
+            }}
+        }});
+        navNext.addEventListener('click', function() {{
+            if (windowEnd < sessions.length - 1) {{
+                windowStart++;
+                windowEnd++;
+                highlightSession();
+            }}
+        }});
 
         // ── Totals ──
         function updateTotals() {{
+            var visible = getVisibleLabels();
             document.querySelectorAll('.group-section').forEach(function(section) {{
                 var rows = section.querySelectorAll('tbody tr');
                 rows.forEach(function(row) {{
@@ -4070,10 +4125,10 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
                     var totalCell = row.querySelector('.total-val');
                     if (totalCell) totalCell.textContent = total;
                 }});
-                var sel = getSelectedSession();
+                // Footer totals for each visible session
                 section.querySelectorAll('tfoot .session-cell').forEach(function(fc) {{
                     var label = fc.getAttribute('data-label');
-                    if (label === sel) {{
+                    if (visible.indexOf(label) !== -1) {{
                         var count = 0;
                         rows.forEach(function(row) {{
                             var cb = row.querySelector('.att-cb[data-label="' + label + '"]');
@@ -4120,7 +4175,7 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             pendingChanges = {{}};
 
             // Update DATA in memory
-            var sel = getSelectedSession();
+            var sel = sessions[currentIdx] ? sessions[currentIdx].label : '';
             Object.keys(changesToSave).forEach(function(key) {{
                 var parts = key.split('-');
                 var row = parseInt(parts[0]);
@@ -4344,17 +4399,31 @@ def _write_attendance_index(creneaux_index):
             background: rgba(227,6,19,0.1); border-color: rgba(227,6,19,0.3);
             transform: translateY(-2px);
         }}
-        /* Today's sessions: inverted colors */
+        /* Today's sessions: strong red highlight */
         .creneau-card.today {{
-            background: #E30613; border-color: #E30613;
-            box-shadow: 0 0 20px rgba(227,6,19,0.5);
+            background: linear-gradient(135deg, #E30613 0%, #b8050f 100%);
+            border: 2px solid #ff3040;
+            box-shadow: 0 0 25px rgba(227,6,19,0.6), inset 0 0 20px rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }}
+        .creneau-card.today::before {{
+            content: "AUJOURD'HUI";
+            position: absolute; top: 10px; right: 12px;
+            font-size: 9px; font-weight: 900; letter-spacing: 2px;
+            color: rgba(255,255,255,0.7); text-transform: uppercase;
         }}
         .creneau-card.today:hover {{
-            background: #ff1a2a; border-color: #ff1a2a;
+            background: linear-gradient(135deg, #ff1a2a 0%, #E30613 100%);
+            border-color: #ff5060;
             transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(227,6,19,0.8);
+        }}
+        .creneau-card.today .creneau-title {{
+            color: #fff; font-size: 18px;
         }}
         .creneau-card.today .creneau-info {{
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.85);
         }}
         .creneau-title {{
             font-size: 16px; font-weight: 800; text-transform: uppercase;
