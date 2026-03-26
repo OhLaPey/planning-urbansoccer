@@ -58,6 +58,18 @@
             background: rgba(227,6,19,0.1); border-color: rgba(227,6,19,0.3);
             transform: translateY(-2px);
         }
+        /* Today's sessions: inverted colors */
+        .creneau-card.today {
+            background: #E30613; border-color: #E30613;
+            box-shadow: 0 0 20px rgba(227,6,19,0.5);
+        }
+        .creneau-card.today:hover {
+            background: #ff1a2a; border-color: #ff1a2a;
+            transform: translateY(-2px);
+        }
+        .creneau-card.today .creneau-info {
+            color: rgba(255,255,255,0.8);
+        }
         .creneau-title {
             font-size: 16px; font-weight: 800; text-transform: uppercase;
             letter-spacing: 1px; margin-bottom: 4px;
@@ -75,23 +87,59 @@
             <p class="subtitle">Suivi des présences</p>
         </div>
 
-<a href="presences-samedi-11h15.html" class="creneau-card">
-  <div class="creneau-title">SAMEDI 11H15</div>
-  <div class="creneau-info">26 enfants &middot; 23 séances</div>
-</a>
-<a href="presences-mercredi-14h.html" class="creneau-card">
-  <div class="creneau-title">MERCREDI 14H</div>
-  <div class="creneau-info">8 enfants &middot; 26 séances</div>
-</a>
-<a href="presences-lundi-17h30.html" class="creneau-card">
+<a href="presences-lundi-17h30.html" class="creneau-card" data-day="0">
   <div class="creneau-title">LUNDI 17H30</div>
   <div class="creneau-info">6 enfants &middot; 23 séances</div>
 </a>
-<a href="presences-baby.html" class="creneau-card">
+<a href="presences-mardi-17h30.html" class="creneau-card" data-day="1">
+  <div class="creneau-title">MARDI 17H30</div>
+  <div class="creneau-info">7 enfants &middot; 26 séances</div>
+</a>
+<a href="presences-mercredi-14h.html" class="creneau-card" data-day="2">
+  <div class="creneau-title">MERCREDI 14H</div>
+  <div class="creneau-info">8 enfants &middot; 26 séances</div>
+</a>
+<a href="presences-mercredi-15h45.html" class="creneau-card" data-day="2">
+  <div class="creneau-title">MERCREDI 15H45</div>
+  <div class="creneau-info">32 enfants &middot; 26 séances</div>
+</a>
+<a href="presences-vendredi-17h30.html" class="creneau-card" data-day="4">
+  <div class="creneau-title">VENDREDI 17H30</div>
+  <div class="creneau-info">8 enfants &middot; 26 séances</div>
+</a>
+<a href="presences-samedi-9h30.html" class="creneau-card" data-day="5">
+  <div class="creneau-title">SAMEDI 9H30</div>
+  <div class="creneau-info">9 enfants &middot; 23 séances</div>
+</a>
+<a href="presences-samedi-11h15.html" class="creneau-card" data-day="5">
+  <div class="creneau-title">SAMEDI 11H15</div>
+  <div class="creneau-info">26 enfants &middot; 23 séances</div>
+</a>
+<a href="presences-samedi-14h00.html" class="creneau-card" data-day="5">
+  <div class="creneau-title">SAMEDI 14H00</div>
+  <div class="creneau-info">8 enfants &middot; 23 séances</div>
+</a>
+<a href="presences-samedi-15h45.html" class="creneau-card" data-day="5">
+  <div class="creneau-title">SAMEDI 15H45</div>
+  <div class="creneau-info">7 enfants &middot; 23 séances</div>
+</a>
+<a href="presences-baby.html" class="creneau-card" data-day="5">
   <div class="creneau-title">BABY</div>
   <div class="creneau-info">5 enfants &middot; 23 séances</div>
 </a>
 
     </div>
+    <script>
+    (function() {
+        // Highlight today's sessions (JS day: 0=Sun,1=Mon...6=Sat → convert to 0=Mon...6=Sun)
+        var jsDay = new Date().getDay();
+        var pyDay = jsDay === 0 ? 6 : jsDay - 1; // 0=Mon, 1=Tue, ... 5=Sat, 6=Sun
+        document.querySelectorAll('.creneau-card').forEach(function(card) {
+            if (parseInt(card.getAttribute('data-day')) === pyDay) {
+                card.classList.add('today');
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
