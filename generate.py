@@ -658,7 +658,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         .top-bar {{ display: flex; justify-content: space-between; align-items: center;
                      padding: 8px 4px 0; }}
         .top-bar .admin-btn, .top-bar .psg-btn {{
-            padding: 5px 12px; border-radius: 6px; font-size: 10px; font-weight: 700;
+            padding: 10px 22px; border-radius: 8px; font-size: 14px; font-weight: 700;
             cursor: pointer; text-decoration: none; transition: all 0.25s;
             font-family: 'Montserrat', sans-serif; text-transform: uppercase;
             letter-spacing: 0.5px; border: 1px solid rgba(255,255,255,0.12);
@@ -1113,7 +1113,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             .dates {{ font-size: 16px; padding: 8px 20px; }}
             .week-selector {{ gap: 8px; }}
             .week-tab {{ font-size: 14px; padding: 10px 18px; }}
-            .top-bar .admin-btn, .top-bar .psg-btn {{ font-size: 9px; padding: 4px 8px; }}
+            .top-bar .admin-btn, .top-bar .psg-btn {{ font-size: 11px; padding: 6px 12px; }}
             .view-toggle {{ max-width: 500px; margin-left: auto; margin-right: auto; }}
             .view-btn {{ font-size: 14px; padding: 10px; }}
             .day-tabs {{ gap: 6px; margin-bottom: 16px; }}
