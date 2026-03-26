@@ -58,17 +58,31 @@
             background: rgba(227,6,19,0.1); border-color: rgba(227,6,19,0.3);
             transform: translateY(-2px);
         }
-        /* Today's sessions: inverted colors */
+        /* Today's sessions: strong red highlight */
         .creneau-card.today {
-            background: #E30613; border-color: #E30613;
-            box-shadow: 0 0 20px rgba(227,6,19,0.5);
+            background: linear-gradient(135deg, #E30613 0%, #b8050f 100%);
+            border: 2px solid #ff3040;
+            box-shadow: 0 0 25px rgba(227,6,19,0.6), inset 0 0 20px rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        .creneau-card.today::before {
+            content: "AUJOURD'HUI";
+            position: absolute; top: 10px; right: 12px;
+            font-size: 9px; font-weight: 900; letter-spacing: 2px;
+            color: rgba(255,255,255,0.7); text-transform: uppercase;
         }
         .creneau-card.today:hover {
-            background: #ff1a2a; border-color: #ff1a2a;
+            background: linear-gradient(135deg, #ff1a2a 0%, #E30613 100%);
+            border-color: #ff5060;
             transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(227,6,19,0.8);
+        }
+        .creneau-card.today .creneau-title {
+            color: #fff; font-size: 18px;
         }
         .creneau-card.today .creneau-info {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.85);
         }
         .creneau-title {
             font-size: 16px; font-weight: 800; text-transform: uppercase;
