@@ -1,0 +1,486 @@
+{
+  "title": "MERCREDI 14H",
+  "slug": "mercredi-14h",
+  "sheet_name": "MERCREDI 14h Présence",
+  "sessions": [
+    {
+      "col": 5,
+      "label": "S1",
+      "date": "10/09/25",
+      "is_vacation": false
+    },
+    {
+      "col": 6,
+      "label": "S2",
+      "date": "17/09/25",
+      "is_vacation": false
+    },
+    {
+      "col": 7,
+      "label": "S3",
+      "date": "24/09/25",
+      "is_vacation": false
+    },
+    {
+      "col": 8,
+      "label": "S4",
+      "date": "01/10/25",
+      "is_vacation": false
+    },
+    {
+      "col": 9,
+      "label": "S5",
+      "date": "08/10/25",
+      "is_vacation": false
+    },
+    {
+      "col": 10,
+      "label": "S6",
+      "date": "15/10/25",
+      "is_vacation": false
+    },
+    {
+      "col": 11,
+      "label": "V",
+      "date": "22/10/25",
+      "is_vacation": true
+    },
+    {
+      "col": 12,
+      "label": "V",
+      "date": "29/10/25",
+      "is_vacation": true
+    },
+    {
+      "col": 13,
+      "label": "S7",
+      "date": "05/11/25",
+      "is_vacation": false
+    },
+    {
+      "col": 14,
+      "label": "S8",
+      "date": "12/11/25",
+      "is_vacation": false
+    },
+    {
+      "col": 15,
+      "label": "S9",
+      "date": "19/11/25",
+      "is_vacation": false
+    },
+    {
+      "col": 16,
+      "label": "S10",
+      "date": "26/11/25",
+      "is_vacation": false
+    },
+    {
+      "col": 17,
+      "label": "S11",
+      "date": "03/12/25",
+      "is_vacation": false
+    },
+    {
+      "col": 18,
+      "label": "S12",
+      "date": "10/12/25",
+      "is_vacation": false
+    },
+    {
+      "col": 19,
+      "label": "S13",
+      "date": "17/12/25",
+      "is_vacation": false
+    },
+    {
+      "col": 20,
+      "label": "V",
+      "date": "24/12/25",
+      "is_vacation": true
+    },
+    {
+      "col": 21,
+      "label": "V",
+      "date": "31/12/25",
+      "is_vacation": true
+    },
+    {
+      "col": 22,
+      "label": "S14",
+      "date": "07/01/26",
+      "is_vacation": false
+    },
+    {
+      "col": 23,
+      "label": "S15",
+      "date": "14/01/26",
+      "is_vacation": false
+    },
+    {
+      "col": 24,
+      "label": "S16",
+      "date": "21/01/26",
+      "is_vacation": false
+    },
+    {
+      "col": 25,
+      "label": "S17",
+      "date": "28/01/26",
+      "is_vacation": false
+    },
+    {
+      "col": 26,
+      "label": "S18",
+      "date": "04/02/26",
+      "is_vacation": false
+    },
+    {
+      "col": 27,
+      "label": "S19",
+      "date": "11/02/26",
+      "is_vacation": false
+    },
+    {
+      "col": 28,
+      "label": "V",
+      "date": "18/02/26",
+      "is_vacation": true
+    },
+    {
+      "col": 29,
+      "label": "V",
+      "date": "25/02/26",
+      "is_vacation": true
+    },
+    {
+      "col": 30,
+      "label": "S20",
+      "date": "04/03/26",
+      "is_vacation": false
+    },
+    {
+      "col": 31,
+      "label": "S21",
+      "date": "11/03/26",
+      "is_vacation": false
+    },
+    {
+      "col": 32,
+      "label": "S22",
+      "date": "18/03/26",
+      "is_vacation": false
+    },
+    {
+      "col": 33,
+      "label": "S23",
+      "date": "25/03/26",
+      "is_vacation": false
+    },
+    {
+      "col": 34,
+      "label": "S24",
+      "date": "01/04/26",
+      "is_vacation": false
+    },
+    {
+      "col": 35,
+      "label": "S25",
+      "date": "08/04/26",
+      "is_vacation": false
+    },
+    {
+      "col": 36,
+      "label": "S26",
+      "date": "15/04/26",
+      "is_vacation": false
+    }
+  ],
+  "groups": [
+    {
+      "name": "Groupe 1",
+      "kids": [
+        {
+          "row": 7,
+          "num": 1,
+          "name": "MARTIN Lucas",
+          "category": "U10",
+          "attendance": {
+            "S1": 1,
+            "S2": 0,
+            "S3": 0,
+            "S4": 1,
+            "S5": 1,
+            "S6": 1,
+            "V": null,
+            "S7": 0,
+            "S8": 1,
+            "S9": 0,
+            "S10": 1,
+            "S11": 1,
+            "S12": 1,
+            "S13": 1,
+            "S14": 1,
+            "S15": 1,
+            "S16": 1,
+            "S17": 1,
+            "S18": 1,
+            "S19": 1,
+            "S20": 1,
+            "S21": null,
+            "S22": null,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null
+          }
+        },
+        {
+          "row": 8,
+          "num": 2,
+          "name": "DUBOIS Nathan",
+          "category": "U10",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 1,
+            "S4": 1,
+            "S5": 1,
+            "S6": 1,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 1,
+            "S10": 1,
+            "S11": 1,
+            "S12": 1,
+            "S13": 1,
+            "S14": 0,
+            "S15": 1,
+            "S16": 1,
+            "S17": 0,
+            "S18": 1,
+            "S19": 1,
+            "S20": 1,
+            "S21": null,
+            "S22": null,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null
+          }
+        },
+        {
+          "row": 9,
+          "num": 3,
+          "name": "PETIT Arthur",
+          "category": "U10",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 0,
+            "S4": 0,
+            "S5": 1,
+            "S6": 1,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 1,
+            "S10": 1,
+            "S11": 1,
+            "S12": 1,
+            "S13": 1,
+            "S14": 1,
+            "S15": 1,
+            "S16": 1,
+            "S17": 1,
+            "S18": 1,
+            "S19": 1,
+            "S20": 1,
+            "S21": null,
+            "S22": null,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null
+          }
+        },
+        {
+          "row": 10,
+          "num": 4,
+          "name": "ROBERT Léo",
+          "category": "U10",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 1,
+            "S4": 1,
+            "S5": 1,
+            "S6": 1,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 1,
+            "S10": 1,
+            "S11": 1,
+            "S12": 1,
+            "S13": 1,
+            "S14": 0,
+            "S15": 1,
+            "S16": 1,
+            "S17": 1,
+            "S18": 1,
+            "S19": 0,
+            "S20": 1,
+            "S21": null,
+            "S22": null,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null
+          }
+        },
+        {
+          "row": 11,
+          "num": 5,
+          "name": "RICHARD Hugo",
+          "category": "U11",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 1,
+            "S4": 1,
+            "S5": 0,
+            "S6": 1,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 1,
+            "S10": 1,
+            "S11": 1,
+            "S12": 1,
+            "S13": 1,
+            "S14": 1,
+            "S15": 1,
+            "S16": 1,
+            "S17": 1,
+            "S18": 1,
+            "S19": 0,
+            "S20": 0,
+            "S21": null,
+            "S22": null,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null
+          }
+        },
+        {
+          "row": 12,
+          "num": 6,
+          "name": "MOREAU Théo",
+          "category": "U11",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 1,
+            "S4": 1,
+            "S5": 0,
+            "S6": 1,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 1,
+            "S10": 1,
+            "S11": 1,
+            "S12": 1,
+            "S13": 0,
+            "S14": 1,
+            "S15": 1,
+            "S16": 0,
+            "S17": 1,
+            "S18": 1,
+            "S19": 1,
+            "S20": 1,
+            "S21": null,
+            "S22": null,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null
+          }
+        },
+        {
+          "row": 13,
+          "num": 7,
+          "name": "SIMON Gabriel",
+          "category": "U11",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 0,
+            "S4": 0,
+            "S5": 1,
+            "S6": 0,
+            "V": null,
+            "S7": 1,
+            "S8": 0,
+            "S9": 1,
+            "S10": 1,
+            "S11": 1,
+            "S12": 0,
+            "S13": 1,
+            "S14": 0,
+            "S15": 1,
+            "S16": 1,
+            "S17": 1,
+            "S18": 1,
+            "S19": 1,
+            "S20": 0,
+            "S21": null,
+            "S22": null,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null
+          }
+        },
+        {
+          "row": 14,
+          "num": 8,
+          "name": "LAURENT Raphaël",
+          "category": "U11",
+          "attendance": {
+            "S1": 0,
+            "S2": 1,
+            "S3": 0,
+            "S4": 1,
+            "S5": 1,
+            "S6": 1,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 0,
+            "S10": 1,
+            "S11": 1,
+            "S12": 1,
+            "S13": 1,
+            "S14": 0,
+            "S15": 1,
+            "S16": 1,
+            "S17": 1,
+            "S18": 0,
+            "S19": 1,
+            "S20": 1,
+            "S21": null,
+            "S22": null,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null
+          }
+        }
+      ]
+    }
+  ]
+}

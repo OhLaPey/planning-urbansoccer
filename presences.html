@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSG Academy - Présences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0C1C3E;
+            min-height: 100vh;
+            padding: 15px;
+            color: #fff;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background: url('bg-psg.jpg') center center / cover no-repeat;
+            opacity: 0.15;
+        }
+        .container {
+            position: relative; z-index: 1; max-width: 600px; margin: 0 auto;
+            background: rgba(12,28,62,0.95); border-radius: 8px;
+            padding: 20px; margin-top: 20px;
+            border-top: 4px solid #E30613;
+        }
+        .header {
+            text-align: center; margin-bottom: 24px; padding: 14px 10px 8px;
+            position: relative;
+        }
+        .back-btn {
+            position: absolute; top: 8px; left: 0;
+            background: none; border: 1px solid rgba(255,255,255,0.15);
+            color: #aaa; font-size: 11px; cursor: pointer; padding: 6px 12px;
+            border-radius: 6px; text-decoration: none; font-family: inherit;
+            font-weight: 600; transition: all 0.2s;
+        }
+        .back-btn:hover { color: #E30613; border-color: #E30613; }
+        h1 {
+            color: #fff; font-size: 24px; font-weight: 900; margin-bottom: 4px;
+            text-transform: uppercase; letter-spacing: 2px;
+        }
+        .subtitle {
+            color: #E30613; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px;
+        }
+        .creneau-card {
+            display: block; padding: 18px 20px; margin-bottom: 10px;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px; text-decoration: none; color: #fff;
+            transition: all 0.2s;
+        }
+        .creneau-card:hover {
+            background: rgba(227,6,19,0.1); border-color: rgba(227,6,19,0.3);
+            transform: translateY(-2px);
+        }
+        .creneau-title {
+            font-size: 16px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 4px;
+        }
+        .creneau-info {
+            font-size: 12px; color: #888; font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-btn">&larr; Planning</a>
+            <h1>PSG Academy</h1>
+            <p class="subtitle">Suivi des présences</p>
+        </div>
+
+<a href="presences-samedi-11h15.html" class="creneau-card">
+  <div class="creneau-title">SAMEDI 11H15</div>
+  <div class="creneau-info">26 enfants &middot; 23 séances</div>
+</a>
+<a href="presences-mercredi-14h.html" class="creneau-card">
+  <div class="creneau-title">MERCREDI 14H</div>
+  <div class="creneau-info">8 enfants &middot; 26 séances</div>
+</a>
+<a href="presences-lundi-17h30.html" class="creneau-card">
+  <div class="creneau-title">LUNDI 17H30</div>
+  <div class="creneau-info">6 enfants &middot; 23 séances</div>
+</a>
+<a href="presences-baby.html" class="creneau-card">
+  <div class="creneau-title">BABY</div>
+  <div class="creneau-info">5 enfants &middot; 23 séances</div>
+</a>
+
+    </div>
+</body>
+</html>
