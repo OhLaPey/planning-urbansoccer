@@ -44,6 +44,9 @@ jobs:
           cp index.html _site/
           cp S*.html _site/
           cp bg-team.jpg _site/ 2>/dev/null || true
+          cp bg-psg.jpg _site/ 2>/dev/null || true
+          cp presences*.html _site/ 2>/dev/null || true
+          cp manifest.json _site/ 2>/dev/null || true
           cp -r notes/ _site/notes/ 2>/dev/null || true
           cp sw.js _site/ 2>/dev/null || true
           cp latest.json _site/ 2>/dev/null || true
