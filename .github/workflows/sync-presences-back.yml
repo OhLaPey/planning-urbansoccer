@@ -1,0 +1,37 @@
+name: Sync présences → SharePoint
+
+# Se déclenche quand les JSON de présences sont modifiés sur main
+# (= quand quelqu'un coche des présences sur la page web)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/presences-*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync-back:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer les dépendances
+        run: pip install requests openpyxl
+
+      - name: Sync présences vers SharePoint
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          SHAREPOINT_SITE_URL: ${{ secrets.SHAREPOINT_SITE_URL }}
+          SHAREPOINT_SITE_ID: ${{ secrets.SHAREPOINT_SITE_ID }}
+          SHAREPOINT_DRIVE_ID: ${{ secrets.SHAREPOINT_DRIVE_ID }}
+          SHAREPOINT_FOLDER_PATH: ${{ secrets.SHAREPOINT_FOLDER_PATH || 'General/RH/Plannings' }}
+        run: python sync_presences_to_sharepoint.py

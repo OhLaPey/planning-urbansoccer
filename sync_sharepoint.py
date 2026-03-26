@@ -171,6 +171,42 @@ def download_file(token: str, drive_id: str, item_id: str, dest_path: str):
         f.write(resp.content)
 
 
+def upload_file(token: str, drive_id: str, folder_path: str,
+                filename: str, local_path: str):
+    """Uploade (ou remplace) un fichier vers SharePoint."""
+    encoded_path = quote(f"{folder_path}/{filename}")
+    url = f"{GRAPH_BASE}/drives/{drive_id}/root:/{encoded_path}:/content"
+    with open(local_path, "rb") as f:
+        data = f.read()
+    resp = requests.put(
+        url,
+        headers={
+            **graph_headers(token),
+            "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        },
+        data=data,
+        timeout=120,
+    )
+    resp.raise_for_status()
+    return resp.json()
+
+
+def find_attendance_item(token: str, drive_id: str) -> dict | None:
+    """Trouve le fichier de présences dans le dossier SharePoint. Retourne l'item Graph ou None."""
+    folder_path = quote(SHAREPOINT_FOLDER_PATH)
+    url = f"{GRAPH_BASE}/drives/{drive_id}/root:/{folder_path}:/children"
+    params = {"$select": "name,id,size,lastModifiedDateTime,file"}
+    resp = requests.get(url, headers=graph_headers(token), params=params, timeout=30)
+    resp.raise_for_status()
+    for item in resp.json().get("value", []):
+        name = item.get("name", "")
+        if name.startswith("~$"):
+            continue
+        if ATTENDANCE_PATTERN.match(name):
+            return item
+    return None
+
+
 # ── Git operations ───────────────────────────────────────────────────────────
 
 def git_has_changes() -> bool:
