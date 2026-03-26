@@ -3777,7 +3777,7 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
                         f'<td class="session-cell {cls}" data-label="{s["label"]}" '
                         f'data-row="{kid["row"]}" data-col="{s["col"]}">'
                         f'<input type="checkbox" class="att-cb" data-label="{s["label"]}" '
-                        f'data-row="{kid["row"]}" data-col="{s["col"]}"{checked} disabled>'
+                        f'data-row="{kid["row"]}" data-col="{s["col"]}"{checked}>'
                         f'</td>\n'
                     )
             # Total present
@@ -3940,39 +3940,16 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
         .total-row td {{ font-weight: 700; border-top: 2px solid rgba(255,255,255,0.15);
                           background: rgba(255,255,255,0.03); }}
 
-        /* ── Edit mode ── */
-        .edit-bar {{
-            display: none; justify-content: center; gap: 10px;
-            margin-bottom: 12px; padding: 10px;
-            background: rgba(227,6,19,0.1); border: 1px solid rgba(227,6,19,0.3);
-            border-radius: 8px;
+        /* ── Auto-save indicator ── */
+        .save-indicator {{
+            position: fixed; bottom: 20px; right: 20px; z-index: 100;
+            padding: 8px 16px; border-radius: 8px; font-size: 12px;
+            font-weight: 700; font-family: 'Montserrat', sans-serif;
+            opacity: 0; transition: opacity 0.3s; pointer-events: none;
         }}
-        .edit-bar.active {{ display: flex; flex-wrap: wrap; align-items: center; }}
-        .edit-bar .badge {{ font-size: 11px; font-weight: 700; color: #E30613;
-                             text-transform: uppercase; letter-spacing: 1px; }}
-        .save-btn {{
-            padding: 8px 20px; background: #E30613; border: none; border-radius: 6px;
-            color: white; font-weight: 700; font-size: 12px; cursor: pointer;
-            font-family: inherit; text-transform: uppercase; transition: all 0.2s;
-        }}
-        .save-btn:hover {{ background: #ff1a2a; box-shadow: 0 0 15px rgba(227,6,19,0.4); }}
-        .save-btn:disabled {{ opacity: 0.5; cursor: not-allowed; }}
-        .cancel-btn {{
-            padding: 8px 16px; background: none; border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 6px; color: #aaa; font-weight: 600; font-size: 12px;
-            cursor: pointer; font-family: inherit; transition: all 0.2s;
-        }}
-        .cancel-btn:hover {{ border-color: #fff; color: #fff; }}
-
-        /* ── Admin button ── */
-        .admin-btn {{
-            position: absolute; top: 8px; right: 8px;
-            background: none; border: 1px solid rgba(255,255,255,0.15);
-            color: #555; font-size: 16px; cursor: pointer; padding: 4px 10px;
-            border-radius: 6px; transition: all 0.2s;
-        }}
-        .admin-btn:hover {{ color: #E30613; border-color: #E30613; }}
-        .admin-btn.unlocked {{ color: #E30613; border-color: #E30613; }}
+        .save-indicator.saving {{ opacity: 1; background: rgba(255,165,0,0.9); color: #fff; }}
+        .save-indicator.saved {{ opacity: 1; background: rgba(0,200,120,0.9); color: #fff; }}
+        .save-indicator.error {{ opacity: 1; background: rgba(227,6,19,0.9); color: #fff; }}
 
         /* ── Responsive ── */
         .table-wrapper {{ overflow-x: auto; -webkit-overflow-scrolling: touch; }}
@@ -3998,7 +3975,6 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
 <body>
     <div class="container">
         <a href="presences.html" class="back-btn">&larr; Créneaux</a>
-        <button class="admin-btn" id="admin-btn" title="Mode édition">&#9881;</button>
 
         <div class="header">
             <h1>PSG Academy</h1>
@@ -4010,17 +3986,12 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             <select id="session-select"></select>
         </div>
 
-        <div class="edit-bar" id="edit-bar">
-            <span class="badge">Mode édition</span>
-            <button class="save-btn" id="save-btn" disabled>Enregistrer</button>
-            <button class="cancel-btn" id="cancel-btn">Annuler</button>
-        </div>
-
         <div class="table-wrapper">
 {groups_html}
         </div>
     </div>
 
+    <div class="save-indicator" id="save-indicator"></div>
     <div class="status-msg" id="status-msg"></div>
 
     <script>
@@ -4028,32 +3999,19 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
         var DATA = {json_embedded};
         var REPO = 'OhLaPey/planning-urbansoccer';
         var JSON_PATH = 'data/presences-{slug}.json';
-        var TOKEN_KEY = 'planning-admin-token';
-        var STAFF_CODE = '1937';
-        var STAFF_KEY = 'planning-staff-ok';
         var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
 
-        var editMode = false;
-        var dirty = false;
-        var pendingChanges = {{}};  // {{"row-col": value}}
+        var pendingChanges = {{}};
+        var saveTimer = null;
+        var saving = false;
 
-        // ── Auth ──
-        function isStaffVerified() {{ return sessionStorage.getItem(STAFF_KEY) === '1'; }}
-        function verifyStaff() {{
-            if (isStaffVerified()) return true;
-            var code = prompt('Code staff requis :');
-            if (code && code.trim() === STAFF_CODE) {{ sessionStorage.setItem(STAFF_KEY, '1'); return true; }}
-            alert('Code staff incorrect.'); return false;
-        }}
         function getToken() {{
-            if (!isStaffVerified()) return '';
-            return localStorage.getItem(TOKEN_KEY) || atob(_p.join(''));
+            return localStorage.getItem('planning-admin-token') || atob(_p.join(''));
         }}
 
         // ── Session selector ──
         var sessionSelect = document.getElementById('session-select');
         var sessions = DATA.sessions.filter(function(s) {{ return !s.is_vacation; }});
-        var vacations = DATA.sessions.filter(function(s) {{ return s.is_vacation; }});
 
         // Determine current session
         var today = new Date();
@@ -4063,7 +4021,6 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
         var currentSession = sessions.length > 0 ? sessions[sessions.length - 1].label : null;
         for (var i = 0; i < sessions.length; i++) {{
             if (sessions[i].date) {{
-                // Parse dd/mm/yy
                 var parts = sessions[i].date.split('/');
                 if (parts.length === 3) {{
                     var yr = parseInt(parts[2]);
@@ -4087,41 +4044,34 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
 
         function highlightSession() {{
             var sel = getSelectedSession();
-            // Hide all session columns except selected + show name/num/cat/total
             document.querySelectorAll('.session-col, .session-cell').forEach(function(el) {{
                 var label = el.getAttribute('data-label');
                 el.style.display = (label === sel) ? '' : 'none';
             }});
+            // Enable checkboxes for selected session
+            document.querySelectorAll('.att-cb').forEach(function(cb) {{
+                var label = cb.getAttribute('data-label');
+                cb.disabled = label !== sel;
+                if (label === sel) cb.classList.add('editable');
+                else cb.classList.remove('editable');
+            }});
             updateTotals();
         }}
 
-        sessionSelect.addEventListener('change', function() {{
-            if (dirty) {{
-                if (!confirm('Modifications non enregistrées. Changer de séance ?')) {{
-                    sessionSelect.value = currentSession;
-                    return;
-                }}
-                cancelEdit();
-            }}
-            highlightSession();
-        }});
+        sessionSelect.addEventListener('change', highlightSession);
 
         // ── Totals ──
         function updateTotals() {{
             document.querySelectorAll('.group-section').forEach(function(section) {{
                 var rows = section.querySelectorAll('tbody tr');
                 rows.forEach(function(row) {{
-                    // Count all checked checkboxes for this kid
                     var total = 0;
-                    var cbs = row.querySelectorAll('.att-cb');
-                    cbs.forEach(function(cb) {{ if (cb.checked) total++; }});
+                    row.querySelectorAll('.att-cb').forEach(function(cb) {{ if (cb.checked) total++; }});
                     var totalCell = row.querySelector('.total-val');
                     if (totalCell) totalCell.textContent = total;
                 }});
-                // Footer total for selected session
                 var sel = getSelectedSession();
-                var footCells = section.querySelectorAll('tfoot .session-cell');
-                footCells.forEach(function(fc) {{
+                section.querySelectorAll('tfoot .session-cell').forEach(function(fc) {{
                     var label = fc.getAttribute('data-label');
                     if (label === sel) {{
                         var count = 0;
@@ -4135,101 +4085,46 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             }});
         }}
 
-        // ── Edit mode ──
-        var adminBtn = document.getElementById('admin-btn');
-        var editBar = document.getElementById('edit-bar');
-        var saveBtn = document.getElementById('save-btn');
-        var cancelBtn = document.getElementById('cancel-btn');
-
-        adminBtn.addEventListener('click', function() {{
-            if (editMode) {{
-                cancelEdit();
-                return;
-            }}
-            if (!verifyStaff()) return;
-            editMode = true;
-            adminBtn.classList.add('unlocked');
-            editBar.classList.add('active');
-            enableCellEditing();
+        // ── Checkbox change → auto-save ──
+        document.querySelectorAll('.att-cb').forEach(function(cb) {{
+            cb.addEventListener('change', function() {{
+                var key = cb.getAttribute('data-row') + '-' + cb.getAttribute('data-col');
+                pendingChanges[key] = cb.checked ? 1 : 0;
+                updateTotals();
+                scheduleSave();
+            }});
         }});
 
-        function enableCellEditing() {{
-            var sel = getSelectedSession();
-            document.querySelectorAll('.att-cb[data-label="' + sel + '"]').forEach(function(cb) {{
-                if (cb.closest('tfoot')) return;
-                cb.disabled = false;
-                cb.classList.add('editable');
-                cb.addEventListener('change', toggleCheckbox);
-            }});
+        function scheduleSave() {{
+            if (saveTimer) clearTimeout(saveTimer);
+            showIndicator('saving');
+            saveTimer = setTimeout(doSave, 2000);
         }}
 
-        function disableCellEditing() {{
-            document.querySelectorAll('.att-cb.editable').forEach(function(cb) {{
-                cb.disabled = true;
-                cb.classList.remove('editable');
-                cb.removeEventListener('change', toggleCheckbox);
-            }});
-        }}
-
-        function toggleCheckbox(e) {{
-            if (!editMode) return;
-            var cb = e.currentTarget;
-            var newVal = cb.checked ? 1 : 0;
-            var key = cb.getAttribute('data-row') + '-' + cb.getAttribute('data-col');
-            pendingChanges[key] = newVal;
-            dirty = true;
-            saveBtn.disabled = false;
-            updateTotals();
-        }}
-
-        function cancelEdit() {{
-            if (dirty && !confirm('Annuler les modifications ?')) return;
-            // Revert checkboxes
-            Object.keys(pendingChanges).forEach(function(key) {{
-                var parts = key.split('-');
-                var row = parts[0], col = parts[1];
-                var cb = document.querySelector('.att-cb[data-row="' + row + '"][data-col="' + col + '"]');
-                if (cb) {{
-                    var origVal = findOriginalValue(parseInt(row), getSelectedSession());
-                    cb.checked = origVal === 1;
-                }}
-            }});
-            pendingChanges = {{}};
-            dirty = false;
-            editMode = false;
-            saveBtn.disabled = true;
-            adminBtn.classList.remove('unlocked');
-            editBar.classList.remove('active');
-            disableCellEditing();
-            updateTotals();
-        }}
-
-        function findOriginalValue(row, sessionLabel) {{
-            for (var gi = 0; gi < DATA.groups.length; gi++) {{
-                for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {{
-                    if (DATA.groups[gi].kids[ki].row === row) {{
-                        return DATA.groups[gi].kids[ki].attendance[sessionLabel];
-                    }}
-                }}
+        function showIndicator(state) {{
+            var el = document.getElementById('save-indicator');
+            el.className = 'save-indicator ' + state;
+            if (state === 'saving') el.textContent = 'Enregistrement...';
+            else if (state === 'saved') el.textContent = 'Enregistré !';
+            else if (state === 'error') el.textContent = 'Erreur !';
+            if (state === 'saved') {{
+                setTimeout(function() {{ el.className = 'save-indicator'; }}, 2500);
             }}
-            return null;
         }}
 
-        // ── Save via GitHub API ──
-        saveBtn.addEventListener('click', function() {{
-            if (!dirty) return;
+        function doSave() {{
+            if (saving || Object.keys(pendingChanges).length === 0) return;
+            saving = true;
             var token = getToken();
-            if (!token) {{ showStatus('Token manquant', 'error'); return; }}
+            var changesToSave = JSON.parse(JSON.stringify(pendingChanges));
+            pendingChanges = {{}};
 
-            saveBtn.disabled = true;
-            saveBtn.textContent = 'Enregistrement...';
-
-            // Update DATA in memory from checkboxes
+            // Update DATA in memory
             var sel = getSelectedSession();
-            Object.keys(pendingChanges).forEach(function(key) {{
+            Object.keys(changesToSave).forEach(function(key) {{
                 var parts = key.split('-');
                 var row = parseInt(parts[0]);
-                var val = pendingChanges[key];
+                var val = changesToSave[key];
                 for (var gi = 0; gi < DATA.groups.length; gi++) {{
                     for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {{
                         if (DATA.groups[gi].kids[ki].row === row) {{
@@ -4239,7 +4134,7 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
                 }}
             }});
 
-            // Push to GitHub
+            // Fetch current SHA, merge with remote, then push
             var url = 'https://api.github.com/repos/' + REPO + '/contents/' + JSON_PATH;
             fetch(url, {{
                 headers: {{ 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json' }}
@@ -4247,6 +4142,28 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             .then(function(r) {{ return r.json(); }})
             .then(function(info) {{
                 var sha = info.sha;
+                // Decode remote content and merge to avoid overwriting concurrent edits
+                if (info.content) {{
+                    try {{
+                        var remoteData = JSON.parse(decodeURIComponent(escape(atob(info.content.replace(/\\n/g, '')))));
+                        // Apply only our local changes on top of the remote state
+                        Object.keys(changesToSave).forEach(function(key) {{
+                            var parts = key.split('-');
+                            var row = parseInt(parts[0]);
+                            var val = changesToSave[key];
+                            for (var gi = 0; gi < remoteData.groups.length; gi++) {{
+                                for (var ki = 0; ki < remoteData.groups[gi].kids.length; ki++) {{
+                                    if (remoteData.groups[gi].kids[ki].row === row) {{
+                                        remoteData.groups[gi].kids[ki].attendance[sel] = val;
+                                    }}
+                                }}
+                            }}
+                        }});
+                        DATA = remoteData;
+                    }} catch(e) {{
+                        // Fallback: use local DATA if remote decode fails
+                    }}
+                }}
                 var content = btoa(unescape(encodeURIComponent(JSON.stringify(DATA, null, 2))));
                 return fetch(url, {{
                     method: 'PUT',
@@ -4263,24 +4180,37 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
                 }});
             }})
             .then(function(r) {{
+                if (r.status === 409) {{
+                    // Conflict: someone else saved at the same time, retry
+                    Object.keys(changesToSave).forEach(function(k) {{
+                        if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k];
+                    }});
+                    saving = false;
+                    scheduleSave();
+                    return;
+                }}
                 if (!r.ok) throw new Error('HTTP ' + r.status);
                 return r.json();
             }})
-            .then(function() {{
-                pendingChanges = {{}};
-                dirty = false;
-                saveBtn.textContent = 'Enregistrer';
-                saveBtn.disabled = true;
-                showStatus('Enregistré !', 'success');
+            .then(function(result) {{
+                if (!result) return; // conflict retry
+                saving = false;
+                showIndicator('saved');
+                // If more changes came in while saving, save again
+                if (Object.keys(pendingChanges).length > 0) scheduleSave();
             }})
             .catch(function(err) {{
-                saveBtn.textContent = 'Enregistrer';
-                saveBtn.disabled = false;
-                showStatus('Erreur : ' + err.message, 'error');
+                // Put changes back for retry
+                Object.keys(changesToSave).forEach(function(k) {{
+                    if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k];
+                }});
+                saving = false;
+                showIndicator('error');
+                console.error('Save error:', err);
+                // Auto-retry after 5s
+                setTimeout(scheduleSave, 5000);
             }});
-        }});
-
-        cancelBtn.addEventListener('click', cancelEdit);
+        }}
 
         // ── Status messages ──
         function showStatus(msg, type) {{
@@ -4292,11 +4222,6 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
 
         // ── Init ──
         highlightSession();
-        // If staff already verified, show admin as ready
-        if (isStaffVerified()) {{
-            adminBtn.style.color = '#E30613';
-            adminBtn.style.borderColor = 'rgba(227,6,19,0.3)';
-        }}
     }})();
     </script>
 </body>
