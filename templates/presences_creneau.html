@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ creneau.title }} — Présences EDF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0C1C3E;
+            min-height: 100vh;
+            padding: 15px;
+            color: #fff;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(227,6,19,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0,65,112,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(227,6,19,0.04) 0%, transparent 70%);
+            opacity: 1;
+        }
+        .container {
+            position: relative; z-index: 1; max-width: 600px; margin: 0 auto;
+            background: rgba(8,18,40,0.95); border-radius: 8px;
+            padding: 2px 6px; margin-top: 6px; margin-bottom: 6px;
+            border-top: 4px solid #E30613; overflow: hidden;
+        }
+        .container::after {
+            content: '\276F\276F\276F\276F'; position: absolute;
+            top: 12px; right: -2px; font-size: 28px; font-weight: 900;
+            color: rgba(227,6,19,0.06); letter-spacing: -4px;
+            pointer-events: none; z-index: 0;
+        }
+
+        /* ── Header ── */
+        .header { text-align: center; margin-bottom: 12px; padding: 14px 10px 8px; }
+        h1 { color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px;
+              text-transform: uppercase; letter-spacing: 2px;
+              text-shadow: 0 0 30px rgba(227,6,19,0.3); }
+        .subtitle { color: #E30613; font-size: 11px; font-weight: 700; text-transform: uppercase;
+                     letter-spacing: 3px; }
+
+        /* ── Week selector (sessions) ── */
+        .week-selector { display: flex; justify-content: center; gap: 6px;
+                          margin-bottom: 15px; flex-wrap: wrap; }
+        .week-tab { padding: 8px 14px; background: rgba(255,255,255,0.04);
+                     border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
+                     color: #666; text-decoration: none; font-weight: 600; font-size: 13px;
+                     transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .week-tab:hover { background: rgba(227,6,19,0.1); border-color: rgba(227,6,19,0.3); color: #E30613; }
+        .week-tab.active { background: #E30613; border-color: #E30613; color: white;
+                            box-shadow: 0 0 15px rgba(227,6,19,0.4); }
+
+        /* ── View toggle ── */
+        .view-toggle { display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
+                        background: rgba(255,255,255,0.04); border-radius: 6px; padding: 4px; }
+        .view-btn { flex: 1; padding: 8px; border: none; background: transparent;
+                     color: #666; font-size: 12px; font-weight: 700; cursor: pointer;
+                     border-radius: 4px; transition: all 0.2s; font-family: inherit;
+                     text-transform: uppercase; letter-spacing: 0.5px;
+                     text-decoration: none; text-align: center; }
+        .view-btn.active { background: rgba(227,6,19,0.15); color: #E30613;
+                            box-shadow: 0 0 10px rgba(227,6,19,0.2); }
+        .view-btn:hover:not(.active) { color: #aaa; }
+
+        /* ── Day tabs (créneaux) ── */
+        .day-tabs { display: flex; gap: 3px; margin-bottom: 12px; overflow-x: auto;
+                     padding-bottom: 4px; -webkit-overflow-scrolling: touch;
+                     scrollbar-width: none; }
+        .day-tabs::-webkit-scrollbar { display: none; }
+        .day-tab { padding: 6px 8px; background: rgba(255,255,255,0.04);
+                    border: 1px solid rgba(255,255,255,0.08); border-radius: 4px;
+                    color: #666; font-size: 10px; font-weight: 700; cursor: pointer;
+                    white-space: nowrap; transition: all 0.2s; flex: 1; min-width: 0;
+                    text-align: center; text-transform: uppercase; text-decoration: none; }
+        .day-tab.active { background: rgba(227,6,19,0.15); border-color: rgba(227,6,19,0.3);
+                           color: #E30613; }
+        .day-tab:hover:not(.active) { background: rgba(227,6,19,0.08); color: #ccc; }
+
+        /* ── Dates badge ── */
+        .dates { color: #E30613; font-size: 14px; font-weight: 700;
+                  background: rgba(227,6,19,0.1); padding: 6px 14px;
+                  border-radius: 6px; display: inline-block; margin-bottom: 12px;
+                  border: 1px solid rgba(227,6,19,0.2); }
+
+        /* ── Nav links ── */
+        .nav-links { display: flex; gap: 6px; justify-content: center; margin-bottom: 12px; }
+        .nav-link { font-size: 11px; color: #555; text-decoration: none; font-weight: 600;
+                     transition: color 0.2s; }
+        .nav-link:hover { color: #E30613; }
+
+        /* ── Cards ── */
+        .card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px; padding: 12px; margin-bottom: 10px;
+        }
+        .card-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 8px; padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .card-title { color: #E30613; font-size: 11px; font-weight: 700;
+                       text-transform: uppercase; letter-spacing: 1px; }
+
+        /* ── Kids list ── */
+        .kids-list { display: flex; flex-direction: column; }
+        .kid-row {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 7px 6px; border-bottom: 1px solid rgba(255,255,255,0.03);
+            transition: background 0.15s; border-radius: 4px; margin: 1px 0;
+        }
+        .kid-row:last-child { border-bottom: none; }
+        .kid-row.present { background: rgba(100,220,60,0.06); }
+        .kid-row.absent { background: rgba(255,80,80,0.04); }
+        .kid-row.changed { box-shadow: inset 3px 0 0 #E30613; }
+        .kid-info { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+        .kid-num { font-size: 10px; color: #444; min-width: 18px; text-align: right; font-weight: 600; }
+        .kid-details { display: flex; align-items: center; gap: 6px; min-width: 0; }
+        .kid-name { font-weight: 700; font-size: 13px; white-space: nowrap;
+                     overflow: hidden; text-overflow: ellipsis; }
+        .kid-cat { font-size: 9px; padding: 2px 6px; border-radius: 4px;
+                    background: rgba(227,6,19,0.1); color: #E30613;
+                    font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+
+        /* ── Toggle buttons ── */
+        .kid-toggle { display: flex; gap: 4px; flex-shrink: 0; }
+        .toggle-btn {
+            width: 40px; height: 40px; border-radius: 6px;
+            border: 2px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02); color: #444;
+            font-size: 14px; font-weight: 800; cursor: pointer;
+            transition: all 0.15s; display: flex; align-items: center; justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .toggle-btn:active { transform: scale(0.9); }
+        .toggle-present.active {
+            background: rgba(100,220,60,0.12); border-color: #64dc3c; color: #64dc3c;
+            box-shadow: 0 0 10px rgba(100,220,60,0.25);
+        }
+        .toggle-absent.active {
+            background: rgba(255,80,80,0.1); border-color: #ff5050; color: #ff5050;
+            box-shadow: 0 0 10px rgba(255,80,80,0.15);
+        }
+
+        /* ── Save bar ── */
+        .save-bar {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: rgba(8,18,40,0.97); backdrop-filter: blur(10px);
+            border-top: 2px solid #E30613;
+            padding: 10px 16px; z-index: 50;
+            transform: translateY(100%); transition: transform 0.3s ease;
+            box-shadow: 0 -4px 20px rgba(227,6,19,0.15);
+        }
+        .save-bar.visible { transform: translateY(0); }
+        .save-bar-inner {
+            max-width: 600px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .save-count { font-size: 13px; color: #E30613; font-weight: 700; }
+        .save-btn {
+            padding: 10px 28px; background: #E30613; color: white; border: none;
+            border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer;
+            font-family: 'Montserrat', sans-serif; transition: all 0.2s;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            box-shadow: 0 0 15px rgba(227,6,19,0.3);
+        }
+        .save-btn:hover { background: #ff3040; box-shadow: 0 0 25px rgba(227,6,19,0.5); }
+        .save-btn:disabled { background: #333; box-shadow: none; cursor: not-allowed; color: #666; }
+        .save-btn.success { background: #64dc3c; box-shadow: 0 0 15px rgba(100,220,60,0.3); }
+
+        /* ── Toast ── */
+        .toast {
+            position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+            background: #64dc3c; color: #0C1C3E; padding: 10px 20px;
+            border-radius: 6px; font-size: 12px; font-weight: 700;
+            z-index: 100; opacity: 0; transition: opacity 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .toast.show { opacity: 1; }
+        .toast.error { background: #ff5050; color: white; }
+
+        /* ── Flash ── */
+        .flash { padding: 10px 16px; border-radius: 6px; margin-bottom: 12px; font-size: 12px; font-weight: 600; }
+        .flash.success { background: rgba(100,220,60,0.1); border: 1px solid rgba(100,220,60,0.3); color: #64dc3c; }
+        .flash.error { background: rgba(255,80,80,0.1); border: 1px solid rgba(255,80,80,0.3); color: #ff5050; }
+
+        /* ── Responsive ── */
+        @media (min-width: 768px) {
+            h1 { font-size: 24px; }
+            .subtitle { font-size: 14px; }
+            .dates { font-size: 16px; padding: 8px 20px; }
+            .week-selector { gap: 8px; }
+            .week-tab { font-size: 14px; padding: 10px 18px; }
+            .view-toggle { max-width: 500px; margin-left: auto; margin-right: auto; }
+            .view-btn { font-size: 14px; padding: 10px; }
+            .day-tabs { gap: 6px; }
+            .day-tab { font-size: 13px; padding: 10px 14px; border-radius: 10px; }
+        }
+        @media (max-width: 400px) {
+            .kid-name { font-size: 11px; }
+            .toggle-btn { width: 44px; height: 44px; font-size: 16px; }
+        }
+
+        /* ── Scrollbar PSG ── */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+        ::-webkit-scrollbar-thumb { background: #E30613; border-radius: 3px;
+                                     box-shadow: 0 0 6px rgba(227,6,19,0.5); }
+        * { scrollbar-width: thin; scrollbar-color: #E30613 rgba(255,255,255,0.02); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Suivi PSG Academy</h1>
+            <div class="subtitle">Présences EDF</div>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <!-- View toggle: Planning / Présences -->
+        <div class="view-toggle">
+            <a href="/index.html" class="view-btn">Planning</a>
+            <a href="/presences" class="view-btn active">Présences</a>
+        </div>
+
+        <!-- Créneau tabs (like day tabs) -->
+        <div class="day-tabs" id="creneau-tabs">
+            {% for c in data.creneaux %}
+            <a href="/presences/{{ c.slug }}"
+               class="day-tab {{ 'active' if c.slug == creneau.slug }}">
+                {{ c.title }}
+            </a>
+            {% endfor %}
+        </div>
+
+        <!-- Session selector (like week-selector) -->
+        <div class="week-selector" id="session-selector">
+            {% for sess in creneau.sessions %}
+            {% if not sess.is_vacation %}
+            <a href="/presences/{{ creneau.slug }}?session={{ sess.label }}"
+               class="week-tab {{ 'active' if sess.label == selected_session }}">
+                {{ sess.label }}
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Date badge -->
+        {% set current_sess = creneau.sessions|selectattr('label', 'equalto', selected_session)|first %}
+        {% if current_sess and current_sess.date %}
+        <div style="text-align: center; margin-bottom: 12px;">
+            <div class="dates">{{ current_sess.date }}</div>
+        </div>
+        {% endif %}
+
+        <!-- Nav -->
+        <div class="nav-links">
+            <a href="/presences/{{ creneau.slug }}/history" class="nav-link">Voir l'historique complet →</a>
+        </div>
+
+        <!-- Kids by group -->
+        {% for group in creneau.groups %}
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">{{ group.name }}</span>
+                <span style="font-size: 13px; font-weight: 700;">
+                    <span class="group-count" data-group="{{ loop.index0 }}"
+                          style="color: #64dc3c;">—</span>
+                    <span style="color:#444">/</span>
+                    <span style="color: #888;">{{ group.kids|length }}</span>
+                </span>
+            </div>
+
+            <div class="kids-list" data-group="{{ loop.index0 }}">
+                {% for kid in group.kids %}
+                {% set val = kid.attendance.get(selected_session) %}
+                <div class="kid-row {{ 'present' if val == 1 else ('absent' if val == 0 else '') }}"
+                     data-row="{{ kid.row }}"
+                     data-current="{{ val if val is not none else '' }}">
+                    <div class="kid-info">
+                        <span class="kid-num">{{ kid.num }}</span>
+                        <div class="kid-details">
+                            <span class="kid-name">{{ kid.name }}</span>
+                            {% if kid.category %}
+                            <span class="kid-cat">{{ kid.category }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="kid-toggle">
+                        <button class="toggle-btn toggle-present {{ 'active' if val == 1 }}"
+                                onclick="setAttendance(this, 1)">P</button>
+                        <button class="toggle-btn toggle-absent {{ 'active' if val == 0 }}"
+                                onclick="setAttendance(this, 0)">A</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Save bar -->
+    <div class="save-bar" id="save-bar">
+        <div class="save-bar-inner">
+            <span class="save-count" id="save-count">0 modif.</span>
+            <button class="save-btn" id="save-btn" onclick="saveAll()">
+                Enregistrer
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+    const SHEET_NAME = {{ creneau.sheet_name|tojson }};
+    const SESSION_LABEL = {{ selected_session|tojson }};
+    const SESSIONS = {{ creneau.sessions|tojson }};
+    const SESSION_COL = (function() {
+        for (let s of SESSIONS) {
+            if (s.label === SESSION_LABEL) return s.col;
+        }
+        return null;
+    })();
+
+    let changes = {};
+
+    function setAttendance(btn, value) {
+        const row = btn.closest('.kid-row');
+        const rowNum = parseInt(row.dataset.row);
+        const original = row.dataset.current;
+        const isActive = btn.classList.contains('active');
+
+        row.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+        row.classList.remove('present', 'absent');
+
+        if (isActive) {
+            if (original !== '') {
+                const origVal = parseInt(original);
+                if (origVal === 1) {
+                    row.querySelector('.toggle-present').classList.add('active');
+                    row.classList.add('present');
+                } else {
+                    row.querySelector('.toggle-absent').classList.add('active');
+                    row.classList.add('absent');
+                }
+            }
+            delete changes[rowNum];
+        } else {
+            btn.classList.add('active');
+            row.classList.add(value === 1 ? 'present' : 'absent');
+            if (original !== '' && parseInt(original) === value) {
+                delete changes[rowNum];
+            } else {
+                changes[rowNum] = {row: rowNum, col: SESSION_COL, value: value};
+            }
+        }
+
+        row.classList.toggle('changed', rowNum in changes);
+        updateUI();
+    }
+
+    function updateUI() {
+        const count = Object.keys(changes).length;
+        document.getElementById('save-count').textContent = count + ' modif' + (count > 1 ? 's' : '') + '.';
+        document.getElementById('save-bar').classList.toggle('visible', count > 0);
+
+        document.querySelectorAll('.kids-list').forEach(list => {
+            const idx = list.dataset.group;
+            let present = 0;
+            list.querySelectorAll('.kid-row').forEach(r => {
+                if (r.classList.contains('present')) present++;
+            });
+            const el = document.querySelector(`.group-count[data-group="${idx}"]`);
+            if (el) el.textContent = present;
+        });
+    }
+
+    function saveAll() {
+        const updates = Object.values(changes);
+        if (!updates.length) return;
+
+        const btn = document.getElementById('save-btn');
+        btn.disabled = true;
+        btn.textContent = 'ENVOI…';
+
+        fetch('/api/presences/save', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ sheet_name: SHEET_NAME, updates })
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.ok) {
+                for (const key in changes) {
+                    const row = document.querySelector(`.kid-row[data-row="${key}"]`);
+                    if (row) {
+                        row.dataset.current = changes[key].value.toString();
+                        row.classList.remove('changed');
+                    }
+                }
+                changes = {};
+                updateUI();
+                btn.classList.add('success');
+                btn.textContent = '✓ OK';
+                showToast(data.count + ' présence(s) enregistrée(s)');
+                setTimeout(() => { btn.classList.remove('success'); btn.textContent = 'ENREGISTRER'; }, 2000);
+            } else {
+                showToast(data.error || 'Erreur', true);
+            }
+        })
+        .catch(() => showToast('Erreur réseau', true))
+        .finally(() => { btn.disabled = false; });
+    }
+
+    function showToast(msg, isError) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = 'toast' + (isError ? ' error' : '') + ' show';
+        setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', function() {
+        // Scroll active session into view
+        const activeWeek = document.querySelector('.week-tab.active');
+        if (activeWeek) activeWeek.scrollIntoView({ inline: 'center', block: 'nearest' });
+
+        // Scroll active créneau into view
+        const activeCreneau = document.querySelector('.day-tab.active');
+        if (activeCreneau) activeCreneau.scrollIntoView({ inline: 'center', block: 'nearest' });
+
+        updateUI();
+    });
+    </script>
+</body>
+</html>

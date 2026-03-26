@@ -10,3 +10,8 @@ Anniversaires/*.db
 Anniversaires/*.db-wal
 Anniversaires/*.db-shm
 sync-watcher.log
+
+# Attendance Excel data (user-provided, not tracked)
+PSG Academy*.xlsx
+Suivi des présences*.xlsx
+Suivi*presences*.xlsx
