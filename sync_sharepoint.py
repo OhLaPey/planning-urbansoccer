@@ -55,6 +55,12 @@ PLANNING_PATTERN = re.compile(
     r"^Plannings\s+\d{4}\s+S\d{1,2}(?:\s+v\d+)?\.xlsx$", re.IGNORECASE
 )
 
+# Pattern pour le fichier de présences PSG Academy
+ATTENDANCE_PATTERN = re.compile(
+    r"^(Suivi\s+des?\s+pr[eé]sences|PSG.*Academy.*Pr[eé]sences).*\.xlsx$",
+    re.IGNORECASE,
+)
+
 GRAPH_BASE = "https://graph.microsoft.com/v1.0"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -127,8 +133,9 @@ def resolve_drive_id(token: str, site_id: str) -> str:
 
 # ── Liste et téléchargement des fichiers ─────────────────────────────────────
 
-def list_planning_files(token: str, drive_id: str, pattern: str = None) -> list:
-    """Liste les fichiers de planning dans le dossier SharePoint."""
+def list_planning_files(token: str, drive_id: str, pattern: str = None,
+                        include_attendance: bool = False) -> list:
+    """Liste les fichiers de planning (et optionnellement de présences) dans le dossier SharePoint."""
     folder_path = quote(SHAREPOINT_FOLDER_PATH)
     url = f"{GRAPH_BASE}/drives/{drive_id}/root:/{folder_path}:/children"
 
@@ -142,8 +149,9 @@ def list_planning_files(token: str, drive_id: str, pattern: str = None) -> list:
         # Ignorer les fichiers temporaires (~$...)
         if name.startswith("~$"):
             continue
-        # Ne garder que les fichiers Excel de planning
-        if not PLANNING_PATTERN.match(name):
+        is_planning = PLANNING_PATTERN.match(name)
+        is_attendance = ATTENDANCE_PATTERN.match(name)
+        if not is_planning and not (include_attendance and is_attendance):
             continue
         # Filtrer par pattern si spécifié
         if pattern and pattern.lower() not in name.lower():
@@ -191,10 +199,13 @@ def git_commit_and_push(files: list[str], message: str):
 
 # ── Synchronisation principale ───────────────────────────────────────────────
 
-def sync(dry_run: bool = False, pattern: str = None, no_push: bool = False):
-    """Synchronise les plannings de SharePoint vers le repo local."""
+def sync(dry_run: bool = False, pattern: str = None, no_push: bool = False,
+         include_attendance: bool = False):
+    """Synchronise les plannings (et présences) de SharePoint vers le repo local."""
     print("=" * 60)
     print("  Sync SharePoint → GitHub : Plannings UrbanSoccer")
+    if include_attendance:
+        print("  (+ fichier de présences PSG Academy)")
     print("=" * 60)
 
     # Vérification des credentials
@@ -227,7 +238,8 @@ def sync(dry_run: bool = False, pattern: str = None, no_push: bool = False):
 
     # Liste des fichiers
     print(f"\n📋 Fichiers dans '{SHAREPOINT_FOLDER_PATH}' :")
-    files = list_planning_files(token, drive_id, pattern)
+    files = list_planning_files(token, drive_id, pattern,
+                                include_attendance=include_attendance)
 
     if not files:
         print("  Aucun fichier de planning trouvé.")
@@ -297,8 +309,13 @@ def main():
         "--no-push", action="store_true",
         help="Stage les fichiers sans commit/push"
     )
+    parser.add_argument(
+        "--with-presences", action="store_true",
+        help="Inclure le fichier de présences PSG Academy (Suivi des présences EDF.xlsx)"
+    )
     args = parser.parse_args()
-    sync(dry_run=args.dry_run, pattern=args.pattern, no_push=args.no_push)
+    sync(dry_run=args.dry_run, pattern=args.pattern, no_push=args.no_push,
+         include_attendance=args.with_presences)
 
 
 if __name__ == "__main__":
