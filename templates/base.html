@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Anniversaires{% endblock %} — UrbanSoccer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: Tahoma, 'Inter', sans-serif;
-            background: #1E1E1E;
-            background-image:
-                radial-gradient(ellipse at 20% 50%, rgba(255,120,50,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(255,120,50,0.04) 0%, transparent 50%);
+            font-family: 'Montserrat', sans-serif;
+            background: #1A1A1A;
             min-height: 100vh;
             padding: 15px;
             color: #fff;
@@ -25,97 +22,99 @@
             inset: 0;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.03;
-            background-image:
-                linear-gradient(to right, #fff 1px, transparent 1px),
-                linear-gradient(to bottom, #fff 1px, transparent 1px),
-                radial-gradient(circle at 50% 50%, transparent 58px, #fff 58px, #fff 60px, transparent 60px),
-                linear-gradient(to right, transparent 49.8%, #fff 49.8%, #fff 50.2%, transparent 50.2%),
-                linear-gradient(to bottom, transparent 30%, #fff 30%, #fff 30.3%, transparent 30.3%),
-                linear-gradient(to bottom, transparent 69.7%, #fff 69.7%, #fff 70%, transparent 70%),
-                linear-gradient(to right, transparent 25%, #fff 25%, #fff 25.3%, transparent 25.3%),
-                linear-gradient(to right, transparent 74.7%, #fff 74.7%, #fff 75%, transparent 75%);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+            background: url('bg-team.jpg') center center / cover no-repeat;
+            opacity: 0.22;
         }
-        .container { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+        .container {
+            position: relative; z-index: 1; max-width: 600px; margin: 0 auto;
+            background: rgba(26,26,26,0.95); border-radius: 8px;
+            padding: 2px 6px; margin-top: 6px; margin-bottom: 6px;
+            border-top: 4px solid #FF6600; overflow: hidden;
+        }
+        .container::after {
+            content: '\276F\276F\276F\276F'; position: absolute;
+            top: 12px; right: -2px; font-size: 28px; font-weight: 900;
+            color: rgba(255,102,0,0.08); letter-spacing: -4px;
+            pointer-events: none; z-index: 0;
+        }
 
         /* ── Header ── */
-        .header { text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }
-        h1 { font-family: 'Space Mono', monospace;
-              color: #FF7832; font-size: 18px; font-weight: 700; margin-bottom: 2px;
-              text-transform: uppercase; letter-spacing: 1px;
-              text-shadow: 0 0 30px rgba(255,120,50,0.3); }
-        .subtitle { color: #888; font-size: 12px; }
+        .header { text-align: center; margin-bottom: 12px; padding: 14px 10px 8px; }
+        h1 { color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px;
+              text-transform: uppercase; letter-spacing: 2px;
+              text-shadow: 0 0 30px rgba(255,102,0,0.3); }
+        .subtitle { color: #FF6600; font-size: 11px; font-weight: 700; text-transform: uppercase;
+                     letter-spacing: 3px; }
 
         /* ── Flash messages ── */
-        .flash { padding: 10px 16px; border-radius: 8px; margin-bottom: 12px; font-size: 13px; }
-        .flash.success { background: rgba(76,175,80,0.15); border: 1px solid rgba(76,175,80,0.3); color: #81C784; }
-        .flash.error { background: rgba(244,67,54,0.15); border: 1px solid rgba(244,67,54,0.3); color: #E57373; }
+        .flash { padding: 10px 16px; border-radius: 6px; margin-bottom: 12px; font-size: 12px; font-weight: 600; }
+        .flash.success { background: rgba(100,220,60,0.1); border: 1px solid rgba(100,220,60,0.3); color: #64dc3c; }
+        .flash.error { background: rgba(255,80,80,0.1); border: 1px solid rgba(255,80,80,0.3); color: #ff5050; }
 
         /* ── Cards ── */
         .card {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 12px;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 10px;
         }
         .card-header {
             display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .card-title {
-            font-family: 'Space Mono', monospace;
-            color: #FF7832; font-size: 13px; font-weight: 700;
+            color: #FF6600; font-size: 12px; font-weight: 700;
             text-transform: uppercase; letter-spacing: 0.5px;
         }
 
         /* ── Buttons ── */
         .btn {
             display: inline-flex; align-items: center; gap: 6px;
-            padding: 8px 16px; border: none; border-radius: 8px;
-            font-size: 12px; font-weight: 600; cursor: pointer;
+            padding: 8px 16px; border: none; border-radius: 6px;
+            font-size: 12px; font-weight: 700; cursor: pointer;
             text-decoration: none; transition: all 0.2s; font-family: inherit;
+            text-transform: uppercase; letter-spacing: 0.3px;
         }
         .btn-primary {
-            background: #FF7832; color: white;
-            box-shadow: 0 0 15px rgba(255,120,50,0.3);
+            background: #FF6600; color: white;
+            box-shadow: 0 0 15px rgba(255,102,0,0.3);
         }
-        .btn-primary:hover { background: #FF8F4C; box-shadow: 0 0 20px rgba(255,120,50,0.5); }
+        .btn-primary:hover { background: #ff9050; box-shadow: 0 0 20px rgba(255,102,0,0.5); }
         .btn-secondary {
-            background: rgba(255,255,255,0.08); color: #aaa;
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.04); color: #888;
+            border: 1px solid rgba(255,255,255,0.08);
         }
-        .btn-secondary:hover { background: rgba(255,255,255,0.12); color: #fff; }
+        .btn-secondary:hover { background: rgba(255,102,0,0.1); color: #FF6600;
+                                border-color: rgba(255,102,0,0.3); }
         .btn-danger {
-            background: rgba(244,67,54,0.15); color: #E57373;
-            border: 1px solid rgba(244,67,54,0.2);
+            background: rgba(255,80,80,0.1); color: #ff5050;
+            border: 1px solid rgba(255,80,80,0.2);
         }
-        .btn-danger:hover { background: rgba(244,67,54,0.25); }
-        .btn-sm { padding: 5px 10px; font-size: 11px; }
+        .btn-danger:hover { background: rgba(255,80,80,0.2); }
+        .btn-sm { padding: 5px 10px; font-size: 10px; }
 
         /* ── Forms ── */
         .form-group { margin-bottom: 12px; }
         .form-label {
-            display: block; font-size: 11px; font-weight: 600;
+            display: block; font-size: 10px; font-weight: 700;
             color: #888; text-transform: uppercase; letter-spacing: 0.5px;
             margin-bottom: 4px;
         }
         .form-input, .form-select {
             width: 100%; padding: 10px 12px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 8px; color: #fff;
-            font-size: 14px; font-family: inherit;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px; color: #fff;
+            font-size: 13px; font-family: inherit;
             transition: border-color 0.2s;
         }
         .form-input:focus, .form-select:focus {
-            outline: none; border-color: #FF7832;
-            box-shadow: 0 0 10px rgba(255,120,50,0.2);
+            outline: none; border-color: rgba(255,102,0,0.4);
+            box-shadow: 0 0 10px rgba(255,102,0,0.15);
         }
-        .form-input::placeholder { color: #555; }
-        .form-select option { background: #2a2a2a; color: #fff; }
+        .form-input::placeholder { color: #444; }
+        .form-select option { background: #1f1f1f; color: #ccc; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
         textarea.form-input { resize: vertical; min-height: 60px; }
@@ -123,29 +122,29 @@
         /* ── Date selector ── */
         .date-nav {
             display: flex; justify-content: center; align-items: center;
-            gap: 8px; margin-bottom: 15px; flex-wrap: wrap;
+            gap: 6px; margin-bottom: 15px; flex-wrap: wrap;
         }
         .date-chip {
-            padding: 6px 14px;
+            padding: 6px 12px;
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
+            border-radius: 6px;
             color: #666; text-decoration: none;
-            font-weight: 500; font-size: 12px;
-            transition: all 0.2s;
+            font-weight: 600; font-size: 11px;
+            transition: all 0.2s; text-transform: uppercase;
         }
-        .date-chip:hover { background: rgba(255,120,50,0.1); border-color: rgba(255,120,50,0.3); color: #FF7832; }
+        .date-chip:hover { background: rgba(255,102,0,0.1); border-color: rgba(255,102,0,0.3); color: #FF6600; }
         .date-chip.active {
-            background: #FF7832; border-color: #FF7832; color: white;
-            box-shadow: 0 0 15px rgba(255,120,50,0.4);
+            background: rgba(255,102,0,0.15); border-color: rgba(255,102,0,0.3); color: #FF6600;
         }
 
         /* ── Stats badges ── */
         .stats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; justify-content: center; }
         .stat-badge {
-            padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600;
+            padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 700;
+            text-transform: uppercase;
         }
-        .stat-total { background: rgba(255,120,50,0.15); color: #FF7832; border: 1px solid rgba(255,120,50,0.3); }
+        .stat-total { background: rgba(255,102,0,0.15); color: #FF6600; border: 1px solid rgba(255,102,0,0.3); }
         .stat-ligue1 { background: rgba(255,165,0,0.12); color: #FFA500; }
         .stat-cl { background: rgba(100,149,237,0.15); color: #6495ED; }
         .stat-fff { background: rgba(76,175,80,0.15); color: #66BB6A; }
@@ -156,10 +155,9 @@
         .birthday-row {
             display: grid;
             grid-template-columns: 60px 1fr 130px 60px auto;
-            align-items: center;
-            gap: 8px;
+            align-items: center; gap: 8px;
             padding: 10px 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
             transition: background 0.15s;
         }
         .birthday-row:hover { background: rgba(255,255,255,0.03); }
@@ -169,8 +167,9 @@
         a.birthday-name:hover { color: #FF7832 !important; }
         .birthday-details { color: #666; font-size: 11px; }
         .birthday-formule {
-            font-size: 11px; font-weight: 600; padding: 3px 10px;
-            border-radius: 12px; text-align: center; white-space: nowrap;
+            font-size: 10px; font-weight: 700; padding: 3px 10px;
+            border-radius: 4px; text-align: center; white-space: nowrap;
+            text-transform: uppercase;
         }
         .formule-ligue1 { background: rgba(255,165,0,0.12); color: #FFA500; }
         .formule-cl { background: rgba(100,149,237,0.15); color: #6495ED; }
@@ -187,52 +186,35 @@
         }
 
         /* ── Empty state ── */
-        .empty-state {
-            text-align: center; padding: 40px 20px; color: #555;
-        }
-        .empty-state p { margin-bottom: 16px; font-size: 14px; }
+        .empty-state { text-align: center; padding: 40px 20px; color: #555; }
+        .empty-state p { margin-bottom: 16px; font-size: 13px; }
 
         /* ── Responsive ── */
         @media (max-width: 600px) {
             .birthday-row { grid-template-columns: 50px 1fr auto; }
             .birthday-formule, .birthday-kids { display: none; }
             .form-row, .form-row-3 { grid-template-columns: 1fr; }
-            .container { padding: 0 4px; }
         }
 
         /* ── Confirm dialog ── */
         .confirm-overlay {
             display: none; position: fixed; inset: 0; z-index: 100;
-            background: rgba(0,0,0,0.7); align-items: center; justify-content: center;
+            background: rgba(0,0,0,0.85); align-items: center; justify-content: center;
         }
         .confirm-overlay.active { display: flex; }
         .confirm-box {
-            background: #2a2a2a; border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px; padding: 24px; max-width: 360px; text-align: center;
+            background: #1f1f1f; border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px; padding: 24px; max-width: 360px; text-align: center;
         }
-        .confirm-box p { margin-bottom: 16px; font-size: 14px; }
+        .confirm-box p { margin-bottom: 16px; font-size: 13px; }
         .confirm-box .btn { margin: 0 4px; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>UrbanSoccer</h1>
-            <div class="subtitle">Gestion des affiches & suivi week-end</div>
-            <nav style="margin-top: 8px; display: flex; gap: 6px; justify-content: center;">
-                <a href="/" style="padding: 4px 12px; border-radius: 16px; font-size: 11px; font-weight: 600;
-                    text-decoration: none; color: #888; background: rgba(255,255,255,0.04);
-                    border: 1px solid rgba(255,255,255,0.08); transition: all 0.15s;"
-                    onmouseover="this.style.color='#FF7832';this.style.borderColor='rgba(255,120,50,0.3)'"
-                    onmouseout="this.style.color='#888';this.style.borderColor='rgba(255,255,255,0.08)'"
-                    >Anniversaires</a>
-                <a href="/presences" style="padding: 4px 12px; border-radius: 16px; font-size: 11px; font-weight: 600;
-                    text-decoration: none; color: #888; background: rgba(255,255,255,0.04);
-                    border: 1px solid rgba(255,255,255,0.08); transition: all 0.15s;"
-                    onmouseover="this.style.color='#FF7832';this.style.borderColor='rgba(255,120,50,0.3)'"
-                    onmouseout="this.style.color='#888';this.style.borderColor='rgba(255,255,255,0.08)'"
-                    >Présences PSG</a>
-            </nav>
+            <h1>Anniversaires</h1>
+            <div class="subtitle">Urban 7D</div>
         </div>
 
         {% with messages = get_flashed_messages(with_categories=true) %}

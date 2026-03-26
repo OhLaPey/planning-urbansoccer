@@ -1,72 +1,137 @@
-{% extends "base.html" %}
-{% block title %}Présences PSG Academy{% endblock %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présences EDF — PSG Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0C1C3E;
+            min-height: 100vh;
+            padding: 15px;
+            color: #fff;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(227,6,19,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0,65,112,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(227,6,19,0.04) 0%, transparent 70%);
+        }
+        .container {
+            position: relative; z-index: 1; max-width: 600px; margin: 0 auto;
+            background: rgba(8,18,40,0.95); border-radius: 8px;
+            padding: 2px 6px; margin-top: 6px; margin-bottom: 6px;
+            border-top: 4px solid #E30613; overflow: hidden;
+        }
+        .container::after {
+            content: '\276F\276F\276F\276F'; position: absolute;
+            top: 12px; right: -2px; font-size: 28px; font-weight: 900;
+            color: rgba(227,6,19,0.06); letter-spacing: -4px;
+            pointer-events: none; z-index: 0;
+        }
 
-{% block content %}
-<div style="text-align: center; margin-bottom: 16px;">
-    <a href="/" class="btn btn-secondary btn-sm" style="margin-bottom: 8px;">← Anniversaires</a>
-</div>
+        .header { text-align: center; margin-bottom: 12px; padding: 14px 10px 8px; }
+        h1 { color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px;
+              text-transform: uppercase; letter-spacing: 2px;
+              text-shadow: 0 0 30px rgba(227,6,19,0.3); }
+        .subtitle { color: #E30613; font-size: 11px; font-weight: 700; text-transform: uppercase;
+                     letter-spacing: 3px; }
 
-<div class="card">
-    <div class="card-header">
-        <span class="card-title">PSG Academy — Présences</span>
-    </div>
+        .view-toggle { display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
+                        background: rgba(255,255,255,0.04); border-radius: 6px; padding: 4px; }
+        .view-btn { flex: 1; padding: 8px; border: none; background: transparent;
+                     color: #666; font-size: 12px; font-weight: 700; cursor: pointer;
+                     border-radius: 4px; transition: all 0.2s; font-family: inherit;
+                     text-transform: uppercase; letter-spacing: 0.5px;
+                     text-decoration: none; text-align: center; }
+        .view-btn.active { background: rgba(227,6,19,0.15); color: #E30613;
+                            box-shadow: 0 0 10px rgba(227,6,19,0.2); }
+        .view-btn:hover:not(.active) { color: #aaa; }
 
-    {% if not data.file %}
-    <div class="empty-state">
-        <p>Aucun fichier Excel de présences trouvé.</p>
-        <p style="font-size: 12px; color: #666;">
-            Placez le fichier Excel PSG Academy (avec des onglets « …Présence »)
-            dans le dossier de l'application.
-        </p>
-    </div>
-    {% elif not data.creneaux %}
-    <div class="empty-state">
-        <p>Aucun onglet de présence trouvé dans le fichier.</p>
-        <p style="font-size: 12px; color: #666;">
-            Les onglets doivent contenir « Présence » dans leur nom.
-        </p>
-    </div>
-    {% else %}
-    <div class="creneau-list">
-        {% for c in data.creneaux %}
-        <a href="/presences/{{ c.slug }}" class="creneau-item">
-            <div class="creneau-info">
-                <span class="creneau-name">{{ c.title }}</span>
-                <span class="creneau-meta">
-                    {{ c.groups|length }} groupe{{ 's' if c.groups|length > 1 }}
-                    · {{ c.groups|sum(attribute='kids'|length) if false else namespace(total=0) }}
-                    {% set ns = namespace(total=0) %}
-                    {% for g in c.groups %}{% set ns.total = ns.total + g.kids|length %}{% endfor %}
-                    {{ ns.total }} enfant{{ 's' if ns.total > 1 }}
-                    · {{ c.sessions|rejectattr('is_vacation')|list|length }} séances
-                </span>
-            </div>
-            <span class="creneau-arrow">›</span>
-        </a>
-        {% endfor %}
-    </div>
+        .creneau-grid {
+            display: flex; flex-direction: column; gap: 6px;
+            margin-bottom: 15px;
+        }
+        .creneau-btn {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 14px; background: rgba(255,255,255,0.04);
+            border-radius: 6px; color: white; font-weight: 600; font-size: 13px;
+            border: 1px solid rgba(255,255,255,0.08); cursor: pointer;
+            transition: all 0.2s; text-decoration: none;
+        }
+        .creneau-btn:hover { background: rgba(227,6,19,0.1); border-color: rgba(227,6,19,0.3);
+                              transform: translateX(4px); }
+        .creneau-btn:active { transform: translateX(2px); }
+        .creneau-count { font-size: 10px; padding: 3px 8px; background: rgba(227,6,19,0.15);
+                          border-radius: 4px; color: #E30613; font-weight: 700; }
 
-    <div style="text-align: center; margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
-        <span style="font-size: 11px; color: #555;">
-            Fichier : {{ data.file.split('/')[-1] }}
-        </span>
-    </div>
-    {% endif %}
-</div>
+        .empty-state { text-align: center; padding: 40px 20px; color: #555; }
+        .empty-state p { margin-bottom: 16px; font-size: 13px; }
 
-<style>
-    .creneau-list { display: flex; flex-direction: column; gap: 2px; }
-    .creneau-item {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 14px 16px; text-decoration: none; color: #fff;
-        border-radius: 8px; transition: background 0.15s;
-        border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-    .creneau-item:hover { background: rgba(255,120,50,0.08); }
-    .creneau-item:active { background: rgba(255,120,50,0.15); }
-    .creneau-info { display: flex; flex-direction: column; gap: 3px; }
-    .creneau-name { font-weight: 700; font-size: 15px; }
-    .creneau-meta { font-size: 12px; color: #888; }
-    .creneau-arrow { font-size: 24px; color: #FF7832; font-weight: 300; }
-</style>
-{% endblock %}
+        .file-info { text-align: center; margin-top: 10px; padding-top: 10px;
+                      border-top: 1px solid rgba(255,255,255,0.04); }
+        .file-info span { font-size: 10px; color: #333; }
+
+        @media (min-width: 768px) {
+            h1 { font-size: 24px; }
+            .subtitle { font-size: 14px; }
+            .view-toggle { max-width: 500px; margin-left: auto; margin-right: auto; }
+            .view-btn { font-size: 14px; padding: 10px; }
+            .creneau-btn { font-size: 14px; padding: 14px 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Suivi PSG Academy</h1>
+            <div class="subtitle">Présences EDF</div>
+        </div>
+
+        <!-- View toggle -->
+        <div class="view-toggle">
+            <a href="/index.html" class="view-btn">Planning</a>
+            <a href="/presences" class="view-btn active">Présences</a>
+        </div>
+
+        {% if not data.file %}
+        <div class="empty-state">
+            <p>Aucun fichier Excel de présences trouvé.</p>
+            <p style="font-size: 11px; color: #444;">
+                Placez le fichier « Suivi des présences EDF.xlsx »
+                dans le dossier de l'application.
+            </p>
+        </div>
+        {% elif not data.creneaux %}
+        <div class="empty-state">
+            <p>Aucun onglet de présence trouvé.</p>
+        </div>
+        {% else %}
+        <div class="creneau-grid">
+            {% for c in data.creneaux %}
+            {% set ns = namespace(total=0) %}
+            {% for g in c.groups %}{% set ns.total = ns.total + g.kids|length %}{% endfor %}
+            <a href="/presences/{{ c.slug }}" class="creneau-btn">
+                <span>{{ c.title }}</span>
+                <span class="creneau-count">{{ ns.total }} joueurs · {{ c.groups|length }} grp</span>
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="file-info">
+            <span>{{ data.file.split('/')[-1] }}</span>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
