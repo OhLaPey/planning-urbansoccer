@@ -594,7 +594,9 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
     for w in sorted(all_weeks):
         cls = ' active' if w == week_num else ''
         href = '#' if w == week_num else f'S{w}.html'
-        week_tabs += f'            <a href="{href}" class="week-tab{cls}">S{w}</a>\n'
+        w_sun = datetime.fromisocalendar(year, w, 7)
+        data_end = w_sun.strftime('%Y-%m-%d')
+        week_tabs += f'            <a href="{href}" class="week-tab{cls}" data-end="{data_end}">S{w}</a>\n'
 
     employee_buttons = ""
     for name in week_employees:
@@ -616,6 +618,11 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Planning U7D">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF6600">
     <title>Planning Urban 7D - S{week_num}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -670,6 +677,8 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         .week-tab:hover {{ background: rgba(255,102,0,0.1); border-color: rgba(255,102,0,0.3); color: #FF6600; }}
         .week-tab.active {{ background: #FF6600; border-color: #FF6600; color: white;
                             box-shadow: 0 0 15px rgba(255,102,0,0.4); }}
+        .week-tab.past {{ opacity: 0.4; }}
+        .week-tab.past:hover {{ opacity: 0.7; }}
 
         /* ── View toggle ── */
         .view-toggle {{ display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
@@ -1292,6 +1301,19 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         var DAYS_FULL = {day_labels_full_json};
         var WEEK_DATES = {week_dates_json};
         var currentDay = 0;
+        // Griser les onglets des semaines passées
+        (function() {{
+            var today = new Date();
+            var yyyy = today.getFullYear();
+            var mm = String(today.getMonth()+1).padStart(2,"0");
+            var dd = String(today.getDate()).padStart(2,"0");
+            var todayStr = yyyy + "-" + mm + "-" + dd;
+            document.querySelectorAll('.week-tab[data-end]').forEach(function(tab) {{
+                if (tab.getAttribute('data-end') < todayStr && !tab.classList.contains('active')) {{
+                    tab.classList.add('past');
+                }}
+            }});
+        }})();
         (function() {{
             var now = new Date();
             var today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
@@ -3797,6 +3819,12 @@ def main():
             '<head>\n'
             '    <meta charset="UTF-8">\n'
             '    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
+            '    <meta name="apple-mobile-web-app-capable" content="yes">\n'
+            '    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">\n'
+            '    <meta name="apple-mobile-web-app-title" content="Planning U7D">\n'
+            '    <link rel="manifest" href="manifest.json">\n'
+            '    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><text y=\'.9em\' font-size=\'90\'>&#9917;</text></svg>">\n'
+            '    <meta name="theme-color" content="#FF6600">\n'
             '    <title>Planning Urban 7D</title>\n'
             '    <script>\n'
             '    (function() {\n'
