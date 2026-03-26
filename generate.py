@@ -654,13 +654,25 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
                              color: rgba(255,102,0,0.08); letter-spacing: -4px;
                              pointer-events: none; z-index: 0; }}
 
+        /* ── Top bar (Admin + PSG Academy) ── */
+        .top-bar {{ display: flex; justify-content: space-between; align-items: center;
+                     padding: 8px 4px 0; }}
+        .top-bar .admin-btn, .top-bar .psg-btn {{
+            padding: 5px 12px; border-radius: 6px; font-size: 10px; font-weight: 700;
+            cursor: pointer; text-decoration: none; transition: all 0.25s;
+            font-family: 'Montserrat', sans-serif; text-transform: uppercase;
+            letter-spacing: 0.5px; border: 1px solid rgba(255,255,255,0.12);
+            background: none; color: #666;
+        }}
+        .top-bar .admin-btn:hover {{ color: #FF6600; border-color: rgba(255,102,0,0.4); }}
+        .top-bar .admin-btn.unlocked {{ color: #FF6600; border-color: rgba(255,102,0,0.4); }}
+        .top-bar .psg-btn {{ background: #0C1C3E; color: #E30613;
+                              border-color: rgba(227,6,19,0.4); }}
+        .top-bar .psg-btn:hover {{ background: rgba(227,6,19,0.15); color: #ff3040;
+                                    border-color: #E30613; }}
+
         /* ── Header ── */
-        .header {{ text-align: center; margin-bottom: 12px; padding: 14px 10px 8px; position: relative; }}
-        .admin-btn {{ position: absolute; top: 10px; right: 10px; background: none; border: none;
-                      color: #444; font-size: 18px; cursor: pointer; padding: 4px 8px;
-                      transition: color 0.2s; opacity: 0.5; }}
-        .admin-btn:hover {{ color: #FF6600; opacity: 1; }}
-        .admin-btn.unlocked {{ color: #FF6600; opacity: 1; }}
+        .header {{ text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }}
         h1 {{ font-family: 'Montserrat', sans-serif;
               color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px;
               text-transform: uppercase; letter-spacing: 2px;
@@ -685,20 +697,6 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         .week-tab.past {{ opacity: 0.4; }}
         .week-tab.past:hover {{ opacity: 0.7; }}
 
-        /* ── Corner buttons ── */
-        .corner-btn {{
-            position: fixed; z-index: 90; padding: 8px 12px;
-            background: rgba(26,26,26,0.85); backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
-            color: #666; font-size: 10px; font-weight: 700; cursor: pointer;
-            text-decoration: none; transition: all 0.25s;
-            font-family: 'Montserrat', sans-serif; text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }}
-        .corner-btn:hover {{ color: #FF6600; border-color: rgba(255,102,0,0.4);
-                              background: rgba(26,26,26,0.95); }}
-        .corner-btn-left {{ top: 10px; left: 10px; }}
-        .corner-btn-right {{ top: 10px; right: 10px; }}
 
         /* ── View toggle ── */
         .view-toggle {{ display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
@@ -1115,7 +1113,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
             .dates {{ font-size: 16px; padding: 8px 20px; }}
             .week-selector {{ gap: 8px; }}
             .week-tab {{ font-size: 14px; padding: 10px 18px; }}
-            .corner-btn {{ font-size: 11px; padding: 10px 16px; }}
+            .top-bar .admin-btn, .top-bar .psg-btn {{ font-size: 9px; padding: 4px 8px; }}
             .view-toggle {{ max-width: 500px; margin-left: auto; margin-right: auto; }}
             .view-btn {{ font-size: 14px; padding: 10px; }}
             .day-tabs {{ gap: 6px; margin-bottom: 16px; }}
@@ -1194,17 +1192,15 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
     </style>
 </head>
 <body>
-    <!-- Corner button -->
-    <a href="/presences" class="corner-btn corner-btn-right" title="Suivi des présences EDF">PSG Academy</a>
-
     <div class="container">
-        <!-- Admin button inside container -->
-        <button class="corner-btn" style="position:absolute; top:8px; left:8px; z-index:10;" onclick="if(typeof verifyStaff==='function'){{verifyStaff();initAdminToolbar();}}" title="Mode admin">Admin</button>
+        <div class="top-bar">
+            <button class="admin-btn" id="admin-btn" title="Mode admin">Admin</button>
+            <a href="presences.html" class="psg-btn" title="Suivi des présences PSG Academy">PSG Academy</a>
+        </div>
         <div class="header">
             <h1>Planning Urban 7D</h1>
             <p class="subtitle">Semaine {week_num}</p>
             <div class="dates">{date_range}</div>
-            <button class="admin-btn" id="admin-btn" title="Mode \u00e9dition">\u2699</button>
         </div>
 
         <div class="week-selector">
@@ -3667,6 +3663,743 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
 </html>"""
 
 
+# ── Attendance pages (PSG Academy) ─────────────────────────────────────────
+
+
+def generate_attendance_pages():
+    """Génère les pages statiques de présences PSG Academy."""
+    try:
+        from attendance import find_attendance_file, parse_attendance
+    except ImportError:
+        print("\n⚠ Module attendance.py introuvable — pages présences non générées")
+        return
+
+    filepath = find_attendance_file()
+    if not filepath:
+        print("\n⚠ Aucun fichier Excel de présences trouvé — pages présences non générées")
+        return
+
+    data = parse_attendance(filepath)
+    if not data["creneaux"]:
+        print("\n⚠ Aucun créneau trouvé dans le fichier de présences")
+        return
+
+    os.makedirs("data", exist_ok=True)
+    print(f"\n── Génération pages présences ({len(data['creneaux'])} créneaux) ──")
+
+    creneaux_index = []
+
+    for creneau in data["creneaux"]:
+        slug = creneau["slug"]
+        title = creneau["title"]
+        sessions = creneau["sessions"]
+        groups = creneau["groups"]
+        total_kids = sum(len(g["kids"]) for g in groups)
+
+        # ── Write JSON data ──
+        json_path = f"data/presences-{slug}.json"
+        json_data = {
+            "title": title,
+            "slug": slug,
+            "sheet_name": creneau["sheet_name"],
+            "sessions": sessions,
+            "groups": [
+                {
+                    "name": g["name"],
+                    "kids": [
+                        {
+                            "row": k["row"],
+                            "num": k["num"],
+                            "name": k["name"],
+                            "category": k["category"],
+                            "attendance": k["attendance"],
+                        }
+                        for k in g["kids"]
+                    ],
+                }
+                for g in groups
+            ],
+        }
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(json_data, f, ensure_ascii=False, indent=2)
+
+        creneaux_index.append({"title": title, "slug": slug, "total_kids": total_kids,
+                                "sessions_count": len([s for s in sessions if not s["is_vacation"]])})
+
+        # ── Generate HTML page ──
+        _write_attendance_html(slug, title, sessions, groups, json_data)
+        print(f"  Écrit : presences-{slug}.html + {json_path}")
+
+    # ── Generate index page ──
+    _write_attendance_index(creneaux_index)
+    print(f"  Écrit : presences.html (index, {len(creneaux_index)} créneaux)")
+
+
+def _write_attendance_html(slug, title, sessions, groups, json_data):
+    """Génère une page HTML statique de présences pour un créneau."""
+    # Build session headers
+    session_headers = ""
+    for s in sessions:
+        cls = "vacation" if s["is_vacation"] else ""
+        label = s["label"]
+        date_str = s.get("date", "") or ""
+        session_headers += (
+            f'<th class="session-col {cls}" data-label="{label}" '
+            f'title="{date_str}">{label}</th>\n'
+        )
+
+    # Build group tables
+    groups_html = ""
+    for g_idx, group in enumerate(groups):
+        groups_html += f'<div class="group-section" data-group="{g_idx}">\n'
+        groups_html += f'<h3 class="group-title">{group["name"]}</h3>\n'
+        groups_html += '<table class="attendance-table"><thead><tr>\n'
+        groups_html += '<th class="num-col">#</th><th class="name-col">Nom</th>'
+        groups_html += '<th class="cat-col">Cat.</th>\n'
+        groups_html += session_headers
+        groups_html += '<th class="total-col">Total</th></tr></thead><tbody>\n'
+
+        for kid in group["kids"]:
+            groups_html += (
+                f'<tr data-row="{kid["row"]}" data-name="{kid["name"]}">\n'
+                f'<td class="num-col">{kid["num"]}</td>'
+                f'<td class="name-col">{kid["name"]}</td>'
+                f'<td class="cat-col">{kid["category"]}</td>\n'
+            )
+            for s in sessions:
+                val = kid["attendance"].get(s["label"])
+                cls = "vacation" if s["is_vacation"] else ""
+                if val == 1:
+                    cls += " present"
+                elif val == 0:
+                    cls += " absent"
+                display = "1" if val == 1 else ("0" if val == 0 else "")
+                groups_html += (
+                    f'<td class="session-cell {cls}" data-label="{s["label"]}" '
+                    f'data-row="{kid["row"]}" data-col="{s["col"]}">{display}</td>\n'
+                )
+            # Total present
+            total_p = sum(1 for s in sessions if kid["attendance"].get(s["label"]) == 1)
+            groups_html += f'<td class="total-col total-val">{total_p}</td></tr>\n'
+
+        # Total row
+        groups_html += '</tbody><tfoot><tr class="total-row">\n'
+        groups_html += '<td></td><td class="name-col"><strong>TOTAL</strong></td><td></td>\n'
+        for s in sessions:
+            total = sum(
+                1 for k in group["kids"]
+                if k["attendance"].get(s["label"]) == 1
+            )
+            cls = "vacation" if s["is_vacation"] else ""
+            groups_html += f'<td class="session-cell {cls} total-cell">{total if total else ""}</td>\n'
+        grand = sum(
+            sum(1 for s in sessions if k["attendance"].get(s["label"]) == 1)
+            for k in group["kids"]
+        )
+        groups_html += f'<td class="total-col"><strong>{grand}</strong></td></tr>\n'
+        groups_html += '</tfoot></table></div>\n'
+
+    json_embedded = json.dumps(json_data, ensure_ascii=False)
+
+    html = f'''<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSG Academy - {title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+        body {{
+            font-family: 'Montserrat', sans-serif;
+            background: #0C1C3E;
+            min-height: 100vh;
+            padding: 10px;
+            color: #fff;
+            position: relative;
+        }}
+        body::before {{
+            content: '';
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background: url('bg-psg.jpg') center center / cover no-repeat;
+            opacity: 0.15;
+        }}
+        .container {{
+            position: relative; z-index: 1; max-width: 900px; margin: 0 auto;
+            background: rgba(12,28,62,0.95); border-radius: 8px;
+            padding: 12px; margin-top: 6px; margin-bottom: 6px;
+            border-top: 4px solid #E30613; overflow: visible;
+        }}
+
+        /* ── Header ── */
+        .header {{
+            text-align: center; margin-bottom: 12px;
+            padding: 14px 10px 8px; position: relative;
+        }}
+        .back-btn {{
+            position: absolute; top: 8px; left: 8px;
+            background: none; border: 1px solid rgba(255,255,255,0.15);
+            color: #aaa; font-size: 11px; cursor: pointer; padding: 6px 12px;
+            border-radius: 6px; text-decoration: none; font-family: inherit;
+            font-weight: 600; transition: all 0.2s;
+        }}
+        .back-btn:hover {{ color: #E30613; border-color: #E30613; }}
+        h1 {{
+            color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px;
+            text-transform: uppercase; letter-spacing: 2px;
+        }}
+        .subtitle {{
+            color: #E30613; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px;
+        }}
+
+        /* ── Créneau tabs ── */
+        .creneau-tabs {{
+            display: flex; justify-content: center; gap: 6px;
+            margin-bottom: 15px; flex-wrap: wrap;
+        }}
+        .creneau-tab {{
+            padding: 8px 14px; background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
+            color: #666; text-decoration: none; font-weight: 600; font-size: 12px;
+            transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px;
+        }}
+        .creneau-tab:hover {{ background: rgba(227,6,19,0.1); border-color: rgba(227,6,19,0.3); color: #E30613; }}
+        .creneau-tab.active {{ background: #E30613; border-color: #E30613; color: white;
+                                box-shadow: 0 0 15px rgba(227,6,19,0.4); }}
+
+        /* ── Session selector ── */
+        .session-selector {{
+            display: flex; align-items: center; gap: 10px;
+            justify-content: center; margin-bottom: 15px; flex-wrap: wrap;
+        }}
+        .session-selector label {{ font-size: 12px; font-weight: 700; color: #aaa; text-transform: uppercase; }}
+        .session-selector select {{
+            padding: 8px 12px; background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.15); border-radius: 6px;
+            color: #fff; font-size: 13px; font-family: inherit; font-weight: 600;
+        }}
+        .session-selector select:focus {{ border-color: #E30613; outline: none; }}
+
+        /* ── Tables ── */
+        .group-section {{ margin-bottom: 20px; }}
+        .group-title {{
+            font-size: 13px; font-weight: 700; color: #E30613;
+            text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 8px; padding-left: 4px;
+        }}
+        .attendance-table {{
+            width: 100%; border-collapse: collapse; font-size: 11px;
+        }}
+        .attendance-table th {{
+            background: rgba(255,255,255,0.06); padding: 6px 4px;
+            text-align: center; font-weight: 700; color: #aaa;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            white-space: nowrap; font-size: 10px;
+        }}
+        .attendance-table td {{
+            padding: 5px 4px; text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }}
+        .name-col {{ text-align: left !important; white-space: nowrap; min-width: 140px; }}
+        .num-col {{ width: 28px; color: #555; }}
+        .cat-col {{ width: 40px; color: #888; font-size: 10px; }}
+        .total-col {{ width: 40px; font-weight: 700; color: #E30613; }}
+        .session-col {{ min-width: 28px; }}
+        .session-cell {{ cursor: default; transition: all 0.15s; min-width: 28px; }}
+        .session-cell.editable {{ cursor: pointer; }}
+        .session-cell.editable:hover {{ background: rgba(255,255,255,0.1); }}
+        .session-cell.present {{ background: rgba(0,200,120,0.25); color: #4fc6a0; font-weight: 700; }}
+        .session-cell.absent {{ background: rgba(227,6,19,0.2); color: #ff6b6b; font-weight: 700; }}
+        .session-cell.vacation {{ background: rgba(0,180,220,0.15); color: #0bb4dc; }}
+        .total-row td {{ font-weight: 700; border-top: 2px solid rgba(255,255,255,0.15);
+                          background: rgba(255,255,255,0.03); }}
+
+        /* ── Edit mode ── */
+        .edit-bar {{
+            display: none; justify-content: center; gap: 10px;
+            margin-bottom: 12px; padding: 10px;
+            background: rgba(227,6,19,0.1); border: 1px solid rgba(227,6,19,0.3);
+            border-radius: 8px;
+        }}
+        .edit-bar.active {{ display: flex; flex-wrap: wrap; align-items: center; }}
+        .edit-bar .badge {{ font-size: 11px; font-weight: 700; color: #E30613;
+                             text-transform: uppercase; letter-spacing: 1px; }}
+        .save-btn {{
+            padding: 8px 20px; background: #E30613; border: none; border-radius: 6px;
+            color: white; font-weight: 700; font-size: 12px; cursor: pointer;
+            font-family: inherit; text-transform: uppercase; transition: all 0.2s;
+        }}
+        .save-btn:hover {{ background: #ff1a2a; box-shadow: 0 0 15px rgba(227,6,19,0.4); }}
+        .save-btn:disabled {{ opacity: 0.5; cursor: not-allowed; }}
+        .cancel-btn {{
+            padding: 8px 16px; background: none; border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px; color: #aaa; font-weight: 600; font-size: 12px;
+            cursor: pointer; font-family: inherit; transition: all 0.2s;
+        }}
+        .cancel-btn:hover {{ border-color: #fff; color: #fff; }}
+
+        /* ── Admin button ── */
+        .admin-btn {{
+            position: absolute; top: 8px; right: 8px;
+            background: none; border: 1px solid rgba(255,255,255,0.15);
+            color: #555; font-size: 16px; cursor: pointer; padding: 4px 10px;
+            border-radius: 6px; transition: all 0.2s;
+        }}
+        .admin-btn:hover {{ color: #E30613; border-color: #E30613; }}
+        .admin-btn.unlocked {{ color: #E30613; border-color: #E30613; }}
+
+        /* ── Responsive ── */
+        .table-wrapper {{ overflow-x: auto; -webkit-overflow-scrolling: touch; }}
+        @media (max-width: 600px) {{
+            body {{ padding: 4px; }}
+            .container {{ padding: 6px; }}
+            .attendance-table {{ font-size: 10px; }}
+            .name-col {{ min-width: 100px; }}
+        }}
+
+        /* ── Status messages ── */
+        .status-msg {{
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            padding: 12px 24px; border-radius: 8px; font-size: 13px; font-weight: 600;
+            z-index: 100; opacity: 0; transition: opacity 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }}
+        .status-msg.show {{ opacity: 1; }}
+        .status-msg.success {{ background: rgba(0,200,120,0.9); color: #fff; }}
+        .status-msg.error {{ background: rgba(227,6,19,0.9); color: #fff; }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="presences.html" class="back-btn">&larr; Créneaux</a>
+        <button class="admin-btn" id="admin-btn" title="Mode édition">&#9881;</button>
+
+        <div class="header">
+            <h1>PSG Academy</h1>
+            <p class="subtitle">{title}</p>
+        </div>
+
+        <div class="session-selector">
+            <label>Séance :</label>
+            <select id="session-select"></select>
+        </div>
+
+        <div class="edit-bar" id="edit-bar">
+            <span class="badge">Mode édition</span>
+            <button class="save-btn" id="save-btn" disabled>Enregistrer</button>
+            <button class="cancel-btn" id="cancel-btn">Annuler</button>
+        </div>
+
+        <div class="table-wrapper">
+{groups_html}
+        </div>
+    </div>
+
+    <div class="status-msg" id="status-msg"></div>
+
+    <script>
+    (function() {{
+        var DATA = {json_embedded};
+        var REPO = 'OhLaPey/planning-urbansoccer';
+        var JSON_PATH = 'data/presences-{slug}.json';
+        var TOKEN_KEY = 'planning-admin-token';
+        var STAFF_CODE = '1937';
+        var STAFF_KEY = 'planning-staff-ok';
+        var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
+
+        var editMode = false;
+        var dirty = false;
+        var pendingChanges = {{}};  // {{"row-col": value}}
+
+        // ── Auth ──
+        function isStaffVerified() {{ return sessionStorage.getItem(STAFF_KEY) === '1'; }}
+        function verifyStaff() {{
+            if (isStaffVerified()) return true;
+            var code = prompt('Code staff requis :');
+            if (code && code.trim() === STAFF_CODE) {{ sessionStorage.setItem(STAFF_KEY, '1'); return true; }}
+            alert('Code staff incorrect.'); return false;
+        }}
+        function getToken() {{
+            if (!isStaffVerified()) return '';
+            return localStorage.getItem(TOKEN_KEY) || atob(_p.join(''));
+        }}
+
+        // ── Session selector ──
+        var sessionSelect = document.getElementById('session-select');
+        var sessions = DATA.sessions.filter(function(s) {{ return !s.is_vacation; }});
+        var vacations = DATA.sessions.filter(function(s) {{ return s.is_vacation; }});
+
+        // Determine current session
+        var today = new Date();
+        var todayStr = today.getFullYear() + '-' +
+            String(today.getMonth()+1).padStart(2,'0') + '-' +
+            String(today.getDate()).padStart(2,'0');
+        var currentSession = sessions.length > 0 ? sessions[sessions.length - 1].label : null;
+        for (var i = 0; i < sessions.length; i++) {{
+            if (sessions[i].date) {{
+                // Parse dd/mm/yy
+                var parts = sessions[i].date.split('/');
+                if (parts.length === 3) {{
+                    var yr = parseInt(parts[2]);
+                    if (yr < 100) yr += 2000;
+                    var sDate = yr + '-' + parts[1].padStart(2,'0') + '-' + parts[0].padStart(2,'0');
+                    if (sDate >= todayStr) {{ currentSession = sessions[i].label; break; }}
+                }}
+            }}
+        }}
+
+        // Populate select
+        sessions.forEach(function(s) {{
+            var opt = document.createElement('option');
+            opt.value = s.label;
+            opt.textContent = s.label + (s.date ? ' (' + s.date + ')' : '');
+            if (s.label === currentSession) opt.selected = true;
+            sessionSelect.appendChild(opt);
+        }});
+
+        function getSelectedSession() {{ return sessionSelect.value; }}
+
+        function highlightSession() {{
+            var sel = getSelectedSession();
+            // Hide all session columns except selected + show name/num/cat/total
+            document.querySelectorAll('.session-col, .session-cell').forEach(function(el) {{
+                var label = el.getAttribute('data-label');
+                el.style.display = (label === sel) ? '' : 'none';
+            }});
+            updateTotals();
+        }}
+
+        sessionSelect.addEventListener('change', function() {{
+            if (dirty) {{
+                if (!confirm('Modifications non enregistrées. Changer de séance ?')) {{
+                    sessionSelect.value = currentSession;
+                    return;
+                }}
+                cancelEdit();
+            }}
+            highlightSession();
+        }});
+
+        // ── Totals ──
+        function updateTotals() {{
+            document.querySelectorAll('.group-section').forEach(function(section) {{
+                var rows = section.querySelectorAll('tbody tr');
+                rows.forEach(function(row) {{
+                    // Count all visible present cells for this kid
+                    var total = 0;
+                    DATA.sessions.forEach(function(s) {{
+                        var cell = row.querySelector('.session-cell[data-label="' + s.label + '"]');
+                        if (cell && cell.textContent.trim() === '1') total++;
+                    }});
+                    var totalCell = row.querySelector('.total-val');
+                    if (totalCell) totalCell.textContent = total;
+                }});
+                // Footer total for selected session
+                var sel = getSelectedSession();
+                var footCells = section.querySelectorAll('tfoot .session-cell');
+                footCells.forEach(function(fc) {{
+                    var label = fc.getAttribute('data-label');
+                    if (label === sel) {{
+                        var count = 0;
+                        rows.forEach(function(row) {{
+                            var cell = row.querySelector('.session-cell[data-label="' + label + '"]');
+                            if (cell && cell.textContent.trim() === '1') count++;
+                        }});
+                        fc.textContent = count || '';
+                    }}
+                }});
+            }});
+        }}
+
+        // ── Edit mode ──
+        var adminBtn = document.getElementById('admin-btn');
+        var editBar = document.getElementById('edit-bar');
+        var saveBtn = document.getElementById('save-btn');
+        var cancelBtn = document.getElementById('cancel-btn');
+
+        adminBtn.addEventListener('click', function() {{
+            if (editMode) {{
+                cancelEdit();
+                return;
+            }}
+            if (!verifyStaff()) return;
+            editMode = true;
+            adminBtn.classList.add('unlocked');
+            editBar.classList.add('active');
+            enableCellEditing();
+        }});
+
+        function enableCellEditing() {{
+            var sel = getSelectedSession();
+            document.querySelectorAll('.session-cell[data-label="' + sel + '"]').forEach(function(cell) {{
+                if (cell.closest('tfoot')) return;  // skip total row
+                cell.classList.add('editable');
+                cell.addEventListener('click', toggleCell);
+            }});
+        }}
+
+        function disableCellEditing() {{
+            document.querySelectorAll('.session-cell.editable').forEach(function(cell) {{
+                cell.classList.remove('editable');
+                cell.removeEventListener('click', toggleCell);
+            }});
+        }}
+
+        function toggleCell(e) {{
+            if (!editMode) return;
+            var cell = e.currentTarget;
+            var current = cell.textContent.trim();
+            var newVal;
+            if (current === '1') {{
+                newVal = 0;
+                cell.textContent = '0';
+                cell.classList.remove('present');
+                cell.classList.add('absent');
+            }} else {{
+                newVal = 1;
+                cell.textContent = '1';
+                cell.classList.remove('absent');
+                cell.classList.add('present');
+            }}
+            var key = cell.getAttribute('data-row') + '-' + cell.getAttribute('data-col');
+            pendingChanges[key] = newVal;
+            dirty = true;
+            saveBtn.disabled = false;
+            updateTotals();
+        }}
+
+        function cancelEdit() {{
+            if (dirty && !confirm('Annuler les modifications ?')) return;
+            // Revert changes
+            Object.keys(pendingChanges).forEach(function(key) {{
+                var parts = key.split('-');
+                var row = parts[0], col = parts[1];
+                var cell = document.querySelector('.session-cell[data-row="' + row + '"][data-col="' + col + '"]');
+                if (cell) {{
+                    // Find original value in DATA
+                    var origVal = findOriginalValue(parseInt(row), getSelectedSession());
+                    cell.textContent = origVal === 1 ? '1' : (origVal === 0 ? '0' : '');
+                    cell.classList.remove('present', 'absent');
+                    if (origVal === 1) cell.classList.add('present');
+                    else if (origVal === 0) cell.classList.add('absent');
+                }}
+            }});
+            pendingChanges = {{}};
+            dirty = false;
+            editMode = false;
+            saveBtn.disabled = true;
+            adminBtn.classList.remove('unlocked');
+            editBar.classList.remove('active');
+            disableCellEditing();
+            updateTotals();
+        }}
+
+        function findOriginalValue(row, sessionLabel) {{
+            for (var gi = 0; gi < DATA.groups.length; gi++) {{
+                for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {{
+                    if (DATA.groups[gi].kids[ki].row === row) {{
+                        return DATA.groups[gi].kids[ki].attendance[sessionLabel];
+                    }}
+                }}
+            }}
+            return null;
+        }}
+
+        // ── Save via GitHub API ──
+        saveBtn.addEventListener('click', function() {{
+            if (!dirty) return;
+            var token = getToken();
+            if (!token) {{ showStatus('Token manquant', 'error'); return; }}
+
+            saveBtn.disabled = true;
+            saveBtn.textContent = 'Enregistrement...';
+
+            // Update DATA in memory
+            var sel = getSelectedSession();
+            Object.keys(pendingChanges).forEach(function(key) {{
+                var parts = key.split('-');
+                var row = parseInt(parts[0]);
+                var val = pendingChanges[key];
+                for (var gi = 0; gi < DATA.groups.length; gi++) {{
+                    for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {{
+                        if (DATA.groups[gi].kids[ki].row === row) {{
+                            DATA.groups[gi].kids[ki].attendance[sel] = val;
+                        }}
+                    }}
+                }}
+            }});
+
+            // Push to GitHub
+            var url = 'https://api.github.com/repos/' + REPO + '/contents/' + JSON_PATH;
+            fetch(url, {{
+                headers: {{ 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json' }}
+            }})
+            .then(function(r) {{ return r.json(); }})
+            .then(function(info) {{
+                var sha = info.sha;
+                var content = btoa(unescape(encodeURIComponent(JSON.stringify(DATA, null, 2))));
+                return fetch(url, {{
+                    method: 'PUT',
+                    headers: {{
+                        'Authorization': 'token ' + token,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    }},
+                    body: JSON.stringify({{
+                        message: 'Présences ' + DATA.title + ' ' + sel + ' — mise à jour',
+                        content: content,
+                        sha: sha
+                    }})
+                }});
+            }})
+            .then(function(r) {{
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                return r.json();
+            }})
+            .then(function() {{
+                pendingChanges = {{}};
+                dirty = false;
+                saveBtn.textContent = 'Enregistrer';
+                saveBtn.disabled = true;
+                showStatus('Enregistré !', 'success');
+            }})
+            .catch(function(err) {{
+                saveBtn.textContent = 'Enregistrer';
+                saveBtn.disabled = false;
+                showStatus('Erreur : ' + err.message, 'error');
+            }});
+        }});
+
+        cancelBtn.addEventListener('click', cancelEdit);
+
+        // ── Status messages ──
+        function showStatus(msg, type) {{
+            var el = document.getElementById('status-msg');
+            el.textContent = msg;
+            el.className = 'status-msg show ' + type;
+            setTimeout(function() {{ el.classList.remove('show'); }}, 3000);
+        }}
+
+        // ── Init ──
+        highlightSession();
+        // If staff already verified, show admin as ready
+        if (isStaffVerified()) {{
+            adminBtn.style.color = '#E30613';
+            adminBtn.style.borderColor = 'rgba(227,6,19,0.3)';
+        }}
+    }})();
+    </script>
+</body>
+</html>'''
+
+    with open(f"presences-{slug}.html", "w", encoding="utf-8") as f:
+        f.write(html)
+
+
+def _write_attendance_index(creneaux_index):
+    """Génère la page index des créneaux de présences."""
+    cards_html = ""
+    tabs_html = ""
+    for c in creneaux_index:
+        cards_html += (
+            f'<a href="presences-{c["slug"]}.html" class="creneau-card">\n'
+            f'  <div class="creneau-title">{c["title"]}</div>\n'
+            f'  <div class="creneau-info">{c["total_kids"]} enfants &middot; '
+            f'{c["sessions_count"]} séances</div>\n'
+            f'</a>\n'
+        )
+        tabs_html += (
+            f'<a href="presences-{c["slug"]}.html" class="creneau-tab">{c["title"]}</a>\n'
+        )
+
+    html = f'''<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSG Academy - Présences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+        body {{
+            font-family: 'Montserrat', sans-serif;
+            background: #0C1C3E;
+            min-height: 100vh;
+            padding: 15px;
+            color: #fff;
+            position: relative;
+        }}
+        body::before {{
+            content: '';
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background: url('bg-psg.jpg') center center / cover no-repeat;
+            opacity: 0.15;
+        }}
+        .container {{
+            position: relative; z-index: 1; max-width: 600px; margin: 0 auto;
+            background: rgba(12,28,62,0.95); border-radius: 8px;
+            padding: 20px; margin-top: 20px;
+            border-top: 4px solid #E30613;
+        }}
+        .header {{
+            text-align: center; margin-bottom: 24px; padding: 14px 10px 8px;
+            position: relative;
+        }}
+        .back-btn {{
+            position: absolute; top: 8px; left: 0;
+            background: none; border: 1px solid rgba(255,255,255,0.15);
+            color: #aaa; font-size: 11px; cursor: pointer; padding: 6px 12px;
+            border-radius: 6px; text-decoration: none; font-family: inherit;
+            font-weight: 600; transition: all 0.2s;
+        }}
+        .back-btn:hover {{ color: #E30613; border-color: #E30613; }}
+        h1 {{
+            color: #fff; font-size: 24px; font-weight: 900; margin-bottom: 4px;
+            text-transform: uppercase; letter-spacing: 2px;
+        }}
+        .subtitle {{
+            color: #E30613; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px;
+        }}
+        .creneau-card {{
+            display: block; padding: 18px 20px; margin-bottom: 10px;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px; text-decoration: none; color: #fff;
+            transition: all 0.2s;
+        }}
+        .creneau-card:hover {{
+            background: rgba(227,6,19,0.1); border-color: rgba(227,6,19,0.3);
+            transform: translateY(-2px);
+        }}
+        .creneau-title {{
+            font-size: 16px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 4px;
+        }}
+        .creneau-info {{
+            font-size: 12px; color: #888; font-weight: 500;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-btn">&larr; Planning</a>
+            <h1>PSG Academy</h1>
+            <p class="subtitle">Suivi des présences</p>
+        </div>
+
+{cards_html}
+    </div>
+</body>
+</html>'''
+
+    with open("presences.html", "w", encoding="utf-8") as f:
+        f.write(html)
+
+
 # ── Main ───────────────────────────────────────────────────────────────────
 
 
@@ -3889,6 +4622,9 @@ def main():
             '</html>'
         )
     print(f"\u00c9crit : index.html (semaines : {', '.join(f'S{w}' for w in sorted(all_weeks))})")
+
+    # ── Générer les pages de présences PSG Academy ──
+    generate_attendance_pages()
 
     print("\nTermin\u00e9 !")
     print("\n\u2500\u2500 Abonnement calendrier \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500")
