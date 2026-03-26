@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Planning U7D">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF6600">
     <title>Planning Urban 7D - S12</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -57,6 +62,8 @@
         .week-tab:hover { background: rgba(255,102,0,0.1); border-color: rgba(255,102,0,0.3); color: #FF6600; }
         .week-tab.active { background: #FF6600; border-color: #FF6600; color: white;
                             box-shadow: 0 0 15px rgba(255,102,0,0.4); }
+        .week-tab.past { opacity: 0.4; }
+        .week-tab.past:hover { opacity: 0.7; }
 
         /* ── View toggle ── */
         .view-toggle { display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
@@ -559,12 +566,12 @@
         </div>
 
         <div class="week-selector">
-            <a href="S9.html" class="week-tab">S9</a>
-            <a href="S10.html" class="week-tab">S10</a>
-            <a href="S11.html" class="week-tab">S11</a>
-            <a href="#" class="week-tab active">S12</a>
-            <a href="S13.html" class="week-tab">S13</a>
-            <a href="S14.html" class="week-tab">S14</a>
+            <a href="S9.html" class="week-tab" data-end="2026-03-01">S9</a>
+            <a href="S10.html" class="week-tab" data-end="2026-03-08">S10</a>
+            <a href="S11.html" class="week-tab" data-end="2026-03-15">S11</a>
+            <a href="#" class="week-tab active" data-end="2026-03-22">S12</a>
+            <a href="S13.html" class="week-tab" data-end="2026-03-29">S13</a>
+            <a href="S14.html" class="week-tab" data-end="2026-04-05">S14</a>
         </div>
 
         <div class="week-notes" id="week-notes"></div>
@@ -709,6 +716,19 @@
         var DAYS_FULL = ["Lundi 16/03", "Mardi 17/03", "Mercredi 18/03", "Jeudi 19/03", "Vendredi 20/03", "Samedi 21/03", "Dimanche 22/03"];
         var WEEK_DATES = ["2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22"];
         var currentDay = 0;
+        // Griser les onglets des semaines passées
+        (function() {
+            var today = new Date();
+            var yyyy = today.getFullYear();
+            var mm = String(today.getMonth()+1).padStart(2,"0");
+            var dd = String(today.getDate()).padStart(2,"0");
+            var todayStr = yyyy + "-" + mm + "-" + dd;
+            document.querySelectorAll('.week-tab[data-end]').forEach(function(tab) {
+                if (tab.getAttribute('data-end') < todayStr && !tab.classList.contains('active')) {
+                    tab.classList.add('past');
+                }
+            });
+        })();
         (function() {
             var now = new Date();
             var today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
