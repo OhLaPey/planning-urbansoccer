@@ -47,16 +47,20 @@
         .subtitle { color: #E30613; font-size: 11px; font-weight: 700; text-transform: uppercase;
                      letter-spacing: 3px; }
 
-        .view-toggle { display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
-                        background: rgba(255,255,255,0.04); border-radius: 6px; padding: 4px; }
-        .view-btn { flex: 1; padding: 8px; border: none; background: transparent;
-                     color: #666; font-size: 12px; font-weight: 700; cursor: pointer;
-                     border-radius: 4px; transition: all 0.2s; font-family: inherit;
-                     text-transform: uppercase; letter-spacing: 0.5px;
-                     text-decoration: none; text-align: center; }
-        .view-btn.active { background: rgba(227,6,19,0.15); color: #E30613;
-                            box-shadow: 0 0 10px rgba(227,6,19,0.2); }
-        .view-btn:hover:not(.active) { color: #aaa; }
+        /* ── Corner buttons ── */
+        .corner-btn {
+            position: fixed; z-index: 90; padding: 8px 12px;
+            background: rgba(8,18,40,0.85); backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+            color: #666; font-size: 10px; font-weight: 700; cursor: pointer;
+            text-decoration: none; transition: all 0.25s;
+            font-family: 'Montserrat', sans-serif; text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .corner-btn:hover { color: #E30613; border-color: rgba(227,6,19,0.4);
+                              background: rgba(8,18,40,0.95); }
+        .corner-btn-left { top: 10px; left: 10px; }
+        .corner-btn-right { top: 10px; right: 10px; }
 
         .creneau-grid {
             display: flex; flex-direction: column; gap: 6px;
@@ -85,23 +89,17 @@
         @media (min-width: 768px) {
             h1 { font-size: 24px; }
             .subtitle { font-size: 14px; }
-            .view-toggle { max-width: 500px; margin-left: auto; margin-right: auto; }
-            .view-btn { font-size: 14px; padding: 10px; }
             .creneau-btn { font-size: 14px; padding: 14px 18px; }
         }
     </style>
 </head>
 <body>
+    <a href="/index.html" class="corner-btn corner-btn-right" title="Planning UrbanSoccer">Planning</a>
+
     <div class="container">
         <div class="header">
             <h1>Suivi PSG Academy</h1>
             <div class="subtitle">Présences EDF</div>
-        </div>
-
-        <!-- View toggle -->
-        <div class="view-toggle">
-            <a href="/index.html" class="view-btn">Planning</a>
-            <a href="/presences" class="view-btn active">Présences</a>
         </div>
 
         {% if not data.file %}
