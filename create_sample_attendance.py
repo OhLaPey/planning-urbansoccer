@@ -18,8 +18,154 @@ HEADER_FONT = Font(bold=True, size=11)
 TITLE_FONT = Font(bold=True, size=14)
 TOTAL_FONT = Font(bold=True, size=12)
 
-# Données de démo
+# Données de démo — 10 créneaux comme dans le vrai fichier EDF
 CRENEAUX = [
+    {
+        "name": "LUNDI 17H30 Présence",
+        "title": "LUNDI 17H30",
+        "start_date": datetime(2025, 9, 8),
+        "day_offset": 0,  # lundi
+        "groups": [
+            {
+                "kids": [
+                    ("BERNARD Ethan", "U11"),
+                    ("THOMAS Axel", "U11"),
+                    ("LEROY Mathis", "U11"),
+                    ("GIRARD Louis", "U12"),
+                    ("BONNET Enzo", "U12"),
+                    ("FONTAINE Adam", "U12"),
+                ]
+            },
+        ],
+    },
+    {
+        "name": "MARDI 17H30 Présence",
+        "title": "MARDI 17H30",
+        "start_date": datetime(2025, 9, 9),
+        "day_offset": 1,  # mardi
+        "groups": [
+            {
+                "kids": [
+                    ("DUPONT Mathéo", "U10"),
+                    ("MOREL Nathan", "U10"),
+                    ("FOURNIER Enzo", "U10"),
+                    ("LAMBERT Théo", "U11"),
+                    ("ROUSSEAU Lucas", "U11"),
+                    ("BLANC Ethan", "U11"),
+                    ("CHEVALIER Liam", "U12"),
+                ]
+            },
+        ],
+    },
+    {
+        "name": "MERCREDI 14h Présence",
+        "title": "MERCREDI 14H",
+        "start_date": datetime(2025, 9, 10),
+        "day_offset": 2,  # mercredi
+        "groups": [
+            {
+                "kids": [
+                    ("MARTIN Lucas", "U10"),
+                    ("DUBOIS Nathan", "U10"),
+                    ("PETIT Arthur", "U10"),
+                    ("ROBERT Léo", "U10"),
+                    ("RICHARD Hugo", "U11"),
+                    ("MOREAU Théo", "U11"),
+                    ("SIMON Gabriel", "U11"),
+                    ("LAURENT Raphaël", "U11"),
+                ]
+            },
+        ],
+    },
+    {
+        "name": "MERCREDI 15H45 Présence",
+        "title": "MERCREDI 15H45",
+        "start_date": datetime(2025, 9, 10),
+        "day_offset": 2,  # mercredi
+        "groups": [
+            {
+                "kids": [
+                    ("ABOU LEYLA Youssef", "U10"),
+                    ("LEGRAND LHOPITAULT Gabriel", "U10"),
+                    ("NGUEMA MEDANG Seth", "U10"),
+                    ("MEDALE Joaquim", "U10"),
+                    ("BESNARD Noah", "U10"),
+                    ("DESPOISSE Louis", "U10"),
+                    ("SACADURA DOS SANTOS Thomas", "U10"),
+                    ("KARIMI Joal-Liam", "U10"),
+                    ("DELGADO Emiliano", "U10"),
+                    ("MANNA Gabriel", "U10"),
+                    ("FARSI Amir", "U10"),
+                    ("AMRI Souleymane", "U10"),
+                    ("MAHAMOUD IBRAHIM Zaïn", "U10"),
+                    ("NICOLLE Noah", "U10"),
+                    ("AMER Ayman", "U10"),
+                    ("AZIZA Sam", "U10"),
+                ]
+            },
+            {
+                "kids": [
+                    ("MOREIRA Liam", "U11"),
+                    ("DEVOS Adam", "U11"),
+                    ("MOLINA NEGRE Ruben", "U11"),
+                    ("MOUMEN Maher", "U11"),
+                    ("MOUMEN Waël", "U11"),
+                    ("BEAUMONT Elie", "U11"),
+                    ("GOMIS Noam", "U11"),
+                    ("BAMBA Karim Christ Emmanuel", "U12"),
+                    ("ARBONA Florian", "U12"),
+                    ("MAGOSSOU Melphy Antoine", "U12"),
+                    ("ABOU LEYA Adam", "U12"),
+                    ("MARTIN CHOPINAUD Louis", "U12"),
+                    ("MOREIRA Lucas", "U12"),
+                    ("GUERRERO Nino", "U12"),
+                    ("GONCALVES Gabin", "U12"),
+                    ("GARBAA Ilyas", "U12"),
+                ]
+            },
+        ],
+    },
+    {
+        "name": "VENDREDI 17h30 Présence",
+        "title": "VENDREDI 17H30",
+        "start_date": datetime(2025, 9, 12),
+        "day_offset": 4,  # vendredi
+        "groups": [
+            {
+                "kids": [
+                    ("PEREIRA Nolan", "U11"),
+                    ("DA SILVA Yanis", "U11"),
+                    ("COSTA Léandro", "U11"),
+                    ("FERREIRA Mattéo", "U12"),
+                    ("SANTOS Rafael", "U12"),
+                    ("OLIVEIRA Ilian", "U12"),
+                    ("RODRIGUES Noam", "U12"),
+                    ("ALVES Ayoub", "U13"),
+                ]
+            },
+        ],
+    },
+    {
+        "name": "SAMEDI 9h30 Présence",
+        "title": "SAMEDI 9H30",
+        "start_date": datetime(2025, 9, 13),
+        "day_offset": 5,  # samedi
+        "groups": [
+            {
+                "kids": [
+                    ("LECLERC Noé", "U10"),
+                    ("GARNIER Rayan", "U10"),
+                    ("FAURE Amine", "U10"),
+                    ("MERCIER Timéo", "U10"),
+                    ("GAUTHIER Ilyes", "U10"),
+                    ("MARCHAND Léon", "U11"),
+                    ("DUVAL Nolan", "U11"),
+                    ("DENIS Aymen", "U11"),
+                    ("LEMOINE Soan", "U11"),
+                ]
+            },
+        ],
+    },
     {
         "name": "SAMEDI 11h15 Présence",
         "title": "SAMEDI 11H15",
@@ -63,39 +209,40 @@ CRENEAUX = [
         ],
     },
     {
-        "name": "MERCREDI 14h Présence",
-        "title": "MERCREDI 14H",
-        "start_date": datetime(2025, 9, 10),
-        "day_offset": 2,  # mercredi
+        "name": "SAMEDI 14h00 Présence",
+        "title": "SAMEDI 14H00",
+        "start_date": datetime(2025, 9, 13),
+        "day_offset": 5,  # samedi
         "groups": [
             {
                 "kids": [
-                    ("MARTIN Lucas", "U10"),
-                    ("DUBOIS Nathan", "U10"),
-                    ("PETIT Arthur", "U10"),
-                    ("ROBERT Léo", "U10"),
-                    ("RICHARD Hugo", "U11"),
-                    ("MOREAU Théo", "U11"),
-                    ("SIMON Gabriel", "U11"),
-                    ("LAURENT Raphaël", "U11"),
+                    ("HENRY Raphaël", "U11"),
+                    ("MICHEL Noah", "U11"),
+                    ("LEFEBVRE Mathis", "U11"),
+                    ("DAVID Liam", "U12"),
+                    ("BERTRAND Enzo", "U12"),
+                    ("ROUX Timéo", "U12"),
+                    ("VINCENT Lucas", "U13"),
+                    ("MULLER Yanis", "U13"),
                 ]
             },
         ],
     },
     {
-        "name": "LUNDI 17H30 Présence",
-        "title": "LUNDI 17H30",
-        "start_date": datetime(2025, 9, 8),
-        "day_offset": 0,  # lundi
+        "name": "SAMEDI 15h45 Présence",
+        "title": "SAMEDI 15H45",
+        "start_date": datetime(2025, 9, 13),
+        "day_offset": 5,  # samedi
         "groups": [
             {
                 "kids": [
-                    ("BERNARD Ethan", "U11"),
-                    ("THOMAS Axel", "U11"),
-                    ("LEROY Mathis", "U11"),
-                    ("GIRARD Louis", "U12"),
-                    ("BONNET Enzo", "U12"),
-                    ("FONTAINE Adam", "U12"),
+                    ("POULAIN Gabriel", "U12"),
+                    ("COLLET Noé", "U12"),
+                    ("MASSON Rayan", "U12"),
+                    ("AUBERT Ilyes", "U13"),
+                    ("RENAUD Soan", "U13"),
+                    ("PICARD Nolan", "U13"),
+                    ("ROGER Aymen", "U13"),
                 ]
             },
         ],
@@ -104,7 +251,7 @@ CRENEAUX = [
         "name": "BABY Présence",
         "title": "BABY",
         "start_date": datetime(2025, 9, 13),
-        "day_offset": 5,
+        "day_offset": 5,  # samedi
         "groups": [
             {
                 "kids": [

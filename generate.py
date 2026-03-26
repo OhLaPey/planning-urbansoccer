@@ -3748,7 +3748,7 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             f'title="{date_str}">{label}</th>\n'
         )
 
-    # Build group tables
+    # Build group tables with checkboxes
     groups_html = ""
     for g_idx, group in enumerate(groups):
         groups_html += f'<div class="group-section" data-group="{g_idx}">\n'
@@ -3769,15 +3769,17 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             for s in sessions:
                 val = kid["attendance"].get(s["label"])
                 cls = "vacation" if s["is_vacation"] else ""
-                if val == 1:
-                    cls += " present"
-                elif val == 0:
-                    cls += " absent"
-                display = "1" if val == 1 else ("0" if val == 0 else "")
-                groups_html += (
-                    f'<td class="session-cell {cls}" data-label="{s["label"]}" '
-                    f'data-row="{kid["row"]}" data-col="{s["col"]}">{display}</td>\n'
-                )
+                checked = ' checked' if val == 1 else ''
+                if s["is_vacation"]:
+                    groups_html += f'<td class="session-cell {cls}" data-label="{s["label"]}"></td>\n'
+                else:
+                    groups_html += (
+                        f'<td class="session-cell {cls}" data-label="{s["label"]}" '
+                        f'data-row="{kid["row"]}" data-col="{s["col"]}">'
+                        f'<input type="checkbox" class="att-cb" data-label="{s["label"]}" '
+                        f'data-row="{kid["row"]}" data-col="{s["col"]}"{checked} disabled>'
+                        f'</td>\n'
+                    )
             # Total present
             total_p = sum(1 for s in sessions if kid["attendance"].get(s["label"]) == 1)
             groups_html += f'<td class="total-col total-val">{total_p}</td></tr>\n'
@@ -3907,12 +3909,34 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
         .cat-col {{ width: 40px; color: #888; font-size: 10px; }}
         .total-col {{ width: 40px; font-weight: 700; color: #E30613; }}
         .session-col {{ min-width: 28px; }}
-        .session-cell {{ cursor: default; transition: all 0.15s; min-width: 28px; }}
-        .session-cell.editable {{ cursor: pointer; }}
-        .session-cell.editable:hover {{ background: rgba(255,255,255,0.1); }}
-        .session-cell.present {{ background: rgba(0,200,120,0.25); color: #4fc6a0; font-weight: 700; }}
-        .session-cell.absent {{ background: rgba(227,6,19,0.2); color: #ff6b6b; font-weight: 700; }}
+        .session-cell {{ cursor: default; transition: all 0.15s; min-width: 28px; text-align: center; }}
         .session-cell.vacation {{ background: rgba(0,180,220,0.15); color: #0bb4dc; }}
+
+        /* Checkbox styling */
+        .att-cb {{
+            -webkit-appearance: none; appearance: none;
+            width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 4px; background: rgba(0,0,0,0.2);
+            cursor: not-allowed; position: relative; vertical-align: middle;
+            transition: all 0.15s;
+        }}
+        .att-cb:checked {{
+            background: #00c878; border-color: #00c878;
+        }}
+        .att-cb:checked::after {{
+            content: '\\2713'; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%); color: #fff;
+            font-size: 14px; font-weight: 900; line-height: 1;
+        }}
+        .att-cb:not(:checked)::after {{
+            content: ''; /* empty when unchecked */
+        }}
+        .att-cb.editable {{
+            cursor: pointer; border-color: rgba(255,255,255,0.4);
+        }}
+        .att-cb.editable:hover {{
+            border-color: #E30613; box-shadow: 0 0 6px rgba(227,6,19,0.4);
+        }}
         .total-row td {{ font-weight: 700; border-top: 2px solid rgba(255,255,255,0.15);
                           background: rgba(255,255,255,0.03); }}
 
@@ -4087,12 +4111,10 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             document.querySelectorAll('.group-section').forEach(function(section) {{
                 var rows = section.querySelectorAll('tbody tr');
                 rows.forEach(function(row) {{
-                    // Count all visible present cells for this kid
+                    // Count all checked checkboxes for this kid
                     var total = 0;
-                    DATA.sessions.forEach(function(s) {{
-                        var cell = row.querySelector('.session-cell[data-label="' + s.label + '"]');
-                        if (cell && cell.textContent.trim() === '1') total++;
-                    }});
+                    var cbs = row.querySelectorAll('.att-cb');
+                    cbs.forEach(function(cb) {{ if (cb.checked) total++; }});
                     var totalCell = row.querySelector('.total-val');
                     if (totalCell) totalCell.textContent = total;
                 }});
@@ -4104,8 +4126,8 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
                     if (label === sel) {{
                         var count = 0;
                         rows.forEach(function(row) {{
-                            var cell = row.querySelector('.session-cell[data-label="' + label + '"]');
-                            if (cell && cell.textContent.trim() === '1') count++;
+                            var cb = row.querySelector('.att-cb[data-label="' + label + '"]');
+                            if (cb && cb.checked) count++;
                         }});
                         fc.textContent = count || '';
                     }}
@@ -4133,37 +4155,27 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
 
         function enableCellEditing() {{
             var sel = getSelectedSession();
-            document.querySelectorAll('.session-cell[data-label="' + sel + '"]').forEach(function(cell) {{
-                if (cell.closest('tfoot')) return;  // skip total row
-                cell.classList.add('editable');
-                cell.addEventListener('click', toggleCell);
+            document.querySelectorAll('.att-cb[data-label="' + sel + '"]').forEach(function(cb) {{
+                if (cb.closest('tfoot')) return;
+                cb.disabled = false;
+                cb.classList.add('editable');
+                cb.addEventListener('change', toggleCheckbox);
             }});
         }}
 
         function disableCellEditing() {{
-            document.querySelectorAll('.session-cell.editable').forEach(function(cell) {{
-                cell.classList.remove('editable');
-                cell.removeEventListener('click', toggleCell);
+            document.querySelectorAll('.att-cb.editable').forEach(function(cb) {{
+                cb.disabled = true;
+                cb.classList.remove('editable');
+                cb.removeEventListener('change', toggleCheckbox);
             }});
         }}
 
-        function toggleCell(e) {{
+        function toggleCheckbox(e) {{
             if (!editMode) return;
-            var cell = e.currentTarget;
-            var current = cell.textContent.trim();
-            var newVal;
-            if (current === '1') {{
-                newVal = 0;
-                cell.textContent = '0';
-                cell.classList.remove('present');
-                cell.classList.add('absent');
-            }} else {{
-                newVal = 1;
-                cell.textContent = '1';
-                cell.classList.remove('absent');
-                cell.classList.add('present');
-            }}
-            var key = cell.getAttribute('data-row') + '-' + cell.getAttribute('data-col');
+            var cb = e.currentTarget;
+            var newVal = cb.checked ? 1 : 0;
+            var key = cb.getAttribute('data-row') + '-' + cb.getAttribute('data-col');
             pendingChanges[key] = newVal;
             dirty = true;
             saveBtn.disabled = false;
@@ -4172,18 +4184,14 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
 
         function cancelEdit() {{
             if (dirty && !confirm('Annuler les modifications ?')) return;
-            // Revert changes
+            // Revert checkboxes
             Object.keys(pendingChanges).forEach(function(key) {{
                 var parts = key.split('-');
                 var row = parts[0], col = parts[1];
-                var cell = document.querySelector('.session-cell[data-row="' + row + '"][data-col="' + col + '"]');
-                if (cell) {{
-                    // Find original value in DATA
+                var cb = document.querySelector('.att-cb[data-row="' + row + '"][data-col="' + col + '"]');
+                if (cb) {{
                     var origVal = findOriginalValue(parseInt(row), getSelectedSession());
-                    cell.textContent = origVal === 1 ? '1' : (origVal === 0 ? '0' : '');
-                    cell.classList.remove('present', 'absent');
-                    if (origVal === 1) cell.classList.add('present');
-                    else if (origVal === 0) cell.classList.add('absent');
+                    cb.checked = origVal === 1;
                 }}
             }});
             pendingChanges = {{}};
@@ -4216,7 +4224,7 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             saveBtn.disabled = true;
             saveBtn.textContent = 'Enregistrement...';
 
-            // Update DATA in memory
+            // Update DATA in memory from checkboxes
             var sel = getSelectedSession();
             Object.keys(pendingChanges).forEach(function(key) {{
                 var parts = key.split('-');
@@ -4298,20 +4306,57 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
         f.write(html)
 
 
+def _attendance_sort_key(title):
+    """Retourne une clé de tri chronologique pour un créneau (jour + heure)."""
+    import re as _re
+    day_order = {
+        "lundi": 0, "mardi": 1, "mercredi": 2, "jeudi": 3,
+        "vendredi": 4, "samedi": 5, "dimanche": 6, "baby": 5.5,
+    }
+    title_lower = title.lower().strip()
+    day_num = 7  # default: end
+    hour = 0
+    for day, idx in day_order.items():
+        if title_lower.startswith(day) or title_lower == day:
+            day_num = idx
+            break
+    # Extract time like 17H30, 9h30, 14H00, 11H15
+    m = _re.search(r"(\d{1,2})[hH](\d{0,2})", title)
+    if m:
+        hour = int(m.group(1)) * 60 + int(m.group(2) or 0)
+    return (day_num, hour)
+
+
+def _attendance_day_of_week(title):
+    """Retourne le numéro de jour de la semaine (0=lundi) pour un créneau."""
+    day_map = {
+        "lundi": 0, "mardi": 1, "mercredi": 2, "jeudi": 3,
+        "vendredi": 4, "samedi": 5, "dimanche": 6,
+    }
+    title_lower = title.lower().strip()
+    for day, idx in day_map.items():
+        if title_lower.startswith(day):
+            return idx
+    # BABY is on Saturday
+    if "baby" in title_lower:
+        return 5
+    return -1
+
+
 def _write_attendance_index(creneaux_index):
     """Génère la page index des créneaux de présences."""
+    # Sort chronologically by day of week + time
+    creneaux_sorted = sorted(creneaux_index, key=lambda c: _attendance_sort_key(c["title"]))
+
     cards_html = ""
-    tabs_html = ""
-    for c in creneaux_index:
+    for c in creneaux_sorted:
+        day_idx = _attendance_day_of_week(c["title"])
         cards_html += (
-            f'<a href="presences-{c["slug"]}.html" class="creneau-card">\n'
+            f'<a href="presences-{c["slug"]}.html" class="creneau-card" data-day="{day_idx}">\n'
             f'  <div class="creneau-title">{c["title"]}</div>\n'
             f'  <div class="creneau-info">{c["total_kids"]} enfants &middot; '
             f'{c["sessions_count"]} séances</div>\n'
             f'</a>\n'
-        )
-        tabs_html += (
-            f'<a href="presences-{c["slug"]}.html" class="creneau-tab">{c["title"]}</a>\n'
         )
 
     html = f'''<!DOCTYPE html>
@@ -4374,6 +4419,18 @@ def _write_attendance_index(creneaux_index):
             background: rgba(227,6,19,0.1); border-color: rgba(227,6,19,0.3);
             transform: translateY(-2px);
         }}
+        /* Today's sessions: inverted colors */
+        .creneau-card.today {{
+            background: #E30613; border-color: #E30613;
+            box-shadow: 0 0 20px rgba(227,6,19,0.5);
+        }}
+        .creneau-card.today:hover {{
+            background: #ff1a2a; border-color: #ff1a2a;
+            transform: translateY(-2px);
+        }}
+        .creneau-card.today .creneau-info {{
+            color: rgba(255,255,255,0.8);
+        }}
         .creneau-title {{
             font-size: 16px; font-weight: 800; text-transform: uppercase;
             letter-spacing: 1px; margin-bottom: 4px;
@@ -4393,6 +4450,18 @@ def _write_attendance_index(creneaux_index):
 
 {cards_html}
     </div>
+    <script>
+    (function() {{
+        // Highlight today's sessions (JS day: 0=Sun,1=Mon...6=Sat → convert to 0=Mon...6=Sun)
+        var jsDay = new Date().getDay();
+        var pyDay = jsDay === 0 ? 6 : jsDay - 1; // 0=Mon, 1=Tue, ... 5=Sat, 6=Sun
+        document.querySelectorAll('.creneau-card').forEach(function(card) {{
+            if (parseInt(card.getAttribute('data-day')) === pyDay) {{
+                card.classList.add('today');
+            }}
+        }});
+    }})();
+    </script>
 </body>
 </html>'''
 
