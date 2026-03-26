@@ -574,11 +574,12 @@
     </style>
 </head>
 <body>
-    <!-- Corner buttons -->
-    <button class="corner-btn corner-btn-left" onclick="if(typeof verifyStaff==='function'){verifyStaff();initAdminToolbar();}" title="Mode admin">Admin</button>
-    <a href="/presences" class="corner-btn corner-btn-right" title="Suivi des présences EDF">Présences</a>
+    <!-- Corner button -->
+    <a href="/presences" class="corner-btn corner-btn-right" title="Suivi des présences EDF">PSG Academy</a>
 
     <div class="container">
+        <!-- Admin button inside container -->
+        <button class="corner-btn" style="position:absolute; top:8px; left:8px; z-index:10;" onclick="if(typeof verifyStaff==='function'){verifyStaff();initAdminToolbar();}" title="Mode admin">Admin</button>
         <div class="header">
             <h1>Planning Urban 7D</h1>
             <p class="subtitle">Semaine 12</p>
