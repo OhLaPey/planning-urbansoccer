@@ -1,0 +1,3102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Planning U7D">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF6600">
+    <title>Planning Urban 7D - S15</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #1A1A1A;
+            min-height: 100vh;
+            padding: 15px;
+            color: #fff;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: url('bg-team.jpg') center center / cover no-repeat;
+            opacity: 0.22;
+        }
+        .container { position: relative; z-index: 1; max-width: 600px; margin: 0 auto;
+                      background: rgba(26,26,26,0.95); border-radius: 8px;
+                      padding: 2px 6px; margin-top: 6px; margin-bottom: 6px;
+                      border-top: 4px solid #FF6600; overflow: hidden; }
+        .container::after { content: '\276F\276F\276F\276F'; position: absolute;
+                             top: 12px; right: -2px; font-size: 28px; font-weight: 900;
+                             color: rgba(255,102,0,0.08); letter-spacing: -4px;
+                             pointer-events: none; z-index: 0; }
+
+        /* ── Top bar (Admin + PSG Academy) ── */
+        .top-bar { display: flex; justify-content: space-between; align-items: center;
+                     padding: 8px 4px 0; }
+        .top-bar .admin-btn, .top-bar .psg-btn {
+            padding: 10px 22px; border-radius: 8px; font-size: 14px; font-weight: 700;
+            cursor: pointer; text-decoration: none; transition: all 0.25s;
+            font-family: 'Montserrat', sans-serif; text-transform: uppercase;
+            letter-spacing: 0.5px; border: 1px solid rgba(255,255,255,0.12);
+            background: none; color: #666;
+        }
+        .top-bar .admin-btn:hover { color: #FF6600; border-color: rgba(255,102,0,0.4); }
+        .top-bar .admin-btn.unlocked { color: #FF6600; border-color: rgba(255,102,0,0.4); }
+        .top-bar .psg-btn { background: #0C1C3E; color: #E30613;
+                              border-color: rgba(227,6,19,0.4); }
+        .top-bar .psg-btn:hover { background: rgba(227,6,19,0.15); color: #ff3040;
+                                    border-color: #E30613; }
+
+        /* ── Header ── */
+        .header { text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }
+        h1 { font-family: 'Montserrat', sans-serif;
+              color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px;
+              text-transform: uppercase; letter-spacing: 2px;
+              text-shadow: 0 0 30px rgba(255,102,0,0.3); }
+        .subtitle { color: #FF6600; font-size: 11px; font-weight: 700; text-transform: uppercase;
+                     letter-spacing: 3px; }
+        .dates { color: #FF6600; font-size: 14px; font-weight: 700;
+                  background: rgba(255,102,0,0.1); padding: 6px 14px;
+                  border-radius: 6px; display: inline-block; margin-top: 6px;
+                  border: 1px solid rgba(255,102,0,0.2); }
+
+        /* ── Week selector ── */
+        .week-selector { display: flex; justify-content: center; gap: 6px;
+                          margin-bottom: 15px; flex-wrap: wrap; }
+        .week-tab { padding: 8px 14px; background: rgba(255,255,255,0.04);
+                     border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
+                     color: #666; text-decoration: none; font-weight: 600; font-size: 13px;
+                     transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .week-tab:hover { background: rgba(255,102,0,0.1); border-color: rgba(255,102,0,0.3); color: #FF6600; }
+        .week-tab.active { background: #FF6600; border-color: #FF6600; color: white;
+                            box-shadow: 0 0 15px rgba(255,102,0,0.4); }
+        .week-tab.past { opacity: 0.4; }
+        .week-tab.past:hover { opacity: 0.7; }
+
+
+        /* ── View toggle ── */
+        .view-toggle { display: flex; justify-content: center; gap: 4px; margin-bottom: 15px;
+                        background: rgba(255,255,255,0.04); border-radius: 6px; padding: 4px; }
+        .view-btn { flex: 1; padding: 8px; border: none; background: transparent;
+                     color: #666; font-size: 12px; font-weight: 700; cursor: pointer;
+                     border-radius: 4px; transition: all 0.2s; font-family: inherit;
+                     text-transform: uppercase; letter-spacing: 0.5px; }
+        .view-btn.active { background: rgba(255,102,0,0.15); color: #FF6600;
+                            box-shadow: 0 0 10px rgba(255,102,0,0.2); }
+
+        /* ── Day tabs ── */
+        .day-tabs { display: flex; gap: 3px; margin-bottom: 12px; overflow-x: auto;
+                     padding-bottom: 4px; -webkit-overflow-scrolling: touch;
+                     scrollbar-width: none; }
+        .day-tabs::-webkit-scrollbar { display: none; }
+        .day-tab { padding: 6px 8px; background: rgba(255,255,255,0.04);
+                    border: 1px solid rgba(255,255,255,0.08); border-radius: 4px;
+                    color: #666; font-size: 10px; font-weight: 700; cursor: pointer;
+                    white-space: nowrap; transition: all 0.2s; flex: 1; min-width: 0;
+                    text-align: center; text-transform: uppercase; }
+        .day-tab.active { background: rgba(255,102,0,0.15); border-color: rgba(255,102,0,0.3);
+                           color: #FF6600; }
+
+        /* ── Timeline (vue Journée) ── */
+        .timeline { position: relative; margin-bottom: 20px;
+                     overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        /* ── Scrollbar orange néon ── */
+        .timeline::-webkit-scrollbar { height: 6px; }
+        .timeline::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 3px; }
+        .timeline::-webkit-scrollbar-thumb { background: #FF6600; border-radius: 2px;
+                                              box-shadow: 0 0 8px rgba(255,102,0,0.6); }
+        .timeline { scrollbar-width: thin; scrollbar-color: #FF6600 rgba(255,255,255,0.04); }
+        .timeline-inner { min-width: 500px; }
+        .time-markers { display: flex; justify-content: space-between; padding: 0 0 6px 0;
+                         border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
+        .time-marker { font-size: 9px; color: #555; font-weight: 500; }
+        .timeline-row { display: flex; align-items: center; margin-bottom: 4px; }
+        .tl-name { width: 70px; font-size: 10px; color: #aaa; font-weight: 500;
+                    flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+                    padding-right: 6px; cursor: pointer; transition: color 0.2s;
+                    position: sticky; left: 0; z-index: 2;
+                    background: linear-gradient(90deg, rgba(26,26,26,0.98) 80%, transparent);
+                    padding-right: 10px; }
+        .tl-name:hover { color: #FF6600; }
+        .tl-bar-container { flex: 1; position: relative; height: 26px;
+                             background: rgba(255,255,255,0.02); border-radius: 4px; }
+        .tl-grid-line { position: absolute; top: 0; bottom: 0; width: 1px; pointer-events: none; z-index: 0; }
+        .tl-grid-line.hour { background: rgba(255,255,255,0.10); }
+        .tl-grid-line.half { background: rgba(255,255,255,0.05); border-left: 1px dashed rgba(255,255,255,0.08); width: 0; }
+        @keyframes nowPulse {
+            0%, 100% { filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 8px rgba(255,215,0,0.4)); opacity: 0.7; }
+            50% { filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px rgba(255,215,0,0.8)); opacity: 1; }
+        }
+        .tl-now-line { position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
+                        border-left: 2px dashed #ffd700;
+                        filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 8px rgba(255,215,0,0.4)); opacity: 0.8; }
+        .tl-now-marker { position: absolute; top: 0; bottom: 0; width: 2px; pointer-events: none; z-index: 3;
+                          border-left: 2px dashed #ffd700;
+                          filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 8px rgba(255,215,0,0.4)); opacity: 0.8; }
+        .tl-bar { position: absolute; height: 100%; border-radius: 4px;
+                   display: flex; align-items: center; justify-content: center;
+                   font-size: 9px; font-weight: 600; overflow: hidden;
+                   border-left: 2px solid; transition: all 0.2s;
+                   cursor: default; }
+        .tl-bar:hover { filter: brightness(1.3); z-index: 2;
+                         box-shadow: 0 0 12px var(--glow-color); }
+        .tl-bar .bar-label { padding: 0 4px; white-space: nowrap; }
+        .tl-bar.replaced { position: relative; opacity: 0.7; }
+        .tl-bar.replaced::after { content: ''; position: absolute; inset: 0; border-radius: inherit;
+            background: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255,60,60,0.35) 3px, rgba(255,60,60,0.35) 5px);
+            pointer-events: none; }
+        .tl-bar.replacer { position: relative; }
+        .tl-bar.replacer::after { content: ''; position: absolute; inset: 0; border-radius: inherit;
+            background: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(60,220,80,0.35) 3px, rgba(60,220,80,0.35) 5px);
+            pointer-events: none; }
+
+        /* ── Employee list (vue Staff) ── */
+        .employee-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
+        .employee-btn { display: flex; align-items: center; justify-content: space-between;
+                         padding: 12px 14px; background: rgba(255,255,255,0.04);
+                         border-radius: 6px; color: white; font-weight: 600; font-size: 13px;
+                         border: 1px solid rgba(255,255,255,0.08); cursor: pointer;
+                         transition: all 0.2s; font-family: inherit; width: 100%; text-align: left; }
+        .employee-btn:hover { background: rgba(255,102,0,0.1); border-color: rgba(255,102,0,0.3);
+                               transform: translateX(4px); }
+        .employee-btn.repos { color: #444; cursor: default; pointer-events: none; }
+        .badge { font-size: 10px; padding: 3px 8px; background: rgba(255,255,255,0.06);
+                  border-radius: 4px; color: #444; font-weight: 600; text-transform: uppercase; }
+        .hours-badge { background: rgba(255,102,0,0.15); color: #FF6600; font-weight: 700; }
+
+        /* ── Individual preview (modal) ── */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+                          z-index: 100; justify-content: center; align-items: flex-start;
+                          padding: 15px 10px; overflow-y: auto; }
+        .modal-overlay.open { display: flex; }
+        .modal { background: #1f1f1f; border-radius: 8px; width: 100%; max-width: 500px;
+                  border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
+        .modal-header { padding: 14px 16px; display: flex; justify-content: space-between;
+                         align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .modal-header h2 { font-size: 16px; color: #FF6600; font-weight: 700; }
+        .modal-close { background: none; border: none; color: #666; font-size: 24px;
+                        cursor: pointer; padding: 0 5px; line-height: 1; }
+        .modal-close:hover { color: #fff; }
+        .modal-body { padding: 12px 14px; }
+        .modal-day { margin-bottom: 12px; }
+        .modal-day-title { font-size: 11px; color: #666; font-weight: 600;
+                            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+        .modal-event { display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+                        border-radius: 4px; margin-bottom: 3px; border-left: 3px solid; }
+        .modal-event .ev-time { font-size: 11px; font-weight: 600; white-space: nowrap;
+                                 min-width: 80px; }
+        .modal-event .ev-label { font-size: 12px; font-weight: 500; }
+        .modal-event .ev-repl { font-size: 10px; font-weight: 600; margin-left: auto; white-space: nowrap; }
+        .modal-event.replaced { position: relative; opacity: 0.7; }
+        .modal-event.replaced::after { content: ''; position: absolute; inset: 0; border-radius: inherit;
+            background: repeating-linear-gradient(45deg, transparent, transparent 3px,
+            rgba(255,60,60,0.25) 3px, rgba(255,60,60,0.25) 5px); pointer-events: none; }
+        .modal-event.replacer { position: relative; }
+        .modal-event.replacer::after { content: ''; position: absolute; inset: 0; border-radius: inherit;
+            background: repeating-linear-gradient(45deg, transparent, transparent 3px,
+            rgba(60,220,80,0.25) 3px, rgba(60,220,80,0.25) 5px); pointer-events: none; }
+        .modal-footer { padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.06);
+                         text-align: center; }
+        .modal-hours-total { margin-top: 12px; padding: 10px 14px; text-align: right;
+                              font-size: 13px; color: #FF6600; font-weight: 500;
+                              border-top: 1px solid rgba(255,255,255,0.06); }
+        .hours-line { padding: 2px 0; }
+        .hours-line.pause { color: #888; font-size: 11px; }
+        .hours-line.net { color: #64dc3c; font-size: 14px; margin-top: 4px;
+                           padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .hours-brut { color: #666; font-weight: 400; font-size: 9px; }
+        .subscribe-btn { display: inline-flex; align-items: center; gap: 8px;
+                          padding: 10px 24px; background: #FF6600; color: white;
+                          border: none; border-radius: 6px; font-size: 13px; font-weight: 700;
+                          cursor: pointer; font-family: inherit; transition: all 0.2s;
+                          text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+                          box-shadow: 0 0 20px rgba(255,102,0,0.3); }
+        .subscribe-btn:hover { background: #ff9050;
+                                box-shadow: 0 0 30px rgba(255,102,0,0.5); transform: scale(1.02); }
+
+        /* ── Calendar chooser (bottom sheet) ── */
+        .cal-chooser-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85);
+                                z-index:200; justify-content:center; align-items:flex-end; }
+        .cal-chooser-overlay.open { display:flex; }
+        .cal-chooser { background:#1f1f1f; border-radius:8px 8px 0 0; width:100%; max-width:500px;
+                        padding:20px 16px 30px; animation: slideUp 0.25s ease-out; }
+        @keyframes slideUp { from { transform:translateY(100%); } to { transform:translateY(0); } }
+        .cal-chooser h3 { color:#FF6600; font-size:15px; font-weight:700; margin-bottom:4px; text-align:center; }
+        .cal-chooser .cal-sub { color:#666; font-size:11px; text-align:center; margin-bottom:16px; }
+        .cal-option { display:flex; align-items:center; gap:12px; padding:14px;
+                       background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+                       border-radius:6px; margin-bottom:8px; text-decoration:none; color:white;
+                       transition:all 0.2s; cursor:pointer; }
+        .cal-option:hover { background:rgba(255,102,0,0.1); border-color:rgba(255,102,0,0.3); }
+        .cal-option .cal-icon { font-size:22px; width:36px; text-align:center; flex-shrink:0; }
+        .cal-option .cal-info { flex:1; }
+        .cal-option .cal-name { font-weight:600; font-size:13px; }
+        .cal-option .cal-desc { font-size:10px; color:#888; margin-top:2px; }
+        .cal-chooser-cancel { display:block; width:100%; padding:12px; background:none;
+                               border:1px solid rgba(255,255,255,0.1); border-radius:6px;
+                               color:#888; font-size:13px; cursor:pointer; margin-top:4px;
+                               font-family:inherit; transition: all 0.2s; }
+        .cal-chooser-cancel:hover { color:#fff; border-color:rgba(255,255,255,0.3); }
+        .google-steps { padding: 0 4px; }
+        .step-url { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+                     border-radius: 4px; padding: 10px 12px; font-size: 10px; color: #FF6600;
+                     word-break: break-all; margin-bottom: 10px; font-family: monospace; }
+        .copy-url-btn { width: 100%; padding: 10px; background: #FF6600; color: #fff; border: none;
+                         border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer;
+                         font-family: inherit; transition: all 0.2s; }
+        .copy-url-btn.copied { background: #2a6e2a; color: #64dc3c; }
+        .step-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 14px 0; }
+        .step-title { font-size: 12px; color: #aaa; font-weight: 600; margin-bottom: 6px; }
+        .step-list { font-size: 12px; color: #ccc; padding-left: 20px; margin: 0; }
+        .step-list li { margin-bottom: 6px; }
+        .step-link { color: #4a9eff; text-decoration: none; }
+        .step-link:hover { text-decoration: underline; }
+        .step-note { font-size: 10px; color: #64dc3c; margin-top: 10px; text-align: center; }
+        .email-btn { display: flex; align-items: center; justify-content: center; gap: 8px;
+                      width: 100%; padding: 10px; background: rgba(255,255,255,0.06);
+                      border: 1px solid rgba(255,255,255,0.12); border-radius: 6px;
+                      font-size: 12px; color: #ccc; cursor: pointer; font-family: inherit;
+                      text-decoration: none; margin-top: 8px; transition: all 0.2s; }
+        .email-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+        .no-events { text-align: center; padding: 30px; color: #444; font-size: 13px; }
+
+        /* ── Notes de semaine ── */
+        .week-notes { margin-bottom: 15px; }
+        .note-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+                      border-radius: 6px; padding: 12px 14px; margin-bottom: 8px; }
+        .note-card.comment { border-left: 3px solid #FF6600; }
+        .note-card.update { border-left: 3px solid #ffc000; }
+        .note-header { display: flex; justify-content: space-between; align-items: center;
+                        margin-bottom: 6px; }
+        .note-label { font-size: 10px; font-weight: 700; text-transform: uppercase;
+                       letter-spacing: 0.5px; }
+        .note-label.comment { color: #FF6600; }
+        .note-label.update { color: #ffc000; }
+        .note-text { font-size: 12px; color: #ccc; line-height: 1.6; white-space: pre-line; }
+        .note-text:empty::before { content: 'Cliquer pour ajouter...'; color: #444; font-style: italic; }
+        .note-text[contenteditable=true] { outline: none; border: 1px solid rgba(255,102,0,0.2);
+                                            border-radius: 6px; padding: 8px; min-height: 40px;
+                                            background: rgba(0,0,0,0.2); }
+        .note-actions { display: flex; gap: 6px; }
+        .note-btn { background: none; border: none; color: #555; font-size: 14px;
+                     cursor: pointer; padding: 2px 4px; transition: color 0.2s; }
+        .note-btn:hover { color: #FF6600; }
+        .note-btn.del:hover { color: #ff5050; }
+        .add-note-btn { display: flex; align-items: center; justify-content: center; gap: 6px;
+                         padding: 8px; background: rgba(255,255,255,0.02);
+                         border: 1px dashed rgba(255,255,255,0.1); border-radius: 6px;
+                         color: #444; font-size: 11px; cursor: pointer; transition: all 0.2s;
+                         font-family: inherit; width: 100%; margin-bottom: 8px; }
+        .add-note-btn:hover { border-color: rgba(255,102,0,0.3); color: #FF6600; }
+        .publish-btn { display: flex; align-items: center; justify-content: center; gap: 6px;
+                        padding: 10px 16px; background: #FF6600; border: none; border-radius: 6px;
+                        color: #fff; font-size: 12px; font-weight: 600; cursor: pointer;
+                        transition: all 0.2s; font-family: inherit; width: 100%; margin-top: 8px;
+                        box-shadow: 0 0 15px rgba(255,102,0,0.3); }
+        .publish-btn:hover { background: #ff9050; box-shadow: 0 0 25px rgba(255,102,0,0.5); }
+        .publish-btn:disabled { background: #444; box-shadow: none; cursor: not-allowed; color: #888; }
+        .publish-btn.success { background: #64dc3c; box-shadow: 0 0 15px rgba(100,220,60,0.3); }
+        .admin-setup { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+        .admin-input { flex: 1; padding: 8px 10px; background: rgba(0,0,0,0.3);
+                        border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;
+                        color: #ccc; font-size: 11px; font-family: inherit; outline: none; }
+        .admin-input:focus { border-color: rgba(255,102,0,0.4); }
+        .admin-input::placeholder { color: #444; }
+        .admin-save-btn { padding: 8px 12px; background: rgba(255,102,0,0.15);
+                           border: 1px solid rgba(255,102,0,0.3); border-radius: 4px;
+                           color: #FF6600; font-size: 11px; cursor: pointer; font-family: inherit;
+                           white-space: nowrap; }
+        .admin-hint { font-size: 10px; color: #444; margin-top: 4px; }
+
+        /* ── Remplacements ── */
+        .note-card.replacement { border-left: 3px solid #ff5050; }
+        .note-label.replacement { color: #ff5050; }
+        .repl-summary { font-size: 12px; color: #ccc; line-height: 1.6; }
+        .repl-out { color: #ff6b6b; font-weight: 600; }
+        .repl-in { color: #64dc3c; font-weight: 600; }
+        .repl-form { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+        .repl-form select, .repl-form input { padding: 7px 10px; background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;
+            color: #ccc; font-size: 11px; font-family: inherit; outline: none; }
+        .repl-form select:focus, .repl-form input:focus { border-color: rgba(255,102,0,0.4); }
+        .repl-form select option { background: #1f1f1f; color: #ccc; }
+        .repl-row { display: flex; gap: 6px; align-items: center; }
+        .repl-row label { font-size: 10px; color: #666; min-width: 55px; text-align: right; }
+        .repl-row select, .repl-row input { flex: 1; }
+        .repl-add-btn { padding: 7px 14px; background: rgba(255,80,80,0.15);
+            border: 1px solid rgba(255,80,80,0.3); border-radius: 4px;
+            color: #ff5050; font-size: 11px; cursor: pointer; font-family: inherit;
+            transition: all 0.2s; align-self: flex-end; }
+        .repl-add-btn:hover { background: rgba(255,80,80,0.25); }
+        .add-repl-btn { display: flex; align-items: center; justify-content: center; gap: 6px;
+                         padding: 8px; background: rgba(255,80,80,0.02);
+                         border: 1px dashed rgba(255,80,80,0.15); border-radius: 6px;
+                         color: #ff5050; font-size: 11px; cursor: pointer; transition: all 0.2s;
+                         font-family: inherit; width: 100%; margin-bottom: 8px; opacity: 0.6; }
+        .add-repl-btn:hover { border-color: rgba(255,80,80,0.4); opacity: 1; }
+
+        /* ── Admin edit mode ── */
+        .admin-toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+                          padding: 8px 12px; background: rgba(255,102,0,0.08);
+                          border: 1px solid rgba(255,102,0,0.2); border-radius: 10px; }
+        .edit-toggle { padding: 6px 14px; background: rgba(255,102,0,0.15);
+                        border: 1px solid rgba(255,102,0,0.3); border-radius: 8px;
+                        color: #FF6600; font-size: 11px; font-weight: 600; cursor: pointer;
+                        font-family: inherit; transition: all 0.2s; }
+        .edit-toggle:hover { background: #FF6600; color: #fff; }
+        .edit-toggle.active { background: #FF6600; color: #fff;
+                               box-shadow: 0 0 10px rgba(255,102,0,0.4); }
+        .tl-bar.editable { cursor: pointer; }
+        .tl-bar.editable:hover { outline: 2px solid #FF6600; outline-offset: 1px; }
+        .edit-popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                       z-index: 200; background: #1a1a2e; border: 1px solid rgba(255,102,0,0.3);
+                       border-radius: 12px; padding: 16px; min-width: 260px;
+                       box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .edit-popup h3 { font-size: 13px; color: #FF6600; margin-bottom: 10px; }
+        .edit-popup .field { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .edit-popup .field label { font-size: 11px; color: #888; min-width: 45px; }
+        .edit-popup .field input, .edit-popup .field input[type="text"] {
+            flex: 1; padding: 6px 8px; background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+            color: #fff; font-size: 12px; font-family: inherit; outline: none; }
+        .edit-popup .field input:focus { border-color: rgba(255,102,0,0.4); }
+        .edit-popup .actions { display: flex; gap: 6px; margin-top: 10px; }
+        .edit-popup .actions button { flex: 1; padding: 8px; border: none; border-radius: 8px;
+                                       font-size: 11px; font-weight: 600; cursor: pointer;
+                                       font-family: inherit; transition: all 0.2s; }
+        .edit-popup .btn-save { background: #FF6600; color: #fff; }
+        .edit-popup .btn-save:hover { background: #ff9050; }
+        .edit-popup .btn-cancel { background: rgba(255,255,255,0.08); color: #888; }
+        .edit-popup .btn-cancel:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        .edit-popup .btn-delete { background: rgba(220,50,50,0.15); color: #e55; flex: 0.6; }
+        .edit-popup .btn-delete:hover { background: rgba(220,50,50,0.3); color: #ff6666; }
+        .edit-popup select { flex: 1; padding: 6px 8px; background: rgba(0,0,0,0.3);
+                              border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+                              color: #fff; font-size: 12px; font-family: inherit; outline: none; }
+        .edit-popup select:focus { border-color: rgba(255,102,0,0.4); }
+        .day-check { display: flex; align-items: center; gap: 8px; padding: 5px 8px;
+                      border-radius: 6px; cursor: pointer; font-size: 12px; color: #ccc;
+                      transition: background 0.15s; }
+        .day-check:hover { background: rgba(255,255,255,0.05); }
+        .day-check em { color: #666; font-style: normal; font-size: 10px; }
+        .day-check input[type="checkbox"] { accent-color: #FF6600; width: 16px; height: 16px; cursor: pointer; }
+        .day-check.all-check { border-bottom: 1px solid rgba(255,255,255,0.06);
+                                padding-bottom: 8px; margin-bottom: 4px; }
+        .day-check.all-check span { font-weight: 600; color: #FF6600; }
+        .edit-overlay { position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,0.5); }
+        .save-edits-btn { display: none; padding: 6px 16px; border: none; border-radius: 8px;
+                           font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;
+                           transition: all 0.2s; margin-left: 8px; }
+        .save-edits-btn.dirty { display: inline-block; background: #FF6600; color: #fff;
+                                  animation: pulse-save 1.5s ease-in-out infinite; }
+        .save-edits-btn.saving { background: #666; color: #fff; cursor: wait; }
+        .save-edits-btn.saved { display: inline-block; background: #2a6e2a; color: #64dc3c; }
+        .save-edits-btn.error { display: inline-block; background: #6e2a2a; color: #ff6666; }
+        @keyframes pulse-save { 0%,100% { box-shadow: 0 0 4px rgba(255,102,0,0.3); }
+                                 50% { box-shadow: 0 0 14px rgba(255,102,0,0.6); } }
+        .edit-status { font-size: 10px; color: #64dc3c; margin-left: auto; }
+
+        /* ── Unsaved changes banner ── */
+        .unsaved-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+                           background: linear-gradient(135deg, #cc5500, #FF6600);
+                           color: #fff; padding: 10px 16px; display: flex; align-items: center;
+                           justify-content: center; gap: 12px; font-size: 13px; font-weight: 600;
+                           box-shadow: 0 2px 12px rgba(255,102,0,0.4);
+                           animation: slideDown 0.3s ease-out; }
+        .unsaved-banner .unsaved-icon { font-size: 18px; animation: pulse-icon 1.5s ease-in-out infinite; }
+        .unsaved-banner .unsaved-btn { padding: 5px 14px; border: 2px solid #fff; border-radius: 6px;
+                                        background: transparent; color: #fff; font-size: 12px;
+                                        font-weight: 700; cursor: pointer; font-family: inherit;
+                                        transition: all 0.2s; }
+        .unsaved-banner .unsaved-btn:hover { background: #fff; color: #FF6600; }
+        .unsaved-banner .unsaved-btn.btn-discard { border-color: rgba(255,255,255,0.4);
+                                                     color: rgba(255,255,255,0.8); font-weight: 500; }
+        .unsaved-banner .unsaved-btn.btn-discard:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+        @keyframes pulse-icon { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+        body.has-unsaved-banner { padding-top: 46px; }
+
+        /* ── Confirm modal (replaces native confirm) ── */
+        .confirm-overlay { position: fixed; inset: 0; z-index: 10000;
+                            background: rgba(0,0,0,0.7); display: flex; align-items: center;
+                            justify-content: center; animation: fadeIn 0.15s ease-out; }
+        .confirm-dialog { background: #1a1a2e; border: 1px solid rgba(255,102,0,0.3);
+                           border-radius: 12px; padding: 24px; min-width: 300px; max-width: 400px;
+                           box-shadow: 0 10px 40px rgba(0,0,0,0.6); text-align: center; }
+        .confirm-dialog .confirm-icon { font-size: 36px; margin-bottom: 12px; }
+        .confirm-dialog .confirm-msg { font-size: 14px; color: #ddd; margin-bottom: 20px; line-height: 1.5; }
+        .confirm-dialog .confirm-actions { display: flex; gap: 10px; }
+        .confirm-dialog .confirm-actions button { flex: 1; padding: 10px; border: none; border-radius: 8px;
+                                                    font-size: 13px; font-weight: 600; cursor: pointer;
+                                                    font-family: inherit; transition: all 0.2s; }
+        .confirm-dialog .btn-confirm-save { background: #FF6600; color: #fff; }
+        .confirm-dialog .btn-confirm-save:hover { background: #ff9050; }
+        .confirm-dialog .btn-confirm-discard { background: rgba(220,50,50,0.15); color: #e55; }
+        .confirm-dialog .btn-confirm-discard:hover { background: rgba(220,50,50,0.3); color: #ff6666; }
+        .confirm-dialog .btn-confirm-cancel { background: rgba(255,255,255,0.08); color: #888; }
+        .confirm-dialog .btn-confirm-cancel:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ── Drag-resize handles ── */
+        .tl-bar.editable .drag-handle {
+            position: absolute; top: 0; bottom: 0; width: 8px;
+            cursor: ew-resize; z-index: 10; opacity: 0;
+            transition: opacity 0.15s;
+        }
+        .tl-bar.editable:hover .drag-handle,
+        .tl-bar.editable .drag-handle.active { opacity: 1; }
+        .drag-handle.left { left: -2px; border-radius: 4px 0 0 4px; background: linear-gradient(90deg, rgba(255,102,0,0.7), transparent); }
+        .drag-handle.right { right: -2px; border-radius: 0 4px 4px 0; background: linear-gradient(270deg, rgba(255,102,0,0.7), transparent); }
+        .drag-handle::after {
+            content: ''; position: absolute; top: 50%; transform: translateY(-50%);
+            width: 2px; height: 12px; background: rgba(255,255,255,0.7); border-radius: 1px;
+        }
+        .drag-handle.left::after { left: 2px; }
+        .drag-handle.right::after { right: 2px; }
+        .tl-bar-container { cursor: default; }
+        .add-staff-row { display: flex; justify-content: center; padding: 8px 0; }
+        .add-staff-btn { background: rgba(255,102,0,0.1); border: 1px dashed rgba(255,102,0,0.3);
+                          color: #FF6600; font-size: 12px; font-weight: 600; padding: 6px 18px;
+                          border-radius: 8px; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .add-staff-btn:hover { background: rgba(255,102,0,0.2); border-color: #FF6600; }
+        .del-staff { display: inline-block; margin-left: 4px; color: #e55; font-size: 14px;
+                      font-weight: 700; cursor: pointer; opacity: 0.5; transition: opacity 0.15s;
+                      line-height: 1; vertical-align: middle; }
+        .del-staff:hover { opacity: 1; }
+        .drag-tooltip {
+            position: fixed; z-index: 300; padding: 3px 8px;
+            background: #1a1a2e; border: 1px solid rgba(255,102,0,0.5);
+            border-radius: 6px; font-size: 11px; font-weight: 600;
+            color: #FF6600; pointer-events: none; white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        /* ── Legend ── */
+        .legend { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+                   margin-bottom: 15px; }
+        .legend-item { display: flex; align-items: center; gap: 4px; font-size: 10px;
+                        color: #666; padding: 3px 8px; background: rgba(255,255,255,0.03);
+                        border-radius: 6px; }
+        .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+        /* ── Desktop : planning agrandi ── */
+        @media (min-width: 900px) {
+            body { padding: 24px 40px; }
+            .container { max-width: 1100px; padding: 8px 18px; }
+            h1 { font-size: 24px; letter-spacing: 2px; }
+            .subtitle { font-size: 14px; }
+            .dates { font-size: 16px; padding: 8px 20px; }
+            .week-selector { gap: 8px; }
+            .week-tab { font-size: 14px; padding: 10px 18px; }
+            .top-bar .admin-btn, .top-bar .psg-btn { font-size: 11px; padding: 6px 12px; }
+            .view-toggle { max-width: 500px; margin-left: auto; margin-right: auto; }
+            .view-btn { font-size: 14px; padding: 10px; }
+            .day-tabs { gap: 6px; margin-bottom: 16px; }
+            .day-tab { font-size: 13px; padding: 10px 14px; border-radius: 10px; }
+            .timeline { margin-bottom: 28px; }
+            .timeline-row { margin-bottom: 6px; }
+            .tl-name { width: 130px; font-size: 13px; padding-right: 14px; }
+            .tl-bar-container { height: 36px; border-radius: 7px; }
+            .tl-bar { border-radius: 7px; font-size: 11px; border-left-width: 3px; }
+            .tl-bar .bar-label { padding: 0 6px; }
+            .time-marker { font-size: 12px; }
+            .legend { gap: 10px; margin-bottom: 20px; }
+            .legend-item { font-size: 12px; padding: 4px 10px; }
+            .legend-dot { width: 10px; height: 10px; }
+            .employee-list { gap: 8px; }
+            .employee-btn { font-size: 15px; padding: 14px 18px; }
+            .badge { font-size: 12px; padding: 4px 10px; }
+            .modal { max-width: 650px; }
+            .modal-header h2 { font-size: 18px; }
+            .modal-event .ev-time { font-size: 13px; min-width: 100px; }
+            .modal-event .ev-label { font-size: 14px; }
+            .cal-chooser { max-width: 550px; }
+        }
+        @media (min-width: 1300px) {
+            .container { max-width: 1400px; padding: 10px 24px; }
+            .tl-name { width: 150px; font-size: 14px; }
+            .tl-bar-container { height: 40px; }
+            .tl-bar { font-size: 12px; }
+            .time-marker { font-size: 13px; }
+        }
+        .meta-note {
+            text-align: center; color: #FF6600; font-size: 10px;
+            margin: 16px 0 4px; letter-spacing: 0.5px;
+        }
+        /* ── Diff popup (collage intelligent) ── */
+        .diff-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+                         z-index: 300; display: flex; align-items: center; justify-content: center; }
+        .diff-popup { background: #1a1a2e; border: 1px solid rgba(255,102,0,0.3);
+                       border-radius: 12px; padding: 16px; max-width: 520px; width: 92%;
+                       max-height: 85vh; overflow-y: auto;
+                       box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .diff-popup h3 { font-size: 13px; color: #FF6600; margin-bottom: 12px; }
+        .diff-lines { font-size: 11px; line-height: 1.6; margin-bottom: 12px; }
+        .diff-line { padding: 2px 6px; border-radius: 3px; margin-bottom: 2px;
+                      white-space: pre-wrap; word-break: break-word; }
+        .diff-line.removed { background: rgba(220,50,50,0.15); color: #e88; text-decoration: line-through; }
+        .diff-line.added { background: rgba(50,180,50,0.15); color: #8e8; }
+        .diff-line.same { color: #666; }
+        .diff-actions { display: flex; gap: 8px; margin-top: 12px; }
+        .diff-actions button { flex: 1; padding: 10px; border: none; border-radius: 8px;
+                                font-size: 12px; font-weight: 600; cursor: pointer;
+                                font-family: inherit; transition: all 0.2s; }
+        .diff-btn-apply { background: #FF6600; color: #fff; }
+        .diff-btn-apply:hover { background: #ff9050; }
+        .diff-btn-cancel { background: rgba(255,255,255,0.08); color: #888; }
+        .diff-btn-cancel:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        /* ── Action cards dans le popup ── */
+        .smart-actions { margin-top: 12px; border-top: 1px solid rgba(255,102,0,0.2); padding-top: 10px; }
+        .smart-actions-title { font-size: 12px; color: #FF6600; font-weight: 600; margin-bottom: 8px; }
+        .action-card { background: rgba(255,102,0,0.06); border: 1px solid rgba(255,102,0,0.15);
+                        border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; }
+        .action-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+        .action-card-header input[type="checkbox"] { accent-color: #FF6600; width: 16px; height: 16px; }
+        .action-card-header .action-type { font-size: 10px; font-weight: 700; text-transform: uppercase;
+                                            letter-spacing: 0.5px; padding: 2px 6px; border-radius: 4px; }
+        .action-type-repl { background: rgba(255,102,0,0.2); color: #FF6600; }
+        .action-type-sched { background: rgba(50,180,50,0.2); color: #8e8; }
+        .action-card-raw { font-size: 9px; color: #555; margin-bottom: 6px; font-style: italic; }
+        .action-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
+        .action-field { display: flex; flex-direction: column; gap: 2px; }
+        .action-field label { font-size: 9px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+        .action-field select, .action-field input {
+            padding: 5px 6px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 5px; color: #fff; font-size: 11px; font-family: inherit; outline: none; }
+        .action-field select:focus, .action-field input:focus { border-color: rgba(255,102,0,0.4); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <button class="admin-btn" id="admin-btn" title="Mode admin">Admin</button>
+            <a href="presences.html" class="psg-btn" title="Suivi des présences PSG Academy">PSG Academy</a>
+        </div>
+        <div class="header">
+            <h1>Planning Urban 7D</h1>
+            <p class="subtitle">Semaine 15</p>
+            <div class="dates">6 → 12 Avril</div>
+        </div>
+
+        <div class="week-selector">
+            <a href="S9.html" class="week-tab" data-end="2026-03-01">S9</a>
+            <a href="S10.html" class="week-tab" data-end="2026-03-08">S10</a>
+            <a href="S11.html" class="week-tab" data-end="2026-03-15">S11</a>
+            <a href="S12.html" class="week-tab" data-end="2026-03-22">S12</a>
+            <a href="S13.html" class="week-tab" data-end="2026-03-29">S13</a>
+            <a href="S14.html" class="week-tab" data-end="2026-04-05">S14</a>
+            <a href="#" class="week-tab active" data-end="2026-04-12">S15</a>
+        </div>
+
+        <div class="week-notes" id="week-notes"></div>
+
+        <div class="view-toggle">
+            <button class="view-btn active" data-view="day">Vue quotidienne</button>
+            <button class="view-btn" data-view="staff">Vue hebdo par staff</button>
+        </div>
+
+        <!-- ── Vue Journée (timeline) ── -->
+        <div id="view-day">
+            <div class="day-tabs" id="day-tabs"></div>
+            <div class="legend" id="legend"></div>
+            <div class="timeline" id="timeline"></div>
+        </div>
+
+        <!-- ── Vue Staff (liste) ── -->
+        <div id="view-staff" style="display:none;">
+            <div class="employee-list">
+            <button class="employee-btn" data-name="BONILLO Matthieu" data-slug="bonillo-matthieu">BONILLO Matthieu</button>
+            <div class="employee-btn repos">BOULARDET Lucas <span class="badge">Repos</span></div>
+            <button class="employee-btn" data-name="CARRERE Peïo" data-slug="carrere-peio">CARRERE Peïo</button>
+            <button class="employee-btn" data-name="CASTELLON Pascaline" data-slug="castellon-pascaline">CASTELLON Pascaline</button>
+            <div class="employee-btn repos">COHAT Linda <span class="badge">Repos</span></div>
+            <button class="employee-btn" data-name="CONRAD - stage David" data-slug="conrad-stage-david">CONRAD - stage David</button>
+            <button class="employee-btn" data-name="CRUZEL Quentin" data-slug="cruzel-quentin">CRUZEL Quentin</button>
+            <button class="employee-btn" data-name="DE NOUEL Maxime" data-slug="de-nouel-maxime">DE NOUEL Maxime</button>
+            <button class="employee-btn" data-name="DIVIEN Yohan" data-slug="divien-yohan">DIVIEN Yohan</button>
+            <button class="employee-btn" data-name="DONAER Nicolas" data-slug="donaer-nicolas">DONAER Nicolas</button>
+            <button class="employee-btn" data-name="DOVINA Théo" data-slug="dovina-theo">DOVINA Théo</button>
+            <div class="employee-btn repos">HEBERT Jean Baptiste <span class="badge">Repos</span></div>
+            <div class="employee-btn repos">JARGUEL Thomas <span class="badge">Repos</span></div>
+            <div class="employee-btn repos">KABUNDA NDEKE Marvyn <span class="badge">Repos</span></div>
+            <button class="employee-btn" data-name="LABEFODE Thomas" data-slug="labefode-thomas">LABEFODE Thomas</button>
+            <button class="employee-btn" data-name="LOUIBA Yacine" data-slug="louiba-yacine">LOUIBA Yacine</button>
+            <button class="employee-btn" data-name="MOSTEFA Yanis" data-slug="mostefa-yanis">MOSTEFA Yanis</button>
+            <button class="employee-btn" data-name="ORDONEZ GOMEZ Oceane" data-slug="ordonez-gomez-oceane">ORDONEZ GOMEZ Oceane</button>
+            <button class="employee-btn" data-name="PEREZ Loic" data-slug="perez-loic">PEREZ Loic</button>
+            <button class="employee-btn" data-name="PISTORE Remi" data-slug="pistore-remi">PISTORE Remi</button>
+            <button class="employee-btn" data-name="PUJOL Mathieu" data-slug="pujol-mathieu">PUJOL Mathieu</button>
+            <button class="employee-btn" data-name="RABII Mehdi" data-slug="rabii-mehdi">RABII Mehdi</button>
+            <button class="employee-btn" data-name="SANGARNE Enzo" data-slug="sangarne-enzo">SANGARNE Enzo</button>
+            <button class="employee-btn" data-name="SEIGNE Kevin" data-slug="seigne-kevin">SEIGNE Kevin</button>
+            <button class="employee-btn" data-name="TINGUY Florian" data-slug="tinguy-florian">TINGUY Florian</button>
+            <div class="employee-btn repos">TOPPAN Mattis <span class="badge">Repos</span></div>
+            <button class="employee-btn" data-name="VASSANT Tiffany" data-slug="vassant-tiffany">VASSANT Tiffany</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Modal preview individuelle ── -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-name"></h2>
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <button class="subscribe-btn" id="modal-subscribe" style="padding:6px 14px;font-size:11px;">
+                        S'abonner
+                    </button>
+                    <button class="modal-close" id="modal-close">&times;</button>
+                </div>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- ── Choix application calendrier ── -->
+    <div class="cal-chooser-overlay" id="cal-chooser">
+        <div class="cal-chooser">
+            <h3>Ajouter au calendrier</h3>
+            <div class="cal-sub" id="cal-chooser-name"></div>
+            <a class="cal-option" id="cal-google" target="_blank" rel="noopener">
+                <span class="cal-icon">G</span>
+                <div class="cal-info">
+                    <div class="cal-name">Google Agenda</div>
+                    <div class="cal-desc">S'abonner (mise à jour auto)</div>
+                </div>
+            </a>
+            <div class="cal-option cal-option-small" id="cal-google-manual" style="cursor:pointer;">
+                <span class="cal-icon" style="font-size:0.8em;">ℹ</span>
+                <div class="cal-info">
+                    <div class="cal-name" style="font-size:0.85em;">Google Agenda (manuel)</div>
+                    <div class="cal-desc">Si le bouton ci-dessus ouvre l'appli au lieu du navigateur</div>
+                </div>
+            </div>
+            <a class="cal-option" id="cal-apple">
+                <span class="cal-icon"></span>
+                <div class="cal-info">
+                    <div class="cal-name">Apple Calendar</div>
+                    <div class="cal-desc">iPhone, iPad, Mac (mise à jour auto)</div>
+                </div>
+            </a>
+            <a class="cal-option" id="cal-outlook" target="_blank" rel="noopener">
+                <span class="cal-icon">O</span>
+                <div class="cal-info">
+                    <div class="cal-name">Outlook</div>
+                    <div class="cal-desc">Outlook.com / Office 365</div>
+                </div>
+            </a>
+            <a class="cal-option" id="cal-download">
+                <span class="cal-icon">⬇</span>
+                <div class="cal-info">
+                    <div class="cal-name">Télécharger .ics</div>
+                    <div class="cal-desc">Import ponctuel (ne se met pas à jour)</div>
+                </div>
+            </a>
+            <button class="cal-chooser-cancel" id="cal-cancel">Annuler</button>
+        </div>
+    </div>
+
+    <!-- ── Instructions Google Agenda ── -->
+    <div class="cal-chooser-overlay" id="google-instructions" style="display:none;">
+        <div class="cal-chooser">
+            <h3>Google Agenda</h3>
+            <div class="google-steps">
+                <div class="step-url" id="google-url-box"></div>
+                <button class="copy-url-btn" id="google-copy-btn">Copier le lien</button>
+                <div class="step-divider"></div>
+                <p class="step-title">Ensuite :</p>
+                <ol class="step-list">
+                    <li>Ouvrir <a href="https://calendar.google.com/calendar/r/settings/addbyurl" target="_blank" rel="noopener" class="step-link">Google Agenda &gt; Ajouter par URL</a></li>
+                    <li>Coller le lien copié</li>
+                    <li>Cliquer sur <strong>Ajouter l'agenda</strong></li>
+                </ol>
+                <p class="step-note">L'agenda se mettra à jour automatiquement.</p>
+                <a class="email-btn" id="google-email">Envoyer les instructions par email</a>
+            </div>
+            <button class="cal-chooser-cancel" id="google-back">Retour</button>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var NOTES_DATA = {"comment": "Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je vais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques férié donc semblable à un dimanche padel, on ouvre à 9h et du renfort en début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habituels \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés", "updates": []};
+        // Nettoyage des anciennes données localStorage (source de désync entre appareils)
+        try { localStorage.removeItem('planning-notes-S15'); } catch(e) {}
+        var DATA = {"BONILLO Matthieu": {"slug": "bonillo-matthieu", "events": [{"code": "EDF-C", "label": "EDF-C", "start": "2026-04-11T09:00", "end": "2026-04-11T13:00", "day": 5}]}, "BOULARDET Lucas": {"slug": "boulardet-lucas", "events": []}, "CARRERE Peïo": {"slug": "carrere-peio", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-06T08:45", "end": "2026-04-06T16:30", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-07T09:45", "end": "2026-04-07T18:00", "day": 1}, {"code": "EV-LO", "label": "Événement logistique", "start": "2026-04-09T07:30", "end": "2026-04-09T15:00", "day": 3}, {"code": "CUP-L", "label": "Cup League", "start": "2026-04-11T07:30", "end": "2026-04-11T08:45", "day": 5}, {"code": "EDF-A", "label": "EDF-A", "start": "2026-04-11T08:45", "end": "2026-04-11T09:45", "day": 5}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-11T09:45", "end": "2026-04-11T17:30", "day": 5}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-12T08:45", "end": "2026-04-12T16:00", "day": 6}]}, "CASTELLON Pascaline": {"slug": "castellon-pascaline", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-07T20:00", "end": "2026-04-08T00:00", "day": 1}]}, "COHAT Linda": {"slug": "cohat-linda", "events": []}, "CONRAD - stage David": {"slug": "conrad-stage-david", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-07T11:30", "end": "2026-04-07T19:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-08T16:00", "end": "2026-04-08T22:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-09T10:00", "end": "2026-04-09T17:30", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-10T11:00", "end": "2026-04-10T19:00", "day": 4}]}, "CRUZEL Quentin": {"slug": "cruzel-quentin", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-08T20:00", "end": "2026-04-09T00:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-09T18:00", "end": "2026-04-10T00:00", "day": 3}]}, "DE NOUEL Maxime": {"slug": "de-nouel-maxime", "events": [{"code": "C-PAD", "label": "Cours Padel", "start": "2026-04-06T17:45", "end": "2026-04-06T21:15", "day": 0}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-04-07T10:45", "end": "2026-04-07T11:15", "day": 1}, {"code": "PAD-A", "label": "Padel animation", "start": "2026-04-07T11:15", "end": "2026-04-07T12:00", "day": 1}, {"code": "CUP-L", "label": "Cup League", "start": "2026-04-07T13:15", "end": "2026-04-07T14:15", "day": 1}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-04-07T14:15", "end": "2026-04-07T16:45", "day": 1}, {"code": "PAD-A", "label": "Padel animation", "start": "2026-04-07T16:45", "end": "2026-04-07T17:45", "day": 1}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-04-07T17:45", "end": "2026-04-07T21:15", "day": 1}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-04-08T11:45", "end": "2026-04-08T13:15", "day": 2}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-04-08T14:15", "end": "2026-04-08T15:45", "day": 2}, {"code": "PAD-A", "label": "Padel animation", "start": "2026-04-08T15:45", "end": "2026-04-08T17:00", "day": 2}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-04-08T17:00", "end": "2026-04-08T20:30", "day": 2}, {"code": "EV-AN", "label": "EV-AN", "start": "2026-04-09T08:00", "end": "2026-04-09T14:00", "day": 3}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-04-09T14:45", "end": "2026-04-09T17:15", "day": 3}, {"code": "C-PAD", "label": "Cours Padel", "start": "2026-04-10T08:45", "end": "2026-04-10T12:15", "day": 4}, {"code": "PAD-A", "label": "Padel animation", "start": "2026-04-10T13:00", "end": "2026-04-10T15:00", "day": 4}, {"code": "CUP-R", "label": "Cup Régisseur", "start": "2026-04-11T07:30", "end": "2026-04-11T14:00", "day": 5}]}, "DIVIEN Yohan": {"slug": "divien-yohan", "events": [{"code": "EDF-C", "label": "EDF-C", "start": "2026-04-11T09:00", "end": "2026-04-11T13:00", "day": 5}]}, "DONAER Nicolas": {"slug": "donaer-nicolas", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-06T15:00", "end": "2026-04-06T17:15", "day": 0}, {"code": "EDF-C", "label": "EDF-C", "start": "2026-04-06T17:15", "end": "2026-04-06T19:15", "day": 0}, {"code": "L-ARB", "label": "L-ARB", "start": "2026-04-06T20:30", "end": "2026-04-06T22:30", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-08T11:45", "end": "2026-04-08T14:15", "day": 2}, {"code": "EDF-B", "label": "EDF-B", "start": "2026-04-08T14:15", "end": "2026-04-08T15:45", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-08T15:45", "end": "2026-04-08T17:15", "day": 2}, {"code": "EDF-B", "label": "EDF-B", "start": "2026-04-08T17:15", "end": "2026-04-08T18:45", "day": 2}, {"code": "EV-AN", "label": "EV-AN", "start": "2026-04-09T08:00", "end": "2026-04-09T14:00", "day": 3}, {"code": "EDF-C", "label": "EDF-C", "start": "2026-04-10T17:15", "end": "2026-04-10T19:15", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-10T19:15", "end": "2026-04-11T00:30", "day": 4}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-04-12T13:30", "end": "2026-04-12T15:30", "day": 6}, {"code": "AIDE - ANNIV", "label": "AIDE - ANNIV", "start": "2026-04-12T15:30", "end": "2026-04-12T17:30", "day": 6}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-12T17:30", "end": "2026-04-12T23:40", "day": 6}]}, "DOVINA Théo": {"slug": "dovina-theo", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-09T20:00", "end": "2026-04-10T00:00", "day": 3}]}, "HEBERT Jean Baptiste": {"slug": "hebert-jean-baptiste", "events": []}, "JARGUEL Thomas": {"slug": "jarguel-thomas", "events": []}, "KABUNDA NDEKE Marvyn": {"slug": "kabunda-ndeke-marvyn", "events": []}, "LABEFODE Thomas": {"slug": "labefode-thomas", "events": [{"code": "EDF-C", "label": "EDF-C", "start": "2026-04-10T17:15", "end": "2026-04-10T19:15", "day": 4}]}, "LOUIBA Yacine": {"slug": "louiba-yacine", "events": [{"code": "FORE-ARB", "label": "FORE-ARB", "start": "2026-04-07T19:30", "end": "2026-04-07T20:00", "day": 1}, {"code": "FORP-ARB", "label": "FORP-ARB", "start": "2026-04-07T20:00", "end": "2026-04-07T22:30", "day": 1}, {"code": "FORP-ARB", "label": "FORP-ARB", "start": "2026-04-08T19:30", "end": "2026-04-08T20:30", "day": 2}, {"code": "L-ARB", "label": "L-ARB", "start": "2026-04-08T20:30", "end": "2026-04-08T22:30", "day": 2}]}, "MOSTEFA Yanis": {"slug": "mostefa-yanis", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-12T09:30", "end": "2026-04-12T10:15", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-04-12T10:15", "end": "2026-04-12T12:15", "day": 6}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-12T12:15", "end": "2026-04-12T12:45", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-04-12T13:30", "end": "2026-04-12T17:30", "day": 6}]}, "ORDONEZ GOMEZ Oceane": {"slug": "ordonez-gomez-oceane", "events": [{"code": "L-ARB", "label": "L-ARB", "start": "2026-04-06T20:30", "end": "2026-04-06T22:30", "day": 0}, {"code": "L-ARB", "label": "L-ARB", "start": "2026-04-07T20:30", "end": "2026-04-07T22:30", "day": 1}, {"code": "L-ARB", "label": "L-ARB", "start": "2026-04-08T19:30", "end": "2026-04-08T22:30", "day": 2}]}, "PEREZ Loic": {"slug": "perez-loic", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-06T17:30", "end": "2026-04-07T00:00", "day": 0}, {"code": "EDF-C", "label": "EDF-C", "start": "2026-04-07T17:15", "end": "2026-04-07T19:15", "day": 1}, {"code": "L-ARB", "label": "L-ARB", "start": "2026-04-07T19:30", "end": "2026-04-07T22:30", "day": 1}, {"code": "EDF-C", "label": "EDF-C", "start": "2026-04-08T13:45", "end": "2026-04-08T17:45", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-08T18:00", "end": "2026-04-08T19:15", "day": 2}, {"code": "L-REG", "label": "Régisseur League", "start": "2026-04-08T19:15", "end": "2026-04-08T21:45", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-09T11:45", "end": "2026-04-09T13:30", "day": 3}, {"code": "ENT-M", "label": "Entretien Ménage", "start": "2026-04-09T13:30", "end": "2026-04-09T17:30", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-09T17:30", "end": "2026-04-09T22:00", "day": 3}, {"code": "EDF-C", "label": "EDF-C", "start": "2026-04-11T09:00", "end": "2026-04-11T09:30", "day": 5}, {"code": "EDF-B", "label": "EDF-B", "start": "2026-04-11T09:30", "end": "2026-04-11T12:30", "day": 5}, {"code": "EDF-C", "label": "EDF-C", "start": "2026-04-11T13:45", "end": "2026-04-11T15:45", "day": 5}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-04-11T15:45", "end": "2026-04-11T17:45", "day": 5}]}, "PISTORE Remi": {"slug": "pistore-remi", "events": [{"code": "EDF-C", "label": "EDF-C", "start": "2026-04-10T17:15", "end": "2026-04-10T19:15", "day": 4}]}, "PUJOL Mathieu": {"slug": "pujol-mathieu", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-06T16:30", "end": "2026-04-07T00:00", "day": 0}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-07T17:15", "end": "2026-04-07T22:15", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-08T09:45", "end": "2026-04-08T15:45", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-09T09:45", "end": "2026-04-09T11:00", "day": 3}, {"code": "EV-LO", "label": "Événement logistique", "start": "2026-04-09T11:00", "end": "2026-04-09T14:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-09T14:00", "end": "2026-04-09T18:00", "day": 3}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-10T09:45", "end": "2026-04-10T18:00", "day": 4}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-12T16:00", "end": "2026-04-12T22:20", "day": 6}]}, "RABII Mehdi": {"slug": "rabii-mehdi", "events": [{"code": "VDC", "label": "Vie de centre", "start": "2026-04-11T11:00", "end": "2026-04-11T13:00", "day": 5}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-04-11T13:45", "end": "2026-04-11T17:45", "day": 5}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-11T17:45", "end": "2026-04-11T21:45", "day": 5}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-04-12T10:45", "end": "2026-04-12T12:45", "day": 6}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-12T12:45", "end": "2026-04-12T13:45", "day": 6}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-04-12T13:45", "end": "2026-04-12T17:45", "day": 6}]}, "SANGARNE Enzo": {"slug": "sangarne-enzo", "events": [{"code": "EDF-C", "label": "EDF-C", "start": "2026-04-08T13:45", "end": "2026-04-08T17:30", "day": 2}]}, "SEIGNE Kevin": {"slug": "seigne-kevin", "events": [{"code": "EDF-C", "label": "EDF-C", "start": "2026-04-11T09:00", "end": "2026-04-11T13:00", "day": 5}, {"code": "EDF-C", "label": "EDF-C", "start": "2026-04-11T13:45", "end": "2026-04-11T17:45", "day": 5}]}, "TINGUY Florian": {"slug": "tinguy-florian", "events": [{"code": "EDF-C", "label": "EDF-C", "start": "2026-04-07T17:15", "end": "2026-04-07T19:15", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-07T19:15", "end": "2026-04-08T00:00", "day": 1}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-08T17:30", "end": "2026-04-09T00:00", "day": 2}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-10T17:30", "end": "2026-04-11T00:30", "day": 4}, {"code": "ANNIV", "label": "Anniversaire", "start": "2026-04-11T13:15", "end": "2026-04-11T17:15", "day": 5}, {"code": "VDC", "label": "Vie de centre", "start": "2026-04-11T17:15", "end": "2026-04-11T22:45", "day": 5}]}, "TOPPAN Mattis": {"slug": "toppan-mattis", "events": []}, "VASSANT Tiffany": {"slug": "vassant-tiffany", "events": [{"code": "EDF-C", "label": "EDF-C", "start": "2026-04-08T13:45", "end": "2026-04-08T17:30", "day": 2}]}};
+        // Nettoyage des anciennes données localStorage
+        try { localStorage.removeItem('planning-edits-S15'); } catch(e) {}
+        var COLORS = {"VDC": {"bg": "rgba(255,102,0,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FOR-E": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FOR-P": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}, "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "ENT-M": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EDF-A": {"bg": "rgba(0,112,192,0.40)", "border": "#0070c0", "text": "#60b0ff"}, "EDF-B": {"bg": "rgba(0,112,192,0.40)", "border": "#0070c0", "text": "#60b0ff"}, "EDF-C": {"bg": "rgba(0,112,192,0.40)", "border": "#0070c0", "text": "#60b0ff"}, "COMMD": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-LO": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "VIS-M": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FORE": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FORP": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}};
+        var DEFAULT_C = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"};
+        var DAYS = ["Lun 06", "Mar 07", "Mer 08", "Jeu 09", "Ven 10", "Sam 11", "Dim 12"];
+        var DAYS_FULL = ["Lundi 06/04", "Mardi 07/04", "Mercredi 08/04", "Jeudi 09/04", "Vendredi 10/04", "Samedi 11/04", "Dimanche 12/04"];
+        var WEEK_DATES = ["2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12"];
+        var currentDay = 0;
+        // Griser les onglets des semaines passées
+        (function() {
+            var today = new Date();
+            var yyyy = today.getFullYear();
+            var mm = String(today.getMonth()+1).padStart(2,"0");
+            var dd = String(today.getDate()).padStart(2,"0");
+            var todayStr = yyyy + "-" + mm + "-" + dd;
+            document.querySelectorAll('.week-tab[data-end]').forEach(function(tab) {
+                if (tab.getAttribute('data-end') < todayStr && !tab.classList.contains('active')) {
+                    tab.classList.add('past');
+                }
+            });
+        })();
+        (function() {
+            var now = new Date();
+            var today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+            var idx = WEEK_DATES.indexOf(today);
+            if (idx !== -1) currentDay = idx;
+        })();
+        var currentView = 'day';
+
+        function getColor(code) { return COLORS[code] || DEFAULT_C; }
+        function getFirstName(n) { var p=n.split(' '); for(var i=0;i<p.length;i++){ if(p[i]!==p[i].toUpperCase()) return p.slice(i).join(' '); } return p[p.length-1]; }
+
+        // ── Replacement matching ──
+        function getReplacements() {
+            return (notesWork && notesWork.replacements) || [];
+        }
+        function getReplacementStatus(fullName, dateStr, startH, endH) {
+            var repls = getReplacements();
+            for (var i = 0; i < repls.length; i++) {
+                var r = repls[i];
+                if (r.date !== dateStr) continue;
+                var rStart = parseFloat(r.start.split(':')[0]) + parseFloat(r.start.split(':')[1] || 0) / 60;
+                var rEnd = parseFloat(r.end.split(':')[0]) + parseFloat(r.end.split(':')[1] || 0) / 60;
+                // Check overlap: bar overlaps with replacement window
+                if (startH < rEnd && endH > rStart) {
+                    if (fullName === r.out) return {status: 'out', other: r['in']};
+                    if (fullName === r['in']) return {status: 'in', other: r.out};
+                }
+            }
+            return null;
+        }
+
+        // ── Day tabs ──
+        var dayTabsEl = document.getElementById('day-tabs');
+        DAYS.forEach(function(label, i) {
+            var btn = document.createElement('div');
+            btn.className = 'day-tab' + (i === currentDay ? ' active' : '');
+            btn.textContent = label;
+            btn.onclick = function() { selectDay(i); };
+            dayTabsEl.appendChild(btn);
+        });
+
+        function selectDay(i) {
+            currentDay = i;
+            dayTabsEl.querySelectorAll('.day-tab').forEach(function(t, j) {
+                t.classList.toggle('active', j === i);
+            });
+            renderTimeline();
+        }
+
+        // Scroll active day tab into view
+        setTimeout(function() {
+            var activeTab = dayTabsEl.querySelector('.day-tab.active');
+            if (activeTab) activeTab.scrollIntoView({ inline: 'center', block: 'nearest' });
+        }, 0);
+
+        // ── Legend ── Build code-to-label map from all events
+        var CODE_LABELS = {};
+        Object.keys(DATA).forEach(function(n) {
+            if (n === '_codeNames' || n === '_meta') return;
+            DATA[n].events.forEach(function(ev) {
+                if (ev.label && ev.label !== ev.code) CODE_LABELS[ev.code] = ev.label;
+            });
+        });
+        function renderLegend(codes) {
+            var el = document.getElementById('legend');
+            el.innerHTML = '';
+            var seen = {};
+            codes.forEach(function(code) {
+                if (seen[code]) return;
+                seen[code] = true;
+                var c = getColor(code);
+                var item = document.createElement('div');
+                item.className = 'legend-item';
+                var displayName = CODE_LABELS[code] || (DATA._codeNames && DATA._codeNames[code]) || code;
+                item.innerHTML = '<div class="legend-dot" style="background:' + c.border +
+                    ';box-shadow:0 0 6px ' + c.border + '"></div>' + displayName;
+                el.appendChild(item);
+            });
+        }
+
+        // ── Timeline rendering ──
+        function renderTimeline() {
+            var tl = document.getElementById('timeline');
+            tl.innerHTML = '';
+            var dateStr = WEEK_DATES[currentDay] || '';
+
+            // Collect events for this day
+            var dayEvents = [];
+            var allCodes = [];
+            Object.keys(DATA).forEach(function(name) {
+                if (name === '_codeNames' || name === '_meta') return;
+                var emp = DATA[name];
+                emp.events.forEach(function(ev) {
+                    if (ev.day === currentDay) {
+                        dayEvents.push({ name: name, ev: ev });
+                        allCodes.push(ev.code);
+                    }
+                });
+            });
+
+            // Inject virtual events for replacers not already present this day
+            var dayRepls = getReplacements().filter(function(r) { return r.date === dateStr; });
+            dayRepls.forEach(function(r) {
+                var replacerName = r['in'];
+                if (!replacerName || !DATA[replacerName]) return;
+                // Check if replacer already has events this day
+                var hasEvents = dayEvents.some(function(d) { return d.name === replacerName; });
+                // Find the replaced person's event(s) overlapping the replacement window to get code/label
+                var rStart = parseFloat(r.start.split(':')[0]) + parseFloat(r.start.split(':')[1] || 0) / 60;
+                var rEnd = parseFloat(r.end.split(':')[0]) + parseFloat(r.end.split(':')[1] || 0) / 60;
+                var outName = r.out;
+                var refCode = 'VDC';
+                var refLabel = 'Vie de centre';
+                if (outName && DATA[outName]) {
+                    DATA[outName].events.forEach(function(ev) {
+                        if (ev.day !== currentDay) return;
+                        var s2 = new Date(ev.start);
+                        var e2 = new Date(ev.end);
+                        var sh2 = s2.getHours() + s2.getMinutes()/60;
+                        var eh2 = e2.getHours() + e2.getMinutes()/60;
+                        if (eh2 <= sh2) eh2 = 24;
+                        if (sh2 < rEnd && eh2 > rStart) {
+                            refCode = ev.code;
+                            refLabel = ev.label;
+                        }
+                    });
+                }
+                if (!hasEvents) {
+                    // Build synthetic ISO dates for the replacement window
+                    var synthStart = dateStr + 'T' + r.start.split(':')[0].padStart(2,'0') + ':' + (r.start.split(':')[1] || '00').padStart(2,'0');
+                    var synthEnd = dateStr + 'T' + r.end.split(':')[0].padStart(2,'0') + ':' + (r.end.split(':')[1] || '00').padStart(2,'0');
+                    var synthEv = {
+                        code: refCode,
+                        label: refLabel,
+                        start: synthStart,
+                        end: synthEnd,
+                        day: currentDay,
+                        _synthetic: true
+                    };
+                    dayEvents.push({ name: replacerName, ev: synthEv });
+                    allCodes.push(refCode);
+                }
+            });
+
+            if (dayEvents.length === 0) {
+                tl.innerHTML = '<div class="no-events">Aucun créneau ce jour</div>';
+                renderLegend([]);
+                return;
+            }
+
+            renderLegend(allCodes);
+
+            // Add replacement legend if any replacements exist for this day
+            var dayRepls = getReplacements().filter(function(r) { return r.date === dateStr; });
+            if (dayRepls.length > 0) {
+                var legendEl = document.getElementById('legend');
+                var replOut = document.createElement('div');
+                replOut.className = 'legend-item';
+                replOut.innerHTML = '<div class="legend-dot" style="background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,60,60,0.5) 2px,rgba(255,60,60,0.5) 3px);border:1px solid #ff3c3c"></div>Remplacé(e)';
+                legendEl.appendChild(replOut);
+                var replIn = document.createElement('div');
+                replIn.className = 'legend-item';
+                replIn.innerHTML = '<div class="legend-dot" style="background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(60,220,80,0.5) 2px,rgba(60,220,80,0.5) 3px);border:1px solid #3cdc50"></div>Remplaçant(e)';
+                legendEl.appendChild(replIn);
+            }
+
+            // Scrollable inner wrapper
+            var inner = document.createElement('div');
+            inner.className = 'timeline-inner';
+
+            // Find time range
+            var minH = 24, maxH = 0;
+            dayEvents.forEach(function(d) {
+                var s = new Date(d.ev.start);
+                var e = new Date(d.ev.end);
+                var sh = s.getHours() + s.getMinutes()/60;
+                var eh = e.getHours() + e.getMinutes()/60;
+                if (eh <= sh) eh = 24;
+                if (sh < minH) minH = sh;
+                if (eh > maxH) maxH = eh;
+            });
+            minH = Math.floor(minH);
+            maxH = Math.ceil(maxH);
+            if (maxH <= minH) maxH = minH + 1;
+            var range = maxH - minH;
+
+            // Set inner width: wider on desktop for comfort
+            var isDesktop = window.innerWidth >= 900;
+            var pxPerHour = isDesktop ? 80 : 40;
+            var nameW = isDesktop ? 150 : 70;
+            inner.style.minWidth = (nameW + range * pxPerHour) + 'px';
+
+            // Grid line positions for bar containers
+            var gridLines = [];
+            for (var gh = minH; gh <= maxH; gh++) {
+                var pos = ((gh - minH) / range) * 100;
+                gridLines.push({ pos: pos, cls: 'hour' });
+                if (gh < maxH) {
+                    var halfPos = ((gh + 0.5 - minH) / range) * 100;
+                    gridLines.push({ pos: halfPos, cls: 'half' });
+                }
+            }
+
+            // Time markers
+            var markerRow = document.createElement('div');
+            markerRow.className = 'timeline-row';
+            var markerSpacer = document.createElement('div');
+            markerSpacer.className = 'tl-name';
+            markerSpacer.innerHTML = '&nbsp;';
+            markerRow.appendChild(markerSpacer);
+            var markers = document.createElement('div');
+            markers.className = 'time-markers';
+            markers.style.flex = '1';
+            for (var h = minH; h <= maxH; h++) {
+                var m = document.createElement('span');
+                m.className = 'time-marker';
+                m.textContent = h + 'h';
+                markers.appendChild(m);
+            }
+            markerRow.appendChild(markers);
+            inner.appendChild(markerRow);
+
+            // Group by employee
+            var byName = {};
+            var nameOrder = [];
+            dayEvents.forEach(function(d) {
+                if (!byName[d.name]) { byName[d.name] = []; nameOrder.push(d.name); }
+                byName[d.name].push(d.ev);
+            });
+
+            nameOrder.forEach(function(name) {
+                var row = document.createElement('div');
+                row.className = 'timeline-row';
+
+                var nameEl = document.createElement('div');
+                nameEl.className = 'tl-name';
+                nameEl.textContent = getFirstName(name);
+                nameEl.title = name;
+                nameEl.onclick = function() { openModal(name); };
+                row.appendChild(nameEl);
+
+                var barContainer = document.createElement('div');
+                barContainer.className = 'tl-bar-container';
+                barContainer.dataset.minH = minH;
+                barContainer.dataset.range = range;
+
+                // Add grid lines
+                gridLines.forEach(function(gl) {
+                    var line = document.createElement('div');
+                    line.className = 'tl-grid-line ' + gl.cls;
+                    line.style.left = gl.pos + '%';
+                    barContainer.appendChild(line);
+                });
+
+                byName[name].forEach(function(ev) {
+                    var s = new Date(ev.start);
+                    var e = new Date(ev.end);
+                    var sh = s.getHours() + s.getMinutes()/60;
+                    var eh = e.getHours() + e.getMinutes()/60;
+                    if (eh <= sh) eh = 24;
+
+                    var left = ((sh - minH) / range) * 100;
+                    var width = ((eh - sh) / range) * 100;
+                    if (left < 0) left = 0;
+                    if (left + width > 100) width = 100 - left;
+
+                    var c = getColor(ev.code);
+                    var bar = document.createElement('div');
+                    bar.className = 'tl-bar';
+
+                    // Check replacement status for this bar
+                    var replInfo = getReplacementStatus(name, dateStr, sh, eh);
+                    if (replInfo && replInfo.status === 'out') bar.className += ' replaced';
+                    if (replInfo && replInfo.status === 'in') bar.className += ' replacer';
+
+                    bar.style.cssText = 'left:' + left + '%;width:' + width + '%;' +
+                        'background:' + c.bg + ';border-color:' + c.border + ';color:' + c.text +
+                        ';--glow-color:' + c.border + ';' +
+                        'box-shadow:inset 0 0 8px rgba(255,255,255,0.05), 0 0 4px ' + c.border + '40;';
+                    bar.innerHTML = '<span class="bar-label">' + ev.code + '</span>';
+                    var timeStr = s.getHours().toString().padStart(2,'0') + ':' + s.getMinutes().toString().padStart(2,'0') +
+                        ' - ' + e.getHours().toString().padStart(2,'0') + ':' + e.getMinutes().toString().padStart(2,'0');
+                    bar.title = ev.label + '\n' + timeStr;
+                    if (replInfo && replInfo.status === 'out') bar.title += '\nRemplacé par ' + getFirstName(replInfo.other);
+                    if (replInfo && replInfo.status === 'in') bar.title += '\nRemplace ' + getFirstName(replInfo.other);
+                    barContainer.appendChild(bar);
+                });
+
+                row.appendChild(barContainer);
+                inner.appendChild(row);
+            });
+
+            tl.appendChild(inner);
+
+            // Auto-scroll to current hour if viewing today + draw now-line
+            var _now = new Date();
+            var _today = _now.getFullYear() + '-' + String(_now.getMonth()+1).padStart(2,'0') + '-' + String(_now.getDate()).padStart(2,'0');
+            if (WEEK_DATES[currentDay] === _today) {
+                var currentH = _now.getHours() + _now.getMinutes() / 60;
+                if (currentH >= minH && currentH <= maxH) {
+                    // Draw now-line on each bar container
+                    var nowPct = ((currentH - minH) / range) * 100;
+                    inner.querySelectorAll('.tl-bar-container').forEach(function(bc) {
+                        var nl = document.createElement('div');
+                        nl.className = 'tl-now-line';
+                        nl.style.left = nowPct + '%';
+                        bc.appendChild(nl);
+                    });
+                    // Draw now-line on time markers row
+                    var tmRow = inner.querySelector('.time-markers');
+                    if (tmRow) {
+                        tmRow.style.position = 'relative';
+                        var nm = document.createElement('div');
+                        nm.className = 'tl-now-marker';
+                        nm.style.left = nowPct + '%';
+                        tmRow.appendChild(nm);
+                    }
+
+                    setTimeout(function() {
+                        var scrollPct = (currentH - minH) / range;
+                        var nameColWidth = 70;
+                        var scrollableWidth = inner.scrollWidth - nameColWidth;
+                        var scrollTarget = nameColWidth + scrollPct * scrollableWidth - tl.clientWidth / 2;
+                        tl.scrollLeft = Math.max(0, scrollTarget);
+                    }, 0);
+                }
+            }
+        }
+
+        // Auto-update now-line every 60 seconds
+        setInterval(function() {
+            var view = document.getElementById('view-day');
+            if (view && view.style.display !== 'none') {
+                renderTimeline();
+            }
+        }, 60000);
+
+        function pad2(n) { return n.toString().padStart(2, '0'); }
+
+        function toICSDate(dt) {
+            return dt.getFullYear().toString() +
+                pad2(dt.getMonth() + 1) + pad2(dt.getDate()) + 'T' +
+                pad2(dt.getHours()) + pad2(dt.getMinutes()) + '00';
+        }
+
+        function icsEscape(str) {
+            return str.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
+        }
+
+        function generateICSForNames(names) {
+            // Build notes description from NOTES_DATA (notes only, no label)
+            var noteDesc = '';
+            if (NOTES_DATA.comment) {
+                noteDesc += NOTES_DATA.comment;
+            }
+            (NOTES_DATA.updates || []).forEach(function(u) {
+                if (u.text) {
+                    var prefix = u.date ? ('MAJ ' + u.date + ': ') : 'MAJ: ';
+                    if (noteDesc) noteDesc += '\n';
+                    noteDesc += prefix + u.text;
+                }
+            });
+
+            var lines = [
+                'BEGIN:VCALENDAR', 'VERSION:2.0',
+                'PRODID:-//Planning Urban 7D//FR',
+                'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+                'X-WR-CALNAME:Planning Urban 7D',
+                'X-WR-TIMEZONE:Europe/Paris'
+            ];
+            names.forEach(function(name) {
+                var emp = DATA[name];
+                if (!emp) return;
+                emp.events.forEach(function(ev, i) {
+                    var s = new Date(ev.start);
+                    var e = new Date(ev.end);
+                    lines.push('BEGIN:VEVENT');
+                    lines.push('UID:export-' + emp.slug + '-' + i + '@urban7d');
+                    lines.push('DTSTART;TZID=Europe/Paris:' + toICSDate(s));
+                    lines.push('DTEND;TZID=Europe/Paris:' + toICSDate(e));
+                    lines.push('SUMMARY:' + getFirstName(name) + ' - ' + ev.label);
+                    if (noteDesc) lines.push('DESCRIPTION:' + icsEscape(noteDesc));
+                    lines.push('END:VEVENT');
+                });
+            });
+            lines.push('END:VCALENDAR');
+            return lines.join('\r\n');
+        }
+
+        // ── Calendar chooser (universel tous navigateurs / OS) ──
+        var _currentIcsUrl = '';
+
+        function openCalendarChooser(slug, displayName) {
+            var base = window.location.href.replace(/[^/]*$/, '');
+            var icsPath = 'ics/' + slug + '.ics';
+            var fullUrl = new URL(icsPath, base).href;
+            var webcalUrl = 'webcal://' + new URL(icsPath, base).host + new URL(icsPath, base).pathname;
+            var calName = encodeURIComponent('Planning ' + displayName);
+            _currentIcsUrl = fullUrl;
+
+            document.getElementById('cal-chooser-name').textContent = displayName;
+            document.getElementById('cal-google').href =
+                'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcalUrl);
+            document.getElementById('cal-apple').href = webcalUrl;
+            document.getElementById('cal-outlook').href =
+                'https://outlook.live.com/calendar/0/addfromweb?url=' + encodeURIComponent(fullUrl) + '&name=' + calName;
+            document.getElementById('cal-download').href = icsPath;
+            document.getElementById('cal-download').setAttribute('download', slug + '.ics');
+            document.getElementById('google-url-box').textContent = fullUrl;
+
+            document.getElementById('cal-chooser').style.display = '';
+            document.getElementById('cal-chooser').classList.add('open');
+        }
+
+        function closeCalendarChooser() {
+            document.getElementById('cal-chooser').classList.remove('open');
+            document.getElementById('cal-chooser').style.display = '';
+            document.getElementById('google-instructions').style.display = 'none';
+        }
+        document.getElementById('cal-cancel').onclick = closeCalendarChooser;
+        document.getElementById('cal-chooser').onclick = function(e) {
+            if (e.target === this) closeCalendarChooser();
+        };
+
+        // Google Agenda (manuel) : ouvre le panneau d'instructions
+        document.getElementById('cal-google-manual').onclick = function() {
+            document.getElementById('cal-chooser').style.display = 'none';
+            document.getElementById('cal-chooser').classList.remove('open');
+            document.getElementById('google-instructions').style.display = '';
+            // Copie auto du lien
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(_currentIcsUrl).then(function() {
+                    var btn = document.getElementById('google-copy-btn');
+                    btn.textContent = 'Lien copié !';
+                    btn.classList.add('copied');
+                    setTimeout(function() { btn.textContent = 'Copier le lien'; btn.classList.remove('copied'); }, 3000);
+                });
+            }
+        };
+        document.getElementById('google-copy-btn').onclick = function() {
+            var btn = this;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(_currentIcsUrl).then(function() {
+                    btn.textContent = 'Lien copié !';
+                    btn.classList.add('copied');
+                    setTimeout(function() { btn.textContent = 'Copier le lien'; btn.classList.remove('copied'); }, 3000);
+                });
+            } else {
+                prompt('Copier ce lien :', _currentIcsUrl);
+            }
+        };
+        document.getElementById('google-back').onclick = function() {
+            document.getElementById('google-instructions').style.display = 'none';
+            document.getElementById('cal-chooser').style.display = '';
+            document.getElementById('cal-chooser').classList.add('open');
+        };
+        document.getElementById('google-instructions').onclick = function(e) {
+            if (e.target === this) closeCalendarChooser();
+        };
+
+        // Bouton email : ouvre un mailto avec instructions
+        var _currentDisplayName = '';
+        var _origOpenChooser = openCalendarChooser;
+        openCalendarChooser = function(slug, displayName) {
+            _currentDisplayName = displayName;
+            _origOpenChooser(slug, displayName);
+        };
+        document.getElementById('google-email').onclick = function(e) {
+            e.preventDefault();
+            var addUrl = 'https://calendar.google.com/calendar/r/settings/addbyurl';
+            var subject = 'Planning Urban 7D - ' + _currentDisplayName;
+            var body = 'Salut ' + _currentDisplayName + ' !\n\n'
+                + 'Pour ajouter ton planning dans Google Agenda :\n\n'
+                + '1. Copie ce lien :\n' + _currentIcsUrl + '\n\n'
+                + '2. Ouvre cette page (depuis un ordi ou navigateur web) :\n' + addUrl + '\n\n'
+                + '3. Colle le lien et clique "Ajouter l\'agenda"\n\n'
+                + 'Ton planning se mettra à jour automatiquement !';
+            window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        };
+
+        // ── View toggle ──
+        document.querySelectorAll('.view-btn').forEach(function(btn) {
+            btn.onclick = function() {
+                currentView = btn.getAttribute('data-view');
+                document.querySelectorAll('.view-btn').forEach(function(b) {
+                    b.classList.toggle('active', b === btn);
+                });
+                document.getElementById('view-day').style.display = currentView === 'day' ? '' : 'none';
+                document.getElementById('view-staff').style.display = currentView === 'staff' ? '' : 'none';
+            };
+        });
+
+        // ── Modal ──
+        var modalEl = document.getElementById('modal');
+        document.getElementById('modal-close').onclick = closeModal;
+        modalEl.onclick = function(e) { if (e.target === modalEl) closeModal(); };
+
+        function closeModal() { modalEl.classList.remove('open'); }
+
+        function openModal(name) {
+            var emp = DATA[name];
+            if (!emp) return;
+
+            document.getElementById('modal-name').textContent = getFirstName(name);
+            var body = document.getElementById('modal-body');
+            body.innerHTML = '';
+
+            // Group events by day
+            var byDay = {};
+            emp.events.forEach(function(ev) { if (!byDay[ev.day]) byDay[ev.day] = []; byDay[ev.day].push(ev); });
+
+            // Inject virtual events for days where this person is a replacer but has no events
+            var repls = getReplacements();
+            repls.forEach(function(r) {
+                if (r['in'] !== name) return;
+                // Find the day index for this replacement date
+                var dayIdx = WEEK_DATES.indexOf(r.date);
+                if (dayIdx < 0) return;
+                var hasEventsThisDay = byDay[dayIdx] && byDay[dayIdx].length > 0;
+                if (hasEventsThisDay) return;
+                // Find code/label from replaced person's event
+                var outName = r.out;
+                var refCode = 'VDC';
+                var refLabel = 'Vie de centre';
+                var rStart = parseFloat(r.start.split(':')[0]) + parseFloat(r.start.split(':')[1] || 0) / 60;
+                var rEnd = parseFloat(r.end.split(':')[0]) + parseFloat(r.end.split(':')[1] || 0) / 60;
+                if (outName && DATA[outName]) {
+                    DATA[outName].events.forEach(function(ev) {
+                        if (ev.day !== dayIdx) return;
+                        var s2 = new Date(ev.start);
+                        var e2 = new Date(ev.end);
+                        var sh2 = s2.getHours() + s2.getMinutes()/60;
+                        var eh2 = e2.getHours() + e2.getMinutes()/60;
+                        if (eh2 <= sh2) eh2 = 24;
+                        if (sh2 < rEnd && eh2 > rStart) {
+                            refCode = ev.code;
+                            refLabel = ev.label;
+                        }
+                    });
+                }
+                var synthStart = r.date + 'T' + r.start.split(':')[0].padStart(2,'0') + ':' + (r.start.split(':')[1] || '00').padStart(2,'0');
+                var synthEnd = r.date + 'T' + r.end.split(':')[0].padStart(2,'0') + ':' + (r.end.split(':')[1] || '00').padStart(2,'0');
+                if (!byDay[dayIdx]) byDay[dayIdx] = [];
+                byDay[dayIdx].push({
+                    code: refCode,
+                    label: refLabel,
+                    start: synthStart,
+                    end: synthEnd,
+                    day: dayIdx,
+                    _synthetic: true
+                });
+            });
+
+            var hasDays = false;
+            for (var d = 0; d < 7; d++) {
+                if (!byDay[d] || byDay[d].length === 0) continue;
+                hasDays = true;
+                var dayDiv = document.createElement('div');
+                dayDiv.className = 'modal-day';
+
+                var title = document.createElement('div');
+                title.className = 'modal-day-title';
+                title.textContent = DAYS_FULL[d];
+                dayDiv.appendChild(title);
+
+                byDay[d].forEach(function(ev) {
+                    var c = getColor(ev.code);
+                    var s = new Date(ev.start);
+                    var e = new Date(ev.end);
+                    var sh = s.getHours() + s.getMinutes()/60;
+                    var eh = e.getHours() + e.getMinutes()/60;
+                    if (eh <= sh) eh = 24;
+                    var evDateStr = ev.start.substring(0, 10);
+
+                    var evDiv = document.createElement('div');
+                    evDiv.className = 'modal-event';
+
+                    // Check replacement status
+                    var replInfo = getReplacementStatus(name, evDateStr, sh, eh);
+                    if (replInfo && replInfo.status === 'out') evDiv.className += ' replaced';
+                    if (replInfo && replInfo.status === 'in') evDiv.className += ' replacer';
+
+                    evDiv.style.cssText = 'background:' + c.bg + ';border-color:' + c.border +
+                        ';box-shadow:0 0 8px ' + c.border + '30;';
+
+                    var timeSpan = document.createElement('span');
+                    timeSpan.className = 'ev-time';
+                    timeSpan.style.color = c.text;
+                    timeSpan.textContent = s.getHours().toString().padStart(2,'0') + ':' +
+                        s.getMinutes().toString().padStart(2,'0') + ' → ' +
+                        e.getHours().toString().padStart(2,'0') + ':' +
+                        e.getMinutes().toString().padStart(2,'0');
+
+                    var labelSpan = document.createElement('span');
+                    labelSpan.className = 'ev-label';
+                    labelSpan.style.color = c.text;
+                    labelSpan.textContent = ev.label;
+
+                    evDiv.appendChild(timeSpan);
+                    evDiv.appendChild(labelSpan);
+
+                    // Add replacement annotation text
+                    if (replInfo) {
+                        var replSpan = document.createElement('span');
+                        replSpan.className = 'ev-repl';
+                        if (replInfo.status === 'out') {
+                            replSpan.textContent = '↔ ' + getFirstName(replInfo.other);
+                            replSpan.style.color = '#ff6b6b';
+                        } else {
+                            replSpan.textContent = '↔ ' + getFirstName(replInfo.other);
+                            replSpan.style.color = '#51cf66';
+                        }
+                        evDiv.appendChild(replSpan);
+                    }
+
+                    dayDiv.appendChild(evDiv);
+                });
+                body.appendChild(dayDiv);
+            }
+
+            if (!hasDays) {
+                body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
+            } else {
+                // Total weekly hours footer (brut / net)
+                var totalH = computeWeeklyHours(emp);
+                var footer = document.createElement('div');
+                footer.className = 'modal-hours-total';
+                if (totalH.pause > 0) {
+                    footer.innerHTML =
+                        '<div class="hours-line">Heures brut : <strong>' + formatHours(totalH.brut) + '</strong></div>' +
+                        '<div class="hours-line pause">Pauses (20min / 6h) : <strong>−' + formatHours(totalH.pause) + '</strong></div>' +
+                        '<div class="hours-line net">Heures net : <strong>' + formatHours(totalH.net) + '</strong></div>';
+                } else {
+                    footer.innerHTML = 'Total semaine : <strong>' + formatHours(totalH.brut) + '</strong>';
+                }
+                body.appendChild(footer);
+            }
+
+            // Subscribe button → opens calendar chooser
+            var subBtn = document.getElementById('modal-subscribe');
+            subBtn.onclick = function(e) {
+                e.preventDefault();
+                openCalendarChooser(emp.slug, getFirstName(name));
+            };
+
+            modalEl.classList.add('open');
+        }
+
+        // ── Compute weekly hours per employee and display badges ──
+        function computeWeeklyHours(emp) {
+            var brut = 0;
+            emp.events.forEach(function(ev) {
+                var s = new Date(ev.start);
+                var e = new Date(ev.end);
+                brut += (e - s) / (1000 * 60 * 60);
+            });
+            var pauseH = computeWeeklyPause(emp);
+            return { brut: brut, net: brut - pauseH, pause: pauseH };
+        }
+        // Compute total pause deduction for an employee's week.
+        // Rule: per day, merge consecutive/overlapping shifts into continuous
+        // blocks, then for each block every 6h worked → 20 min pause.
+        function computeWeeklyPause(emp) {
+            // Group events by day
+            var byDay = {};
+            emp.events.forEach(function(ev) {
+                var d = ev.day;
+                if (!byDay[d]) byDay[d] = [];
+                byDay[d].push({ s: new Date(ev.start).getTime(), e: new Date(ev.end).getTime() });
+            });
+            var totalPause = 0; // in hours
+            Object.keys(byDay).forEach(function(d) {
+                var intervals = byDay[d].slice().sort(function(a,b) { return a.s - b.s; });
+                // Merge strictly consecutive intervals (fin == début du suivant)
+                var merged = [intervals[0]];
+                for (var i = 1; i < intervals.length; i++) {
+                    var last = merged[merged.length - 1];
+                    if (intervals[i].s <= last.e) {
+                        last.e = Math.max(last.e, intervals[i].e);
+                    } else {
+                        merged.push({ s: intervals[i].s, e: intervals[i].e });
+                    }
+                }
+                // For each continuous block, count pauses (every 6h → 20min)
+                merged.forEach(function(block) {
+                    var durationH = (block.e - block.s) / (1000 * 60 * 60);
+                    var pauses = Math.floor(durationH / 6);
+                    totalPause += pauses * (20 / 60); // 20 min in hours
+                });
+            });
+            return totalPause;
+        }
+        function formatHours(h) {
+            var hrs = Math.floor(h);
+            var mins = Math.round((h - hrs) * 60);
+            return mins > 0 ? hrs + 'h' + (mins < 10 ? '0' : '') + mins : hrs + 'h';
+        }
+        function updateHoursBadges() {
+            document.querySelectorAll('.employee-btn[data-name]').forEach(function(btn) {
+                var emp = DATA[btn.getAttribute('data-name')];
+                if (!emp) return;
+                // Remove old badges
+                btn.querySelectorAll('.hours-badge').forEach(function(b) { b.remove(); });
+                var h = computeWeeklyHours(emp);
+                var badge = document.createElement('span');
+                badge.className = 'badge hours-badge';
+                if (h.pause > 0) {
+                    badge.innerHTML = formatHours(h.net) + ' <span class="hours-brut">(' + formatHours(h.brut) + ')</span>';
+                    badge.title = 'Net : ' + formatHours(h.net) + ' | Brut : ' + formatHours(h.brut) + ' | Pauses : ' + formatHours(h.pause);
+                } else {
+                    badge.textContent = formatHours(h.brut);
+                }
+                btn.appendChild(badge);
+            });
+        }
+        updateHoursBadges();
+
+        // ── Staff list click ──
+        document.querySelectorAll('.employee-btn[data-name]').forEach(function(btn) {
+            btn.onclick = function() { openModal(btn.getAttribute('data-name')); };
+        });
+
+        // ── Notes de semaine (injectées depuis notes/SXX.json) ──
+        var REPO = 'OhLaPey/planning-urbansoccer';
+        var NOTES_PATH = 'notes/S15.json';
+        var TOKEN_KEY = 'planning-admin-token';
+        var ADMIN_KEY = 'planning-admin-unlocked';
+        var notesEl = document.getElementById('week-notes');
+        var notesWork = JSON.parse(JSON.stringify(NOTES_DATA));
+        var notesDirty = false;
+        function saveNotesLocal() {
+            // Plus de localStorage — les notes sont en mémoire et persistées via "Publier"
+            updateUnsavedBanner();
+        }
+
+        // ── Unsaved changes banner ──
+        var _unsavedBannerEl = null;
+        function hasUnsavedChanges() { return notesDirty || _editsDirty; }
+        function updateUnsavedBanner() {
+            if (hasUnsavedChanges()) {
+                if (!_unsavedBannerEl) {
+                    _unsavedBannerEl = document.createElement('div');
+                    _unsavedBannerEl.className = 'unsaved-banner';
+                    _unsavedBannerEl.innerHTML =
+                        '<span class="unsaved-icon">⚠</span>' +
+                        '<span>Modifications non enregistrées</span>';
+                    document.body.prepend(_unsavedBannerEl);
+                    document.body.classList.add('has-unsaved-banner');
+                }
+            } else {
+                if (_unsavedBannerEl) {
+                    _unsavedBannerEl.remove();
+                    _unsavedBannerEl = null;
+                    document.body.classList.remove('has-unsaved-banner');
+                }
+            }
+        }
+        // ── beforeunload protection ──
+        window.addEventListener('beforeunload', function(e) {
+            if (hasUnsavedChanges()) { e.preventDefault(); e.returnValue = ''; }
+        });
+        // ── Custom confirm dialog (replaces native confirm) ──
+        function showConfirmDialog(msg, onSave, onDiscard) {
+            var overlay = document.createElement('div');
+            overlay.className = 'confirm-overlay';
+            overlay.innerHTML =
+                '<div class="confirm-dialog">' +
+                    '<div class="confirm-icon">⚠️</div>' +
+                    '<div class="confirm-msg">' + msg + '</div>' +
+                    '<div class="confirm-actions">' +
+                        '<button class="btn-confirm-save">Enregistrer</button>' +
+                        '<button class="btn-confirm-discard">Quitter sans sauver</button>' +
+                        '<button class="btn-confirm-cancel">Annuler</button>' +
+                    '</div>' +
+                '</div>';
+            document.body.appendChild(overlay);
+            overlay.querySelector('.btn-confirm-save').onclick = function() {
+                overlay.remove(); if (onSave) onSave();
+            };
+            overlay.querySelector('.btn-confirm-discard').onclick = function() {
+                overlay.remove(); if (onDiscard) onDiscard();
+            };
+            overlay.querySelector('.btn-confirm-cancel').onclick = function() {
+                overlay.remove();
+            };
+            overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
+        }
+
+        // ── Parsing intelligent du texte collé ──
+        var _staffNames = Object.keys(DATA).filter(function(n) { return n !== '_codeNames' && n !== '_meta'; }).sort();
+        var _nameMap = {};
+        _staffNames.forEach(function(full) {
+            var parts = full.split(' ');
+            parts.forEach(function(p) { if (p.length > 2) _nameMap[p.toLowerCase()] = full; });
+            if (parts.length > 2) _nameMap[parts.slice(1).join(' ').toLowerCase()] = full;
+        });
+        var _dayMap = { 'lundi': 0, 'mardi': 1, 'mercredi': 2, 'jeudi': 3,
+                         'vendredi': 4, 'samedi': 5, 'dimanche': 6 };
+        var _dayLabelsShort = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+        var _codeList = Object.keys(COLORS);
+
+        function _findStaff(word) { return _nameMap[word.toLowerCase()] || null; }
+
+        function _detectDay(str) {
+            var dm = str.match(/\b(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\b/i);
+            if (dm) return _dayMap[dm[1].toLowerCase()];
+            var ddm = str.match(/(\d{1,2})[/](\d{1,2})/);
+            if (ddm) {
+                var dd = ddm[1].padStart(2,'0'), mm = ddm[2].padStart(2,'0');
+                for (var i = 0; i < WEEK_DATES.length; i++) {
+                    if (WEEK_DATES[i].endsWith('-' + mm + '-' + dd)) return i;
+                }
+            }
+            return null;
+        }
+
+        function _detectTimes(str) {
+            var m = str.match(/(\d{1,2})[hH:](\d{0,2})\s*[-–à]\s*(\d{1,2})[hH:](\d{0,2})/);
+            if (m) return [m[1].padStart(2,'0') + ':' + (m[2]||'00').padStart(2,'0'),
+                           m[3].padStart(2,'0') + ':' + (m[4]||'00').padStart(2,'0')];
+            return null;
+        }
+
+        function _detectCode(str) {
+            var upper = str.toUpperCase();
+            for (var i = 0; i < _codeList.length; i++) {
+                if (upper.indexOf(_codeList[i]) >= 0) return _codeList[i];
+            }
+            // Fuzzy match common words
+            var fuzzy = {'vie de centre':'VDC','edf':'EDF-C','stage':'STAGE','padel':'C-PAD',
+                         'cours padel':'C-PAD','anniversaire':'ANNIV','maladie':'MAL','réunion':'REU',
+                         'cup':'CUP-L','régisseur':'L-REG','formation':'FOR-E','inventaire':'INVEN'};
+            var lower = str.toLowerCase();
+            for (var key in fuzzy) { if (lower.indexOf(key) >= 0) return fuzzy[key]; }
+            return null;
+        }
+
+        function parseSmartActions(text) {
+            var actions = [];
+            var lines = text.split('\n');
+            lines.forEach(function(line) {
+                var trimmed = line.trim();
+                var lower = trimmed.toLowerCase();
+                if (!lower) return;
+
+                // 1) Remplacement : "X remplacé par Y" / "Y remplace X"
+                var rm = lower.match(/(\w+)\s+remplac[eé]e?\s+par\s+(\w+)/i) ||
+                         lower.match(/(\w+)\s+remplace\s+(\w+)/i);
+                if (rm) {
+                    var n1 = _findStaff(rm[1]), n2 = _findStaff(rm[2]);
+                    if (n1 && n2 && n1 !== n2) {
+                        var isPassive = lower.indexOf('remplacé') >= 0;
+                        var dayIdx = _detectDay(lower);
+                        var times = _detectTimes(lower);
+                        actions.push({
+                            type: 'replacement',
+                            out: isPassive ? n1 : n2,
+                            'in': isPassive ? n2 : n1,
+                            dayIdx: dayIdx,
+                            start: times ? times[0] : null,
+                            end: times ? times[1] : null,
+                            raw: trimmed
+                        });
+                        return;
+                    }
+                }
+
+                // 2) Format multi-staff : "Jour DD/MM : Staff1 XXh-XXh en CODE, Staff2 XXh-XXh en CODE"
+                //    Détecte un préfixe jour puis split par virgule
+                var lineDay = _detectDay(lower);
+                var colonIdx = trimmed.indexOf(':');
+                var parts;
+                if (lineDay !== null && colonIdx > 0 && colonIdx < 30) {
+                    // Le jour est dans le préfixe avant le ":"
+                    parts = trimmed.substring(colonIdx + 1).split(',');
+                } else {
+                    parts = [trimmed];
+                }
+
+                parts.forEach(function(part) {
+                    var partLower = part.toLowerCase().trim();
+                    if (!partLower) return;
+                    // Chercher un nom de staff dans ce segment
+                    var foundStaff = null;
+                    var partWords = partLower.replace(/[^a-zà-ÿ\s]/g, ' ').split(/\s+/);
+                    for (var w = 0; w < partWords.length; w++) {
+                        var s = _findStaff(partWords[w]);
+                        if (s) { foundStaff = s; break; }
+                    }
+                    if (!foundStaff) return;
+                    // Détecter horaires et code dans ce segment
+                    var segTimes = _detectTimes(partLower);
+                    var segDay = _detectDay(partLower);
+                    if (segDay === null) segDay = lineDay; // hériter du jour de la ligne
+                    var segCode = _detectCode(partLower);
+                    // Ignorer les "RAS" (rien à signaler)
+                    if (partLower.indexOf('ras') >= 0 && !segTimes && !segCode) return;
+                    if (segTimes || segCode) {
+                        actions.push({
+                            type: 'schedule',
+                            staff: foundStaff,
+                            dayIdx: segDay,
+                            start: segTimes ? segTimes[0] : null,
+                            end: segTimes ? segTimes[1] : null,
+                            code: segCode || 'VDC',
+                            raw: part.trim()
+                        });
+                    }
+                });
+            });
+            return actions;
+        }
+
+        // ── Diff popup : comparaison visuelle + actions éditables ──
+        function showDiffPopup(oldText, newText, smartActions, callback) {
+            var oldLines = oldText.split('\n');
+            var newLines = newText.split('\n');
+            var oldSet = {};
+            oldLines.forEach(function(l) { if (l.trim()) oldSet[l.trim()] = true; });
+            var newSet = {};
+            newLines.forEach(function(l) { if (l.trim()) newSet[l.trim()] = true; });
+            var diffHtml = '';
+            var hasChanges = false;
+            oldLines.forEach(function(line) {
+                if (!line.trim()) return;
+                if (!newSet[line.trim()]) {
+                    diffHtml += '<div class="diff-line removed">− ' + escHtml(line) + '</div>';
+                    hasChanges = true;
+                }
+            });
+            newLines.forEach(function(line) {
+                if (!line.trim()) return;
+                if (!oldSet[line.trim()]) {
+                    diffHtml += '<div class="diff-line added">+ ' + escHtml(line) + '</div>';
+                    hasChanges = true;
+                }
+            });
+            newLines.forEach(function(line) {
+                if (!line.trim()) return;
+                if (oldSet[line.trim()]) {
+                    diffHtml += '<div class="diff-line same">&nbsp; ' + escHtml(line) + '</div>';
+                }
+            });
+            if (!hasChanges && (!smartActions || smartActions.length === 0)) {
+                callback(true, []);
+                return;
+            }
+
+            // Build staff <option> list
+            var staffOpts = '';
+            _staffNames.forEach(function(n) {
+                staffOpts += '<option value="' + escHtml(n) + '">' + escHtml(n) + '</option>';
+            });
+            // Build day <option> list
+            var dayOpts = '<option value="">--</option>';
+            WEEK_DATES.forEach(function(d, i) {
+                dayOpts += '<option value="' + i + '">' + _dayLabelsShort[i] + ' ' + d.split('-')[2] + '</option>';
+            });
+            // Build code <option> list
+            var codeOpts = '';
+            _codeList.forEach(function(c) {
+                codeOpts += '<option value="' + c + '">' + c + '</option>';
+            });
+
+            var overlay = document.createElement('div');
+            overlay.className = 'diff-overlay';
+            var popupEl = document.createElement('div');
+            popupEl.className = 'diff-popup';
+
+            // Title
+            popupEl.innerHTML = '<h3>Modifications détectées</h3>';
+
+            // Diff section
+            if (hasChanges) {
+                var diffDiv = document.createElement('div');
+                diffDiv.className = 'diff-lines';
+                diffDiv.innerHTML = diffHtml;
+                popupEl.appendChild(diffDiv);
+            }
+
+            // Smart actions section (editable cards)
+            var actionCards = [];
+            if (smartActions && smartActions.length > 0) {
+                var actDiv = document.createElement('div');
+                actDiv.className = 'smart-actions';
+                actDiv.innerHTML = '<div class="smart-actions-title">🔄 Actions détectées</div>';
+
+                smartActions.forEach(function(a, idx) {
+                    var card = document.createElement('div');
+                    card.className = 'action-card';
+                    card.dataset.idx = idx;
+
+                    // Header with checkbox + type badge
+                    var hdr = document.createElement('div');
+                    hdr.className = 'action-card-header';
+                    var cb = document.createElement('input');
+                    cb.type = 'checkbox'; cb.checked = true; cb.dataset.actionIdx = idx;
+                    hdr.appendChild(cb);
+                    var badge = document.createElement('span');
+                    badge.className = 'action-type ' + (a.type === 'replacement' ? 'action-type-repl' : 'action-type-sched');
+                    badge.textContent = a.type === 'replacement' ? 'Remplacement' : 'Horaire';
+                    hdr.appendChild(badge);
+                    card.appendChild(hdr);
+
+                    // Raw text (source)
+                    var rawDiv = document.createElement('div');
+                    rawDiv.className = 'action-card-raw';
+                    rawDiv.textContent = '« ' + a.raw + ' »';
+                    card.appendChild(rawDiv);
+
+                    // Editable fields
+                    var fields = document.createElement('div');
+                    fields.className = 'action-fields';
+
+                    if (a.type === 'replacement') {
+                        // Staff out
+                        fields.innerHTML +=
+                            '<div class="action-field"><label>Sort</label>' +
+                            '<select data-field="out">' + staffOpts.replace('value="' + escHtml(a.out) + '"', 'value="' + escHtml(a.out) + '" selected') + '</select></div>';
+                        // Staff in
+                        fields.innerHTML +=
+                            '<div class="action-field"><label>Entre</label>' +
+                            '<select data-field="in">' + staffOpts.replace('value="' + escHtml(a['in']) + '"', 'value="' + escHtml(a['in']) + '" selected') + '</select></div>';
+                    } else {
+                        // Staff
+                        fields.innerHTML +=
+                            '<div class="action-field"><label>Staff</label>' +
+                            '<select data-field="staff">' + staffOpts.replace('value="' + escHtml(a.staff) + '"', 'value="' + escHtml(a.staff) + '" selected') + '</select></div>';
+                        // Code
+                        fields.innerHTML +=
+                            '<div class="action-field"><label>Activité</label>' +
+                            '<select data-field="code">' + codeOpts.replace('value="' + (a.code||'VDC') + '"', 'value="' + (a.code||'VDC') + '" selected') + '</select></div>';
+                    }
+                    // Day
+                    var selDay = (a.dayIdx !== null && a.dayIdx !== undefined) ? a.dayIdx.toString() : '';
+                    fields.innerHTML +=
+                        '<div class="action-field"><label>Jour</label>' +
+                        '<select data-field="dayIdx">' + dayOpts.replace('value="' + selDay + '">', 'value="' + selDay + '" selected>') + '</select></div>';
+                    // Times
+                    fields.innerHTML +=
+                        '<div class="action-field"><label>Horaires</label>' +
+                        '<div style="display:flex;gap:4px;align-items:center;">' +
+                        '<input type="time" data-field="start" value="' + (a.start || '09:00') + '" style="flex:1;">' +
+                        '<span style="color:#666;">-</span>' +
+                        '<input type="time" data-field="end" value="' + (a.end || '17:00') + '" style="flex:1;">' +
+                        '</div></div>';
+
+                    card.appendChild(fields);
+                    actDiv.appendChild(card);
+                    actionCards.push(card);
+                });
+                popupEl.appendChild(actDiv);
+            }
+
+            // Action buttons
+            var btns = document.createElement('div');
+            btns.className = 'diff-actions';
+            btns.innerHTML = '<button class="diff-btn-cancel">Annuler</button><button class="diff-btn-apply">Appliquer</button>';
+            popupEl.appendChild(btns);
+
+            overlay.appendChild(popupEl);
+            document.body.appendChild(overlay);
+
+            // Collect edited values on apply
+            btns.querySelector('.diff-btn-apply').onclick = function() {
+                var selected = [];
+                actionCards.forEach(function(card, idx) {
+                    var cb = card.querySelector('input[type="checkbox"]');
+                    if (!cb.checked) return;
+                    var a = JSON.parse(JSON.stringify(smartActions[idx]));
+                    // Read edited values from form fields
+                    card.querySelectorAll('[data-field]').forEach(function(el) {
+                        var field = el.dataset.field;
+                        if (field === 'dayIdx') {
+                            a.dayIdx = el.value !== '' ? parseInt(el.value) : null;
+                        } else {
+                            a[field] = el.value;
+                        }
+                    });
+                    selected.push(a);
+                });
+                overlay.remove(); callback(true, selected);
+            };
+            btns.querySelector('.diff-btn-cancel').onclick = function() {
+                overlay.remove(); callback(false, []);
+            };
+            overlay.onclick = function(e) { if (e.target === overlay) { overlay.remove(); callback(false, []); } };
+        }
+        function escHtml(s) {
+            return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }
+
+        // ── Appliquer les actions validées (remplacements + horaires) ──
+        function applySmartActions(selectedActions) {
+            if (!selectedActions || selectedActions.length === 0) return;
+            var data = notesWork;
+            if (!data.replacements) data.replacements = [];
+            var hasTimelineChanges = false;
+            selectedActions.forEach(function(a) {
+                var dayIdx = (a.dayIdx !== null && a.dayIdx !== undefined) ? a.dayIdx : currentDay;
+                var dateStr = WEEK_DATES[dayIdx] || WEEK_DATES[currentDay];
+                if (a.type === 'replacement') {
+                    data.replacements.push({
+                        date: dateStr,
+                        out: a.out,
+                        'in': a['in'],
+                        start: a.start || '09:00',
+                        end: a.end || '17:00'
+                    });
+                    hasTimelineChanges = true;
+                } else if (a.type === 'schedule') {
+                    var staff = a.staff;
+                    if (DATA[staff]) {
+                        var startISO = dateStr + 'T' + (a.start || '09:00');
+                        var endISO = dateStr + 'T' + (a.end || '17:00');
+                        DATA[staff].events.push({
+                            code: a.code || 'VDC',
+                            label: CODE_LABELS[a.code] || a.code || 'VDC',
+                            start: startISO,
+                            end: endISO,
+                            day: dayIdx
+                        });
+                        _editsDirty = true;
+                        hasTimelineChanges = true;
+                    }
+                }
+            });
+            if (hasTimelineChanges) {
+                updateSaveButton();
+                renderTimeline();
+            }
+        }
+
+        var STAFF_CODE = '1937';
+        var STAFF_KEY = 'planning-staff-ok';
+        var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
+        function isStaffVerified() { return sessionStorage.getItem(STAFF_KEY) === '1'; }
+        function verifyStaff() {
+            if (isStaffVerified()) return true;
+            var code = prompt('Code staff requis :');
+            if (code && code.trim() === STAFF_CODE) { sessionStorage.setItem(STAFF_KEY, '1'); return true; }
+            alert('Code staff incorrect.'); return false;
+        }
+        function getToken() {
+            if (!isStaffVerified()) return '';
+            return localStorage.getItem(TOKEN_KEY) || atob(_p.join(''));
+        }
+        function setToken(t) { localStorage.setItem(TOKEN_KEY, t); }
+        function isAdminUnlocked() { return sessionStorage.getItem(ADMIN_KEY) === '1' || isStaffVerified(); }
+        function unlockAdmin() { sessionStorage.setItem(ADMIN_KEY, '1'); }
+        function ensureToken() {
+            if (!verifyStaff()) return '';
+            return getToken();
+        }
+
+        function renderNotes() {
+            var data = notesWork;
+            notesEl.innerHTML = '';
+
+            // Comment card
+            var card = document.createElement('div');
+            card.className = 'note-card comment';
+            var hdr = document.createElement('div');
+            hdr.className = 'note-header';
+            hdr.innerHTML = '<span class="note-label comment">Note de semaine</span>';
+            var editBtn = document.createElement('button');
+            editBtn.className = 'note-btn';
+            editBtn.innerHTML = '✎';
+            editBtn.title = 'Éditer';
+            hdr.appendChild(editBtn);
+            card.appendChild(hdr);
+            var txt = document.createElement('div');
+            txt.className = 'note-text';
+            txt.textContent = data.comment || '';
+            card.appendChild(txt);
+            notesEl.appendChild(card);
+
+            editBtn.onclick = function() {
+                if (txt.contentEditable === 'true') {
+                    txt.contentEditable = 'false';
+                    data.comment = txt.innerText;
+                    editBtn.innerHTML = '✎';
+                    notesDirty = true; saveNotesLocal();
+                    renderNotes();
+                } else {
+                    txt.contentEditable = 'true';
+                    txt.focus();
+                    editBtn.innerHTML = '✔';
+                }
+            };
+
+            // ── Collage intelligent : détecter les changements et demander confirmation ──
+            txt.addEventListener('paste', function(e) {
+                if (txt.contentEditable !== 'true') return;
+                var pasted = (e.clipboardData || window.clipboardData).getData('text');
+                if (!pasted || !pasted.trim()) return;
+                var oldText = data.comment || '';
+                var newText = pasted.trim();
+                if (oldText.trim() === newText) return;
+                e.preventDefault();
+                var smartActions = parseSmartActions(newText);
+                showDiffPopup(oldText, newText, smartActions, function(accepted, selectedActions) {
+                    if (accepted) {
+                        data.comment = newText;
+                        applySmartActions(selectedActions);
+                        notesDirty = true; saveNotesLocal();
+                        renderNotes();
+                    }
+                });
+            });
+
+            // Update cards
+            data.updates.forEach(function(u, idx) {
+                var ucard = document.createElement('div');
+                ucard.className = 'note-card update';
+                var uhdr = document.createElement('div');
+                uhdr.className = 'note-header';
+                var dateLabel = '';
+                if (u.date) {
+                    var _dp = u.date.split(/[\-T :]/);
+                    var _dd = new Date(parseInt(_dp[0]), parseInt(_dp[1])-1, parseInt(_dp[2]),
+                        _dp.length > 3 ? parseInt(_dp[3]) : 0, _dp.length > 4 ? parseInt(_dp[4]) : 0);
+                    var _jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+                    var _mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+                    var _timePart = (_dp.length > 3) ? ' à ' + _dp[3] + 'h' + (_dp[4] || '00') : '';
+                    dateLabel = ' — ' + _jours[_dd.getDay()] + ' ' + _dd.getDate() + ' ' + _mois[_dd.getMonth()] + _timePart;
+                }
+                uhdr.innerHTML = '<span class="note-label update">Mise à jour' + dateLabel + '</span>';
+                var uactions = document.createElement('div');
+                uactions.className = 'note-actions';
+                var uedit = document.createElement('button');
+                uedit.className = 'note-btn';
+                uedit.innerHTML = '✎';
+                uedit.title = 'Éditer';
+                var udel = document.createElement('button');
+                udel.className = 'note-btn del';
+                udel.innerHTML = '✖';
+                udel.title = 'Supprimer';
+                uactions.appendChild(uedit);
+                uactions.appendChild(udel);
+                uhdr.appendChild(uactions);
+                ucard.appendChild(uhdr);
+                var utxt = document.createElement('div');
+                utxt.className = 'note-text';
+                utxt.textContent = u.text || '';
+                ucard.appendChild(utxt);
+                notesEl.appendChild(ucard);
+
+                uedit.onclick = function() {
+                    if (utxt.contentEditable === 'true') {
+                        utxt.contentEditable = 'false';
+                        data.updates[idx].text = utxt.innerText;
+                        uedit.innerHTML = '✎';
+                        notesDirty = true; saveNotesLocal();
+                        renderNotes();
+                    } else {
+                        utxt.contentEditable = 'true';
+                        utxt.focus();
+                        uedit.innerHTML = '✔';
+                    }
+                };
+
+                // ── Collage intelligent sur les mises à jour ──
+                utxt.addEventListener('paste', function(e) {
+                    if (utxt.contentEditable !== 'true') return;
+                    var pasted = (e.clipboardData || window.clipboardData).getData('text');
+                    if (!pasted || !pasted.trim()) return;
+                    var smartActions = parseSmartActions(pasted.trim());
+                    if (smartActions.length === 0) return; // pas d'action détectée → collage normal
+                    e.preventDefault();
+                    var oldText = data.updates[idx].text || '';
+                    showDiffPopup(oldText, pasted.trim(), smartActions, function(accepted, selectedActions) {
+                        if (accepted) {
+                            data.updates[idx].text = pasted.trim();
+                            applySmartActions(selectedActions);
+                            notesDirty = true; saveNotesLocal();
+                            renderNotes();
+                        }
+                    });
+                });
+
+                udel.onclick = function() {
+                    data.updates.splice(idx, 1);
+                    notesDirty = true; saveNotesLocal();
+                    renderNotes();
+                };
+            });
+
+            // ── Replacement cards ──
+            var repls = data.replacements || [];
+            repls.forEach(function(r, idx) {
+                var rcard = document.createElement('div');
+                rcard.className = 'note-card replacement';
+                var rhdr = document.createElement('div');
+                rhdr.className = 'note-header';
+                var rDateLabel = '';
+                if (r.date) {
+                    var _rp = r.date.split('-');
+                    var _rd = new Date(parseInt(_rp[0]), parseInt(_rp[1])-1, parseInt(_rp[2]));
+                    var _rjours = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+                    rDateLabel = ' — ' + _rjours[_rd.getDay()] + ' ' + _rd.getDate() + '/' + _rp[1];
+                }
+                rhdr.innerHTML = '<span class="note-label replacement">Remplacement' + rDateLabel + '</span>';
+                var ractions = document.createElement('div');
+                ractions.className = 'note-actions';
+                var rdel = document.createElement('button');
+                rdel.className = 'note-btn del';
+                rdel.innerHTML = '✖';
+                rdel.title = 'Supprimer';
+                ractions.appendChild(rdel);
+                rhdr.appendChild(ractions);
+                rcard.appendChild(rhdr);
+                var rsummary = document.createElement('div');
+                rsummary.className = 'repl-summary';
+                rsummary.innerHTML = '<span class="repl-out">' + getFirstName(r.out) + '</span> → <span class="repl-in">' + getFirstName(r.in) + '</span>' +
+                    '  <span style="color:#666;font-size:10px">' + (r.start || '') + ' – ' + (r.end || '') + '</span>';
+                rcard.appendChild(rsummary);
+                notesEl.appendChild(rcard);
+
+                rdel.onclick = function() {
+                    data.replacements.splice(idx, 1);
+                    notesDirty = true; saveNotesLocal();
+                    renderNotes();
+                    renderTimeline();
+                };
+            });
+
+            // Add replacement button
+            var addReplBtn = document.createElement('button');
+            addReplBtn.className = 'add-repl-btn';
+            addReplBtn.textContent = '+ Ajouter un remplacement';
+            addReplBtn.onclick = function() {
+                // Build employee list from DATA
+                var names = Object.keys(DATA).filter(function(n) { return n !== '_codeNames'; }).sort();
+                var form = document.createElement('div');
+                form.className = 'note-card replacement';
+                form.innerHTML = '<div class="note-header"><span class="note-label replacement">Nouveau remplacement</span></div>';
+                var formBody = document.createElement('div');
+                formBody.className = 'repl-form';
+
+                // Date row
+                var dateRow = document.createElement('div');
+                dateRow.className = 'repl-row';
+                dateRow.innerHTML = '<label>Jour</label>';
+                var dateSel = document.createElement('select');
+                WEEK_DATES.forEach(function(d, i) {
+                    var opt = document.createElement('option');
+                    opt.value = d;
+                    var _jrs = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+                    var _dp = d.split('-');
+                    var _dt = new Date(parseInt(_dp[0]), parseInt(_dp[1])-1, parseInt(_dp[2]));
+                    opt.textContent = _jrs[_dt.getDay()] + ' ' + _dt.getDate() + '/' + _dp[1];
+                    if (i === currentDay) opt.selected = true;
+                    dateSel.appendChild(opt);
+                });
+                dateRow.appendChild(dateSel);
+                formBody.appendChild(dateRow);
+
+                // "Out" row – only people working on the selected day
+                var outRow = document.createElement('div');
+                outRow.className = 'repl-row';
+                outRow.innerHTML = '<label>Sort</label>';
+                var outSel = document.createElement('select');
+                function refreshOutOptions() {
+                    var prev = outSel.value;
+                    outSel.innerHTML = '';
+                    var outDef = document.createElement('option');
+                    outDef.value = ''; outDef.textContent = 'Personne remplacée...';
+                    outSel.appendChild(outDef);
+                    var dayIdx = WEEK_DATES.indexOf(dateSel.value);
+                    names.forEach(function(n) {
+                        if (dayIdx < 0) return;
+                        var emp = DATA[n];
+                        if (!emp || !emp.events) return;
+                        var works = emp.events.some(function(ev) { return ev.day === dayIdx; });
+                        if (!works) return;
+                        var opt = document.createElement('option');
+                        opt.value = n; opt.textContent = n;
+                        if (n === prev) opt.selected = true;
+                        outSel.appendChild(opt);
+                    });
+                }
+                refreshOutOptions();
+                dateSel.addEventListener('change', refreshOutOptions);
+                outRow.appendChild(outSel);
+                formBody.appendChild(outRow);
+
+                // "In" row
+                var inRow = document.createElement('div');
+                inRow.className = 'repl-row';
+                inRow.innerHTML = '<label>Entre</label>';
+                var inSel = document.createElement('select');
+                var inDef = document.createElement('option');
+                inDef.value = ''; inDef.textContent = 'Remplaçant(e)...';
+                inSel.appendChild(inDef);
+                names.forEach(function(n) {
+                    var opt = document.createElement('option');
+                    opt.value = n; opt.textContent = n;
+                    inSel.appendChild(opt);
+                });
+                inRow.appendChild(inSel);
+                formBody.appendChild(inRow);
+
+                // Time range row
+                var timeRow = document.createElement('div');
+                timeRow.className = 'repl-row';
+                timeRow.innerHTML = '<label>Créneau</label>';
+                var startInput = document.createElement('input');
+                startInput.type = 'time'; startInput.value = '18:00';
+                startInput.style.flex = '1';
+                var sep = document.createElement('span');
+                sep.textContent = ' → '; sep.style.color = '#666';
+                var endInput = document.createElement('input');
+                endInput.type = 'time'; endInput.value = '23:00';
+                endInput.style.flex = '1';
+                timeRow.appendChild(startInput);
+                timeRow.appendChild(sep);
+                timeRow.appendChild(endInput);
+                formBody.appendChild(timeRow);
+
+                // Auto-fill time range from replaced person's schedule
+                function autoFillTimes() {
+                    var selName = outSel.value;
+                    var selDate = dateSel.value;
+                    if (!selName || !selDate || !DATA[selName]) return;
+                    var emp = DATA[selName];
+                    var dayIdx = WEEK_DATES.indexOf(selDate);
+                    if (dayIdx < 0) return;
+                    // Find earliest start and latest end for this person on this day
+                    var earliest = null, latest = null;
+                    emp.events.forEach(function(ev) {
+                        if (ev.day !== dayIdx) return;
+                        var s = new Date(ev.start);
+                        var e = new Date(ev.end);
+                        var sStr = s.getHours().toString().padStart(2,'0') + ':' + s.getMinutes().toString().padStart(2,'0');
+                        var eStr = e.getHours().toString().padStart(2,'0') + ':' + e.getMinutes().toString().padStart(2,'0');
+                        if (eStr === '00:00') eStr = '23:59';
+                        if (!earliest || sStr < earliest) earliest = sStr;
+                        if (!latest || eStr > latest) latest = eStr;
+                    });
+                    if (earliest && latest) {
+                        startInput.value = earliest;
+                        endInput.value = latest;
+                    }
+                }
+                outSel.addEventListener('change', autoFillTimes);
+                dateSel.addEventListener('change', autoFillTimes);
+
+                // Submit
+                var submitBtn = document.createElement('button');
+                submitBtn.className = 'repl-add-btn';
+                submitBtn.textContent = 'Valider';
+                submitBtn.onclick = function() {
+                    if (!outSel.value || !inSel.value) return;
+                    if (!data.replacements) data.replacements = [];
+                    data.replacements.push({
+                        date: dateSel.value,
+                        out: outSel.value,
+                        in: inSel.value,
+                        start: startInput.value,
+                        end: endInput.value
+                    });
+                    notesDirty = true; saveNotesLocal();
+                    renderNotes();
+                    renderTimeline();
+                };
+                formBody.appendChild(submitBtn);
+                form.appendChild(formBody);
+
+                // Replace button with form
+                addReplBtn.replaceWith(form);
+            };
+            notesEl.appendChild(addReplBtn);
+
+            // Add update button
+            var addBtn = document.createElement('button');
+            addBtn.className = 'add-note-btn';
+            addBtn.textContent = '+ Ajouter une mise à jour';
+            addBtn.onclick = function() {
+                var today = new Date();
+                var ds = today.getFullYear() + '-' +
+                    (today.getMonth()+1).toString().padStart(2,'0') + '-' +
+                    today.getDate().toString().padStart(2,'0') + ' ' +
+                    today.getHours().toString().padStart(2,'0') + ':' +
+                    today.getMinutes().toString().padStart(2,'0');
+                data.updates.push({ date: ds, text: '' });
+                notesDirty = true; saveNotesLocal();
+                renderNotes();
+                var cards = notesEl.querySelectorAll('.note-card.update .note-text');
+                if (cards.length > 0) {
+                    var last = cards[cards.length - 1];
+                    last.contentEditable = 'true';
+                    last.focus();
+                    var editBtns = notesEl.querySelectorAll('.note-card.update .note-btn:not(.del)');
+                    if (editBtns.length > 0) editBtns[editBtns.length - 1].innerHTML = '✔';
+                }
+            };
+            notesEl.appendChild(addBtn);
+
+            // Publish button (only if admin token is set and notes changed)
+            var token = getToken();
+            if (token && notesDirty) {
+                var pubBtn = document.createElement('button');
+                pubBtn.className = 'publish-btn';
+                pubBtn.textContent = 'Publier les notes';
+                pubBtn.onclick = function() {
+                    pubBtn.disabled = true;
+                    pubBtn.textContent = 'Publication en cours...';
+                    pushNotesToGitHub(data, pubBtn);
+                };
+                notesEl.appendChild(pubBtn);
+            }
+        }
+
+        function pushNotesToGitHub(data, btn) {
+            var token = ensureToken();
+            if (!token) { btn.textContent = 'Token requis pour publier'; btn.disabled = false; return; }
+            var content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\n')));
+            var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + NOTES_PATH;
+
+            // First get the current file SHA (required for update)
+            fetch(apiUrl, {
+                headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }
+            })
+            .then(function(r) { return r.ok ? r.json() : { sha: null }; })
+            .then(function(file) {
+                var body = {
+                    message: 'MAJ notes S15 depuis la page',
+                    content: content,
+                    branch: 'main'
+                };
+                if (file.sha) body.sha = file.sha;
+
+                return fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+            })
+            .then(function(r) {
+                if (r.ok) {
+                    notesDirty = false;
+                    updateUnsavedBanner();
+                    showRefreshCountdown(btn);
+                } else {
+                    return r.json().then(function(err) {
+                        btn.disabled = false;
+                        btn.textContent = 'Erreur : ' + (err.message || 'vérifier le token');
+                        btn.classList.remove('success');
+                    });
+                }
+            })
+            .catch(function(e) {
+                btn.disabled = false;
+                btn.textContent = 'Erreur réseau, réessayer';
+            });
+        }
+
+        function showRefreshCountdown(btn) {
+            var seconds = 90;
+            btn.classList.add('success');
+            btn.disabled = true;
+
+            function tick() {
+                if (seconds > 0) {
+                    btn.textContent = 'Publié ✔ En ligne dans ~' + seconds + 's — Rafraîchir';
+                    seconds--;
+                    setTimeout(tick, 1000);
+                } else {
+                    btn.textContent = "C'est en ligne ! Rafraîchir la page";
+                }
+                btn.disabled = false;
+                btn.onclick = function() { location.reload(); };
+            }
+            tick();
+        }
+
+        renderNotes();
+
+        // Initial render
+        renderTimeline();
+
+        // Charger les données depuis le JSON (prend en compte les modifs web)
+        (function() {
+            var jsonUrl = 'data/S15-events.json?_t=' + Date.now();
+            fetch(jsonUrl)
+                .then(function(r) { return r.ok ? r.json() : null; })
+                .then(function(remote) {
+                    if (!remote) return;
+                    // Comparer les timestamps _meta
+                    var localMeta = DATA._meta || {};
+                    var remoteMeta = remote._meta || {};
+                    if (remoteMeta.updated_at && remoteMeta.updated_at > (localMeta.updated_at || '')) {
+                        // Les données distantes sont plus récentes — les appliquer
+                        Object.keys(remote).forEach(function(k) {
+                            if (k !== '_codeNames') DATA[k] = remote[k];
+                        });
+                        renderTimeline();
+                        updateHoursBadges();
+                    }
+                })
+                .catch(function() {});
+        })();
+
+        // ── Admin edit mode ──
+        var editMode = false;
+        var adminToolbarEl = null;
+
+        function initAdminToolbar() {
+            if (!isAdminUnlocked()) return;
+            if (adminToolbarEl) return;
+            adminToolbarEl = document.createElement('div');
+            adminToolbarEl.className = 'admin-toolbar';
+            adminToolbarEl.innerHTML = '';
+            var toggleBtn = document.createElement('button');
+            toggleBtn.className = 'edit-toggle';
+            toggleBtn.textContent = 'Mode édition';
+            toggleBtn.onclick = function() {
+                if (editMode && _editsDirty) {
+                    showConfirmDialog(
+                        'Vous avez des modifications non enregistrées.<br>Que souhaitez-vous faire ?',
+                        function() { publishAllEdits(); },
+                        function() {
+                            _editsDirty = false;
+                            updateSaveButton();
+                            updateUnsavedBanner();
+                            editMode = false;
+                            toggleBtn.classList.remove('active');
+                            toggleBtn.textContent = 'Mode édition';
+                            renderTimeline();
+                        }
+                    );
+                    return;
+                }
+                editMode = !editMode;
+                toggleBtn.classList.toggle('active', editMode);
+                toggleBtn.textContent = editMode ? 'Quitter édition' : 'Mode édition';
+                renderTimeline();
+            };
+            adminToolbarEl.appendChild(toggleBtn);
+            var saveBtn = document.createElement('button');
+            saveBtn.className = 'save-edits-btn';
+            saveBtn.id = 'save-edits-btn';
+            saveBtn.textContent = 'Enregistrer';
+            saveBtn.style.display = 'none';
+            saveBtn.onclick = function() { publishAllEdits(); };
+            adminToolbarEl.appendChild(saveBtn);
+            var statusEl = document.createElement('span');
+            statusEl.className = 'edit-status';
+            statusEl.id = 'edit-status';
+            adminToolbarEl.appendChild(statusEl);
+            var viewDay = document.getElementById('view-day');
+            viewDay.insertBefore(adminToolbarEl, viewDay.firstChild);
+        }
+
+        // Override renderTimeline to add editable class when editMode
+        var _origRenderTimeline = renderTimeline;
+        var _dragState = null;
+
+        // Snap a decimal hour to the nearest 15-min increment
+        function snapHour(h) { return Math.round(h * 4) / 4; }
+        function hourToStr(h) {
+            var hh = Math.floor(h); var mm = Math.round((h - hh) * 60);
+            if (mm === 60) { hh++; mm = 0; }
+            return hh.toString().padStart(2,'0') + ':' + mm.toString().padStart(2,'0');
+        }
+
+        function startDrag(e, bar, side, empName, ev, container) {
+            e.preventDefault(); e.stopPropagation();
+            var rect = container.getBoundingClientRect();
+            // Compute current timeline range from rendered grid
+            var tl = document.getElementById('timeline');
+            var inner = tl.querySelector('.timeline-inner');
+            // Read minH / range from container data attributes
+            var minH = parseFloat(container.dataset.minH);
+            var range = parseFloat(container.dataset.range);
+
+            _dragState = { bar: bar, side: side, empName: empName, ev: ev,
+                            rect: rect, minH: minH, range: range };
+            bar.querySelector('.drag-handle.' + side).classList.add('active');
+
+            // Create tooltip
+            var tip = document.createElement('div');
+            tip.className = 'drag-tooltip';
+            tip.id = 'drag-tooltip';
+            document.body.appendChild(tip);
+            updateDrag(e);
+        }
+
+        function updateDrag(e) {
+            if (!_dragState) return;
+            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            var ds = _dragState;
+            var pct = ((clientX - ds.rect.left) / ds.rect.width) * 100;
+            pct = Math.max(0, Math.min(100, pct));
+            var newH = snapHour(ds.minH + (pct / 100) * ds.range);
+
+            var s = new Date(ds.ev.start);
+            var eDate = new Date(ds.ev.end);
+            var sh = s.getHours() + s.getMinutes() / 60;
+            var eh = eDate.getHours() + eDate.getMinutes() / 60;
+            if (eh <= sh) eh = 24;
+
+            if (ds.side === 'left') {
+                newH = Math.min(newH, eh - 0.25);  // min 15 min
+                var newLeft = ((newH - ds.minH) / ds.range) * 100;
+                var newWidth = ((eh - newH) / ds.range) * 100;
+                ds.bar.style.left = newLeft + '%';
+                ds.bar.style.width = newWidth + '%';
+                ds.currentH = newH;
+            } else {
+                newH = Math.max(newH, sh + 0.25);
+                var origLeft = ((sh - ds.minH) / ds.range) * 100;
+                var newWidth = ((newH - sh) / ds.range) * 100;
+                ds.bar.style.width = newWidth + '%';
+                ds.currentH = newH;
+            }
+
+            var tip = document.getElementById('drag-tooltip');
+            if (tip) {
+                tip.textContent = hourToStr(newH);
+                tip.style.left = (clientX + 12) + 'px';
+                tip.style.top = (clientY - 28) + 'px';
+            }
+        }
+
+        function endDrag() {
+            if (!_dragState) return;
+            var ds = _dragState;
+            var s = new Date(ds.ev.start);
+            var eDate = new Date(ds.ev.end);
+            var sh = s.getHours() + s.getMinutes() / 60;
+            var eh = eDate.getHours() + eDate.getMinutes() / 60;
+            if (eh <= sh) eh = 24;
+
+            var newStart, newEnd;
+            if (ds.side === 'left') {
+                newStart = hourToStr(ds.currentH);
+                newEnd = hourToStr(eh);
+            } else {
+                newStart = hourToStr(sh);
+                newEnd = hourToStr(ds.currentH);
+            }
+
+            _dragState = null;
+            var tip = document.getElementById('drag-tooltip');
+            if (tip) tip.remove();
+
+            applyTimeEdit(ds.empName, ds.ev, newStart, newEnd);
+        }
+
+        document.addEventListener('mousemove', function(e) { updateDrag(e); });
+        document.addEventListener('mouseup', function() { endDrag(); });
+        document.addEventListener('touchmove', function(e) { if (_dragState) { e.preventDefault(); updateDrag(e); } }, { passive: false });
+        document.addEventListener('touchend', function() { endDrag(); });
+
+        renderTimeline = function() {
+            _origRenderTimeline();
+            if (!editMode) return;
+
+            document.querySelectorAll('#timeline .tl-bar').forEach(function(bar) {
+                bar.classList.add('editable');
+                // Add drag handles
+                if (!bar.querySelector('.drag-handle')) {
+                    var handleL = document.createElement('div');
+                    handleL.className = 'drag-handle left';
+                    var handleR = document.createElement('div');
+                    handleR.className = 'drag-handle right';
+                    bar.appendChild(handleL);
+                    bar.appendChild(handleR);
+                }
+            });
+
+            // Add click + drag handlers + delete staff buttons
+            var rows = document.querySelectorAll('#timeline .timeline-row');
+            rows.forEach(function(row) {
+                var nameEl = row.querySelector('.tl-name');
+                if (!nameEl || !nameEl.title) return;
+                var empName = nameEl.title;
+                var container = row.querySelector('.tl-bar-container');
+
+                // Add delete staff button next to name
+                if (!nameEl.querySelector('.del-staff')) {
+                    var delBtn = document.createElement('span');
+                    delBtn.className = 'del-staff';
+                    delBtn.textContent = '×';
+                    delBtn.title = 'Supprimer ' + empName;
+                    delBtn.onclick = function(e) { e.stopPropagation(); deleteStaff(empName); };
+                    nameEl.appendChild(delBtn);
+                }
+                row.querySelectorAll('.tl-bar').forEach(function(bar, idx) {
+                    var emp = DATA[empName];
+                    if (!emp) return;
+                    var dayEvts = emp.events.filter(function(ev) { return ev.day === currentDay; });
+                    if (!dayEvts[idx]) return;
+                    var ev = dayEvts[idx];
+
+                    bar.onclick = function(e) {
+                        if (!editMode || _dragState) return;
+                        // Don't open popup if click was on a drag handle
+                        if (e.target.classList.contains('drag-handle')) return;
+                        e.stopPropagation();
+                        openEditPopup(empName, ev, idx);
+                    };
+
+                    bar.querySelector('.drag-handle.left').onmousedown = function(e) { startDrag(e, bar, 'left', empName, ev, container); };
+                    bar.querySelector('.drag-handle.right').onmousedown = function(e) { startDrag(e, bar, 'right', empName, ev, container); };
+                    bar.querySelector('.drag-handle.left').ontouchstart = function(e) { startDrag(e, bar, 'left', empName, ev, container); };
+                    bar.querySelector('.drag-handle.right').ontouchstart = function(e) { startDrag(e, bar, 'right', empName, ev, container); };
+                });
+
+                // Click on empty area of bar container → create new event
+                (function(cont, eName) {
+                    cont.addEventListener('click', function(e) {
+                        if (!editMode || _dragState) return;
+                        if (e.target !== cont && !e.target.classList.contains('tl-grid-line')) return;
+                        var rect = cont.getBoundingClientRect();
+                        var minH = parseFloat(cont.dataset.minH);
+                        var range = parseFloat(cont.dataset.range);
+                        var pct = ((e.clientX - rect.left) / rect.width) * 100;
+                        var clickH = snapHour(minH + (pct / 100) * range);
+                        openAddEventPopup(eName, clickH);
+                    });
+                })(container, empName);
+            });
+
+            // Add staff button at bottom of timeline
+            var addStaffRow = document.getElementById('add-staff-row');
+            if (addStaffRow) addStaffRow.remove();
+            var tl = document.getElementById('timeline');
+            var addRow = document.createElement('div');
+            addRow.className = 'timeline-row add-staff-row';
+            addRow.id = 'add-staff-row';
+            addRow.innerHTML = '<button class="add-staff-btn">+ Ajouter un employé</button>';
+            addRow.querySelector('button').onclick = function() { openAddStaffPopup(); };
+            tl.querySelector('.timeline-inner').appendChild(addRow);
+        };
+
+        // Build activity code options for select
+        function buildCodeOptions() {
+            var codes = {};
+            Object.keys(DATA).forEach(function(n) {
+                if (n === '_codeNames' || n === '_meta') return;
+                DATA[n].events.forEach(function(ev) {
+                    if (!codes[ev.code]) codes[ev.code] = ev.label || ev.code;
+                });
+            });
+            if (DATA._codeNames) {
+                Object.keys(DATA._codeNames).forEach(function(c) {
+                    if (!codes[c]) codes[c] = DATA._codeNames[c];
+                });
+            }
+            return codes;
+        }
+
+        function openEditPopup(empName, ev, evIdx) {
+            // Remove existing popup
+            var old = document.getElementById('edit-overlay');
+            if (old) old.remove();
+            old = document.getElementById('edit-popup');
+            if (old) old.remove();
+
+            var s = new Date(ev.start);
+            var e = new Date(ev.end);
+            var sh = s.getHours().toString().padStart(2, '0') + ':' + s.getMinutes().toString().padStart(2, '0');
+            var eh = e.getHours().toString().padStart(2, '0') + ':' + e.getMinutes().toString().padStart(2, '0');
+
+            // Build code selector
+            var codes = buildCodeOptions();
+            var codeOpts = '';
+            Object.keys(codes).sort().forEach(function(c) {
+                var sel = (c === ev.code) ? ' selected' : '';
+                codeOpts += '<option value="' + c + '"' + sel + '>' + c + ' — ' + codes[c] + '</option>';
+            });
+
+            var overlay = document.createElement('div');
+            overlay.className = 'edit-overlay';
+            overlay.id = 'edit-overlay';
+            overlay.onclick = function() { closeEditPopup(); };
+            document.body.appendChild(overlay);
+
+            var popup = document.createElement('div');
+            popup.className = 'edit-popup';
+            popup.id = 'edit-popup';
+            popup.innerHTML =
+                '<h3>' + getFirstName(empName) + ' — ' + ev.label + '</h3>' +
+                '<div class="field"><label>Activité</label><select id="edit-code">' + codeOpts + '</select></div>' +
+                '<div class="field"><label>Début</label><input type="time" id="edit-start" value="' + sh + '"></div>' +
+                '<div class="field"><label>Fin</label><input type="time" id="edit-end" value="' + eh + '"></div>' +
+                '<div class="actions">' +
+                '<button class="btn-delete" id="edit-delete">Supprimer</button>' +
+                '<button class="btn-cancel" id="edit-cancel">Annuler</button>' +
+                '<button class="btn-save" id="edit-save">Enregistrer</button>' +
+                '</div>';
+            document.body.appendChild(popup);
+
+            document.getElementById('edit-cancel').onclick = closeEditPopup;
+            document.getElementById('edit-delete').onclick = function() {
+                if (!confirm('Supprimer ce créneau ?')) return;
+                deleteEvent(empName, ev);
+                closeEditPopup();
+            };
+            document.getElementById('edit-save').onclick = function() {
+                var newStart = document.getElementById('edit-start').value;
+                var newEnd = document.getElementById('edit-end').value;
+                var newCode = document.getElementById('edit-code').value;
+                if (!newStart || !newEnd) return;
+                var codes = buildCodeOptions();
+                ev.code = newCode;
+                ev.label = codes[newCode] || newCode;
+                applyTimeEdit(empName, ev, newStart, newEnd);
+                closeEditPopup();
+            };
+        }
+
+        function deleteEvent(empName, ev) {
+            var emp = DATA[empName];
+            if (!emp) return;
+            var idx = emp.events.indexOf(ev);
+            if (idx !== -1) emp.events.splice(idx, 1);
+            renderTimeline();
+            updateHoursBadges();
+            pushDataAfterEdit();
+        }
+
+        function openAddEventPopup(empName, defaultHour) {
+            closeEditPopup();
+            var dateStr = WEEK_DATES[currentDay];
+            var startH = hourToStr(defaultHour);
+            var endH = hourToStr(defaultHour + 1);
+
+            var codes = buildCodeOptions();
+            var codeOpts = '';
+            Object.keys(codes).sort().forEach(function(c) {
+                codeOpts += '<option value="' + c + '">' + c + ' — ' + codes[c] + '</option>';
+            });
+
+            var overlay = document.createElement('div');
+            overlay.className = 'edit-overlay';
+            overlay.id = 'edit-overlay';
+            overlay.onclick = function() { closeEditPopup(); };
+            document.body.appendChild(overlay);
+
+            var popup = document.createElement('div');
+            popup.className = 'edit-popup';
+            popup.id = 'edit-popup';
+            popup.innerHTML =
+                '<h3>Nouveau créneau — ' + getFirstName(empName) + '</h3>' +
+                '<div class="field"><label>Activité</label><select id="edit-code">' + codeOpts + '</select></div>' +
+                '<div class="field"><label>Début</label><input type="time" id="edit-start" value="' + startH + '"></div>' +
+                '<div class="field"><label>Fin</label><input type="time" id="edit-end" value="' + endH + '"></div>' +
+                '<div class="actions">' +
+                '<button class="btn-cancel" id="edit-cancel">Annuler</button>' +
+                '<button class="btn-save" id="edit-save">Ajouter</button>' +
+                '</div>';
+            document.body.appendChild(popup);
+
+            document.getElementById('edit-cancel').onclick = closeEditPopup;
+            document.getElementById('edit-save').onclick = function() {
+                var newStart = document.getElementById('edit-start').value;
+                var newEnd = document.getElementById('edit-end').value;
+                var newCode = document.getElementById('edit-code').value;
+                if (!newStart || !newEnd) return;
+                var codes = buildCodeOptions();
+                var newEv = {
+                    code: newCode,
+                    label: codes[newCode] || newCode,
+                    start: dateStr + 'T' + newStart,
+                    end: dateStr + 'T' + newEnd,
+                    day: currentDay
+                };
+                DATA[empName].events.push(newEv);
+                renderTimeline();
+                updateHoursBadges();
+                closeEditPopup();
+                pushDataAfterEdit();
+            };
+        }
+
+        function openAddStaffPopup() {
+            closeEditPopup();
+            // Find staff who have NO events on the current day (repos)
+            var reposStaff = [];
+            Object.keys(DATA).forEach(function(name) {
+                if (name === '_codeNames' || name === '_meta') return;
+                var hasEventToday = DATA[name].events.some(function(ev) { return ev.day === currentDay; });
+                if (!hasEventToday) reposStaff.push(name);
+            });
+
+            if (reposStaff.length === 0) {
+                alert('Tous les employés travaillent déjà ce jour.');
+                return;
+            }
+
+            reposStaff.sort();
+
+            var overlay = document.createElement('div');
+            overlay.className = 'edit-overlay';
+            overlay.id = 'edit-overlay';
+            overlay.onclick = function() { closeEditPopup(); };
+            document.body.appendChild(overlay);
+
+            var popup = document.createElement('div');
+            popup.className = 'edit-popup';
+            popup.id = 'edit-popup';
+
+            var listHtml = '<h3>Ajouter un employé en repos</h3>';
+            listHtml += '<p style="font-size:11px;color:#888;margin-bottom:10px;">Sélectionnez l\'employé à ajouter pour ' + DAYS_FULL[currentDay] + ' :</p>';
+            listHtml += '<div style="max-height:250px;overflow-y:auto;">';
+            reposStaff.forEach(function(name, idx) {
+                listHtml += '<button class="btn-save" id="pick-staff-' + idx + '" style="display:block;width:100%;margin-bottom:6px;text-align:left;padding:8px 12px;font-size:13px;">' + name + '</button>';
+            });
+            listHtml += '</div>';
+            listHtml += '<div class="actions" style="margin-top:12px;">';
+            listHtml += '<button class="btn-cancel" id="edit-cancel">Annuler</button>';
+            listHtml += '</div>';
+            popup.innerHTML = listHtml;
+            document.body.appendChild(popup);
+
+            document.getElementById('edit-cancel').onclick = closeEditPopup;
+            reposStaff.forEach(function(name, idx) {
+                document.getElementById('pick-staff-' + idx).onclick = function() {
+                    closeEditPopup();
+                    openAddEventForReposStaff(name);
+                };
+            });
+        }
+
+        function openAddEventForReposStaff(empName) {
+            var dateStr = WEEK_DATES[currentDay];
+            var codes = buildCodeOptions();
+            var codeOpts = '';
+            Object.keys(codes).sort().forEach(function(c) {
+                codeOpts += '<option value="' + c + '">' + c + ' — ' + codes[c] + '</option>';
+            });
+
+            var overlay = document.createElement('div');
+            overlay.className = 'edit-overlay';
+            overlay.id = 'edit-overlay';
+            overlay.onclick = function() { closeEditPopup(); };
+            document.body.appendChild(overlay);
+
+            var popup = document.createElement('div');
+            popup.className = 'edit-popup';
+            popup.id = 'edit-popup';
+            popup.innerHTML =
+                '<h3>Créneau — ' + getFirstName(empName) + '</h3>' +
+                '<div class="field"><label>Activité</label><select id="edit-code">' + codeOpts + '</select></div>' +
+                '<div class="field"><label>Début</label><input type="time" id="edit-start" value="09:00"></div>' +
+                '<div class="field"><label>Fin</label><input type="time" id="edit-end" value="17:00"></div>' +
+                '<div class="actions">' +
+                '<button class="btn-cancel" id="edit-cancel">Annuler</button>' +
+                '<button class="btn-save" id="edit-save">Ajouter</button>' +
+                '</div>';
+            document.body.appendChild(popup);
+
+            document.getElementById('edit-cancel').onclick = closeEditPopup;
+            document.getElementById('edit-save').onclick = function() {
+                var newStart = document.getElementById('edit-start').value;
+                var newEnd = document.getElementById('edit-end').value;
+                var newCode = document.getElementById('edit-code').value;
+                if (!newStart || !newEnd) return;
+                var codes = buildCodeOptions();
+                var newEv = {
+                    code: newCode,
+                    label: codes[newCode] || newCode,
+                    start: dateStr + 'T' + newStart,
+                    end: dateStr + 'T' + newEnd,
+                    day: currentDay
+                };
+                DATA[empName].events.push(newEv);
+                renderTimeline();
+                updateHoursBadges();
+                closeEditPopup();
+                pushDataAfterEdit();
+            };
+        }
+
+        function deleteStaff(empName) {
+            var emp = DATA[empName];
+            if (!emp) return;
+            closeEditPopup();
+
+            // Find which days this employee has events
+            var daySet = {};
+            emp.events.forEach(function(ev) { daySet[ev.day] = true; });
+            var daysWithEvents = Object.keys(daySet).map(Number).sort(function(a,b){ return a-b; });
+
+            // If no events, just delete the empty entry
+            if (daysWithEvents.length === 0) {
+                if (!confirm('Supprimer ' + empName + ' (aucun créneau) ?')) return;
+                delete DATA[empName];
+                renderTimeline();
+                updateHoursBadges();
+                pushDataAfterEdit();
+                return;
+            }
+
+            var overlay = document.createElement('div');
+            overlay.className = 'edit-overlay';
+            overlay.id = 'edit-overlay';
+            overlay.onclick = function() { closeEditPopup(); };
+            document.body.appendChild(overlay);
+
+            var popup = document.createElement('div');
+            popup.className = 'edit-popup';
+            popup.id = 'edit-popup';
+
+            var html = '<h3>Supprimer ' + getFirstName(empName) + '</h3>';
+            html += '<p style="font-size:11px;color:#888;margin-bottom:10px;">Sélectionner les jours à supprimer :</p>';
+
+            // "Select all" checkbox
+            html += '<label class="day-check all-check"><input type="checkbox" id="del-all"> <span>Toute la semaine</span></label>';
+
+            // One checkbox per day
+            for (var i = 0; i < 7; i++) {
+                var hasEvts = daySet[i];
+                var count = emp.events.filter(function(ev) { return ev.day === i; }).length;
+                var label = DAYS_FULL[i] + ' ' + (WEEK_DATES[i] || '').substring(8,10) + '/' + (WEEK_DATES[i] || '').substring(5,7);
+                if (hasEvts) {
+                    html += '<label class="day-check"><input type="checkbox" value="' + i + '" class="del-day-cb"' +
+                        (daysWithEvents.length === 1 ? ' checked' : '') +
+                        '> <span>' + label + ' <em>(' + count + ' créneau' + (count > 1 ? 'x' : '') + ')</em></span></label>';
+                }
+            }
+
+            html += '<div class="actions" style="margin-top:12px;">' +
+                '<button class="btn-cancel" id="edit-cancel">Annuler</button>' +
+                '<button class="btn-delete" id="del-confirm" style="flex:1;">Supprimer</button>' +
+                '</div>';
+
+            popup.innerHTML = html;
+            document.body.appendChild(popup);
+
+            // "Select all" toggles all checkboxes
+            document.getElementById('del-all').onchange = function() {
+                var checked = this.checked;
+                popup.querySelectorAll('.del-day-cb').forEach(function(cb) { cb.checked = checked; });
+            };
+            // If all individual checkboxes are checked, check "select all" too
+            popup.querySelectorAll('.del-day-cb').forEach(function(cb) {
+                cb.onchange = function() {
+                    var allCbs = popup.querySelectorAll('.del-day-cb');
+                    var allChecked = true;
+                    allCbs.forEach(function(c) { if (!c.checked) allChecked = false; });
+                    document.getElementById('del-all').checked = allChecked;
+                };
+            });
+
+            document.getElementById('edit-cancel').onclick = closeEditPopup;
+            document.getElementById('del-confirm').onclick = function() {
+                var selectedDays = [];
+                popup.querySelectorAll('.del-day-cb:checked').forEach(function(cb) {
+                    selectedDays.push(parseInt(cb.value));
+                });
+                if (selectedDays.length === 0) return;
+
+                // If all days selected, remove employee entirely
+                if (selectedDays.length === daysWithEvents.length) {
+                    delete DATA[empName];
+                } else {
+                    // Remove only events from selected days
+                    emp.events = emp.events.filter(function(ev) {
+                        return selectedDays.indexOf(ev.day) === -1;
+                    });
+                }
+                renderTimeline();
+                updateHoursBadges();
+                closeEditPopup();
+                pushDataAfterEdit();
+            };
+        }
+
+        var _editsDirty = false;
+
+        function pushDataAfterEdit() {
+            _editsDirty = true;
+            updateSaveButton();
+            updateUnsavedBanner();
+        }
+
+        function updateSaveButton() {
+            var btn = document.getElementById('save-edits-btn');
+            if (!btn) return;
+            if (_editsDirty) {
+                btn.style.display = '';
+                btn.disabled = false;
+                btn.textContent = 'Enregistrer';
+                btn.className = 'save-edits-btn dirty';
+            } else {
+                btn.className = 'save-edits-btn';
+                btn.style.display = 'none';
+            }
+        }
+
+        function publishAllEdits() {
+            var btn = document.getElementById('save-edits-btn');
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = 'Sauvegarde...';
+                btn.className = 'save-edits-btn saving';
+            }
+            var statusEl = document.getElementById('edit-status');
+            pushDataToGitHub(function(ok) {
+                if (ok) {
+                    _editsDirty = false;
+                    updateUnsavedBanner();
+                    // Mettre à jour la note de source
+                    var metaEl = document.querySelector('.meta-note');
+                    if (metaEl) {
+                        var raw = weekData._meta.updated_at;
+                        var fmt = raw;
+                        var m2 = raw.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}:\d{2})$/);
+                        if (m2) fmt = m2[3] + '/' + m2[2] + '/' + m2[1] + ' à ' + m2[4];
+                        metaEl.innerHTML = 'S15 · MAJ ' + fmt + ' · Modif admin';
+                    }
+                    if (btn) {
+                        btn.textContent = 'Sauvegardé ✔';
+                        btn.className = 'save-edits-btn saved';
+                        setTimeout(function() { updateSaveButton(); }, 2000);
+                    }
+                } else {
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.textContent = 'Erreur — Réessayer';
+                        btn.className = 'save-edits-btn error';
+                    }
+                }
+            });
+        }
+
+        function closeEditPopup() {
+            var el = document.getElementById('edit-overlay');
+            if (el) el.remove();
+            el = document.getElementById('edit-popup');
+            if (el) el.remove();
+        }
+
+        function applyTimeEdit(empName, ev, newStart, newEnd) {
+            var dateStr = ev.start.substring(0, 11);
+            ev.start = dateStr + newStart;
+            ev.end = dateStr + newEnd;
+            renderTimeline();
+            updateHoursBadges();
+            pushDataAfterEdit();
+        }
+
+        function pushDataToGitHub(cb) {
+            var token = ensureToken();
+            if (!token) { cb(false); return; }
+
+            // Build the updated data JSON for this week
+            var weekData = {};
+            Object.keys(DATA).forEach(function(name) {
+                if (name === '_codeNames') return;
+                if (name === '_meta') return;
+                weekData[name] = DATA[name];
+            });
+            // Ajouter _meta avec source et timestamp
+            var now = new Date();
+            var pad = function(n) { return n < 10 ? '0' + n : '' + n; };
+            weekData._meta = {
+                source: 'Modif admin',
+                updated_at: now.getFullYear() + '-' + pad(now.getMonth()+1) + '-' + pad(now.getDate()) + ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes())
+            };
+            var content = btoa(unescape(encodeURIComponent(JSON.stringify(weekData, null, 2) + '\n')));
+            var dataPath = 'data/S15-events.json';
+            var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + dataPath;
+
+            // Get current SHA
+            fetch(apiUrl, {
+                headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }
+            })
+            .then(function(r) { return r.ok ? r.json() : { sha: null }; })
+            .then(function(file) {
+                var body = {
+                    message: 'MAJ créneaux S15 depuis la page',
+                    content: content,
+                    branch: 'main'
+                };
+                if (file.sha) body.sha = file.sha;
+
+                return fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+            })
+            .then(function(r) { cb(r.ok); })
+            .catch(function() { cb(false); });
+        }
+
+        // Init admin toolbar if already unlocked
+        initAdminToolbar();
+
+        // ── Note discrète : dernière MAJ + source ──
+        var _meta = {};
+        (function() {
+            if (!_meta.updated_at) return;
+            var src = _meta.source || 'Excel';
+            // Formater la date en français (DD/MM/YYYY à HH:MM)
+            var raw = _meta.updated_at;
+            var formatted = raw;
+            var m = raw.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}:\d{2})$/);
+            if (m) formatted = m[3] + '/' + m[2] + '/' + m[1] + ' à ' + m[4];
+            var note = document.createElement('div');
+            note.className = 'meta-note';
+            note.innerHTML = 'S15 · MAJ ' + formatted + ' · ' + src;
+            document.querySelector('.container').appendChild(note);
+        })();
+
+        // Admin button in header (combines auth + edit toggle)
+        var adminBtnEl = document.getElementById('admin-btn');
+        if (isAdminUnlocked()) {
+            adminBtnEl.classList.add('unlocked');
+        }
+        adminBtnEl.onclick = function() {
+            if (!isAdminUnlocked()) {
+                if (verifyStaff()) {
+                    unlockAdmin();
+                    adminBtnEl.classList.add('unlocked');
+                    initAdminToolbar();
+                    renderNotes();
+                    var toggleBtn = adminToolbarEl.querySelector('.edit-toggle');
+                    if (toggleBtn) toggleBtn.click();
+                }
+            } else {
+                // Already unlocked — toggle edit mode
+                var toggleBtn = adminToolbarEl ? adminToolbarEl.querySelector('.edit-toggle') : null;
+                if (toggleBtn) toggleBtn.click();
+            }
+        };
+
+    })();
+    </script>
+</body>
+</html>
