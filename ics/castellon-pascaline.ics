@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:castellon-pascaline-s10-1@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260302T000000
 DTEND;TZID=Europe/Paris:20260302T235900
 SUMMARY:Maladie
@@ -44,7 +44,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s11-1@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260309T130000
 DTEND;TZID=Europe/Paris:20260309T190000
 SUMMARY:Formation pratique
@@ -58,7 +58,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s12-1@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260321T130000
 DTEND;TZID=Europe/Paris:20260321T190000
 SUMMARY:Cup Régisseur
@@ -70,7 +70,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s13-1@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260324T200000
 DTEND;TZID=Europe/Paris:20260325T000000
 SUMMARY:Vie de centre
@@ -85,7 +85,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s14-1@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260331T200000
 DTEND;TZID=Europe/Paris:20260401T000000
 SUMMARY:Vie de centre
@@ -98,7 +98,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s14-2@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260401T200000
 DTEND;TZID=Europe/Paris:20260402T000000
 SUMMARY:Vie de centre
@@ -108,20 +108,5 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
  amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
  ont prévus sur les anniversaires. On verra si les créneaux sont réserv
  és
-END:VEVENT
-BEGIN:VEVENT
-UID:castellon-pascaline-s15-1@urban7d
-DTSTAMP:20260327T082132Z
-DTSTART;TZID=Europe/Paris:20260407T200000
-DTEND;TZID=Europe/Paris:20260408T000000
-SUMMARY:Vie de centre
-DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
- ais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques fé
- rié donc semblable à un dimanche padel\, on ouvre à 9h et du renfort en
-  début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habitue
- ls \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n
- 🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n
- 🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prév
- us sur les anniversaires. On verra si les créneaux sont réservés
 END:VEVENT
 END:VCALENDAR
