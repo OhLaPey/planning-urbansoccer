@@ -595,6 +595,7 @@
             <a href="S12.html" class="week-tab" data-end="2026-03-22">S12</a>
             <a href="S13.html" class="week-tab" data-end="2026-03-29">S13</a>
             <a href="S14.html" class="week-tab" data-end="2026-04-05">S14</a>
+            <a href="S15.html" class="week-tab" data-end="2026-04-12">S15</a>
         </div>
 
         <div class="week-notes" id="week-notes"></div>
@@ -2336,6 +2337,28 @@
 
         // Initial render
         renderTimeline();
+
+        // Charger les données depuis le JSON (prend en compte les modifs web)
+        (function() {
+            var jsonUrl = 'data/S11-events.json?_t=' + Date.now();
+            fetch(jsonUrl)
+                .then(function(r) { return r.ok ? r.json() : null; })
+                .then(function(remote) {
+                    if (!remote) return;
+                    // Comparer les timestamps _meta
+                    var localMeta = DATA._meta || {};
+                    var remoteMeta = remote._meta || {};
+                    if (remoteMeta.updated_at && remoteMeta.updated_at > (localMeta.updated_at || '')) {
+                        // Les données distantes sont plus récentes — les appliquer
+                        Object.keys(remote).forEach(function(k) {
+                            if (k !== '_codeNames') DATA[k] = remote[k];
+                        });
+                        renderTimeline();
+                        updateHoursBadges();
+                    }
+                })
+                .catch(function() {});
+        })();
 
         // ── Admin edit mode ──
         var editMode = false;
