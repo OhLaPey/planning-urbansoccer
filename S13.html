@@ -2345,19 +2345,14 @@
                 .then(function(r) { return r.ok ? r.json() : null; })
                 .then(function(remote) {
                     if (!remote) return;
-                    // Comparer les timestamps _meta
-                    var localMeta = DATA._meta || {};
-                    var remoteMeta = remote._meta || {};
-                    if (remoteMeta.updated_at && remoteMeta.updated_at > (localMeta.updated_at || '')) {
-                        // Les données distantes sont plus récentes — les appliquer
-                        Object.keys(remote).forEach(function(k) {
-                            if (k !== '_codeNames') DATA[k] = remote[k];
-                        });
-                        renderTimeline();
-                        updateHoursBadges();
-                    }
+                    // Toujours appliquer les données du JSON (elles incluent les modifs web)
+                    Object.keys(remote).forEach(function(k) {
+                        if (k !== '_codeNames') DATA[k] = remote[k];
+                    });
+                    renderTimeline();
+                    updateHoursBadges();
                 })
-                .catch(function() {});
+                .catch(function(e) { console.warn('Fetch JSON failed:', e); });
         })();
 
         // ── Admin edit mode ──
