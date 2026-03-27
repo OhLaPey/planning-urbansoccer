@@ -2923,6 +2923,28 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
         // Initial render
         renderTimeline();
 
+        // Charger les données depuis le JSON (prend en compte les modifs web)
+        (function() {{
+            var jsonUrl = 'data/S{week_num}-events.json?_t=' + Date.now();
+            fetch(jsonUrl)
+                .then(function(r) {{ return r.ok ? r.json() : null; }})
+                .then(function(remote) {{
+                    if (!remote) return;
+                    // Comparer les timestamps _meta
+                    var localMeta = DATA._meta || {{}};
+                    var remoteMeta = remote._meta || {{}};
+                    if (remoteMeta.updated_at && remoteMeta.updated_at > (localMeta.updated_at || '')) {{
+                        // Les données distantes sont plus récentes — les appliquer
+                        Object.keys(remote).forEach(function(k) {{
+                            if (k !== '_codeNames') DATA[k] = remote[k];
+                        }});
+                        renderTimeline();
+                        updateHoursBadges();
+                    }}
+                }})
+                .catch(function() {{}});
+        }})();
+
         // ── Admin edit mode ──
         var editMode = false;
         var adminToolbarEl = null;
