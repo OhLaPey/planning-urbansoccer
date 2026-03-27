@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s11-1@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260309T190000
 DTEND;TZID=Europe/Paris:20260309T193000
 SUMMARY:Formation
@@ -40,7 +40,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s11-2@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260309T193000
 DTEND;TZID=Europe/Paris:20260309T223000
 SUMMARY:L-ARB
@@ -54,7 +54,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s11-3@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260310T183000
 DTEND;TZID=Europe/Paris:20260310T223000
 SUMMARY:L-ARB
@@ -68,7 +68,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s11-4@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260311T193000
 DTEND;TZID=Europe/Paris:20260311T223000
 SUMMARY:L-ARB
@@ -82,7 +82,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s12-1@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260316T193000
 DTEND;TZID=Europe/Paris:20260316T223000
 SUMMARY:L-ARB
@@ -94,7 +94,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s12-2@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260317T193000
 DTEND;TZID=Europe/Paris:20260317T223000
 SUMMARY:L-ARB
@@ -106,7 +106,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s12-3@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260318T193000
 DTEND;TZID=Europe/Paris:20260318T213000
 SUMMARY:L-ARB
@@ -118,7 +118,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s13-1@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260323T193000
 DTEND;TZID=Europe/Paris:20260323T223000
 SUMMARY:L-ARB
@@ -133,7 +133,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s13-2@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260324T203000
 DTEND;TZID=Europe/Paris:20260324T223000
 SUMMARY:L-ARB
@@ -148,7 +148,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s13-3@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260325T183000
 DTEND;TZID=Europe/Paris:20260325T223000
 SUMMARY:L-ARB
@@ -163,7 +163,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s14-1@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260330T193000
 DTEND;TZID=Europe/Paris:20260330T223000
 SUMMARY:L-ARB
@@ -176,7 +176,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s14-2@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260331T193000
 DTEND;TZID=Europe/Paris:20260331T223000
 SUMMARY:L-ARB
@@ -189,7 +189,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s14-3@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260401T193000
 DTEND;TZID=Europe/Paris:20260401T223000
 SUMMARY:L-ARB
@@ -202,7 +202,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:ordonez-gomez-oceane-s14-4@urban7d
-DTSTAMP:20260327T082132Z
+DTSTAMP:20260326T151623Z
 DTSTART;TZID=Europe/Paris:20260402T183000
 DTEND;TZID=Europe/Paris:20260402T203000
 SUMMARY:L-ARB
@@ -212,50 +212,5 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
  amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
  ont prévus sur les anniversaires. On verra si les créneaux sont réserv
  és
-END:VEVENT
-BEGIN:VEVENT
-UID:ordonez-gomez-oceane-s15-1@urban7d
-DTSTAMP:20260327T082132Z
-DTSTART;TZID=Europe/Paris:20260406T203000
-DTEND;TZID=Europe/Paris:20260406T223000
-SUMMARY:L-ARB
-DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
- ais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques fé
- rié donc semblable à un dimanche padel\, on ouvre à 9h et du renfort en
-  début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habitue
- ls \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n
- 🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n
- 🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prév
- us sur les anniversaires. On verra si les créneaux sont réservés
-END:VEVENT
-BEGIN:VEVENT
-UID:ordonez-gomez-oceane-s15-2@urban7d
-DTSTAMP:20260327T082132Z
-DTSTART;TZID=Europe/Paris:20260407T203000
-DTEND;TZID=Europe/Paris:20260407T223000
-SUMMARY:L-ARB
-DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
- ais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques fé
- rié donc semblable à un dimanche padel\, on ouvre à 9h et du renfort en
-  début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habitue
- ls \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n
- 🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n
- 🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prév
- us sur les anniversaires. On verra si les créneaux sont réservés
-END:VEVENT
-BEGIN:VEVENT
-UID:ordonez-gomez-oceane-s15-3@urban7d
-DTSTAMP:20260327T082132Z
-DTSTART;TZID=Europe/Paris:20260408T193000
-DTEND;TZID=Europe/Paris:20260408T223000
-SUMMARY:L-ARB
-DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
- ais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques fé
- rié donc semblable à un dimanche padel\, on ouvre à 9h et du renfort en
-  début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habitue
- ls \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n
- 🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n
- 🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prév
- us sur les anniversaires. On verra si les créneaux sont réservés
 END:VEVENT
 END:VCALENDAR
