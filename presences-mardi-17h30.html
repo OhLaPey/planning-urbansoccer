@@ -37,7 +37,7 @@
         .back-btn {
             position: absolute; top: 8px; left: 8px;
             background: none; border: 1px solid rgba(255,255,255,0.15);
-            color: #aaa; font-size: 11px; cursor: pointer; padding: 6px 12px;
+            color: #aaa; font-size: 14px; cursor: pointer; padding: 12px 22px;
             border-radius: 6px; text-decoration: none; font-family: inherit;
             font-weight: 600; transition: all 0.2s;
         }
@@ -546,11 +546,21 @@
         var todayStr = today.getFullYear() + '-' +
             String(today.getMonth()+1).padStart(2,'0') + '-' +
             String(today.getDate()).padStart(2,'0');
-        // Fallback: dernière session avec une date connue
+        // Trouver la session courante : dernière session avec des données de présence
         var currentIdx = 0;
         for (var i = sessions.length - 1; i >= 0; i--) {
-            if (sessions[i].date) { currentIdx = i; break; }
+            var label = sessions[i].label;
+            var hasData = false;
+            for (var gi = 0; gi < DATA.groups.length; gi++) {
+                for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {
+                    var val = DATA.groups[gi].kids[ki].attendance[label];
+                    if (val === 1 || val === 0) { hasData = true; break; }
+                }
+                if (hasData) break;
+            }
+            if (hasData) { currentIdx = i; break; }
         }
+        // Si date disponible, chercher la session courante par date
         for (var i = 0; i < sessions.length; i++) {
             if (sessions[i].date) {
                 var parts = sessions[i].date.split('/');
