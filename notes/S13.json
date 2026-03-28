@@ -6,5 +6,13 @@
       "text": "MAJ Anniversaires, un week-end qui sera très clame :\r\n🎂 Samedi 28/03 : Florian 11h-15h en VDC, Mehdi 17h30-21h45 en VDC, Loïc RAS\r\n🎂 Dimanche 29/03 : Enzo repos, Florian alternance VDC/Anniv jusqu'à 17h15, Mehdi RAS"
     }
   ],
-  "replacements": []
+  "replacements": [
+    {
+      "date": "2026-03-28",
+      "out": "BONILLO Matthieu",
+      "in": "VASSANT Tiffany",
+      "start": "09:00",
+      "end": "13:00"
+    }
+  ]
 }
