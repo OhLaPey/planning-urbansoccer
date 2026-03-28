@@ -1085,8 +1085,7 @@
                 var sha = info.sha;
                 if (info.content) {
                     try {
-                        var remote = JSON.parse(decodeURIComponent(escape(atob(info.content.replace(/
-/g, '')))));
+                        var remote = JSON.parse(decodeURIComponent(escape(atob(info.content.replace(/\n/g, '')))));
                         Object.keys(changesToSave).forEach(function(key) {
                             var row = parseInt(key.split('-')[0]);
                             for (var gi = 0; gi < remote.groups.length; gi++)
