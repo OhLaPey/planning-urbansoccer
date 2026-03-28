@@ -6,211 +6,253 @@
     {
       "col": 5,
       "label": "S1",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 6,
       "label": "S2",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 7,
       "label": "S3",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 8,
       "label": "S4",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 9,
       "label": "S5",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 10,
       "label": "S6",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 11,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 12,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 13,
       "label": "S7",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 14,
       "label": "S8",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 15,
       "label": "S9",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 16,
       "label": "S10",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 17,
       "label": "S11",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 18,
       "label": "S12",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 19,
       "label": "S13",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 20,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 21,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 22,
       "label": "S14",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 23,
       "label": "S15",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 24,
       "label": "S16",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 25,
       "label": "S17",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 26,
       "label": "S18",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 27,
       "label": "S19",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 28,
       "label": "S20",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 29,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 30,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 31,
       "label": "S21",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 32,
       "label": "S22",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 33,
       "label": "S23",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 34,
       "label": "S24",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 35,
       "label": "S25",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 36,
       "label": "S26",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 37,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 38,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 39,
       "label": "S27",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 40,
       "label": "S28",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 41,
       "label": "F",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 42,
       "label": "S29",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 43,
       "label": "S30",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 44,
       "label": "S31",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 45,
       "label": "S32",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 46,
       "label": "S33",
+      "date": null,
       "is_vacation": false
     }
   ],
@@ -247,7 +289,7 @@
             "S20": 0,
             "S21": 0,
             "S22": 1,
-            "S23": 1,
+            "S23": 0,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -290,7 +332,7 @@
             "S20": 0,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -333,7 +375,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -376,7 +418,7 @@
             "S20": 0,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -419,7 +461,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -462,7 +504,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -505,7 +547,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 1,
-            "S23": 0,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -548,7 +590,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -591,7 +633,7 @@
             "S20": 1,
             "S21": 0,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -634,7 +676,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -677,7 +719,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -720,7 +762,7 @@
             "S20": 0,
             "S21": 0,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -763,7 +805,7 @@
             "S20": 0,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -806,7 +848,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -849,7 +891,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -892,7 +934,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -909,11 +951,54 @@
       ]
     },
     {
-      "name": "2è groupe",
+      "name": "Groupe 2",
       "kids": [
         {
-          "row": 28,
+          "row": 27,
           "num": 1,
+          "name": "SEFDAR Adam",
+          "category": "U7",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 0,
+            "S4": 0,
+            "S5": 1,
+            "S6": 1,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 1,
+            "S10": 1,
+            "S11": null,
+            "S12": 0,
+            "S13": 1,
+            "S14": 1,
+            "S15": 1,
+            "S16": 1,
+            "S17": 1,
+            "S18": 1,
+            "S19": 1,
+            "S20": 1,
+            "S21": 1,
+            "S22": 1,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null,
+            "S27": null,
+            "S28": null,
+            "F": null,
+            "S29": null,
+            "S30": null,
+            "S31": null,
+            "S32": null,
+            "S33": null
+          }
+        },
+        {
+          "row": 28,
+          "num": 2,
           "name": "LEBORGNE Ayden",
           "category": "U7",
           "attendance": {
@@ -940,7 +1025,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -956,7 +1041,7 @@
         },
         {
           "row": 29,
-          "num": 2,
+          "num": 3,
           "name": "DIVIEN Nathanaël",
           "category": "U7",
           "attendance": {
@@ -983,7 +1068,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -999,7 +1084,7 @@
         },
         {
           "row": 30,
-          "num": 3,
+          "num": 4,
           "name": "CLAVEYROLAS Leeroy",
           "category": "U7",
           "attendance": {
@@ -1026,7 +1111,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1042,7 +1127,7 @@
         },
         {
           "row": 31,
-          "num": 4,
+          "num": 5,
           "name": "BOJOVIC Filip",
           "category": "U7",
           "attendance": {
@@ -1069,7 +1154,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1085,7 +1170,7 @@
         },
         {
           "row": 32,
-          "num": 5,
+          "num": 6,
           "name": "TALLAPRAGADE Riaan",
           "category": "U7",
           "attendance": {
@@ -1112,7 +1197,7 @@
             "S20": 1,
             "S21": 0,
             "S22": 0,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1128,7 +1213,7 @@
         },
         {
           "row": 33,
-          "num": 6,
+          "num": 7,
           "name": "PEREIRA LELIEVRE Nino",
           "category": "U7",
           "attendance": {
@@ -1155,7 +1240,7 @@
             "S20": 0,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1171,7 +1256,7 @@
         },
         {
           "row": 34,
-          "num": 7,
+          "num": 8,
           "name": "ALIAHMAD Karl",
           "category": "U8",
           "attendance": {
@@ -1198,7 +1283,7 @@
             "S20": 1,
             "S21": 0,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1214,7 +1299,7 @@
         },
         {
           "row": 35,
-          "num": 8,
+          "num": 9,
           "name": "CASENAVE Gabriel",
           "category": "U8",
           "attendance": {
@@ -1241,7 +1326,7 @@
             "S20": 0,
             "S21": 0,
             "S22": 0,
-            "S23": 0,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1257,7 +1342,7 @@
         },
         {
           "row": 36,
-          "num": 9,
+          "num": 10,
           "name": "PARASCANDOLO Leonardo",
           "category": "U8",
           "attendance": {
@@ -1284,7 +1369,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1300,7 +1385,7 @@
         },
         {
           "row": 37,
-          "num": 10,
+          "num": 11,
           "name": "OUTASGA Adam",
           "category": "U8",
           "attendance": {
@@ -1327,7 +1412,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 0,
-            "S23": 0,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1343,7 +1428,7 @@
         },
         {
           "row": 38,
-          "num": 11,
+          "num": 12,
           "name": "LEMAITRE FOLIOT Corentin",
           "category": "U8",
           "attendance": {
@@ -1370,7 +1455,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1386,7 +1471,7 @@
         },
         {
           "row": 39,
-          "num": 12,
+          "num": 13,
           "name": "SYLLA Rachid",
           "category": "U8",
           "attendance": {
@@ -1413,7 +1498,7 @@
             "S20": 1,
             "S21": 0,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1429,7 +1514,7 @@
         },
         {
           "row": 40,
-          "num": 13,
+          "num": 14,
           "name": "YERANOSYAN Léo",
           "category": "U8",
           "attendance": {
@@ -1456,7 +1541,7 @@
             "S20": 0,
             "S21": 1,
             "S22": 1,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1472,7 +1557,7 @@
         },
         {
           "row": 41,
-          "num": 14,
+          "num": 15,
           "name": "HAY Louka",
           "category": "U8",
           "attendance": {
@@ -1499,7 +1584,7 @@
             "S20": 1,
             "S21": 1,
             "S22": 1,
-            "S23": 0,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1515,7 +1600,7 @@
         },
         {
           "row": 42,
-          "num": 15,
+          "num": 16,
           "name": "DUBOIS LAMBERTINI Gaspard",
           "category": "U7",
           "attendance": {
@@ -1542,7 +1627,7 @@
             "S20": 1,
             "S21": 1,
             "S22": null,
-            "S23": 1,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
@@ -1559,11 +1644,54 @@
       ]
     },
     {
-      "name": "3è groupe",
+      "name": "Groupe 3",
       "kids": [
         {
-          "row": 48,
+          "row": 47,
           "num": 1,
+          "name": "GARCIA Sara",
+          "category": "U8",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 1,
+            "S4": 1,
+            "S5": 1,
+            "S6": 0,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 1,
+            "S10": 0,
+            "S11": null,
+            "S12": 1,
+            "S13": 1,
+            "S14": null,
+            "S15": 1,
+            "S16": 1,
+            "S17": 1,
+            "S18": 1,
+            "S19": 1,
+            "S20": 1,
+            "S21": 1,
+            "S22": 1,
+            "S23": 1,
+            "S24": null,
+            "S25": null,
+            "S26": null,
+            "S27": null,
+            "S28": null,
+            "F": null,
+            "S29": null,
+            "S30": null,
+            "S31": null,
+            "S32": null,
+            "S33": null
+          }
+        },
+        {
+          "row": 48,
+          "num": 2,
           "name": "D'HONT LECOMTE Yannik",
           "category": "U8",
           "attendance": {
@@ -1606,7 +1734,7 @@
         },
         {
           "row": 49,
-          "num": 2,
+          "num": 3,
           "name": "ROUSEVELT Louis",
           "category": "U8",
           "attendance": {
@@ -1649,7 +1777,7 @@
         },
         {
           "row": 50,
-          "num": 3,
+          "num": 4,
           "name": "LANDES David",
           "category": "U9",
           "attendance": {
@@ -1692,7 +1820,7 @@
         },
         {
           "row": 51,
-          "num": 4,
+          "num": 5,
           "name": "LANDES Nathan",
           "category": "U9",
           "attendance": {
@@ -1735,7 +1863,7 @@
         },
         {
           "row": 52,
-          "num": 5,
+          "num": 6,
           "name": "GILAVERT Arthur",
           "category": "U9",
           "attendance": {
@@ -1778,7 +1906,7 @@
         },
         {
           "row": 53,
-          "num": 6,
+          "num": 7,
           "name": "UMAIR Yousaf",
           "category": "U9",
           "attendance": {
@@ -1821,7 +1949,7 @@
         },
         {
           "row": 54,
-          "num": 7,
+          "num": 8,
           "name": "LAGSSAIR Zakaria",
           "category": "U9",
           "attendance": {
@@ -1864,7 +1992,7 @@
         },
         {
           "row": 55,
-          "num": 8,
+          "num": 9,
           "name": "FERNANDES DOS REIS Luan",
           "category": "U9",
           "attendance": {
@@ -1907,7 +2035,7 @@
         },
         {
           "row": 56,
-          "num": 9,
+          "num": 10,
           "name": "DABBAJI Ayoub",
           "category": "U9",
           "attendance": {
@@ -1950,7 +2078,7 @@
         },
         {
           "row": 57,
-          "num": 10,
+          "num": 11,
           "name": "PUJOL Timéo",
           "category": "U9",
           "attendance": {
@@ -1993,7 +2121,7 @@
         },
         {
           "row": 58,
-          "num": 11,
+          "num": 12,
           "name": "MIVEKANNIN Hugo",
           "category": "U9",
           "attendance": {
@@ -2036,7 +2164,7 @@
         },
         {
           "row": 59,
-          "num": 12,
+          "num": 13,
           "name": "GUERLAIS Clément",
           "category": "U8",
           "attendance": {
@@ -2079,7 +2207,7 @@
         },
         {
           "row": 60,
-          "num": 13,
+          "num": 14,
           "name": "Emilio 14h (changement créneau ?)",
           "category": "U9",
           "attendance": {
@@ -2122,7 +2250,7 @@
         },
         {
           "row": 61,
-          "num": 14,
+          "num": 15,
           "name": "Léo 14h (changement créneau ?)",
           "category": "U7",
           "attendance": {
@@ -2150,6 +2278,54 @@
             "S21": 1,
             "S22": 1,
             "S23": 1,
+            "S24": null,
+            "S25": null,
+            "S26": null,
+            "S27": null,
+            "S28": null,
+            "F": null,
+            "S29": null,
+            "S30": null,
+            "S31": null,
+            "S32": null,
+            "S33": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Groupe 4",
+      "kids": [
+        {
+          "row": 67,
+          "num": 1,
+          "name": "DRISSI Ilyan",
+          "category": "U6",
+          "attendance": {
+            "S1": 0,
+            "S2": 0,
+            "S3": 0,
+            "S4": 0,
+            "S5": 0,
+            "S6": 0,
+            "V": null,
+            "S7": 0,
+            "S8": 0,
+            "S9": 0,
+            "S10": 0,
+            "S11": 0,
+            "S12": 0,
+            "S13": 0,
+            "S14": 0,
+            "S15": 0,
+            "S16": 0,
+            "S17": null,
+            "S18": null,
+            "S19": null,
+            "S20": null,
+            "S21": null,
+            "S22": null,
+            "S23": null,
             "S24": null,
             "S25": null,
             "S26": null,
