@@ -3982,7 +3982,7 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
                 var sha = info.sha;
                 if (info.content) {{
                     try {{
-                        var remote = JSON.parse(decodeURIComponent(escape(atob(info.content.replace(/\n/g, '')))));
+                        var remote = JSON.parse(decodeURIComponent(escape(atob(info.content.replace(/\\n/g, '')))));
                         Object.keys(changesToSave).forEach(function(key) {{
                             var row = parseInt(key.split('-')[0]);
                             for (var gi = 0; gi < remote.groups.length; gi++)
