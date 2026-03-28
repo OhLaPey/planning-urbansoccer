@@ -37,6 +37,15 @@ jobs:
         run: python regen_ics.py
         continue-on-error: true
 
+      - name: Sauvegarder les pages présences avant generate
+        run: |
+          mkdir -p _presences_backup
+          cp presences*.html _presences_backup/ 2>/dev/null || true
+
+      - name: Restaurer les pages présences après generate
+        run: |
+          cp _presences_backup/presences*.html . 2>/dev/null || true
+
       - name: Préparer les fichiers pour Pages
         run: |
           mkdir -p _site
@@ -51,9 +60,6 @@ jobs:
           cp -r notes/ _site/notes/ 2>/dev/null || true
           cp sw.js _site/ 2>/dev/null || true
           cp latest.json _site/ 2>/dev/null || true
-          # Restaurer les pages présences du repo (generate.py peut les écraser)
-          git checkout -- presences*.html 2>/dev/null || true
-          cp presences*.html _site/ 2>/dev/null || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
