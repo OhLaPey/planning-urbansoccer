@@ -1,7 +1,7 @@
 {
   "title": "LUNDI 17H30",
   "slug": "lundi-17h30",
-  "sheet_name": "LUNDI 17H30 PrÃ©sence",
+  "sheet_name": "LUNDI 17H30 Présence",
   "sessions": [
     {
       "col": 5,
@@ -478,7 +478,7 @@
         {
           "row": 12,
           "num": 6,
-          "name": "RODRIGUEZ ClÃ©ment",
+          "name": "RODRIGUEZ Clément",
           "category": "U11",
           "attendance": {
             "S1": 1,
@@ -865,7 +865,7 @@
       ]
     },
     {
-      "name": "2Ã¨ groupe",
+      "name": "2è groupe",
       "kids": [
         {
           "row": 28,
