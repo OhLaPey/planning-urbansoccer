@@ -37,7 +37,7 @@
         .back-btn {
             position: absolute; top: 8px; left: 8px;
             background: none; border: 1px solid rgba(255,255,255,0.15);
-            color: #aaa; font-size: 14px; cursor: pointer; padding: 12px 20px;
+            color: #aaa; font-size: 11px; cursor: pointer; padding: 6px 12px;
             border-radius: 6px; text-decoration: none; font-family: inherit;
             font-weight: 600; transition: all 0.2s;
         }
@@ -94,7 +94,7 @@
         }
 
         /* ── Tables ── */
-        .group-section { margin-bottom: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .group-section { margin-bottom: 20px; }
         .group-title {
             font-size: 13px; font-weight: 700; color: #E30613;
             text-transform: uppercase; letter-spacing: 1px;
@@ -115,8 +115,7 @@
         }
         .name-col { text-align: left !important; white-space: nowrap; min-width: 140px; }
         .num-col { width: 28px; color: #555; }
-        .cat-col { display: none; }
-        .name-cat { color: #888; font-size: 10px; margin-left: 4px; }
+        .cat-col { width: 40px; color: #888; font-size: 10px; }
         .total-col { width: 40px; font-weight: 700; color: #E30613; }
         .session-col { min-width: 28px; }
         .session-cell { cursor: default; transition: all 0.15s; min-width: 28px; text-align: center; }
@@ -180,43 +179,6 @@
         .status-msg.show { opacity: 1; }
         .status-msg.success { background: rgba(0,200,120,0.9); color: #fff; }
         .status-msg.error { background: rgba(227,6,19,0.9); color: #fff; }
-
-        /* ── Move/swap button ── */
-        .move-btn {
-            background: none; border: none; color: #555; font-size: 13px;
-            cursor: pointer; padding: 2px 4px; margin-left: 4px;
-            transition: color 0.2s; vertical-align: middle;
-        }
-        .move-btn:hover { color: #E30613; }
-        .move-overlay {
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.7); z-index: 1000;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .move-popup {
-            background: #222; border: 1px solid rgba(227,6,19,0.3);
-            border-radius: 12px; padding: 20px; max-width: 340px; width: 90%;
-            color: #fff; font-family: inherit;
-        }
-        .move-popup h3 { color: #E30613; font-size: 14px; margin-bottom: 12px; }
-        .move-popup label { font-size: 12px; color: #aaa; display: block; margin-bottom: 4px; }
-        .move-popup select {
-            width: 100%; padding: 8px; background: #333; color: #fff;
-            border: 1px solid rgba(255,255,255,0.15); border-radius: 6px;
-            font-family: inherit; font-size: 12px; margin-bottom: 12px;
-        }
-        .move-popup .move-actions { display: flex; gap: 8px; margin-top: 8px; }
-        .move-popup .move-actions button {
-            flex: 1; padding: 10px; border: none; border-radius: 8px;
-            font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
-        }
-        .move-popup .btn-confirm { background: #E30613; color: #fff; }
-        .move-popup .btn-confirm:hover { background: #ff3040; }
-        .move-popup .btn-swap { background: #0070c0; color: #fff; }
-        .move-popup .btn-swap:hover { background: #0090e0; }
-        .move-popup .btn-cancel { background: #444; color: #ccc; }
-        .move-popup .btn-cancel:hover { background: #555; }
-        .move-popup hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 12px 0; }
     </style>
 </head>
 <body>
@@ -273,7 +235,7 @@
 <th class="session-col " data-label="S23" title="13/04/26">S23</th>
 <th class="total-col">Total</th></tr></thead><tbody>
 <tr data-row="7" data-name="BERNARD Ethan">
-<td class="num-col">1</td><td class="name-col">BERNARD Ethan <span class="name-cat">(U11)</span></td><td class="cat-col">U11</td>
+<td class="num-col">1</td><td class="name-col">BERNARD Ethan</td><td class="cat-col">U11</td>
 <td class="session-cell " data-label="S1" data-row="7" data-col="5"><input type="checkbox" class="att-cb" data-label="S1" data-row="7" data-col="5" checked></td>
 <td class="session-cell " data-label="S2" data-row="7" data-col="6"><input type="checkbox" class="att-cb" data-label="S2" data-row="7" data-col="6" checked></td>
 <td class="session-cell " data-label="S3" data-row="7" data-col="7"><input type="checkbox" class="att-cb" data-label="S3" data-row="7" data-col="7" checked></td>
@@ -308,7 +270,7 @@
 <td class="session-cell " data-label="S23" data-row="7" data-col="36"><input type="checkbox" class="att-cb" data-label="S23" data-row="7" data-col="36"></td>
 <td class="total-col total-val">17</td></tr>
 <tr data-row="8" data-name="THOMAS Axel">
-<td class="num-col">2</td><td class="name-col">THOMAS Axel <span class="name-cat">(U11)</span></td><td class="cat-col">U11</td>
+<td class="num-col">2</td><td class="name-col">THOMAS Axel</td><td class="cat-col">U11</td>
 <td class="session-cell " data-label="S1" data-row="8" data-col="5"><input type="checkbox" class="att-cb" data-label="S1" data-row="8" data-col="5"></td>
 <td class="session-cell " data-label="S2" data-row="8" data-col="6"><input type="checkbox" class="att-cb" data-label="S2" data-row="8" data-col="6" checked></td>
 <td class="session-cell " data-label="S3" data-row="8" data-col="7"><input type="checkbox" class="att-cb" data-label="S3" data-row="8" data-col="7"></td>
@@ -343,7 +305,7 @@
 <td class="session-cell " data-label="S23" data-row="8" data-col="36"><input type="checkbox" class="att-cb" data-label="S23" data-row="8" data-col="36"></td>
 <td class="total-col total-val">12</td></tr>
 <tr data-row="9" data-name="LEROY Mathis">
-<td class="num-col">3</td><td class="name-col">LEROY Mathis <span class="name-cat">(U11)</span></td><td class="cat-col">U11</td>
+<td class="num-col">3</td><td class="name-col">LEROY Mathis</td><td class="cat-col">U11</td>
 <td class="session-cell " data-label="S1" data-row="9" data-col="5"><input type="checkbox" class="att-cb" data-label="S1" data-row="9" data-col="5"></td>
 <td class="session-cell " data-label="S2" data-row="9" data-col="6"><input type="checkbox" class="att-cb" data-label="S2" data-row="9" data-col="6" checked></td>
 <td class="session-cell " data-label="S3" data-row="9" data-col="7"><input type="checkbox" class="att-cb" data-label="S3" data-row="9" data-col="7"></td>
@@ -378,7 +340,7 @@
 <td class="session-cell " data-label="S23" data-row="9" data-col="36"><input type="checkbox" class="att-cb" data-label="S23" data-row="9" data-col="36"></td>
 <td class="total-col total-val">15</td></tr>
 <tr data-row="10" data-name="GIRARD Louis">
-<td class="num-col">4</td><td class="name-col">GIRARD Louis <span class="name-cat">(U12)</span></td><td class="cat-col">U12</td>
+<td class="num-col">4</td><td class="name-col">GIRARD Louis</td><td class="cat-col">U12</td>
 <td class="session-cell " data-label="S1" data-row="10" data-col="5"><input type="checkbox" class="att-cb" data-label="S1" data-row="10" data-col="5" checked></td>
 <td class="session-cell " data-label="S2" data-row="10" data-col="6"><input type="checkbox" class="att-cb" data-label="S2" data-row="10" data-col="6" checked></td>
 <td class="session-cell " data-label="S3" data-row="10" data-col="7"><input type="checkbox" class="att-cb" data-label="S3" data-row="10" data-col="7" checked></td>
@@ -413,7 +375,7 @@
 <td class="session-cell " data-label="S23" data-row="10" data-col="36"><input type="checkbox" class="att-cb" data-label="S23" data-row="10" data-col="36"></td>
 <td class="total-col total-val">15</td></tr>
 <tr data-row="11" data-name="BONNET Enzo">
-<td class="num-col">5</td><td class="name-col">BONNET Enzo <span class="name-cat">(U12)</span></td><td class="cat-col">U12</td>
+<td class="num-col">5</td><td class="name-col">BONNET Enzo</td><td class="cat-col">U12</td>
 <td class="session-cell " data-label="S1" data-row="11" data-col="5"><input type="checkbox" class="att-cb" data-label="S1" data-row="11" data-col="5"></td>
 <td class="session-cell " data-label="S2" data-row="11" data-col="6"><input type="checkbox" class="att-cb" data-label="S2" data-row="11" data-col="6" checked></td>
 <td class="session-cell " data-label="S3" data-row="11" data-col="7"><input type="checkbox" class="att-cb" data-label="S3" data-row="11" data-col="7" checked></td>
@@ -448,7 +410,7 @@
 <td class="session-cell " data-label="S23" data-row="11" data-col="36"><input type="checkbox" class="att-cb" data-label="S23" data-row="11" data-col="36"></td>
 <td class="total-col total-val">14</td></tr>
 <tr data-row="12" data-name="FONTAINE Adam">
-<td class="num-col">6</td><td class="name-col">FONTAINE Adam <span class="name-cat">(U12)</span></td><td class="cat-col">U12</td>
+<td class="num-col">6</td><td class="name-col">FONTAINE Adam</td><td class="cat-col">U12</td>
 <td class="session-cell " data-label="S1" data-row="12" data-col="5"><input type="checkbox" class="att-cb" data-label="S1" data-row="12" data-col="5" checked></td>
 <td class="session-cell " data-label="S2" data-row="12" data-col="6"><input type="checkbox" class="att-cb" data-label="S2" data-row="12" data-col="6" checked></td>
 <td class="session-cell " data-label="S3" data-row="12" data-col="7"><input type="checkbox" class="att-cb" data-label="S3" data-row="12" data-col="7" checked></td>
@@ -532,7 +494,7 @@
         var JSON_PATH = 'data/presences-lundi-17h30.json';
         var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
 
-        var VISIBLE_SESSIONS = 10;
+        var VISIBLE_SESSIONS = 5;
         var pendingChanges = {};
         var saveTimer = null;
         var saving = false;
@@ -554,7 +516,6 @@
         for (var i = sessions.length - 1; i >= 0; i--) {
             if (sessions[i].date) { currentIdx = i; break; }
         }
-        // Trouver la session courante ou prochaine
         for (var i = 0; i < sessions.length; i++) {
             if (sessions[i].date) {
                 var parts = sessions[i].date.split('/');
@@ -798,188 +759,6 @@
 
         // ── Init ──
         highlightSession();
-
-        // ── Move/Swap kids between groups ──
-        function addMoveButtons() {
-            document.querySelectorAll('.name-col').forEach(function(td) {
-                if (td.querySelector('.move-btn') || !td.closest('tbody')) return;
-                var btn = document.createElement('button');
-                btn.className = 'move-btn';
-                btn.innerHTML = '\u21c4';
-                btn.title = 'Changer de groupe';
-                var kidName = td.textContent.trim();
-                btn.onclick = function(e) { e.stopPropagation(); openMovePopup(kidName); };
-                td.appendChild(btn);
-            });
-        }
-
-        function findKid(name) {
-            for (var gi = 0; gi < DATA.groups.length; gi++) {
-                for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {
-                    if (DATA.groups[gi].kids[ki].name === name) {
-                        return { groupIdx: gi, kidIdx: ki, kid: DATA.groups[gi].kids[ki] };
-                    }
-                }
-            }
-            return null;
-        }
-
-        function openMovePopup(kidName) {
-            var info = findKid(kidName);
-            if (!info) return;
-            var currentGroup = DATA.groups[info.groupIdx].name;
-
-            var overlay = document.createElement('div');
-            overlay.className = 'move-overlay';
-            overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
-
-            var popup = document.createElement('div');
-            popup.className = 'move-popup';
-
-            // Transfer section
-            var html = '<h3>\u21c4 ' + kidName + '</h3>';
-            html += '<label>Transf\u00e9rer vers :</label><select id="move-group">';
-            DATA.groups.forEach(function(g, i) {
-                if (i !== info.groupIdx) html += '<option value="' + i + '">' + g.name + '</option>';
-            });
-            html += '</select>';
-            html += '<div class="move-actions"><button class="btn-confirm" id="btn-transfer">Transf\u00e9rer</button>';
-            html += '<button class="btn-cancel" id="btn-move-cancel">Annuler</button></div>';
-
-            // Swap section
-            html += '<hr>';
-            html += '<label>\u00c9changer avec :</label><select id="swap-kid">';
-            DATA.groups.forEach(function(g, i) {
-                if (i !== info.groupIdx) {
-                    g.kids.forEach(function(k) {
-                        html += '<option value="' + k.name + '">' + g.name + ' — ' + k.name + '</option>';
-                    });
-                }
-            });
-            html += '</select>';
-            html += '<div class="move-actions"><button class="btn-swap" id="btn-swap">\u00c9changer</button></div>';
-
-            popup.innerHTML = html;
-            overlay.appendChild(popup);
-            document.body.appendChild(overlay);
-
-            document.getElementById('btn-transfer').onclick = function() {
-                var targetIdx = parseInt(document.getElementById('move-group').value);
-                var kid = DATA.groups[info.groupIdx].kids.splice(info.kidIdx, 1)[0];
-                DATA.groups[targetIdx].kids.push(kid);
-                overlay.remove();
-                rebuildTable();
-                scheduleSave();
-            };
-
-            document.getElementById('btn-swap').onclick = function() {
-                var otherName = document.getElementById('swap-kid').value;
-                var other = findKid(otherName);
-                if (!other) return;
-                // Swap kids between groups
-                var kidA = DATA.groups[info.groupIdx].kids[info.kidIdx];
-                var kidB = DATA.groups[other.groupIdx].kids[other.kidIdx];
-                DATA.groups[info.groupIdx].kids[info.kidIdx] = kidB;
-                DATA.groups[other.groupIdx].kids[other.kidIdx] = kidA;
-                overlay.remove();
-                rebuildTable();
-                scheduleSave();
-            };
-
-            document.getElementById('btn-move-cancel').onclick = function() { overlay.remove(); };
-        }
-
-        function rebuildTable() {
-            // Re-render all group sections
-            var container = document.querySelector('.container');
-            document.querySelectorAll('.group-section').forEach(function(s) { s.remove(); });
-
-            var sessions_all = DATA.sessions;
-            var sessionsNV = sessions_all.filter(function(s) { return !s.is_vacation; });
-            var currentLabel = sessionsNV.length > 0 ? sessionsNV[sessionsNV.length - 1].label : '';
-
-            DATA.groups.forEach(function(group, gi) {
-                var section = document.createElement('div');
-                section.className = 'group-section';
-                var title = document.createElement('div');
-                title.className = 'group-title';
-                title.textContent = group.name;
-                section.appendChild(title);
-
-                var table = document.createElement('table');
-                table.className = 'attendance-table';
-
-                // Header
-                var thead = '<thead><tr><th class="num-col">#</th><th class="name-col">Nom</th><th class="cat-col">Cat</th>';
-                sessions_all.forEach(function(s) {
-                    var cls = 'session-col' + (s.is_vacation ? ' vacation' : '') + (s.label === currentLabel ? ' current-session' : '');
-                    thead += '<th class="' + cls + '" data-label="' + s.label + '">' + s.label + '</th>';
-                });
-                thead += '<th class="total-col">Total</th></tr></thead>';
-
-                // Body
-                var tbody = '<tbody>';
-                group.kids.forEach(function(kid, ki) {
-                    tbody += '<tr data-row="' + kid.row + '" data-name="' + kid.name + '">';
-                    tbody += '<td class="num-col">' + (ki + 1) + '</td>';
-                    tbody += '<td class="name-col">' + kid.name + '</td>';
-                    tbody += '<td class="cat-col">' + (kid.category || '') + '</td>';
-                    sessions_all.forEach(function(s) {
-                        if (s.is_vacation) {
-                            tbody += '<td class="session-cell vacation" data-label="' + s.label + '"></td>';
-                        } else {
-                            var val = kid.attendance[s.label];
-                            var checked = val === 1 ? ' checked' : '';
-                            var isCurrent = s.label === currentLabel;
-                            var disabled = isCurrent ? '' : ' disabled';
-                            tbody += '<td class="session-cell" data-label="' + s.label + '" data-row="' + kid.row + '" data-col="' + s.col + '">';
-                            if (val !== null && val !== undefined || isCurrent) {
-                                tbody += '<input type="checkbox" class="att-cb" data-label="' + s.label + '" data-row="' + kid.row + '" data-col="' + s.col + '"' + checked + disabled + '>';
-                            }
-                            tbody += '</td>';
-                        }
-                    });
-                    var total = 0;
-                    Object.values(kid.attendance).forEach(function(v) { if (v === 1) total++; });
-                    tbody += '<td class="total-val">' + total + '</td>';
-                    tbody += '</tr>';
-                });
-                tbody += '</tbody>';
-
-                // Footer
-                var tfoot = '<tfoot><tr><td></td><td style="text-align:left;font-weight:700;">TOTAL</td><td></td>';
-                sessions_all.forEach(function(s) {
-                    if (s.is_vacation) {
-                        tfoot += '<td class="session-cell vacation" data-label="' + s.label + '"></td>';
-                    } else {
-                        var count = 0;
-                        group.kids.forEach(function(k) { if (k.attendance[s.label] === 1) count++; });
-                        tfoot += '<td class="session-cell" data-label="' + s.label + '">' + (count || '') + '</td>';
-                    }
-                });
-                tfoot += '<td></td></tr></tfoot>';
-
-                table.innerHTML = thead + tbody + tfoot;
-                section.appendChild(table);
-                container.insertBefore(section, document.querySelector('.save-indicator') || document.querySelector('.status-msg'));
-            });
-
-            // Re-attach checkbox listeners
-            document.querySelectorAll('.att-cb').forEach(function(cb) {
-                cb.addEventListener('change', function() {
-                    var key = cb.getAttribute('data-row') + '-' + cb.getAttribute('data-col');
-                    pendingChanges[key] = cb.checked ? 1 : 0;
-                    updateTotals();
-                    scheduleSave();
-                });
-            });
-
-            addMoveButtons();
-            showSessions();
-        }
-
-        addMoveButtons();
-
     })();
     </script>
 </body>
