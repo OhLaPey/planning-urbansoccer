@@ -822,54 +822,11 @@
       ]
     },
     {
-      "name": "Groupe 2",
+      "name": "2è groupe",
       "kids": [
         {
-          "row": 27,
-          "num": 1,
-          "name": "BARRY Oumar Sinden",
-          "category": "U8",
-          "attendance": {
-            "S1": 0,
-            "S2": 1,
-            "S3": 1,
-            "S4": 1,
-            "S5": 0,
-            "S6": 1,
-            "V": null,
-            "S7": 0,
-            "S8": 1,
-            "S9": 0,
-            "S10": 1,
-            "S11": null,
-            "S12": 1,
-            "S13": 0,
-            "S14": 1,
-            "S15": 1,
-            "S16": 0,
-            "S17": 1,
-            "S18": 1,
-            "S19": 1,
-            "S20": 1,
-            "S21": 1,
-            "S22": 1,
-            "S23": null,
-            "S24": null,
-            "S25": null,
-            "S26": null,
-            "S27": null,
-            "S28": null,
-            "F": null,
-            "S29": null,
-            "S30": null,
-            "S31": null,
-            "S32": null,
-            "S33": null
-          }
-        },
-        {
           "row": 28,
-          "num": 2,
+          "num": 1,
           "name": "KABOU Léon-Louis",
           "category": "U8",
           "attendance": {
@@ -912,7 +869,7 @@
         },
         {
           "row": 29,
-          "num": 3,
+          "num": 2,
           "name": "DEVJE Nesta",
           "category": "U8",
           "attendance": {
@@ -955,7 +912,7 @@
         },
         {
           "row": 30,
-          "num": 4,
+          "num": 3,
           "name": "BEN NACEUR Nael",
           "category": "U8",
           "attendance": {
@@ -998,7 +955,7 @@
         },
         {
           "row": 31,
-          "num": 5,
+          "num": 4,
           "name": "KAID Omar",
           "category": "U8",
           "attendance": {
@@ -1041,7 +998,7 @@
         },
         {
           "row": 32,
-          "num": 6,
+          "num": 5,
           "name": "NDECKY Namaar",
           "category": "U8",
           "attendance": {
@@ -1084,7 +1041,7 @@
         },
         {
           "row": 33,
-          "num": 7,
+          "num": 6,
           "name": "AGUERSSIF Celyan",
           "category": "U9",
           "attendance": {
@@ -1127,7 +1084,7 @@
         },
         {
           "row": 34,
-          "num": 8,
+          "num": 7,
           "name": "ROSSI LE CAMUS Camille",
           "category": "U9",
           "attendance": {
@@ -1170,7 +1127,7 @@
         },
         {
           "row": 35,
-          "num": 9,
+          "num": 8,
           "name": "GONZALEZ Emilio (changement ?)",
           "category": "U9",
           "attendance": {
@@ -1213,7 +1170,7 @@
         },
         {
           "row": 36,
-          "num": 10,
+          "num": 9,
           "name": "MULLER Noham",
           "category": "U9",
           "attendance": {
@@ -1256,7 +1213,7 @@
         },
         {
           "row": 37,
-          "num": 11,
+          "num": 10,
           "name": "DJOUAD Adam",
           "category": "U8",
           "attendance": {
@@ -1299,7 +1256,7 @@
         },
         {
           "row": 38,
-          "num": 12,
+          "num": 11,
           "name": "SABIR Ilyâs",
           "category": "U9",
           "attendance": {
@@ -1342,7 +1299,7 @@
         },
         {
           "row": 39,
-          "num": 13,
+          "num": 12,
           "name": "MUHAMMAD Johan",
           "category": "U8",
           "attendance": {
