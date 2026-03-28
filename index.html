@@ -25,7 +25,16 @@
             }
         }
         if (!target) target = weeks[weeks.length - 1].week;
-        window.location.replace("S" + target + ".html");
+        fetch("S" + target + ".html")
+            .then(function(r) { return r.text(); })
+            .then(function(html) {
+                document.open();
+                document.write(html);
+                document.close();
+            })
+            .catch(function() {
+                window.location.replace("S" + target + ".html");
+            });
     })();
     </script>
     <noscript><meta http-equiv="refresh" content="0;url=S15.html"></noscript>
