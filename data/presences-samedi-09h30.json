@@ -1,7 +1,7 @@
 {
   "title": "SAMEDI 09H30",
   "slug": "samedi-09h30",
-  "sheet_name": "SAMEDI 9h30 PrÃ©sence",
+  "sheet_name": "SAMEDI 9h30 Présence",
   "sessions": [
     {
       "col": 5,
@@ -306,7 +306,7 @@
         {
           "row": 8,
           "num": 2,
-          "name": "CALSAT RaphaÃ«l",
+          "name": "CALSAT Raphaël",
           "category": "U6",
           "attendance": {
             "S1": 1,
@@ -951,7 +951,7 @@
       ]
     },
     {
-      "name": "2Ã¨ groupe",
+      "name": "2è groupe",
       "kids": [
         {
           "row": 28,
@@ -999,7 +999,7 @@
         {
           "row": 29,
           "num": 2,
-          "name": "DIVIEN NathanaÃ«l",
+          "name": "DIVIEN Nathanaël",
           "category": "U7",
           "attendance": {
             "S1": 1,
@@ -1472,7 +1472,7 @@
         {
           "row": 40,
           "num": 13,
-          "name": "YERANOSYAN LÃ©o",
+          "name": "YERANOSYAN Léo",
           "category": "U8",
           "attendance": {
             "S1": 0,
@@ -1601,7 +1601,7 @@
       ]
     },
     {
-      "name": "3Ã¨ groupe",
+      "name": "3è groupe",
       "kids": [
         {
           "row": 48,
@@ -1993,7 +1993,7 @@
         {
           "row": 57,
           "num": 10,
-          "name": "PUJOL TimÃ©o",
+          "name": "PUJOL Timéo",
           "category": "U9",
           "attendance": {
             "S1": 1,
@@ -2079,7 +2079,7 @@
         {
           "row": 59,
           "num": 12,
-          "name": "GUERLAIS ClÃ©ment",
+          "name": "GUERLAIS Clément",
           "category": "U8",
           "attendance": {
             "S1": 1,
@@ -2122,7 +2122,7 @@
         {
           "row": 60,
           "num": 13,
-          "name": "Emilio 14h (changement crÃ©neau ?)",
+          "name": "Emilio 14h (changement créneau ?)",
           "category": "U9",
           "attendance": {
             "S1": null,
@@ -2165,7 +2165,7 @@
         {
           "row": 61,
           "num": 14,
-          "name": "LÃ©o 14h (changement crÃ©neau ?)",
+          "name": "Léo 14h (changement créneau ?)",
           "category": "U7",
           "attendance": {
             "S1": null,
