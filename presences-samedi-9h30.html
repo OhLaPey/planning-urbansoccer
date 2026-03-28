@@ -179,6 +179,43 @@
         .status-msg.show { opacity: 1; }
         .status-msg.success { background: rgba(0,200,120,0.9); color: #fff; }
         .status-msg.error { background: rgba(227,6,19,0.9); color: #fff; }
+
+        /* ── Move/swap button ── */
+        .move-btn {
+            background: none; border: none; color: #555; font-size: 13px;
+            cursor: pointer; padding: 2px 4px; margin-left: 4px;
+            transition: color 0.2s; vertical-align: middle;
+        }
+        .move-btn:hover { color: #E30613; }
+        .move-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7); z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .move-popup {
+            background: #222; border: 1px solid rgba(227,6,19,0.3);
+            border-radius: 12px; padding: 20px; max-width: 340px; width: 90%;
+            color: #fff; font-family: inherit;
+        }
+        .move-popup h3 { color: #E30613; font-size: 14px; margin-bottom: 12px; }
+        .move-popup label { font-size: 12px; color: #aaa; display: block; margin-bottom: 4px; }
+        .move-popup select {
+            width: 100%; padding: 8px; background: #333; color: #fff;
+            border: 1px solid rgba(255,255,255,0.15); border-radius: 6px;
+            font-family: inherit; font-size: 12px; margin-bottom: 12px;
+        }
+        .move-popup .move-actions { display: flex; gap: 8px; margin-top: 8px; }
+        .move-popup .move-actions button {
+            flex: 1; padding: 10px; border: none; border-radius: 8px;
+            font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+        }
+        .move-popup .btn-confirm { background: #E30613; color: #fff; }
+        .move-popup .btn-confirm:hover { background: #ff3040; }
+        .move-popup .btn-swap { background: #0070c0; color: #fff; }
+        .move-popup .btn-swap:hover { background: #0090e0; }
+        .move-popup .btn-cancel { background: #444; color: #ccc; }
+        .move-popup .btn-cancel:hover { background: #555; }
+        .move-popup hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 12px 0; }
     </style>
 </head>
 <body>
@@ -860,6 +897,188 @@
 
         // ── Init ──
         highlightSession();
+
+        // ── Move/Swap kids between groups ──
+        function addMoveButtons() {
+            document.querySelectorAll('.name-col').forEach(function(td) {
+                if (td.querySelector('.move-btn') || !td.closest('tbody')) return;
+                var btn = document.createElement('button');
+                btn.className = 'move-btn';
+                btn.innerHTML = '\u21c4';
+                btn.title = 'Changer de groupe';
+                var kidName = td.textContent.trim();
+                btn.onclick = function(e) { e.stopPropagation(); openMovePopup(kidName); };
+                td.appendChild(btn);
+            });
+        }
+
+        function findKid(name) {
+            for (var gi = 0; gi < DATA.groups.length; gi++) {
+                for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {
+                    if (DATA.groups[gi].kids[ki].name === name) {
+                        return { groupIdx: gi, kidIdx: ki, kid: DATA.groups[gi].kids[ki] };
+                    }
+                }
+            }
+            return null;
+        }
+
+        function openMovePopup(kidName) {
+            var info = findKid(kidName);
+            if (!info) return;
+            var currentGroup = DATA.groups[info.groupIdx].name;
+
+            var overlay = document.createElement('div');
+            overlay.className = 'move-overlay';
+            overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
+
+            var popup = document.createElement('div');
+            popup.className = 'move-popup';
+
+            // Transfer section
+            var html = '<h3>\u21c4 ' + kidName + '</h3>';
+            html += '<label>Transf\u00e9rer vers :</label><select id="move-group">';
+            DATA.groups.forEach(function(g, i) {
+                if (i !== info.groupIdx) html += '<option value="' + i + '">' + g.name + '</option>';
+            });
+            html += '</select>';
+            html += '<div class="move-actions"><button class="btn-confirm" id="btn-transfer">Transf\u00e9rer</button>';
+            html += '<button class="btn-cancel" id="btn-move-cancel">Annuler</button></div>';
+
+            // Swap section
+            html += '<hr>';
+            html += '<label>\u00c9changer avec :</label><select id="swap-kid">';
+            DATA.groups.forEach(function(g, i) {
+                if (i !== info.groupIdx) {
+                    g.kids.forEach(function(k) {
+                        html += '<option value="' + k.name + '">' + g.name + ' — ' + k.name + '</option>';
+                    });
+                }
+            });
+            html += '</select>';
+            html += '<div class="move-actions"><button class="btn-swap" id="btn-swap">\u00c9changer</button></div>';
+
+            popup.innerHTML = html;
+            overlay.appendChild(popup);
+            document.body.appendChild(overlay);
+
+            document.getElementById('btn-transfer').onclick = function() {
+                var targetIdx = parseInt(document.getElementById('move-group').value);
+                var kid = DATA.groups[info.groupIdx].kids.splice(info.kidIdx, 1)[0];
+                DATA.groups[targetIdx].kids.push(kid);
+                overlay.remove();
+                rebuildTable();
+                scheduleSave();
+            };
+
+            document.getElementById('btn-swap').onclick = function() {
+                var otherName = document.getElementById('swap-kid').value;
+                var other = findKid(otherName);
+                if (!other) return;
+                // Swap kids between groups
+                var kidA = DATA.groups[info.groupIdx].kids[info.kidIdx];
+                var kidB = DATA.groups[other.groupIdx].kids[other.kidIdx];
+                DATA.groups[info.groupIdx].kids[info.kidIdx] = kidB;
+                DATA.groups[other.groupIdx].kids[other.kidIdx] = kidA;
+                overlay.remove();
+                rebuildTable();
+                scheduleSave();
+            };
+
+            document.getElementById('btn-move-cancel').onclick = function() { overlay.remove(); };
+        }
+
+        function rebuildTable() {
+            // Re-render all group sections
+            var container = document.querySelector('.container');
+            document.querySelectorAll('.group-section').forEach(function(s) { s.remove(); });
+
+            var sessions_all = DATA.sessions;
+            var sessionsNV = sessions_all.filter(function(s) { return !s.is_vacation; });
+            var currentLabel = sessionsNV.length > 0 ? sessionsNV[sessionsNV.length - 1].label : '';
+
+            DATA.groups.forEach(function(group, gi) {
+                var section = document.createElement('div');
+                section.className = 'group-section';
+                var title = document.createElement('div');
+                title.className = 'group-title';
+                title.textContent = group.name;
+                section.appendChild(title);
+
+                var table = document.createElement('table');
+                table.className = 'attendance-table';
+
+                // Header
+                var thead = '<thead><tr><th class="num-col">#</th><th class="name-col">Nom</th><th class="cat-col">Cat</th>';
+                sessions_all.forEach(function(s) {
+                    var cls = 'session-col' + (s.is_vacation ? ' vacation' : '') + (s.label === currentLabel ? ' current-session' : '');
+                    thead += '<th class="' + cls + '" data-label="' + s.label + '">' + s.label + '</th>';
+                });
+                thead += '<th class="total-col">Total</th></tr></thead>';
+
+                // Body
+                var tbody = '<tbody>';
+                group.kids.forEach(function(kid, ki) {
+                    tbody += '<tr data-row="' + kid.row + '" data-name="' + kid.name + '">';
+                    tbody += '<td class="num-col">' + (ki + 1) + '</td>';
+                    tbody += '<td class="name-col">' + kid.name + '</td>';
+                    tbody += '<td class="cat-col">' + (kid.category || '') + '</td>';
+                    sessions_all.forEach(function(s) {
+                        if (s.is_vacation) {
+                            tbody += '<td class="session-cell vacation" data-label="' + s.label + '"></td>';
+                        } else {
+                            var val = kid.attendance[s.label];
+                            var checked = val === 1 ? ' checked' : '';
+                            var isCurrent = s.label === currentLabel;
+                            var disabled = isCurrent ? '' : ' disabled';
+                            tbody += '<td class="session-cell" data-label="' + s.label + '" data-row="' + kid.row + '" data-col="' + s.col + '">';
+                            if (val !== null && val !== undefined || isCurrent) {
+                                tbody += '<input type="checkbox" class="att-cb" data-label="' + s.label + '" data-row="' + kid.row + '" data-col="' + s.col + '"' + checked + disabled + '>';
+                            }
+                            tbody += '</td>';
+                        }
+                    });
+                    var total = 0;
+                    Object.values(kid.attendance).forEach(function(v) { if (v === 1) total++; });
+                    tbody += '<td class="total-val">' + total + '</td>';
+                    tbody += '</tr>';
+                });
+                tbody += '</tbody>';
+
+                // Footer
+                var tfoot = '<tfoot><tr><td></td><td style="text-align:left;font-weight:700;">TOTAL</td><td></td>';
+                sessions_all.forEach(function(s) {
+                    if (s.is_vacation) {
+                        tfoot += '<td class="session-cell vacation" data-label="' + s.label + '"></td>';
+                    } else {
+                        var count = 0;
+                        group.kids.forEach(function(k) { if (k.attendance[s.label] === 1) count++; });
+                        tfoot += '<td class="session-cell" data-label="' + s.label + '">' + (count || '') + '</td>';
+                    }
+                });
+                tfoot += '<td></td></tr></tfoot>';
+
+                table.innerHTML = thead + tbody + tfoot;
+                section.appendChild(table);
+                container.insertBefore(section, document.querySelector('.save-indicator') || document.querySelector('.status-msg'));
+            });
+
+            // Re-attach checkbox listeners
+            document.querySelectorAll('.att-cb').forEach(function(cb) {
+                cb.addEventListener('change', function() {
+                    var key = cb.getAttribute('data-row') + '-' + cb.getAttribute('data-col');
+                    pendingChanges[key] = cb.checked ? 1 : 0;
+                    updateTotals();
+                    scheduleSave();
+                });
+            });
+
+            addMoveButtons();
+            showSessions();
+        }
+
+        addMoveButtons();
+
     })();
     </script>
 </body>
