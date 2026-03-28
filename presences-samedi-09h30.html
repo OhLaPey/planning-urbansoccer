@@ -7,47 +7,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{ font-family: 'Montserrat', sans-serif; background: #0C1C3E; min-height: 100vh; padding: 10px; color: #fff; position: relative; }}
-        body::before {{ content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; background: url('bg-psg.jpg') center center / cover no-repeat; opacity: 0.15; }}
-        .container {{ position: relative; z-index: 1; max-width: 900px; margin: 0 auto; background: rgba(12,28,62,0.95); border-radius: 8px; padding: 12px; margin-top: 6px; margin-bottom: 6px; border-top: 4px solid #E30613; }}
-        .back-btn {{ display: block; width: fit-content; margin: 0 0 10px 0; background: rgba(227,6,19,0.08); border: 2px solid rgba(227,6,19,0.4); color: #E30613; font-size: 14px; cursor: pointer; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-family: inherit; font-weight: 700; transition: all 0.2s; z-index: 10; }}
-        .back-btn:hover {{ background: #E30613; color: #fff; border-color: #E30613; }}
-        .header {{ text-align: center; margin-bottom: 12px; padding: 10px; }}
-        h1 {{ color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 2px; }}
-        .subtitle {{ color: #E30613; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; }}
-        .session-nav {{ display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 15px; }}
-        .session-nav-btn {{ background: none; border: 1px solid rgba(255,255,255,0.2); color: #aaa; font-size: 18px; cursor: pointer; padding: 6px 12px; border-radius: 6px; font-weight: 700; transition: all 0.2s; }}
-        .session-nav-btn:hover {{ color: #E30613; border-color: #E30613; }}
-        .session-nav-btn:disabled {{ opacity: 0.3; cursor: not-allowed; }}
-        .session-nav-info {{ font-size: 13px; font-weight: 700; text-align: center; min-width: 140px; }}
-        .session-nav-info small {{ display: block; font-size: 10px; color: #888; }}
-        .group-section {{ margin-bottom: 20px; overflow-x: auto; }}
-        .group-title {{ font-size: 13px; font-weight: 700; color: #E30613; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }}
-        .attendance-table {{ width: 100%; border-collapse: collapse; font-size: 11px; }}
-        .attendance-table th {{ background: rgba(255,255,255,0.06); padding: 6px 4px; text-align: center; font-weight: 700; color: #aaa; border-bottom: 2px solid rgba(255,255,255,0.1); font-size: 10px; white-space: nowrap; }}
-        .attendance-table td {{ padding: 5px 4px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }}
-        .name-col {{ text-align: left !important; white-space: nowrap; min-width: 140px; }}
-        .name-cat {{ color: #E30613; font-size: 10px; font-weight: 700; margin-left: 6px; }}
-        .num-col {{ width: 28px; color: #555; }}
-        .cat-col {{ display: none; }}
-        .total-val {{ font-weight: 700; color: #E30613; }}
-        tfoot {{ display: none; }}
-        .session-col {{ min-width: 28px; }}
-        .session-cell {{ min-width: 28px; }}
-        .session-cell.vacation {{ background: rgba(0,180,220,0.15); }}
-        .session-col.current-session {{ color: #E30613 !important; font-weight: 900; }}
-        .session-cell.current-session {{ background: rgba(227,6,19,0.15); }}
-        .att-cb {{ -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(0,0,0,0.2); cursor: not-allowed; position: relative; vertical-align: middle; transition: all 0.15s; }}
-        .att-cb:checked {{ background: #00c878; border-color: #00c878; }}
-        .att-cb:checked::after {{ content: '¹3'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 14px; font-weight: 900; }}
-        .att-cb.editable {{ cursor: pointer; border-color: rgba(255,255,255,0.4); }}
-        .att-cb.editable:hover {{ border-color: #E30613; box-shadow: 0 0 6px rgba(227,6,19,0.4); }}
-        .save-indicator {{ position: fixed; bottom: 20px; right: 20px; z-index: 100; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; opacity: 0; transition: opacity 0.3s; pointer-events: none; }}
-        .save-indicator.saving {{ opacity: 1; background: rgba(255,165,0,0.9); color: #fff; }}
-        .save-indicator.saved {{ opacity: 1; background: rgba(0,200,120,0.9); color: #fff; }}
-        .save-indicator.error {{ opacity: 1; background: rgba(227,6,19,0.9); color: #fff; }}
-        @media (max-width: 600px) {{ body {{ padding: 4px; }} .container {{ padding: 6px; }} .attendance-table {{ font-size: 10px; }} .name-col {{ min-width: 100px; }} }}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: #0C1C3E; min-height: 100vh; padding: 10px; color: #fff; position: relative; }
+        body::before { content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; background: url('bg-psg.jpg') center center / cover no-repeat; opacity: 0.15; }
+        .container { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; background: rgba(12,28,62,0.95); border-radius: 8px; padding: 12px; margin-top: 6px; margin-bottom: 6px; border-top: 4px solid #E30613; }
+        .back-btn { display: block; width: fit-content; margin: 0 0 10px 0; background: rgba(227,6,19,0.08); border: 2px solid rgba(227,6,19,0.4); color: #E30613; font-size: 14px; cursor: pointer; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-family: inherit; font-weight: 700; transition: all 0.2s; z-index: 10; }
+        .back-btn:hover { background: #E30613; color: #fff; border-color: #E30613; }
+        .header { text-align: center; margin-bottom: 12px; padding: 10px; }
+        h1 { color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: #E30613; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; }
+        .session-nav { display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 15px; }
+        .session-nav-btn { background: none; border: 1px solid rgba(255,255,255,0.2); color: #aaa; font-size: 18px; cursor: pointer; padding: 6px 12px; border-radius: 6px; font-weight: 700; transition: all 0.2s; }
+        .session-nav-btn:hover { color: #E30613; border-color: #E30613; }
+        .session-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .session-nav-info { font-size: 13px; font-weight: 700; text-align: center; min-width: 140px; }
+        .session-nav-info small { display: block; font-size: 10px; color: #888; }
+        .group-section { margin-bottom: 20px; overflow-x: auto; }
+        .group-title { font-size: 13px; font-weight: 700; color: #E30613; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .attendance-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+        .attendance-table th { background: rgba(255,255,255,0.06); padding: 6px 4px; text-align: center; font-weight: 700; color: #aaa; border-bottom: 2px solid rgba(255,255,255,0.1); font-size: 10px; white-space: nowrap; }
+        .attendance-table td { padding: 5px 4px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .name-col { text-align: left !important; white-space: nowrap; min-width: 140px; }
+        .name-cat { color: #E30613; font-size: 10px; font-weight: 700; margin-left: 6px; }
+        .num-col { width: 28px; color: #555; }
+        .cat-col { display: none; }
+        .total-val { font-weight: 700; color: #E30613; }
+        tfoot { display: none; }
+        .session-col { min-width: 28px; }
+        .session-cell { min-width: 28px; }
+        .session-cell.vacation { background: rgba(0,180,220,0.15); }
+        .session-col.current-session { color: #E30613 !important; font-weight: 900; }
+        .session-cell.current-session { background: rgba(227,6,19,0.15); }
+        .att-cb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(0,0,0,0.2); cursor: not-allowed; position: relative; vertical-align: middle; transition: all 0.15s; }
+        .att-cb:checked { background: #00c878; border-color: #00c878; }
+        .att-cb:checked::after { content: '¹3'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 14px; font-weight: 900; }
+        .att-cb.editable { cursor: pointer; border-color: rgba(255,255,255,0.4); }
+        .att-cb.editable:hover { border-color: #E30613; box-shadow: 0 0 6px rgba(227,6,19,0.4); }
+        .save-indicator { position: fixed; bottom: 20px; right: 20px; z-index: 100; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        .save-indicator.saving { opacity: 1; background: rgba(255,165,0,0.9); color: #fff; }
+        .save-indicator.saved { opacity: 1; background: rgba(0,200,120,0.9); color: #fff; }
+        .save-indicator.error { opacity: 1; background: rgba(227,6,19,0.9); color: #fff; }
+        @media (max-width: 600px) { body { padding: 4px; } .container { padding: 6px; } .attendance-table { font-size: 10px; } .name-col { min-width: 100px; } }
     </style>
 </head>
 <body>
@@ -2596,144 +2596,144 @@
     </div>
     <div class="save-indicator" id="save-indicator"></div>
     <script>
-    (function() {{
+    (function() {
         var DATA = {"title": "SAMEDI 09H30", "slug": "samedi-09h30", "sheet_name": "SAMEDI 9h30 Présence", "sessions": [{"col": 5, "label": "S1", "date": null, "is_vacation": false}, {"col": 6, "label": "S2", "date": null, "is_vacation": false}, {"col": 7, "label": "S3", "date": null, "is_vacation": false}, {"col": 8, "label": "S4", "date": null, "is_vacation": false}, {"col": 9, "label": "S5", "date": null, "is_vacation": false}, {"col": 10, "label": "S6", "date": null, "is_vacation": false}, {"col": 11, "label": "V", "date": null, "is_vacation": true}, {"col": 12, "label": "V", "date": null, "is_vacation": true}, {"col": 13, "label": "S7", "date": null, "is_vacation": false}, {"col": 14, "label": "S8", "date": null, "is_vacation": false}, {"col": 15, "label": "S9", "date": null, "is_vacation": false}, {"col": 16, "label": "S10", "date": null, "is_vacation": false}, {"col": 17, "label": "S11", "date": null, "is_vacation": false}, {"col": 18, "label": "S12", "date": null, "is_vacation": false}, {"col": 19, "label": "S13", "date": null, "is_vacation": false}, {"col": 20, "label": "V", "date": null, "is_vacation": true}, {"col": 21, "label": "V", "date": null, "is_vacation": true}, {"col": 22, "label": "S14", "date": null, "is_vacation": false}, {"col": 23, "label": "S15", "date": null, "is_vacation": false}, {"col": 24, "label": "S16", "date": null, "is_vacation": false}, {"col": 25, "label": "S17", "date": null, "is_vacation": false}, {"col": 26, "label": "S18", "date": null, "is_vacation": false}, {"col": 27, "label": "S19", "date": null, "is_vacation": false}, {"col": 28, "label": "S20", "date": null, "is_vacation": false}, {"col": 29, "label": "V", "date": null, "is_vacation": true}, {"col": 30, "label": "V", "date": null, "is_vacation": true}, {"col": 31, "label": "S21", "date": null, "is_vacation": false}, {"col": 32, "label": "S22", "date": null, "is_vacation": false}, {"col": 33, "label": "S23", "date": null, "is_vacation": false}, {"col": 34, "label": "S24", "date": null, "is_vacation": false}, {"col": 35, "label": "S25", "date": null, "is_vacation": false}, {"col": 36, "label": "S26", "date": null, "is_vacation": false}, {"col": 37, "label": "V", "date": null, "is_vacation": true}, {"col": 38, "label": "V", "date": null, "is_vacation": true}, {"col": 39, "label": "S27", "date": null, "is_vacation": false}, {"col": 40, "label": "S28", "date": null, "is_vacation": false}, {"col": 41, "label": "F", "date": null, "is_vacation": true}, {"col": 42, "label": "S29", "date": null, "is_vacation": false}, {"col": 43, "label": "S30", "date": null, "is_vacation": false}, {"col": 44, "label": "S31", "date": null, "is_vacation": false}, {"col": 45, "label": "S32", "date": null, "is_vacation": false}, {"col": 46, "label": "S33", "date": null, "is_vacation": false}], "groups": [{"name": "Groupe 1", "kids": [{"row": 7, "num": 1, "name": "ABOU LEYLA Ilyes", "category": "U6", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 0, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 0, "S10": 0, "S11": 1, "S12": 1, "S13": null, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 0, "S21": 0, "S22": 1, "S23": 0, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 8, "num": 2, "name": "CALSAT Raphaël", "category": "U6", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 0, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 0, "S11": 1, "S12": 1, "S13": null, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 0, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 9, "num": 3, "name": "FONTAINE Erez", "category": "U6", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 0, "S5": 1, "S6": null, "V": null, "S7": 0, "S8": 0, "S9": 1, "S10": 1, "S11": 1, "S12": 1, "S13": null, "S14": 1, "S15": 0, "S16": 1, "S17": 0, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 10, "num": 4, "name": "ANDRE Salomon", "category": "U6", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 0, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": 1, "S12": 1, "S13": null, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 0, "S20": 0, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 11, "num": 5, "name": "DHAKAR Zayd", "category": "U6", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": 1, "S12": 0, "S13": null, "S14": 0, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 12, "num": 6, "name": "GUENNECPINTOR Isaac", "category": "U6", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 0, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 0, "S10": 1, "S11": 0, "S12": 1, "S13": null, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 13, "num": 7, "name": "MHIRA Yassir", "category": "U6", "attendance": {"S1": 1, "S2": 1, "S3": 0, "S4": 1, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 0, "S10": 1, "S11": 1, "S12": 0, "S13": null, "S14": 0, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 14, "num": 8, "name": "MARTIN Lonni", "category": "U6", "attendance": {"S1": 1, "S2": 0, "S3": 1, "S4": 0, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": 1, "S12": 1, "S13": null, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 0, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 15, "num": 9, "name": "BEN MAHMOUD Aylan", "category": "U6", "attendance": {"S1": 0, "S2": 1, "S3": 0, "S4": 0, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 0, "S11": 0, "S12": 0, "S13": null, "S14": 1, "S15": 1, "S16": 1, "S17": 0, "S18": 1, "S19": 1, "S20": 1, "S21": 0, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 16, "num": 10, "name": "FONTAINE Aaron", "category": "U7", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": null, "S11": null, "S12": null, "S13": null, "S14": null, "S15": 1, "S16": 1, "S17": 1, "S18": 0, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 17, "num": 11, "name": "FONTAINE Erwan", "category": "U7", "attendance": {"S1": 1, "S2": 0, "S3": 1, "S4": 1, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": null, "S11": null, "S12": null, "S13": null, "S14": null, "S15": 0, "S16": 1, "S17": 1, "S18": 0, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 18, "num": 12, "name": "VIALETTE Eden", "category": "U7", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": null, "V": null, "S7": 0, "S8": null, "S9": 1, "S10": null, "S11": null, "S12": null, "S13": null, "S14": null, "S15": 0, "S16": 1, "S17": 0, "S18": 1, "S19": 0, "S20": 0, "S21": 0, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 19, "num": 13, "name": "ANTIC MOREAU Jules", "category": "U7", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 0, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": null, "S11": null, "S12": null, "S13": null, "S14": null, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 0, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 20, "num": 14, "name": "AHITOUR Younes", "category": "U7", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": null, "S11": null, "S12": null, "S13": null, "S14": null, "S15": 1, "S16": 0, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 21, "num": 15, "name": "EL MOADDAM Amjad", "category": "U7", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": null, "S9": 1, "S10": null, "S11": null, "S12": null, "S13": null, "S14": null, "S15": 1, "S16": 0, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 22, "num": 16, "name": "HAMMAMI Hedi", "category": "U6", "attendance": {"S1": 0, "S2": 0, "S3": 0, "S4": 0, "S5": 0, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": null, "S11": null, "S12": null, "S13": null, "S14": null, "S15": 0, "S16": 1, "S17": 0, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}]}, {"name": "Groupe 2", "kids": [{"row": 27, "num": 1, "name": "SEFDAR Adam", "category": "U7", "attendance": {"S1": 1, "S2": 1, "S3": 0, "S4": 0, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 0, "S13": 1, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 28, "num": 2, "name": "LEBORGNE Ayden", "category": "U7", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": 1, "S15": 1, "S16": 0, "S17": 1, "S18": 0, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 29, "num": 3, "name": "DIVIEN Nathanaël", "category": "U7", "attendance": {"S1": 1, "S2": 0, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 0, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": 1, "S15": 1, "S16": 0, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 30, "num": 4, "name": "CLAVEYROLAS Leeroy", "category": "U7", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 31, "num": 5, "name": "BOJOVIC Filip", "category": "U7", "attendance": {"S1": 1, "S2": 0, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 0, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 32, "num": 6, "name": "TALLAPRAGADE Riaan", "category": "U7", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 0, "S5": 0, "S6": 0, "V": null, "S7": 0, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 0, "S13": 1, "S14": 1, "S15": 0, "S16": 0, "S17": 0, "S18": 0, "S19": 1, "S20": 1, "S21": 0, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 33, "num": 7, "name": "PEREIRA LELIEVRE Nino", "category": "U7", "attendance": {"S1": 0, "S2": 0, "S3": 0, "S4": 0, "S5": 0, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": 0, "S15": 1, "S16": 0, "S17": 1, "S18": 1, "S19": 1, "S20": 0, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 34, "num": 8, "name": "ALIAHMAD Karl", "category": "U8", "attendance": {"S1": 1, "S2": 0, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 0, "S14": 1, "S15": 1, "S16": 0, "S17": 0, "S18": 1, "S19": 1, "S20": 1, "S21": 0, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 35, "num": 9, "name": "CASENAVE Gabriel", "category": "U8", "attendance": {"S1": 1, "S2": 0, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 0, "S10": 1, "S11": null, "S12": 0, "S13": 1, "S14": 0, "S15": 1, "S16": 0, "S17": 1, "S18": 0, "S19": 1, "S20": 0, "S21": 0, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 36, "num": 10, "name": "PARASCANDOLO Leonardo", "category": "U8", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 0, "S13": 1, "S14": 1, "S15": 1, "S16": 1, "S17": 0, "S18": 1, "S19": 0, "S20": 1, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 37, "num": 11, "name": "OUTASGA Adam", "category": "U8", "attendance": {"S1": 0, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 0, "S11": null, "S12": 1, "S13": 1, "S14": 1, "S15": 1, "S16": 0, "S17": 0, "S18": 0, "S19": 1, "S20": 1, "S21": 1, "S22": 0, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 38, "num": 12, "name": "LEMAITRE FOLIOT Corentin", "category": "U8", "attendance": {"S1": 0, "S2": 0, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 0, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 39, "num": 13, "name": "SYLLA Rachid", "category": "U8", "attendance": {"S1": 0, "S2": 1, "S3": 1, "S4": 0, "S5": 1, "S6": 0, "V": null, "S7": 0, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": 1, "S15": 1, "S16": 0, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 0, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 40, "num": 14, "name": "YERANOSYAN Léo", "category": "U8", "attendance": {"S1": 0, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 0, "V": null, "S7": 0, "S8": 0, "S9": 0, "S10": 1, "S11": null, "S12": 0, "S13": 1, "S14": 1, "S15": 1, "S16": 1, "S17": 0, "S18": 1, "S19": 0, "S20": 0, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 41, "num": 15, "name": "HAY Louka", "category": "U8", "attendance": {"S1": 0, "S2": 0, "S3": 0, "S4": 0, "S5": 0, "S6": 0, "V": null, "S7": 0, "S8": 0, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": 1, "S15": 1, "S16": 0, "S17": 1, "S18": 0, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 42, "num": 16, "name": "DUBOIS LAMBERTINI Gaspard", "category": "U7", "attendance": {"S1": 0, "S2": 0, "S3": 0, "S4": 0, "S5": 0, "S6": 0, "V": null, "S7": 0, "S8": 0, "S9": 0, "S10": 0, "S11": null, "S12": 0, "S13": 0, "S14": 0, "S15": 0, "S16": 0, "S17": 0, "S18": null, "S19": 1, "S20": 1, "S21": 1, "S22": null, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}]}, {"name": "Groupe 3", "kids": [{"row": 47, "num": 1, "name": "GARCIA Sara", "category": "U8", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 0, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 0, "S11": null, "S12": 1, "S13": 1, "S14": null, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 48, "num": 2, "name": "D'HONT LECOMTE Yannik", "category": "U8", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 0, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": null, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 0, "S20": 1, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 49, "num": 3, "name": "ROUSEVELT Louis", "category": "U8", "attendance": {"S1": 1, "S2": 1, "S3": 0, "S4": 1, "S5": 0, "S6": 0, "V": null, "S7": 1, "S8": 1, "S9": 0, "S10": 1, "S11": null, "S12": 0, "S13": 0, "S14": null, "S15": 0, "S16": 0, "S17": 0, "S18": 0, "S19": 0, "S20": 0, "S21": 0, "S22": 0, "S23": 0, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 50, "num": 4, "name": "LANDES David", "category": "U9", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": null, "V": null, "S7": 0, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": null, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 51, "num": 5, "name": "LANDES Nathan", "category": "U9", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": null, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": null, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 52, "num": 6, "name": "GILAVERT Arthur", "category": "U9", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 0, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 0, "S14": null, "S15": 0, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 0, "S22": 1, "S23": 0, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 53, "num": 7, "name": "UMAIR Yousaf", "category": "U9", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": null, "S15": 0, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 54, "num": 8, "name": "LAGSSAIR Zakaria", "category": "U9", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 0, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 0, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": null, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 55, "num": 9, "name": "FERNANDES DOS REIS Luan", "category": "U9", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": null, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 1, "S20": 1, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 56, "num": 10, "name": "DABBAJI Ayoub", "category": "U9", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 1, "S13": 0, "S14": null, "S15": 1, "S16": 0, "S17": 1, "S18": 1, "S19": 1, "S20": 0, "S21": 1, "S22": 0, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 57, "num": 11, "name": "PUJOL Timéo", "category": "U9", "attendance": {"S1": 1, "S2": 0, "S3": 0, "S4": 1, "S5": 0, "S6": 0, "V": null, "S7": 0, "S8": 0, "S9": 0, "S10": 1, "S11": null, "S12": 0, "S13": 0, "S14": null, "S15": 0, "S16": 1, "S17": 0, "S18": 0, "S19": 1, "S20": 0, "S21": 0, "S22": 0, "S23": 0, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 58, "num": 12, "name": "MIVEKANNIN Hugo", "category": "U9", "attendance": {"S1": 0, "S2": 0, "S3": 1, "S4": 1, "S5": 1, "S6": 0, "V": null, "S7": 1, "S8": 1, "S9": 0, "S10": 1, "S11": null, "S12": 1, "S13": 1, "S14": null, "S15": 1, "S16": 1, "S17": 0, "S18": 1, "S19": 1, "S20": 1, "S21": 0, "S22": 0, "S23": 0, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 59, "num": 13, "name": "GUERLAIS Clément", "category": "U8", "attendance": {"S1": 1, "S2": 1, "S3": 1, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 1, "S8": 1, "S9": 1, "S10": 1, "S11": null, "S12": 0, "S13": 1, "S14": 1, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 0, "S20": 1, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 60, "num": 14, "name": "Emilio 14h (changement créneau ?)", "category": "U9", "attendance": {"S1": null, "S2": null, "S3": null, "S4": 1, "S5": 1, "S6": 1, "V": null, "S7": 0, "S8": 1, "S9": 1, "S10": 0, "S11": null, "S12": 1, "S13": 0, "S14": null, "S15": 1, "S16": 1, "S17": 1, "S18": 1, "S19": 0, "S20": 1, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}, {"row": 61, "num": 15, "name": "Léo 14h (changement créneau ?)", "category": "U7", "attendance": {"S1": null, "S2": null, "S3": null, "S4": null, "S5": null, "S6": null, "V": null, "S7": null, "S8": null, "S9": null, "S10": null, "S11": null, "S12": null, "S13": null, "S14": null, "S15": null, "S16": 1, "S17": 0, "S18": 1, "S19": 0, "S20": 0, "S21": 1, "S22": 1, "S23": 1, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}]}, {"name": "Groupe 4", "kids": [{"row": 67, "num": 1, "name": "DRISSI Ilyan", "category": "U6", "attendance": {"S1": 0, "S2": 0, "S3": 0, "S4": 0, "S5": 0, "S6": 0, "V": null, "S7": 0, "S8": 0, "S9": 0, "S10": 0, "S11": 0, "S12": 0, "S13": 0, "S14": 0, "S15": 0, "S16": 0, "S17": null, "S18": null, "S19": null, "S20": null, "S21": null, "S22": null, "S23": null, "S24": null, "S25": null, "S26": null, "S27": null, "S28": null, "F": null, "S29": null, "S30": null, "S31": null, "S32": null, "S33": null}}]}]};
         var REPO = 'OhLaPey/planning-urbansoccer';
         var JSON_PATH = 'data/presences-samedi-09h30.json';
         var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
         var VISIBLE_SESSIONS = 5;
-        var pendingChanges = {{}};
+        var pendingChanges = {};
         var saveTimer = null;
         var saving = false;
-        function getToken() {{ return localStorage.getItem('planning-admin-token') || atob(_p.join('')); }}
-        var sessions = DATA.sessions.filter(function(s) {{ return !s.is_vacation; }});
+        function getToken() { return localStorage.getItem('planning-admin-token') || atob(_p.join('')); }
+        var sessions = DATA.sessions.filter(function(s) { return !s.is_vacation; });
         // Find current session: last with attendance data
         var currentIdx = 0;
-        for (var i = sessions.length - 1; i >= 0; i--) {{
+        for (var i = sessions.length - 1; i >= 0; i--) {
             var label = sessions[i].label;
             var hasData = false;
-            for (var gi = 0; gi < DATA.groups.length; gi++) {{
-                for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {{
+            for (var gi = 0; gi < DATA.groups.length; gi++) {
+                for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {
                     var val = DATA.groups[gi].kids[ki].attendance[label];
-                    if (val === 1 || val === 0) {{ hasData = true; break; }}
-                }}
+                    if (val === 1 || val === 0) { hasData = true; break; }
+                }
                 if (hasData) break;
-            }}
-            if (hasData) {{ currentIdx = i; break; }}
-        }}
+            }
+            if (hasData) { currentIdx = i; break; }
+        }
         var windowEnd = currentIdx;
         var windowStart = Math.max(0, windowEnd - VISIBLE_SESSIONS + 1);
         var navPrev = document.getElementById('nav-prev');
         var navNext = document.getElementById('nav-next');
         var navInfo = document.getElementById('nav-info');
-        function getVisibleLabels() {{
+        function getVisibleLabels() {
             var labels = [];
             for (var i = windowStart; i <= Math.min(windowEnd, sessions.length - 1); i++) labels.push(sessions[i].label);
             return labels;
-        }}
-        function updateNav() {{
+        }
+        function updateNav() {
             var visible = getVisibleLabels();
             navInfo.innerHTML = '<strong>' + (visible[0]||'')+' — '+(visible[visible.length-1]||'')+'</strong>';
             navPrev.disabled = windowStart <= 0;
             navNext.disabled = windowEnd >= sessions.length - 1;
-        }}
-        function showSessions() {{
+        }
+        function showSessions() {
             var visible = getVisibleLabels();
             var currentLabel = sessions[currentIdx] ? sessions[currentIdx].label : '';
-            document.querySelectorAll('.session-col, .session-cell').forEach(function(el) {{
+            document.querySelectorAll('.session-col, .session-cell').forEach(function(el) {
                 var label = el.getAttribute('data-label');
                 el.style.display = visible.indexOf(label) !== -1 ? '' : 'none';
                 el.classList.toggle('current-session', label === currentLabel);
-            }});
-            document.querySelectorAll('.att-cb').forEach(function(cb) {{
+            });
+            document.querySelectorAll('.att-cb').forEach(function(cb) {
                 var label = cb.getAttribute('data-label');
                 var isCurrent = label === currentLabel;
                 cb.disabled = !isCurrent;
                 cb.classList.toggle('editable', isCurrent);
-            }});
+            });
             updateNav();
             updateTotals();
-        }}
-        navPrev.addEventListener('click', function() {{ if (windowStart > 0) {{ windowStart--; windowEnd--; showSessions(); }} }});
-        navNext.addEventListener('click', function() {{ if (windowEnd < sessions.length - 1) {{ windowStart++; windowEnd++; showSessions(); }} }});
-        function updateTotals() {{
-            document.querySelectorAll('.group-section').forEach(function(section) {{
-                section.querySelectorAll('tbody tr').forEach(function(row) {{
+        }
+        navPrev.addEventListener('click', function() { if (windowStart > 0) { windowStart--; windowEnd--; showSessions(); } });
+        navNext.addEventListener('click', function() { if (windowEnd < sessions.length - 1) { windowStart++; windowEnd++; showSessions(); } });
+        function updateTotals() {
+            document.querySelectorAll('.group-section').forEach(function(section) {
+                section.querySelectorAll('tbody tr').forEach(function(row) {
                     var total = 0;
-                    row.querySelectorAll('.att-cb').forEach(function(cb) {{ if (cb.checked) total++; }});
+                    row.querySelectorAll('.att-cb').forEach(function(cb) { if (cb.checked) total++; });
                     var tc = row.querySelector('.total-val');
                     if (tc) tc.textContent = total;
-                }});
-            }});
-        }}
-        document.querySelectorAll('.att-cb').forEach(function(cb) {{
-            cb.addEventListener('change', function() {{
+                });
+            });
+        }
+        document.querySelectorAll('.att-cb').forEach(function(cb) {
+            cb.addEventListener('change', function() {
                 var key = cb.getAttribute('data-row') + '-' + cb.getAttribute('data-col');
                 pendingChanges[key] = cb.checked ? 1 : 0;
                 updateTotals();
                 scheduleSave();
-            }});
-        }});
-        function scheduleSave() {{
+            });
+        });
+        function scheduleSave() {
             if (saveTimer) clearTimeout(saveTimer);
             showIndicator('saving');
             saveTimer = setTimeout(doSave, 2000);
-        }}
-        function showIndicator(state) {{
+        }
+        function showIndicator(state) {
             var el = document.getElementById('save-indicator');
             el.className = 'save-indicator ' + state;
             if (state === 'saving') el.textContent = 'Enregistrement...';
             else if (state === 'saved') el.textContent = 'Enregistré !';
             else if (state === 'error') el.textContent = 'Erreur !';
-            if (state === 'saved') setTimeout(function() {{ el.className = 'save-indicator'; }}, 2500);
-        }}
-        function doSave() {{
+            if (state === 'saved') setTimeout(function() { el.className = 'save-indicator'; }, 2500);
+        }
+        function doSave() {
             if (saving || Object.keys(pendingChanges).length === 0) return;
             saving = true;
             var token = getToken();
             var changesToSave = JSON.parse(JSON.stringify(pendingChanges));
-            pendingChanges = {{}};
+            pendingChanges = {};
             var sel = sessions[currentIdx] ? sessions[currentIdx].label : '';
-            Object.keys(changesToSave).forEach(function(key) {{
+            Object.keys(changesToSave).forEach(function(key) {
                 var row = parseInt(key.split('-')[0]);
                 var val = changesToSave[key];
                 for (var gi = 0; gi < DATA.groups.length; gi++)
                     for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++)
                         if (DATA.groups[gi].kids[ki].row === row)
                             DATA.groups[gi].kids[ki].attendance[sel] = val;
-            }});
+            });
             var url = 'https://api.github.com/repos/' + REPO + '/contents/' + JSON_PATH;
-            fetch(url, {{ headers: {{ 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json' }} }})
-            .then(function(r) {{ return r.json(); }})
-            .then(function(info) {{
+            fetch(url, { headers: { 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json' } })
+            .then(function(r) { return r.json(); })
+            .then(function(info) {
                 var sha = info.sha;
-                if (info.content) {{
-                    try {{
+                if (info.content) {
+                    try {
                         var remote = JSON.parse(decodeURIComponent(escape(atob(info.content.replace(/
 /g, '')))));
-                        Object.keys(changesToSave).forEach(function(key) {{
+                        Object.keys(changesToSave).forEach(function(key) {
                             var row = parseInt(key.split('-')[0]);
                             for (var gi = 0; gi < remote.groups.length; gi++)
                                 for (var ki = 0; ki < remote.groups[gi].kids.length; ki++)
                                     if (remote.groups[gi].kids[ki].row === row)
                                         remote.groups[gi].kids[ki].attendance[sel] = changesToSave[key];
-                        }});
+                        });
                         DATA = remote;
-                    }} catch(e) {{}}
-                }}
+                    } catch(e) {}
+                }
                 var content = btoa(unescape(encodeURIComponent(JSON.stringify(DATA, null, 2))));
-                return fetch(url, {{ method: 'PUT', headers: {{ 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' }}, body: JSON.stringify({{ message: 'Présences ' + DATA.title + ' ' + sel + ' — mise à jour', content: content, sha: sha }}) }});
-            }})
-            .then(function(r) {{
-                if (r.status === 409) {{ Object.keys(changesToSave).forEach(function(k) {{ if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k]; }}); saving = false; scheduleSave(); return; }}
+                return fetch(url, { method: 'PUT', headers: { 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' }, body: JSON.stringify({ message: 'Présences ' + DATA.title + ' ' + sel + ' — mise à jour', content: content, sha: sha }) });
+            })
+            .then(function(r) {
+                if (r.status === 409) { Object.keys(changesToSave).forEach(function(k) { if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k]; }); saving = false; scheduleSave(); return; }
                 if (!r.ok) throw new Error('HTTP ' + r.status);
                 return r.json();
-            }})
-            .then(function(result) {{ if (!result) return; saving = false; showIndicator('saved'); if (Object.keys(pendingChanges).length > 0) scheduleSave(); }})
-            .catch(function(err) {{ Object.keys(changesToSave).forEach(function(k) {{ if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k]; }}); saving = false; showIndicator('error'); setTimeout(scheduleSave, 5000); }});
-        }}
+            })
+            .then(function(result) { if (!result) return; saving = false; showIndicator('saved'); if (Object.keys(pendingChanges).length > 0) scheduleSave(); })
+            .catch(function(err) { Object.keys(changesToSave).forEach(function(k) { if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k]; }); saving = false; showIndicator('error'); setTimeout(scheduleSave, 5000); });
+        }
         showSessions();
-    }})();
+    })();
     </script>
 </body>
 </html>
