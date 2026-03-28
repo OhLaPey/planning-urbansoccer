@@ -3841,7 +3841,7 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
         .session-cell.current-session {{ background: rgba(227,6,19,0.15); }}
         .att-cb {{ -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(0,0,0,0.2); cursor: not-allowed; position: relative; vertical-align: middle; transition: all 0.15s; }}
         .att-cb:checked {{ background: #00c878; border-color: #00c878; }}
-        .att-cb:checked::after {{ content: '\2713'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 14px; font-weight: 900; }}
+        .att-cb:checked::after {{ content: '\\2713'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 14px; font-weight: 900; }}
         .att-cb.editable {{ cursor: pointer; border-color: rgba(255,255,255,0.4); }}
         .att-cb.editable:hover {{ border-color: #E30613; box-shadow: 0 0 6px rgba(227,6,19,0.4); }}
         .save-indicator {{ position: fixed; bottom: 20px; right: 20px; z-index: 100; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; opacity: 0; transition: opacity 0.3s; pointer-events: none; }}

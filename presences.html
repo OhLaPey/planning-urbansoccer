@@ -65,6 +65,15 @@
         .creneau-info {
             font-size: 12px; color: #888; font-weight: 500;
         }
+        .creneau-card.is-today {
+            background: rgba(227,6,19,0.15); border-color: #E30613;
+            box-shadow: 0 0 15px rgba(227,6,19,0.3);
+        }
+        .creneau-card.is-today .creneau-info { color: #E30613; }
+        .today-badge {
+            float: right; font-size: 9px; font-weight: 700; color: #E30613;
+            text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;
+        }
     </style>
 </head>
 <body>
@@ -75,47 +84,62 @@
             <p class="subtitle">Suivi des présences</p>
         </div>
 
-<a href="presences-baby-soccer.html" class="creneau-card">
+<a href="presences-baby-soccer.html" class="creneau-card" data-day="6">
   <div class="creneau-title">BABY SOCCER</div>
   <div class="creneau-info">35 enfants &middot; 33 séances</div>
 </a>
-<a href="presences-lundi-17h30.html" class="creneau-card">
+<a href="presences-lundi-17h30.html" class="creneau-card" data-day="1">
   <div class="creneau-title">LUNDI 17H30</div>
   <div class="creneau-info">16 enfants &middot; 33 séances</div>
 </a>
-<a href="presences-mardi-17h30.html" class="creneau-card">
+<a href="presences-mardi-17h30.html" class="creneau-card" data-day="2">
   <div class="creneau-title">MARDI 17H30</div>
   <div class="creneau-info">19 enfants &middot; 33 séances</div>
 </a>
-<a href="presences-mercredi-14h00.html" class="creneau-card">
+<a href="presences-mercredi-14h00.html" class="creneau-card" data-day="3">
   <div class="creneau-title">MERCREDI 14H00</div>
   <div class="creneau-info">35 enfants &middot; 33 séances</div>
 </a>
-<a href="presences-mercredi-15h45.html" class="creneau-card">
+<a href="presences-mercredi-15h45.html" class="creneau-card" data-day="3">
   <div class="creneau-title">MERCREDI 15H45</div>
   <div class="creneau-info">46 enfants &middot; 33 séances</div>
 </a>
-<a href="presences-vendredi-17h30.html" class="creneau-card">
+<a href="presences-vendredi-17h30.html" class="creneau-card" data-day="5">
   <div class="creneau-title">VENDREDI 17H30</div>
   <div class="creneau-info">48 enfants &middot; 33 séances</div>
 </a>
-<a href="presences-samedi-09h30.html" class="creneau-card">
+<a href="presences-samedi-09h30.html" class="creneau-card" data-day="6">
   <div class="creneau-title">SAMEDI 09H30</div>
   <div class="creneau-info">48 enfants &middot; 33 séances</div>
 </a>
-<a href="presences-samedi-11h15.html" class="creneau-card">
+<a href="presences-samedi-11h15.html" class="creneau-card" data-day="6">
   <div class="creneau-title">SAMEDI 11H15</div>
   <div class="creneau-info">41 enfants &middot; 33 séances</div>
 </a>
-<a href="presences-samedi-14h00.html" class="creneau-card">
+<a href="presences-samedi-14h00.html" class="creneau-card" data-day="6">
   <div class="creneau-title">SAMEDI 14H00</div>
   <div class="creneau-info">26 enfants &middot; 33 séances</div>
 </a>
-<a href="presences-samedi-15h45.html" class="creneau-card">
+<a href="presences-samedi-15h45.html" class="creneau-card" data-day="6">
   <div class="creneau-title">SAMEDI 15H45</div>
   <div class="creneau-info">14 enfants &middot; 33 séances</div>
 </a>
 
     </div>
+
+<script>
+(function() {
+    var today = new Date().getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+    document.querySelectorAll('.creneau-card[data-day]').forEach(function(card) {
+        if (parseInt(card.getAttribute('data-day')) === today) {
+            card.classList.add('is-today');
+            var badge = document.createElement('span');
+            badge.className = 'today-badge';
+            badge.textContent = "Aujourd'hui";
+            card.querySelector('.creneau-title').appendChild(badge);
+        }
+    });
+})();
+</script>
 </body>
 </html>
