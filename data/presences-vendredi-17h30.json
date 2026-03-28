@@ -951,54 +951,11 @@
       ]
     },
     {
-      "name": "Groupe 2",
+      "name": "2è groupe",
       "kids": [
         {
-          "row": 27,
-          "num": 1,
-          "name": "ZORGATI Ryan",
-          "category": "U8",
-          "attendance": {
-            "S1": 1,
-            "S2": 1,
-            "S3": 1,
-            "S4": 1,
-            "S5": 1,
-            "S6": 1,
-            "V": null,
-            "S7": 1,
-            "S8": 1,
-            "S9": 1,
-            "S10": 1,
-            "S11": 1,
-            "S12": 1,
-            "S13": 1,
-            "S14": 1,
-            "S15": 1,
-            "S16": 0,
-            "S17": null,
-            "S18": 1,
-            "S19": 1,
-            "S20": 1,
-            "S21": 1,
-            "S22": 1,
-            "S23": 1,
-            "S24": null,
-            "S25": null,
-            "S26": null,
-            "S27": null,
-            "S28": null,
-            "F": null,
-            "S29": null,
-            "S30": null,
-            "S31": null,
-            "S32": null,
-            "S33": null
-          }
-        },
-        {
           "row": 28,
-          "num": 2,
+          "num": 1,
           "name": "BRADAI Adam",
           "category": "U8",
           "attendance": {
@@ -1041,7 +998,7 @@
         },
         {
           "row": 29,
-          "num": 3,
+          "num": 2,
           "name": "ALADWAN Shahim",
           "category": "U9",
           "attendance": {
@@ -1084,7 +1041,7 @@
         },
         {
           "row": 30,
-          "num": 4,
+          "num": 3,
           "name": "KATAOKA Ren",
           "category": "U9",
           "attendance": {
@@ -1127,7 +1084,7 @@
         },
         {
           "row": 31,
-          "num": 5,
+          "num": 4,
           "name": "BEN ABDELJELIL Skander",
           "category": "U9",
           "attendance": {
@@ -1170,7 +1127,7 @@
         },
         {
           "row": 32,
-          "num": 6,
+          "num": 5,
           "name": "SEMPE Soan",
           "category": "U9",
           "attendance": {
@@ -1213,7 +1170,7 @@
         },
         {
           "row": 33,
-          "num": 7,
+          "num": 6,
           "name": "KHASAEEBAH Adim",
           "category": "U10",
           "attendance": {
@@ -1256,7 +1213,7 @@
         },
         {
           "row": 34,
-          "num": 8,
+          "num": 7,
           "name": "PEGUET Achille",
           "category": "U10",
           "attendance": {
@@ -1299,7 +1256,7 @@
         },
         {
           "row": 35,
-          "num": 9,
+          "num": 8,
           "name": "GRIMAL Adria",
           "category": "U10",
           "attendance": {
@@ -1342,7 +1299,7 @@
         },
         {
           "row": 36,
-          "num": 10,
+          "num": 9,
           "name": "AMADIEU BALAVOINE Basile",
           "category": "U10",
           "attendance": {
@@ -1385,7 +1342,7 @@
         },
         {
           "row": 37,
-          "num": 11,
+          "num": 10,
           "name": "REGIS Noé",
           "category": "U10",
           "attendance": {
@@ -1428,7 +1385,7 @@
         },
         {
           "row": 38,
-          "num": 12,
+          "num": 11,
           "name": "NICOLLE Noah",
           "category": "U10",
           "attendance": {
@@ -1471,7 +1428,7 @@
         },
         {
           "row": 39,
-          "num": 13,
+          "num": 12,
           "name": "AL HASSAN Karam",
           "category": "U11",
           "attendance": {
@@ -1514,7 +1471,7 @@
         },
         {
           "row": 40,
-          "num": 14,
+          "num": 13,
           "name": "BELFQUIH Amine",
           "category": "U12",
           "attendance": {
@@ -1557,7 +1514,7 @@
         },
         {
           "row": 41,
-          "num": 15,
+          "num": 14,
           "name": "ARIF Adam",
           "category": "U10",
           "attendance": {
@@ -1601,54 +1558,11 @@
       ]
     },
     {
-      "name": "Groupe 3",
+      "name": "3è groupe",
       "kids": [
         {
-          "row": 46,
-          "num": 1,
-          "name": "HAMICHE Maëlan",
-          "category": "U11",
-          "attendance": {
-            "S1": 1,
-            "S2": 1,
-            "S3": 1,
-            "S4": 1,
-            "S5": 1,
-            "S6": 1,
-            "V": null,
-            "S7": 1,
-            "S8": 1,
-            "S9": 1,
-            "S10": 1,
-            "S11": 1,
-            "S12": 1,
-            "S13": 1,
-            "S14": 1,
-            "S15": 1,
-            "S16": 0,
-            "S17": 1,
-            "S18": 1,
-            "S19": 1,
-            "S20": 1,
-            "S21": 1,
-            "S22": 1,
-            "S23": null,
-            "S24": null,
-            "S25": null,
-            "S26": null,
-            "S27": null,
-            "S28": null,
-            "F": null,
-            "S29": null,
-            "S30": null,
-            "S31": null,
-            "S32": null,
-            "S33": null
-          }
-        },
-        {
           "row": 47,
-          "num": 2,
+          "num": 1,
           "name": "MANAL Gabriel",
           "category": "U11",
           "attendance": {
@@ -1691,7 +1605,7 @@
         },
         {
           "row": 48,
-          "num": 3,
+          "num": 2,
           "name": "COURTEILLE Nahil",
           "category": "U11",
           "attendance": {
@@ -1734,7 +1648,7 @@
         },
         {
           "row": 49,
-          "num": 4,
+          "num": 3,
           "name": "COURTEILLE Ryan",
           "category": "U11",
           "attendance": {
@@ -1777,7 +1691,7 @@
         },
         {
           "row": 50,
-          "num": 5,
+          "num": 4,
           "name": "ZORGATI Adam",
           "category": "U11",
           "attendance": {
@@ -1820,7 +1734,7 @@
         },
         {
           "row": 51,
-          "num": 6,
+          "num": 5,
           "name": "MESTRALLET Téo",
           "category": "U12",
           "attendance": {
@@ -1863,7 +1777,7 @@
         },
         {
           "row": 52,
-          "num": 7,
+          "num": 6,
           "name": "BERNADETTE Loïc",
           "category": "U12",
           "attendance": {
@@ -1906,7 +1820,7 @@
         },
         {
           "row": 53,
-          "num": 8,
+          "num": 7,
           "name": "STIER Arthur",
           "category": "U12",
           "attendance": {
@@ -1949,7 +1863,7 @@
         },
         {
           "row": 54,
-          "num": 9,
+          "num": 8,
           "name": "PEREZ DÜRR Lukas",
           "category": "U12",
           "attendance": {
@@ -1992,7 +1906,7 @@
         },
         {
           "row": 55,
-          "num": 10,
+          "num": 9,
           "name": "SELLAOUTI Ahmed",
           "category": "U12",
           "attendance": {
@@ -2035,7 +1949,7 @@
         },
         {
           "row": 56,
-          "num": 11,
+          "num": 10,
           "name": "BOU ISSAC Marc",
           "category": "U12",
           "attendance": {
@@ -2078,7 +1992,7 @@
         },
         {
           "row": 57,
-          "num": 12,
+          "num": 11,
           "name": "VAZQUEZ Aaron",
           "category": "U12",
           "attendance": {
@@ -2121,7 +2035,7 @@
         },
         {
           "row": 58,
-          "num": 13,
+          "num": 12,
           "name": "SEMPE Ilyan",
           "category": "U12",
           "attendance": {
@@ -2164,7 +2078,7 @@
         },
         {
           "row": 59,
-          "num": 14,
+          "num": 13,
           "name": "CROSNIER Simon",
           "category": "U13",
           "attendance": {
@@ -2207,7 +2121,7 @@
         },
         {
           "row": 60,
-          "num": 15,
+          "num": 14,
           "name": "LINCHEVSKYY Taras",
           "category": "U13",
           "attendance": {
@@ -2250,7 +2164,7 @@
         },
         {
           "row": 61,
-          "num": 16,
+          "num": 15,
           "name": "SAFA Mohamad",
           "category": "U10",
           "attendance": {
@@ -2293,7 +2207,7 @@
         },
         {
           "row": 62,
-          "num": 17,
+          "num": 16,
           "name": "RAOUX Maélan",
           "category": "U10",
           "attendance": {
