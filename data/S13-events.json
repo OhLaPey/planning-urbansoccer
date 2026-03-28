@@ -592,7 +592,7 @@
         "code": "ANNIV",
         "label": "Anniversaire",
         "start": "2026-03-29T13:45",
-        "end": "2026-03-29T17:45",
+        "end": "2026-03-29T17:15",
         "day": 6
       }
     ]
@@ -670,14 +670,14 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-29T12:15",
-        "end": "2026-03-29T12:45",
+        "end": "2026-03-29T15:15",
         "day": 6
       },
       {
         "code": "ANNIV",
         "label": "Anniversaire",
-        "start": "2026-03-29T13:15",
-        "end": "2026-03-29T15:15",
+        "start": "2026-03-29T15:15",
+        "end": "2026-03-29T17:15",
         "day": 6
       }
     ]
@@ -715,6 +715,6 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-03-28 09:28"
+    "updated_at": "2026-03-28 09:30"
   }
 }
