@@ -1,7 +1,7 @@
 {
   "title": "SAMEDI 11H15",
   "slug": "samedi-11h15",
-  "sheet_name": "SAMEDI 11h15 PrÃ©sence",
+  "sheet_name": "SAMEDI 11h15 Présence",
   "sessions": [
     {
       "col": 5,
@@ -478,7 +478,7 @@
         {
           "row": 12,
           "num": 6,
-          "name": "DZIEDZIC ThÃ©o",
+          "name": "DZIEDZIC Théo",
           "category": "U10",
           "attendance": {
             "S1": 1,
@@ -736,7 +736,7 @@
       ]
     },
     {
-      "name": "2Ã¨ groupe",
+      "name": "2è groupe",
       "kids": [
         {
           "row": 28,
@@ -1214,7 +1214,7 @@
         {
           "row": 39,
           "num": 12,
-          "name": "DELCROIX RaphaÃ«l",
+          "name": "DELCROIX Raphaël",
           "category": "U13",
           "attendance": {
             "S1": 0,
@@ -1300,7 +1300,7 @@
       ]
     },
     {
-      "name": "3Ã¨ groupe",
+      "name": "3è groupe",
       "kids": [
         {
           "row": 48,
@@ -1563,7 +1563,7 @@
         {
           "row": 54,
           "num": 7,
-          "name": "SABATTIER ThÃ©o",
+          "name": "SABATTIER Théo",
           "category": "U15",
           "attendance": {
             "S1": 1,
@@ -1692,7 +1692,7 @@
         {
           "row": 57,
           "num": 10,
-          "name": "LATHIERE RaphaÃ«l",
+          "name": "LATHIERE Raphaël",
           "category": "U15",
           "attendance": {
             "S1": 1,
