@@ -1,7 +1,7 @@
 {
   "title": "SAMEDI 14H00",
   "slug": "samedi-14h00",
-  "sheet_name": "SAMEDI 14h00 Pr√©sence",
+  "sheet_name": "SAMEDI 14h00 PrÈsence",
   "sessions": [
     {
       "col": 5,
@@ -392,7 +392,7 @@
         {
           "row": 10,
           "num": 4,
-          "name": "SOULA DROUET L√©o (changement ?)",
+          "name": "SOULA DROUET LÈo (changement ?)",
           "category": "U7",
           "attendance": {
             "S1": 1,
@@ -822,12 +822,12 @@
       ]
     },
     {
-      "name": "2√® groupe",
+      "name": "2Ë groupe",
       "kids": [
         {
           "row": 28,
           "num": 1,
-          "name": "KABOU L√©on-Louis",
+          "name": "KABOU LÈon-Louis",
           "category": "U8",
           "attendance": {
             "S1": 1,
@@ -1257,7 +1257,7 @@
         {
           "row": 38,
           "num": 11,
-          "name": "SABIR Ily√¢s",
+          "name": "SABIR Ily‚s",
           "category": "U9",
           "attendance": {
             "S1": 0,
