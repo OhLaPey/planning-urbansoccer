@@ -3920,9 +3920,9 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
             }});
             document.querySelectorAll('.att-cb').forEach(function(cb) {{
                 var label = cb.getAttribute('data-label');
-                var isCurrent = label === currentLabel;
-                cb.disabled = !isCurrent;
-                cb.classList.toggle('editable', isCurrent);
+                var isVisible = visible.indexOf(label) !== -1;
+                cb.disabled = !isVisible;
+                cb.classList.toggle('editable', isVisible);
             }});
             updateNav();
             updateTotals();
