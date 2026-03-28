@@ -1,7 +1,7 @@
 {
   "title": "SAMEDI 15H45",
   "slug": "samedi-15h45",
-  "sheet_name": "SAMEDI 15h45 PrÃ©sence",
+  "sheet_name": "SAMEDI 15h45 Présence",
   "sessions": [
     {
       "col": 5,
@@ -306,7 +306,7 @@
         {
           "row": 8,
           "num": 2,
-          "name": "RAOUX MÃ©lan",
+          "name": "RAOUX Mélan",
           "category": "U10",
           "attendance": {
             "S1": 1,
@@ -349,7 +349,7 @@
         {
           "row": 9,
           "num": 3,
-          "name": "RODRIGUEZ ClÃ©ment",
+          "name": "RODRIGUEZ Clément",
           "category": "U11",
           "attendance": {
             "S1": 1,
@@ -478,7 +478,7 @@
         {
           "row": 12,
           "num": 6,
-          "name": "AYENOUE EzÃ©chiel",
+          "name": "AYENOUE Ezéchiel",
           "category": "U12",
           "attendance": {
             "S1": 0,
@@ -822,7 +822,7 @@
         {
           "row": 20,
           "num": 14,
-          "name": "COSTE HÃ©lio",
+          "name": "COSTE Hélio",
           "category": "U11",
           "attendance": {
             "S1": null,
