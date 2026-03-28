@@ -613,7 +613,9 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
                 f'<span class="badge">Repos</span></div>\n'
             )
 
-    return f"""<!DOCTYPE html>
+    build_ts = datetime.now().strftime("%Y-%m-%d %H:%M")
+    return f"""<!-- built {build_ts} -->
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
