@@ -654,7 +654,12 @@
         var todayStr = today.getFullYear() + '-' +
             String(today.getMonth()+1).padStart(2,'0') + '-' +
             String(today.getDate()).padStart(2,'0');
-        var currentIdx = sessions.length - 1;
+        // Fallback: dernière session avec une date connue
+        var currentIdx = 0;
+        for (var i = sessions.length - 1; i >= 0; i--) {
+            if (sessions[i].date) { currentIdx = i; break; }
+        }
+        // Trouver la session courante ou prochaine
         for (var i = 0; i < sessions.length; i++) {
             if (sessions[i].date) {
                 var parts = sessions[i].date.split('/');
