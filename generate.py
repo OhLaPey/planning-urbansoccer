@@ -3669,8 +3669,8 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
 # ── Attendance pages (PSG Academy) ─────────────────────────────────────────
 
 
-def generate_attendance_pages():
-    """Génère les pages statiques de présences PSG Academy."""
+def generate_attendance_pages(json_only=False):
+    """Génère les données JSON de présences PSG Academy (et optionnellement les pages HTML)."""
     try:
         from attendance import find_attendance_file, parse_attendance
     except ImportError:
@@ -3729,13 +3729,17 @@ def generate_attendance_pages():
         creneaux_index.append({"title": title, "slug": slug, "total_kids": total_kids,
                                 "sessions_count": len([s for s in sessions if not s["is_vacation"]])})
 
-        # ── Generate HTML page ──
-        _write_attendance_html(slug, title, sessions, groups, json_data)
-        print(f"  Écrit : presences-{slug}.html + {json_path}")
+        if not json_only:
+            # ── Generate HTML page ──
+            _write_attendance_html(slug, title, sessions, groups, json_data)
+            print(f"  Écrit : presences-{slug}.html + {json_path}")
+        else:
+            print(f"  Écrit : {json_path} ({total_kids} joueurs)")
 
-    # ── Generate index page ──
-    _write_attendance_index(creneaux_index)
-    print(f"  Écrit : presences.html (index, {len(creneaux_index)} créneaux)")
+    if not json_only:
+        # ── Generate index page ──
+        _write_attendance_index(creneaux_index)
+        print(f"  Écrit : presences.html (index, {len(creneaux_index)} créneaux)")
 
 
 def _write_attendance_html(slug, title, sessions, groups, json_data):
@@ -4641,8 +4645,10 @@ def main():
         )
     print(f"\u00c9crit : index.html (semaines : {', '.join(f'S{w}' for w in sorted(all_weeks))})")
 
-    # ── Générer les pages de présences PSG Academy ──
-    generate_attendance_pages()
+    # ── Générer les données JSON de présences (sans écraser les pages HTML) ──
+    # Les pages HTML presences-*.html sont maintenues manuellement avec les features
+    # (checkboxes, highlight, historique). On ne régénère que les JSON.
+    generate_attendance_pages(json_only=True)
 
     print("\nTermin\u00e9 !")
     print("\n\u2500\u2500 Abonnement calendrier \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500")
