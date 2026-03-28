@@ -6,211 +6,253 @@
     {
       "col": 5,
       "label": "S1",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 6,
       "label": "S2",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 7,
       "label": "S3",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 8,
       "label": "S4",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 9,
       "label": "S5",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 10,
       "label": "S6",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 11,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 12,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 13,
       "label": "S7",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 14,
       "label": "S8",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 15,
       "label": "S9",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 16,
       "label": "S10",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 17,
       "label": "S11",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 18,
       "label": "S12",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 19,
       "label": "S13",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 20,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 21,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 22,
       "label": "S14",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 23,
       "label": "S15",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 24,
       "label": "S16",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 25,
       "label": "S17",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 26,
       "label": "S18",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 27,
       "label": "S19",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 28,
       "label": "S20",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 29,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 30,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 31,
       "label": "S21",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 32,
       "label": "S22",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 33,
       "label": "S23",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 34,
       "label": "S24",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 35,
       "label": "S25",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 36,
       "label": "S26",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 37,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 38,
       "label": "V",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 39,
       "label": "S27",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 40,
       "label": "S28",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 41,
       "label": "F",
+      "date": null,
       "is_vacation": true
     },
     {
       "col": 42,
       "label": "S29",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 43,
       "label": "S30",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 44,
       "label": "S31",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 45,
       "label": "S32",
+      "date": null,
       "is_vacation": false
     },
     {
       "col": 46,
       "label": "S33",
+      "date": null,
       "is_vacation": false
     }
   ],
@@ -909,11 +951,54 @@
       ]
     },
     {
-      "name": "2è groupe",
+      "name": "Groupe 2",
       "kids": [
         {
-          "row": 28,
+          "row": 27,
           "num": 1,
+          "name": "ZORGATI Ryan",
+          "category": "U8",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 1,
+            "S4": 1,
+            "S5": 1,
+            "S6": 1,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 1,
+            "S10": 1,
+            "S11": 1,
+            "S12": 1,
+            "S13": 1,
+            "S14": 1,
+            "S15": 1,
+            "S16": 0,
+            "S17": null,
+            "S18": 1,
+            "S19": 1,
+            "S20": 1,
+            "S21": 1,
+            "S22": 1,
+            "S23": 1,
+            "S24": null,
+            "S25": null,
+            "S26": null,
+            "S27": null,
+            "S28": null,
+            "F": null,
+            "S29": null,
+            "S30": null,
+            "S31": null,
+            "S32": null,
+            "S33": null
+          }
+        },
+        {
+          "row": 28,
+          "num": 2,
           "name": "BRADAI Adam",
           "category": "U8",
           "attendance": {
@@ -956,7 +1041,7 @@
         },
         {
           "row": 29,
-          "num": 2,
+          "num": 3,
           "name": "ALADWAN Shahim",
           "category": "U9",
           "attendance": {
@@ -999,7 +1084,7 @@
         },
         {
           "row": 30,
-          "num": 3,
+          "num": 4,
           "name": "KATAOKA Ren",
           "category": "U9",
           "attendance": {
@@ -1042,7 +1127,7 @@
         },
         {
           "row": 31,
-          "num": 4,
+          "num": 5,
           "name": "BEN ABDELJELIL Skander",
           "category": "U9",
           "attendance": {
@@ -1085,7 +1170,7 @@
         },
         {
           "row": 32,
-          "num": 5,
+          "num": 6,
           "name": "SEMPE Soan",
           "category": "U9",
           "attendance": {
@@ -1128,7 +1213,7 @@
         },
         {
           "row": 33,
-          "num": 6,
+          "num": 7,
           "name": "KHASAEEBAH Adim",
           "category": "U10",
           "attendance": {
@@ -1171,7 +1256,7 @@
         },
         {
           "row": 34,
-          "num": 7,
+          "num": 8,
           "name": "PEGUET Achille",
           "category": "U10",
           "attendance": {
@@ -1214,7 +1299,7 @@
         },
         {
           "row": 35,
-          "num": 8,
+          "num": 9,
           "name": "GRIMAL Adria",
           "category": "U10",
           "attendance": {
@@ -1257,7 +1342,7 @@
         },
         {
           "row": 36,
-          "num": 9,
+          "num": 10,
           "name": "AMADIEU BALAVOINE Basile",
           "category": "U10",
           "attendance": {
@@ -1300,7 +1385,7 @@
         },
         {
           "row": 37,
-          "num": 10,
+          "num": 11,
           "name": "REGIS Noé",
           "category": "U10",
           "attendance": {
@@ -1343,7 +1428,7 @@
         },
         {
           "row": 38,
-          "num": 11,
+          "num": 12,
           "name": "NICOLLE Noah",
           "category": "U10",
           "attendance": {
@@ -1386,7 +1471,7 @@
         },
         {
           "row": 39,
-          "num": 12,
+          "num": 13,
           "name": "AL HASSAN Karam",
           "category": "U11",
           "attendance": {
@@ -1429,7 +1514,7 @@
         },
         {
           "row": 40,
-          "num": 13,
+          "num": 14,
           "name": "BELFQUIH Amine",
           "category": "U12",
           "attendance": {
@@ -1472,7 +1557,7 @@
         },
         {
           "row": 41,
-          "num": 14,
+          "num": 15,
           "name": "ARIF Adam",
           "category": "U10",
           "attendance": {
@@ -1516,11 +1601,54 @@
       ]
     },
     {
-      "name": "3è groupe",
+      "name": "Groupe 3",
       "kids": [
         {
-          "row": 47,
+          "row": 46,
           "num": 1,
+          "name": "HAMICHE Maëlan",
+          "category": "U11",
+          "attendance": {
+            "S1": 1,
+            "S2": 1,
+            "S3": 1,
+            "S4": 1,
+            "S5": 1,
+            "S6": 1,
+            "V": null,
+            "S7": 1,
+            "S8": 1,
+            "S9": 1,
+            "S10": 1,
+            "S11": 1,
+            "S12": 1,
+            "S13": 1,
+            "S14": 1,
+            "S15": 1,
+            "S16": 0,
+            "S17": 1,
+            "S18": 1,
+            "S19": 1,
+            "S20": 1,
+            "S21": 1,
+            "S22": 1,
+            "S23": null,
+            "S24": null,
+            "S25": null,
+            "S26": null,
+            "S27": null,
+            "S28": null,
+            "F": null,
+            "S29": null,
+            "S30": null,
+            "S31": null,
+            "S32": null,
+            "S33": null
+          }
+        },
+        {
+          "row": 47,
+          "num": 2,
           "name": "MANAL Gabriel",
           "category": "U11",
           "attendance": {
@@ -1563,7 +1691,7 @@
         },
         {
           "row": 48,
-          "num": 2,
+          "num": 3,
           "name": "COURTEILLE Nahil",
           "category": "U11",
           "attendance": {
@@ -1606,7 +1734,7 @@
         },
         {
           "row": 49,
-          "num": 3,
+          "num": 4,
           "name": "COURTEILLE Ryan",
           "category": "U11",
           "attendance": {
@@ -1649,7 +1777,7 @@
         },
         {
           "row": 50,
-          "num": 4,
+          "num": 5,
           "name": "ZORGATI Adam",
           "category": "U11",
           "attendance": {
@@ -1692,7 +1820,7 @@
         },
         {
           "row": 51,
-          "num": 5,
+          "num": 6,
           "name": "MESTRALLET Téo",
           "category": "U12",
           "attendance": {
@@ -1735,7 +1863,7 @@
         },
         {
           "row": 52,
-          "num": 6,
+          "num": 7,
           "name": "BERNADETTE Loïc",
           "category": "U12",
           "attendance": {
@@ -1778,7 +1906,7 @@
         },
         {
           "row": 53,
-          "num": 7,
+          "num": 8,
           "name": "STIER Arthur",
           "category": "U12",
           "attendance": {
@@ -1821,7 +1949,7 @@
         },
         {
           "row": 54,
-          "num": 8,
+          "num": 9,
           "name": "PEREZ DÜRR Lukas",
           "category": "U12",
           "attendance": {
@@ -1864,7 +1992,7 @@
         },
         {
           "row": 55,
-          "num": 9,
+          "num": 10,
           "name": "SELLAOUTI Ahmed",
           "category": "U12",
           "attendance": {
@@ -1907,7 +2035,7 @@
         },
         {
           "row": 56,
-          "num": 10,
+          "num": 11,
           "name": "BOU ISSAC Marc",
           "category": "U12",
           "attendance": {
@@ -1950,7 +2078,7 @@
         },
         {
           "row": 57,
-          "num": 11,
+          "num": 12,
           "name": "VAZQUEZ Aaron",
           "category": "U12",
           "attendance": {
@@ -1993,7 +2121,7 @@
         },
         {
           "row": 58,
-          "num": 12,
+          "num": 13,
           "name": "SEMPE Ilyan",
           "category": "U12",
           "attendance": {
@@ -2036,7 +2164,7 @@
         },
         {
           "row": 59,
-          "num": 13,
+          "num": 14,
           "name": "CROSNIER Simon",
           "category": "U13",
           "attendance": {
@@ -2079,7 +2207,7 @@
         },
         {
           "row": 60,
-          "num": 14,
+          "num": 15,
           "name": "LINCHEVSKYY Taras",
           "category": "U13",
           "attendance": {
@@ -2122,7 +2250,7 @@
         },
         {
           "row": 61,
-          "num": 15,
+          "num": 16,
           "name": "SAFA Mohamad",
           "category": "U10",
           "attendance": {
@@ -2165,7 +2293,7 @@
         },
         {
           "row": 62,
-          "num": 16,
+          "num": 17,
           "name": "RAOUX Maélan",
           "category": "U10",
           "attendance": {
