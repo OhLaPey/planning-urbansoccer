@@ -1,7 +1,7 @@
 {
   "title": "VENDREDI 17H30",
   "slug": "vendredi-17h30",
-  "sheet_name": "VENDREDI 17h30 PrÃ©sence",
+  "sheet_name": "VENDREDI 17h30 Présence",
   "sessions": [
     {
       "col": 5,
@@ -263,7 +263,7 @@
         {
           "row": 7,
           "num": 1,
-          "name": "TRIN LÃ©o",
+          "name": "TRIN Léo",
           "category": "U6",
           "attendance": {
             "S1": 0,
@@ -951,7 +951,7 @@
       ]
     },
     {
-      "name": "2Ã¨ groupe",
+      "name": "2è groupe",
       "kids": [
         {
           "row": 28,
@@ -1343,7 +1343,7 @@
         {
           "row": 37,
           "num": 10,
-          "name": "REGIS NoÃ©",
+          "name": "REGIS Noé",
           "category": "U10",
           "attendance": {
             "S1": 1,
@@ -1558,7 +1558,7 @@
       ]
     },
     {
-      "name": "3Ã¨ groupe",
+      "name": "3è groupe",
       "kids": [
         {
           "row": 47,
@@ -1735,7 +1735,7 @@
         {
           "row": 51,
           "num": 5,
-          "name": "MESTRALLET TÃ©o",
+          "name": "MESTRALLET Téo",
           "category": "U12",
           "attendance": {
             "S1": 0,
@@ -1778,7 +1778,7 @@
         {
           "row": 52,
           "num": 6,
-          "name": "BERNADETTE LoÃ¯c",
+          "name": "BERNADETTE Loïc",
           "category": "U12",
           "attendance": {
             "S1": 1,
@@ -1864,7 +1864,7 @@
         {
           "row": 54,
           "num": 8,
-          "name": "PEREZ DÃœRR Lukas",
+          "name": "PEREZ DÜRR Lukas",
           "category": "U12",
           "attendance": {
             "S1": 1,
@@ -2208,7 +2208,7 @@
         {
           "row": 62,
           "num": 16,
-          "name": "RAOUX MaÃ©lan",
+          "name": "RAOUX Maélan",
           "category": "U10",
           "attendance": {
             "S1": 0,
