@@ -1,7 +1,7 @@
 {
   "title": "MARDI 17H30",
   "slug": "mardi-17h30",
-  "sheet_name": "MARDI 17H30 PrÃ©sence",
+  "sheet_name": "MARDI 17H30 Présence",
   "sessions": [
     {
       "col": 5,
@@ -263,7 +263,7 @@
         {
           "row": 7,
           "num": 1,
-          "name": "GHACHI TAILLARD NaÃ«l",
+          "name": "GHACHI TAILLARD Naël",
           "category": "U6",
           "attendance": {
             "S1": 1,
@@ -521,7 +521,7 @@
         {
           "row": 13,
           "num": 7,
-          "name": "BENZITOUNI KamÃ¯l",
+          "name": "BENZITOUNI Kamïl",
           "category": "U7",
           "attendance": {
             "S1": 1,
@@ -564,7 +564,7 @@
       ]
     },
     {
-      "name": "2Ã¨ groupe",
+      "name": "2è groupe",
       "kids": [
         {
           "row": 28,
@@ -655,7 +655,7 @@
         {
           "row": 30,
           "num": 3,
-          "name": "DANOT MaÃ«l",
+          "name": "DANOT Maël",
           "category": "U9",
           "attendance": {
             "S1": 1,
@@ -870,7 +870,7 @@
         {
           "row": 35,
           "num": 8,
-          "name": "GHACHI TAILLARD NoÃ©",
+          "name": "GHACHI TAILLARD Noé",
           "category": "U9",
           "attendance": {
             "S1": 1,
@@ -913,7 +913,7 @@
         {
           "row": 36,
           "num": 9,
-          "name": "PUJOL TimÃ©o",
+          "name": "PUJOL Timéo",
           "category": "U9",
           "attendance": {
             "S1": 1,
