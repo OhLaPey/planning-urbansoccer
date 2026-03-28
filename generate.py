@@ -555,12 +555,15 @@ def load_week_notes(week_num):
     return {"comment": "", "updates": []}
 
 
-def generate_html(week_employees, week_num, year, all_weeks, excel_version=0):
+def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, web_data=None):
     """Génère la page HTML avec preview timeline + vue individuelle + abonnement."""
     date_range = format_date_range(year, week_num)
 
-    # Toujours utiliser les données fraîchement parsées de l'Excel
-    events_json = build_events_json(week_employees)
+    # Utiliser les données web si disponibles, sinon l'Excel
+    if web_data:
+        events_json = json.dumps(web_data, ensure_ascii=False)
+    else:
+        events_json = build_events_json(week_employees)
 
     # Lire les métadonnées _meta depuis le JSON (si présent)
     try:
@@ -4534,10 +4537,22 @@ def main():
             json.dump(json_data, f, ensure_ascii=False, indent=2)
         print(f"\u00c9crit : {json_path}")
 
-        # Events JSON — toujours régénérer depuis l'Excel (source de vérité)
+        # Events JSON — préserver les modifications web si plus récentes
         events_path = f"data/S{week_num}-events.json"
         ef_info = next((e for e in excel_files if e["week"] == week_num), None)
         excel_ver = ef_info["version"] if ef_info else 0
+
+        # Lire le JSON existant AVANT de l'écraser (peut contenir des modifs web)
+        web_events = None
+        try:
+            with open(events_path, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+            if existing.get("_meta", {}).get("source") == "Modif admin":
+                web_events = existing
+                print(f"  ⚡ S{week_num} : modifs web détectées (MAJ {existing['_meta'].get('updated_at', '?')})")
+        except (json.JSONDecodeError, FileNotFoundError, IOError):
+            pass
+
         events_data = json.loads(build_events_json(employees))
         source = f"Excel v{excel_ver}" if excel_ver > 0 else "Excel"
         events_data["_meta"] = {
@@ -4550,8 +4565,11 @@ def main():
         print(f"Écrit : {events_path}")
 
 
-        # HTML
-        html_content = generate_html(employees, week_num, year, all_weeks, excel_version=excel_ver)
+        # HTML — utiliser les données web si disponibles, sinon Excel
+        if web_events:
+            html_content = generate_html(employees, week_num, year, all_weeks, excel_version=excel_ver, web_data=web_events)
+        else:
+            html_content = generate_html(employees, week_num, year, all_weeks, excel_version=excel_ver)
         html_path = f"S{week_num}.html"
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(html_content)
