@@ -3808,47 +3808,47 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {{{{ margin: 0; padding: 0; box-sizing: border-box; }}}}
-        body {{{{ font-family: 'Montserrat', sans-serif; background: #0C1C3E; min-height: 100vh; padding: 10px; color: #fff; position: relative; }}}}
-        body::before {{{{ content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; background: url('bg-psg.jpg') center center / cover no-repeat; opacity: 0.15; }}}}
-        .container {{{{ position: relative; z-index: 1; max-width: 900px; margin: 0 auto; background: rgba(12,28,62,0.95); border-radius: 8px; padding: 12px; margin-top: 6px; margin-bottom: 6px; border-top: 4px solid #E30613; }}}}
-        .back-btn {{{{ display: block; width: fit-content; margin: 0 0 10px 0; background: rgba(227,6,19,0.08); border: 2px solid rgba(227,6,19,0.4); color: #E30613; font-size: 14px; cursor: pointer; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-family: inherit; font-weight: 700; transition: all 0.2s; z-index: 10; }}}}
-        .back-btn:hover {{{{ background: #E30613; color: #fff; border-color: #E30613; }}}}
-        .header {{{{ text-align: center; margin-bottom: 12px; padding: 10px; }}}}
-        h1 {{{{ color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 2px; }}}}
-        .subtitle {{{{ color: #E30613; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; }}}}
-        .session-nav {{{{ display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 15px; }}}}
-        .session-nav-btn {{{{ background: none; border: 1px solid rgba(255,255,255,0.2); color: #aaa; font-size: 18px; cursor: pointer; padding: 6px 12px; border-radius: 6px; font-weight: 700; transition: all 0.2s; }}}}
-        .session-nav-btn:hover {{{{ color: #E30613; border-color: #E30613; }}}}
-        .session-nav-btn:disabled {{{{ opacity: 0.3; cursor: not-allowed; }}}}
-        .session-nav-info {{{{ font-size: 13px; font-weight: 700; text-align: center; min-width: 140px; }}}}
-        .session-nav-info small {{{{ display: block; font-size: 10px; color: #888; }}}}
-        .group-section {{{{ margin-bottom: 20px; overflow-x: auto; }}}}
-        .group-title {{{{ font-size: 13px; font-weight: 700; color: #E30613; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }}}}
-        .attendance-table {{{{ width: 100%; border-collapse: collapse; font-size: 11px; }}}}
-        .attendance-table th {{{{ background: rgba(255,255,255,0.06); padding: 6px 4px; text-align: center; font-weight: 700; color: #aaa; border-bottom: 2px solid rgba(255,255,255,0.1); font-size: 10px; white-space: nowrap; }}}}
-        .attendance-table td {{{{ padding: 5px 4px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }}}}
-        .name-col {{{{ text-align: left !important; white-space: nowrap; min-width: 140px; }}}}
-        .name-cat {{{{ color: #E30613; font-size: 10px; font-weight: 700; margin-left: 6px; }}}}
-        .num-col {{{{ width: 28px; color: #555; }}}}
-        .cat-col {{{{ display: none; }}}}
-        .total-val {{{{ font-weight: 700; color: #E30613; }}}}
-        tfoot {{{{ display: none; }}}}
-        .session-col {{{{ min-width: 28px; }}}}
-        .session-cell {{{{ min-width: 28px; }}}}
-        .session-cell.vacation {{{{ background: rgba(0,180,220,0.15); }}}}
-        .session-col.current-session {{{{ color: #E30613 !important; font-weight: 900; }}}}
-        .session-cell.current-session {{{{ background: rgba(227,6,19,0.15); }}}}
-        .att-cb {{{{ -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(0,0,0,0.2); cursor: not-allowed; position: relative; vertical-align: middle; transition: all 0.15s; }}}}
-        .att-cb:checked {{{{ background: #00c878; border-color: #00c878; }}}}
-        .att-cb:checked::after {{{{ content: '\2713'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 14px; font-weight: 900; }}}}
-        .att-cb.editable {{{{ cursor: pointer; border-color: rgba(255,255,255,0.4); }}}}
-        .att-cb.editable:hover {{{{ border-color: #E30613; box-shadow: 0 0 6px rgba(227,6,19,0.4); }}}}
-        .save-indicator {{{{ position: fixed; bottom: 20px; right: 20px; z-index: 100; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; opacity: 0; transition: opacity 0.3s; pointer-events: none; }}}}
-        .save-indicator.saving {{{{ opacity: 1; background: rgba(255,165,0,0.9); color: #fff; }}}}
-        .save-indicator.saved {{{{ opacity: 1; background: rgba(0,200,120,0.9); color: #fff; }}}}
-        .save-indicator.error {{{{ opacity: 1; background: rgba(227,6,19,0.9); color: #fff; }}}}
-        @media (max-width: 600px) {{{{ body {{{{ padding: 4px; }}}} .container {{{{ padding: 6px; }}}} .attendance-table {{{{ font-size: 10px; }}}} .name-col {{{{ min-width: 100px; }}}} }}}}
+        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+        body {{ font-family: 'Montserrat', sans-serif; background: #0C1C3E; min-height: 100vh; padding: 10px; color: #fff; position: relative; }}
+        body::before {{ content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; background: url('bg-psg.jpg') center center / cover no-repeat; opacity: 0.15; }}
+        .container {{ position: relative; z-index: 1; max-width: 900px; margin: 0 auto; background: rgba(12,28,62,0.95); border-radius: 8px; padding: 12px; margin-top: 6px; margin-bottom: 6px; border-top: 4px solid #E30613; }}
+        .back-btn {{ display: block; width: fit-content; margin: 0 0 10px 0; background: rgba(227,6,19,0.08); border: 2px solid rgba(227,6,19,0.4); color: #E30613; font-size: 14px; cursor: pointer; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-family: inherit; font-weight: 700; transition: all 0.2s; z-index: 10; }}
+        .back-btn:hover {{ background: #E30613; color: #fff; border-color: #E30613; }}
+        .header {{ text-align: center; margin-bottom: 12px; padding: 10px; }}
+        h1 {{ color: #fff; font-size: 20px; font-weight: 900; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 2px; }}
+        .subtitle {{ color: #E30613; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; }}
+        .session-nav {{ display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 15px; }}
+        .session-nav-btn {{ background: none; border: 1px solid rgba(255,255,255,0.2); color: #aaa; font-size: 18px; cursor: pointer; padding: 6px 12px; border-radius: 6px; font-weight: 700; transition: all 0.2s; }}
+        .session-nav-btn:hover {{ color: #E30613; border-color: #E30613; }}
+        .session-nav-btn:disabled {{ opacity: 0.3; cursor: not-allowed; }}
+        .session-nav-info {{ font-size: 13px; font-weight: 700; text-align: center; min-width: 140px; }}
+        .session-nav-info small {{ display: block; font-size: 10px; color: #888; }}
+        .group-section {{ margin-bottom: 20px; overflow-x: auto; }}
+        .group-title {{ font-size: 13px; font-weight: 700; color: #E30613; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }}
+        .attendance-table {{ width: 100%; border-collapse: collapse; font-size: 11px; }}
+        .attendance-table th {{ background: rgba(255,255,255,0.06); padding: 6px 4px; text-align: center; font-weight: 700; color: #aaa; border-bottom: 2px solid rgba(255,255,255,0.1); font-size: 10px; white-space: nowrap; }}
+        .attendance-table td {{ padding: 5px 4px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }}
+        .name-col {{ text-align: left !important; white-space: nowrap; min-width: 140px; }}
+        .name-cat {{ color: #E30613; font-size: 10px; font-weight: 700; margin-left: 6px; }}
+        .num-col {{ width: 28px; color: #555; }}
+        .cat-col {{ display: none; }}
+        .total-val {{ font-weight: 700; color: #E30613; }}
+        tfoot {{ display: none; }}
+        .session-col {{ min-width: 28px; }}
+        .session-cell {{ min-width: 28px; }}
+        .session-cell.vacation {{ background: rgba(0,180,220,0.15); }}
+        .session-col.current-session {{ color: #E30613 !important; font-weight: 900; }}
+        .session-cell.current-session {{ background: rgba(227,6,19,0.15); }}
+        .att-cb {{ -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2); border-radius: 4px; background: rgba(0,0,0,0.2); cursor: not-allowed; position: relative; vertical-align: middle; transition: all 0.15s; }}
+        .att-cb:checked {{ background: #00c878; border-color: #00c878; }}
+        .att-cb:checked::after {{ content: '\2713'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 14px; font-weight: 900; }}
+        .att-cb.editable {{ cursor: pointer; border-color: rgba(255,255,255,0.4); }}
+        .att-cb.editable:hover {{ border-color: #E30613; box-shadow: 0 0 6px rgba(227,6,19,0.4); }}
+        .save-indicator {{ position: fixed; bottom: 20px; right: 20px; z-index: 100; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; opacity: 0; transition: opacity 0.3s; pointer-events: none; }}
+        .save-indicator.saving {{ opacity: 1; background: rgba(255,165,0,0.9); color: #fff; }}
+        .save-indicator.saved {{ opacity: 1; background: rgba(0,200,120,0.9); color: #fff; }}
+        .save-indicator.error {{ opacity: 1; background: rgba(227,6,19,0.9); color: #fff; }}
+        @media (max-width: 600px) {{ body {{ padding: 4px; }} .container {{ padding: 6px; }} .attendance-table {{ font-size: 10px; }} .name-col {{ min-width: 100px; }} }}
     </style>
 </head>
 <body>
@@ -3869,143 +3869,143 @@ def _write_attendance_html(slug, title, sessions, groups, json_data):
     </div>
     <div class="save-indicator" id="save-indicator"></div>
     <script>
-    (function() {{{{
+    (function() {{
         var DATA = {json_embedded};
         var REPO = 'OhLaPey/planning-urbansoccer';
         var JSON_PATH = 'data/presences-{slug}.json';
         var _p = ['Z2l0aHViX3BhdF8xMUJWTEZMVl','EwNGFQeEFvQWZzYktvX2lZOHZF','cVhqaUx1ZzNmOVQ5cUhUcUJKan','NkMWhKR2tGYXl0c28xMDJmYXRV','SFhYS1pWWks4MXZGUkpE'];
         var VISIBLE_SESSIONS = 5;
-        var pendingChanges = {{{{}}}};
+        var pendingChanges = {{}};
         var saveTimer = null;
         var saving = false;
-        function getToken() {{{{ return localStorage.getItem('planning-admin-token') || atob(_p.join('')); }}}}
-        var sessions = DATA.sessions.filter(function(s) {{{{ return !s.is_vacation; }}}});
+        function getToken() {{ return localStorage.getItem('planning-admin-token') || atob(_p.join('')); }}
+        var sessions = DATA.sessions.filter(function(s) {{ return !s.is_vacation; }});
         // Find current session: last with attendance data
         var currentIdx = 0;
-        for (var i = sessions.length - 1; i >= 0; i--) {{{{
+        for (var i = sessions.length - 1; i >= 0; i--) {{
             var label = sessions[i].label;
             var hasData = false;
-            for (var gi = 0; gi < DATA.groups.length; gi++) {{{{
-                for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {{{{
+            for (var gi = 0; gi < DATA.groups.length; gi++) {{
+                for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++) {{
                     var val = DATA.groups[gi].kids[ki].attendance[label];
-                    if (val === 1 || val === 0) {{{{ hasData = true; break; }}}}
-                }}}}
+                    if (val === 1 || val === 0) {{ hasData = true; break; }}
+                }}
                 if (hasData) break;
-            }}}}
-            if (hasData) {{{{ currentIdx = i; break; }}}}
-        }}}}
+            }}
+            if (hasData) {{ currentIdx = i; break; }}
+        }}
         var windowEnd = currentIdx;
         var windowStart = Math.max(0, windowEnd - VISIBLE_SESSIONS + 1);
         var navPrev = document.getElementById('nav-prev');
         var navNext = document.getElementById('nav-next');
         var navInfo = document.getElementById('nav-info');
-        function getVisibleLabels() {{{{
+        function getVisibleLabels() {{
             var labels = [];
             for (var i = windowStart; i <= Math.min(windowEnd, sessions.length - 1); i++) labels.push(sessions[i].label);
             return labels;
-        }}}}
-        function updateNav() {{{{
+        }}
+        function updateNav() {{
             var visible = getVisibleLabels();
             navInfo.innerHTML = '<strong>' + (visible[0]||'')+' \u2014 '+(visible[visible.length-1]||'')+'</strong>';
             navPrev.disabled = windowStart <= 0;
             navNext.disabled = windowEnd >= sessions.length - 1;
-        }}}}
-        function showSessions() {{{{
+        }}
+        function showSessions() {{
             var visible = getVisibleLabels();
             var currentLabel = sessions[currentIdx] ? sessions[currentIdx].label : '';
-            document.querySelectorAll('.session-col, .session-cell').forEach(function(el) {{{{
+            document.querySelectorAll('.session-col, .session-cell').forEach(function(el) {{
                 var label = el.getAttribute('data-label');
                 el.style.display = visible.indexOf(label) !== -1 ? '' : 'none';
                 el.classList.toggle('current-session', label === currentLabel);
-            }}}});
-            document.querySelectorAll('.att-cb').forEach(function(cb) {{{{
+            }});
+            document.querySelectorAll('.att-cb').forEach(function(cb) {{
                 var label = cb.getAttribute('data-label');
                 var isCurrent = label === currentLabel;
                 cb.disabled = !isCurrent;
                 cb.classList.toggle('editable', isCurrent);
-            }}}});
+            }});
             updateNav();
             updateTotals();
-        }}}}
-        navPrev.addEventListener('click', function() {{{{ if (windowStart > 0) {{{{ windowStart--; windowEnd--; showSessions(); }}}} }}}});
-        navNext.addEventListener('click', function() {{{{ if (windowEnd < sessions.length - 1) {{{{ windowStart++; windowEnd++; showSessions(); }}}} }}}});
-        function updateTotals() {{{{
-            document.querySelectorAll('.group-section').forEach(function(section) {{{{
-                section.querySelectorAll('tbody tr').forEach(function(row) {{{{
+        }}
+        navPrev.addEventListener('click', function() {{ if (windowStart > 0) {{ windowStart--; windowEnd--; showSessions(); }} }});
+        navNext.addEventListener('click', function() {{ if (windowEnd < sessions.length - 1) {{ windowStart++; windowEnd++; showSessions(); }} }});
+        function updateTotals() {{
+            document.querySelectorAll('.group-section').forEach(function(section) {{
+                section.querySelectorAll('tbody tr').forEach(function(row) {{
                     var total = 0;
-                    row.querySelectorAll('.att-cb').forEach(function(cb) {{{{ if (cb.checked) total++; }}}});
+                    row.querySelectorAll('.att-cb').forEach(function(cb) {{ if (cb.checked) total++; }});
                     var tc = row.querySelector('.total-val');
                     if (tc) tc.textContent = total;
-                }}}});
-            }}}});
-        }}}}
-        document.querySelectorAll('.att-cb').forEach(function(cb) {{{{
-            cb.addEventListener('change', function() {{{{
+                }});
+            }});
+        }}
+        document.querySelectorAll('.att-cb').forEach(function(cb) {{
+            cb.addEventListener('change', function() {{
                 var key = cb.getAttribute('data-row') + '-' + cb.getAttribute('data-col');
                 pendingChanges[key] = cb.checked ? 1 : 0;
                 updateTotals();
                 scheduleSave();
-            }}}});
-        }}}});
-        function scheduleSave() {{{{
+            }});
+        }});
+        function scheduleSave() {{
             if (saveTimer) clearTimeout(saveTimer);
             showIndicator('saving');
             saveTimer = setTimeout(doSave, 2000);
-        }}}}
-        function showIndicator(state) {{{{
+        }}
+        function showIndicator(state) {{
             var el = document.getElementById('save-indicator');
             el.className = 'save-indicator ' + state;
             if (state === 'saving') el.textContent = 'Enregistrement...';
             else if (state === 'saved') el.textContent = 'Enregistré !';
             else if (state === 'error') el.textContent = 'Erreur !';
-            if (state === 'saved') setTimeout(function() {{{{ el.className = 'save-indicator'; }}}}, 2500);
-        }}}}
-        function doSave() {{{{
+            if (state === 'saved') setTimeout(function() {{ el.className = 'save-indicator'; }}, 2500);
+        }}
+        function doSave() {{
             if (saving || Object.keys(pendingChanges).length === 0) return;
             saving = true;
             var token = getToken();
             var changesToSave = JSON.parse(JSON.stringify(pendingChanges));
-            pendingChanges = {{{{}}}};
+            pendingChanges = {{}};
             var sel = sessions[currentIdx] ? sessions[currentIdx].label : '';
-            Object.keys(changesToSave).forEach(function(key) {{{{
+            Object.keys(changesToSave).forEach(function(key) {{
                 var row = parseInt(key.split('-')[0]);
                 var val = changesToSave[key];
                 for (var gi = 0; gi < DATA.groups.length; gi++)
                     for (var ki = 0; ki < DATA.groups[gi].kids.length; ki++)
                         if (DATA.groups[gi].kids[ki].row === row)
                             DATA.groups[gi].kids[ki].attendance[sel] = val;
-            }}}});
+            }});
             var url = 'https://api.github.com/repos/' + REPO + '/contents/' + JSON_PATH;
-            fetch(url, {{{{ headers: {{{{ 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json' }}}} }}}})
-            .then(function(r) {{{{ return r.json(); }}}})
-            .then(function(info) {{{{
+            fetch(url, {{ headers: {{ 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json' }} }})
+            .then(function(r) {{ return r.json(); }})
+            .then(function(info) {{
                 var sha = info.sha;
-                if (info.content) {{{{
-                    try {{{{
+                if (info.content) {{
+                    try {{
                         var remote = JSON.parse(decodeURIComponent(escape(atob(info.content.replace(/\n/g, '')))));
-                        Object.keys(changesToSave).forEach(function(key) {{{{
+                        Object.keys(changesToSave).forEach(function(key) {{
                             var row = parseInt(key.split('-')[0]);
                             for (var gi = 0; gi < remote.groups.length; gi++)
                                 for (var ki = 0; ki < remote.groups[gi].kids.length; ki++)
                                     if (remote.groups[gi].kids[ki].row === row)
                                         remote.groups[gi].kids[ki].attendance[sel] = changesToSave[key];
-                        }}}});
+                        }});
                         DATA = remote;
-                    }}}} catch(e) {{{{}}}}
-                }}}}
+                    }} catch(e) {{}}
+                }}
                 var content = btoa(unescape(encodeURIComponent(JSON.stringify(DATA, null, 2))));
-                return fetch(url, {{{{ method: 'PUT', headers: {{{{ 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' }}}}, body: JSON.stringify({{{{ message: 'Présences ' + DATA.title + ' ' + sel + ' — mise à jour', content: content, sha: sha }}}}) }}}});
-            }}}})
-            .then(function(r) {{{{
-                if (r.status === 409) {{{{ Object.keys(changesToSave).forEach(function(k) {{{{ if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k]; }}}}); saving = false; scheduleSave(); return; }}}}
+                return fetch(url, {{ method: 'PUT', headers: {{ 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' }}, body: JSON.stringify({{ message: 'Présences ' + DATA.title + ' ' + sel + ' — mise à jour', content: content, sha: sha }}) }});
+            }})
+            .then(function(r) {{
+                if (r.status === 409) {{ Object.keys(changesToSave).forEach(function(k) {{ if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k]; }}); saving = false; scheduleSave(); return; }}
                 if (!r.ok) throw new Error('HTTP ' + r.status);
                 return r.json();
-            }}}})
-            .then(function(result) {{{{ if (!result) return; saving = false; showIndicator('saved'); if (Object.keys(pendingChanges).length > 0) scheduleSave(); }}}})
-            .catch(function(err) {{{{ Object.keys(changesToSave).forEach(function(k) {{{{ if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k]; }}}}); saving = false; showIndicator('error'); setTimeout(scheduleSave, 5000); }}}});
-        }}}}
+            }})
+            .then(function(result) {{ if (!result) return; saving = false; showIndicator('saved'); if (Object.keys(pendingChanges).length > 0) scheduleSave(); }})
+            .catch(function(err) {{ Object.keys(changesToSave).forEach(function(k) {{ if (!pendingChanges[k]) pendingChanges[k] = changesToSave[k]; }}); saving = false; showIndicator('error'); setTimeout(scheduleSave, 5000); }});
+        }}
         showSessions();
-    }}}})();
+    }})();
     </script>
 </body>
 </html>'''
