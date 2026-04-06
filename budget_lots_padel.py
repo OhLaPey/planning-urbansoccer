@@ -103,7 +103,7 @@ def fill_bg(ws, row_start, row_end, col_start, col_end, fill=fill_black):
 # ============================================================
 # Fond noir sur toute la zone de travail
 # ============================================================
-fill_bg(ws, 1, 30, 1, 8, fill_black)
+fill_bg(ws, 1, 50, 1, 8, fill_black)
 
 # ============================================================
 # LOGO Urban Padel (en haut à gauche)
@@ -204,7 +204,7 @@ lot_end_row = lot_start_row + len(lots) - 1
 # ============================================================
 # COLONNE SÉPARATRICE (E)
 # ============================================================
-for r in range(1, 30):
+for r in range(1, 50):
     ws.cell(row=r, column=5).fill = fill_black
 
 # ============================================================
@@ -229,47 +229,68 @@ dv.promptTitle = "Choix du lot"
 ws.add_data_validation(dv)
 
 # Places : 1er (4 lots), 2ème (3 lots), 3ème (2 lots)
+# Chaque lot = 2 lignes (Joueur A + Joueur B) pour permettre des lots différents
 places = [
     ("1ER", 4, fill_gold, Font(bold=True, size=10, color=BLACK)),
     ("2ÈME", 3, fill_silver, Font(bold=True, size=10, color=BLACK)),
     ("3ÈME", 2, fill_bronze, Font(bold=True, size=10, color=WHITE)),
 ]
 
+# Fills légèrement différents pour distinguer Joueur A / Joueur B visuellement
+fill_player_a = fill_dark
+fill_player_b = fill_mid
+
 current_row = row_header + 1
 all_cost_rows = []
 
 for place_name, nb_lots, fill_place, font_place in places:
+    # Ligne titre de la place
+    r = current_row
+    ws.row_dimensions[r].height = 24
+    cell_place_title = ws.cell(row=r, column=6, value=f"{place_name}  ({nb_lots} lots max)")
+    style_cell(cell_place_title, font=Font(bold=True, size=11, color=font_place.color), fill=fill_place, alignment=center, border=border_grey)
+    ws.cell(row=r, column=7).fill = fill_place
+    ws.cell(row=r, column=7).border = border_grey
+    ws.cell(row=r, column=8).fill = fill_place
+    ws.cell(row=r, column=8).border = border_grey
+    current_row += 1
+
     for i in range(nb_lots):
-        r = current_row
-        all_cost_rows.append(r)
-        ws.row_dimensions[r].height = 22
+        for player_idx, player_name in enumerate(["Joueur A", "Joueur B"]):
+            r = current_row
+            all_cost_rows.append(r)
+            ws.row_dimensions[r].height = 20
+            p_fill = fill_player_a if player_idx == 0 else fill_player_b
 
-        # Place label
-        if i == 0:
-            label = f"{place_name} - Lot {i+1}"
-        else:
-            label = f"Lot {i+1}"
+            # Label : "Lot 1 - Joueur A"
+            if player_idx == 0:
+                label = f"  Lot {i+1} - {player_name}"
+            else:
+                label = f"          {player_name}"
 
-        cell_place = ws.cell(row=r, column=6, value=label)
-        style_cell(cell_place, font=font_place, fill=fill_place, alignment=center, border=border_grey)
+            cell_place = ws.cell(row=r, column=6, value=label)
+            font_label = Font(size=9, color=GREEN_FLUO if player_idx == 0 else OFF_WHITE)
+            style_cell(cell_place, font=font_label, fill=p_fill, alignment=left_align, border=border_grey)
 
-        # Lot attribué (dropdown) - fond plus sombre pour indiquer saisie
-        cell_lot = ws.cell(row=r, column=7)
-        cell_lot.value = None
-        style_cell(cell_lot, font=font_white, fill=fill_dark, alignment=left_align, border=border_green)
-        dv.add(cell_lot)
+            # Lot attribué (dropdown)
+            cell_lot = ws.cell(row=r, column=7)
+            cell_lot.value = None
+            style_cell(cell_lot, font=font_white, fill=p_fill, alignment=left_align, border=border_green)
+            dv.add(cell_lot)
 
-        # Coût = RECHERCHEV
-        cell_cost = ws.cell(row=r, column=8)
-        cell_cost.value = f'=IF(G{r}="",0,VLOOKUP(G{r},$B${lot_start_row}:$D${lot_end_row},3,FALSE))'
-        style_cell(cell_cost, font=font_orange, fill=fill_dark, alignment=center, number_format=currency_fmt, border=border_grey)
+            # Coût = RECHERCHEV
+            cell_cost = ws.cell(row=r, column=8)
+            cell_cost.value = f'=IF(G{r}="",0,VLOOKUP(G{r},$B${lot_start_row}:$D${lot_end_row},3,FALSE))'
+            style_cell(cell_cost, font=font_orange, fill=p_fill, alignment=center, number_format=currency_fmt, border=border_grey)
 
-        current_row += 1
+            current_row += 1
 
-    # Sous-total par place
+    # Sous-total par place (somme de toutes les lignes joueurs)
     r_sub = current_row
-    ws.row_dimensions[r_sub].height = 20
-    sub_start = r_sub - nb_lots
+    ws.row_dimensions[r_sub].height = 22
+    # nb_lots x 2 joueurs = nombre de lignes de coût pour cette place
+    nb_player_rows = nb_lots * 2
+    sub_start = r_sub - nb_player_rows
     sub_end = r_sub - 1
 
     cell_sub_label = ws.cell(row=r_sub, column=6, value=f"S/Total {place_name}")
@@ -303,11 +324,13 @@ ws.cell(row=total_row, column=7).fill = fill_black
 ws.cell(row=total_row, column=7).border = border_green
 
 # Total = somme des sous-totaux (plus fiable)
+# Structure par place : 1 ligne titre + (nb_lots x 2 joueurs) lignes + 1 ligne sous-total
 sub_total_rows = []
 cursor = row_header + 1
 for _, nb, _, _ in places:
-    cursor += nb
-    sub_total_rows.append(cursor)
+    cursor += 1              # ligne titre place
+    cursor += nb * 2         # lignes joueurs
+    sub_total_rows.append(cursor)  # ligne sous-total
     cursor += 1
 
 sum_formula = "+".join([f"H{r}" for r in sub_total_rows])
@@ -361,5 +384,5 @@ output = os.path.join(os.path.dirname(os.path.abspath(__file__)), "budget_lots_p
 wb.save(output)
 print(f"Fichier généré : {output}")
 print(f"  - Catalogue : {len(lots)} lots")
-print(f"  - Attribution : 4 lots 1er + 3 lots 2ème + 2 lots 3ème")
+print(f"  - Attribution : 4 lots 1er + 3 lots 2ème + 2 lots 3ème (x2 joueurs par lot)")
 print(f"  - Design : charte Urban Padel (noir/vert fluo/orange/rouge)")
