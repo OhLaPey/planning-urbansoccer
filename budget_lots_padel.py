@@ -1,85 +1,170 @@
 """
 Génère un fichier Excel pour le budget lots du tournoi de Padel (84€).
+Design aux couleurs Urban Padel (noir, vert fluo, orange, rouge).
 - Tableau gauche : catalogue des lots disponibles avec prix
-- Tableau droit : attribution des lots par place (1er/2ème/3ème) avec listes déroulantes
+- Tableau droit : attribution des lots par place avec listes déroulantes
 """
 import openpyxl
 from openpyxl.styles import Font, Alignment, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.drawing.image import Image as XlImage
+import os
 
 wb = openpyxl.Workbook()
 ws = wb.active
 ws.title = "Budget Lots"
 
-# --- Styles ---
-title_font = Font(bold=True, size=13, color="FFFFFF")
-header_font = Font(bold=True, size=10, color="FFFFFF")
-bold_font = Font(bold=True, size=10)
-small_font = Font(size=10)
+# ============================================================
+# CHARTE URBAN PADEL (extraite du site)
+# ============================================================
+BLACK = "1A1A1A"
+DARK_GREY = "2D2D2D"
+MID_GREY = "3A3A3A"
+LIGHT_GREY = "4A4A4A"
+GREEN_FLUO = "7BED5E"      # Vert fluo (boutons, accents)
+GREEN_DARK = "5CB842"       # Vert foncé
+ORANGE = "F5A623"           # Orange (formes géométriques)
+RED = "E84057"              # Rouge/Rose (accent)
+WHITE = "FFFFFF"
+OFF_WHITE = "E8E8E8"
+
+# Or / Argent / Bronze pour les places
+GOLD = "FFD966"
+SILVER = "C0C0C0"
+BRONZE = "CD7F32"
+
 currency_fmt = '#,##0.00 €'
 
-fill_title_blue = PatternFill(start_color="2F5496", end_color="2F5496", fill_type="solid")
-fill_title_green = PatternFill(start_color="548235", end_color="548235", fill_type="solid")
-fill_header = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-fill_header_green = PatternFill(start_color="70AD47", end_color="70AD47", fill_type="solid")
-fill_1er = PatternFill(start_color="FFD966", end_color="FFD966", fill_type="solid")  # Or
-fill_2eme = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")  # Argent
-fill_3eme = PatternFill(start_color="DFC29A", end_color="DFC29A", fill_type="solid")  # Bronze
-fill_total = PatternFill(start_color="FFF2CC", end_color="FFF2CC", fill_type="solid")
-fill_reste = PatternFill(start_color="FCE4EC", end_color="FCE4EC", fill_type="solid")
-fill_light = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
-fill_white = PatternFill(start_color="FFFFFF", end_color="FFFFFF", fill_type="solid")
+# --- Fills ---
+fill_black = PatternFill(start_color=BLACK, end_color=BLACK, fill_type="solid")
+fill_dark = PatternFill(start_color=DARK_GREY, end_color=DARK_GREY, fill_type="solid")
+fill_mid = PatternFill(start_color=MID_GREY, end_color=MID_GREY, fill_type="solid")
+fill_light_grey = PatternFill(start_color=LIGHT_GREY, end_color=LIGHT_GREY, fill_type="solid")
+fill_green = PatternFill(start_color=GREEN_FLUO, end_color=GREEN_FLUO, fill_type="solid")
+fill_green_dark = PatternFill(start_color=GREEN_DARK, end_color=GREEN_DARK, fill_type="solid")
+fill_orange = PatternFill(start_color=ORANGE, end_color=ORANGE, fill_type="solid")
+fill_red = PatternFill(start_color=RED, end_color=RED, fill_type="solid")
+fill_gold = PatternFill(start_color=GOLD, end_color=GOLD, fill_type="solid")
+fill_silver = PatternFill(start_color=SILVER, end_color=SILVER, fill_type="solid")
+fill_bronze = PatternFill(start_color=BRONZE, end_color=BRONZE, fill_type="solid")
 
-thin_border = Border(
-    left=Side(style='thin'), right=Side(style='thin'),
-    top=Side(style='thin'), bottom=Side(style='thin')
+# --- Fonts ---
+font_title = Font(bold=True, size=14, color=GREEN_FLUO)
+font_subtitle = Font(bold=True, size=11, color=ORANGE)
+font_header = Font(bold=True, size=10, color=BLACK)
+font_white = Font(size=10, color=WHITE)
+font_white_bold = Font(bold=True, size=10, color=WHITE)
+font_green = Font(bold=True, size=10, color=GREEN_FLUO)
+font_green_big = Font(bold=True, size=14, color=GREEN_FLUO)
+font_orange = Font(bold=True, size=10, color=ORANGE)
+font_red = Font(bold=True, size=11, color=RED)
+font_black = Font(size=10, color=BLACK)
+font_black_bold = Font(bold=True, size=10, color=BLACK)
+font_off_white = Font(size=10, color=OFF_WHITE)
+
+# --- Borders ---
+border_grey = Border(
+    left=Side(style='thin', color=LIGHT_GREY),
+    right=Side(style='thin', color=LIGHT_GREY),
+    top=Side(style='thin', color=LIGHT_GREY),
+    bottom=Side(style='thin', color=LIGHT_GREY)
+)
+border_green = Border(
+    left=Side(style='thin', color=GREEN_FLUO),
+    right=Side(style='thin', color=GREEN_FLUO),
+    top=Side(style='thin', color=GREEN_FLUO),
+    bottom=Side(style='thin', color=GREEN_FLUO)
+)
+border_bottom_green = Border(
+    bottom=Side(style='medium', color=GREEN_FLUO)
 )
 
+# --- Alignments ---
 center = Alignment(horizontal='center', vertical='center', wrap_text=True)
 left_align = Alignment(horizontal='left', vertical='center', wrap_text=True)
+right_align = Alignment(horizontal='right', vertical='center')
 
 BUDGET = 84
 
-def style_cell(cell, font=None, fill=None, alignment=None, number_format=None):
+def style_cell(cell, font=None, fill=None, alignment=None, number_format=None, border=None):
     if font: cell.font = font
     if fill: cell.fill = fill
     if alignment: cell.alignment = alignment
     if number_format: cell.number_format = number_format
-    cell.border = thin_border
+    if border: cell.border = border
 
-def style_row(ws, row, col_start, col_end, **kwargs):
-    for c in range(col_start, col_end + 1):
-        style_cell(ws.cell(row=row, column=c), **kwargs)
+def fill_bg(ws, row_start, row_end, col_start, col_end, fill=fill_black):
+    """Remplir une zone en fond noir"""
+    for r in range(row_start, row_end + 1):
+        for c in range(col_start, col_end + 1):
+            ws.cell(row=r, column=c).fill = fill
 
 # ============================================================
-# TABLEAU GAUCHE : Catalogue des lots (colonnes A-C)
+# Fond noir sur toute la zone de travail
 # ============================================================
-LEFT_START = 1  # col A
-LEFT_END = 3    # col C
+fill_bg(ws, 1, 30, 1, 8, fill_black)
 
-# Titre
-ws.merge_cells('A1:C1')
-c = ws['A1']
-c.value = "CATALOGUE DES LOTS"
-style_cell(c, font=title_font, fill=fill_title_blue, alignment=center)
+# ============================================================
+# LOGO Urban Padel (en haut à gauche)
+# ============================================================
+logo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logo_urbanpadel_white.png")
+if os.path.exists(logo_path):
+    img = XlImage(logo_path)
+    img.width = 140
+    img.height = 84
+    ws.add_image(img, 'A1')
 
-# Budget
-ws.merge_cells('A2:B2')
-ws['A2'] = "Budget total :"
-ws['A2'].font = bold_font
-ws['A2'].alignment = Alignment(horizontal='right', vertical='center')
-ws['C2'] = BUDGET
-style_cell(ws['C2'], font=Font(bold=True, size=12, color="2F5496"), alignment=center, number_format=currency_fmt)
+# Espace pour le logo : lignes 1-4, cols A-B
+ws.row_dimensions[1].height = 22
+ws.row_dimensions[2].height = 22
+ws.row_dimensions[3].height = 22
+ws.row_dimensions[4].height = 22
 
-# En-têtes
-row_header = 4
-headers_left = ["#", "Lot", "Prix unitaire"]
+# Titre principal à droite du logo
+ws.merge_cells('C1:D3')
+c = ws['C1']
+c.value = "TOURNOI\nPADEL"
+style_cell(c, font=Font(bold=True, size=20, color=GREEN_FLUO), fill=fill_black, alignment=center)
+
+# Budget en vert fluo
+ws.merge_cells('C4:D4')
+c = ws['C4']
+c.value = f"BUDGET LOTS : {BUDGET}€"
+style_cell(c, font=Font(bold=True, size=12, color=ORANGE), fill=fill_black, alignment=center)
+
+# Titre droit
+ws.merge_cells('F1:H3')
+c = ws['F1']
+c.value = "ATTRIBUTION\nDES LOTS"
+style_cell(c, font=Font(bold=True, size=18, color=ORANGE), fill=fill_black, alignment=center)
+
+ws.merge_cells('F4:H4')
+c = ws['F4']
+c.value = f"BUDGET : {BUDGET}€"
+style_cell(c, font=Font(bold=True, size=12, color=GREEN_FLUO), fill=fill_black, alignment=center)
+
+# ============================================================
+# Ligne séparatrice verte (ligne 5)
+# ============================================================
+for c in range(1, 9):
+    cell = ws.cell(row=5, column=c)
+    cell.fill = PatternFill(start_color=GREEN_FLUO, end_color=GREEN_FLUO, fill_type="solid")
+ws.row_dimensions[5].height = 4
+
+# ============================================================
+# TABLEAU GAUCHE : Catalogue des lots (colonnes A-D)
+# ============================================================
+row_header = 6
+headers_left = ["#", "LOT DISPONIBLE", "  ", "PRIX"]
+cols_left = [1, 2, 3, 4]
 for i, h in enumerate(headers_left):
-    ws.cell(row=row_header, column=LEFT_START + i, value=h)
-style_row(ws, row_header, LEFT_START, LEFT_END, font=header_font, fill=fill_header, alignment=center)
+    cell = ws.cell(row=row_header, column=cols_left[i], value=h)
+    style_cell(cell, font=font_header, fill=fill_green, alignment=center, border=border_grey)
 
-# Catalogue de lots (exemples à personnaliser)
+ws.row_dimensions[row_header].height = 28
+
+# Catalogue de lots
 lots = [
     ("Tube balles Padel (x3)", 8),
     ("Surgrips (lot de 3)", 6),
@@ -87,7 +172,7 @@ lots = [
     ("Bidon isotherme", 12),
     ("Chaussettes sport", 10),
     ("Serviette microfibre", 9),
-    ("Casquette/Visière", 15),
+    ("Casquette / Visière", 15),
     ("Sac à chaussures", 18),
     ("Protège-raquette", 16),
     ("T-shirt technique", 22),
@@ -98,47 +183,40 @@ lots = [
 lot_start_row = row_header + 1
 for idx, (nom, prix) in enumerate(lots):
     r = lot_start_row + idx
-    fill = fill_light if idx % 2 == 0 else fill_white
-    ws.cell(row=r, column=1, value=idx + 1)
-    style_cell(ws.cell(row=r, column=1), font=small_font, fill=fill, alignment=center)
-    ws.cell(row=r, column=2, value=nom)
-    style_cell(ws.cell(row=r, column=2), font=small_font, fill=fill, alignment=left_align)
-    ws.cell(row=r, column=3, value=prix)
-    style_cell(ws.cell(row=r, column=3), font=small_font, fill=fill, alignment=center, number_format=currency_fmt)
+    ws.row_dimensions[r].height = 22
+    fill = fill_dark if idx % 2 == 0 else fill_mid
+
+    cell_num = ws.cell(row=r, column=1, value=idx + 1)
+    style_cell(cell_num, font=font_green, fill=fill, alignment=center, border=border_grey)
+
+    cell_nom = ws.cell(row=r, column=2, value=nom)
+    style_cell(cell_nom, font=font_white, fill=fill, alignment=left_align, border=border_grey)
+
+    # Col C = espace séparateur
+    ws.cell(row=r, column=3).fill = fill
+    ws.cell(row=r, column=3).border = border_grey
+
+    cell_prix = ws.cell(row=r, column=4, value=prix)
+    style_cell(cell_prix, font=font_orange, fill=fill, alignment=center, number_format=currency_fmt, border=border_grey)
 
 lot_end_row = lot_start_row + len(lots) - 1
 
-# Plage nommée pour les lots (colonne B)
-lot_names_range = f"'Budget Lots'!$B${lot_start_row}:$B${lot_end_row}"
+# ============================================================
+# COLONNE SÉPARATRICE (E)
+# ============================================================
+for r in range(1, 30):
+    ws.cell(row=r, column=5).fill = fill_black
 
 # ============================================================
-# TABLEAU DROIT : Attribution par place (colonnes E-G)
+# TABLEAU DROIT : Attribution (colonnes F-H)
 # ============================================================
-RIGHT_COL = 5   # col E
-RIGHT_END = 7   # col G
-
-# Titre
-ws.merge_cells('E1:G1')
-c = ws['E1']
-c.value = "ATTRIBUTION DES LOTS"
-style_cell(c, font=title_font, fill=fill_title_green, alignment=center)
-
-# Budget rappel
-ws.merge_cells('E2:F2')
-ws['E2'] = "Budget :"
-ws['E2'].font = bold_font
-ws['E2'].alignment = Alignment(horizontal='right', vertical='center')
-ws['G2'] = f'=C2'
-style_cell(ws['G2'], font=Font(bold=True, size=12, color="548235"), alignment=center, number_format=currency_fmt)
-
-# En-têtes
-headers_right = ["Place", "Lot attribué", "Coût"]
+headers_right = ["PLACE", "LOT ATTRIBUÉ", "COÛT"]
+cols_right = [6, 7, 8]
 for i, h in enumerate(headers_right):
-    ws.cell(row=row_header, column=RIGHT_COL + i, value=h)
-style_row(ws, row_header, RIGHT_COL, RIGHT_END, font=header_font, fill=fill_header_green, alignment=center)
+    cell = ws.cell(row=row_header, column=cols_right[i], value=h)
+    style_cell(cell, font=font_header, fill=fill_orange, alignment=center, border=border_grey)
 
-# --- Validation : liste déroulante basée sur la colonne B des lots ---
-# On crée la formule de validation avec la plage des noms de lots
+# Validation : liste déroulante
 dv = DataValidation(
     type="list",
     formula1=f"=$B${lot_start_row}:$B${lot_end_row}",
@@ -150,110 +228,138 @@ dv.prompt = "Sélectionnez un lot du catalogue"
 dv.promptTitle = "Choix du lot"
 ws.add_data_validation(dv)
 
-# Structure : 1er (4 lignes), 2ème (3 lignes), 3ème (2 lignes)
+# Places : 1er (4 lots), 2ème (3 lots), 3ème (2 lots)
 places = [
-    ("1er", 4, fill_1er),
-    ("2ème", 3, fill_2eme),
-    ("3ème", 2, fill_3eme),
+    ("1ER", 4, fill_gold, Font(bold=True, size=10, color=BLACK)),
+    ("2ÈME", 3, fill_silver, Font(bold=True, size=10, color=BLACK)),
+    ("3ÈME", 2, fill_bronze, Font(bold=True, size=10, color=WHITE)),
 ]
 
 current_row = row_header + 1
-attribution_rows = []  # pour collecter toutes les lignes de coût
+all_cost_rows = []
 
-for place_name, nb_lots, fill_place in places:
+for place_name, nb_lots, fill_place, font_place in places:
     for i in range(nb_lots):
         r = current_row
-        attribution_rows.append(r)
+        all_cost_rows.append(r)
+        ws.row_dimensions[r].height = 22
 
-        # Place (merge ou label uniquement sur la 1ère ligne)
+        # Place label
         if i == 0:
-            label = f"{place_name} (x{nb_lots} lots max)"
+            label = f"{place_name} - Lot {i+1}"
         else:
-            label = ""
-        ws.cell(row=r, column=RIGHT_COL, value=label)
-        style_cell(ws.cell(row=r, column=RIGHT_COL), font=bold_font, fill=fill_place, alignment=center)
+            label = f"Lot {i+1}"
 
-        # Lot attribué (dropdown)
-        lot_cell = ws.cell(row=r, column=RIGHT_COL + 1)
-        lot_cell.value = None
-        style_cell(lot_cell, font=small_font, fill=fill_place, alignment=left_align)
-        dv.add(lot_cell)
+        cell_place = ws.cell(row=r, column=6, value=label)
+        style_cell(cell_place, font=font_place, fill=fill_place, alignment=center, border=border_grey)
 
-        # Coût = VLOOKUP sur le catalogue
-        cost_cell = ws.cell(row=r, column=RIGHT_COL + 2)
-        # RECHERCHEV : cherche le nom du lot dans B:C et retourne le prix (col 2)
-        cost_cell.value = f'=IF(F{r}="",0,VLOOKUP(F{r},$B${lot_start_row}:$C${lot_end_row},2,FALSE))'
-        style_cell(cost_cell, font=small_font, fill=fill_place, alignment=center, number_format=currency_fmt)
+        # Lot attribué (dropdown) - fond plus sombre pour indiquer saisie
+        cell_lot = ws.cell(row=r, column=7)
+        cell_lot.value = None
+        style_cell(cell_lot, font=font_white, fill=fill_dark, alignment=left_align, border=border_green)
+        dv.add(cell_lot)
+
+        # Coût = RECHERCHEV
+        cell_cost = ws.cell(row=r, column=8)
+        cell_cost.value = f'=IF(G{r}="",0,VLOOKUP(G{r},$B${lot_start_row}:$D${lot_end_row},3,FALSE))'
+        style_cell(cell_cost, font=font_orange, fill=fill_dark, alignment=center, number_format=currency_fmt, border=border_grey)
 
         current_row += 1
 
-# Ligne séparatrice + sous-totaux par place
-subtotal_row = current_row
-# On calcule les plages pour chaque place
-row_cursor = row_header + 1
-for place_name, nb_lots, fill_place in places:
-    start_r = row_cursor
-    end_r = row_cursor + nb_lots - 1
-    row_cursor = end_r + 1
+    # Sous-total par place
+    r_sub = current_row
+    ws.row_dimensions[r_sub].height = 20
+    sub_start = r_sub - nb_lots
+    sub_end = r_sub - 1
 
-# --- Ligne TOTAL ---
-total_row = current_row
-ws.cell(row=total_row, column=RIGHT_COL, value="TOTAL")
-style_cell(ws.cell(row=total_row, column=RIGHT_COL), font=Font(bold=True, size=11), fill=fill_total, alignment=center)
-ws.cell(row=total_row, column=RIGHT_COL + 1, value="")
-style_cell(ws.cell(row=total_row, column=RIGHT_COL + 1), fill=fill_total, alignment=center)
+    cell_sub_label = ws.cell(row=r_sub, column=6, value=f"S/Total {place_name}")
+    style_cell(cell_sub_label, font=font_white_bold, fill=fill_light_grey, alignment=center, border=border_grey)
+    ws.cell(row=r_sub, column=7).fill = fill_light_grey
+    ws.cell(row=r_sub, column=7).border = border_grey
+    cell_sub_total = ws.cell(row=r_sub, column=8)
+    cell_sub_total.value = f'=SUM(H{sub_start}:H{sub_end})'
+    style_cell(cell_sub_total, font=font_green, fill=fill_light_grey, alignment=center, number_format=currency_fmt, border=border_grey)
 
-first_cost = row_header + 1
-last_cost = current_row - 1
-ws.cell(row=total_row, column=RIGHT_END).value = f'=SUM(G{first_cost}:G{last_cost})'
-style_cell(ws.cell(row=total_row, column=RIGHT_END), font=Font(bold=True, size=11), fill=fill_total, alignment=center, number_format=currency_fmt)
-
-# --- Ligne RESTE ---
-reste_row = total_row + 1
-ws.cell(row=reste_row, column=RIGHT_COL, value="RESTE")
-style_cell(ws.cell(row=reste_row, column=RIGHT_COL), font=Font(bold=True, size=11, color="FF0000"), fill=fill_reste, alignment=center)
-ws.cell(row=reste_row, column=RIGHT_COL + 1, value="")
-style_cell(ws.cell(row=reste_row, column=RIGHT_COL + 1), fill=fill_reste, alignment=center)
-ws.cell(row=reste_row, column=RIGHT_END).value = f'=G2-G{total_row}'
-style_cell(ws.cell(row=reste_row, column=RIGHT_END), font=Font(bold=True, size=11, color="FF0000"), fill=fill_reste, alignment=center, number_format=currency_fmt)
-
-# --- Sous-totaux par place (en dessous) ---
-detail_row = reste_row + 2
-ws.cell(row=detail_row, column=RIGHT_COL, value="Détail par place")
-style_cell(ws.cell(row=detail_row, column=RIGHT_COL), font=Font(bold=True, size=10, color="333333"), alignment=left_align)
-
-row_cursor = row_header + 1
-for place_name, nb_lots, fill_place in places:
-    detail_row += 1
-    start_r = row_cursor
-    end_r = row_cursor + nb_lots - 1
-    ws.cell(row=detail_row, column=RIGHT_COL, value=f"Total {place_name}")
-    style_cell(ws.cell(row=detail_row, column=RIGHT_COL), font=bold_font, fill=fill_place, alignment=center)
-    ws.cell(row=detail_row, column=RIGHT_COL + 1, value="")
-    style_cell(ws.cell(row=detail_row, column=RIGHT_COL + 1), fill=fill_place, alignment=center)
-    ws.cell(row=detail_row, column=RIGHT_END).value = f'=SUM(G{start_r}:G{end_r})'
-    style_cell(ws.cell(row=detail_row, column=RIGHT_END), font=bold_font, fill=fill_place, alignment=center, number_format=currency_fmt)
-    row_cursor = end_r + 1
+    current_row += 1
 
 # ============================================================
-# Ajustements largeurs
+# Ligne séparatrice verte avant total
+# ============================================================
+for c in range(6, 9):
+    cell = ws.cell(row=current_row, column=c)
+    cell.fill = PatternFill(start_color=GREEN_FLUO, end_color=GREEN_FLUO, fill_type="solid")
+ws.row_dimensions[current_row].height = 4
+current_row += 1
+
+# --- TOTAL ---
+total_row = current_row
+ws.row_dimensions[total_row].height = 30
+first_cost = row_header + 1
+last_cost = all_cost_rows[-1]
+
+cell_total_label = ws.cell(row=total_row, column=6, value="TOTAL")
+style_cell(cell_total_label, font=Font(bold=True, size=13, color=GREEN_FLUO), fill=fill_black, alignment=center, border=border_green)
+ws.cell(row=total_row, column=7).fill = fill_black
+ws.cell(row=total_row, column=7).border = border_green
+
+# Total = somme des sous-totaux (plus fiable)
+sub_total_rows = []
+cursor = row_header + 1
+for _, nb, _, _ in places:
+    cursor += nb
+    sub_total_rows.append(cursor)
+    cursor += 1
+
+sum_formula = "+".join([f"H{r}" for r in sub_total_rows])
+cell_total = ws.cell(row=total_row, column=8)
+cell_total.value = f'={sum_formula}'
+style_cell(cell_total, font=Font(bold=True, size=13, color=GREEN_FLUO), fill=fill_black, alignment=center, number_format=currency_fmt, border=border_green)
+
+# --- RESTE ---
+reste_row = total_row + 1
+ws.row_dimensions[reste_row].height = 30
+
+cell_reste_label = ws.cell(row=reste_row, column=6, value="RESTE")
+style_cell(cell_reste_label, font=Font(bold=True, size=13, color=RED), fill=fill_black, alignment=center, border=Border(
+    left=Side(style='thin', color=RED), right=Side(style='thin', color=RED),
+    top=Side(style='thin', color=RED), bottom=Side(style='thin', color=RED)))
+ws.cell(row=reste_row, column=7).fill = fill_black
+ws.cell(row=reste_row, column=7).border = Border(
+    left=Side(style='thin', color=RED), right=Side(style='thin', color=RED),
+    top=Side(style='thin', color=RED), bottom=Side(style='thin', color=RED))
+cell_reste = ws.cell(row=reste_row, column=8)
+cell_reste.value = f'={BUDGET}-H{total_row}'
+style_cell(cell_reste, font=Font(bold=True, size=13, color=RED), fill=fill_black, alignment=center, number_format=currency_fmt,
+           border=Border(left=Side(style='thin', color=RED), right=Side(style='thin', color=RED),
+                         top=Side(style='thin', color=RED), bottom=Side(style='thin', color=RED)))
+
+# ============================================================
+# Fond noir restant
+# ============================================================
+max_row = max(lot_end_row, reste_row) + 3
+fill_bg(ws, reste_row + 1, max_row, 1, 8, fill_black)
+
+# ============================================================
+# Largeurs de colonnes
 # ============================================================
 ws.column_dimensions['A'].width = 5
 ws.column_dimensions['B'].width = 28
-ws.column_dimensions['C'].width = 16
-ws.column_dimensions['D'].width = 3   # séparateur
-ws.column_dimensions['E'].width = 22
-ws.column_dimensions['F'].width = 28
-ws.column_dimensions['G'].width = 16
+ws.column_dimensions['C'].width = 3
+ws.column_dimensions['D'].width = 14
+ws.column_dimensions['E'].width = 3   # séparateur
+ws.column_dimensions['F'].width = 18
+ws.column_dimensions['G'].width = 28
+ws.column_dimensions['H'].width = 14
 
-# Figer les volets
-ws.freeze_panes = 'A5'
+# Masquer le quadrillage
+ws.sheet_view.showGridLines = False
 
 # ============================================================
 # Sauvegarde
 # ============================================================
-output = "/home/user/planning-urbansoccer/budget_lots_padel.xlsx"
+output = os.path.join(os.path.dirname(os.path.abspath(__file__)), "budget_lots_padel.xlsx")
 wb.save(output)
 print(f"Fichier généré : {output}")
 print(f"  - Catalogue : {len(lots)} lots")
-print(f"  - Attribution : 4 lots 1er + 3 lots 2ème + 2 lots 3ème = 9 sélecteurs")
+print(f"  - Attribution : 4 lots 1er + 3 lots 2ème + 2 lots 3ème")
+print(f"  - Design : charte Urban Padel (noir/vert fluo/orange/rouge)")
