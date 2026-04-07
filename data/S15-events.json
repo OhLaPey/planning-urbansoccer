@@ -263,13 +263,13 @@
         "code": "CUP-R",
         "label": "Cup Régisseur",
         "start": "2026-04-11T07:30",
-        "end": "2026-04-11T14:00",
+        "end": "2026-04-11T13:45",
         "day": 5
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-04-11T14:00",
+        "start": "2026-04-11T13:45",
         "end": "2026-04-11T16:30",
         "day": 5
       }
@@ -687,7 +687,7 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-04-11T11:00",
-        "end": "2026-04-11T13:00",
+        "end": "2026-04-11T13:45",
         "day": 5
       },
       {
@@ -830,6 +830,6 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-04-07 11:21"
+    "updated_at": "2026-04-07 11:31"
   }
 }
