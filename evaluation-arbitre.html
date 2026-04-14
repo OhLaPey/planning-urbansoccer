@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche d'Évaluation Arbitre — UrbanSoccer League</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #1A1A1A;
+            color: #fff;
+            min-height: 100vh;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(26,26,26,0.97);
+            border-radius: 10px;
+            border-top: 4px solid #FF6600;
+            padding: 24px 20px 32px;
+        }
+
+        /* ── Header ── */
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .header h1 {
+            font-size: 22px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+        .header .subtitle {
+            color: #FF6600;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* ── Infos match ── */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .info-grid .full { grid-column: 1 / -1; }
+        .field-label {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+        .field-input {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            padding: 10px 12px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            transition: border-color 0.2s;
+        }
+        .field-input:focus {
+            outline: none;
+            border-color: #FF6600;
+            box-shadow: 0 0 8px rgba(255,102,0,0.2);
+        }
+        select.field-input {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 32px;
+        }
+
+        /* ── Section ── */
+        .section {
+            margin-bottom: 22px;
+        }
+        .section-title {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #FF6600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255,102,0,0.2);
+        }
+
+        /* ── Critère ── */
+        .critere {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 8px;
+        }
+        .critere-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .critere-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #e0e0e0;
+        }
+        .critere-desc {
+            font-size: 10px;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        /* ── Rating (1-5) ── */
+        .rating {
+            display: flex;
+            gap: 4px;
+        }
+        .rating-btn {
+            width: 36px;
+            height: 32px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 5px;
+            background: rgba(255,255,255,0.04);
+            color: #666;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .rating-btn:hover {
+            border-color: rgba(255,102,0,0.4);
+            color: #FF6600;
+        }
+        .rating-btn.active {
+            background: #FF6600;
+            border-color: #FF6600;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(255,102,0,0.3);
+        }
+
+        /* ── Commentaire par critère ── */
+        .critere-comment {
+            margin-top: 8px;
+        }
+        .critere-comment input {
+            width: 100%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 4px;
+            padding: 6px 10px;
+            color: #ccc;
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 400;
+        }
+        .critere-comment input:focus {
+            outline: none;
+            border-color: rgba(255,102,0,0.3);
+        }
+        .critere-comment input::placeholder { color: #444; }
+
+        /* ── Bilan ── */
+        .bilan-block {
+            margin-bottom: 14px;
+        }
+        .bilan-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .bilan-label.positif { color: #4CAF50; }
+        .bilan-label.amelioration { color: #FF9800; }
+        .bilan-label.general { color: #aaa; }
+        .bilan-textarea {
+            width: 100%;
+            min-height: 80px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 10px 12px;
+            color: #ddd;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 400;
+            resize: vertical;
+            line-height: 1.5;
+        }
+        .bilan-textarea:focus {
+            outline: none;
+            border-color: rgba(255,102,0,0.3);
+            box-shadow: 0 0 8px rgba(255,102,0,0.1);
+        }
+        .bilan-textarea::placeholder { color: #444; }
+
+        /* ── Note globale ── */
+        .note-globale {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+            padding: 16px;
+            background: rgba(255,102,0,0.06);
+            border: 1px solid rgba(255,102,0,0.15);
+            border-radius: 8px;
+        }
+        .note-globale-label {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ccc;
+        }
+        .note-globale-value {
+            font-size: 32px;
+            font-weight: 900;
+            color: #FF6600;
+            min-width: 60px;
+            text-align: center;
+        }
+        .note-globale-max {
+            font-size: 14px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        /* ── Boutons ── */
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 24px;
+        }
+        .btn {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #FF6600;
+            color: #fff;
+            box-shadow: 0 0 12px rgba(255,102,0,0.3);
+        }
+        .btn-primary:hover {
+            background: #e65c00;
+            box-shadow: 0 0 20px rgba(255,102,0,0.4);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.06);
+            color: #aaa;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .btn-secondary:hover {
+            color: #fff;
+            border-color: rgba(255,255,255,0.2);
+        }
+        .btn-danger {
+            background: rgba(244,67,54,0.15);
+            color: #f44336;
+            border: 1px solid rgba(244,67,54,0.2);
+        }
+        .btn-danger:hover {
+            background: rgba(244,67,54,0.25);
+        }
+
+        /* ── Toast ── */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: #333;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ── Historique ── */
+        .historique-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .historique-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 6px;
+            margin-bottom: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .historique-item:hover {
+            background: rgba(255,102,0,0.08);
+            border-color: rgba(255,102,0,0.2);
+        }
+        .historique-info {
+            flex: 1;
+        }
+        .historique-arbitre {
+            font-size: 13px;
+            font-weight: 700;
+            color: #e0e0e0;
+        }
+        .historique-date {
+            font-size: 10px;
+            color: #666;
+            font-weight: 500;
+        }
+        .historique-note {
+            font-size: 18px;
+            font-weight: 900;
+            color: #FF6600;
+            margin-left: 12px;
+        }
+        .historique-delete {
+            margin-left: 10px;
+            background: none;
+            border: none;
+            color: #555;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .historique-delete:hover {
+            color: #f44336;
+            background: rgba(244,67,54,0.1);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 24px;
+            color: #444;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* ── Print ── */
+        @media print {
+            body { background: #fff; color: #000; padding: 0; }
+            .container { border: none; padding: 0; background: #fff; max-width: 100%; }
+            .header { border-bottom: 2px solid #FF6600; }
+            .header h1 { color: #000; }
+            .field-input { border: 1px solid #ccc; color: #000; background: #fff; }
+            .critere { border: 1px solid #ddd; background: #fafafa; }
+            .critere-name { color: #000; }
+            .critere-desc { color: #666; }
+            .rating-btn { border: 1px solid #ccc; color: #999; background: #fff; }
+            .rating-btn.active { background: #FF6600; color: #fff; border-color: #FF6600; }
+            .bilan-textarea { border: 1px solid #ccc; color: #000; background: #fff; }
+            .note-globale { background: #fff3e0; border-color: #FF6600; }
+            .note-globale-label { color: #333; }
+            .actions, .historique-section, .toast { display: none !important; }
+            .section-title::after { background: #FF6600; }
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 500px) {
+            .container { padding: 16px 14px 24px; }
+            .header h1 { font-size: 18px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .rating-btn { width: 32px; height: 28px; font-size: 12px; }
+            .actions { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>Évaluation Arbitre</h1>
+        <div class="subtitle">UrbanSoccer League</div>
+    </div>
+
+    <!-- Infos du match -->
+    <div class="section">
+        <div class="section-title">Informations</div>
+        <div class="info-grid">
+            <div>
+                <label class="field-label">Arbitre</label>
+                <input type="text" class="field-input" id="arbitre" placeholder="Nom de l'arbitre">
+            </div>
+            <div>
+                <label class="field-label">Date</label>
+                <input type="date" class="field-input" id="date">
+            </div>
+            <div>
+                <label class="field-label">Compétition</label>
+                <select class="field-input" id="competition">
+                    <option value="">— Choisir —</option>
+                    <option value="League Lundi">League Lundi</option>
+                    <option value="League Mardi">League Mardi</option>
+                    <option value="League Mercredi">League Mercredi</option>
+                    <option value="League Jeudi">League Jeudi</option>
+                    <option value="League Vendredi">League Vendredi</option>
+                    <option value="League Samedi">League Samedi</option>
+                    <option value="League Dimanche">League Dimanche</option>
+                    <option value="Tournoi">Tournoi</option>
+                    <option value="Autre">Autre</option>
+                </select>
+            </div>
+            <div>
+                <label class="field-label">Créneau</label>
+                <input type="text" class="field-input" id="creneau" placeholder="Ex : 20h00 – 22h00">
+            </div>
+            <div class="full">
+                <label class="field-label">Observateur</label>
+                <input type="text" class="field-input" id="observateur" placeholder="Votre nom">
+            </div>
+        </div>
+    </div>
+
+    <!-- Critères d'évaluation -->
+    <div class="section" id="criteres-section">
+        <div class="section-title">Évaluation</div>
+        <!-- Les critères sont générés en JS -->
+    </div>
+
+    <!-- Note globale -->
+    <div class="note-globale">
+        <span class="note-globale-label">Note globale</span>
+        <span class="note-globale-value" id="note-value">—</span>
+        <span class="note-globale-max" id="note-max"></span>
+    </div>
+
+    <!-- Bilan -->
+    <div class="section">
+        <div class="section-title">Bilan</div>
+
+        <div class="bilan-block">
+            <div class="bilan-label positif">&#9679; Points positifs</div>
+            <textarea class="bilan-textarea" id="positifs" placeholder="Ce que l'arbitre a bien fait durant la soirée..."></textarea>
+        </div>
+
+        <div class="bilan-block">
+            <div class="bilan-label amelioration">&#9679; Axes d'amélioration</div>
+            <textarea class="bilan-textarea" id="ameliorations" placeholder="Ce sur quoi l'arbitre peut progresser..."></textarea>
+        </div>
+
+        <div class="bilan-block">
+            <div class="bilan-label general">&#9679; Commentaire général</div>
+            <textarea class="bilan-textarea" id="commentaire" placeholder="Remarques complémentaires, contexte particulier..."></textarea>
+        </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+        <button class="btn btn-primary" onclick="sauvegarder()">Sauvegarder</button>
+        <button class="btn btn-secondary" onclick="imprimerFiche()">Imprimer</button>
+        <button class="btn btn-danger" onclick="reinitialiser()">Effacer</button>
+    </div>
+
+    <!-- Historique -->
+    <div class="section historique-section" style="margin-top: 32px;">
+        <div class="historique-header">
+            <div class="section-title" style="margin-bottom: 0;">Évaluations sauvegardées</div>
+        </div>
+        <div id="historique-list">
+            <div class="empty-state">Aucune évaluation sauvegardée</div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── Critères d'évaluation ──
+var CRITERES = [
+    {
+        categorie: "Placement & Déplacements",
+        items: [
+            { id: "placement_position", nom: "Positionnement", desc: "Se place de manière optimale pour voir les actions de jeu" },
+            { id: "placement_deplacement", nom: "Déplacements", desc: "Se déplace de façon fluide, suit le rythme du match" },
+            { id: "placement_angles", nom: "Angles de vision", desc: "Cherche les bons angles pour observer les contacts et les fautes" }
+        ]
+    },
+    {
+        categorie: "Sifflet & Signalétique",
+        items: [
+            { id: "sifflet_clarte", nom: "Clarté du sifflet", desc: "Coups de sifflet nets, audibles et bien différenciés" },
+            { id: "sifflet_gestuelle", nom: "Gestuelle", desc: "Signale clairement les décisions (fautes, touches, corners, coups francs)" },
+            { id: "sifflet_timing", nom: "Timing", desc: "Siffle au bon moment, ni trop tôt ni trop tard" }
+        ]
+    },
+    {
+        categorie: "Décisions & Lecture du jeu",
+        items: [
+            { id: "decision_justesse", nom: "Justesse des décisions", desc: "Les décisions prises sont correctes et cohérentes" },
+            { id: "decision_coherence", nom: "Cohérence", desc: "Applique les mêmes critères du début à la fin du match" },
+            { id: "decision_avantage", nom: "Gestion de l'avantage", desc: "Laisse jouer quand c'est pertinent, sait laisser le jeu couler" },
+            { id: "decision_regles", nom: "Connaissance des règles", desc: "Maîtrise les règles spécifiques UrbanSoccer / futsal" }
+        ]
+    },
+    {
+        categorie: "Communication & Gestion",
+        items: [
+            { id: "comm_joueurs", nom: "Communication avec les joueurs", desc: "Échange calmement, explique ses décisions quand nécessaire" },
+            { id: "comm_autorite", nom: "Autorité & Présence", desc: "Inspire le respect, contrôle le match sans être autoritaire" },
+            { id: "comm_conflits", nom: "Gestion des tensions", desc: "Désamorce les situations conflictuelles avec sang-froid" },
+            { id: "comm_cartons", nom: "Utilisation des sanctions", desc: "Utilise les avertissements et cartons de façon juste et proportionnée" }
+        ]
+    },
+    {
+        categorie: "Attitude & Professionnalisme",
+        items: [
+            { id: "attitude_presentation", nom: "Présentation", desc: "Tenue correcte, ponctualité, équipement d'arbitre" },
+            { id: "attitude_impartialite", nom: "Impartialité", desc: "Traite les deux équipes de façon équitable" },
+            { id: "attitude_concentration", nom: "Concentration", desc: "Reste attentif du début à la fin, même sur les temps morts" }
+        ]
+    }
+];
+
+// ── Rendu des critères ──
+function renderCriteres() {
+    var container = document.getElementById('criteres-section');
+    var html = '<div class="section-title">Évaluation</div>';
+
+    CRITERES.forEach(function(cat) {
+        html += '<div style="margin-bottom:16px;">';
+        html += '<div style="font-size:11px;font-weight:800;color:#ccc;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;padding-left:4px;">' + cat.categorie + '</div>';
+        cat.items.forEach(function(item) {
+            html += '<div class="critere" data-id="' + item.id + '">';
+            html += '  <div class="critere-header">';
+            html += '    <span class="critere-name">' + item.nom + '</span>';
+            html += '    <div class="rating">';
+            for (var i = 1; i <= 5; i++) {
+                html += '<button class="rating-btn" data-critere="' + item.id + '" data-value="' + i + '" onclick="noter(\'' + item.id + '\',' + i + ')">' + i + '</button>';
+            }
+            html += '    </div>';
+            html += '  </div>';
+            html += '  <div class="critere-desc">' + item.desc + '</div>';
+            html += '  <div class="critere-comment"><input type="text" placeholder="Commentaire (optionnel)" data-comment="' + item.id + '"></div>';
+            html += '</div>';
+        });
+        html += '</div>';
+    });
+
+    container.innerHTML = html;
+}
+
+// ── Notes ──
+var notes = {};
+
+function noter(id, value) {
+    // Toggle : si même valeur, désélectionner
+    if (notes[id] === value) {
+        delete notes[id];
+    } else {
+        notes[id] = value;
+    }
+
+    // Mettre à jour les boutons
+    var btns = document.querySelectorAll('[data-critere="' + id + '"]');
+    btns.forEach(function(btn) {
+        btn.classList.toggle('active', parseInt(btn.dataset.value) === notes[id]);
+    });
+
+    updateNoteGlobale();
+}
+
+function updateNoteGlobale() {
+    var keys = Object.keys(notes);
+    var totalCriteres = 0;
+    CRITERES.forEach(function(cat) { totalCriteres += cat.items.length; });
+
+    if (keys.length === 0) {
+        document.getElementById('note-value').textContent = '—';
+        document.getElementById('note-max').textContent = '';
+        return;
+    }
+
+    var sum = 0;
+    keys.forEach(function(k) { sum += notes[k]; });
+    var moyenne = (sum / keys.length).toFixed(1);
+
+    document.getElementById('note-value').textContent = moyenne;
+    document.getElementById('note-max').textContent = '/ 5 (' + keys.length + '/' + totalCriteres + ' critères)';
+}
+
+// ── Collecte des données ──
+function collecterDonnees() {
+    var commentaires = {};
+    document.querySelectorAll('[data-comment]').forEach(function(input) {
+        if (input.value.trim()) {
+            commentaires[input.dataset.comment] = input.value.trim();
+        }
+    });
+
+    return {
+        arbitre: document.getElementById('arbitre').value.trim(),
+        date: document.getElementById('date').value,
+        competition: document.getElementById('competition').value,
+        creneau: document.getElementById('creneau').value.trim(),
+        observateur: document.getElementById('observateur').value.trim(),
+        notes: Object.assign({}, notes),
+        commentaires: commentaires,
+        positifs: document.getElementById('positifs').value.trim(),
+        ameliorations: document.getElementById('ameliorations').value.trim(),
+        commentaire: document.getElementById('commentaire').value.trim(),
+        timestamp: new Date().toISOString()
+    };
+}
+
+// ── Sauvegarder ──
+function sauvegarder() {
+    var data = collecterDonnees();
+    if (!data.arbitre) {
+        showToast('Veuillez indiquer le nom de l\'arbitre');
+        return;
+    }
+
+    var evaluations = JSON.parse(localStorage.getItem('evaluations_arbitres') || '[]');
+    data.id = Date.now();
+    evaluations.unshift(data);
+    localStorage.setItem('evaluations_arbitres', JSON.stringify(evaluations));
+
+    showToast('Évaluation sauvegardée');
+    renderHistorique();
+}
+
+// ── Charger une évaluation ──
+function chargerEvaluation(id) {
+    var evaluations = JSON.parse(localStorage.getItem('evaluations_arbitres') || '[]');
+    var data = evaluations.find(function(e) { return e.id === id; });
+    if (!data) return;
+
+    document.getElementById('arbitre').value = data.arbitre || '';
+    document.getElementById('date').value = data.date || '';
+    document.getElementById('competition').value = data.competition || '';
+    document.getElementById('creneau').value = data.creneau || '';
+    document.getElementById('observateur').value = data.observateur || '';
+    document.getElementById('positifs').value = data.positifs || '';
+    document.getElementById('ameliorations').value = data.ameliorations || '';
+    document.getElementById('commentaire').value = data.commentaire || '';
+
+    // Restaurer les notes
+    notes = {};
+    document.querySelectorAll('.rating-btn').forEach(function(btn) { btn.classList.remove('active'); });
+
+    if (data.notes) {
+        Object.keys(data.notes).forEach(function(critId) {
+            noter(critId, data.notes[critId]);
+        });
+    }
+
+    // Restaurer les commentaires
+    document.querySelectorAll('[data-comment]').forEach(function(input) {
+        input.value = (data.commentaires && data.commentaires[input.dataset.comment]) || '';
+    });
+
+    showToast('Évaluation chargée');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Supprimer une évaluation ──
+function supprimerEvaluation(id, event) {
+    event.stopPropagation();
+    if (!confirm('Supprimer cette évaluation ?')) return;
+
+    var evaluations = JSON.parse(localStorage.getItem('evaluations_arbitres') || '[]');
+    evaluations = evaluations.filter(function(e) { return e.id !== id; });
+    localStorage.setItem('evaluations_arbitres', JSON.stringify(evaluations));
+
+    showToast('Évaluation supprimée');
+    renderHistorique();
+}
+
+// ── Historique ──
+function renderHistorique() {
+    var evaluations = JSON.parse(localStorage.getItem('evaluations_arbitres') || '[]');
+    var container = document.getElementById('historique-list');
+
+    if (evaluations.length === 0) {
+        container.innerHTML = '<div class="empty-state">Aucune évaluation sauvegardée</div>';
+        return;
+    }
+
+    var html = '';
+    evaluations.forEach(function(ev) {
+        var keys = Object.keys(ev.notes || {});
+        var moyenne = '—';
+        if (keys.length > 0) {
+            var sum = 0;
+            keys.forEach(function(k) { sum += ev.notes[k]; });
+            moyenne = (sum / keys.length).toFixed(1);
+        }
+
+        var dateStr = '';
+        if (ev.date) {
+            var d = new Date(ev.date + 'T00:00:00');
+            dateStr = d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+        var subtitle = [dateStr, ev.competition].filter(Boolean).join(' — ');
+
+        html += '<div class="historique-item" onclick="chargerEvaluation(' + ev.id + ')">';
+        html += '  <div class="historique-info">';
+        html += '    <div class="historique-arbitre">' + ev.arbitre + '</div>';
+        html += '    <div class="historique-date">' + subtitle + '</div>';
+        html += '  </div>';
+        html += '  <div class="historique-note">' + moyenne + '</div>';
+        html += '  <button class="historique-delete" onclick="supprimerEvaluation(' + ev.id + ', event)" title="Supprimer">&#10005;</button>';
+        html += '</div>';
+    });
+
+    container.innerHTML = html;
+}
+
+// ── Imprimer ──
+function imprimerFiche() {
+    window.print();
+}
+
+// ── Réinitialiser ──
+function reinitialiser() {
+    if (!confirm('Effacer tous les champs de la fiche en cours ?')) return;
+
+    document.getElementById('arbitre').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('competition').value = '';
+    document.getElementById('creneau').value = '';
+    document.getElementById('observateur').value = '';
+    document.getElementById('positifs').value = '';
+    document.getElementById('ameliorations').value = '';
+    document.getElementById('commentaire').value = '';
+
+    notes = {};
+    document.querySelectorAll('.rating-btn').forEach(function(btn) { btn.classList.remove('active'); });
+    document.querySelectorAll('[data-comment]').forEach(function(input) { input.value = ''; });
+
+    updateNoteGlobale();
+    showToast('Fiche réinitialisée');
+}
+
+// ── Toast ──
+function showToast(msg) {
+    var el = document.getElementById('toast');
+    el.textContent = msg;
+    el.classList.add('show');
+    setTimeout(function() { el.classList.remove('show'); }, 2500);
+}
+
+// ── Init ──
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('date').value = new Date().toISOString().split('T')[0];
+    renderCriteres();
+    renderHistorique();
+});
+</script>
+
+</body>
+</html>
