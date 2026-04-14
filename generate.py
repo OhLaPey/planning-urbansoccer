@@ -1198,7 +1198,6 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
     <div class="container">
         <div class="top-bar">
             <button class="admin-btn" id="admin-btn" title="Mode admin">Admin</button>
-            <a href="presences.html" class="psg-btn" title="Suivi des présences PSG Academy">PSG Academy</a>
         </div>
         <div class="header">
             <h1>Planning Urban 7D</h1>
