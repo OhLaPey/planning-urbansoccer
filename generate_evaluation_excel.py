@@ -86,15 +86,13 @@ CRITERES = [
         ("Utilisation des sanctions", "Avertissements et cartons justes et proportionnés"),
     ]),
     ("ATTITUDE & PROFESSIONNALISME", [
-        ("Présentation", "Tenue correcte, ponctualité, équipement d'arbitre"),
+        ("Présentation", "Tenue correcte, équipement d'arbitre"),
         ("Impartialité", "Traite les deux équipes de façon équitable"),
-        ("Concentration", "Reste attentif du début à la fin, même sur les temps morts"),
         ("Timing & Gestion du temps", "Début des matchs à l'heure, durées de mi-temps, enchaînement"),
     ]),
     ("ANIMATION", [
         ("Jeux à la mi-temps", "Animation proposée quand programmée (quiz, défis, jeux…)"),
-        ("Relation clients", "Discussions avec les joueurs/équipes, accueil, disponibilité"),
-        ("Ambiance de la soirée", "Contribue à une bonne atmosphère, dynamise la soirée"),
+        ("Relation clients & Ambiance", "Discussions joueurs/équipes, accueil, disponibilité, bonne atmosphère"),
     ]),
 ]
 
