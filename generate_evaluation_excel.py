@@ -125,62 +125,62 @@ def generate():
 
     # ── HEADER ──
     ws.merge_cells("A1:H1")
-    style_cell(ws, 1, 1, "ÉVALUATION ARBITRE", font_size=16, bold=True, color=WHITE,
+    style_cell(ws, 1, 1, "ÉVALUATION ARBITRE", font_size=14, bold=True, color=WHITE,
                fill=DARK_BG, alignment=Alignment(horizontal="center", vertical="center"))
-    ws.row_dimensions[1].height = 28
+    ws.row_dimensions[1].height = 22
 
     ws.merge_cells("A2:H2")
-    style_cell(ws, 2, 1, "UrbanSoccer", font_size=9, bold=True, color=ORANGE,
+    style_cell(ws, 2, 1, "UrbanSoccer", font_size=8, bold=True, color=ORANGE,
                fill=DARK_BG, alignment=Alignment(horizontal="center", vertical="center"))
-    ws.row_dimensions[2].height = 16
+    ws.row_dimensions[2].height = 13
 
     # Ligne séparatrice orange
     for c in range(1, 9):
         ws.cell(row=3, column=c).fill = PatternFill(start_color=ORANGE, end_color=ORANGE, fill_type="solid")
-    ws.row_dimensions[3].height = 3
+    ws.row_dimensions[3].height = 2
 
     # ── INFORMATIONS ──
     r = 4
     section_title(ws, r, "INFORMATIONS")
-    ws.row_dimensions[r].height = 18
+    ws.row_dimensions[r].height = 14
 
     r = 5
     info_field(ws, r, 1, "Arbitre", 2, merge_end=4)
     info_field(ws, r, 5, "Date", 6, merge_end=8)
-    ws.row_dimensions[r].height = 22
+    ws.row_dimensions[r].height = 18
 
     r = 6
     info_field(ws, r, 1, "Match", 2, merge_end=8)
-    ws.row_dimensions[r].height = 22
+    ws.row_dimensions[r].height = 18
 
     r = 7
     info_field(ws, r, 1, "Créneau", 2, merge_end=4)
     info_field(ws, r, 5, "Observ.", 6, merge_end=8)
-    ws.row_dimensions[r].height = 22
-
-    # ── ÉVALUATION ──
-    r = 9
-    section_title(ws, r, "ÉVALUATION")
     ws.row_dimensions[r].height = 18
 
+    # ── ÉVALUATION ──
+    r = 8
+    section_title(ws, r, "ÉVALUATION")
+    ws.row_dimensions[r].height = 14
+
     # En-têtes colonnes notes
-    r = 10
+    r = 9
     ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=2)
-    style_cell(ws, r, 1, "Critère", font_size=8, bold=True, color=GRAY, fill=DARK_BG,
+    style_cell(ws, r, 1, "Critère", font_size=7, bold=True, color=GRAY, fill=DARK_BG,
                alignment=Alignment(vertical="center"))
     for i, label in enumerate(NOTE_LABELS):
         col = 3 + i
-        style_cell(ws, r, col, label, font_size=8, bold=True, color=GRAY, fill=DARK_BG,
+        style_cell(ws, r, col, label, font_size=7, bold=True, color=GRAY, fill=DARK_BG,
                    alignment=Alignment(horizontal="center", vertical="center"),
                    border=thin_border)
-    ws.row_dimensions[r].height = 16
+    ws.row_dimensions[r].height = 13
 
-    r = 11
+    r = 10
     alt = False
     for cat_name, items in CRITERES:
         # Sous-titre catégorie
         ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-        style_cell(ws, r, 1, cat_name, font_size=8, bold=True, color=ORANGE,
+        style_cell(ws, r, 1, cat_name, font_size=7, bold=True, color=ORANGE,
                    fill="222222", alignment=Alignment(vertical="center"))
         for c in range(1, 9):
             ws.cell(row=r, column=c).border = Border(
@@ -189,7 +189,7 @@ def generate():
             )
             if c > 1:
                 ws.cell(row=r, column=c).fill = PatternFill(start_color="222222", end_color="222222", fill_type="solid")
-        ws.row_dimensions[r].height = 16
+        ws.row_dimensions[r].height = 13
         r += 1
 
         for nom, desc in items:
@@ -199,80 +199,82 @@ def generate():
             # Nom du critère + description sur la même ligne
             style_cell(ws, r, 1, "", fill=bg)
             ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=2)
-            style_cell(ws, r, 1, nom, font_size=9, bold=True, color=WHITE, fill=bg,
+            style_cell(ws, r, 1, nom, font_size=8, bold=True, color=WHITE, fill=bg,
                        border=thin_border, alignment=Alignment(vertical="center", indent=1))
 
             # Cases de notation N/N, 1-5
             for i in range(6):
                 col = 3 + i
-                style_cell(ws, r, col, "", font_size=9, color=WHITE, fill=bg,
+                style_cell(ws, r, col, "", font_size=8, color=WHITE, fill=bg,
                            border=orange_border,
                            alignment=Alignment(horizontal="center", vertical="center"))
-            ws.row_dimensions[r].height = 20
+            ws.row_dimensions[r].height = 15
             r += 1
 
             # Description en dessous, compact
             ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-            style_cell(ws, r, 1, desc, font_size=7, color=GRAY, fill=bg,
+            style_cell(ws, r, 1, desc, font_size=6, color=GRAY, fill=bg,
                        alignment=Alignment(vertical="center", indent=1))
-            ws.row_dimensions[r].height = 13
+            ws.row_dimensions[r].height = 10
             r += 1
 
     # ── SITUATIONS À REVOIR ──
     section_title(ws, r, "SITUATIONS À REVOIR (VIDÉO)")
-    ws.row_dimensions[r].height = 18
-    r += 1
-
-    # En-têtes
-    style_cell(ws, r, 1, "Min.", font_size=8, bold=True, color=GRAY, fill=DARK_BG,
-               border=thin_border, alignment=Alignment(horizontal="center", vertical="center"))
-    ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=8)
-    style_cell(ws, r, 2, "Description de la situation", font_size=8, bold=True, color=GRAY,
-               fill=DARK_BG, border=thin_border, alignment=Alignment(vertical="center"))
     ws.row_dimensions[r].height = 14
     r += 1
 
-    for i in range(4):
+    # En-têtes
+    style_cell(ws, r, 1, "Min.", font_size=7, bold=True, color=GRAY, fill=DARK_BG,
+               border=thin_border, alignment=Alignment(horizontal="center", vertical="center"))
+    ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=8)
+    style_cell(ws, r, 2, "Description de la situation", font_size=7, bold=True, color=GRAY,
+               fill=DARK_BG, border=thin_border, alignment=Alignment(vertical="center"))
+    ws.row_dimensions[r].height = 12
+    r += 1
+
+    for i in range(3):
         bg = LIGHT_ROW if i % 2 else DARK_ROW
-        style_cell(ws, r, 1, "", font_size=9, color=WHITE, fill=bg, border=orange_border,
+        style_cell(ws, r, 1, "", font_size=8, color=WHITE, fill=bg, border=orange_border,
                    alignment=Alignment(horizontal="center", vertical="center"))
         ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=8)
-        style_cell(ws, r, 2, "", font_size=9, color=WHITE, fill=bg, border=orange_border,
+        style_cell(ws, r, 2, "", font_size=8, color=WHITE, fill=bg, border=orange_border,
                    alignment=Alignment(vertical="center"))
-        ws.row_dimensions[r].height = 18
+        ws.row_dimensions[r].height = 15
         r += 1
 
     # ── BILAN ──
     section_title(ws, r, "BILAN")
-    ws.row_dimensions[r].height = 18
+    ws.row_dimensions[r].height = 14
     r += 1
 
     for label, color in [("POINTS POSITIFS", GREEN), ("AXES D'AMÉLIORATION", AMBER), ("COMMENTAIRE GÉNÉRAL", GRAY)]:
         ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-        style_cell(ws, r, 1, label, font_size=8, bold=True, color=color, fill=DARK_BG,
+        style_cell(ws, r, 1, label, font_size=7, bold=True, color=color, fill=DARK_BG,
                    alignment=Alignment(vertical="center"))
-        ws.row_dimensions[r].height = 14
+        ws.row_dimensions[r].height = 12
         r += 1
 
-        for line in range(2):
-            bg = LIGHT_ROW if line % 2 else DARK_ROW
-            ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-            style_cell(ws, r, 1, "", font_size=9, color=WHITE, fill=bg,
-                       border=Border(bottom=Side(style="dotted", color="444444")),
-                       alignment=Alignment(vertical="center", indent=1))
-            ws.row_dimensions[r].height = 18
-            r += 1
+        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
+        bg = DARK_ROW
+        style_cell(ws, r, 1, "", font_size=8, color=WHITE, fill=bg,
+                   border=Border(bottom=Side(style="dotted", color="444444")),
+                   alignment=Alignment(vertical="center", indent=1))
+        ws.row_dimensions[r].height = 30
+        r += 1
 
     # ── Mise en page impression ──
     ws.print_area = f"A1:H{r - 1}"
     ws.page_setup.orientation = "portrait"
+    ws.page_setup.paperSize = ws.PAPERSIZE_A4
     ws.page_setup.fitToWidth = 1
     ws.page_setup.fitToHeight = 1
     ws.sheet_properties.pageSetUpPr.fitToPage = True
-    ws.page_margins.left = 0.3
-    ws.page_margins.right = 0.3
-    ws.page_margins.top = 0.3
-    ws.page_margins.bottom = 0.3
+    ws.page_margins.left = 0.25
+    ws.page_margins.right = 0.25
+    ws.page_margins.top = 0.25
+    ws.page_margins.bottom = 0.25
+    ws.page_margins.header = 0
+    ws.page_margins.footer = 0
 
     output = "Evaluation Arbitre - UrbanSoccer.xlsx"
     wb.save(output)
