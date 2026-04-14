@@ -82,13 +82,6 @@
             border-color: #FF6600;
             box-shadow: 0 0 8px rgba(255,102,0,0.2);
         }
-        select.field-input {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 12px center;
-            padding-right: 32px;
-        }
 
         /* ── Section ── */
         .section {
@@ -226,37 +219,80 @@
         }
         .bilan-textarea::placeholder { color: #444; }
 
-        /* ── Note globale ── */
-        .note-globale {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin: 20px 0;
-            padding: 16px;
-            background: rgba(255,102,0,0.06);
-            border: 1px solid rgba(255,102,0,0.15);
-            border-radius: 8px;
-        }
-        .note-globale-label {
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ccc;
-        }
-        .note-globale-value {
-            font-size: 32px;
-            font-weight: 900;
-            color: #FF6600;
-            min-width: 60px;
-            text-align: center;
-        }
-        .note-globale-max {
-            font-size: 14px;
-            font-weight: 600;
+        /* ── Non noté ── */
+        .rating-btn.nn {
+            font-size: 9px;
+            letter-spacing: 0.5px;
             color: #555;
         }
+        .rating-btn.nn.active {
+            background: #444;
+            border-color: #555;
+            color: #ccc;
+            box-shadow: none;
+        }
+
+        /* ── Situations à revoir ── */
+        .situation-item {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .situation-item input {
+            flex: 1;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 5px;
+            padding: 8px 10px;
+            color: #ddd;
+            font-family: inherit;
+            font-size: 12px;
+        }
+        .situation-item input:focus {
+            outline: none;
+            border-color: rgba(255,102,0,0.3);
+        }
+        .situation-item input::placeholder { color: #444; }
+        .situation-minute {
+            width: 70px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .situation-remove {
+            background: none;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 5px;
+            color: #555;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 0 10px;
+            transition: all 0.2s;
+        }
+        .situation-remove:hover {
+            color: #f44336;
+            border-color: rgba(244,67,54,0.3);
+        }
+        .btn-add-situation {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.04);
+            border: 1px dashed rgba(255,255,255,0.12);
+            border-radius: 6px;
+            padding: 8px 14px;
+            color: #888;
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-add-situation:hover {
+            border-color: rgba(255,102,0,0.3);
+            color: #FF6600;
+        }
+
+        .bilan-label.video { color: #42A5F5; }
 
         /* ── Boutons ── */
         .actions {
@@ -360,12 +396,6 @@
             color: #666;
             font-weight: 500;
         }
-        .historique-note {
-            font-size: 18px;
-            font-weight: 900;
-            color: #FF6600;
-            margin-left: 12px;
-        }
         .historique-delete {
             margin-left: 10px;
             background: none;
@@ -403,9 +433,10 @@
             .rating-btn { border: 1px solid #ccc; color: #999; background: #fff; }
             .rating-btn.active { background: #FF6600; color: #fff; border-color: #FF6600; }
             .bilan-textarea { border: 1px solid #ccc; color: #000; background: #fff; }
-            .note-globale { background: #fff3e0; border-color: #FF6600; }
-            .note-globale-label { color: #333; }
             .actions, .historique-section, .toast { display: none !important; }
+            .rating-btn.nn.active { background: #ccc; color: #333; }
+            .situation-item input { border: 1px solid #ccc; color: #000; background: #fff; }
+            .situation-remove, .btn-add-situation { display: none; }
             .section-title::after { background: #FF6600; }
         }
 
@@ -440,26 +471,15 @@
                 <label class="field-label">Date</label>
                 <input type="date" class="field-input" id="date">
             </div>
-            <div>
-                <label class="field-label">Compétition</label>
-                <select class="field-input" id="competition">
-                    <option value="">— Choisir —</option>
-                    <option value="League Lundi">League Lundi</option>
-                    <option value="League Mardi">League Mardi</option>
-                    <option value="League Mercredi">League Mercredi</option>
-                    <option value="League Jeudi">League Jeudi</option>
-                    <option value="League Vendredi">League Vendredi</option>
-                    <option value="League Samedi">League Samedi</option>
-                    <option value="League Dimanche">League Dimanche</option>
-                    <option value="Tournoi">Tournoi</option>
-                    <option value="Autre">Autre</option>
-                </select>
+            <div class="full">
+                <label class="field-label">Match (équipes)</label>
+                <input type="text" class="field-input" id="match" placeholder="Ex : Les Tontons vs FC Brasserie">
             </div>
             <div>
                 <label class="field-label">Créneau</label>
                 <input type="text" class="field-input" id="creneau" placeholder="Ex : 20h00 – 22h00">
             </div>
-            <div class="full">
+            <div>
                 <label class="field-label">Observateur</label>
                 <input type="text" class="field-input" id="observateur" placeholder="Votre nom">
             </div>
@@ -472,11 +492,12 @@
         <!-- Les critères sont générés en JS -->
     </div>
 
-    <!-- Note globale -->
-    <div class="note-globale">
-        <span class="note-globale-label">Note globale</span>
-        <span class="note-globale-value" id="note-value">—</span>
-        <span class="note-globale-max" id="note-max"></span>
+    <!-- Situations à revoir (vidéo) -->
+    <div class="section">
+        <div class="section-title">Situations à revoir</div>
+        <p style="font-size:10px;color:#666;margin-bottom:10px;">Actions à revoir en vidéo après le match</p>
+        <div id="situations-list"></div>
+        <button class="btn-add-situation" onclick="ajouterSituation()">+ Ajouter une situation</button>
     </div>
 
     <!-- Bilan -->
@@ -526,9 +547,7 @@ var CRITERES = [
     {
         categorie: "Placement & Déplacements",
         items: [
-            { id: "placement_position", nom: "Positionnement", desc: "Se place de manière optimale pour voir les actions de jeu" },
-            { id: "placement_deplacement", nom: "Déplacements", desc: "Se déplace de façon fluide, suit le rythme du match" },
-            { id: "placement_angles", nom: "Angles de vision", desc: "Cherche les bons angles pour observer les contacts et les fautes" }
+            { id: "placement_global", nom: "Placement & Déplacements", desc: "Positionnement sur le terrain, déplacements fluides, bons angles de vision pour suivre le jeu" }
         ]
     },
     {
@@ -536,7 +555,7 @@ var CRITERES = [
         items: [
             { id: "sifflet_clarte", nom: "Clarté du sifflet", desc: "Coups de sifflet nets, audibles et bien différenciés" },
             { id: "sifflet_gestuelle", nom: "Gestuelle", desc: "Signale clairement les décisions (fautes, touches, corners, coups francs)" },
-            { id: "sifflet_timing", nom: "Timing", desc: "Siffle au bon moment, ni trop tôt ni trop tard" }
+            { id: "sifflet_timing", nom: "Timing du sifflet", desc: "Siffle au bon moment, ni trop tôt ni trop tard" }
         ]
     },
     {
@@ -562,7 +581,16 @@ var CRITERES = [
         items: [
             { id: "attitude_presentation", nom: "Présentation", desc: "Tenue correcte, ponctualité, équipement d'arbitre" },
             { id: "attitude_impartialite", nom: "Impartialité", desc: "Traite les deux équipes de façon équitable" },
-            { id: "attitude_concentration", nom: "Concentration", desc: "Reste attentif du début à la fin, même sur les temps morts" }
+            { id: "attitude_concentration", nom: "Concentration", desc: "Reste attentif du début à la fin, même sur les temps morts" },
+            { id: "attitude_timing", nom: "Timing & Gestion du temps", desc: "Début des matchs à l'heure, respect des durées de mi-temps, enchaînement des périodes" }
+        ]
+    },
+    {
+        categorie: "Animation",
+        items: [
+            { id: "anim_mitemps", nom: "Jeux à la mi-temps", desc: "Animation proposée à la mi-temps quand programmée (quiz, défis, jeux…)" },
+            { id: "anim_clients", nom: "Relation clients", desc: "Discussions avec les joueurs/équipes, accueil, disponibilité, ambiance générale" },
+            { id: "anim_ambiance", nom: "Ambiance de la soirée", desc: "Contribue à une bonne atmosphère, dynamise la soirée" }
         ]
     }
 ];
@@ -580,6 +608,7 @@ function renderCriteres() {
             html += '  <div class="critere-header">';
             html += '    <span class="critere-name">' + item.nom + '</span>';
             html += '    <div class="rating">';
+            html += '      <button class="rating-btn nn" data-critere="' + item.id + '" data-value="0" onclick="noter(\'' + item.id + '\',0)">N/N</button>';
             for (var i = 1; i <= 5; i++) {
                 html += '<button class="rating-btn" data-critere="' + item.id + '" data-value="' + i + '" onclick="noter(\'' + item.id + '\',' + i + ')">' + i + '</button>';
             }
@@ -599,39 +628,49 @@ function renderCriteres() {
 var notes = {};
 
 function noter(id, value) {
-    // Toggle : si même valeur, désélectionner
     if (notes[id] === value) {
         delete notes[id];
     } else {
         notes[id] = value;
     }
 
-    // Mettre à jour les boutons
     var btns = document.querySelectorAll('[data-critere="' + id + '"]');
     btns.forEach(function(btn) {
         btn.classList.toggle('active', parseInt(btn.dataset.value) === notes[id]);
     });
-
-    updateNoteGlobale();
 }
 
-function updateNoteGlobale() {
-    var keys = Object.keys(notes);
-    var totalCriteres = 0;
-    CRITERES.forEach(function(cat) { totalCriteres += cat.items.length; });
+// ── Situations à revoir ──
+var situationCount = 0;
 
-    if (keys.length === 0) {
-        document.getElementById('note-value').textContent = '—';
-        document.getElementById('note-max').textContent = '';
-        return;
-    }
+function ajouterSituation(minute, desc) {
+    situationCount++;
+    var id = 'sit_' + situationCount;
+    var list = document.getElementById('situations-list');
+    var div = document.createElement('div');
+    div.className = 'situation-item';
+    div.id = id;
+    div.innerHTML = '<input type="text" class="situation-minute" placeholder="Min." data-sit-minute="' + id + '" value="' + (minute || '') + '">'
+        + '<input type="text" placeholder="Description de la situation..." data-sit-desc="' + id + '" value="' + (desc || '') + '">'
+        + '<button class="situation-remove" onclick="supprimerSituation(\'' + id + '\')">&#10005;</button>';
+    list.appendChild(div);
+}
 
-    var sum = 0;
-    keys.forEach(function(k) { sum += notes[k]; });
-    var moyenne = (sum / keys.length).toFixed(1);
+function supprimerSituation(id) {
+    var el = document.getElementById(id);
+    if (el) el.remove();
+}
 
-    document.getElementById('note-value').textContent = moyenne;
-    document.getElementById('note-max').textContent = '/ 5 (' + keys.length + '/' + totalCriteres + ' critères)';
+function collecterSituations() {
+    var situations = [];
+    document.querySelectorAll('.situation-item').forEach(function(div) {
+        var minute = div.querySelector('[data-sit-minute]').value.trim();
+        var desc = div.querySelector('[data-sit-desc]').value.trim();
+        if (minute || desc) {
+            situations.push({ minute: minute, description: desc });
+        }
+    });
+    return situations;
 }
 
 // ── Collecte des données ──
@@ -646,11 +685,12 @@ function collecterDonnees() {
     return {
         arbitre: document.getElementById('arbitre').value.trim(),
         date: document.getElementById('date').value,
-        competition: document.getElementById('competition').value,
+        match: document.getElementById('match').value.trim(),
         creneau: document.getElementById('creneau').value.trim(),
         observateur: document.getElementById('observateur').value.trim(),
         notes: Object.assign({}, notes),
         commentaires: commentaires,
+        situations: collecterSituations(),
         positifs: document.getElementById('positifs').value.trim(),
         ameliorations: document.getElementById('ameliorations').value.trim(),
         commentaire: document.getElementById('commentaire').value.trim(),
@@ -683,7 +723,7 @@ function chargerEvaluation(id) {
 
     document.getElementById('arbitre').value = data.arbitre || '';
     document.getElementById('date').value = data.date || '';
-    document.getElementById('competition').value = data.competition || '';
+    document.getElementById('match').value = data.match || '';
     document.getElementById('creneau').value = data.creneau || '';
     document.getElementById('observateur').value = data.observateur || '';
     document.getElementById('positifs').value = data.positifs || '';
@@ -704,6 +744,15 @@ function chargerEvaluation(id) {
     document.querySelectorAll('[data-comment]').forEach(function(input) {
         input.value = (data.commentaires && data.commentaires[input.dataset.comment]) || '';
     });
+
+    // Restaurer les situations
+    document.getElementById('situations-list').innerHTML = '';
+    situationCount = 0;
+    if (data.situations && data.situations.length > 0) {
+        data.situations.forEach(function(s) {
+            ajouterSituation(s.minute, s.description);
+        });
+    }
 
     showToast('Évaluation chargée');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -734,27 +783,18 @@ function renderHistorique() {
 
     var html = '';
     evaluations.forEach(function(ev) {
-        var keys = Object.keys(ev.notes || {});
-        var moyenne = '—';
-        if (keys.length > 0) {
-            var sum = 0;
-            keys.forEach(function(k) { sum += ev.notes[k]; });
-            moyenne = (sum / keys.length).toFixed(1);
-        }
-
         var dateStr = '';
         if (ev.date) {
             var d = new Date(ev.date + 'T00:00:00');
             dateStr = d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
         }
-        var subtitle = [dateStr, ev.competition].filter(Boolean).join(' — ');
+        var subtitle = [dateStr, ev.match].filter(Boolean).join(' — ');
 
         html += '<div class="historique-item" onclick="chargerEvaluation(' + ev.id + ')">';
         html += '  <div class="historique-info">';
         html += '    <div class="historique-arbitre">' + ev.arbitre + '</div>';
         html += '    <div class="historique-date">' + subtitle + '</div>';
         html += '  </div>';
-        html += '  <div class="historique-note">' + moyenne + '</div>';
         html += '  <button class="historique-delete" onclick="supprimerEvaluation(' + ev.id + ', event)" title="Supprimer">&#10005;</button>';
         html += '</div>';
     });
@@ -773,7 +813,7 @@ function reinitialiser() {
 
     document.getElementById('arbitre').value = '';
     document.getElementById('date').value = '';
-    document.getElementById('competition').value = '';
+    document.getElementById('match').value = '';
     document.getElementById('creneau').value = '';
     document.getElementById('observateur').value = '';
     document.getElementById('positifs').value = '';
@@ -784,7 +824,9 @@ function reinitialiser() {
     document.querySelectorAll('.rating-btn').forEach(function(btn) { btn.classList.remove('active'); });
     document.querySelectorAll('[data-comment]').forEach(function(input) { input.value = ''; });
 
-    updateNoteGlobale();
+    document.getElementById('situations-list').innerHTML = '';
+    situationCount = 0;
+
     showToast('Fiche réinitialisée');
 }
 
