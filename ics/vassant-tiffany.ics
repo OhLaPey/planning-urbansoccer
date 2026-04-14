@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:vassant-tiffany-s11-1@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260311T130000
 DTEND;TZID=Europe/Paris:20260311T134500
 SUMMARY:Formation
@@ -40,7 +40,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:vassant-tiffany-s11-2@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260311T134500
 DTEND;TZID=Europe/Paris:20260311T173000
 SUMMARY:EDF-C
@@ -54,7 +54,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:vassant-tiffany-s12-1@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260318T134500
 DTEND;TZID=Europe/Paris:20260318T173000
 SUMMARY:EDF-C
@@ -66,7 +66,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:vassant-tiffany-s13-1@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260325T134500
 DTEND;TZID=Europe/Paris:20260325T173000
 SUMMARY:EDF-C
@@ -80,8 +80,24 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
   Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
+UID:vassant-tiffany-s13-2@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260328T090000
+DTEND;TZID=Europe/Paris:20260328T130000
+SUMMARY:[Remplace Matthieu] EDF-C
+DESCRIPTION:Remplace BONILLO Matthieu\nSemaine classique\n⚽🥎 EDF et co
+ urs padel sur les jours habituels\n🏆⚽️ Betsson League et Business L
+ eague de lundi à mercredi\n🏆🥎 P25H lundi matin et P50H vendredi mat
+ in\n🎾 Dimanche\, test pour les joueurs intéressés pour des cours co p
+ adel\n🎂 Des anniversaires sont prévus sur les anniversaires\nMAJ 2026-
+ 03-23 14:54: MAJ Anniversaires\, un week-end qui sera très clame :\n🎂
+  Samedi 28/03 : Florian 11h-15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc 
+ RAS\n🎂 Dimanche 29/03 : Enzo repos\, Florian alternance VDC/Anniv jusq
+ u'à 17h15\, Mehdi RAS
+END:VEVENT
+BEGIN:VEVENT
 UID:vassant-tiffany-s14-1@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260401T134500
 DTEND;TZID=Europe/Paris:20260401T173000
 SUMMARY:EDF-C
@@ -90,6 +106,41 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
  s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
  amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
  ont prévus sur les anniversaires. On verra si les créneaux sont réserv
- és
+ és\nMAJ 2026-04-03 11:28: 🎂MAJ Anniversaire 🎂 \nSamedi : \n- RAS po
+ ur Loïc Perez\n- Quentin\, pas d'anniv mais début de VDC à 15h30\n- Meh
+ di\, pas d'anniv mais début VDC à 17h30\n\nDimanche : \n- Yanis\, matin
+ ée VDC seulement\, pas d'anniv l'aprem\n- Quentin\, Anniv à 15h15 puis V
+ DC
+END:VEVENT
+BEGIN:VEVENT
+UID:vassant-tiffany-s15-1@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260408T134500
+DTEND;TZID=Europe/Paris:20260408T173000
+SUMMARY:EDF-C
+DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
+ ais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques fé
+ rié donc semblable à un dimanche padel\, on ouvre à 9h et du renfort en
+  début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habitue
+ ls \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n
+ 🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n
+ 🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:vassant-tiffany-s16-1@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260415T134500
+DTEND;TZID=Europe/Paris:20260415T173000
+SUMMARY:EDF-C
+DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les 
+ jours habituels\n🏆⚽️ Betsson League et Business League de lundi à 
+ mercredi\n🏆🥎 Cup Padel : P50 lundi aprem\, montante/descendante vend
+ redi soir et  P50M dimanche matin\n🏆🍕🍻 Matchs retours des quarts 
+ de LDC mardi et mercredi\n🏆⚽️ Tournoi étudiant IGENSIA mercredi so
+ ir\n🥎🇲🇽 Inauguration officielle des pistes de padel jeudi soir. C
+ eux qui ne travaillent pas peuvent bien entendu passer pour profiter de la
+  soirée\n🎂 Des anniversaires sont prévus sur les anniversaires. On ve
+ rra si les créneaux sont réservés
 END:VEVENT
 END:VCALENDAR

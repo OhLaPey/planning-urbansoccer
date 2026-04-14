@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-1@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260224T200000
 DTEND;TZID=Europe/Paris:20260224T235900
 SUMMARY:[Remplace Lucas] Vie de centre
@@ -47,7 +47,7 @@ DESCRIPTION:Remplace BOULARDET Lucas\nSemaine de vacances scolaires\n⚽ St
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-2@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260301T093000
 DTEND;TZID=Europe/Paris:20260301T101500
 SUMMARY:Vie de centre
@@ -67,7 +67,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-3@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260301T101500
 DTEND;TZID=Europe/Paris:20260301T121500
 SUMMARY:Anniversaire
@@ -87,7 +87,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-4@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260301T121500
 DTEND;TZID=Europe/Paris:20260301T124500
 SUMMARY:Vie de centre
@@ -107,7 +107,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-5@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260301T134500
 DTEND;TZID=Europe/Paris:20260301T174500
 SUMMARY:Anniversaire
@@ -127,7 +127,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-1@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260308T093000
 DTEND;TZID=Europe/Paris:20260308T101500
 SUMMARY:Vie de centre
@@ -145,7 +145,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-2@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260308T101500
 DTEND;TZID=Europe/Paris:20260308T121500
 SUMMARY:Anniversaire
@@ -163,7 +163,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-3@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260308T121500
 DTEND;TZID=Europe/Paris:20260308T124500
 SUMMARY:Vie de centre
@@ -181,7 +181,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-4@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260308T134500
 DTEND;TZID=Europe/Paris:20260308T174500
 SUMMARY:Anniversaire
@@ -199,7 +199,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-1@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260314T131500
 DTEND;TZID=Europe/Paris:20260314T171500
 SUMMARY:[Remplacé par Florian] Anniversaire
@@ -213,7 +213,7 @@ DESCRIPTION:Remplacé par TINGUY Florian\nPlanning 09/03 au 15/03 \n\n⚽
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-2@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260315T093000
 DTEND;TZID=Europe/Paris:20260315T101500
 SUMMARY:Vie de centre
@@ -227,7 +227,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-3@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260315T101500
 DTEND;TZID=Europe/Paris:20260315T121500
 SUMMARY:Anniversaire
@@ -241,7 +241,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-4@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260315T121500
 DTEND;TZID=Europe/Paris:20260315T124500
 SUMMARY:Vie de centre
@@ -255,7 +255,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-5@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260315T131500
 DTEND;TZID=Europe/Paris:20260315T151500
 SUMMARY:Anniversaire
@@ -269,7 +269,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s12-1@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260322T093000
 DTEND;TZID=Europe/Paris:20260322T101500
 SUMMARY:Vie de centre
@@ -281,7 +281,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s12-2@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260322T101500
 DTEND;TZID=Europe/Paris:20260322T121500
 SUMMARY:Anniversaire
@@ -293,7 +293,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s12-3@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260322T121500
 DTEND;TZID=Europe/Paris:20260322T124500
 SUMMARY:Vie de centre
@@ -305,7 +305,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s12-4@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260322T131500
 DTEND;TZID=Europe/Paris:20260322T151500
 SUMMARY:Anniversaire
@@ -317,7 +317,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s14-1@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260405T093000
 DTEND;TZID=Europe/Paris:20260405T101500
 SUMMARY:Vie de centre
@@ -326,11 +326,15 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
  s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
  amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
  ont prévus sur les anniversaires. On verra si les créneaux sont réserv
- és
+ és\nMAJ 2026-04-03 11:28: 🎂MAJ Anniversaire 🎂 \nSamedi : \n- RAS po
+ ur Loïc Perez\n- Quentin\, pas d'anniv mais début de VDC à 15h30\n- Meh
+ di\, pas d'anniv mais début VDC à 17h30\n\nDimanche : \n- Yanis\, matin
+ ée VDC seulement\, pas d'anniv l'aprem\n- Quentin\, Anniv à 15h15 puis V
+ DC
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s14-2@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260405T101500
 DTEND;TZID=Europe/Paris:20260405T121500
 SUMMARY:Anniversaire
@@ -339,11 +343,15 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
  s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
  amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
  ont prévus sur les anniversaires. On verra si les créneaux sont réserv
- és
+ és\nMAJ 2026-04-03 11:28: 🎂MAJ Anniversaire 🎂 \nSamedi : \n- RAS po
+ ur Loïc Perez\n- Quentin\, pas d'anniv mais début de VDC à 15h30\n- Meh
+ di\, pas d'anniv mais début VDC à 17h30\n\nDimanche : \n- Yanis\, matin
+ ée VDC seulement\, pas d'anniv l'aprem\n- Quentin\, Anniv à 15h15 puis V
+ DC
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s14-3@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260405T121500
 DTEND;TZID=Europe/Paris:20260405T124500
 SUMMARY:Vie de centre
@@ -352,11 +360,15 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
  s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
  amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
  ont prévus sur les anniversaires. On verra si les créneaux sont réserv
- és
+ és\nMAJ 2026-04-03 11:28: 🎂MAJ Anniversaire 🎂 \nSamedi : \n- RAS po
+ ur Loïc Perez\n- Quentin\, pas d'anniv mais début de VDC à 15h30\n- Meh
+ di\, pas d'anniv mais début VDC à 17h30\n\nDimanche : \n- Yanis\, matin
+ ée VDC seulement\, pas d'anniv l'aprem\n- Quentin\, Anniv à 15h15 puis V
+ DC
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s14-4@urban7d
-DTSTAMP:20260326T151623Z
+DTSTAMP:20260414T200354Z
 DTSTART;TZID=Europe/Paris:20260405T133000
 DTEND;TZID=Europe/Paris:20260405T173000
 SUMMARY:Anniversaire
@@ -365,6 +377,239 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
  s League de lundi à jeudi\n🏆🥎 Cup Padel : P25 lundi aprem et P250 s
  amedi aprem\n🎉⚽🥎 Event Equans jeudi soir\n🎂 Des anniversaires s
  ont prévus sur les anniversaires. On verra si les créneaux sont réserv
- és
+ és\nMAJ 2026-04-03 11:28: 🎂MAJ Anniversaire 🎂 \nSamedi : \n- RAS po
+ ur Loïc Perez\n- Quentin\, pas d'anniv mais début de VDC à 15h30\n- Meh
+ di\, pas d'anniv mais début VDC à 17h30\n\nDimanche : \n- Yanis\, matin
+ ée VDC seulement\, pas d'anniv l'aprem\n- Quentin\, Anniv à 15h15 puis V
+ DC
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s15-1@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260412T093000
+DTEND;TZID=Europe/Paris:20260412T101500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
+ ais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques fé
+ rié donc semblable à un dimanche padel\, on ouvre à 9h et du renfort en
+  début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habitue
+ ls \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n
+ 🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n
+ 🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s15-2@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260412T101500
+DTEND;TZID=Europe/Paris:20260412T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
+ ais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques fé
+ rié donc semblable à un dimanche padel\, on ouvre à 9h et du renfort en
+  début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habitue
+ ls \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n
+ 🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n
+ 🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s15-3@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260412T121500
+DTEND;TZID=Europe/Paris:20260412T124500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
+ ais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques fé
+ rié donc semblable à un dimanche padel\, on ouvre à 9h et du renfort en
+  début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habitue
+ ls \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n
+ 🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n
+ 🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s15-4@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260412T133000
+DTEND;TZID=Europe/Paris:20260412T173000
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
+ ais alterner les semaines de repos de chacun\n\n🍫  Lundi de Pâques fé
+ rié donc semblable à un dimanche padel\, on ouvre à 9h et du renfort en
+  début d'aprem \n\n⚽🥎 EDF et Cours co de Padel sur les jours habitue
+ ls \n⚽🏆 Betsson League et Business League de lundi à mercredi\n\n
+ 🏆🍻🍕 Semaine de LDC \n\n🎉 Event Bureau du Golf jeudi matin\n
+ 🏆🥎 Cup Padel : P100M samedi matin\n🎂 Des anniversaires sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s16-1@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260419T093000
+DTEND;TZID=Europe/Paris:20260419T101500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les 
+ jours habituels\n🏆⚽️ Betsson League et Business League de lundi à 
+ mercredi\n🏆🥎 Cup Padel : P50 lundi aprem\, montante/descendante vend
+ redi soir et  P50M dimanche matin\n🏆🍕🍻 Matchs retours des quarts 
+ de LDC mardi et mercredi\n🏆⚽️ Tournoi étudiant IGENSIA mercredi so
+ ir\n🥎🇲🇽 Inauguration officielle des pistes de padel jeudi soir. C
+ eux qui ne travaillent pas peuvent bien entendu passer pour profiter de la
+  soirée\n🎂 Des anniversaires sont prévus sur les anniversaires. On ve
+ rra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s16-2@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260419T101500
+DTEND;TZID=Europe/Paris:20260419T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les 
+ jours habituels\n🏆⚽️ Betsson League et Business League de lundi à 
+ mercredi\n🏆🥎 Cup Padel : P50 lundi aprem\, montante/descendante vend
+ redi soir et  P50M dimanche matin\n🏆🍕🍻 Matchs retours des quarts 
+ de LDC mardi et mercredi\n🏆⚽️ Tournoi étudiant IGENSIA mercredi so
+ ir\n🥎🇲🇽 Inauguration officielle des pistes de padel jeudi soir. C
+ eux qui ne travaillent pas peuvent bien entendu passer pour profiter de la
+  soirée\n🎂 Des anniversaires sont prévus sur les anniversaires. On ve
+ rra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s16-3@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260419T121500
+DTEND;TZID=Europe/Paris:20260419T124500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les 
+ jours habituels\n🏆⚽️ Betsson League et Business League de lundi à 
+ mercredi\n🏆🥎 Cup Padel : P50 lundi aprem\, montante/descendante vend
+ redi soir et  P50M dimanche matin\n🏆🍕🍻 Matchs retours des quarts 
+ de LDC mardi et mercredi\n🏆⚽️ Tournoi étudiant IGENSIA mercredi so
+ ir\n🥎🇲🇽 Inauguration officielle des pistes de padel jeudi soir. C
+ eux qui ne travaillent pas peuvent bien entendu passer pour profiter de la
+  soirée\n🎂 Des anniversaires sont prévus sur les anniversaires. On ve
+ rra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s16-4@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260419T133000
+DTEND;TZID=Europe/Paris:20260419T173000
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les 
+ jours habituels\n🏆⚽️ Betsson League et Business League de lundi à 
+ mercredi\n🏆🥎 Cup Padel : P50 lundi aprem\, montante/descendante vend
+ redi soir et  P50M dimanche matin\n🏆🍕🍻 Matchs retours des quarts 
+ de LDC mardi et mercredi\n🏆⚽️ Tournoi étudiant IGENSIA mercredi so
+ ir\n🥎🇲🇽 Inauguration officielle des pistes de padel jeudi soir. C
+ eux qui ne travaillent pas peuvent bien entendu passer pour profiter de la
+  soirée\n🎂 Des anniversaires sont prévus sur les anniversaires. On ve
+ rra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s17-1@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260423T094500
+DTEND;TZID=Europe/Paris:20260423T121500
+SUMMARY:EV-AN
+DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
+ ⚽️ Semaine de vacances donc pas d'EDF mais des stages\n🏆🥎 P100 l
+ undi matin\, P50 mercredi matin\, P25 vendredi matin\n🏆⚽️ Betsson L
+ eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
+ e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
+ n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
+ res. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s17-2@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260426T093000
+DTEND;TZID=Europe/Paris:20260426T101500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
+ ⚽️ Semaine de vacances donc pas d'EDF mais des stages\n🏆🥎 P100 l
+ undi matin\, P50 mercredi matin\, P25 vendredi matin\n🏆⚽️ Betsson L
+ eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
+ e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
+ n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
+ res. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s17-3@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260426T101500
+DTEND;TZID=Europe/Paris:20260426T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
+ ⚽️ Semaine de vacances donc pas d'EDF mais des stages\n🏆🥎 P100 l
+ undi matin\, P50 mercredi matin\, P25 vendredi matin\n🏆⚽️ Betsson L
+ eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
+ e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
+ n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
+ res. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s17-4@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260426T121500
+DTEND;TZID=Europe/Paris:20260426T124500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
+ ⚽️ Semaine de vacances donc pas d'EDF mais des stages\n🏆🥎 P100 l
+ undi matin\, P50 mercredi matin\, P25 vendredi matin\n🏆⚽️ Betsson L
+ eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
+ e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
+ n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
+ res. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s17-5@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260426T133000
+DTEND;TZID=Europe/Paris:20260426T173000
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
+ ⚽️ Semaine de vacances donc pas d'EDF mais des stages\n🏆🥎 P100 l
+ undi matin\, P50 mercredi matin\, P25 vendredi matin\n🏆⚽️ Betsson L
+ eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
+ e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
+ n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
+ res. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s18-1@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260502T140000
+DTEND;TZID=Europe/Paris:20260502T180000
+SUMMARY:Anniversaire
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s18-2@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260503T093000
+DTEND;TZID=Europe/Paris:20260503T101500
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s18-3@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260503T101500
+DTEND;TZID=Europe/Paris:20260503T121500
+SUMMARY:Anniversaire
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s18-4@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260503T121500
+DTEND;TZID=Europe/Paris:20260503T124500
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s18-5@urban7d
+DTSTAMP:20260414T200354Z
+DTSTART;TZID=Europe/Paris:20260503T133000
+DTEND;TZID=Europe/Paris:20260503T173000
+SUMMARY:Anniversaire
 END:VEVENT
 END:VCALENDAR

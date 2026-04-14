@@ -669,7 +669,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
         /* ── Top bar (Admin + PSG Academy) ── */
         .top-bar {{ display: flex; justify-content: space-between; align-items: center;
                      padding: 8px 4px 0; }}
-        .top-bar .admin-btn, .top-bar .psg-btn {{
+        .top-bar .admin-btn, .top-bar .psg-btn, .top-bar .eval-btn {{
             padding: 10px 22px; border-radius: 8px; font-size: 14px; font-weight: 700;
             cursor: pointer; text-decoration: none; transition: all 0.25s;
             font-family: 'Montserrat', sans-serif; text-transform: uppercase;
@@ -682,6 +682,10 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                               border-color: rgba(227,6,19,0.4); }}
         .top-bar .psg-btn:hover {{ background: rgba(227,6,19,0.15); color: #ff3040;
                                     border-color: #E30613; }}
+        .top-bar .eval-btn {{ color: #FF6600; border-color: rgba(255,102,0,0.25); display: none; }}
+        .top-bar .eval-btn.visible {{ display: inline-block; }}
+        .top-bar .eval-btn:hover {{ background: rgba(255,102,0,0.1);
+                                     border-color: rgba(255,102,0,0.5); }}
 
         /* ── Header ── */
         .header {{ text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }}
@@ -1125,7 +1129,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             .dates {{ font-size: 16px; padding: 8px 20px; }}
             .week-selector {{ gap: 8px; }}
             .week-tab {{ font-size: 14px; padding: 10px 18px; }}
-            .top-bar .admin-btn, .top-bar .psg-btn {{ font-size: 11px; padding: 6px 12px; }}
+            .top-bar .admin-btn, .top-bar .psg-btn, .top-bar .eval-btn {{ font-size: 11px; padding: 6px 12px; }}
             .view-toggle {{ max-width: 500px; margin-left: auto; margin-right: auto; }}
             .view-btn {{ font-size: 14px; padding: 10px; }}
             .day-tabs {{ gap: 6px; margin-bottom: 16px; }}
@@ -1207,6 +1211,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
     <div class="container">
         <div class="top-bar">
             <button class="admin-btn" id="admin-btn" title="Mode admin">Admin</button>
+            <a href="evaluation-arbitre.html" class="eval-btn" id="eval-btn" title="Fiche d'évaluation arbitre">Éval Arbitre</a>
         </div>
         <div class="header">
             <h1>Planning Urban 7D</h1>
@@ -3648,14 +3653,18 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
 
         // Admin button in header (combines auth + edit toggle)
         var adminBtnEl = document.getElementById('admin-btn');
+        var evalBtnEl = document.getElementById('eval-btn');
+        function showEvalBtn() {{ if (evalBtnEl) evalBtnEl.classList.add('visible'); }}
         if (isAdminUnlocked()) {{
             adminBtnEl.classList.add('unlocked');
+            showEvalBtn();
         }}
         adminBtnEl.onclick = function() {{
             if (!isAdminUnlocked()) {{
                 if (verifyStaff()) {{
                     unlockAdmin();
                     adminBtnEl.classList.add('unlocked');
+                    showEvalBtn();
                     initAdminToolbar();
                     renderNotes();
                     var toggleBtn = adminToolbarEl.querySelector('.edit-toggle');

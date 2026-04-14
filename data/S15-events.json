@@ -57,7 +57,7 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-04-11T09:45",
-        "end": "2026-04-11T12:45",
+        "end": "2026-04-11T17:30",
         "day": 5
       },
       {
@@ -66,20 +66,6 @@
         "start": "2026-04-12T08:45",
         "end": "2026-04-12T16:00",
         "day": 6
-      },
-      {
-        "code": "EV-LO",
-        "label": "Événement logistique",
-        "start": "2026-04-11T12:45",
-        "end": "2026-04-11T16:00",
-        "day": 5
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-04-11T16:00",
-        "end": "2026-04-11T17:45",
-        "day": 5
       }
     ]
   },
@@ -263,14 +249,7 @@
         "code": "CUP-R",
         "label": "Cup Régisseur",
         "start": "2026-04-11T07:30",
-        "end": "2026-04-11T13:45",
-        "day": 5
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-04-11T13:45",
-        "end": "2026-04-11T16:30",
+        "end": "2026-04-11T14:00",
         "day": 5
       }
     ]
@@ -459,13 +438,27 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-04-12T09:30",
+        "end": "2026-04-12T10:15",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-04-12T10:15",
+        "end": "2026-04-12T12:15",
+        "day": 6
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-04-12T12:15",
         "end": "2026-04-12T12:45",
         "day": 6
       },
       {
         "code": "ANNIV",
         "label": "Anniversaire",
-        "start": "2026-04-12T13:15",
+        "start": "2026-04-12T13:30",
         "end": "2026-04-12T17:30",
         "day": 6
       }
@@ -588,7 +581,7 @@
         "code": "ANNIV",
         "label": "Anniversaire",
         "start": "2026-04-11T15:45",
-        "end": "2026-04-11T17:30",
+        "end": "2026-04-11T17:45",
         "day": 5
       }
     ]
@@ -673,20 +666,20 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-04-11T11:00",
-        "end": "2026-04-11T13:45",
+        "end": "2026-04-11T13:00",
         "day": 5
       },
       {
         "code": "ANNIV",
         "label": "Anniversaire",
         "start": "2026-04-11T13:45",
-        "end": "2026-04-11T17:15",
+        "end": "2026-04-11T17:45",
         "day": 5
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-04-11T17:15",
+        "start": "2026-04-11T17:45",
         "end": "2026-04-11T21:45",
         "day": 5
       },
@@ -776,24 +769,17 @@
         "day": 4
       },
       {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-04-11T18:00",
-        "end": "2026-04-11T22:45",
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-04-11T13:15",
+        "end": "2026-04-11T17:15",
         "day": 5
       },
       {
-        "code": "EDF-C",
-        "label": "EDF-C",
-        "start": "2026-04-08T13:45",
-        "end": "2026-04-08T17:30",
-        "day": 2
-      },
-      {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-04-11T16:00",
-        "end": "2026-04-11T18:00",
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-04-11T17:15",
+        "end": "2026-04-11T22:45",
         "day": 5
       }
     ]
@@ -815,7 +801,7 @@
     ]
   },
   "_meta": {
-    "source": "Modif admin",
-    "updated_at": "2026-04-07 11:34"
+    "source": "Excel",
+    "updated_at": "2026-04-14 20:03"
   }
 }

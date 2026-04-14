@@ -35,8 +35,8 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-24T12:00",
-        "end": "2026-03-24T18:30",
+        "start": "2026-03-24T11:45",
+        "end": "2026-03-24T22:00",
         "day": 1
       },
       {
@@ -97,15 +97,7 @@
   },
   "COHAT Linda": {
     "slug": "cohat-linda",
-    "events": [
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-24T18:00",
-        "end": "2026-03-24T23:00",
-        "day": 1
-      }
-    ]
+    "events": []
   },
   "CRUZEL Quentin": {
     "slug": "cruzel-quentin",
@@ -489,13 +481,6 @@
         "start": "2026-03-28T15:45",
         "end": "2026-03-28T17:45",
         "day": 5
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-03-24T15:00",
-        "end": "2026-03-24T17:15",
-        "day": 1
       }
     ]
   },
@@ -590,9 +575,16 @@
         "day": 0
       },
       {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-28T13:45",
+        "end": "2026-03-28T17:45",
+        "day": 5
+      },
+      {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-03-28T17:30",
+        "start": "2026-03-28T17:45",
         "end": "2026-03-28T21:15",
         "day": 5
       },
@@ -607,7 +599,7 @@
         "code": "ANNIV",
         "label": "Anniversaire",
         "start": "2026-03-29T13:45",
-        "end": "2026-03-29T17:15",
+        "end": "2026-03-29T17:45",
         "day": 6
       }
     ]
@@ -621,6 +613,13 @@
         "start": "2026-03-25T13:45",
         "end": "2026-03-25T17:30",
         "day": 2
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-29T13:15",
+        "end": "2026-03-29T17:15",
+        "day": 6
       }
     ]
   },
@@ -664,7 +663,14 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-28T11:00",
-        "end": "2026-03-28T15:00",
+        "end": "2026-03-28T13:00",
+        "day": 5
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-03-28T13:30",
+        "end": "2026-03-28T17:30",
         "day": 5
       },
       {
@@ -685,14 +691,14 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-03-29T12:15",
-        "end": "2026-03-29T15:15",
+        "end": "2026-03-29T12:45",
         "day": 6
       },
       {
         "code": "ANNIV",
         "label": "Anniversaire",
-        "start": "2026-03-29T15:15",
-        "end": "2026-03-29T17:15",
+        "start": "2026-03-29T13:15",
+        "end": "2026-03-29T15:15",
         "day": 6
       }
     ]
@@ -729,7 +735,7 @@
     ]
   },
   "_meta": {
-    "source": "Modif admin",
-    "updated_at": "2026-03-28 10:28"
+    "source": "Excel",
+    "updated_at": "2026-04-14 20:03"
   }
 }
