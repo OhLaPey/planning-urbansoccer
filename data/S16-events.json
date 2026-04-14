@@ -57,6 +57,13 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
+        "start": "2026-04-13T22:00",
+        "end": "2026-04-14T00:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
         "start": "2026-04-14T16:00",
         "end": "2026-04-14T18:15",
         "day": 1
@@ -109,20 +116,6 @@
         "start": "2026-04-16T17:00",
         "end": "2026-04-17T00:00",
         "day": 3
-      },
-      {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-04-15T15:15",
-        "end": "2026-04-15T17:15",
-        "day": 2
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-04-13T22:00",
-        "end": "2026-04-13T23:59",
-        "day": 0
       }
     ]
   },
@@ -135,13 +128,6 @@
         "start": "2026-04-19T07:30",
         "end": "2026-04-19T13:00",
         "day": 6
-      },
-      {
-        "code": "PAD-A",
-        "label": "Padel animation",
-        "start": "2026-04-15T15:30",
-        "end": "2026-04-15T16:30",
-        "day": 2
       }
     ]
   },
@@ -845,7 +831,7 @@
     ]
   },
   "_meta": {
-    "source": "Modif admin",
-    "updated_at": "2026-04-13 17:45"
+    "source": "Excel",
+    "updated_at": "2026-04-14 15:31"
   }
 }
