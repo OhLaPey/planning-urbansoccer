@@ -346,22 +346,31 @@ def parse_shifts(ws, rows, dates, week_num, employee_name=""):
     events.sort(key=lambda e: e["start"])
 
     # Résoudre les chevauchements : un staff ne peut pas avoir deux items en même temps.
-    # Si deux events se chevauchent, on tronque la fin du premier au début du suivant.
+    # Si deux events se chevauchent, on découpe le premier en deux parties :
+    # une partie avant et une partie après le second event.
     resolved = []
     for ev in events:
         if resolved:
             prev = resolved[-1]
             if ev["start"] < prev["end"]:
-                print(
-                    f"  /!\\ {employee_name} : chevauchement détecté entre "
-                    f"«{prev['code']}» (fin {prev['end'].strftime('%H:%M')}) et "
-                    f"«{ev['code']}» (début {ev['start'].strftime('%H:%M')}) — "
-                    f"troncature de «{prev['code']}»"
-                )
+                original_end = prev["end"]
+                # Tronquer le précédent pour qu'il finisse au début du nouveau
                 prev["end"] = ev["start"]
-                # Si le précédent a une durée nulle ou négative, le supprimer
                 if prev["end"] <= prev["start"]:
                     resolved.pop()
+                # Ajouter le nouveau event
+                resolved.append(ev)
+                # Si le précédent continuait après le nouveau, créer un reste
+                if original_end > ev["end"]:
+                    rest = {
+                        "code": prev["code"],
+                        "label": prev["label"],
+                        "start": ev["end"],
+                        "end": original_end,
+                        "week": prev["week"],
+                    }
+                    resolved.append(rest)
+                continue
         resolved.append(ev)
 
     return resolved

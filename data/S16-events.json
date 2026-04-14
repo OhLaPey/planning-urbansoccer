@@ -57,6 +57,13 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
+        "start": "2026-04-13T22:00",
+        "end": "2026-04-14T00:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
         "start": "2026-04-14T16:00",
         "end": "2026-04-14T18:15",
         "day": 1
@@ -825,6 +832,6 @@
   },
   "_meta": {
     "source": "Excel",
-    "updated_at": "2026-04-14 15:20"
+    "updated_at": "2026-04-14 15:31"
   }
 }
