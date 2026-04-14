@@ -682,7 +682,8 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                               border-color: rgba(227,6,19,0.4); }}
         .top-bar .psg-btn:hover {{ background: rgba(227,6,19,0.15); color: #ff3040;
                                     border-color: #E30613; }}
-        .top-bar .eval-btn {{ color: #FF6600; border-color: rgba(255,102,0,0.25); }}
+        .top-bar .eval-btn {{ color: #FF6600; border-color: rgba(255,102,0,0.25); display: none; }}
+        .top-bar .eval-btn.visible {{ display: inline-block; }}
         .top-bar .eval-btn:hover {{ background: rgba(255,102,0,0.1);
                                      border-color: rgba(255,102,0,0.5); }}
 
@@ -1210,7 +1211,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
     <div class="container">
         <div class="top-bar">
             <button class="admin-btn" id="admin-btn" title="Mode admin">Admin</button>
-            <a href="evaluation-arbitre.html" class="eval-btn" title="Fiche d'évaluation arbitre">Éval Arbitre</a>
+            <a href="evaluation-arbitre.html" class="eval-btn" id="eval-btn" title="Fiche d'évaluation arbitre">Éval Arbitre</a>
         </div>
         <div class="header">
             <h1>Planning Urban 7D</h1>
@@ -3652,14 +3653,18 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
 
         // Admin button in header (combines auth + edit toggle)
         var adminBtnEl = document.getElementById('admin-btn');
+        var evalBtnEl = document.getElementById('eval-btn');
+        function showEvalBtn() {{ if (evalBtnEl) evalBtnEl.classList.add('visible'); }}
         if (isAdminUnlocked()) {{
             adminBtnEl.classList.add('unlocked');
+            showEvalBtn();
         }}
         adminBtnEl.onclick = function() {{
             if (!isAdminUnlocked()) {{
                 if (verifyStaff()) {{
                     unlockAdmin();
                     adminBtnEl.classList.add('unlocked');
+                    showEvalBtn();
                     initAdminToolbar();
                     renderNotes();
                     var toggleBtn = adminToolbarEl.querySelector('.edit-toggle');
