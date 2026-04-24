@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:cruzel-quentin-s9-1@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260223T173000
 DTEND;TZID=Europe/Paris:20260224T000000
 SUMMARY:Vie de centre
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s9-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260224T160000
 DTEND;TZID=Europe/Paris:20260225T000000
 SUMMARY:Vie de centre
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s9-3@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260225T133000
 DTEND;TZID=Europe/Paris:20260225T220000
 SUMMARY:Vie de centre
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s9-4@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260227T183000
 DTEND;TZID=Europe/Paris:20260228T000000
 SUMMARY:Vie de centre
@@ -106,7 +106,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s9-5@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260228T170000
 DTEND;TZID=Europe/Paris:20260228T222000
 SUMMARY:Vie de centre
@@ -126,7 +126,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s10-1@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260303T200000
 DTEND;TZID=Europe/Paris:20260304T000000
 SUMMARY:Vie de centre
@@ -144,7 +144,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s10-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260305T173000
 DTEND;TZID=Europe/Paris:20260306T000000
 SUMMARY:Vie de centre
@@ -162,7 +162,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s10-3@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260306T173000
 DTEND;TZID=Europe/Paris:20260307T000000
 SUMMARY:Vie de centre
@@ -180,7 +180,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s10-4@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260307T170000
 DTEND;TZID=Europe/Paris:20260307T222000
 SUMMARY:Vie de centre
@@ -198,7 +198,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s11-1@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260310T180000
 DTEND;TZID=Europe/Paris:20260311T000000
 SUMMARY:Vie de centre
@@ -212,7 +212,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s11-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260312T200000
 DTEND;TZID=Europe/Paris:20260313T000000
 SUMMARY:[Remplacé par Mehdi] Vie de centre
@@ -226,7 +226,7 @@ DESCRIPTION:Remplacé par RABII Mehdi\nPlanning 09/03 au 15/03 \n\n⚽ EDF
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s11-3@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260315T160000
 DTEND;TZID=Europe/Paris:20260315T222000
 SUMMARY:Vie de centre
@@ -240,7 +240,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s12-1@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260316T191500
 DTEND;TZID=Europe/Paris:20260317T000000
 SUMMARY:Vie de centre
@@ -252,7 +252,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s12-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260318T183000
 DTEND;TZID=Europe/Paris:20260319T003000
 SUMMARY:Vie de centre
@@ -264,7 +264,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s12-3@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260319T183000
 DTEND;TZID=Europe/Paris:20260319T220000
 SUMMARY:Vie de centre
@@ -276,7 +276,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s12-4@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260321T150000
 DTEND;TZID=Europe/Paris:20260321T222000
 SUMMARY:Vie de centre
@@ -288,7 +288,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s13-1@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260325T200000
 DTEND;TZID=Europe/Paris:20260326T000000
 SUMMARY:Vie de centre
@@ -303,7 +303,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s13-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260326T200000
 DTEND;TZID=Europe/Paris:20260327T000000
 SUMMARY:Vie de centre
@@ -318,7 +318,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s13-3@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260328T150000
 DTEND;TZID=Europe/Paris:20260328T222000
 SUMMARY:Vie de centre
@@ -333,7 +333,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s14-1@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260331T173000
 DTEND;TZID=Europe/Paris:20260331T223000
 SUMMARY:[Remplacé par Mattis] Vie de centre
@@ -350,7 +350,7 @@ DESCRIPTION:Remplacé par TOPPAN Mattis\nPlanning 30/03 au 05/04\n ⚽🥎
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s14-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260402T181500
 DTEND;TZID=Europe/Paris:20260403T000000
 SUMMARY:Vie de centre
@@ -367,7 +367,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s14-3@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260403T173000
 DTEND;TZID=Europe/Paris:20260403T003000
 SUMMARY:Vie de centre
@@ -384,7 +384,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s14-4@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260404T134500
 DTEND;TZID=Europe/Paris:20260404T154500
 SUMMARY:Anniversaire
@@ -401,7 +401,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s14-5@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260404T154500
 DTEND;TZID=Europe/Paris:20260404T224500
 SUMMARY:Vie de centre
@@ -418,7 +418,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s14-6@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260405T133000
 DTEND;TZID=Europe/Paris:20260405T173000
 SUMMARY:Anniversaire
@@ -435,7 +435,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s14-7@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260405T173000
 DTEND;TZID=Europe/Paris:20260405T234000
 SUMMARY:Vie de centre
@@ -452,7 +452,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s15-1@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260408T200000
 DTEND;TZID=Europe/Paris:20260409T000000
 SUMMARY:Vie de centre
@@ -467,7 +467,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s15-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260409T180000
 DTEND;TZID=Europe/Paris:20260410T000000
 SUMMARY:Vie de centre
@@ -482,7 +482,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s16-1@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260414T173000
 DTEND;TZID=Europe/Paris:20260415T000000
 SUMMARY:Vie de centre
@@ -498,7 +498,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s16-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260415T191500
 DTEND;TZID=Europe/Paris:20260416T000000
 SUMMARY:Vie de centre
@@ -514,7 +514,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s16-3@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260417T173000
 DTEND;TZID=Europe/Paris:20260418T003000
 SUMMARY:Vie de centre
@@ -530,7 +530,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s16-4@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260418T131500
 DTEND;TZID=Europe/Paris:20260418T171500
 SUMMARY:Anniversaire
@@ -546,7 +546,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s16-5@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260418T171500
 DTEND;TZID=Europe/Paris:20260418T224500
 SUMMARY:Vie de centre
@@ -562,7 +562,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s17-1@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260421T193000
 DTEND;TZID=Europe/Paris:20260422T000000
 SUMMARY:Vie de centre
@@ -576,7 +576,7 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s17-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260424T170000
 DTEND;TZID=Europe/Paris:20260425T002000
 SUMMARY:Vie de centre
@@ -590,7 +590,7 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s17-3@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260425T153000
 DTEND;TZID=Europe/Paris:20260425T173000
 SUMMARY:Anniversaire
@@ -604,7 +604,7 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s17-4@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260425T173000
 DTEND;TZID=Europe/Paris:20260425T223000
 SUMMARY:Vie de centre
@@ -618,16 +618,62 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s18-1@urban7d
-DTSTAMP:20260414T200354Z
-DTSTART;TZID=Europe/Paris:20260501T163000
-DTEND;TZID=Europe/Paris:20260502T000000
+DTSTAMP:20260424T214641Z
+DTSTART;TZID=Europe/Paris:20260429T180000
+DTEND;TZID=Europe/Paris:20260430T000000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
+ es stages pour Marvyn\n🏆🥎 Cup Padel : P100 lundi aprem\, P25 mercred
+ i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
+ mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
+ e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
+ les créneaux sont réservés surtout avec le WE du 1er mai
 END:VEVENT
 BEGIN:VEVENT
 UID:cruzel-quentin-s18-2@urban7d
-DTSTAMP:20260414T200354Z
+DTSTAMP:20260424T214641Z
+DTSTART;TZID=Europe/Paris:20260501T160000
+DTEND;TZID=Europe/Paris:20260502T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
+ es stages pour Marvyn\n🏆🥎 Cup Padel : P100 lundi aprem\, P25 mercred
+ i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
+ mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
+ e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
+ les créneaux sont réservés surtout avec le WE du 1er mai
+END:VEVENT
+BEGIN:VEVENT
+UID:cruzel-quentin-s18-3@urban7d
+DTSTAMP:20260424T214641Z
 DTSTART;TZID=Europe/Paris:20260503T084500
 DTEND;TZID=Europe/Paris:20260503T173000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
+ es stages pour Marvyn\n🏆🥎 Cup Padel : P100 lundi aprem\, P25 mercred
+ i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
+ mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
+ e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
+ les créneaux sont réservés surtout avec le WE du 1er mai
+END:VEVENT
+BEGIN:VEVENT
+UID:cruzel-quentin-s19-1@urban7d
+DTSTAMP:20260424T214641Z
+DTSTART;TZID=Europe/Paris:20260505T133000
+DTEND;TZID=Europe/Paris:20260505T200000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:cruzel-quentin-s19-2@urban7d
+DTSTAMP:20260424T214641Z
+DTSTART;TZID=Europe/Paris:20260506T181500
+DTEND;TZID=Europe/Paris:20260507T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:cruzel-quentin-s19-3@urban7d
+DTSTAMP:20260424T214641Z
+DTSTART;TZID=Europe/Paris:20260509T150000
+DTEND;TZID=Europe/Paris:20260509T223000
 SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR
