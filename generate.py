@@ -1375,6 +1375,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                 if (r.date !== dateStr) continue;
                 var rStart = parseFloat(r.start.split(':')[0]) + parseFloat(r.start.split(':')[1] || 0) / 60;
                 var rEnd = parseFloat(r.end.split(':')[0]) + parseFloat(r.end.split(':')[1] || 0) / 60;
+                if (rEnd <= rStart) rEnd += 24;
                 // Check overlap: bar overlaps with replacement window
                 if (startH < rEnd && endH > rStart) {{
                     if (fullName === r.out) return {{status: 'out', other: r['in']}};
@@ -1463,6 +1464,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                 // Find the replaced person's event(s) overlapping the replacement window to get code/label
                 var rStart = parseFloat(r.start.split(':')[0]) + parseFloat(r.start.split(':')[1] || 0) / 60;
                 var rEnd = parseFloat(r.end.split(':')[0]) + parseFloat(r.end.split(':')[1] || 0) / 60;
+                if (rEnd <= rStart) rEnd += 24;
                 var outName = r.out;
                 var refCode = 'VDC';
                 var refLabel = 'Vie de centre';
