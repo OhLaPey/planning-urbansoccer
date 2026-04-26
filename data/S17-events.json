@@ -564,7 +564,7 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-04-26T17:00",
+        "start": "2026-04-26T18:00",
         "end": "2026-04-26T23:40",
         "day": 6
       }
@@ -883,7 +883,7 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-04-26T18:00",
+        "start": "2026-04-26T17:00",
         "end": "2026-04-26T22:20",
         "day": 6
       }
@@ -895,6 +895,6 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-04-26 09:50"
+    "updated_at": "2026-04-26 13:30"
   }
 }
