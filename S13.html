@@ -1877,13 +1877,41 @@
                     if (DATA[staff]) {
                         var startISO = dateStr + 'T' + (a.start || '09:00');
                         var endISO = dateStr + 'T' + (a.end || '17:00');
-                        DATA[staff].events.push({
+                        var newStartT = new Date(startISO).getTime();
+                        var newEndT = new Date(endISO).getTime();
+                        // Apply non-overlap rule: the pasted MAJ takes priority over
+                        // existing events on the same day. Trim/split/remove conflicting events.
+                        var kept = [];
+                        DATA[staff].events.forEach(function(ev) {
+                            if (ev.day !== dayIdx) { kept.push(ev); return; }
+                            var evStartT = new Date(ev.start).getTime();
+                            var evEndT = new Date(ev.end).getTime();
+                            // No overlap
+                            if (evEndT <= newStartT || evStartT >= newEndT) { kept.push(ev); return; }
+                            // Existing fully inside new → drop
+                            if (evStartT >= newStartT && evEndT <= newEndT) return;
+                            // Existing surrounds new → split into before + after
+                            if (evStartT < newStartT && evEndT > newEndT) {
+                                kept.push(Object.assign({}, ev, { end: startISO }));
+                                kept.push(Object.assign({}, ev, { start: endISO }));
+                                return;
+                            }
+                            // Existing starts before, ends inside → trim end
+                            if (evStartT < newStartT) {
+                                kept.push(Object.assign({}, ev, { end: startISO }));
+                                return;
+                            }
+                            // Existing starts inside, ends after → trim start
+                            kept.push(Object.assign({}, ev, { start: endISO }));
+                        });
+                        kept.push({
                             code: a.code || 'VDC',
                             label: CODE_LABELS[a.code] || a.code || 'VDC',
                             start: startISO,
                             end: endISO,
                             day: dayIdx
                         });
+                        DATA[staff].events = kept;
                         _editsDirty = true;
                         hasTimelineChanges = true;
                     }
