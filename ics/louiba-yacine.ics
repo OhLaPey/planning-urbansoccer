@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:louiba-yacine-s15-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260407T193000
 DTEND;TZID=Europe/Paris:20260407T200000
 SUMMARY:FORE-ARB
@@ -41,7 +41,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s15-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260407T200000
 DTEND;TZID=Europe/Paris:20260407T223000
 SUMMARY:FORP-ARB
@@ -56,7 +56,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s15-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260408T193000
 DTEND;TZID=Europe/Paris:20260408T203000
 SUMMARY:FORP-ARB
@@ -71,7 +71,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s15-4@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260408T203000
 DTEND;TZID=Europe/Paris:20260408T223000
 SUMMARY:L-ARB
@@ -86,7 +86,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s16-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260413T193000
 DTEND;TZID=Europe/Paris:20260413T223000
 SUMMARY:L-ARB
@@ -102,7 +102,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s16-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260414T183000
 DTEND;TZID=Europe/Paris:20260414T223000
 SUMMARY:L-ARB
@@ -118,7 +118,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s16-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260415T193000
 DTEND;TZID=Europe/Paris:20260415T223000
 SUMMARY:L-ARB
@@ -134,7 +134,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s17-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260420T193000
 DTEND;TZID=Europe/Paris:20260420T223000
 SUMMARY:L-ARB
@@ -144,11 +144,14 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
- res. On verra si les créneaux sont réservés
+ res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
+ iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
+ 7h et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s17-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260421T203000
 DTEND;TZID=Europe/Paris:20260421T223000
 SUMMARY:L-ARB
@@ -158,11 +161,14 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
- res. On verra si les créneaux sont réservés
+ res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
+ iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
+ 7h et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s17-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260422T193000
 DTEND;TZID=Europe/Paris:20260422T213000
 SUMMARY:L-ARB
@@ -172,11 +178,14 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
- res. On verra si les créneaux sont réservés
+ res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
+ iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
+ 7h et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s18-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260428T203000
 DTEND;TZID=Europe/Paris:20260428T223000
 SUMMARY:L-ARB
@@ -185,11 +194,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s18-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260429T193000
 DTEND;TZID=Europe/Paris:20260429T213000
 SUMMARY:L-ARB
@@ -198,27 +211,52 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s19-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260504T193000
 DTEND;TZID=Europe/Paris:20260504T223000
 SUMMARY:L-ARB
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
+  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
+ ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
+ icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
+ anniversaires sont prévus sur les anniversaires. On verra si les créneau
+ x sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s19-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260505T193000
 DTEND;TZID=Europe/Paris:20260505T223000
 SUMMARY:L-ARB
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
+  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
+ ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
+ icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
+ anniversaires sont prévus sur les anniversaires. On verra si les créneau
+ x sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s19-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260506T203000
 DTEND;TZID=Europe/Paris:20260506T223000
 SUMMARY:L-ARB
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
+  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
+ ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
+ icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
+ anniversaires sont prévus sur les anniversaires. On verra si les créneau
+ x sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 END:VCALENDAR
