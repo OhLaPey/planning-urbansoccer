@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:toppan-mattis-s9-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260226T200000
 DTEND;TZID=Europe/Paris:20260227T000000
 SUMMARY:Vie de centre
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s9-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260227T180000
 DTEND;TZID=Europe/Paris:20260228T000000
 SUMMARY:Vie de centre
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s9-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260301T160000
 DTEND;TZID=Europe/Paris:20260301T231500
 SUMMARY:Vie de centre
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s10-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260303T200000
 DTEND;TZID=Europe/Paris:20260304T000000
 SUMMARY:Vie de centre
@@ -104,7 +104,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s10-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260304T200000
 DTEND;TZID=Europe/Paris:20260305T000000
 SUMMARY:Vie de centre
@@ -122,7 +122,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s10-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260306T180000
 DTEND;TZID=Europe/Paris:20260307T000000
 SUMMARY:Vie de centre
@@ -140,7 +140,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s10-4@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260308T160000
 DTEND;TZID=Europe/Paris:20260308T221500
 SUMMARY:Vie de centre
@@ -158,7 +158,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s11-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260311T191500
 DTEND;TZID=Europe/Paris:20260312T000000
 SUMMARY:Vie de centre
@@ -172,7 +172,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s11-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260313T173000
 DTEND;TZID=Europe/Paris:20260314T003000
 SUMMARY:Vie de centre
@@ -186,7 +186,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s12-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260322T150000
 DTEND;TZID=Europe/Paris:20260322T222000
 SUMMARY:[Remplace Mathieu] Vie de centre
@@ -198,7 +198,7 @@ DESCRIPTION:Remplace PUJOL Mathieu\n⚽🥎 EDF et cours padel sur les jour
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s13-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260323T191500
 DTEND;TZID=Europe/Paris:20260324T000000
 SUMMARY:Vie de centre
@@ -213,7 +213,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s13-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260327T173000
 DTEND;TZID=Europe/Paris:20260328T003000
 SUMMARY:Vie de centre
@@ -228,7 +228,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s14-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260331T173000
 DTEND;TZID=Europe/Paris:20260331T223000
 SUMMARY:[Remplace Quentin] Vie de centre
@@ -245,7 +245,7 @@ DESCRIPTION:Remplace CRUZEL Quentin\nPlanning 30/03 au 05/04\n ⚽🥎 EDF
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s14-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260401T200000
 DTEND;TZID=Europe/Paris:20260402T000000
 SUMMARY:Vie de centre
@@ -262,7 +262,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s14-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260403T173000
 DTEND;TZID=Europe/Paris:20260404T003000
 SUMMARY:Vie de centre
@@ -279,7 +279,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s14-4@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260405T150000
 DTEND;TZID=Europe/Paris:20260405T222000
 SUMMARY:Vie de centre
@@ -296,7 +296,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s16-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260414T181500
 DTEND;TZID=Europe/Paris:20260415T000000
 SUMMARY:Vie de centre
@@ -312,7 +312,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s16-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260415T200000
 DTEND;TZID=Europe/Paris:20260416T000000
 SUMMARY:Vie de centre
@@ -328,7 +328,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s16-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260417T173000
 DTEND;TZID=Europe/Paris:20260417T213000
 SUMMARY:Cup Régisseur
@@ -344,7 +344,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s17-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260420T180000
 DTEND;TZID=Europe/Paris:20260421T000000
 SUMMARY:Vie de centre
@@ -354,11 +354,14 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
- res. On verra si les créneaux sont réservés
+ res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
+ iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
+ 7h et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s17-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260422T200000
 DTEND;TZID=Europe/Paris:20260423T000000
 SUMMARY:Vie de centre
@@ -368,11 +371,14 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
- res. On verra si les créneaux sont réservés
+ res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
+ iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
+ 7h et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s17-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260426T140000
 DTEND;TZID=Europe/Paris:20260426T180000
 SUMMARY:Anniversaire
@@ -382,11 +388,14 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
- res. On verra si les créneaux sont réservés
+ res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
+ iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
+ 7h et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s17-4@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260426T180000
 DTEND;TZID=Europe/Paris:20260426T222000
 SUMMARY:Vie de centre
@@ -396,11 +405,14 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  eague et Business League de lundi à mercredi\n\n⚽️🏆🍻 Demi-final
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
- res. On verra si les créneaux sont réservés
+ res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
+ iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
+ 7h et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s18-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260429T170000
 DTEND;TZID=Europe/Paris:20260429T220000
 SUMMARY:Vie de centre
@@ -409,11 +421,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s18-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260430T170000
 DTEND;TZID=Europe/Paris:20260430T220000
 SUMMARY:Vie de centre
@@ -422,11 +438,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s18-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260502T173000
 DTEND;TZID=Europe/Paris:20260502T224000
 SUMMARY:Vie de centre
@@ -435,11 +455,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s18-4@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260503T143000
 DTEND;TZID=Europe/Paris:20260503T234000
 SUMMARY:Vie de centre
@@ -448,34 +472,87 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s19-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260504T133000
 DTEND;TZID=Europe/Paris:20260504T210000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
+  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
+ ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
+ icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
+ anniversaires sont prévus sur les anniversaires. On verra si les créneau
+ x sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s19-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260504T210000
 DTEND;TZID=Europe/Paris:20260504T220000
 SUMMARY:L-ARB
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
+  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
+ ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
+ icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
+ anniversaires sont prévus sur les anniversaires. On verra si les créneau
+ x sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s19-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260504T220000
 DTEND;TZID=Europe/Paris:20260504T223000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
+  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
+ ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
+ icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
+ anniversaires sont prévus sur les anniversaires. On verra si les créneau
+ x sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:toppan-mattis-s19-4@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260508T173000
 DTEND;TZID=Europe/Paris:20260509T002000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
+  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
+ ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
+ icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
+ anniversaires sont prévus sur les anniversaires. On verra si les créneau
+ x sont réservés surtout avec le WE du 8 mai
+END:VEVENT
+BEGIN:VEVENT
+UID:toppan-mattis-s20-1@urban7d
+DTSTAMP:20260428T224418Z
+DTSTART;TZID=Europe/Paris:20260512T203000
+DTEND;TZID=Europe/Paris:20260512T223000
+SUMMARY:L-ARB
+END:VEVENT
+BEGIN:VEVENT
+UID:toppan-mattis-s20-2@urban7d
+DTSTAMP:20260428T224418Z
+DTSTART;TZID=Europe/Paris:20260512T223000
+DTEND;TZID=Europe/Paris:20260513T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:toppan-mattis-s20-3@urban7d
+DTSTAMP:20260428T224418Z
+DTSTART;TZID=Europe/Paris:20260515T180000
+DTEND;TZID=Europe/Paris:20260516T002000
 SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR

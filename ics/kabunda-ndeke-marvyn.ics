@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s11-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260315T134500
 DTEND;TZID=Europe/Paris:20260315T174500
 SUMMARY:Anniversaire
@@ -40,7 +40,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s16-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260419T134500
 DTEND;TZID=Europe/Paris:20260419T174500
 SUMMARY:Anniversaire
@@ -56,7 +56,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260427T084500
 DTEND;TZID=Europe/Paris:20260427T100000
 SUMMARY:Stage
@@ -65,11 +65,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-2@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260427T100000
 DTEND;TZID=Europe/Paris:20260427T120000
 SUMMARY:Stage encadrement
@@ -78,11 +82,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-3@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260427T120000
 DTEND;TZID=Europe/Paris:20260427T140000
 SUMMARY:Stage
@@ -91,11 +99,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-4@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260427T140000
 DTEND;TZID=Europe/Paris:20260427T160000
 SUMMARY:Stage encadrement
@@ -104,11 +116,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-5@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260427T160000
 DTEND;TZID=Europe/Paris:20260427T170000
 SUMMARY:Stage
@@ -117,11 +133,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-6@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260427T170000
 DTEND;TZID=Europe/Paris:20260427T180000
 SUMMARY:Stage encadrement
@@ -130,11 +150,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-7@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260428T090000
 DTEND;TZID=Europe/Paris:20260428T100000
 SUMMARY:Stage
@@ -143,11 +167,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-8@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260428T100000
 DTEND;TZID=Europe/Paris:20260428T120000
 SUMMARY:Stage encadrement
@@ -156,11 +184,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-9@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260428T120000
 DTEND;TZID=Europe/Paris:20260428T140000
 SUMMARY:Stage
@@ -169,11 +201,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-10@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260428T140000
 DTEND;TZID=Europe/Paris:20260428T160000
 SUMMARY:Stage encadrement
@@ -182,11 +218,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-11@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260428T160000
 DTEND;TZID=Europe/Paris:20260428T170000
 SUMMARY:Stage
@@ -195,11 +235,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-12@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260428T170000
 DTEND;TZID=Europe/Paris:20260428T180000
 SUMMARY:Stage encadrement
@@ -208,11 +252,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-13@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260429T090000
 DTEND;TZID=Europe/Paris:20260429T100000
 SUMMARY:Stage
@@ -221,11 +269,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-14@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260429T100000
 DTEND;TZID=Europe/Paris:20260429T120000
 SUMMARY:Stage encadrement
@@ -234,11 +286,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-15@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260429T120000
 DTEND;TZID=Europe/Paris:20260429T140000
 SUMMARY:Stage
@@ -247,11 +303,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-16@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260429T140000
 DTEND;TZID=Europe/Paris:20260429T160000
 SUMMARY:Stage encadrement
@@ -260,11 +320,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-17@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260429T160000
 DTEND;TZID=Europe/Paris:20260429T170000
 SUMMARY:Stage
@@ -273,11 +337,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-18@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260429T170000
 DTEND;TZID=Europe/Paris:20260429T180000
 SUMMARY:Stage encadrement
@@ -286,11 +354,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-19@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260429T180000
 DTEND;TZID=Europe/Paris:20260429T190000
 SUMMARY:Stage
@@ -299,11 +371,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-20@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260430T090000
 DTEND;TZID=Europe/Paris:20260430T100000
 SUMMARY:Stage
@@ -312,11 +388,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-21@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260430T100000
 DTEND;TZID=Europe/Paris:20260430T120000
 SUMMARY:Stage encadrement
@@ -325,11 +405,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-22@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260430T120000
 DTEND;TZID=Europe/Paris:20260430T140000
 SUMMARY:Stage
@@ -338,11 +422,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-23@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260430T140000
 DTEND;TZID=Europe/Paris:20260430T160000
 SUMMARY:Stage encadrement
@@ -351,11 +439,15 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s18-24@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260430T160000
 DTEND;TZID=Europe/Paris:20260430T170000
 SUMMARY:Stage
@@ -364,13 +456,24 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  i matin et P250 vendredi matin\n🏆🍻🍕 Demi-finales de LDC mardi et 
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
- les créneaux sont réservés surtout avec le WE du 1er mai
+ les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
+ iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
+ Quentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s19-1@urban7d
-DTSTAMP:20260426T074518Z
+DTSTAMP:20260428T224418Z
 DTSTART;TZID=Europe/Paris:20260506T193000
 DTEND;TZID=Europe/Paris:20260506T223000
 SUMMARY:L-ARB
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
+  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
+ ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
+ icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
+ anniversaires sont prévus sur les anniversaires. On verra si les créneau
+ x sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 END:VCALENDAR
