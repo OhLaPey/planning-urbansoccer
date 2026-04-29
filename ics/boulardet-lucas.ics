@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:boulardet-lucas-s9-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260224T200000
 DTEND;TZID=Europe/Paris:20260225T000000
 SUMMARY:[Remplacé par Yanis] Vie de centre
@@ -47,7 +47,7 @@ DESCRIPTION:Remplacé par MOSTEFA Yanis\nSemaine de vacances scolaires\n⚽
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s9-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260225T173000
 DTEND;TZID=Europe/Paris:20260226T000000
 SUMMARY:Vie de centre
@@ -67,7 +67,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s14-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260401T180000
 DTEND;TZID=Europe/Paris:20260401T220000
 SUMMARY:Vie de centre
@@ -84,7 +84,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s16-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260414T200000
 DTEND;TZID=Europe/Paris:20260415T000000
 SUMMARY:Vie de centre
@@ -100,7 +100,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s17-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260423T200000
 DTEND;TZID=Europe/Paris:20260424T000000
 SUMMARY:Vie de centre
@@ -111,13 +111,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s18-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260430T200000
 DTEND;TZID=Europe/Paris:20260501T000000
 SUMMARY:Vie de centre
@@ -127,14 +127,14 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s18-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260501T173000
 DTEND;TZID=Europe/Paris:20260502T000000
 SUMMARY:Vie de centre
@@ -144,42 +144,42 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s19-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260504T200000
 DTEND;TZID=Europe/Paris:20260505T001500
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s19-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260505T200000
 DTEND;TZID=Europe/Paris:20260506T001500
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:boulardet-lucas-s20-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260512T200000
 DTEND;TZID=Europe/Paris:20260513T000000
 SUMMARY:Vie de centre
