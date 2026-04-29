@@ -5,5 +5,14 @@
       "date": "2026-04-26 09:51",
       "text": "MAJ Anniversaire :\r\n🎂 Samedi 02/05 : pas d'anniv donc début à 15h pour Mehdi, uniquement de la VDC\r\n🎂 Dimanche 03/05 : peu d'anniv donc Yanis fera 11h-12h30 puis 13h15-17h30, Mehdi pas de changement, Quentin fin à 15h30 et Mattis début à 17h30"
     }
+  ],
+  "replacements": [
+    {
+      "date": "2026-04-29",
+      "out": "CRUZEL Quentin",
+      "in": "JARGUEL Thomas",
+      "start": "18:00",
+      "end": "23:59"
+    }
   ]
 }
