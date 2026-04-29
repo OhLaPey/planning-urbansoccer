@@ -37,14 +37,7 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-05-04T09:45",
-        "end": "2026-05-04T13:30",
-        "day": 0
-      },
-      {
-        "code": "L-REG",
-        "label": "Régisseur League",
-        "start": "2026-05-04T19:15",
-        "end": "2026-05-04T21:45",
+        "end": "2026-05-04T16:00",
         "day": 0
       },
       {
@@ -592,6 +585,13 @@
         "start": "2026-05-09T15:45",
         "end": "2026-05-09T17:45",
         "day": 5
+      },
+      {
+        "code": "L-REG",
+        "label": "Régisseur League",
+        "start": "2026-05-04T19:15",
+        "end": "2026-05-04T21:30",
+        "day": 0
       }
     ]
   },
@@ -796,7 +796,7 @@
     ]
   },
   "_meta": {
-    "source": "Excel",
-    "updated_at": "2026-04-29 07:21"
+    "source": "Modif admin",
+    "updated_at": "2026-04-29 10:41"
   }
 }
