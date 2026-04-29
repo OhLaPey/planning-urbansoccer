@@ -22,6 +22,7 @@ def slug(name):
 
 
 def ics_escape(text):
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
     return text.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
 
 
@@ -186,6 +187,7 @@ def generate_ics(name, all_events, all_notes, dtstamp_utc):
                 evt_desc = repl_note + ("\n" + evt_desc if evt_desc else "")
             evt_desc_escaped = ics_escape(evt_desc) if evt_desc else ""
 
+            summary_label = summary_label.replace("\r\n", " ").replace("\r", " ").replace("\n", " ")
             summary = summary_label.replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;")
 
             lines.append("BEGIN:VEVENT")
