@@ -785,11 +785,10 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
         .tl-bar:hover {{ filter: brightness(1.3); z-index: 2;
                          box-shadow: 0 0 12px var(--glow-color); }}
         .tl-bar .bar-label {{ padding: 0 4px; white-space: nowrap; }}
-        .tl-bar.replaced {{ position: relative; opacity: 0.7; }}
+        .tl-bar.replaced {{ opacity: 0.7; }}
         .tl-bar.replaced::after {{ content: ''; position: absolute; inset: 0; border-radius: inherit;
             background: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255,60,60,0.35) 3px, rgba(255,60,60,0.35) 5px);
             pointer-events: none; }}
-        .tl-bar.replacer {{ position: relative; }}
         .tl-bar.replacer::after {{ content: ''; position: absolute; inset: 0; border-radius: inherit;
             background: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(60,220,80,0.35) 3px, rgba(60,220,80,0.35) 5px);
             pointer-events: none; }}
