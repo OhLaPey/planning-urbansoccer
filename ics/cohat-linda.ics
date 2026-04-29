@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:cohat-linda-s9-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260223T183000
 DTEND;TZID=Europe/Paris:20260224T000000
 SUMMARY:Vie de centre
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s9-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260226T180000
 DTEND;TZID=Europe/Paris:20260226T220000
 SUMMARY:Vie de centre
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s12-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260317T180000
 DTEND;TZID=Europe/Paris:20260318T000000
 SUMMARY:Vie de centre
@@ -78,7 +78,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s18-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260428T200000
 DTEND;TZID=Europe/Paris:20260429T000000
 SUMMARY:Vie de centre
@@ -88,42 +88,42 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s19-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260505T200000
 DTEND;TZID=Europe/Paris:20260506T001500
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s19-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260506T200000
 DTEND;TZID=Europe/Paris:20260507T001500
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s20-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260514T170000
 DTEND;TZID=Europe/Paris:20260515T001500
 SUMMARY:Vie de centre

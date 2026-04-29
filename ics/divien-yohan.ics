@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:divien-yohan-s10-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260302T090000
 DTEND;TZID=Europe/Paris:20260302T100000
 SUMMARY:Stage
@@ -44,7 +44,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260302T100000
 DTEND;TZID=Europe/Paris:20260302T120000
 SUMMARY:Stage encadrement
@@ -62,7 +62,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-3@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260302T120000
 DTEND;TZID=Europe/Paris:20260302T123000
 SUMMARY:Stage
@@ -80,7 +80,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-4@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260302T130000
 DTEND;TZID=Europe/Paris:20260302T140000
 SUMMARY:Stage
@@ -98,7 +98,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-5@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260302T140000
 DTEND;TZID=Europe/Paris:20260302T160000
 SUMMARY:Stage encadrement
@@ -116,7 +116,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-6@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260302T160000
 DTEND;TZID=Europe/Paris:20260302T170000
 SUMMARY:Stage
@@ -134,7 +134,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-7@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260303T090000
 DTEND;TZID=Europe/Paris:20260303T100000
 SUMMARY:Stage
@@ -152,7 +152,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-8@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260303T100000
 DTEND;TZID=Europe/Paris:20260303T120000
 SUMMARY:Stage encadrement
@@ -170,7 +170,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-9@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260303T120000
 DTEND;TZID=Europe/Paris:20260303T123000
 SUMMARY:Stage
@@ -188,7 +188,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-10@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260303T130000
 DTEND;TZID=Europe/Paris:20260303T140000
 SUMMARY:Stage
@@ -206,7 +206,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-11@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260303T140000
 DTEND;TZID=Europe/Paris:20260303T160000
 SUMMARY:Stage encadrement
@@ -224,7 +224,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-12@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260303T160000
 DTEND;TZID=Europe/Paris:20260303T170000
 SUMMARY:Stage
@@ -242,7 +242,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-13@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260304T094500
 DTEND;TZID=Europe/Paris:20260304T100000
 SUMMARY:Stage
@@ -260,7 +260,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-14@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260304T100000
 DTEND;TZID=Europe/Paris:20260304T120000
 SUMMARY:Stage encadrement
@@ -278,7 +278,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-15@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260304T120000
 DTEND;TZID=Europe/Paris:20260304T123000
 SUMMARY:Stage
@@ -296,7 +296,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-16@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260304T130000
 DTEND;TZID=Europe/Paris:20260304T140000
 SUMMARY:Stage
@@ -314,7 +314,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-17@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260304T140000
 DTEND;TZID=Europe/Paris:20260304T160000
 SUMMARY:Stage encadrement
@@ -332,7 +332,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-18@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260304T160000
 DTEND;TZID=Europe/Paris:20260304T170000
 SUMMARY:Stage
@@ -350,7 +350,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-19@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260305T090000
 DTEND;TZID=Europe/Paris:20260305T100000
 SUMMARY:Stage
@@ -368,7 +368,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-20@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260305T100000
 DTEND;TZID=Europe/Paris:20260305T120000
 SUMMARY:Stage encadrement
@@ -386,7 +386,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-21@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260305T120000
 DTEND;TZID=Europe/Paris:20260305T123000
 SUMMARY:Stage
@@ -404,7 +404,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-22@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260305T130000
 DTEND;TZID=Europe/Paris:20260305T140000
 SUMMARY:Stage
@@ -422,7 +422,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-23@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260305T140000
 DTEND;TZID=Europe/Paris:20260305T160000
 SUMMARY:Stage encadrement
@@ -440,7 +440,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-24@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260305T160000
 DTEND;TZID=Europe/Paris:20260305T180000
 SUMMARY:Stage
@@ -458,7 +458,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-25@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260306T094500
 DTEND;TZID=Europe/Paris:20260306T100000
 SUMMARY:Stage
@@ -476,7 +476,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-26@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260306T100000
 DTEND;TZID=Europe/Paris:20260306T120000
 SUMMARY:Stage encadrement
@@ -494,7 +494,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-27@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260306T120000
 DTEND;TZID=Europe/Paris:20260306T123000
 SUMMARY:Stage
@@ -512,7 +512,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-28@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260306T130000
 DTEND;TZID=Europe/Paris:20260306T140000
 SUMMARY:Stage
@@ -530,7 +530,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-29@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260306T140000
 DTEND;TZID=Europe/Paris:20260306T160000
 SUMMARY:Stage encadrement
@@ -548,7 +548,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s10-30@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260306T160000
 DTEND;TZID=Europe/Paris:20260306T170000
 SUMMARY:Stage
@@ -566,7 +566,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s11-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260314T090000
 DTEND;TZID=Europe/Paris:20260314T130000
 SUMMARY:EDF-C
@@ -580,7 +580,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s12-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260321T090000
 DTEND;TZID=Europe/Paris:20260321T130000
 SUMMARY:EDF-C
@@ -592,7 +592,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s13-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260328T090000
 DTEND;TZID=Europe/Paris:20260328T130000
 SUMMARY:EDF-C
@@ -601,13 +601,13 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
  s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
- res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
- -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
-  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h-
+ 15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 : E
+ nzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s14-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260404T090000
 DTEND;TZID=Europe/Paris:20260404T130000
 SUMMARY:EDF-C
@@ -624,7 +624,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s15-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260411T090000
 DTEND;TZID=Europe/Paris:20260411T130000
 SUMMARY:EDF-C
@@ -639,7 +639,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s16-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260418T090000
 DTEND;TZID=Europe/Paris:20260418T130000
 SUMMARY:EDF-C
@@ -655,7 +655,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260420T090000
 DTEND;TZID=Europe/Paris:20260420T100000
 SUMMARY:Stage
@@ -666,13 +666,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260420T100000
 DTEND;TZID=Europe/Paris:20260420T120000
 SUMMARY:Stage encadrement
@@ -683,13 +683,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-3@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260420T120000
 DTEND;TZID=Europe/Paris:20260420T130000
 SUMMARY:Stage
@@ -700,13 +700,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-4@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260420T140000
 DTEND;TZID=Europe/Paris:20260420T160000
 SUMMARY:Stage encadrement
@@ -717,13 +717,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-5@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260421T094500
 DTEND;TZID=Europe/Paris:20260421T100000
 SUMMARY:Stage
@@ -734,13 +734,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-6@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260421T100000
 DTEND;TZID=Europe/Paris:20260421T120000
 SUMMARY:Stage encadrement
@@ -751,13 +751,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-7@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260421T120000
 DTEND;TZID=Europe/Paris:20260421T130000
 SUMMARY:Stage
@@ -768,13 +768,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-8@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260421T140000
 DTEND;TZID=Europe/Paris:20260421T160000
 SUMMARY:Stage encadrement
@@ -785,13 +785,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-9@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260421T160000
 DTEND;TZID=Europe/Paris:20260421T170000
 SUMMARY:Stage
@@ -802,13 +802,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-10@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260421T170000
 DTEND;TZID=Europe/Paris:20260421T180000
 SUMMARY:Stage encadrement
@@ -819,13 +819,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-11@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260422T094500
 DTEND;TZID=Europe/Paris:20260422T100000
 SUMMARY:Stage
@@ -836,13 +836,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-12@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260422T100000
 DTEND;TZID=Europe/Paris:20260422T120000
 SUMMARY:Stage encadrement
@@ -853,13 +853,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-13@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260422T120000
 DTEND;TZID=Europe/Paris:20260422T130000
 SUMMARY:Stage
@@ -870,13 +870,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-14@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260422T140000
 DTEND;TZID=Europe/Paris:20260422T160000
 SUMMARY:Stage encadrement
@@ -887,13 +887,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-15@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260423T094500
 DTEND;TZID=Europe/Paris:20260423T100000
 SUMMARY:Stage
@@ -904,13 +904,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-16@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260423T100000
 DTEND;TZID=Europe/Paris:20260423T120000
 SUMMARY:Stage encadrement
@@ -921,13 +921,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-17@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260423T120000
 DTEND;TZID=Europe/Paris:20260423T130000
 SUMMARY:Stage
@@ -938,13 +938,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-18@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260423T140000
 DTEND;TZID=Europe/Paris:20260423T160000
 SUMMARY:Stage encadrement
@@ -955,13 +955,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-19@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260423T160000
 DTEND;TZID=Europe/Paris:20260423T170000
 SUMMARY:Stage
@@ -972,13 +972,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-20@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260423T170000
 DTEND;TZID=Europe/Paris:20260423T180000
 SUMMARY:Stage encadrement
@@ -989,13 +989,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-21@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260424T094500
 DTEND;TZID=Europe/Paris:20260424T100000
 SUMMARY:Stage
@@ -1006,13 +1006,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-22@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260424T100000
 DTEND;TZID=Europe/Paris:20260424T120000
 SUMMARY:Stage encadrement
@@ -1023,13 +1023,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-23@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260424T120000
 DTEND;TZID=Europe/Paris:20260424T130000
 SUMMARY:Stage
@@ -1040,13 +1040,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-24@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260424T140000
 DTEND;TZID=Europe/Paris:20260424T160000
 SUMMARY:Stage encadrement
@@ -1057,13 +1057,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s17-25@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260424T160000
 DTEND;TZID=Europe/Paris:20260424T170000
 SUMMARY:Stage
@@ -1074,13 +1074,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s18-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260501T075500
 DTEND;TZID=Europe/Paris:20260501T170000
 SUMMARY:Cup League
@@ -1090,14 +1090,14 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s18-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260502T075500
 DTEND;TZID=Europe/Paris:20260502T140000
 SUMMARY:Cup League
@@ -1107,14 +1107,14 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s18-3@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260502T150000
 DTEND;TZID=Europe/Paris:20260502T180000
 SUMMARY:Cup League
@@ -1124,14 +1124,14 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s18-4@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260503T090000
 DTEND;TZID=Europe/Paris:20260503T190000
 SUMMARY:Cup League
@@ -1141,37 +1141,37 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s19-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260504T083000
 DTEND;TZID=Europe/Paris:20260504T174500
 SUMMARY:Cup League
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:divien-yohan-s19-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260509T090000
 DTEND;TZID=Europe/Paris:20260509T130000
 SUMMARY:EDF-C
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 END:VCALENDAR

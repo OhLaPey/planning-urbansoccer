@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:conrad-stage-david-s15-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260407T113000
 DTEND;TZID=Europe/Paris:20260407T190000
 SUMMARY:Vie de centre
@@ -41,7 +41,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s15-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260408T160000
 DTEND;TZID=Europe/Paris:20260408T220000
 SUMMARY:Vie de centre
@@ -56,7 +56,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s15-3@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260409T100000
 DTEND;TZID=Europe/Paris:20260409T173000
 SUMMARY:Vie de centre
@@ -71,7 +71,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s15-4@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260410T110000
 DTEND;TZID=Europe/Paris:20260410T190000
 SUMMARY:Vie de centre
@@ -86,7 +86,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s16-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260413T114500
 DTEND;TZID=Europe/Paris:20260413T220000
 SUMMARY:Vie de centre
@@ -102,7 +102,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s16-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260414T113500
 DTEND;TZID=Europe/Paris:20260414T170000
 SUMMARY:Vie de centre
@@ -118,7 +118,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s16-3@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260415T113000
 DTEND;TZID=Europe/Paris:20260415T170000
 SUMMARY:Vie de centre
@@ -134,7 +134,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s16-4@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260416T113000
 DTEND;TZID=Europe/Paris:20260416T200000
 SUMMARY:Vie de centre
@@ -150,7 +150,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s16-5@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260417T113000
 DTEND;TZID=Europe/Paris:20260417T173000
 SUMMARY:Vie de centre
@@ -166,7 +166,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s17-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260420T114500
 DTEND;TZID=Europe/Paris:20260420T180000
 SUMMARY:Vie de centre
@@ -177,13 +177,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s17-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260421T114500
 DTEND;TZID=Europe/Paris:20260421T220000
 SUMMARY:Vie de centre
@@ -194,13 +194,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s17-3@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260422T110000
 DTEND;TZID=Europe/Paris:20260422T173000
 SUMMARY:Vie de centre
@@ -211,13 +211,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s17-4@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260423T110000
 DTEND;TZID=Europe/Paris:20260423T182500
 SUMMARY:Vie de centre
@@ -228,13 +228,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s17-5@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260424T110000
 DTEND;TZID=Europe/Paris:20260424T171500
 SUMMARY:Vie de centre
@@ -245,13 +245,13 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
  e de CDF avec Lens-PSG mardi soir\n\n⚽️ Petit event jeudi matin pour u
  n groupe de jeunes\n🎂 Des anniversaires sont prévus sur les anniversai
  res. On verra si les créneaux sont réservés\nMAJ 2026-04-26 09:49: MAJ 
- anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun ann
- iv... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 1
- 7h et Mattis débute à 18h
+ anniversaire :\n🎂 Samedi 25/04 : RAS\n🎂 Dimanche 26/04 : aucun anniv
+ ... donc Yanis passe en VDC (11h-13h puis13h30-17h)\, Loïc débute à 17h
+  et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s18-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260427T093000
 DTEND;TZID=Europe/Paris:20260427T170000
 SUMMARY:Vie de centre
@@ -261,14 +261,14 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s18-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260428T114500
 DTEND;TZID=Europe/Paris:20260428T220000
 SUMMARY:Vie de centre
@@ -278,14 +278,14 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s18-3@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260429T114500
 DTEND;TZID=Europe/Paris:20260429T170000
 SUMMARY:Vie de centre
@@ -295,14 +295,14 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s18-4@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260430T114500
 DTEND;TZID=Europe/Paris:20260430T172500
 SUMMARY:Vie de centre
@@ -312,119 +312,119 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
  mercredi\n\n🏆⚽️ Départ de Nicolas Loïc et Yohan pour la Cup Franc
  e\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si 
  les créneaux sont réservés surtout avec le WE du 1er mai\nMAJ 2026-04-2
- 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
- à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'ann
- iv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, 
- Quentin fin à 15h30 et Mattis début à 17h30
+ 6 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : pas d'anniv donc début 
+ à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dimanche 03/05 : peu d'anni
+ v donc Yanis fera 11h-12h30 puis 13h15-17h30\, Mehdi pas de changement\, Q
+ uentin fin à 15h30 et Mattis début à 17h30
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s19-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260504T113000
 DTEND;TZID=Europe/Paris:20260504T133000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s19-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260504T173000
 DTEND;TZID=Europe/Paris:20260504T220000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s19-3@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260505T115000
 DTEND;TZID=Europe/Paris:20260505T220000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s19-4@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260506T114500
 DTEND;TZID=Europe/Paris:20260506T150000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s19-5@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260506T163000
 DTEND;TZID=Europe/Paris:20260506T220000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s19-6@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260507T114500
 DTEND;TZID=Europe/Paris:20260507T144000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s20-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260511T113000
 DTEND;TZID=Europe/Paris:20260511T180000
 SUMMARY:Vie de centre
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s20-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260512T115000
 DTEND;TZID=Europe/Paris:20260512T220000
 SUMMARY:Vie de centre
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s20-3@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260513T101000
 DTEND;TZID=Europe/Paris:20260513T180000
 SUMMARY:Vie de centre
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s20-4@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260515T113000
 DTEND;TZID=Europe/Paris:20260515T160000
 SUMMARY:Vie de centre

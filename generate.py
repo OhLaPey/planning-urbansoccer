@@ -487,6 +487,10 @@ def generate_ics(name, events, week_notes=None):
             desc = extra_desc
             if repl_note:
                 desc = repl_note + ("\n" + desc if desc else "")
+            # Normalize CRLF/CR to LF so a stray \r doesn't end up raw in the
+            # DESCRIPTION value and break iOS Calendar's parser mid-file.
+            desc = desc.replace("\r\n", "\n").replace("\r", "\n")
+            summary = summary.replace("\r\n", "\n").replace("\r", " ").replace("\n", " ")
             desc_escaped = desc.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
             summary_escaped = summary.replace(chr(92), chr(92)+chr(92)).replace(',', chr(92)+',').replace(';', chr(92)+';')
             vevent = [

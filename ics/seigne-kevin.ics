@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:seigne-kevin-s11-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260314T090000
 DTEND;TZID=Europe/Paris:20260314T130000
 SUMMARY:EDF-C
@@ -40,7 +40,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s11-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260314T134500
 DTEND;TZID=Europe/Paris:20260314T174500
 SUMMARY:EDF-C
@@ -54,7 +54,7 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s12-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260321T090000
 DTEND;TZID=Europe/Paris:20260321T130000
 SUMMARY:EDF-C
@@ -66,7 +66,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s12-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260321T134500
 DTEND;TZID=Europe/Paris:20260321T174500
 SUMMARY:EDF-C
@@ -78,7 +78,7 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s13-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260328T090000
 DTEND;TZID=Europe/Paris:20260328T130000
 SUMMARY:EDF-C
@@ -87,13 +87,13 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
  s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
- res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
- -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
-  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h-
+ 15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 : E
+ nzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s13-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260328T134500
 DTEND;TZID=Europe/Paris:20260328T174500
 SUMMARY:EDF-C
@@ -102,13 +102,13 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
  n🏆🥎 P25H lundi matin et P50H vendredi matin\n🎾 Dimanche\, test po
  ur les joueurs intéressés pour des cours co padel\n🎂 Des anniversaire
  s sont prévus sur les anniversaires\nMAJ 2026-03-23 14:54: MAJ Anniversai
- res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h
- -15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 :
-  Enzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
+ res\, un week-end qui sera très clame :\n🎂 Samedi 28/03 : Florian 11h-
+ 15h en VDC\, Mehdi 17h30-21h45 en VDC\, Loïc RAS\n🎂 Dimanche 29/03 : E
+ nzo repos\, Florian alternance VDC/Anniv jusqu'à 17h15\, Mehdi RAS
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s14-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260404T090000
 DTEND;TZID=Europe/Paris:20260404T130000
 SUMMARY:EDF-C
@@ -125,7 +125,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s14-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260404T134500
 DTEND;TZID=Europe/Paris:20260404T174500
 SUMMARY:EDF-C
@@ -142,7 +142,7 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s15-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260411T090000
 DTEND;TZID=Europe/Paris:20260411T130000
 SUMMARY:EDF-C
@@ -157,7 +157,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s15-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260411T134500
 DTEND;TZID=Europe/Paris:20260411T174500
 SUMMARY:EDF-C
@@ -172,7 +172,7 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s16-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260418T090000
 DTEND;TZID=Europe/Paris:20260418T130000
 SUMMARY:EDF-C
@@ -188,7 +188,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s16-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260418T134500
 DTEND;TZID=Europe/Paris:20260418T174500
 SUMMARY:EDF-C
@@ -204,30 +204,30 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s19-1@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260509T090000
 DTEND;TZID=Europe/Paris:20260509T130000
 SUMMARY:EDF-C
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:seigne-kevin-s19-2@urban7d
-DTSTAMP:20260428T224418Z
+DTSTAMP:20260429T050343Z
 DTSTART;TZID=Europe/Paris:20260509T134500
 DTEND;TZID=Europe/Paris:20260509T171500
 SUMMARY:EDF-C
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
-  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Reto
- ur de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). N
- icolas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des 
- anniversaires sont prévus sur les anniversaires. On verra si les créneau
- x sont réservés surtout avec le WE du 8 mai
+DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
+ co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
+ 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
+ r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
+ colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
+ niversaires sont prévus sur les anniversaires. On verra si les créneaux 
+ sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 END:VCALENDAR
