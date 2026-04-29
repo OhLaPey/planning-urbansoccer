@@ -26,7 +26,7 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-1@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260223T090000
 DTEND;TZID=Europe/Paris:20260223T100000
 SUMMARY:Stage
@@ -46,7 +46,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-2@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260223T100000
 DTEND;TZID=Europe/Paris:20260223T120000
 SUMMARY:Stage encadrement
@@ -66,7 +66,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-3@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260223T120000
 DTEND;TZID=Europe/Paris:20260223T123000
 SUMMARY:Stage
@@ -86,7 +86,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-4@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260223T130000
 DTEND;TZID=Europe/Paris:20260223T140000
 SUMMARY:Stage
@@ -106,7 +106,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-5@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260224T090000
 DTEND;TZID=Europe/Paris:20260224T100000
 SUMMARY:Stage
@@ -126,7 +126,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-6@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260224T100000
 DTEND;TZID=Europe/Paris:20260224T120000
 SUMMARY:Stage encadrement
@@ -146,7 +146,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-7@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260224T120000
 DTEND;TZID=Europe/Paris:20260224T123000
 SUMMARY:Stage
@@ -166,7 +166,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-8@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260224T130000
 DTEND;TZID=Europe/Paris:20260224T140000
 SUMMARY:Stage
@@ -186,7 +186,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-9@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260224T140000
 DTEND;TZID=Europe/Paris:20260224T160000
 SUMMARY:Stage encadrement
@@ -206,7 +206,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-10@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260224T160000
 DTEND;TZID=Europe/Paris:20260224T170000
 SUMMARY:Stage
@@ -226,7 +226,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-11@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260224T170000
 DTEND;TZID=Europe/Paris:20260224T180000
 SUMMARY:Stage encadrement
@@ -246,7 +246,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-12@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260225T090000
 DTEND;TZID=Europe/Paris:20260225T100000
 SUMMARY:Stage
@@ -266,7 +266,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-13@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260225T100000
 DTEND;TZID=Europe/Paris:20260225T120000
 SUMMARY:Stage encadrement
@@ -286,7 +286,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-14@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260225T120000
 DTEND;TZID=Europe/Paris:20260225T123000
 SUMMARY:Stage
@@ -306,7 +306,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-15@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260225T130000
 DTEND;TZID=Europe/Paris:20260225T140000
 SUMMARY:Stage
@@ -326,7 +326,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-16@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260225T140000
 DTEND;TZID=Europe/Paris:20260225T160000
 SUMMARY:Stage encadrement
@@ -346,7 +346,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s9-17@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260225T160000
 DTEND;TZID=Europe/Paris:20260225T170000
 SUMMARY:Stage
@@ -366,7 +366,7 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s10-1@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260308T160000
 DTEND;TZID=Europe/Paris:20260308T231500
 SUMMARY:Vie de centre
@@ -384,7 +384,7 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s13-1@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260329T151500
 DTEND;TZID=Europe/Paris:20260329T233000
 SUMMARY:Vie de centre
@@ -399,7 +399,7 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s16-1@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260419T160000
 DTEND;TZID=Europe/Paris:20260419T234000
 SUMMARY:Vie de centre
@@ -415,7 +415,7 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:jarguel-thomas-s17-1@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260424T180000
 DTEND;TZID=Europe/Paris:20260425T002000
 SUMMARY:Vie de centre
@@ -431,8 +431,25 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
   et Mattis débute à 18h
 END:VEVENT
 BEGIN:VEVENT
+UID:jarguel-thomas-s18-1@urban7d
+DTSTAMP:20260429T122946Z
+DTSTART;TZID=Europe/Paris:20260429T180000
+DTEND;TZID=Europe/Paris:20260429T235900
+SUMMARY:[Remplace Quentin] Vie de centre
+DESCRIPTION:Remplace CRUZEL Quentin\nPlanning 27/04 au 03/05\n⚽️ 2eme s
+ emaine de vacances avec des stages pour Marvyn\n🏆🥎 Cup Padel : P100 
+ lundi aprem\, P25 mercredi matin et P250 vendredi matin\n🏆🍻🍕 Demi
+ -finales de LDC mardi et mercredi\n\n🏆⚽️ Départ de Nicolas Loïc e
+ t Yohan pour la Cup France\n🎂 Des anniversaires sont prévus sur les an
+ niversaires. On verra si les créneaux sont réservés surtout avec le WE 
+ du 1er mai\nMAJ 2026-04-26 09:51: MAJ Anniversaire :\n🎂 Samedi 02/05 : 
+ pas d'anniv donc début à 15h pour Mehdi\, uniquement de la VDC\n🎂 Dim
+ anche 03/05 : peu d'anniv donc Yanis fera 11h-12h30 puis 13h15-17h30\, Meh
+ di pas de changement\, Quentin fin à 15h30 et Mattis début à 17h30
+END:VEVENT
+BEGIN:VEVENT
 UID:jarguel-thomas-s20-1@urban7d
-DTSTAMP:20260429T072117Z
+DTSTAMP:20260429T122946Z
 DTSTART;TZID=Europe/Paris:20260517T160000
 DTEND;TZID=Europe/Paris:20260517T222000
 SUMMARY:Vie de centre
