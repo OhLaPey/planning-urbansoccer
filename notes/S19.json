@@ -1,4 +1,13 @@
 {
   "comment": "Planning 04/05 au 10/05\r\n⚽🥎 Reprise de l'EDF et des cours co Padel\r\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\r\n🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\r\n🔴🔵 Retour de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Nicolas reste sur Paris pour une semaine séminaire PSG Academy\r\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés surtout avec le WE du 8 mai",
-  "updates": []
+  "updates": [],
+  "replacements": [
+    {
+      "date": "2026-05-04",
+      "out": "CARRERE Peïo",
+      "in": "PEREZ Loic",
+      "start": "19:15",
+      "end": "21:45"
+    }
+  ]
 }
