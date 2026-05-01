@@ -3572,16 +3572,15 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                 btn.className = 'save-edits-btn saving';
             }}
             var statusEl = document.getElementById('edit-status');
-            pushDataToGitHub(function(ok) {{
+            pushDataToGitHub(function(ok, updatedAt) {{
                 if (ok) {{
                     _editsDirty = false;
                     updateUnsavedBanner();
                     // Mettre à jour la note de source
                     var metaEl = document.querySelector('.meta-note');
-                    if (metaEl) {{
-                        var raw = weekData._meta.updated_at;
-                        var fmt = raw;
-                        var m2 = raw.match(/^(\d{{4}})-(\d{{2}})-(\d{{2}})\s+(\d{{2}}:\d{{2}})$/);
+                    if (metaEl && updatedAt) {{
+                        var fmt = updatedAt;
+                        var m2 = updatedAt.match(/^(\d{{4}})-(\d{{2}})-(\d{{2}})\s+(\d{{2}}:\d{{2}})$/);
                         if (m2) fmt = m2[3] + '/' + m2[2] + '/' + m2[1] + ' \u00e0 ' + m2[4];
                         metaEl.innerHTML = 'S{week_num} \u00b7 MAJ ' + fmt + ' \u00b7 Modif admin';
                     }}
@@ -3634,6 +3633,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                 source: 'Modif admin',
                 updated_at: now.getFullYear() + '-' + pad(now.getMonth()+1) + '-' + pad(now.getDate()) + ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes())
             }};
+            var updatedAt = weekData._meta.updated_at;
             var content = btoa(unescape(encodeURIComponent(JSON.stringify(weekData, null, 2) + '\\n')));
             var dataPath = 'data/S{week_num}-events.json';
             var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + dataPath;
@@ -3661,8 +3661,14 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                     body: JSON.stringify(body)
                 }});
             }})
-            .then(function(r) {{ cb(r.ok); }})
-            .catch(function() {{ cb(false); }});
+            .then(function(r) {{
+                // Schedule the success/error callback outside the promise chain so
+                // a throw inside cb() doesn't fall into the catch() and trigger a
+                // second cb(false).
+                var ok = r.ok;
+                setTimeout(function() {{ cb(ok, updatedAt); }}, 0);
+            }})
+            .catch(function() {{ setTimeout(function() {{ cb(false); }}, 0); }});
         }}
 
         // Init admin toolbar if already unlocked
