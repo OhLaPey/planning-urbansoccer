@@ -3626,12 +3626,17 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                 if (name === '_meta') return;
                 weekData[name] = DATA[name];
             }});
-            // Ajouter _meta avec source et timestamp
+            // Ajouter _meta avec source et timestamp. On préserve excel_version
+            // pour que generate.py sache que ces modifs sont basées sur la
+            // version d'Excel courante — sinon il rebuilderait depuis Excel
+            // et écraserait les modifs web.
             var now = new Date();
             var pad = function(n) {{ return n < 10 ? '0' + n : '' + n; }};
+            var prevMeta = (DATA && DATA._meta) || {{}};
             weekData._meta = {{
                 source: 'Modif admin',
-                updated_at: now.getFullYear() + '-' + pad(now.getMonth()+1) + '-' + pad(now.getDate()) + ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes())
+                updated_at: now.getFullYear() + '-' + pad(now.getMonth()+1) + '-' + pad(now.getDate()) + ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes()),
+                excel_version: prevMeta.excel_version || 0
             }};
             var updatedAt = weekData._meta.updated_at;
             var content = btoa(unescape(encodeURIComponent(JSON.stringify(weekData, null, 2) + '\\n')));
@@ -4314,6 +4319,7 @@ def main():
 
         # Lire le JSON existant AVANT de l'écraser (peut contenir des modifs web)
         web_events = None
+        existing = None
         try:
             with open(events_path, "r", encoding="utf-8") as f:
                 existing = json.load(f)
@@ -4323,16 +4329,32 @@ def main():
         except (json.JSONDecodeError, FileNotFoundError, IOError):
             pass
 
-        events_data = json.loads(build_events_json(employees))
-        source = f"Excel v{excel_ver}" if excel_ver > 0 else "Excel"
-        events_data["_meta"] = {
-            "source": source,
-            "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
-        }
-        with open(events_path, "w", encoding="utf-8") as f:
-            json.dump(events_data, f, ensure_ascii=False, indent=2)
-            f.write("\n")
-        print(f"Écrit : {events_path}")
+        # If web edits are based on the same Excel version we're rebuilding from,
+        # keep them on disk so they don't get wiped on every workflow run. The
+        # Excel only wins if HR uploaded a newer version (excel_ver bumped).
+        existing_excel_ver = (existing or {}).get("_meta", {}).get("excel_version", 0)
+        keep_web = web_events is not None and existing_excel_ver >= excel_ver
+
+        if keep_web:
+            # Refresh the source label / timestamp but keep all the web edits.
+            web_events["_meta"]["excel_version"] = excel_ver
+            with open(events_path, "w", encoding="utf-8") as f:
+                json.dump(web_events, f, ensure_ascii=False, indent=2)
+                f.write("\n")
+            print(f"Conservé : {events_path} (modifs web préservées)")
+        else:
+            events_data = json.loads(build_events_json(employees))
+            source = f"Excel v{excel_ver}" if excel_ver > 0 else "Excel"
+            events_data["_meta"] = {
+                "source": source,
+                "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                "excel_version": excel_ver,
+            }
+            with open(events_path, "w", encoding="utf-8") as f:
+                json.dump(events_data, f, ensure_ascii=False, indent=2)
+                f.write("\n")
+            print(f"Écrit : {events_path}")
+            web_events = None  # don't carry stale modifs into HTML
 
 
         # HTML — utiliser les données web si disponibles, sinon Excel
