@@ -592,13 +592,6 @@
         "start": "2026-05-09T15:45",
         "end": "2026-05-09T17:45",
         "day": 5
-      },
-      {
-        "code": "L-REG",
-        "label": "Régisseur League",
-        "start": "2026-05-04T19:15",
-        "end": "2026-05-04T21:45",
-        "day": 0
       }
     ]
   },
@@ -804,7 +797,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-04-29 14:10",
+    "updated_at": "2026-05-04 09:51",
     "excel_version": 0
   }
 }
