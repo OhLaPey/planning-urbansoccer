@@ -83,13 +83,6 @@
         "day": 2
       },
       {
-        "code": "L-REG",
-        "label": "Régisseur League",
-        "start": "2026-05-06T20:15",
-        "end": "2026-05-06T21:45",
-        "day": 2
-      },
-      {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-05-07T16:00",
@@ -418,8 +411,8 @@
       {
         "code": "L-ARB",
         "label": "L-ARB",
-        "start": "2026-05-06T19:30",
-        "end": "2026-05-06T22:30",
+        "start": "2026-05-06T18:30",
+        "end": "2026-05-06T20:30",
         "day": 2
       }
     ]
@@ -456,8 +449,8 @@
       {
         "code": "L-ARB",
         "label": "L-ARB",
-        "start": "2026-05-06T20:30",
-        "end": "2026-05-06T22:30",
+        "start": "2026-05-06T18:30",
+        "end": "2026-05-06T20:30",
         "day": 2
       }
     ]
@@ -797,7 +790,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-05-04 10:16",
+    "updated_at": "2026-05-05 08:38",
     "excel_version": 0
   }
 }
