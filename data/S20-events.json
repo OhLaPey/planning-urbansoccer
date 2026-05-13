@@ -57,7 +57,7 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-05-16T07:30",
-        "end": "2026-05-16T17:00",
+        "end": "2026-05-16T15:00",
         "day": 5
       }
     ]
@@ -147,13 +147,13 @@
         "code": "ANNIV",
         "label": "Anniversaire",
         "start": "2026-05-16T13:45",
-        "end": "2026-05-16T17:45",
+        "end": "2026-05-16T15:45",
         "day": 5
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-05-16T17:45",
+        "start": "2026-05-16T15:45",
         "end": "2026-05-16T22:30",
         "day": 5
       }
@@ -277,16 +277,9 @@
         "day": 4
       },
       {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-05-17T13:45",
-        "end": "2026-05-17T17:45",
-        "day": 6
-      },
-      {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-05-17T17:45",
+        "start": "2026-05-17T15:00",
         "end": "2026-05-17T23:40",
         "day": 6
       }
@@ -346,29 +339,8 @@
         "code": "ANNIV",
         "label": "Anniversaire",
         "start": "2026-05-16T13:30",
-        "end": "2026-05-16T17:30",
+        "end": "2026-05-16T15:30",
         "day": 5
-      },
-      {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-05-17T10:15",
-        "end": "2026-05-17T12:15",
-        "day": 6
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-05-17T12:15",
-        "end": "2026-05-17T13:00",
-        "day": 6
-      },
-      {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-05-17T13:30",
-        "end": "2026-05-17T17:30",
-        "day": 6
       }
     ]
   },
@@ -418,15 +390,8 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-05-16T08:45",
-        "end": "2026-05-16T17:30",
-        "day": 5
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
         "start": "2026-05-17T08:45",
-        "end": "2026-05-17T17:00",
+        "end": "2026-05-17T16:00",
         "day": 6
       }
     ]
@@ -545,7 +510,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-05-05 12:46",
+    "updated_at": "2026-05-13 14:09",
     "excel_version": 0
   }
 }
