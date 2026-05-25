@@ -26,7 +26,8 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240723T075638Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260301T093000
 DTEND;TZID=Europe/Paris:20260301T101500
 SUMMARY:Vie de centre
@@ -46,7 +47,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250422T160545Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260301T101500
 DTEND;TZID=Europe/Paris:20260301T121500
 SUMMARY:Anniversaire
@@ -66,7 +68,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250321T011701Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260301T121500
 DTEND;TZID=Europe/Paris:20260301T124500
 SUMMARY:Vie de centre
@@ -86,7 +89,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241124T224957Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260301T134500
 DTEND;TZID=Europe/Paris:20260301T174500
 SUMMARY:Anniversaire
@@ -106,7 +110,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s9-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251026T025108Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260224T200000
 DTEND;TZID=Europe/Paris:20260224T235900
 SUMMARY:[Remplace Lucas] Vie de centre
@@ -127,7 +132,8 @@ DESCRIPTION:Remplace BOULARDET Lucas\nSemaine de vacances scolaires\n⚽ St
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250417T051024Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260308T093000
 DTEND;TZID=Europe/Paris:20260308T101500
 SUMMARY:Vie de centre
@@ -145,7 +151,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250917T002908Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260308T101500
 DTEND;TZID=Europe/Paris:20260308T121500
 SUMMARY:Anniversaire
@@ -163,7 +170,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240509T042609Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260308T121500
 DTEND;TZID=Europe/Paris:20260308T124500
 SUMMARY:Vie de centre
@@ -181,7 +189,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s10-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240203T004043Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260308T134500
 DTEND;TZID=Europe/Paris:20260308T174500
 SUMMARY:Anniversaire
@@ -199,7 +208,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240914T073047Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260314T131500
 DTEND;TZID=Europe/Paris:20260314T171500
 SUMMARY:[Remplacé par Florian] Anniversaire
@@ -213,7 +223,8 @@ DESCRIPTION:Remplacé par TINGUY Florian\nPlanning 09/03 au 15/03 \n\n⚽
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251227T214959Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260315T093000
 DTEND;TZID=Europe/Paris:20260315T101500
 SUMMARY:Vie de centre
@@ -227,7 +238,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240112T073449Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260315T101500
 DTEND;TZID=Europe/Paris:20260315T121500
 SUMMARY:Anniversaire
@@ -241,7 +253,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241011T110723Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260315T121500
 DTEND;TZID=Europe/Paris:20260315T124500
 SUMMARY:Vie de centre
@@ -255,7 +268,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s11-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241011T063052Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260315T131500
 DTEND;TZID=Europe/Paris:20260315T151500
 SUMMARY:Anniversaire
@@ -269,7 +283,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s12-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241119T105428Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260322T093000
 DTEND;TZID=Europe/Paris:20260322T101500
 SUMMARY:Vie de centre
@@ -281,7 +296,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s12-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250811T175257Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260322T101500
 DTEND;TZID=Europe/Paris:20260322T121500
 SUMMARY:Anniversaire
@@ -293,7 +309,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s12-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240130T125918Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260322T121500
 DTEND;TZID=Europe/Paris:20260322T124500
 SUMMARY:Vie de centre
@@ -305,7 +322,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s12-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240503T011351Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260322T131500
 DTEND;TZID=Europe/Paris:20260322T151500
 SUMMARY:Anniversaire
@@ -317,7 +335,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s14-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250105T143457Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260405T093000
 DTEND;TZID=Europe/Paris:20260405T101500
 SUMMARY:Vie de centre
@@ -334,7 +353,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s14-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250411T234410Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260405T101500
 DTEND;TZID=Europe/Paris:20260405T121500
 SUMMARY:Anniversaire
@@ -351,7 +371,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s14-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250223T070530Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260405T121500
 DTEND;TZID=Europe/Paris:20260405T124500
 SUMMARY:Vie de centre
@@ -368,7 +389,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s14-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250506T113133Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260405T133000
 DTEND;TZID=Europe/Paris:20260405T173000
 SUMMARY:Anniversaire
@@ -385,7 +407,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s15-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240131T043251Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260412T093000
 DTEND;TZID=Europe/Paris:20260412T101500
 SUMMARY:Vie de centre
@@ -400,7 +423,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s15-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251201T184621Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260412T101500
 DTEND;TZID=Europe/Paris:20260412T121500
 SUMMARY:Anniversaire
@@ -415,7 +439,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s15-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240816T150130Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260412T121500
 DTEND;TZID=Europe/Paris:20260412T124500
 SUMMARY:Vie de centre
@@ -430,7 +455,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s15-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251017T194616Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260412T133000
 DTEND;TZID=Europe/Paris:20260412T173000
 SUMMARY:Anniversaire
@@ -445,7 +471,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s16-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241206T203314Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260419T093000
 DTEND;TZID=Europe/Paris:20260419T101500
 SUMMARY:Vie de centre
@@ -461,7 +488,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s16-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250304T122502Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260419T101500
 DTEND;TZID=Europe/Paris:20260419T121500
 SUMMARY:Anniversaire
@@ -477,7 +505,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s16-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241119T075036Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260419T121500
 DTEND;TZID=Europe/Paris:20260419T124500
 SUMMARY:Vie de centre
@@ -493,7 +522,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s16-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241119T044102Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260419T133000
 DTEND;TZID=Europe/Paris:20260419T173000
 SUMMARY:Anniversaire
@@ -509,7 +539,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s17-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240927T220332Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260423T094500
 DTEND;TZID=Europe/Paris:20260423T121500
 SUMMARY:EV-AN
@@ -526,7 +557,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s17-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251224T094223Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260426T133000
 DTEND;TZID=Europe/Paris:20260426T170000
 SUMMARY:Vie de centre
@@ -543,7 +575,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s17-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240711T090346Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260426T110000
 DTEND;TZID=Europe/Paris:20260426T130000
 SUMMARY:Vie de centre
@@ -560,7 +593,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s17-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250811T001555Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260424T180000
 DTEND;TZID=Europe/Paris:20260424T002000
 SUMMARY:Vie de centre
@@ -577,7 +611,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s18-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241128T003414Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260503T110000
 DTEND;TZID=Europe/Paris:20260503T123000
 SUMMARY:Vie de centre
@@ -594,7 +629,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s18-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250422T215830Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260503T151500
 DTEND;TZID=Europe/Paris:20260503T170000
 SUMMARY:Vie de centre
@@ -611,7 +647,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s18-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240209T005936Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260503T131500
 DTEND;TZID=Europe/Paris:20260503T151500
 SUMMARY:Anniversaire
@@ -628,7 +665,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s19-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241112T045023Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260509T134500
 DTEND;TZID=Europe/Paris:20260509T174500
 SUMMARY:Anniversaire
@@ -642,7 +680,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s19-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250709T051436Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260509T174500
 DTEND;TZID=Europe/Paris:20260509T204500
 SUMMARY:Vie de centre
@@ -656,7 +695,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s19-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240715T194647Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260510T101500
 DTEND;TZID=Europe/Paris:20260510T121500
 SUMMARY:Anniversaire
@@ -670,7 +710,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s19-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240429T002438Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260510T121500
 DTEND;TZID=Europe/Paris:20260510T130000
 SUMMARY:Vie de centre
@@ -684,7 +725,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s19-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250917T133904Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260510T133000
 DTEND;TZID=Europe/Paris:20260510T173000
 SUMMARY:Anniversaire
@@ -698,37 +740,97 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s20-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240414T154044Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260512T193000
 DTEND;TZID=Europe/Paris:20260512T223000
 SUMMARY:L-ARB
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s20-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251220T210841Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260516T133000
 DTEND;TZID=Europe/Paris:20260516T173000
 SUMMARY:Anniversaire
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s20-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240430T133952Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260517T101500
 DTEND;TZID=Europe/Paris:20260517T121500
 SUMMARY:Anniversaire
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s20-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240808T185953Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260517T121500
 DTEND;TZID=Europe/Paris:20260517T130000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s20-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240726T131339Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260517T133000
 DTEND;TZID=Europe/Paris:20260517T173000
 SUMMARY:Anniversaire
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 END:VCALENDAR

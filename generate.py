@@ -427,9 +427,19 @@ def generate_ics(name, events, week_notes=None):
             by_week[w] = []
         by_week[w].append(evt)
 
-    # DTSTAMP must be UTC per RFC 5545
-    from datetime import datetime as _dt, timezone as _tz
-    dtstamp_utc = _dt.now(_tz.utc).strftime("%Y%m%dT%H%M%SZ")
+    # DTSTAMP must be UTC per RFC 5545. We derive it from a hash of the
+    # event content so unchanged events keep the same DTSTAMP across
+    # regenerations — iOS Calendar otherwise sees every event "modified"
+    # on every workflow run and may drop the whole calendar.
+    from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+    import hashlib as _hashlib
+    _DTSTAMP_BASE = _dt(2024, 1, 1, tzinfo=_tz.utc)
+
+    def _event_dtstamp(*parts):
+        key = "|".join(str(p) for p in parts).encode("utf-8")
+        h = _hashlib.sha256(key).digest()
+        offset = int.from_bytes(h[:4], "big") % (60 * 60 * 24 * 365 * 2)
+        return (_DTSTAMP_BASE + _td(seconds=offset)).strftime("%Y%m%dT%H%M%SZ")
 
     for week_num in sorted(by_week.keys()):
         # Build description with weekly notes if available
@@ -493,10 +503,13 @@ def generate_ics(name, events, week_notes=None):
             summary = summary.replace("\r\n", "\n").replace("\r", " ").replace("\n", " ")
             desc_escaped = desc.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
             summary_escaped = summary.replace(chr(92), chr(92)+chr(92)).replace(',', chr(92)+',').replace(';', chr(92)+';')
+            uid = f"{s}-s{week_num}-{i}@urban7d"
+            ev_dtstamp = _event_dtstamp(uid, dt_start, dt_end, summary_escaped, desc_escaped)
             vevent = [
                 "BEGIN:VEVENT",
-                f"UID:{s}-s{week_num}-{i}@urban7d",
-                f"DTSTAMP:{dtstamp_utc}",
+                f"UID:{uid}",
+                f"DTSTAMP:{ev_dtstamp}",
+                "SEQUENCE:0",
                 f"DTSTART;TZID=Europe/Paris:{dt_start}",
                 f"DTEND;TZID=Europe/Paris:{dt_end}",
                 f"SUMMARY:{summary_escaped}",

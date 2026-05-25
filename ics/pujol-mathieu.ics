@@ -26,7 +26,8 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240520T032629Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260226T090000
 DTEND;TZID=Europe/Paris:20260226T094500
 SUMMARY:Stage
@@ -46,7 +47,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240117T160927Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260226T094500
 DTEND;TZID=Europe/Paris:20260226T180000
 SUMMARY:Vie de centre
@@ -66,7 +68,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250204T213050Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260227T094500
 DTEND;TZID=Europe/Paris:20260227T180000
 SUMMARY:Vie de centre
@@ -86,7 +89,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250528T230240Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260228T084500
 DTEND;TZID=Europe/Paris:20260228T170000
 SUMMARY:Vie de centre
@@ -106,7 +110,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s9-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250304T085349Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260301T150000
 DTEND;TZID=Europe/Paris:20260301T222000
 SUMMARY:Vie de centre
@@ -126,7 +131,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250802T204116Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260302T120000
 DTEND;TZID=Europe/Paris:20260302T180000
 SUMMARY:Vie de centre
@@ -144,7 +150,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251102T041651Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260304T090000
 DTEND;TZID=Europe/Paris:20260304T094500
 SUMMARY:Stage
@@ -162,7 +169,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240307T091507Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260304T094500
 DTEND;TZID=Europe/Paris:20260304T173000
 SUMMARY:Vie de centre
@@ -180,7 +188,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250815T093615Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260305T143000
 DTEND;TZID=Europe/Paris:20260305T153000
 SUMMARY:Réunion
@@ -198,7 +207,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250922T053347Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260305T153000
 DTEND;TZID=Europe/Paris:20260305T220000
 SUMMARY:Vie de centre
@@ -216,7 +226,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240920T064743Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260306T090000
 DTEND;TZID=Europe/Paris:20260306T094500
 SUMMARY:Stage
@@ -234,7 +245,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240725T013722Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260306T094500
 DTEND;TZID=Europe/Paris:20260306T173000
 SUMMARY:Vie de centre
@@ -252,7 +264,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s10-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250215T215648Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260307T084500
 DTEND;TZID=Europe/Paris:20260307T170000
 SUMMARY:Vie de centre
@@ -270,7 +283,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250117T014022Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260309T094500
 DTEND;TZID=Europe/Paris:20260309T153000
 SUMMARY:Vie de centre
@@ -284,7 +298,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240223T181540Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260310T094500
 DTEND;TZID=Europe/Paris:20260310T153000
 SUMMARY:Vie de centre
@@ -298,7 +313,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250206T215803Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260310T153000
 DTEND;TZID=Europe/Paris:20260310T163000
 SUMMARY:Réunion
@@ -312,7 +328,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251117T220949Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260310T173000
 DTEND;TZID=Europe/Paris:20260310T190000
 SUMMARY:Vie de centre
@@ -326,7 +343,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250724T052007Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260312T140000
 DTEND;TZID=Europe/Paris:20260312T150000
 SUMMARY:Vie de centre
@@ -340,7 +358,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241130T093707Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260312T150000
 DTEND;TZID=Europe/Paris:20260312T160000
 SUMMARY:Réunion
@@ -354,7 +373,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251221T001304Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260312T160000
 DTEND;TZID=Europe/Paris:20260312T220000
 SUMMARY:Vie de centre
@@ -368,7 +388,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240728T074933Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260313T094500
 DTEND;TZID=Europe/Paris:20260313T190000
 SUMMARY:Vie de centre
@@ -382,7 +403,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250118T020250Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260314T073000
 DTEND;TZID=Europe/Paris:20260314T100000
 SUMMARY:Cup League
@@ -396,7 +418,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s11-10@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250403T085834Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260314T100000
 DTEND;TZID=Europe/Paris:20260314T173000
 SUMMARY:Vie de centre
@@ -410,7 +433,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s12-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240204T183850Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260316T080000
 DTEND;TZID=Europe/Paris:20260316T100000
 SUMMARY:Inventaire
@@ -422,7 +446,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s12-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251020T102958Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260316T100000
 DTEND;TZID=Europe/Paris:20260316T160000
 SUMMARY:Vie de centre
@@ -434,7 +459,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s12-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240325T031426Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260317T171500
 DTEND;TZID=Europe/Paris:20260317T221500
 SUMMARY:Vie de centre
@@ -446,7 +472,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s12-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240711T100131Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260318T150000
 DTEND;TZID=Europe/Paris:20260318T153000
 SUMMARY:Événement logistique
@@ -458,7 +485,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s12-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240224T012921Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260318T153000
 DTEND;TZID=Europe/Paris:20260318T190000
 SUMMARY:Vie de centre
@@ -470,7 +498,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s12-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240417T224848Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260318T190000
 DTEND;TZID=Europe/Paris:20260318T233000
 SUMMARY:Événement logistique
@@ -482,7 +511,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s12-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251017T031413Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260320T094500
 DTEND;TZID=Europe/Paris:20260320T190000
 SUMMARY:Vie de centre
@@ -494,7 +524,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s12-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250317T015356Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260322T150000
 DTEND;TZID=Europe/Paris:20260322T222000
 SUMMARY:[Remplacé par Mattis] Vie de centre
@@ -507,7 +538,8 @@ DESCRIPTION:Remplacé par TOPPAN Mattis\n⚽🥎 EDF et cours padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s13-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240811T190055Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260323T073000
 DTEND;TZID=Europe/Paris:20260323T100000
 SUMMARY:Cup League
@@ -522,7 +554,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s13-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250802T220833Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260323T100000
 DTEND;TZID=Europe/Paris:20260323T150000
 SUMMARY:Vie de centre
@@ -537,7 +570,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s13-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240718T034422Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260324T094500
 DTEND;TZID=Europe/Paris:20260324T150000
 SUMMARY:Vie de centre
@@ -552,7 +586,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s13-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241227T025049Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260325T094500
 DTEND;TZID=Europe/Paris:20260325T180000
 SUMMARY:Vie de centre
@@ -567,7 +602,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s13-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250205T193757Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260326T114500
 DTEND;TZID=Europe/Paris:20260326T220000
 SUMMARY:Vie de centre
@@ -582,7 +618,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s13-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240124T125824Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260327T114500
 DTEND;TZID=Europe/Paris:20260327T190000
 SUMMARY:Vie de centre
@@ -597,7 +634,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s13-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240818T061029Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260329T150000
 DTEND;TZID=Europe/Paris:20260329T170000
 SUMMARY:Aide
@@ -612,7 +650,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s13-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251020T080629Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260329T170000
 DTEND;TZID=Europe/Paris:20260329T222000
 SUMMARY:Vie de centre
@@ -627,7 +666,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s14-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240130T000348Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260330T094500
 DTEND;TZID=Europe/Paris:20260330T180000
 SUMMARY:Vie de centre
@@ -644,7 +684,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s14-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240409T184901Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260401T073000
 DTEND;TZID=Europe/Paris:20260401T113000
 SUMMARY:Inventaire
@@ -661,7 +702,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s14-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241102T131634Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260401T113000
 DTEND;TZID=Europe/Paris:20260401T170000
 SUMMARY:Vie de centre
@@ -678,7 +720,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s14-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240707T080815Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260402T173000
 DTEND;TZID=Europe/Paris:20260402T184500
 SUMMARY:Vie de centre
@@ -695,7 +738,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s14-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250708T032826Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260402T184500
 DTEND;TZID=Europe/Paris:20260402T224500
 SUMMARY:Événement logistique
@@ -712,7 +756,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s14-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250326T122615Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260403T094500
 DTEND;TZID=Europe/Paris:20260403T140000
 SUMMARY:Vie de centre
@@ -729,7 +774,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s14-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240825T184319Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260404T073000
 DTEND;TZID=Europe/Paris:20260404T084500
 SUMMARY:Cup League
@@ -746,7 +792,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s14-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240812T140439Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260404T084500
 DTEND;TZID=Europe/Paris:20260404T094500
 SUMMARY:EDF-A
@@ -763,7 +810,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s14-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240415T034010Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260404T094500
 DTEND;TZID=Europe/Paris:20260404T173000
 SUMMARY:Vie de centre
@@ -780,7 +828,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s15-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251205T072642Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260406T163000
 DTEND;TZID=Europe/Paris:20260407T000000
 SUMMARY:Vie de centre
@@ -795,7 +844,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s15-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250816T192548Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260407T171500
 DTEND;TZID=Europe/Paris:20260407T221500
 SUMMARY:Vie de centre
@@ -810,7 +860,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s15-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240427T075612Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260408T094500
 DTEND;TZID=Europe/Paris:20260408T154500
 SUMMARY:Vie de centre
@@ -825,7 +876,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s15-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240530T063523Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260409T094500
 DTEND;TZID=Europe/Paris:20260409T110000
 SUMMARY:Vie de centre
@@ -840,7 +892,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s15-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240419T114049Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260409T110000
 DTEND;TZID=Europe/Paris:20260409T140000
 SUMMARY:Événement logistique
@@ -855,7 +908,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s15-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250326T103946Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260409T140000
 DTEND;TZID=Europe/Paris:20260409T180000
 SUMMARY:Vie de centre
@@ -870,7 +924,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s15-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250123T214103Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260410T094500
 DTEND;TZID=Europe/Paris:20260410T180000
 SUMMARY:Vie de centre
@@ -885,7 +940,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s15-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250704T180422Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260412T160000
 DTEND;TZID=Europe/Paris:20260412T222000
 SUMMARY:Vie de centre
@@ -900,7 +956,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s16-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240621T042749Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260413T094500
 DTEND;TZID=Europe/Paris:20260413T153000
 SUMMARY:Vie de centre
@@ -916,7 +973,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s16-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240422T131809Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260413T153000
 DTEND;TZID=Europe/Paris:20260413T160000
 SUMMARY:Événement logistique
@@ -932,7 +990,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s16-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250801T101707Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260414T094500
 DTEND;TZID=Europe/Paris:20260414T160000
 SUMMARY:Vie de centre
@@ -948,7 +1007,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s16-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251126T081123Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260416T094500
 DTEND;TZID=Europe/Paris:20260416T160000
 SUMMARY:Vie de centre
@@ -964,7 +1024,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s16-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240608T210012Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260417T094500
 DTEND;TZID=Europe/Paris:20260417T190000
 SUMMARY:Vie de centre
@@ -980,7 +1041,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s16-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241106T011230Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260418T084500
 DTEND;TZID=Europe/Paris:20260418T094500
 SUMMARY:EDF-A
@@ -996,7 +1058,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s16-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251224T090656Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260418T094500
 DTEND;TZID=Europe/Paris:20260418T173000
 SUMMARY:Vie de centre
@@ -1012,7 +1075,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s17-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250724T051849Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260420T120000
 DTEND;TZID=Europe/Paris:20260420T180000
 SUMMARY:Vie de centre
@@ -1029,7 +1093,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s17-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250725T231141Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260421T090000
 DTEND;TZID=Europe/Paris:20260421T100000
 SUMMARY:Stage
@@ -1046,7 +1111,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s17-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241128T181924Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260421T100000
 DTEND;TZID=Europe/Paris:20260421T180000
 SUMMARY:Vie de centre
@@ -1063,7 +1129,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s17-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240318T202641Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260422T073000
 DTEND;TZID=Europe/Paris:20260422T090000
 SUMMARY:Cup League
@@ -1080,7 +1147,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s17-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241024T054752Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260422T090000
 DTEND;TZID=Europe/Paris:20260422T100000
 SUMMARY:Stage
@@ -1097,7 +1165,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s17-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240905T175808Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260422T100000
 DTEND;TZID=Europe/Paris:20260422T170000
 SUMMARY:Vie de centre
@@ -1114,7 +1183,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s17-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250601T190339Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260423T160000
 DTEND;TZID=Europe/Paris:20260423T220000
 SUMMARY:Vie de centre
@@ -1131,7 +1201,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s17-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250216T141215Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260425T143000
 DTEND;TZID=Europe/Paris:20260425T214500
 SUMMARY:Vie de centre
@@ -1148,7 +1219,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s18-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240428T102626Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260427T083000
 DTEND;TZID=Europe/Paris:20260427T094500
 SUMMARY:Stage
@@ -1165,7 +1237,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s18-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250619T231335Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260427T094500
 DTEND;TZID=Europe/Paris:20260427T173000
 SUMMARY:Vie de centre
@@ -1182,7 +1255,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s18-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241023T103407Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260428T090000
 DTEND;TZID=Europe/Paris:20260428T100000
 SUMMARY:Stage
@@ -1199,7 +1273,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s18-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250119T000403Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260428T100000
 DTEND;TZID=Europe/Paris:20260428T170000
 SUMMARY:Vie de centre
@@ -1216,7 +1291,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s19-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240421T045108Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260507T094500
 DTEND;TZID=Europe/Paris:20260507T160000
 SUMMARY:Vie de centre
@@ -1230,7 +1306,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s19-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240414T170950Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260508T073000
 DTEND;TZID=Europe/Paris:20260508T100000
 SUMMARY:Cup Régisseur
@@ -1244,7 +1321,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s19-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240409T090514Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260508T100000
 DTEND;TZID=Europe/Paris:20260508T170000
 SUMMARY:Vie de centre
@@ -1258,7 +1336,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s19-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250416T080945Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260509T084500
 DTEND;TZID=Europe/Paris:20260509T094500
 SUMMARY:EDF-A
@@ -1272,7 +1351,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s19-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251127T111851Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260509T094500
 DTEND;TZID=Europe/Paris:20260509T173000
 SUMMARY:Vie de centre
@@ -1286,7 +1366,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s19-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240131T101255Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260510T084500
 DTEND;TZID=Europe/Paris:20260510T173000
 SUMMARY:Vie de centre
@@ -1300,37 +1381,97 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s20-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240410T113659Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260512T140000
 DTEND;TZID=Europe/Paris:20260512T223000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s20-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241223T042120Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260513T094500
 DTEND;TZID=Europe/Paris:20260513T170000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s20-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250730T233854Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260514T071500
 DTEND;TZID=Europe/Paris:20260514T084500
 SUMMARY:Inventaire
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s20-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250623T063937Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260514T084500
 DTEND;TZID=Europe/Paris:20260514T140000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:pujol-mathieu-s20-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240523T170634Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260516T150000
 DTEND;TZID=Europe/Paris:20260516T204500
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 END:VCALENDAR
