@@ -2,10 +2,24 @@
 """Regenerate ICS files from HTML event data (all weeks, auto-discovered)."""
 
 import glob
+import hashlib
 import json
 import os
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+
+
+_DTSTAMP_BASE = datetime(2024, 1, 1, tzinfo=timezone.utc)
+
+
+def stable_dtstamp(*parts):
+    """DTSTAMP derived from event content so unchanged events keep the same
+    stamp across regenerations (iOS Calendar otherwise treats every event as
+    modified on every workflow run and can silently drop the whole feed)."""
+    key = "|".join(str(p) for p in parts).encode("utf-8")
+    h = hashlib.sha256(key).digest()
+    offset = int.from_bytes(h[:4], "big") % (60 * 60 * 24 * 365 * 2)
+    return (_DTSTAMP_BASE + timedelta(seconds=offset)).strftime("%Y%m%dT%H%M%SZ")
 
 
 ICS_DIR = "ics"
@@ -190,9 +204,12 @@ def generate_ics(name, all_events, all_notes, dtstamp_utc):
             summary_label = summary_label.replace("\r\n", " ").replace("\r", " ").replace("\n", " ")
             summary = summary_label.replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;")
 
+            uid = f"{s}-s{week_num}-{i}@urban7d"
+            ev_stamp = stable_dtstamp(uid, start_str, end_str, summary, evt_desc_escaped)
             lines.append("BEGIN:VEVENT")
-            lines.append(f"UID:{s}-s{week_num}-{i}@urban7d")
-            lines.append(f"DTSTAMP:{dtstamp_utc}")
+            lines.append(f"UID:{uid}")
+            lines.append(f"DTSTAMP:{ev_stamp}")
+            lines.append("SEQUENCE:0")
             lines.append(f"DTSTART;TZID=Europe/Paris:{start_str}")
             lines.append(f"DTEND;TZID=Europe/Paris:{end_str}")
             lines.append(fold_line(f"SUMMARY:{summary}"))

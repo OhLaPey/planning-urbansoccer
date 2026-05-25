@@ -26,7 +26,8 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:cohat-linda-s9-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251006T131313Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260223T183000
 DTEND;TZID=Europe/Paris:20260224T000000
 SUMMARY:Vie de centre
@@ -46,7 +47,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s9-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250621T005618Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260226T180000
 DTEND;TZID=Europe/Paris:20260226T220000
 SUMMARY:Vie de centre
@@ -66,7 +68,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s12-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250808T155343Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260317T180000
 DTEND;TZID=Europe/Paris:20260318T000000
 SUMMARY:Vie de centre
@@ -78,7 +81,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s18-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240607T201730Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260428T200000
 DTEND;TZID=Europe/Paris:20260429T000000
 SUMMARY:Vie de centre
@@ -95,7 +99,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s19-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250717T170654Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260505T200000
 DTEND;TZID=Europe/Paris:20260506T001500
 SUMMARY:Vie de centre
@@ -109,7 +114,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s19-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250922T035836Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260506T200000
 DTEND;TZID=Europe/Paris:20260507T001500
 SUMMARY:Vie de centre
@@ -123,9 +129,21 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:cohat-linda-s20-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250629T080943Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260514T170000
 DTEND;TZID=Europe/Paris:20260515T001500
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 END:VCALENDAR

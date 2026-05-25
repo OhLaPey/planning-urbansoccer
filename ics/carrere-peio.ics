@@ -26,7 +26,8 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:carrere-peio-s9-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250527T055302Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260223T073000
 DTEND;TZID=Europe/Paris:20260223T094500
 SUMMARY:Cup League
@@ -46,7 +47,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250627T090500Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260223T094500
 DTEND;TZID=Europe/Paris:20260223T173000
 SUMMARY:Vie de centre
@@ -66,7 +68,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240416T231241Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260224T090000
 DTEND;TZID=Europe/Paris:20260224T094500
 SUMMARY:Stage
@@ -86,7 +89,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240827T135532Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260224T094500
 DTEND;TZID=Europe/Paris:20260224T160000
 SUMMARY:Vie de centre
@@ -106,7 +110,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241231T094134Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260225T094500
 DTEND;TZID=Europe/Paris:20260225T133000
 SUMMARY:Vie de centre
@@ -126,7 +131,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240608T064428Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260225T133000
 DTEND;TZID=Europe/Paris:20260225T173000
 SUMMARY:Cup Régisseur
@@ -146,7 +152,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250610T171501Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260225T173000
 DTEND;TZID=Europe/Paris:20260225T180000
 SUMMARY:Vie de centre
@@ -166,7 +173,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250808T195527Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260226T173000
 DTEND;TZID=Europe/Paris:20260226T201500
 SUMMARY:Vie de centre
@@ -186,7 +194,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250702T181927Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260226T201500
 DTEND;TZID=Europe/Paris:20260226T203000
 SUMMARY:Régisseur League
@@ -206,7 +215,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-10@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241204T030930Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260226T203000
 DTEND;TZID=Europe/Paris:20260226T213000
 SUMMARY:L-ARB
@@ -226,7 +236,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-11@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240515T114458Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260226T213000
 DTEND;TZID=Europe/Paris:20260226T214500
 SUMMARY:Régisseur League
@@ -246,7 +257,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-12@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250706T152242Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260228T113000
 DTEND;TZID=Europe/Paris:20260228T163000
 SUMMARY:Vie de centre
@@ -266,7 +278,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-13@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250502T005125Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260228T163000
 DTEND;TZID=Europe/Paris:20260228T203000
 SUMMARY:Événement régisseur
@@ -286,7 +299,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-14@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251031T083820Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260301T073000
 DTEND;TZID=Europe/Paris:20260301T084500
 SUMMARY:Cup League
@@ -306,7 +320,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s9-15@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241203T112006Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260301T084500
 DTEND;TZID=Europe/Paris:20260301T160000
 SUMMARY:Vie de centre
@@ -326,7 +341,8 @@ DESCRIPTION:Semaine de vacances scolaires\n⚽ Stage foot pour Loïc Thomas
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240721T020418Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260302T080000
 DTEND;TZID=Europe/Paris:20260302T100000
 SUMMARY:Inventaire
@@ -344,7 +360,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240816T055652Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260302T100000
 DTEND;TZID=Europe/Paris:20260302T150000
 SUMMARY:Vie de centre
@@ -362,7 +379,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250117T004810Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260302T190000
 DTEND;TZID=Europe/Paris:20260302T210000
 SUMMARY:Régisseur League
@@ -380,7 +398,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240429T160809Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260303T120000
 DTEND;TZID=Europe/Paris:20260303T193000
 SUMMARY:Vie de centre
@@ -398,7 +417,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251211T024059Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260303T193000
 DTEND;TZID=Europe/Paris:20260303T213000
 SUMMARY:Régisseur League
@@ -416,7 +436,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250816T065321Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260304T170000
 DTEND;TZID=Europe/Paris:20260304T200000
 SUMMARY:Vie de centre
@@ -434,7 +455,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250113T115806Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260304T200000
 DTEND;TZID=Europe/Paris:20260304T220000
 SUMMARY:Régisseur League
@@ -452,7 +474,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250613T180204Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260305T094500
 DTEND;TZID=Europe/Paris:20260305T140000
 SUMMARY:Vie de centre
@@ -470,7 +493,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s10-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250217T160716Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260305T140000
 DTEND;TZID=Europe/Paris:20260305T180000
 SUMMARY:Événement régisseur
@@ -488,7 +512,8 @@ DESCRIPTION:Reprise de l'EDF et des cours Padel\n⚽ EDF et cours padel sur
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251118T230556Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260309T150000
 DTEND;TZID=Europe/Paris:20260310T000000
 SUMMARY:Vie de centre
@@ -502,7 +527,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240922T104840Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260310T153000
 DTEND;TZID=Europe/Paris:20260310T181500
 SUMMARY:Vie de centre
@@ -516,7 +542,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250722T054051Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260310T181500
 DTEND;TZID=Europe/Paris:20260310T204500
 SUMMARY:Régisseur League
@@ -530,7 +557,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250814T185316Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260310T204500
 DTEND;TZID=Europe/Paris:20260310T220000
 SUMMARY:Vie de centre
@@ -544,7 +572,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241211T031607Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260311T164500
 DTEND;TZID=Europe/Paris:20260311T191500
 SUMMARY:Vie de centre
@@ -558,7 +587,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240810T074915Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260311T191500
 DTEND;TZID=Europe/Paris:20260311T214500
 SUMMARY:Régisseur League
@@ -572,7 +602,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250811T152256Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260312T094500
 DTEND;TZID=Europe/Paris:20260312T160000
 SUMMARY:Vie de centre
@@ -586,7 +617,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250421T220400Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260314T103000
 DTEND;TZID=Europe/Paris:20260314T150000
 SUMMARY:Vie de centre
@@ -600,7 +632,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250525T095137Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260314T150000
 DTEND;TZID=Europe/Paris:20260314T190000
 SUMMARY:Événement régisseur
@@ -614,7 +647,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s11-10@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240609T215817Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260315T084500
 DTEND;TZID=Europe/Paris:20260315T160000
 SUMMARY:Vie de centre
@@ -628,7 +662,8 @@ DESCRIPTION:Planning 09/03 au 15/03 \n\n⚽ EDF et cours padel sur les jou
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251209T051511Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260316T120000
 DTEND;TZID=Europe/Paris:20260316T191500
 SUMMARY:Vie de centre
@@ -640,7 +675,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241210T002004Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260316T191500
 DTEND;TZID=Europe/Paris:20260316T214500
 SUMMARY:Régisseur League
@@ -652,7 +688,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240320T003017Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260317T094500
 DTEND;TZID=Europe/Paris:20260317T180000
 SUMMARY:Vie de centre
@@ -664,7 +701,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250305T120318Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260318T094500
 DTEND;TZID=Europe/Paris:20260318T150000
 SUMMARY:Vie de centre
@@ -676,7 +714,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240614T162944Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260319T094500
 DTEND;TZID=Europe/Paris:20260319T180000
 SUMMARY:Vie de centre
@@ -688,7 +727,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250924T083031Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260321T084500
 DTEND;TZID=Europe/Paris:20260321T094500
 SUMMARY:EDF-A
@@ -700,7 +740,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s12-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250729T054403Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260321T094500
 DTEND;TZID=Europe/Paris:20260321T173000
 SUMMARY:Vie de centre
@@ -712,7 +753,8 @@ DESCRIPTION:⚽🥎 EDF et cours padel sur les jours habituels\n🏆⚽️B
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251221T002325Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260323T114500
 DTEND;TZID=Europe/Paris:20260323T191500
 SUMMARY:Vie de centre
@@ -727,7 +769,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250329T031643Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260323T191500
 DTEND;TZID=Europe/Paris:20260323T214500
 SUMMARY:Régisseur League
@@ -742,7 +785,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251204T191807Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260324T114500
 DTEND;TZID=Europe/Paris:20260324T220000
 SUMMARY:Vie de centre
@@ -757,7 +801,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250716T132727Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260325T181500
 DTEND;TZID=Europe/Paris:20260325T214500
 SUMMARY:Régisseur League
@@ -772,7 +817,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240625T100715Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260326T094500
 DTEND;TZID=Europe/Paris:20260326T150000
 SUMMARY:Vie de centre
@@ -787,7 +833,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251029T201826Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260327T073000
 DTEND;TZID=Europe/Paris:20260327T100000
 SUMMARY:Cup League
@@ -802,7 +849,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240308T153445Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260327T100000
 DTEND;TZID=Europe/Paris:20260327T140000
 SUMMARY:Vie de centre
@@ -817,7 +865,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250316T013518Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260328T084500
 DTEND;TZID=Europe/Paris:20260328T094500
 SUMMARY:EDF-A
@@ -832,7 +881,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s13-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251009T013602Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260328T094500
 DTEND;TZID=Europe/Paris:20260328T173000
 SUMMARY:Vie de centre
@@ -847,7 +897,8 @@ DESCRIPTION:Semaine classique\n⚽🥎 EDF et cours padel sur les jours hab
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240507T032905Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260330T173000
 DTEND;TZID=Europe/Paris:20260330T201500
 SUMMARY:Vie de centre
@@ -864,7 +915,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251227T061052Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260330T201500
 DTEND;TZID=Europe/Paris:20260330T213000
 SUMMARY:Régisseur League
@@ -881,7 +933,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250607T123703Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260330T213000
 DTEND;TZID=Europe/Paris:20260330T223000
 SUMMARY:L-ARB
@@ -898,7 +951,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240824T110931Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260331T094500
 DTEND;TZID=Europe/Paris:20260331T160000
 SUMMARY:Vie de centre
@@ -915,7 +969,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250825T114410Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260402T094500
 DTEND;TZID=Europe/Paris:20260402T153000
 SUMMARY:Vie de centre
@@ -932,7 +987,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250705T154413Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260402T163000
 DTEND;TZID=Europe/Paris:20260402T181500
 SUMMARY:Vie de centre
@@ -949,7 +1005,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240724T135548Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260402T181500
 DTEND;TZID=Europe/Paris:20260402T204500
 SUMMARY:Régisseur League
@@ -966,7 +1023,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250713T062004Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260403T094500
 DTEND;TZID=Europe/Paris:20260403T114500
 SUMMARY:Entretien Ménage
@@ -983,7 +1041,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251203T141259Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260403T114500
 DTEND;TZID=Europe/Paris:20260403T190000
 SUMMARY:Vie de centre
@@ -1000,7 +1059,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s14-10@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240805T042725Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260405T084500
 DTEND;TZID=Europe/Paris:20260405T173000
 SUMMARY:Vie de centre
@@ -1017,7 +1077,8 @@ DESCRIPTION:Planning 30/03 au 05/04\n ⚽🥎 EDF sur les jours habituels
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s15-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241205T153615Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260406T084500
 DTEND;TZID=Europe/Paris:20260406T163000
 SUMMARY:Vie de centre
@@ -1032,7 +1093,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s15-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240609T120654Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260407T094500
 DTEND;TZID=Europe/Paris:20260407T180000
 SUMMARY:Vie de centre
@@ -1047,7 +1109,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s15-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250917T151809Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260409T073000
 DTEND;TZID=Europe/Paris:20260409T150000
 SUMMARY:Événement logistique
@@ -1062,7 +1125,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s15-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241016T125200Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260411T073000
 DTEND;TZID=Europe/Paris:20260411T084500
 SUMMARY:Cup League
@@ -1077,7 +1141,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s15-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250414T010052Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260411T084500
 DTEND;TZID=Europe/Paris:20260411T094500
 SUMMARY:EDF-A
@@ -1092,7 +1157,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s15-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250913T095144Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260411T094500
 DTEND;TZID=Europe/Paris:20260411T173000
 SUMMARY:Vie de centre
@@ -1107,7 +1173,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s15-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250220T212529Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260412T084500
 DTEND;TZID=Europe/Paris:20260412T160000
 SUMMARY:Vie de centre
@@ -1122,7 +1189,8 @@ DESCRIPTION:Planning 06/04 au 12/04\nDe grosses semaines arrivent donc je v
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240322T083604Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260413T153000
 DTEND;TZID=Europe/Paris:20260413T193000
 SUMMARY:Vie de centre
@@ -1138,7 +1206,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251025T052810Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260413T193000
 DTEND;TZID=Europe/Paris:20260413T204500
 SUMMARY:Régisseur League
@@ -1154,7 +1223,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250213T210052Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260413T204500
 DTEND;TZID=Europe/Paris:20260413T210000
 SUMMARY:Vie de centre
@@ -1170,7 +1240,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241220T020321Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260413T210000
 DTEND;TZID=Europe/Paris:20260413T220000
 SUMMARY:L-ARB
@@ -1186,7 +1257,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250911T180906Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260413T220000
 DTEND;TZID=Europe/Paris:20260414T000000
 SUMMARY:Vie de centre
@@ -1202,7 +1274,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240415T060108Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260414T160000
 DTEND;TZID=Europe/Paris:20260414T181500
 SUMMARY:Vie de centre
@@ -1218,7 +1291,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240906T034656Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260414T181500
 DTEND;TZID=Europe/Paris:20260414T204500
 SUMMARY:Régisseur League
@@ -1234,7 +1308,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240605T220140Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260414T213000
 DTEND;TZID=Europe/Paris:20260414T223000
 SUMMARY:L-ARB
@@ -1250,7 +1325,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240925T175242Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260415T171500
 DTEND;TZID=Europe/Paris:20260415T191500
 SUMMARY:Vie de centre
@@ -1266,7 +1342,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-10@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240926T115733Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260415T191500
 DTEND;TZID=Europe/Paris:20260415T214500
 SUMMARY:Régisseur League
@@ -1282,7 +1359,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-11@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240702T153610Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260415T214500
 DTEND;TZID=Europe/Paris:20260416T010000
 SUMMARY:Cup Régisseur
@@ -1298,7 +1376,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-12@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240428T032337Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260416T160000
 DTEND;TZID=Europe/Paris:20260416T170000
 SUMMARY:Vie de centre
@@ -1314,7 +1393,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s16-13@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250916T025554Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260416T170000
 DTEND;TZID=Europe/Paris:20260417T000000
 SUMMARY:Événement régisseur
@@ -1330,7 +1410,8 @@ DESCRIPTION:Planning 13/04 au 19/04\n⚽🥎 EDF et Cours Co Padel sur les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s17-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240202T125352Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260423T090000
 DTEND;TZID=Europe/Paris:20260423T100000
 SUMMARY:Stage
@@ -1347,7 +1428,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s17-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240621T014910Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260423T100000
 DTEND;TZID=Europe/Paris:20260423T160000
 SUMMARY:Vie de centre
@@ -1364,7 +1446,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s17-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240627T131030Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260424T073000
 DTEND;TZID=Europe/Paris:20260424T090000
 SUMMARY:Cup League
@@ -1381,7 +1464,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s17-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250418T025804Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260424T090000
 DTEND;TZID=Europe/Paris:20260424T100000
 SUMMARY:Stage
@@ -1398,7 +1482,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s17-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250415T014140Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260424T100000
 DTEND;TZID=Europe/Paris:20260424T170000
 SUMMARY:Vie de centre
@@ -1415,7 +1500,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s17-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240601T151821Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260425T084500
 DTEND;TZID=Europe/Paris:20260425T151500
 SUMMARY:Vie de centre
@@ -1432,7 +1518,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s17-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240613T231507Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260425T151500
 DTEND;TZID=Europe/Paris:20260425T171500
 SUMMARY:Anniversaire
@@ -1449,7 +1536,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s17-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240706T160900Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260426T084500
 DTEND;TZID=Europe/Paris:20260426T173000
 SUMMARY:Vie de centre
@@ -1466,7 +1554,8 @@ DESCRIPTION:Planning 20/04 au 26/04\n1ere semaine des vacances de Paques\n
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s18-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251208T045728Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260429T073000
 DTEND;TZID=Europe/Paris:20260429T090000
 SUMMARY:Cup League
@@ -1483,7 +1572,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s18-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250601T030320Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260429T090000
 DTEND;TZID=Europe/Paris:20260429T100000
 SUMMARY:Stage
@@ -1500,7 +1590,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s18-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251110T220811Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260429T100000
 DTEND;TZID=Europe/Paris:20260429T170000
 SUMMARY:Vie de centre
@@ -1517,7 +1608,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s18-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250616T201714Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260430T090000
 DTEND;TZID=Europe/Paris:20260430T094500
 SUMMARY:Stage
@@ -1534,7 +1626,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s18-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240127T233103Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260430T094500
 DTEND;TZID=Europe/Paris:20260430T170000
 SUMMARY:Vie de centre
@@ -1551,7 +1644,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s18-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240418T023001Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260501T060000
 DTEND;TZID=Europe/Paris:20260501T073000
 SUMMARY:Inventaire
@@ -1568,7 +1662,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s18-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240909T070801Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260501T073000
 DTEND;TZID=Europe/Paris:20260501T090000
 SUMMARY:Cup League
@@ -1585,7 +1680,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s18-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240621T041634Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260501T090000
 DTEND;TZID=Europe/Paris:20260501T160000
 SUMMARY:Vie de centre
@@ -1602,7 +1698,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s18-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240707T004240Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260502T084500
 DTEND;TZID=Europe/Paris:20260502T173000
 SUMMARY:Vie de centre
@@ -1619,7 +1716,8 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20241109T072855Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260504T094500
 DTEND;TZID=Europe/Paris:20260504T160000
 SUMMARY:Vie de centre
@@ -1633,7 +1731,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250816T081801Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260505T094500
 DTEND;TZID=Europe/Paris:20260505T133000
 SUMMARY:Vie de centre
@@ -1647,7 +1746,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250420T210625Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260505T191500
 DTEND;TZID=Europe/Paris:20260505T213000
 SUMMARY:Régisseur League
@@ -1661,7 +1761,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240910T220319Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260505T213000
 DTEND;TZID=Europe/Paris:20260505T223000
 SUMMARY:L-ARB
@@ -1675,7 +1776,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251230T070244Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260506T134500
 DTEND;TZID=Europe/Paris:20260506T181500
 SUMMARY:Vie de centre
@@ -1689,7 +1791,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251201T114904Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260506T181500
 DTEND;TZID=Europe/Paris:20260506T194500
 SUMMARY:Régisseur League
@@ -1703,7 +1806,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-7@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240921T044800Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260506T194500
 DTEND;TZID=Europe/Paris:20260506T201500
 SUMMARY:Vie de centre
@@ -1717,7 +1821,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-8@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240901T031942Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260506T201500
 DTEND;TZID=Europe/Paris:20260506T214500
 SUMMARY:Régisseur League
@@ -1731,7 +1836,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-9@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240629T185944Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260507T160000
 DTEND;TZID=Europe/Paris:20260508T000000
 SUMMARY:Vie de centre
@@ -1745,58 +1851,131 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-10@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250704T075300Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260504T191500
 DTEND;TZID=Europe/Paris:20260504T214500
-SUMMARY:[Remplacé par Loic] Régisseur League
-DESCRIPTION:Remplacé par PEREZ Loic\nPlanning 04/05 au 10/05\n⚽🥎 Repr
- ise de l'EDF et des cours co Padel\n🏆🥎 Cup Padel : P50 lundi aprem e
- t P100 vendredi matin\n🏆🍕🍻 Demi-finales retours de LDC mardi et m
- ercredi\n🔴🔵 Retour de Loïc et Yohan de la Cup France (avec le troph
- ée j'espère 🏆). Nicolas reste sur Paris pour une semaine séminaire P
- SG Academy\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
- verra si les créneaux sont réservés surtout avec le WE du 8 mai
+SUMMARY:[Remplacé par Remi] Régisseur League
+DESCRIPTION:Remplacé par PISTORE Remi\nPlanning 04/05 au 10/05\n⚽🥎 Re
+ prise de l'EDF et des cours co Padel\n🏆🥎 Cup Padel : P50 lundi aprem
+  et P100 vendredi matin\n🏆🍕🍻 Demi-finales retours de LDC mardi et
+  mercredi\n🔴🔵 Retour de Loïc et Yohan de la Cup France (avec le tro
+ phée j'espère 🏆). Nicolas reste sur Paris pour une semaine séminaire
+  PSG Academy\n🎂 Des anniversaires sont prévus sur les anniversaires. O
+ n verra si les créneaux sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s20-1@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250427T090627Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260511T094500
 DTEND;TZID=Europe/Paris:20260511T180000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s20-2@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20240811T192244Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260512T094500
 DTEND;TZID=Europe/Paris:20260512T140000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s20-3@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250420T062911Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260512T143000
 DTEND;TZID=Europe/Paris:20260512T193000
 SUMMARY:TRAJE
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s20-4@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250207T165855Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260513T100000
 DTEND;TZID=Europe/Paris:20260513T200000
 SUMMARY:TRAJE
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s20-5@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20251021T053736Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260515T094500
 DTEND;TZID=Europe/Paris:20260515T170000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s20-6@urban7d
-DTSTAMP:20260504T073315Z
+DTSTAMP:20250614T120410Z
+SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260516T073000
 DTEND;TZID=Europe/Paris:20260516T170000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
+ cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
+ 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
+  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
+ me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
+  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
+ 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
+ ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
+  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
+  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
+ journée à 16h pour Loïc
 END:VEVENT
 END:VCALENDAR
