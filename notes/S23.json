@@ -1,4 +1,13 @@
 {
   "comment": "Planning 01/06 au 07/06\n\n⚽🥎 EDF, Leagues et des cours co Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin, P50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (foot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés\n💬 On continue les entretiens individuels annuels",
-  "updates": []
+  "updates": [],
+  "replacements": [
+    {
+      "date": "2026-06-03",
+      "out": "MOSTEFA Yanis",
+      "in": "DIVIEN Yohan",
+      "start": "13:45",
+      "end": "17:45"
+    }
+  ]
 }
