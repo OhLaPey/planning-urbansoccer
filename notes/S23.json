@@ -1,6 +1,11 @@
 {
   "comment": "Planning 01/06 au 07/06\n\n⚽🥎 EDF, Leagues et des cours co Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin, P50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (foot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les créneaux sont réservés\n💬 On continue les entretiens individuels annuels",
-  "updates": [],
+  "updates": [
+    {
+      "date": "2026-06-05 16:25",
+      "text": "MAJ Anniversaires :\r\n🎂 Samedi 06/06 : Début à 16h avec un anniv pour Mattis\r\n🎂 Dimanche 07/06 : RAS si ce en'est Tiffany qui remplace Marvyn"
+    }
+  ],
   "replacements": [
     {
       "date": "2026-06-03",
@@ -15,6 +20,13 @@
       "in": "JARGUEL Thomas",
       "start": "19:30",
       "end": "23:59"
+    },
+    {
+      "date": "2026-06-07",
+      "out": "KABUNDA NDEKE Marvyn",
+      "in": "VASSANT Tiffany",
+      "start": "13:45",
+      "end": "17:45"
     }
   ]
 }
