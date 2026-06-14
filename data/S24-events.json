@@ -522,13 +522,6 @@
         "start": "2026-06-12T17:15",
         "end": "2026-06-12T19:15",
         "day": 4
-      },
-      {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-06-14T13:45",
-        "end": "2026-06-14T17:45",
-        "day": 6
       }
     ]
   },
@@ -614,7 +607,7 @@
         "code": "ANNIV",
         "label": "Anniversaire",
         "start": "2026-06-14T13:15",
-        "end": "2026-06-14T17:15",
+        "end": "2026-06-14T15:15",
         "day": 6
       }
     ]
@@ -744,7 +737,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-06-13 12:40",
+    "updated_at": "2026-06-14 09:31",
     "excel_version": 0
   }
 }
