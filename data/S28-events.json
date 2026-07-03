@@ -35,21 +35,7 @@
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-07-10T15:00",
-        "end": "2026-07-10T17:30",
-        "day": 4
-      },
-      {
-        "code": "CUP-R",
-        "label": "Cup Régisseur",
-        "start": "2026-07-10T17:30",
-        "end": "2026-07-10T20:30",
-        "day": 4
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-07-10T20:30",
-        "end": "2026-07-11T00:00",
+        "end": "2026-07-10T24:00",
         "day": 4
       },
       {
@@ -459,13 +445,6 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-07-10T17:30",
-        "end": "2026-07-11T00:00",
-        "day": 4
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
         "start": "2026-07-12T16:00",
         "end": "2026-07-12T23:30",
         "day": 6
@@ -825,8 +804,8 @@
     "events": []
   },
   "_meta": {
-    "source": "Excel",
-    "updated_at": "2026-07-03 09:22",
+    "source": "Modif admin",
+    "updated_at": "2026-07-03 17:11",
     "excel_version": 0
   }
 }
