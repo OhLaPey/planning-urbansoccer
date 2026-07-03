@@ -490,10 +490,10 @@ DESCRIPTION:Planning 27/04 au 03/05\n⚽️ 2eme semaine de vacances avec d
 END:VEVENT
 BEGIN:VEVENT
 UID:kabunda-ndeke-marvyn-s19-1@urban7d
-DTSTAMP:20240829T202146Z
+DTSTAMP:20240507T192924Z
 SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260506T193000
-DTEND;TZID=Europe/Paris:20260506T223000
+DTSTART;TZID=Europe/Paris:20260506T183000
+DTEND;TZID=Europe/Paris:20260506T203000
 SUMMARY:L-ARB
 DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
@@ -502,5 +502,90 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
  colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
  niversaires sont prévus sur les anniversaires. On verra si les créneaux 
  sont réservés surtout avec le WE du 8 mai
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s22-1@urban7d
+DTSTAMP:20250101T143739Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260531T134500
+DTEND;TZID=Europe/Paris:20260531T174500
+SUMMARY:Anniversaire
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s22-2@urban7d
+DTSTAMP:20250409T032536Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260531T174500
+DTEND;TZID=Europe/Paris:20260531T181500
+SUMMARY:EIA
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s23-1@urban7d
+DTSTAMP:20250825T235832Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260607T134500
+DTEND;TZID=Europe/Paris:20260607T174500
+SUMMARY:[Remplacé par Tiffany] Anniversaire
+DESCRIPTION:Remplacé par VASSANT Tiffany\nPlanning 01/06 au 07/06\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆🥎
+  Cup Padel : P100 lundi matin\, P50 vendredi aprem et Betsson Padel Tour s
+ amedi\n🎉Event Akkodis mardi (foot et rugby) et mercredi (padel)\n🎉 E
+ vent Pomona dimanche avec bbq\n🎂 Des anniversaires sont prévus sur les
+  anniversaires. On verra si les créneaux sont réservés\n💬 On continu
+ e les entretiens individuels annuels\nMAJ 2026-06-05 16:25: MAJ Anniversai
+ res :\n🎂 Samedi 06/06 : Début à 16h avec un anniv pour Mattis\n🎂 D
+ imanche 07/06 : RAS si ce en'est Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s26-1@urban7d
+DTSTAMP:20241220T161213Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260628T134500
+DTEND;TZID=Europe/Paris:20260628T174500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
 END:VEVENT
 END:VCALENDAR

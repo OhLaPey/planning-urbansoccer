@@ -1821,22 +1821,7 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s19-8@urban7d
-DTSTAMP:20240901T031942Z
-SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260506T201500
-DTEND;TZID=Europe/Paris:20260506T214500
-SUMMARY:Régisseur League
-DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
- co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
- 🏆🍕🍻 Demi-finales retours de LDC mardi et mercredi\n🔴🔵 Retou
- r de Loïc et Yohan de la Cup France (avec le trophée j'espère 🏆). Ni
- colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
- niversaires sont prévus sur les anniversaires. On verra si les créneaux 
- sont réservés surtout avec le WE du 8 mai
-END:VEVENT
-BEGIN:VEVENT
-UID:carrere-peio-s19-9@urban7d
-DTSTAMP:20240629T185944Z
+DTSTAMP:20241114T100847Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260507T160000
 DTEND;TZID=Europe/Paris:20260508T000000
@@ -1850,8 +1835,8 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
  sont réservés surtout avec le WE du 8 mai
 END:VEVENT
 BEGIN:VEVENT
-UID:carrere-peio-s19-10@urban7d
-DTSTAMP:20250704T075300Z
+UID:carrere-peio-s19-9@urban7d
+DTSTAMP:20240923T043403Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260504T191500
 DTEND;TZID=Europe/Paris:20260504T214500
@@ -1885,10 +1870,10 @@ DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s20-2@urban7d
-DTSTAMP:20240811T192244Z
+DTSTAMP:20250526T140709Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260512T094500
-DTEND;TZID=Europe/Paris:20260512T140000
+DTEND;TZID=Europe/Paris:20260512T120000
 SUMMARY:Vie de centre
 DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
  cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
@@ -1923,10 +1908,10 @@ DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s20-4@urban7d
-DTSTAMP:20250207T165855Z
+DTSTAMP:20250806T201413Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260513T100000
-DTEND;TZID=Europe/Paris:20260513T200000
+DTEND;TZID=Europe/Paris:20260513T220000
 SUMMARY:TRAJE
 DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
  cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
@@ -1961,10 +1946,10 @@ DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les
 END:VEVENT
 BEGIN:VEVENT
 UID:carrere-peio-s20-6@urban7d
-DTSTAMP:20250614T120410Z
+DTSTAMP:20240611T020637Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260516T073000
-DTEND;TZID=Europe/Paris:20260516T170000
+DTEND;TZID=Europe/Paris:20260516T150000
 SUMMARY:Vie de centre
 DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
  cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
@@ -1977,5 +1962,1103 @@ DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les
   fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
   Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
  journée à 16h pour Loïc
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-1@urban7d
+DTSTAMP:20250527T171841Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260518T150000
+DTEND;TZID=Europe/Paris:20260518T191500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-2@urban7d
+DTSTAMP:20240206T174611Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260518T191500
+DTEND;TZID=Europe/Paris:20260518T204500
+SUMMARY:Régisseur League
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-3@urban7d
+DTSTAMP:20250203T090704Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260518T210000
+DTEND;TZID=Europe/Paris:20260518T220000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-4@urban7d
+DTSTAMP:20251013T055412Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260519T094500
+DTEND;TZID=Europe/Paris:20260519T190000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-5@urban7d
+DTSTAMP:20240417T075120Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260520T171500
+DTEND;TZID=Europe/Paris:20260520T181500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-6@urban7d
+DTSTAMP:20251019T121802Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260520T181500
+DTEND;TZID=Europe/Paris:20260520T214500
+SUMMARY:Régisseur League
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-7@urban7d
+DTSTAMP:20240328T000152Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260521T094500
+DTEND;TZID=Europe/Paris:20260521T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-8@urban7d
+DTSTAMP:20240723T103141Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260522T080000
+DTEND;TZID=Europe/Paris:20260522T094500
+SUMMARY:Événement logistique
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-9@urban7d
+DTSTAMP:20241111T034832Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260522T094500
+DTEND;TZID=Europe/Paris:20260522T133000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-10@urban7d
+DTSTAMP:20250331T025802Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260522T133000
+DTEND;TZID=Europe/Paris:20260522T163000
+SUMMARY:Événement régisseur
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s21-11@urban7d
+DTSTAMP:20250828T003143Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260522T163000
+DTEND;TZID=Europe/Paris:20260522T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s22-1@urban7d
+DTSTAMP:20240408T231804Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260526T094500
+DTEND;TZID=Europe/Paris:20260526T153000
+SUMMARY:Vie de centre
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s22-2@urban7d
+DTSTAMP:20240601T230229Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260527T160000
+DTEND;TZID=Europe/Paris:20260527T191500
+SUMMARY:Vie de centre
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s22-3@urban7d
+DTSTAMP:20250409T071536Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260527T191500
+DTEND;TZID=Europe/Paris:20260527T214500
+SUMMARY:Régisseur League
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s22-4@urban7d
+DTSTAMP:20240215T213940Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260528T153000
+DTEND;TZID=Europe/Paris:20260528T180000
+SUMMARY:Vie de centre
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s22-5@urban7d
+DTSTAMP:20240905T174055Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260528T180000
+DTEND;TZID=Europe/Paris:20260528T233000
+SUMMARY:L-REG PADEL
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s22-6@urban7d
+DTSTAMP:20240202T053516Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260530T084500
+DTEND;TZID=Europe/Paris:20260530T173000
+SUMMARY:Vie de centre
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s22-7@urban7d
+DTSTAMP:20240711T234051Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260530T173000
+DTEND;TZID=Europe/Paris:20260530T203000
+SUMMARY:EV-LO LDC
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s22-8@urban7d
+DTSTAMP:20250808T105143Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260531T084500
+DTEND;TZID=Europe/Paris:20260531T153000
+SUMMARY:Vie de centre
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s23-1@urban7d
+DTSTAMP:20250403T230200Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260602T094500
+DTEND;TZID=Europe/Paris:20260602T173000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s23-2@urban7d
+DTSTAMP:20251207T123011Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260603T173000
+DTEND;TZID=Europe/Paris:20260603T223000
+SUMMARY:Événement régisseur
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s23-3@urban7d
+DTSTAMP:20250131T115620Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260605T093000
+DTEND;TZID=Europe/Paris:20260605T100000
+SUMMARY:Cup League
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s23-4@urban7d
+DTSTAMP:20251221T052732Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260605T100000
+DTEND;TZID=Europe/Paris:20260605T173000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s23-5@urban7d
+DTSTAMP:20251007T183726Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260606T084500
+DTEND;TZID=Europe/Paris:20260606T160000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s23-6@urban7d
+DTSTAMP:20250430T002525Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260607T084500
+DTEND;TZID=Europe/Paris:20260607T160000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s24-1@urban7d
+DTSTAMP:20251203T125510Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260608T094500
+DTEND;TZID=Europe/Paris:20260608T140000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s24-2@urban7d
+DTSTAMP:20240314T063311Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260608T183000
+DTEND;TZID=Europe/Paris:20260608T210000
+SUMMARY:Formation pratique
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s24-3@urban7d
+DTSTAMP:20250118T103327Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260609T094500
+DTEND;TZID=Europe/Paris:20260609T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s24-4@urban7d
+DTSTAMP:20250205T085951Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260611T094500
+DTEND;TZID=Europe/Paris:20260611T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s24-5@urban7d
+DTSTAMP:20250301T082746Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260612T094500
+DTEND;TZID=Europe/Paris:20260612T163000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s24-6@urban7d
+DTSTAMP:20240623T231215Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260613T084500
+DTEND;TZID=Europe/Paris:20260613T173000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s24-7@urban7d
+DTSTAMP:20250518T202340Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260614T084500
+DTEND;TZID=Europe/Paris:20260614T150000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s24-8@urban7d
+DTSTAMP:20240323T040953Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260614T150000
+DTEND;TZID=Europe/Paris:20260614T163000
+SUMMARY:AIDE ANNIV
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s25-1@urban7d
+DTSTAMP:20241016T125234Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260615T081500
+DTEND;TZID=Europe/Paris:20260615T094500
+SUMMARY:Inventaire
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s25-2@urban7d
+DTSTAMP:20240516T165539Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260615T094500
+DTEND;TZID=Europe/Paris:20260615T170000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s25-3@urban7d
+DTSTAMP:20250504T154709Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260617T150000
+DTEND;TZID=Europe/Paris:20260617T181500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s25-4@urban7d
+DTSTAMP:20250123T045028Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260617T181500
+DTEND;TZID=Europe/Paris:20260617T214500
+SUMMARY:Régisseur League
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s25-5@urban7d
+DTSTAMP:20240403T090603Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260618T094500
+DTEND;TZID=Europe/Paris:20260618T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s26-1@urban7d
+DTSTAMP:20250716T233110Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260622T094500
+DTEND;TZID=Europe/Paris:20260622T173000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s26-2@urban7d
+DTSTAMP:20240210T173313Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260622T173000
+DTEND;TZID=Europe/Paris:20260622T190000
+SUMMARY:COMMS
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s26-3@urban7d
+DTSTAMP:20250106T172214Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260623T170000
+DTEND;TZID=Europe/Paris:20260624T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s26-4@urban7d
+DTSTAMP:20250122T013627Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260624T123000
+DTEND;TZID=Europe/Paris:20260624T140000
+SUMMARY:COMMS
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s26-5@urban7d
+DTSTAMP:20241210T000355Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260624T140000
+DTEND;TZID=Europe/Paris:20260624T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s26-6@urban7d
+DTSTAMP:20250211T091427Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260625T114500
+DTEND;TZID=Europe/Paris:20260625T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s26-7@urban7d
+DTSTAMP:20251201T121439Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260626T094500
+DTEND;TZID=Europe/Paris:20260626T130000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s27-1@urban7d
+DTSTAMP:20240223T105810Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260629T094500
+DTEND;TZID=Europe/Paris:20260629T183000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s27-2@urban7d
+DTSTAMP:20251014T121531Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260701T060000
+DTEND;TZID=Europe/Paris:20260701T120000
+SUMMARY:Inventaire
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s27-3@urban7d
+DTSTAMP:20241011T073124Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260701T120000
+DTEND;TZID=Europe/Paris:20260701T161500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s27-4@urban7d
+DTSTAMP:20251018T105814Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260702T094500
+DTEND;TZID=Europe/Paris:20260702T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s27-5@urban7d
+DTSTAMP:20250509T040207Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260703T140000
+DTEND;TZID=Europe/Paris:20260703T183000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s27-6@urban7d
+DTSTAMP:20250527T183335Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260703T183000
+DTEND;TZID=Europe/Paris:20260703T223000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s27-7@urban7d
+DTSTAMP:20250413T090328Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260705T150000
+DTEND;TZID=Europe/Paris:20260705T170000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s27-8@urban7d
+DTSTAMP:20241120T102257Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260705T170000
+DTEND;TZID=Europe/Paris:20260705T233000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s28-1@urban7d
+DTSTAMP:20241231T062624Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260707T160000
+DTEND;TZID=Europe/Paris:20260708T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s28-2@urban7d
+DTSTAMP:20250316T024853Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260708T110000
+DTEND;TZID=Europe/Paris:20260708T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s28-3@urban7d
+DTSTAMP:20250803T132831Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260709T094500
+DTEND;TZID=Europe/Paris:20260709T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s28-4@urban7d
+DTSTAMP:20240510T232506Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260710T150000
+DTEND;TZID=Europe/Paris:20260710T173000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s28-5@urban7d
+DTSTAMP:20240129T181416Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260710T173000
+DTEND;TZID=Europe/Paris:20260710T203000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s28-6@urban7d
+DTSTAMP:20250530T084507Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260710T203000
+DTEND;TZID=Europe/Paris:20260711T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s28-7@urban7d
+DTSTAMP:20250521T120305Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260711T150000
+DTEND;TZID=Europe/Paris:20260711T222000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s28-8@urban7d
+DTSTAMP:20250112T030901Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260712T084500
+DTEND;TZID=Europe/Paris:20260712T170000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s29-1@urban7d
+DTSTAMP:20250319T095214Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260714T090000
+DTEND;TZID=Europe/Paris:20260714T180000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s29-2@urban7d
+DTSTAMP:20240608T041849Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260716T090000
+DTEND;TZID=Europe/Paris:20260716T180000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s29-3@urban7d
+DTSTAMP:20241113T080608Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260717T090000
+DTEND;TZID=Europe/Paris:20260717T180000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:carrere-peio-s29-4@urban7d
+DTSTAMP:20250909T193654Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260718T073000
+DTEND;TZID=Europe/Paris:20260718T150000
+SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR

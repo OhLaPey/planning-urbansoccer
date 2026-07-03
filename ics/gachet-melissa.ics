@@ -1,0 +1,123 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Planning Urban 7D//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planning GACHET Mélissa
+X-WR-TIMEZONE:Europe/Paris
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/Paris
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:gachet-melissa-s25-1@urban7d
+DTSTAMP:20251108T002731Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260617T130000
+DTEND;TZID=Europe/Paris:20260617T133000
+SUMMARY:FORE EDF
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:gachet-melissa-s25-2@urban7d
+DTSTAMP:20240328T173909Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260617T133000
+DTEND;TZID=Europe/Paris:20260617T173000
+SUMMARY:FORP EDF
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:gachet-melissa-s25-3@urban7d
+DTSTAMP:20250628T093702Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260617T180000
+DTEND;TZID=Europe/Paris:20260617T190000
+SUMMARY:FORE VDC
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:gachet-melissa-s25-4@urban7d
+DTSTAMP:20250420T205923Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260617T190000
+DTEND;TZID=Europe/Paris:20260618T000000
+SUMMARY:FORP VDC
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:gachet-melissa-s25-5@urban7d
+DTSTAMP:20250626T162917Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260620T130000
+DTEND;TZID=Europe/Paris:20260620T133000
+SUMMARY:FORE ANNIV
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:gachet-melissa-s25-6@urban7d
+DTSTAMP:20250914T120811Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260620T133000
+DTEND;TZID=Europe/Paris:20260620T173000
+SUMMARY:FORP ANNIV
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+END:VCALENDAR

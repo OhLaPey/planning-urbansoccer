@@ -154,4 +154,113 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
  niversaires sont prévus sur les anniversaires. On verra si les créneaux 
  sont réservés surtout avec le WE du 8 mai
 END:VEVENT
+BEGIN:VEVENT
+UID:bonillo-matthieu-s21-1@urban7d
+DTSTAMP:20241126T065654Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260523T090000
+DTEND;TZID=Europe/Paris:20260523T130000
+SUMMARY:EDF-C
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:bonillo-matthieu-s21-2@urban7d
+DTSTAMP:20251215T210217Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260523T133000
+DTEND;TZID=Europe/Paris:20260523T140000
+SUMMARY:EIA
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:bonillo-matthieu-s22-1@urban7d
+DTSTAMP:20241116T083252Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260530T090000
+DTEND;TZID=Europe/Paris:20260530T130000
+SUMMARY:EDF-C
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:bonillo-matthieu-s24-1@urban7d
+DTSTAMP:20240717T043844Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260613T090000
+DTEND;TZID=Europe/Paris:20260613T130000
+SUMMARY:EDF-C
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:bonillo-matthieu-s25-1@urban7d
+DTSTAMP:20251002T130156Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260620T090000
+DTEND;TZID=Europe/Paris:20260620T130000
+SUMMARY:EDF-C
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:bonillo-matthieu-s26-1@urban7d
+DTSTAMP:20250118T015422Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260627T090000
+DTEND;TZID=Europe/Paris:20260627T130000
+SUMMARY:EDF-C
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
 END:VCALENDAR
