@@ -1221,6 +1221,10 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             padding: 5px 6px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
             border-radius: 5px; color: #fff; font-size: 11px; font-family: inherit; outline: none; }}
         .action-field select:focus, .action-field input:focus {{ border-color: rgba(255,102,0,0.4); }}
+        .fb-warning {{ margin: 10px 0 14px; padding: 12px 14px; border-radius: 8px;
+                       background: rgba(255,60,60,0.12); border: 1px solid rgba(255,80,80,0.55);
+                       color: #ff6666; font-size: 13px; line-height: 1.45; font-weight: 500; }}
+        .fb-warning a {{ color: #ff9999; text-decoration: underline; word-break: break-all; }}
     </style>
 </head>
 <body>
@@ -1233,6 +1237,10 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             <h1>Planning Urban 7D</h1>
             <p class="subtitle">Semaine {week_num}</p>
             <div class="dates">{date_range}</div>
+        </div>
+        <div class="fb-warning">
+            ⚠️ Merci de bien vérifier en priorité les infos liées au planning sur le groupe Facebook :
+            <a href="https://www.facebook.com/groups/1643724212536389" target="_blank" rel="noopener">https://www.facebook.com/groups/1643724212536389</a>
         </div>
 
         <div class="week-selector">

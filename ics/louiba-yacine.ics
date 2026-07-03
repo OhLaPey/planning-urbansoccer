@@ -261,10 +261,10 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s19-3@urban7d
-DTSTAMP:20241231T213555Z
+DTSTAMP:20240115T143650Z
 SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260506T203000
-DTEND;TZID=Europe/Paris:20260506T223000
+DTSTART;TZID=Europe/Paris:20260506T183000
+DTEND;TZID=Europe/Paris:20260506T203000
 SUMMARY:L-ARB
 DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours 
  co Padel\n🏆🥎 Cup Padel : P50 lundi aprem et P100 vendredi matin\n
@@ -273,5 +273,343 @@ DESCRIPTION:Planning 04/05 au 10/05\n⚽🥎 Reprise de l'EDF et des cours
  colas reste sur Paris pour une semaine séminaire PSG Academy\n🎂 Des an
  niversaires sont prévus sur les anniversaires. On verra si les créneaux 
  sont réservés surtout avec le WE du 8 mai
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s21-1@urban7d
+DTSTAMP:20251031T090211Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260519T193000
+DTEND;TZID=Europe/Paris:20260519T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s23-1@urban7d
+DTSTAMP:20250911T083211Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260601T193000
+DTEND;TZID=Europe/Paris:20260601T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s23-2@urban7d
+DTSTAMP:20250719T065133Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260603T190000
+DTEND;TZID=Europe/Paris:20260603T193000
+SUMMARY:EIA
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s23-3@urban7d
+DTSTAMP:20240321T042129Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260603T193000
+DTEND;TZID=Europe/Paris:20260603T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s24-1@urban7d
+DTSTAMP:20240716T171422Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260609T193000
+DTEND;TZID=Europe/Paris:20260609T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s24-2@urban7d
+DTSTAMP:20251204T040153Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260610T193000
+DTEND;TZID=Europe/Paris:20260610T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s25-1@urban7d
+DTSTAMP:20241119T212457Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260615T193000
+DTEND;TZID=Europe/Paris:20260615T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s25-2@urban7d
+DTSTAMP:20240210T100313Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260616T193000
+DTEND;TZID=Europe/Paris:20260616T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s25-3@urban7d
+DTSTAMP:20240723T134825Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260617T183000
+DTEND;TZID=Europe/Paris:20260617T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s26-1@urban7d
+DTSTAMP:20240315T131141Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260623T193000
+DTEND;TZID=Europe/Paris:20260623T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s26-2@urban7d
+DTSTAMP:20250507T092923Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260627T173000
+DTEND;TZID=Europe/Paris:20260627T203000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s27-1@urban7d
+DTSTAMP:20250117T210030Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260630T170000
+DTEND;TZID=Europe/Paris:20260630T190000
+SUMMARY:FORE VDC
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s27-2@urban7d
+DTSTAMP:20240401T113419Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260630T190000
+DTEND;TZID=Europe/Paris:20260701T000000
+SUMMARY:FORP VDC
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s27-3@urban7d
+DTSTAMP:20240806T172136Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260702T170000
+DTEND;TZID=Europe/Paris:20260702T190000
+SUMMARY:FORE VDC
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s27-4@urban7d
+DTSTAMP:20250525T210715Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260702T190000
+DTEND;TZID=Europe/Paris:20260703T000000
+SUMMARY:FORP VDC
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s27-5@urban7d
+DTSTAMP:20241114T065111Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260703T183000
+DTEND;TZID=Europe/Paris:20260704T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s28-1@urban7d
+DTSTAMP:20250729T110030Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260706T170000
+DTEND;TZID=Europe/Paris:20260706T233000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s28-2@urban7d
+DTSTAMP:20250806T061833Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260708T200000
+DTEND;TZID=Europe/Paris:20260709T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s28-3@urban7d
+DTSTAMP:20251207T152602Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260709T190000
+DTEND;TZID=Europe/Paris:20260709T230000
+SUMMARY:EV-AN
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s28-4@urban7d
+DTSTAMP:20240301T042604Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260710T183000
+DTEND;TZID=Europe/Paris:20260711T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s29-1@urban7d
+DTSTAMP:20240101T023305Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260714T193000
+DTEND;TZID=Europe/Paris:20260714T230000
+SUMMARY:EV-AN
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s29-2@urban7d
+DTSTAMP:20250601T183249Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260715T200000
+DTEND;TZID=Europe/Paris:20260716T000000
+SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR

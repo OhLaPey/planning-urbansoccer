@@ -759,10 +759,10 @@ DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s20-2@urban7d
-DTSTAMP:20251220T210841Z
+DTSTAMP:20240915T080435Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260516T133000
-DTEND;TZID=Europe/Paris:20260516T173000
+DTEND;TZID=Europe/Paris:20260516T153000
 SUMMARY:Anniversaire
 DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
  cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
@@ -777,60 +777,760 @@ DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les
  journée à 16h pour Loïc
 END:VEVENT
 BEGIN:VEVENT
-UID:mostefa-yanis-s20-3@urban7d
-DTSTAMP:20240430T133952Z
+UID:mostefa-yanis-s22-1@urban7d
+DTSTAMP:20240815T065121Z
 SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260517T101500
-DTEND;TZID=Europe/Paris:20260517T121500
-SUMMARY:Anniversaire
-DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
- cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
- 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
-  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
- me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
-  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
- 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
- ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
-  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
-  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
- journée à 16h pour Loïc
-END:VEVENT
-BEGIN:VEVENT
-UID:mostefa-yanis-s20-4@urban7d
-DTSTAMP:20240808T185953Z
-SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260517T121500
-DTEND;TZID=Europe/Paris:20260517T130000
+DTSTART;TZID=Europe/Paris:20260530T110000
+DTEND;TZID=Europe/Paris:20260530T123000
 SUMMARY:Vie de centre
-DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
- cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
- 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
-  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
- me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
-  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
- 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
- ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
-  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
-  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
- journée à 16h pour Loïc
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
 END:VEVENT
 BEGIN:VEVENT
-UID:mostefa-yanis-s20-5@urban7d
-DTSTAMP:20240726T131339Z
+UID:mostefa-yanis-s22-2@urban7d
+DTSTAMP:20240208T013114Z
 SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260517T133000
-DTEND;TZID=Europe/Paris:20260517T173000
+DTSTART;TZID=Europe/Paris:20260530T130000
+DTEND;TZID=Europe/Paris:20260530T141500
+SUMMARY:Aide
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s22-3@urban7d
+DTSTAMP:20251230T181708Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260530T141500
+DTEND;TZID=Europe/Paris:20260530T171500
 SUMMARY:Anniversaire
-DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les 
- cours co padel\n🏆🥎 Cup Padel : P25 lundi aprem et P25 samedi matin\n
- 🏆 Leagues de lundi à mercredi\n\n⚽🎉 Péïo Nicolas Loïc et Mehdi
-  seront à Nantes mercredi pour représenter le centre sur la All Stars Ga
- me\n🎂 Des anniversaires sont prévus sur les anniversaires. On verra si
-  les créneaux sont réservés surtout avec ce WE de 4 jours\nMAJ 2026-05-
- 13 14:04: MAJ Anniversaire :\n🎂 Samedi 16/05 : repos pour Loïc (tu ét
- ais en doublon)\, 1 seul anniv pour Yanis donc fin à 15h30 et pour Péïo
-  fin de journée à 15h\n🎂 Dimanche 17/05 : Aucun anniv donc repos pour
-  Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
- journée à 16h pour Loïc
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s22-4@urban7d
+DTSTAMP:20240126T101256Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260530T171500
+DTEND;TZID=Europe/Paris:20260530T180000
+SUMMARY:Aide
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s22-5@urban7d
+DTSTAMP:20241220T033034Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260531T093000
+DTEND;TZID=Europe/Paris:20260531T101500
+SUMMARY:Vie de centre
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s22-6@urban7d
+DTSTAMP:20240625T221258Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260531T101500
+DTEND;TZID=Europe/Paris:20260531T121500
+SUMMARY:Anniversaire
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s22-7@urban7d
+DTSTAMP:20250103T144550Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260531T121500
+DTEND;TZID=Europe/Paris:20260531T130000
+SUMMARY:Vie de centre
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s22-8@urban7d
+DTSTAMP:20250221T160112Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260531T131500
+DTEND;TZID=Europe/Paris:20260531T171500
+SUMMARY:Anniversaire
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s22-9@urban7d
+DTSTAMP:20250905T221215Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260531T171500
+DTEND;TZID=Europe/Paris:20260531T174500
+SUMMARY:EIA
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s23-1@urban7d
+DTSTAMP:20240802T121711Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260603T134500
+DTEND;TZID=Europe/Paris:20260603T174500
+SUMMARY:[Remplacé par Yohan] EDF-C
+DESCRIPTION:Remplacé par DIVIEN Yohan\nPlanning 01/06 au 07/06\n\n⚽🥎 
+ EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆🥎 Cup 
+ Padel : P100 lundi matin\, P50 vendredi aprem et Betsson Padel Tour samedi
+ \n🎉Event Akkodis mardi (foot et rugby) et mercredi (padel)\n🎉 Event 
+ Pomona dimanche avec bbq\n🎂 Des anniversaires sont prévus sur les anni
+ versaires. On verra si les créneaux sont réservés\n💬 On continue les
+  entretiens individuels annuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :
+ \n🎂 Samedi 06/06 : Début à 16h avec un anniv pour Mattis\n🎂 Dimanc
+ he 07/06 : RAS si ce en'est Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s23-2@urban7d
+DTSTAMP:20250121T032702Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260606T144500
+DTEND;TZID=Europe/Paris:20260606T164500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s23-3@urban7d
+DTSTAMP:20250128T144608Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260606T164500
+DTEND;TZID=Europe/Paris:20260606T210000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s23-4@urban7d
+DTSTAMP:20240513T015906Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260607T093000
+DTEND;TZID=Europe/Paris:20260607T101500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s23-5@urban7d
+DTSTAMP:20250422T225026Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260607T101500
+DTEND;TZID=Europe/Paris:20260607T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s23-6@urban7d
+DTSTAMP:20251015T065918Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260607T121500
+DTEND;TZID=Europe/Paris:20260607T130000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s23-7@urban7d
+DTSTAMP:20240522T104929Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260607T131500
+DTEND;TZID=Europe/Paris:20260607T171500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s24-1@urban7d
+DTSTAMP:20251128T160513Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260608T183000
+DTEND;TZID=Europe/Paris:20260608T210000
+SUMMARY:Formation pratique
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s24-2@urban7d
+DTSTAMP:20241031T143928Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260614T144500
+DTEND;TZID=Europe/Paris:20260614T164500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s24-3@urban7d
+DTSTAMP:20241029T121723Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260614T164500
+DTEND;TZID=Europe/Paris:20260614T222000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s25-1@urban7d
+DTSTAMP:20251201T221636Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260620T134500
+DTEND;TZID=Europe/Paris:20260620T194500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s25-2@urban7d
+DTSTAMP:20251102T075327Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260621T093000
+DTEND;TZID=Europe/Paris:20260621T101500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s25-3@urban7d
+DTSTAMP:20250315T180740Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260621T101500
+DTEND;TZID=Europe/Paris:20260621T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s25-4@urban7d
+DTSTAMP:20250109T055656Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260621T121500
+DTEND;TZID=Europe/Paris:20260621T130000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s25-5@urban7d
+DTSTAMP:20250730T053654Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260621T131500
+DTEND;TZID=Europe/Paris:20260621T171500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
+ 🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\nDernièr
+ e semaine EDF de l'année (sauf pour le samedi) donc on mettra en place un
+ e auberge espagnole après chaque séance pour marquer la fin d'année\n
+ 🏆🥎 Cup Padel : P100 lundi aprem\, P50 vendredi matin\n📊 Inventair
+ e Pro Shop lundi matin\n🎂 Des animateurs sont prévus sur les anniversa
+ ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
+ é
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s26-1@urban7d
+DTSTAMP:20240316T173208Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260627T144500
+DTEND;TZID=Europe/Paris:20260627T164500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s26-2@urban7d
+DTSTAMP:20250924T105344Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260627T164500
+DTEND;TZID=Europe/Paris:20260627T222000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s26-3@urban7d
+DTSTAMP:20250413T103603Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260628T093000
+DTEND;TZID=Europe/Paris:20260628T101500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s26-4@urban7d
+DTSTAMP:20250401T125602Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260628T101500
+DTEND;TZID=Europe/Paris:20260628T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s26-5@urban7d
+DTSTAMP:20250817T030127Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260628T121500
+DTEND;TZID=Europe/Paris:20260628T130000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s26-6@urban7d
+DTSTAMP:20240207T200357Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260628T133000
+DTEND;TZID=Europe/Paris:20260628T144500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s26-7@urban7d
+DTSTAMP:20250602T101545Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260628T144500
+DTEND;TZID=Europe/Paris:20260628T164500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\, 
+ les finales de Leagues et beaucoup d'anniversaires \n🥎 Cours co Padel s
+ ur les jours habituels // Journée portes ouvertes mercredi pour les cours
+  enfants padel\n⚽ Rattrapage des séances EDF reportées : cela concerne
+  la baby le mercredi et le samedi sur toutes les catégories\n🏆⚽️ D
+ erniers matchs de Betsson League et finales samedi aprem pour Nicolas Mehd
+ i et Yacine\n🏆⚽️🍽️ Finales de Business League suivies d'un buf
+ fet mercredi soir\n⚽️🎉 Event Safran jeudi soir\n🏆🥎 Cup Padel 
+ : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
+ es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s26-8@urban7d
+DTSTAMP:20241021T141652Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260625T200000
+DTEND;TZID=Europe/Paris:20260625T235900
+SUMMARY:[Remplace Théo] Vie de centre
+DESCRIPTION:Remplace DOVINA Théo\nPlanning 22/06 au 28/06\nBelle semaine a
+ vec plusieurs events\, les finales de Leagues et beaucoup d'anniversaires 
+ \n🥎 Cours co Padel sur les jours habituels // Journée portes ouvertes 
+ mercredi pour les cours enfants padel\n⚽ Rattrapage des séances EDF rep
+ ortées : cela concerne la baby le mercredi et le samedi sur toutes les ca
+ tégories\n🏆⚽️ Derniers matchs de Betsson League et finales samedi 
+ aprem pour Nicolas Mehdi et Yacine\n🏆⚽️🍽️ Finales de Business 
+ League suivies d'un buffet mercredi soir\n⚽️🎉 Event Safran jeudi so
+ ir\n🏆🥎 Cup Padel : P25M vendredi soir\n🎂 Des animateurs sont pré
+ vus sur les anniversaires. On verra si les créneaux sont réservés mais 
+ le WE s'annonce chargé
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s27-1@urban7d
+DTSTAMP:20240506T065144Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260704T101500
+DTEND;TZID=Europe/Paris:20260704T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s27-2@urban7d
+DTSTAMP:20241010T025337Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260704T124500
+DTEND;TZID=Europe/Paris:20260704T133000
+SUMMARY:Aide
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s27-3@urban7d
+DTSTAMP:20251104T212155Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260704T133000
+DTEND;TZID=Europe/Paris:20260704T190000
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s27-4@urban7d
+DTSTAMP:20241014T124449Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260704T190000
+DTEND;TZID=Europe/Paris:20260704T204500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s27-5@urban7d
+DTSTAMP:20250923T101123Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260705T101500
+DTEND;TZID=Europe/Paris:20260705T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s27-6@urban7d
+DTSTAMP:20240610T101142Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260705T134500
+DTEND;TZID=Europe/Paris:20260705T174500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
+ tuels // Journée portes ouvertes mercredi aprem et samedi matin pour les 
+ cours enfants padel\n⚽ Rattrapage des séances EDF reportées : dernièr
+ es séances de baby mercredi\n🏆⚽️ Derniers matchs de Betsson League
+  de la saison mardi soir\n⚽🇫🇷🌭 On va faire un soirée BBQ pour 
+ le 16eme de finale des bleus mardi soir\n🏆🥎Cup Padel : P50 lundi apr
+ em\, P25 vendredi aprem et montante/descendante vendredi soir pour Péïo\
+ n📊 Inventaire trimestriel mercredi matin\n🎂Des animateurs sont prév
+ us sur les anniversaires. On verra si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s28-1@urban7d
+DTSTAMP:20250326T205425Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260711T134500
+DTEND;TZID=Europe/Paris:20260711T174500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s28-2@urban7d
+DTSTAMP:20250511T233006Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260711T174500
+DTEND;TZID=Europe/Paris:20260711T212000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
+ homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
+ 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
+ Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
+ edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
+  si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s29-1@urban7d
+DTSTAMP:20241009T074854Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260718T170000
+DTEND;TZID=Europe/Paris:20260718T203000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s29-2@urban7d
+DTSTAMP:20251216T153148Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260719T170000
+DTEND;TZID=Europe/Paris:20260719T210000
+SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR

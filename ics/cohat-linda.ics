@@ -146,4 +146,152 @@ DESCRIPTION:Planning 11/05 au 17/05\n⚽🥎 Semaine off pour l'EDF et les
   Yanis dimanche\, début de journée en VDC à 15h pour Nicolas et fin de 
  journée à 16h pour Loïc
 END:VEVENT
+BEGIN:VEVENT
+UID:cohat-linda-s21-1@urban7d
+DTSTAMP:20251230T174911Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260520T194500
+DTEND;TZID=Europe/Paris:20260520T200000
+SUMMARY:Formation
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:cohat-linda-s21-2@urban7d
+DTSTAMP:20250302T113406Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260520T200000
+DTEND;TZID=Europe/Paris:20260521T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 18/05 au 24/05\n⚽🥎 EDF et des cours co Padel sur 
+ les jours habituels\n🏆 Cup Padel : P50 lundi aprem et P500 samedi\n 
+ 🎉 Event VERISURE en attente de validation (avec pti dej\, réunion et a
+ ctivités)\n🎂 Des anniversaires sont prévus sur les anniversaires. On 
+ verra si les créneaux sont réservés surtout avec ce nouveau WE de 3 jou
+ rs\n⚠️ A noter que j'ai planifié du temps pour que vous puissiez fair
+ e les modules Yoobic. Vous pouvez le faire depuis votre tel en télécharg
+ eant l'appli si vous trouvez ça plus simple\n💬 J'ai commencé à plani
+ fier des entretiens annuels individuels pour certains d'entre vous\, je vo
+ us envoie un mail à ce sujet
+END:VEVENT
+BEGIN:VEVENT
+UID:cohat-linda-s22-1@urban7d
+DTSTAMP:20240211T065709Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260526T193000
+DTEND;TZID=Europe/Paris:20260526T200000
+SUMMARY:EIA
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:cohat-linda-s22-2@urban7d
+DTSTAMP:20241020T045557Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260526T200000
+DTEND;TZID=Europe/Paris:20260527T000000
+SUMMARY:Vie de centre
+DESCRIPTION:MAJ vu que Mehdi ne pose pas son indispo sur le bon jour 😉\n
+ ⚽🥎 EDF\, Leagues et des cours co Padel sur les jours habituels\n🏆
+ 🥎 Cup Padel : P250 +45 ans vendredi soir et P50M samedi aprem\n🏆🥎
+  Pré-tournoi de la Padel League jeudi soir pour Péïo\n🏆🌟 Finale L
+ DC samedi 18h avec des animations qui seront mises en place\n🎂 Des anni
+ versaires sont prévus sur les anniversaires. On verra si les créneaux so
+ nt réservés sur ce seul vrai WE de mai qui s'annonce chargé\n💬 On co
+ ntinue les entretiens individuels annuels\nMAJ 2026-05-30 11:30: POINT ANN
+ IVERSAIRES - Samedi 30/05 :\n@tout le monde \n▶️ Quentin : 13h45 puis 
+ 15h30 - tu passes en VDC à 17h jusqu'à 22h30\n▶️ Mattis : 13h45 puis
+  16h15 - tu rejoins Quentin en VDC à 17h45 jusqu'à 21h30\n▶️ Yanis :
+  VDC à 11h puis aide anniv\, 14h30 puis 16h15 jusqu'à 18h\n▶️ Tiffan
+ y : RAS - 16h (post EDF) jusqu'à 17h45\nMAJ 2026-05-30 11:30: POINT ANNIV
+ ERSAIRES - Dimanche 31/05 :\n@tout le monde\n▶️ Yanis Mostefa : pas d'
+ anniversaire le matin. Début à 12h15 jusqu'à 13h15 en VDC puis annivers
+ aires à 13h30 et 15h30 puis EIA\n▶️ Marvyn Kabunda Ndeke : RAS\n▶
+ ️ Rdi Pstr : début 13h45 avec anniversaires à 14h et 16h (fin 17h45)
+END:VEVENT
+BEGIN:VEVENT
+UID:cohat-linda-s23-1@urban7d
+DTSTAMP:20250924T064302Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260601T173000
+DTEND;TZID=Europe/Paris:20260602T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:cohat-linda-s23-2@urban7d
+DTSTAMP:20250624T155215Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260604T180000
+DTEND;TZID=Europe/Paris:20260604T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 01/06 au 07/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P100 lundi matin\, P
+ 50 vendredi aprem et Betsson Padel Tour samedi\n🎉Event Akkodis mardi (f
+ oot et rugby) et mercredi (padel)\n🎉 Event Pomona dimanche avec bbq\n
+ 🎂 Des anniversaires sont prévus sur les anniversaires. On verra si les
+  créneaux sont réservés\n💬 On continue les entretiens individuels an
+ nuels\nMAJ 2026-06-05 16:25: MAJ Anniversaires :\n🎂 Samedi 06/06 : Déb
+ ut à 16h avec un anniv pour Mattis\n🎂 Dimanche 07/06 : RAS si ce en'es
+ t Tiffany qui remplace Marvyn
+END:VEVENT
+BEGIN:VEVENT
+UID:cohat-linda-s24-1@urban7d
+DTSTAMP:20250916T112050Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260608T183000
+DTEND;TZID=Europe/Paris:20260609T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
+BEGIN:VEVENT
+UID:cohat-linda-s24-2@urban7d
+DTSTAMP:20241101T212920Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260610T200000
+DTEND;TZID=Europe/Paris:20260611T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 08/06 au 14/06\n\n⚽🥎 EDF\, Leagues et des cours c
+ o Padel sur les jours habituels\n🏆🥎 Cup Padel : P25 lundi aprem\, P1
+ 00F samedi aprem\n🎂 Des animateurs sont prévus sur les anniversaires. 
+ On verra si les créneaux sont réservés\n🧑‍🏫💬 Formation Bar/A
+ ccueil lundi soir pour la plupart des staffs en compagnie des copains de M
+ ontaudran
+END:VEVENT
 END:VCALENDAR
