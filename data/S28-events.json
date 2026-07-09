@@ -765,13 +765,6 @@
         "day": 1
       },
       {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-07-12T13:45",
-        "end": "2026-07-12T17:45",
-        "day": 6
-      },
-      {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-07-12T17:45",
@@ -798,7 +791,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-07-09 16:50",
+    "updated_at": "2026-07-09 16:57",
     "excel_version": 0
   }
 }
