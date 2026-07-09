@@ -688,8 +688,8 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-07-10T18:30",
-        "end": "2026-07-11T00:00",
+        "start": "2026-07-10T20:30",
+        "end": "2026-07-10T24:00",
         "day": 4
       }
     ]
@@ -805,7 +805,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-07-03 17:11",
+    "updated_at": "2026-07-09 13:33",
     "excel_version": 0
   }
 }
