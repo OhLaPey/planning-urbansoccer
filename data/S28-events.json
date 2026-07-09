@@ -698,13 +698,6 @@
     "slug": "mostefa-yanis",
     "events": [
       {
-        "code": "ANNIV",
-        "label": "Anniversaire",
-        "start": "2026-07-11T13:45",
-        "end": "2026-07-11T17:45",
-        "day": 5
-      },
-      {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-07-11T17:45",
@@ -805,7 +798,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-07-09 13:33",
+    "updated_at": "2026-07-09 16:50",
     "excel_version": 0
   }
 }
