@@ -1,0 +1,20 @@
+{
+  "comment": "",
+  "updates": [],
+  "replacements": [
+    {
+      "date": "2026-09-03",
+      "out": "CARRERE Peïo",
+      "in": "MANGIN Etienne",
+      "start": "17:00",
+      "end": "23:59"
+    },
+    {
+      "date": "2026-09-04",
+      "out": "MANGIN Etienne",
+      "in": "CARRERE Peïo",
+      "start": "17:00",
+      "end": "23:00"
+    }
+  ]
+}
