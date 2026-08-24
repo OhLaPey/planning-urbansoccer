@@ -24,7 +24,8 @@
     ],
     "non_disponibles": [
       "Ligue 1+",
-      "DAZN"
+      "DAZN",
+      "Disney+"
     ]
   },
 
@@ -44,7 +45,8 @@
     "TMC":               { "numero": "10", "couleur": "#00897b", "clair": true },
     "L'Équipe":          { "numero": "21", "couleur": "#c62828", "clair": true },
     "Ligue 1+":          { "numero": "",   "couleur": "#455a64", "clair": false },
-    "DAZN":              { "numero": "",   "couleur": "#455a64", "clair": false }
+    "DAZN":              { "numero": "",   "couleur": "#455a64", "clair": false },
+    "Disney+":           { "numero": "",   "couleur": "#455a64", "clair": false }
   },
 
   "categories": {
@@ -59,7 +61,7 @@
     "sport":  { "label": "Sport",               "couleur": "#78909C" }
   },
 
-  "regle_diffusion": "La Ligue 1 n'est jamais diffusée au centre, même quand un match passe sur une chaîne disponible (beIN) : mettre alors 'diffusable': false. Rugby (Canal) et Formule 1 (Canal+) sont diffusables.",
+  "regle_diffusion": "Droits 2026-27 : Ligue 1 = 100% Ligue 1+ (hors abonnement). beIN garde Ligue 2 (diffusable), Bundesliga, Coupe de France. Canal+ = LDC, Premier League, Europa, Top 14, F1, Premier Padel. Hors abonnement : Ligue 1+ (L1), DAZN (Serie A), DAZN+Disney+ (Liga — beIN a perdu la Liga en 2026). Garde-fou : 'diffusable': false pour retirer un événement même sur chaîne dispo.",
 
   "_exemple": "Les événements ci-dessous sont des EXEMPLES à remplacer chaque semaine par le vrai programme. Le champ 'chaine' détermine si l'événement est diffusable au centre (voir abonnement.disponibles).",
   "evenements": [
@@ -85,7 +87,8 @@
       "categorie": "foot",
       "competition": "Ligue 1 — 3e journée",
       "affiche": "PSG — Lyon",
-      "chaine": "Ligue 1+"
+      "chaine": "Ligue 1+",
+      "raison": "Ligue 1 uniquement sur Ligue 1+ (hors abonnement)"
     },
     {
       "date": "2026-08-28",
@@ -99,11 +102,9 @@
       "date": "2026-08-29",
       "heure": "17:00",
       "categorie": "foot",
-      "competition": "Ligue 1 — 3e journée",
-      "affiche": "Marseille — Lens",
-      "chaine": "beIN Sports 1",
-      "diffusable": false,
-      "raison": "Ligue 1 — non diffusée au centre"
+      "competition": "Ligue 2 — 3e journée",
+      "affiche": "Guingamp — Bastia",
+      "chaine": "beIN Sports 1"
     },
     {
       "date": "2026-08-29",
@@ -131,10 +132,10 @@
     },
     {
       "date": "2026-08-30",
-      "heure": "21:00",
+      "heure": "20:45",
       "categorie": "foot",
-      "competition": "Ligue 1 — 3e journée",
-      "affiche": "Monaco — Nice",
+      "competition": "Serie A — 1re journée",
+      "affiche": "Inter — Milan AC",
       "chaine": "DAZN"
     },
     {

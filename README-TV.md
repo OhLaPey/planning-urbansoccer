@@ -48,17 +48,16 @@ rafraîchit l'état « EN DIRECT » chaque minute).
 
 - Un événement n'est proposé à la diffusion **que si sa `chaine` figure dans
   `abonnement.disponibles`** (Canal+, beIN Sports, chaînes en clair).
-- Les événements sur `abonnement.non_disponibles` (**Ligue 1+**, **DAZN**) sont
-  affichés à part, en grisé, dans « ⛔ Non diffusé au centre ».
-- **La Ligue 1 n'est jamais diffusée au centre**, même quand un match passe sur
-  une chaîne disponible (ex. beIN Sports). Dans ce cas, ajouter à l'événement :
-
-  ```json
-  "diffusable": false,
-  "raison": "Ligue 1 — non diffusée au centre"
-  ```
-
-  Il bascule alors dans la section grisée avec sa raison, au lieu d'être proposé.
+- Les événements sur `abonnement.non_disponibles` (**Ligue 1+**, **DAZN**,
+  **Disney+**) sont affichés à part, en grisé, dans « ⛔ Non diffusé au centre ».
+  Le champ optionnel `"raison"` personnalise le motif affiché.
+- **La Ligue 1 est 100 % sur Ligue 1+** (hors abonnement) : un match de L1
+  n'apparaît donc jamais comme diffusable. beIN Sports n'a **plus** la Ligue 1
+  ni la **Liga** (partie sur DAZN + Disney+ en 2026), mais conserve la
+  **Ligue 2** (diffusable).
+- Garde-fou : pour retirer manuellement un événement de la diffusion **même s'il
+  passe sur une chaîne disponible**, ajouter `"diffusable": false` (+ `"raison"`).
+  Il bascule alors dans la section grisée.
 - **Rugby (Top 14, sur Canal), Formule 1 (Canal+)** : diffusables, à ajouter
   comme n'importe quel événement.
 
@@ -87,18 +86,24 @@ Pour ajouter une chaîne : l'ajouter dans `chaines_meta` (numéro + couleur +
 
 ## Repère : quelle compétition sur quelle chaîne (France)
 
-Aide-mémoire pour remplir `chaine` (à ajuster selon les droits de la saison) :
+Aide-mémoire pour remplir `chaine` (droits saison **2026-2027** — à revérifier
+chaque saison) :
 
-| Compétition                     | Chaîne(s) au centre                 |
-|---------------------------------|-------------------------------------|
-| Ligue des Champions             | Canal+ / beIN Sports                |
-| Premier League, Liga, Serie A   | Canal+ (droits Canal)               |
-| Coupe de France                 | beIN Sports + France TV (en clair)  |
-| Équipe de France                | TF1 / M6 (en clair)                 |
-| Premier Padel                   | Canal+ (Canal+ Sport)               |
-| Top 14 / rugby                  | Canal+ (Canal+ Sport)               |
-| Formule 1                       | Canal+                              |
-| **Ligue 1**                     | **jamais diffusée** (voir ci-dessus)|
+| Compétition                     | Chaîne(s)              | Au centre ?          |
+|---------------------------------|------------------------|----------------------|
+| Ligue des Champions             | Canal+                 | ✅ diffusable        |
+| Premier League, Europa League   | Canal+                 | ✅ diffusable        |
+| **Ligue 2**                     | **beIN Sports**        | ✅ diffusable        |
+| Bundesliga                      | beIN Sports            | ✅ diffusable        |
+| Coupe de France                 | beIN Sports + France TV| ✅ diffusable        |
+| Équipe de France                | TF1 / M6 (en clair)    | ✅ diffusable        |
+| Premier Padel                   | Canal+ (Canal+ Sport)  | ✅ diffusable        |
+| Top 14 / rugby                  | Canal+ (Canal+ Sport)  | ✅ diffusable        |
+| Formule 1                       | Canal+                 | ✅ diffusable        |
+| Serie A                         | DAZN                   | ⛔ hors abonnement   |
+| **Liga**                        | **DAZN + Disney+**     | ⛔ hors abonnement   |
+| **Ligue 1**                     | **Ligue 1+** (unique)  | ⛔ hors abonnement   |
 
-*(Même un match de Ligue 1 diffusé par beIN Sports n'est pas montré au centre :
-utiliser `"diffusable": false`.)*
+*(Évolutions 2026-27 : la **Ligue 1 est 100 % sur Ligue 1+** ; la **Liga quitte
+beIN** pour DAZN + Disney+ (hors abonnement). beIN conserve la **Ligue 2**
+(jusqu'en 2027), la Bundesliga et la Coupe de France — diffusables.)*
