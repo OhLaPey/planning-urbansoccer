@@ -162,46 +162,61 @@ def build_page(data):
             border-radius: 5px; text-transform: uppercase; letter-spacing: 1px;
         }}
 
-        /* ── Événement ── */
-        .event {{
-            display: grid;
-            grid-template-columns: 66px 6px 1fr auto;
-            align-items: center; gap: 12px;
-            padding: 12px 14px; margin-bottom: 8px; border-radius: 8px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
-            transition: background 0.15s;
+        /* ── Timeline horizontale (adaptée du planning staff) ── */
+        .timeline {{
+            position: relative; overflow-x: auto; margin-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin; scrollbar-color: #FF6600 rgba(255,255,255,0.04);
         }}
-        .event:hover {{ background: rgba(255,255,255,0.06); }}
-        .event.live {{
-            border-color: rgba(255,102,0,0.55);
-            background: rgba(255,102,0,0.08);
-            box-shadow: 0 0 22px rgba(255,102,0,0.12);
+        .timeline::-webkit-scrollbar {{ height: 7px; }}
+        .timeline::-webkit-scrollbar-track {{ background: rgba(255,255,255,0.04); border-radius: 3px; }}
+        .timeline::-webkit-scrollbar-thumb {{ background: #FF6600; border-radius: 2px;
+                                              box-shadow: 0 0 8px rgba(255,102,0,0.6); }}
+        .tl-inner {{ min-width: 600px; }}
+        .tl-row {{ display: flex; align-items: center; margin-bottom: 6px; }}
+        .tl-name {{
+            width: 168px; flex-shrink: 0; padding-right: 12px; overflow: hidden;
+            position: sticky; left: 0; z-index: 2;
+            background: linear-gradient(90deg, rgba(26,26,26,0.98) 86%, transparent);
         }}
-        .event.done {{ opacity: 0.42; }}
-        .ev-time {{ font-size: 20px; font-weight: 800; color: #fff; text-align: center; }}
-        .ev-time small {{ display: block; font-size: 9px; color: #888; font-weight: 700; }}
-        .ev-bar {{ width: 6px; height: 100%; min-height: 40px; border-radius: 3px; }}
-        .ev-main {{ min-width: 0; }}
-        .ev-compet {{
-            font-size: 10px; font-weight: 800; text-transform: uppercase;
-            letter-spacing: 0.8px; margin-bottom: 3px;
+        .tl-affiche {{ font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap;
+                       overflow: hidden; text-overflow: ellipsis; }}
+        .tl-compet {{ font-size: 9px; font-weight: 800; text-transform: uppercase;
+                      letter-spacing: 0.5px; white-space: nowrap; overflow: hidden;
+                      text-overflow: ellipsis; margin-top: 1px; }}
+        .tl-markers {{ flex: 1; display: flex; justify-content: space-between; position: relative;
+                       padding: 0 0 6px; border-bottom: 1px solid rgba(255,255,255,0.06);
+                       margin-bottom: 10px; }}
+        .tl-marker {{ font-size: 10px; color: #666; font-weight: 600; }}
+        .tl-track {{ flex: 1; position: relative; height: 40px;
+                     background: rgba(255,255,255,0.02); border-radius: 5px; }}
+        .tl-gridline {{ position: absolute; top: 0; bottom: 0; width: 1px; pointer-events: none; z-index: 0; }}
+        .tl-gridline.hour {{ background: rgba(255,255,255,0.10); }}
+        .tl-gridline.half {{ border-left: 1px dashed rgba(255,255,255,0.07); }}
+        .tl-bar {{
+            position: absolute; top: 0; bottom: 0; border-radius: 5px;
+            display: flex; align-items: center; gap: 7px; padding: 0 9px;
+            border-left: 3px solid; overflow: hidden; z-index: 1;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.04);
         }}
-        .ev-affiche {{
-            font-size: 17px; font-weight: 700; color: #fff;
-            overflow: hidden; text-overflow: ellipsis;
+        .tl-bar.live {{ box-shadow: 0 0 18px rgba(255,102,0,0.45), inset 0 0 10px rgba(255,255,255,0.06); }}
+        .tl-bar.done {{ opacity: 0.5; }}
+        .tl-bar-num {{
+            background: rgba(255,255,255,0.95); color: #111; font-weight: 900;
+            font-size: 13px; min-width: 24px; text-align: center;
+            padding: 2px 6px; border-radius: 4px; flex-shrink: 0;
         }}
-        .ev-right {{ display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }}
-        .live-tag {{
-            font-size: 10px; font-weight: 900; color: #1A1A1A; background: #FF6600;
-            padding: 3px 9px; border-radius: 5px; text-transform: uppercase;
-            letter-spacing: 1px; display: inline-flex; align-items: center; gap: 5px;
-        }}
-        .live-tag .dot {{
-            width: 7px; height: 7px; border-radius: 50%; background: #1A1A1A;
-            animation: pulse 1.1s infinite;
-        }}
-        @keyframes pulse {{ 0%,100% {{ opacity: 1; }} 50% {{ opacity: 0.25; }} }}
+        .tl-bar-num.clair {{ background: #FF6600; color: #1A1A1A; }}
+        .tl-bar-chan {{ font-size: 12px; font-weight: 800; color: #fff; white-space: nowrap;
+                        overflow: hidden; text-overflow: ellipsis; }}
+        .tl-bar-live {{ font-size: 9px; font-weight: 900; color: #FF6600; margin-left: auto;
+                        flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.5px; }}
+        /* Curseur d'heure en direct */
+        .tl-now {{ position: absolute; top: 0; bottom: 0; width: 2px; z-index: 3; pointer-events: none;
+                   border-left: 2px dashed #ffd700;
+                   filter: drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 9px rgba(255,215,0,0.5));
+                   animation: nowPulse 2s ease-in-out infinite; }}
+        @keyframes nowPulse {{ 0%,100% {{ opacity: 0.75; }} 50% {{ opacity: 1; }} }}
 
         /* ── Sélecteur de jour (identique au planning staff) ── */
         .day-tabs {{
@@ -235,11 +250,10 @@ def build_page(data):
 
         @media (max-width: 620px) {{
             h1 {{ font-size: 22px; letter-spacing: 1.5px; }}
-            .event {{ grid-template-columns: 52px 5px 1fr; gap: 9px; }}
-            .ev-right {{ grid-column: 1 / -1; flex-direction: row; align-items: center;
-                          justify-content: space-between; margin-top: 4px; }}
-            .ev-time {{ font-size: 17px; }}
-            .ev-affiche {{ font-size: 15px; }}
+            .tl-name {{ width: 104px; padding-right: 8px; }}
+            .tl-affiche {{ font-size: 12px; }}
+            .tl-track {{ height: 38px; }}
+            .tl-bar-chan {{ font-size: 11px; }}
         }}
     </style>
 </head>
@@ -279,6 +293,9 @@ def build_page(data):
         var p = ev.date.split("-");
         var t = (ev.heure || "00:00").split(":");
         return new Date(+p[0], +p[1]-1, +p[2], +t[0], +(t[1]||0));
+    }}
+    function eventDuration(ev) {{
+        return (ev.duree_min && ev.duree_min > 0) ? ev.duree_min : EVENT_DURATION_MIN;
     }}
 
     function isAvailable(chaine) {{
@@ -326,31 +343,16 @@ def build_page(data):
         wrap.innerHTML = html;
     }}
 
-    function eventCard(ev, now) {{
-        var start = eventStart(ev);
-        var end = new Date(start.getTime() + EVENT_DURATION_MIN*60000);
-        var state = "soon";
-        if (now >= start && now < end) state = "live";
-        else if (now >= end) state = "done";
-
-        var cat = catInfo(ev.categorie);
-
-        var right = chanBadge(ev.chaine);
-        if (state === "live") {{
-            right = '<span class="live-tag"><span class="dot"></span>En direct</span>' + right;
-        }}
-
-        return '<div class="event ' + (state==="live"?"live":"") + ' ' +
-                (state==="done"?"done":"") + '">' +
-            '<div class="ev-time">' + (ev.heure||"") + '</div>' +
-            '<div class="ev-bar" style="background:' + cat.couleur + '"></div>' +
-            '<div class="ev-main">' +
-                '<div class="ev-compet" style="color:' + cat.couleur + '">' +
-                    (ev.competition || cat.label) + '</div>' +
-                '<div class="ev-affiche">' + (ev.affiche || "") + '</div>' +
-            '</div>' +
-            '<div class="ev-right">' + right + '</div>' +
-        '</div>';
+    function esc(s) {{
+        return String(s == null ? "" : s)
+            .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }}
+    function hexToRgba(hex, a) {{
+        hex = String(hex || "#78909C").replace("#", "");
+        if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+        var r = parseInt(hex.substr(0,2),16), g = parseInt(hex.substr(2,2),16), b = parseInt(hex.substr(4,2),16);
+        return "rgba(" + r + "," + g + "," + b + "," + a + ")";
     }}
 
     // ── État : jour sélectionné + jours disponibles ──
@@ -400,22 +402,118 @@ def build_page(data):
         var todayStr = ymd(now);
         var evts = diffusableEvents().filter(function(ev) {{ return ev.date === STATE.current; }});
 
-        if (!evts.length) {{
-            schedule.innerHTML = '<div class="empty-state"><div class="big">📺</div>' +
-                '<p>Aucune diffusion ce jour.</p></div>';
-            return;
-        }}
-
         var p = STATE.current.split("-");
         var d = new Date(+p[0], +p[1]-1, +p[2]);
         var isToday = (STATE.current === todayStr);
-        var html = '<div class="day-head' + (isToday ? " today" : "") + '">' +
+        var headHtml = '<div class="day-head' + (isToday ? " today" : "") + '">' +
             '<span class="day-name">' + JS_DAYS[d.getDay()] + '</span>' +
             '<span class="day-date">' + d.getDate() + ' ' + JS_MONTHS[d.getMonth()] + '</span>' +
             (isToday ? '<span class="today-tag">Aujourd\\'hui</span>' : '') +
             '</div>';
-        evts.forEach(function(ev) {{ html += eventCard(ev, now); }});
-        schedule.innerHTML = html;
+
+        if (!evts.length) {{
+            schedule.innerHTML = headHtml + '<div class="empty-state"><div class="big">📺</div>' +
+                '<p>Aucune diffusion ce jour.</p></div>';
+            return;
+        }}
+
+        // ── Plage horaire de la journée (début = 1re diffusion, fin = +durée) ──
+        var minH = 24, maxH = 0;
+        evts.forEach(function(ev) {{
+            var s = eventStart(ev);
+            var sh = s.getHours() + s.getMinutes()/60;
+            var eh = sh + eventDuration(ev)/60;
+            if (sh < minH) minH = sh;
+            if (eh > maxH) maxH = eh;
+        }});
+        minH = Math.floor(minH); maxH = Math.ceil(maxH);
+        if (maxH <= minH) maxH = minH + 1;
+        var range = maxH - minH;
+
+        var isDesktop = window.innerWidth >= 900;
+        var pxPerHour = isDesktop ? 92 : 50;
+        var nameW = isDesktop ? 168 : 104;
+        var innerMin = nameW + range * pxPerHour;
+
+        // ── Curseur d'heure en direct (uniquement le jour même, dans la plage) ──
+        var currentH = now.getHours() + now.getMinutes()/60;
+        var showNow = isToday && currentH >= minH && currentH <= maxH;
+        var nowPct = ((currentH - minH) / range) * 100;
+        var nowHtml = showNow ? '<div class="tl-now" style="left:' + nowPct + '%"></div>' : '';
+
+        // Lignes de grille (heures + demi-heures)
+        var gridHtml = "";
+        for (var gh = minH; gh <= maxH; gh++) {{
+            var pos = ((gh - minH) / range) * 100;
+            gridHtml += '<div class="tl-gridline hour" style="left:' + pos + '%"></div>';
+            if (gh < maxH) {{
+                var hp = ((gh + 0.5 - minH) / range) * 100;
+                gridHtml += '<div class="tl-gridline half" style="left:' + hp + '%"></div>';
+            }}
+        }}
+
+        // Marqueurs d'heures
+        var markersHtml = "";
+        for (var h = minH; h <= maxH; h++) {{
+            markersHtml += '<span class="tl-marker">' + h + 'h</span>';
+        }}
+        var markersRow = '<div class="tl-row">' +
+            '<div class="tl-name">&nbsp;</div>' +
+            '<div class="tl-markers">' + markersHtml + nowHtml + '</div>' +
+            '</div>';
+
+        // Une ligne par diffusion
+        var rowsHtml = "";
+        evts.forEach(function(ev) {{
+            var s = eventStart(ev);
+            var end = new Date(s.getTime() + eventDuration(ev)*60000);
+            var sh = s.getHours() + s.getMinutes()/60;
+            var eh = sh + eventDuration(ev)/60;
+            var left = ((sh - minH) / range) * 100;
+            var width = ((eh - sh) / range) * 100;
+            if (left < 0) left = 0;
+            if (left + width > 100) width = 100 - left;
+
+            var state = (now >= s && now < end) ? "live" : (now >= end ? "done" : "soon");
+            var cat = catInfo(ev.categorie);
+            var num = chanNum(ev.chaine);
+            var clair = chanClair(ev.chaine);
+
+            var barCls = "tl-bar" + (state === "live" ? " live" : "") + (state === "done" ? " done" : "");
+            var numHtml = num ? '<span class="tl-bar-num' + (clair ? " clair" : "") + '">' + esc(num) + '</span>' : '';
+            var liveHtml = (state === "live") ? '<span class="tl-bar-live">\\u25CF Direct</span>' : '';
+            var barStyle = 'left:' + left + '%;width:' + width + '%;' +
+                'background:' + hexToRgba(cat.couleur, 0.24) + ';border-color:' + cat.couleur + ';';
+            var barTitle = esc((ev.affiche || "") + " — " + (ev.competition || "") +
+                " · " + (ev.heure || "") + " · " + ev.chaine);
+
+            rowsHtml += '<div class="tl-row">' +
+                '<div class="tl-name">' +
+                    '<div class="tl-affiche">' + esc(ev.affiche || ev.competition || "") + '</div>' +
+                    '<div class="tl-compet" style="color:' + cat.couleur + '">' +
+                        esc((ev.heure || "") + " · " + (ev.competition || cat.label)) + '</div>' +
+                '</div>' +
+                '<div class="tl-track">' + gridHtml + nowHtml +
+                    '<div class="' + barCls + '" style="' + barStyle + '" title="' + barTitle + '">' +
+                        numHtml + '<span class="tl-bar-chan">' + esc(ev.chaine) + '</span>' + liveHtml +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+        }});
+
+        var inner = '<div class="tl-inner" style="min-width:' + innerMin + 'px">' +
+            markersRow + rowsHtml + '</div>';
+        schedule.innerHTML = headHtml + '<div class="timeline" id="timeline">' + inner + '</div>';
+
+        // Auto-scroll pour centrer l'heure courante
+        if (showNow) {{
+            var tl = document.getElementById("timeline");
+            var innerEl = tl.querySelector(".tl-inner");
+            var scrollPct = (currentH - minH) / range;
+            var scrollableWidth = innerEl.scrollWidth - nameW;
+            var target = nameW + scrollPct * scrollableWidth - tl.clientWidth / 2;
+            tl.scrollLeft = Math.max(0, target);
+        }}
     }}
 
     function rebuild() {{

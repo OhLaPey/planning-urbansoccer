@@ -24,6 +24,12 @@ Un **sélecteur de jour** (même principe que le planning staff) permet de
 naviguer d'un jour à l'autre ; par défaut, le jour du jour est affiché. Seuls
 les jours ayant au moins une diffusion apparaissent dans le sélecteur.
 
+Chaque journée est présentée en **timeline horizontale** (comme le planning) :
+une ligne par diffusion, une barre colorée par catégorie positionnée sur l'axe
+des heures, avec le n° de chaîne. Le jour même, un **curseur d'heure en direct**
+(trait doré) suit l'heure réelle et se recentre automatiquement ; les
+diffusions en cours sont marquées « ● Direct ».
+
 ## Mettre à jour le programme (chaque semaine)
 
 1. Ouvrir **`data/tv-programme.json`**
@@ -76,6 +82,8 @@ les jours ayant au moins une diffusion apparaissent dans le sélecteur.
 | `competition` | oui         | `"Ligue des Champions — J1"`     |
 | `affiche`     | oui         | `"PSG — Atalanta"`               |
 | `chaine`      | oui         | doit exister dans `chaines_meta` |
+| `duree_min`   | non         | durée de la barre en minutes (déf. 130) |
+| `diffusable`  | non         | `false` pour forcer le masquage  |
 
 ## Chaînes et numéros
 
