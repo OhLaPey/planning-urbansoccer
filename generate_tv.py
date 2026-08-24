@@ -202,26 +202,25 @@ def build_page(data):
             animation: pulse 1.1s infinite;
         }}
         @keyframes pulse {{ 0%,100% {{ opacity: 1; }} 50% {{ opacity: 0.25; }} }}
-        .reason-tag {{
-            font-size: 9px; font-weight: 800; color: #ff8a80;
-            background: rgba(255,80,80,0.12); border: 1px solid rgba(255,80,80,0.3);
-            padding: 3px 8px; border-radius: 5px; text-transform: uppercase;
-            letter-spacing: 0.5px; text-align: right;
-        }}
 
-        /* ── Section non diffusable ── */
-        .unavailable {{
-            margin-top: 30px; padding: 16px; border-radius: 8px;
-            background: rgba(255,255,255,0.02);
-            border: 1px dashed rgba(255,255,255,0.12);
+        /* ── Sélecteur de jour (identique au planning staff) ── */
+        .day-tabs {{
+            display: flex; gap: 4px; margin: 16px 0 6px; overflow-x: auto;
+            padding-bottom: 4px; -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }}
-        .unavailable h2 {{
-            font-size: 12px; font-weight: 800; color: #888; text-transform: uppercase;
-            letter-spacing: 1px; margin-bottom: 4px;
+        .day-tabs::-webkit-scrollbar {{ display: none; }}
+        .day-tab {{
+            padding: 9px 12px; background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08); border-radius: 6px;
+            color: #666; font-size: 13px; font-weight: 700; cursor: pointer;
+            white-space: nowrap; transition: all 0.2s; flex: 1; min-width: 0;
+            text-align: center; text-transform: uppercase; letter-spacing: 0.5px;
         }}
-        .unavailable .hint {{ font-size: 11px; color: #666; margin-bottom: 12px; }}
-        .unavailable .event {{ opacity: 0.6; }}
-        .unavailable .ev-affiche {{ color: #bbb; }}
+        .day-tab:hover {{ background: rgba(255,102,0,0.1); border-color: rgba(255,102,0,0.3); color: #FF6600; }}
+        .day-tab.active {{
+            background: rgba(255,102,0,0.15); border-color: rgba(255,102,0,0.3); color: #FF6600;
+        }}
 
         /* ── Vide ── */
         .empty-state {{ text-align: center; padding: 46px 20px; color: #666; }}
@@ -255,6 +254,8 @@ def build_page(data):
 
         <div class="legend" id="legend"></div>
 
+        <div class="day-tabs" id="day-tabs"></div>
+
         <div id="schedule"></div>
 
         <div class="foot">
@@ -266,6 +267,7 @@ def build_page(data):
     var DATA = {data_json};
 
     var JS_DAYS = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    var JS_DAYS_SHORT = ["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"];
     var JS_MONTHS = ["janvier","février","mars","avril","mai","juin","juillet",
                      "août","septembre","octobre","novembre","décembre"];
     var EVENT_DURATION_MIN = 130; // durée supposée d'un match/événement
@@ -332,16 +334,13 @@ def build_page(data):
         else if (now >= end) state = "done";
 
         var cat = catInfo(ev.categorie);
-        var dispo = isAvailable(ev.chaine);
 
         var right = chanBadge(ev.chaine);
-        if (ev._raison) {{
-            right = '<span class="reason-tag">' + ev._raison + '</span>' + right;
-        }} else if (state === "live" && dispo) {{
+        if (state === "live") {{
             right = '<span class="live-tag"><span class="dot"></span>En direct</span>' + right;
         }}
 
-        return '<div class="event ' + (state==="live"&&dispo?"live":"") + ' ' +
+        return '<div class="event ' + (state==="live"?"live":"") + ' ' +
                 (state==="done"?"done":"") + '">' +
             '<div class="ev-time">' + (ev.heure||"") + '</div>' +
             '<div class="ev-bar" style="background:' + cat.couleur + '"></div>' +
@@ -354,76 +353,96 @@ def build_page(data):
         '</div>';
     }}
 
-    function render() {{
-        renderClock();
+    // ── État : jour sélectionné + jours disponibles ──
+    var STATE = {{ current: null, dates: [] }};
+
+    // Événements diffusables (chaîne dispo + non exclus), à partir d'aujourd'hui.
+    function diffusableEvents() {{
+        var todayStr = ymd(new Date());
+        return (DATA.evenements || []).slice()
+            .filter(function(ev) {{
+                if (ev.date < todayStr) return false;         // jours passés masqués
+                if (ev.diffusable === false) return false;    // exclu manuellement
+                return isAvailable(ev.chaine);                // chaîne hors abonnement masquée
+            }})
+            .sort(function(a, b) {{ return eventStart(a) - eventStart(b); }});
+    }}
+
+    function uniqueDates(evts) {{
+        var seen = {{}}, out = [];
+        evts.forEach(function(ev) {{ if (!seen[ev.date]) {{ seen[ev.date] = 1; out.push(ev.date); }} }});
+        return out;
+    }}
+
+    function dayTabLabel(dateStr) {{
+        var p = dateStr.split("-");
+        var d = new Date(+p[0], +p[1]-1, +p[2]);
+        return JS_DAYS_SHORT[d.getDay()] + " " + pad(d.getDate());
+    }}
+
+    function renderDayTabs() {{
+        var el = document.getElementById("day-tabs");
+        el.innerHTML = "";
+        STATE.dates.forEach(function(dateStr) {{
+            var btn = document.createElement("div");
+            btn.className = "day-tab" + (dateStr === STATE.current ? " active" : "");
+            btn.textContent = dayTabLabel(dateStr);
+            btn.onclick = function() {{ STATE.current = dateStr; renderDayTabs(); renderDay(); }};
+            el.appendChild(btn);
+        }});
+        var active = el.querySelector(".day-tab.active");
+        if (active) active.scrollIntoView({{ inline: "center", block: "nearest" }});
+    }}
+
+    function renderDay() {{
         var now = new Date();
-        var todayStr = ymd(now);
-
-        var evts = (DATA.evenements || []).slice().sort(function(a,b) {{
-            return eventStart(a) - eventStart(b);
-        }});
-
-        // On garde aujourd'hui + futur, on masque le passé (hors événement du jour).
-        var dispo = [], indispo = [];
-        evts.forEach(function(ev) {{
-            if (ev.date < todayStr) return; // jours passés masqués
-            var exclu = (ev.diffusable === false);
-            if (isAvailable(ev.chaine) && !exclu) {{
-                dispo.push(ev);
-            }} else {{
-                ev._raison = ev.raison
-                    ? ev.raison
-                    : (exclu ? "Non diffusé au centre" : "Chaîne hors abonnement");
-                indispo.push(ev);
-            }}
-        }});
-
         var schedule = document.getElementById("schedule");
+        var todayStr = ymd(now);
+        var evts = diffusableEvents().filter(function(ev) {{ return ev.date === STATE.current; }});
 
-        if (!dispo.length && !indispo.length) {{
+        if (!evts.length) {{
             schedule.innerHTML = '<div class="empty-state"><div class="big">📺</div>' +
-                '<p>Aucun événement programmé pour le moment.</p></div>';
+                '<p>Aucune diffusion ce jour.</p></div>';
             return;
         }}
 
-        // Regroupement par jour des événements diffusables
-        var html = "";
-        var groups = {{}}, order = [];
-        dispo.forEach(function(ev) {{
-            if (!groups[ev.date]) {{ groups[ev.date] = []; order.push(ev.date); }}
-            groups[ev.date].push(ev);
-        }});
-
-        order.forEach(function(date) {{
-            var p = date.split("-");
-            var d = new Date(+p[0], +p[1]-1, +p[2]);
-            var isToday = (date === todayStr);
-            html += '<div class="day-block"><div class="day-head' +
-                (isToday ? " today" : "") + '">' +
-                '<span class="day-name">' + JS_DAYS[d.getDay()] + '</span>' +
-                '<span class="day-date">' + d.getDate() + ' ' + JS_MONTHS[d.getMonth()] + '</span>' +
-                (isToday ? '<span class="today-tag">Aujourd\\'hui</span>' : '') +
-                '</div>';
-            groups[date].forEach(function(ev) {{ html += eventCard(ev, now); }});
-            html += '</div>';
-        }});
-
-        // Section « non disponible au centre »
-        if (indispo.length) {{
-            html += '<div class="unavailable"><h2>⛔ Non diffusé au centre</h2>' +
-                '<div class="hint">Chaînes hors abonnement (' +
-                (DATA.abonnement.non_disponibles || []).join(", ") +
-                ') ou événements non diffusés (Ligue 1) — non proposés sur les écrans.</div>';
-            indispo.forEach(function(ev) {{ html += eventCard(ev, now); }});
-            html += '</div>';
-        }}
-
+        var p = STATE.current.split("-");
+        var d = new Date(+p[0], +p[1]-1, +p[2]);
+        var isToday = (STATE.current === todayStr);
+        var html = '<div class="day-head' + (isToday ? " today" : "") + '">' +
+            '<span class="day-name">' + JS_DAYS[d.getDay()] + '</span>' +
+            '<span class="day-date">' + d.getDate() + ' ' + JS_MONTHS[d.getMonth()] + '</span>' +
+            (isToday ? '<span class="today-tag">Aujourd\\'hui</span>' : '') +
+            '</div>';
+        evts.forEach(function(ev) {{ html += eventCard(ev, now); }});
         schedule.innerHTML = html;
     }}
 
+    function rebuild() {{
+        renderClock();
+        var evts = diffusableEvents();
+        STATE.dates = uniqueDates(evts);
+
+        if (!STATE.dates.length) {{
+            document.getElementById("day-tabs").innerHTML = "";
+            document.getElementById("schedule").innerHTML =
+                '<div class="empty-state"><div class="big">📺</div>' +
+                '<p>Aucune diffusion programmée pour le moment.</p></div>';
+            return;
+        }}
+
+        // Conserve le jour choisi s'il existe encore, sinon aujourd'hui, sinon le 1er.
+        var todayStr = ymd(new Date());
+        if (STATE.dates.indexOf(STATE.current) === -1) {{
+            STATE.current = (STATE.dates.indexOf(todayStr) !== -1) ? todayStr : STATE.dates[0];
+        }}
+        renderDayTabs();
+        renderDay();
+    }}
+
     renderLegend();
-    render();
-    setInterval(render, 60000);            // rafraîchit l'état EN DIRECT chaque minute
+    rebuild();
+    setInterval(rebuild, 60000);           // rafraîchit l'état EN DIRECT + jours chaque minute
     setInterval(function() {{               // recharge la page 1×/h (nouveau programme éventuel)
         location.reload();
     }}, 3600000);
@@ -447,7 +466,7 @@ def main():
         if e.get("chaine") in dispo and e.get("diffusable") is not False
     )
     print(f"Écrit : {OUTPUT_PATH}")
-    print(f"  {n} événements ({diffusables} diffusables, {n - diffusables} non diffusables)")
+    print(f"  {n} événements ({diffusables} diffusables affichés, {n - diffusables} masqués)")
 
 
 if __name__ == "__main__":

@@ -20,6 +20,10 @@ Une fois publiée sur GitHub Pages : **`.../tv.html`**
 (à afficher en plein écran sur les TV — la page se recharge seule 1×/h et
 rafraîchit l'état « EN DIRECT » chaque minute).
 
+Un **sélecteur de jour** (même principe que le planning staff) permet de
+naviguer d'un jour à l'autre ; par défaut, le jour du jour est affiché. Seuls
+les jours ayant au moins une diffusion apparaissent dans le sélecteur.
+
 ## Mettre à jour le programme (chaque semaine)
 
 1. Ouvrir **`data/tv-programme.json`**
@@ -46,11 +50,12 @@ rafraîchit l'état « EN DIRECT » chaque minute).
 
 ## Règle de diffusion
 
-- Un événement n'est proposé à la diffusion **que si sa `chaine` figure dans
+- Un événement n'est affiché **que si sa `chaine` figure dans
   `abonnement.disponibles`** (Canal+, beIN Sports, chaînes en clair).
 - Les événements sur `abonnement.non_disponibles` (**Ligue 1+**, **DAZN**,
-  **Disney+**) sont affichés à part, en grisé, dans « ⛔ Non diffusé au centre ».
-  Le champ optionnel `"raison"` personnalise le motif affiché.
+  **Disney+**) ne sont **pas affichés** — la page ne montre que ce qui est
+  réellement diffusable au centre. (Vous pouvez tout de même les laisser dans le
+  fichier de données : ils seront simplement ignorés à l'affichage.)
 - **La Ligue 1 est 100 % sur Ligue 1+** (hors abonnement) : un match de L1
   n'apparaît donc jamais comme diffusable. beIN Sports n'a **plus** la Ligue 1
   ni la **Liga** (partie sur DAZN + Disney+ en 2026), mais conserve la
