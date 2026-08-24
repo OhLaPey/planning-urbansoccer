@@ -202,6 +202,12 @@ def build_page(data):
             animation: pulse 1.1s infinite;
         }}
         @keyframes pulse {{ 0%,100% {{ opacity: 1; }} 50% {{ opacity: 0.25; }} }}
+        .reason-tag {{
+            font-size: 9px; font-weight: 800; color: #ff8a80;
+            background: rgba(255,80,80,0.12); border: 1px solid rgba(255,80,80,0.3);
+            padding: 3px 8px; border-radius: 5px; text-transform: uppercase;
+            letter-spacing: 0.5px; text-align: right;
+        }}
 
         /* ── Section non diffusable ── */
         .unavailable {{
@@ -329,7 +335,9 @@ def build_page(data):
         var dispo = isAvailable(ev.chaine);
 
         var right = chanBadge(ev.chaine);
-        if (state === "live" && dispo) {{
+        if (ev._raison) {{
+            right = '<span class="reason-tag">' + ev._raison + '</span>' + right;
+        }} else if (state === "live" && dispo) {{
             right = '<span class="live-tag"><span class="dot"></span>En direct</span>' + right;
         }}
 
@@ -359,7 +367,15 @@ def build_page(data):
         var dispo = [], indispo = [];
         evts.forEach(function(ev) {{
             if (ev.date < todayStr) return; // jours passés masqués
-            if (isAvailable(ev.chaine)) dispo.push(ev); else indispo.push(ev);
+            var exclu = (ev.diffusable === false);
+            if (isAvailable(ev.chaine) && !exclu) {{
+                dispo.push(ev);
+            }} else {{
+                ev._raison = exclu
+                    ? (ev.raison || "Non diffusé au centre")
+                    : "Chaîne hors abonnement";
+                indispo.push(ev);
+            }}
         }});
 
         var schedule = document.getElementById("schedule");
@@ -394,10 +410,10 @@ def build_page(data):
 
         // Section « non disponible au centre »
         if (indispo.length) {{
-            html += '<div class="unavailable"><h2>⛔ Non disponible au centre</h2>' +
-                '<div class="hint">Ces événements passent sur des chaînes hors abonnement (' +
+            html += '<div class="unavailable"><h2>⛔ Non diffusé au centre</h2>' +
+                '<div class="hint">Chaînes hors abonnement (' +
                 (DATA.abonnement.non_disponibles || []).join(", ") +
-                ') — non diffusables sur les écrans.</div>';
+                ') ou événements non diffusés (Ligue 1) — non proposés sur les écrans.</div>';
             indispo.forEach(function(ev) {{ html += eventCard(ev, now); }});
             html += '</div>';
         }}
@@ -426,7 +442,10 @@ def main():
         f.write(html)
     n = len(data.get("evenements", []))
     dispo = set(data.get("abonnement", {}).get("disponibles", []))
-    diffusables = sum(1 for e in data.get("evenements", []) if e.get("chaine") in dispo)
+    diffusables = sum(
+        1 for e in data.get("evenements", [])
+        if e.get("chaine") in dispo and e.get("diffusable") is not False
+    )
     print(f"Écrit : {OUTPUT_PATH}")
     print(f"  {n} événements ({diffusables} diffusables, {n - diffusables} non diffusables)")
 

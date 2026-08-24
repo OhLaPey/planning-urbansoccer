@@ -55,8 +55,11 @@
     "padel":  { "label": "Padel",               "couleur": "#BA55D3" },
     "tennis": { "label": "Tennis",              "couleur": "#26C6DA" },
     "rugby":  { "label": "Rugby",               "couleur": "#8D6E63" },
+    "f1":     { "label": "Formule 1",           "couleur": "#E10600" },
     "sport":  { "label": "Sport",               "couleur": "#78909C" }
   },
+
+  "regle_diffusion": "La Ligue 1 n'est jamais diffusée au centre, même quand un match passe sur une chaîne disponible (beIN) : mettre alors 'diffusable': false. Rugby (Canal) et Formule 1 (Canal+) sont diffusables.",
 
   "_exemple": "Les événements ci-dessous sont des EXEMPLES à remplacer chaque semaine par le vrai programme. Le champ 'chaine' détermine si l'événement est diffusable au centre (voir abonnement.disponibles).",
   "evenements": [
@@ -98,7 +101,9 @@
       "categorie": "foot",
       "competition": "Ligue 1 — 3e journée",
       "affiche": "Marseille — Lens",
-      "chaine": "beIN Sports 1"
+      "chaine": "beIN Sports 1",
+      "diffusable": false,
+      "raison": "Ligue 1 — non diffusée au centre"
     },
     {
       "date": "2026-08-29",
@@ -111,8 +116,16 @@
     {
       "date": "2026-08-30",
       "heure": "15:00",
+      "categorie": "f1",
+      "competition": "Formule 1 — GP des Pays-Bas",
+      "affiche": "Course",
+      "chaine": "Canal+"
+    },
+    {
+      "date": "2026-08-30",
+      "heure": "17:00",
       "categorie": "rugby",
-      "competition": "Top 14",
+      "competition": "Top 14 — 2e journée",
       "affiche": "Toulouse — La Rochelle",
       "chaine": "Canal+ Sport 360"
     },

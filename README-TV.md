@@ -49,8 +49,18 @@ rafraîchit l'état « EN DIRECT » chaque minute).
 - Un événement n'est proposé à la diffusion **que si sa `chaine` figure dans
   `abonnement.disponibles`** (Canal+, beIN Sports, chaînes en clair).
 - Les événements sur `abonnement.non_disponibles` (**Ligue 1+**, **DAZN**) sont
-  affichés à part, en grisé, dans « ⛔ Non disponible au centre » — pour que
-  l'équipe sache pourquoi un gros match n'est pas diffusable.
+  affichés à part, en grisé, dans « ⛔ Non diffusé au centre ».
+- **La Ligue 1 n'est jamais diffusée au centre**, même quand un match passe sur
+  une chaîne disponible (ex. beIN Sports). Dans ce cas, ajouter à l'événement :
+
+  ```json
+  "diffusable": false,
+  "raison": "Ligue 1 — non diffusée au centre"
+  ```
+
+  Il bascule alors dans la section grisée avec sa raison, au lieu d'être proposé.
+- **Rugby (Top 14, sur Canal), Formule 1 (Canal+)** : diffusables, à ajouter
+  comme n'importe quel événement.
 
 ## Champs d'un événement
 
@@ -86,8 +96,9 @@ Aide-mémoire pour remplir `chaine` (à ajuster selon les droits de la saison) :
 | Coupe de France                 | beIN Sports + France TV (en clair)  |
 | Équipe de France                | TF1 / M6 (en clair)                 |
 | Premier Padel                   | Canal+ (Canal+ Sport)               |
-| Top 14 / rugby                  | Canal+                              |
-| **Ligue 1**                     | **Ligue 1+ / DAZN → non diffusable**|
+| Top 14 / rugby                  | Canal+ (Canal+ Sport)               |
+| Formule 1                       | Canal+                              |
+| **Ligue 1**                     | **jamais diffusée** (voir ci-dessus)|
 
-*(La Ligue 1 est majoritairement sur Ligue 1+ / DAZN, hors abonnement : un match
-Ligue 1 diffusé par beIN Sports reste, lui, diffusable.)*
+*(Même un match de Ligue 1 diffusé par beIN Sports n'est pas montré au centre :
+utiliser `"diffusable": false`.)*
