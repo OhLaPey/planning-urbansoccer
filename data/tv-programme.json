@@ -120,7 +120,8 @@
       "categorie": "f1",
       "competition": "Formule 1 — GP des Pays-Bas",
       "affiche": "Course",
-      "chaine": "Canal+"
+      "chaine": "Canal+",
+      "duree_min": 150
     },
     {
       "date": "2026-08-30",
