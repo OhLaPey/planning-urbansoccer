@@ -371,9 +371,9 @@ def build_page(data):
             if (isAvailable(ev.chaine) && !exclu) {{
                 dispo.push(ev);
             }} else {{
-                ev._raison = exclu
-                    ? (ev.raison || "Non diffusé au centre")
-                    : "Chaîne hors abonnement";
+                ev._raison = ev.raison
+                    ? ev.raison
+                    : (exclu ? "Non diffusé au centre" : "Chaîne hors abonnement");
                 indispo.push(ev);
             }}
         }});
