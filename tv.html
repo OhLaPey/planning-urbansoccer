@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TV Centre">
+    <meta name="theme-color" content="#FF6600">
+    <title>Programme TV — Centre UrbanSoccer</title>
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128250;</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #1A1A1A;
+            min-height: 100vh;
+            padding: 15px;
+            color: #fff;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background: url('bg-team.jpg') center center / cover no-repeat;
+            opacity: 0.18;
+        }
+        .container {
+            position: relative; z-index: 1; max-width: 1100px; margin: 0 auto;
+            background: rgba(26,26,26,0.95); border-radius: 8px;
+            padding: 4px 14px 22px; margin-top: 6px; margin-bottom: 6px;
+            border-top: 4px solid #FF6600; overflow: hidden;
+        }
+        .container::after {
+            content: '\276F\276F\276F\276F'; position: absolute;
+            top: 14px; right: -2px; font-size: 34px; font-weight: 900;
+            color: rgba(255,102,0,0.08); letter-spacing: -5px;
+            pointer-events: none; z-index: 0;
+        }
+
+        /* ── Header ── */
+        .header { text-align: center; padding: 22px 10px 10px; }
+        .header .tv-icon { font-size: 24px; }
+        h1 {
+            color: #fff; font-size: 30px; font-weight: 900; margin: 4px 0 2px;
+            text-transform: uppercase; letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(255,102,0,0.3);
+        }
+        .subtitle {
+            color: #FF6600; font-size: 12px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 4px;
+        }
+        .clock {
+            margin-top: 12px; font-size: 15px; color: #bbb; font-weight: 600;
+            text-transform: capitalize;
+        }
+        .clock .time { color: #FF6600; font-weight: 800; }
+
+        /* ── Légende chaînes ── */
+        .legend {
+            display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+            margin: 14px 0 8px; padding: 12px; border-radius: 8px;
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+        }
+        .legend-title {
+            width: 100%; text-align: center; font-size: 10px; font-weight: 700;
+            color: #777; text-transform: uppercase; letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+        .chan-badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            font-size: 11px; font-weight: 800; padding: 4px 11px 4px 5px; border-radius: 5px;
+            color: #fff; text-transform: uppercase; letter-spacing: 0.3px;
+            border: 1px solid rgba(255,255,255,0.14); white-space: nowrap;
+        }
+        .chan-num {
+            background: rgba(255,255,255,0.95); color: #111; font-weight: 900;
+            font-size: 12px; min-width: 22px; text-align: center;
+            padding: 2px 5px; border-radius: 4px; letter-spacing: 0;
+        }
+        .chan-badge.clair .chan-num { background: #FF6600; color: #1A1A1A; }
+        .chan-badge.clair::after {
+            content: 'CLAIR'; font-size: 8px; opacity: 0.85;
+            background: rgba(255,255,255,0.2); padding: 1px 4px; border-radius: 3px;
+        }
+
+        /* ── Jour ── */
+        .day-block { margin-top: 20px; }
+        .day-head {
+            display: flex; align-items: baseline; gap: 10px;
+            padding: 8px 4px; border-bottom: 2px solid rgba(255,102,0,0.35);
+            margin-bottom: 10px;
+        }
+        .day-head .day-name {
+            font-size: 18px; font-weight: 900; text-transform: uppercase;
+            letter-spacing: 1px; color: #fff;
+        }
+        .day-head .day-date { font-size: 12px; color: #888; font-weight: 600; }
+        .day-head.today .day-name { color: #FF6600; }
+        .day-head .today-tag {
+            margin-left: auto; font-size: 10px; font-weight: 800;
+            background: #FF6600; color: #1A1A1A; padding: 3px 10px;
+            border-radius: 5px; text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* ── Événement ── */
+        .event {
+            display: grid;
+            grid-template-columns: 66px 6px 1fr auto;
+            align-items: center; gap: 12px;
+            padding: 12px 14px; margin-bottom: 8px; border-radius: 8px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            transition: background 0.15s;
+        }
+        .event:hover { background: rgba(255,255,255,0.06); }
+        .event.live {
+            border-color: rgba(255,102,0,0.55);
+            background: rgba(255,102,0,0.08);
+            box-shadow: 0 0 22px rgba(255,102,0,0.12);
+        }
+        .event.done { opacity: 0.42; }
+        .ev-time { font-size: 20px; font-weight: 800; color: #fff; text-align: center; }
+        .ev-time small { display: block; font-size: 9px; color: #888; font-weight: 700; }
+        .ev-bar { width: 6px; height: 100%; min-height: 40px; border-radius: 3px; }
+        .ev-main { min-width: 0; }
+        .ev-compet {
+            font-size: 10px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 0.8px; margin-bottom: 3px;
+        }
+        .ev-affiche {
+            font-size: 17px; font-weight: 700; color: #fff;
+            overflow: hidden; text-overflow: ellipsis;
+        }
+        .ev-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+        .live-tag {
+            font-size: 10px; font-weight: 900; color: #1A1A1A; background: #FF6600;
+            padding: 3px 9px; border-radius: 5px; text-transform: uppercase;
+            letter-spacing: 1px; display: inline-flex; align-items: center; gap: 5px;
+        }
+        .live-tag .dot {
+            width: 7px; height: 7px; border-radius: 50%; background: #1A1A1A;
+            animation: pulse 1.1s infinite;
+        }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+        /* ── Section non diffusable ── */
+        .unavailable {
+            margin-top: 30px; padding: 16px; border-radius: 8px;
+            background: rgba(255,255,255,0.02);
+            border: 1px dashed rgba(255,255,255,0.12);
+        }
+        .unavailable h2 {
+            font-size: 12px; font-weight: 800; color: #888; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 4px;
+        }
+        .unavailable .hint { font-size: 11px; color: #666; margin-bottom: 12px; }
+        .unavailable .event { opacity: 0.6; }
+        .unavailable .ev-affiche { color: #bbb; }
+
+        /* ── Vide ── */
+        .empty-state { text-align: center; padding: 46px 20px; color: #666; }
+        .empty-state .big { font-size: 40px; margin-bottom: 10px; }
+
+        /* ── Footer ── */
+        .foot {
+            margin-top: 26px; padding-top: 14px; text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 10px; color: #555; letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 620px) {
+            h1 { font-size: 22px; letter-spacing: 1.5px; }
+            .event { grid-template-columns: 52px 5px 1fr; gap: 9px; }
+            .ev-right { grid-column: 1 / -1; flex-direction: row; align-items: center;
+                          justify-content: space-between; margin-top: 4px; }
+            .ev-time { font-size: 17px; }
+            .ev-affiche { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="tv-icon">📺</div>
+            <h1>Programme TV</h1>
+            <div class="subtitle">Diffusion sur les écrans du centre</div>
+            <div class="clock" id="clock"></div>
+        </div>
+
+        <div class="legend" id="legend"></div>
+
+        <div id="schedule"></div>
+
+        <div class="foot">
+            Mis à jour le 2026-08-24 · Diffusable = chaîne incluse dans l'abonnement du centre
+        </div>
+    </div>
+
+    <script>
+    var DATA = {"meta": {"titre": "Programme TV — Centre UrbanSoccer", "sous_titre": "Diffusion sur les écrans du centre", "updated_at": "2026-08-24", "note": "Événements diffusables sur les chaînes du centre uniquement. Mettez ce fichier à jour chaque semaine puis relancez : python generate_tv.py"}, "abonnement": {"disponibles": ["Canal+", "Canal+ Sport 360", "Canal+ Foot", "beIN Sports 1", "beIN Sports 2", "beIN Sports 3", "TF1", "M6", "France 2", "France 3", "W9", "TMC", "L'Équipe"], "non_disponibles": ["Ligue 1+", "DAZN"]}, "chaines_meta": {"Canal+": {"numero": "4", "couleur": "#0a0a0a", "clair": false}, "Canal+ Sport 360": {"numero": "30", "couleur": "#0a0a0a", "clair": false}, "Canal+ Foot": {"numero": "31", "couleur": "#0a0a0a", "clair": false}, "beIN Sports 1": {"numero": "51", "couleur": "#7b1fa2", "clair": false}, "beIN Sports 2": {"numero": "52", "couleur": "#7b1fa2", "clair": false}, "beIN Sports 3": {"numero": "53", "couleur": "#7b1fa2", "clair": false}, "TF1": {"numero": "1", "couleur": "#1e4fd6", "clair": true}, "France 2": {"numero": "2", "couleur": "#1565c0", "clair": true}, "France 3": {"numero": "3", "couleur": "#1565c0", "clair": true}, "M6": {"numero": "6", "couleur": "#d81f6a", "clair": true}, "W9": {"numero": "9", "couleur": "#e91e63", "clair": true}, "TMC": {"numero": "10", "couleur": "#00897b", "clair": true}, "L'Équipe": {"numero": "21", "couleur": "#c62828", "clair": true}, "Ligue 1+": {"numero": "", "couleur": "#455a64", "clair": false}, "DAZN": {"numero": "", "couleur": "#455a64", "clair": false}}, "categories": {"ldc": {"label": "Ligue des Champions", "couleur": "#6495ED"}, "coupe": {"label": "Coupes", "couleur": "#FFA500"}, "edf": {"label": "Équipe de France", "couleur": "#66BB6A"}, "foot": {"label": "Football", "couleur": "#FF8C42"}, "padel": {"label": "Padel", "couleur": "#BA55D3"}, "tennis": {"label": "Tennis", "couleur": "#26C6DA"}, "rugby": {"label": "Rugby", "couleur": "#8D6E63"}, "sport": {"label": "Sport", "couleur": "#78909C"}}, "evenements": [{"date": "2026-08-25", "heure": "21:00", "categorie": "coupe", "competition": "Trophée des Champions", "affiche": "PSG — Marseille", "chaine": "beIN Sports 1"}, {"date": "2026-08-26", "heure": "21:00", "categorie": "ldc", "competition": "Ligue des Champions — Barrages", "affiche": "Match de barrage aller", "chaine": "Canal+"}, {"date": "2026-08-27", "heure": "20:45", "categorie": "foot", "competition": "Ligue 1 — 3e journée", "affiche": "PSG — Lyon", "chaine": "Ligue 1+"}, {"date": "2026-08-28", "heure": "19:00", "categorie": "padel", "competition": "Premier Padel — P2", "affiche": "Quarts de finale", "chaine": "Canal+ Sport 360"}, {"date": "2026-08-29", "heure": "17:00", "categorie": "foot", "competition": "Ligue 1 — 3e journée", "affiche": "Marseille — Lens", "chaine": "beIN Sports 1"}, {"date": "2026-08-29", "heure": "21:00", "categorie": "foot", "competition": "Premier League", "affiche": "Liverpool — Arsenal", "chaine": "Canal+ Foot"}, {"date": "2026-08-30", "heure": "15:00", "categorie": "rugby", "competition": "Top 14", "affiche": "Toulouse — La Rochelle", "chaine": "Canal+ Sport 360"}, {"date": "2026-08-30", "heure": "21:00", "categorie": "foot", "competition": "Ligue 1 — 3e journée", "affiche": "Monaco — Nice", "chaine": "DAZN"}, {"date": "2026-08-31", "heure": "16:00", "categorie": "padel", "competition": "Premier Padel — P2", "affiche": "Finale", "chaine": "Canal+ Sport 360"}, {"date": "2026-09-01", "heure": "20:45", "categorie": "foot", "competition": "Championnat d'Europe / Amical", "affiche": "Affiche en clair", "chaine": "L'Équipe"}]};
+
+    var JS_DAYS = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    var JS_MONTHS = ["janvier","février","mars","avril","mai","juin","juillet",
+                     "août","septembre","octobre","novembre","décembre"];
+    var EVENT_DURATION_MIN = 130; // durée supposée d'un match/événement
+
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function ymd(d) { return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate()); }
+
+    function eventStart(ev) {
+        var p = ev.date.split("-");
+        var t = (ev.heure || "00:00").split(":");
+        return new Date(+p[0], +p[1]-1, +p[2], +t[0], +(t[1]||0));
+    }
+
+    function isAvailable(chaine) {
+        var dispo = (DATA.abonnement.disponibles || []);
+        return dispo.indexOf(chaine) !== -1;
+    }
+
+    function chanColor(chaine) {
+        var m = DATA.chaines_meta[chaine];
+        return m ? m.couleur : "#455a64";
+    }
+    function chanClair(chaine) {
+        var m = DATA.chaines_meta[chaine];
+        return m ? !!m.clair : false;
+    }
+    function chanNum(chaine) {
+        var m = DATA.chaines_meta[chaine];
+        return (m && m.numero) ? m.numero : "";
+    }
+    function chanBadge(chaine) {
+        var num = chanNum(chaine);
+        var numHtml = num ? '<span class="chan-num">' + num + '</span>' : '';
+        return '<span class="chan-badge' + (chanClair(chaine) ? ' clair' : '') +
+               '" style="background:' + chanColor(chaine) + '">' +
+               numHtml + '<span>' + chaine + '</span></span>';
+    }
+    function catInfo(cat) {
+        return DATA.categories[cat] || { label: cat || "Sport", couleur: "#78909C" };
+    }
+
+    function renderClock() {
+        var now = new Date();
+        var el = document.getElementById("clock");
+        el.innerHTML = JS_DAYS[now.getDay()] + " " + now.getDate() + " " +
+            JS_MONTHS[now.getMonth()] + " · <span class=\"time\">" +
+            pad(now.getHours()) + ":" + pad(now.getMinutes()) + "</span>";
+    }
+
+    function renderLegend() {
+        var wrap = document.getElementById("legend");
+        var html = '<div class="legend-title">Chaînes disponibles au centre · numéro à gauche</div>';
+        (DATA.abonnement.disponibles || []).forEach(function(ch) {
+            html += chanBadge(ch);
+        });
+        wrap.innerHTML = html;
+    }
+
+    function eventCard(ev, now) {
+        var start = eventStart(ev);
+        var end = new Date(start.getTime() + EVENT_DURATION_MIN*60000);
+        var state = "soon";
+        if (now >= start && now < end) state = "live";
+        else if (now >= end) state = "done";
+
+        var cat = catInfo(ev.categorie);
+        var dispo = isAvailable(ev.chaine);
+
+        var right = chanBadge(ev.chaine);
+        if (state === "live" && dispo) {
+            right = '<span class="live-tag"><span class="dot"></span>En direct</span>' + right;
+        }
+
+        return '<div class="event ' + (state==="live"&&dispo?"live":"") + ' ' +
+                (state==="done"?"done":"") + '">' +
+            '<div class="ev-time">' + (ev.heure||"") + '</div>' +
+            '<div class="ev-bar" style="background:' + cat.couleur + '"></div>' +
+            '<div class="ev-main">' +
+                '<div class="ev-compet" style="color:' + cat.couleur + '">' +
+                    (ev.competition || cat.label) + '</div>' +
+                '<div class="ev-affiche">' + (ev.affiche || "") + '</div>' +
+            '</div>' +
+            '<div class="ev-right">' + right + '</div>' +
+        '</div>';
+    }
+
+    function render() {
+        renderClock();
+        var now = new Date();
+        var todayStr = ymd(now);
+
+        var evts = (DATA.evenements || []).slice().sort(function(a,b) {
+            return eventStart(a) - eventStart(b);
+        });
+
+        // On garde aujourd'hui + futur, on masque le passé (hors événement du jour).
+        var dispo = [], indispo = [];
+        evts.forEach(function(ev) {
+            if (ev.date < todayStr) return; // jours passés masqués
+            if (isAvailable(ev.chaine)) dispo.push(ev); else indispo.push(ev);
+        });
+
+        var schedule = document.getElementById("schedule");
+
+        if (!dispo.length && !indispo.length) {
+            schedule.innerHTML = '<div class="empty-state"><div class="big">📺</div>' +
+                '<p>Aucun événement programmé pour le moment.</p></div>';
+            return;
+        }
+
+        // Regroupement par jour des événements diffusables
+        var html = "";
+        var groups = {}, order = [];
+        dispo.forEach(function(ev) {
+            if (!groups[ev.date]) { groups[ev.date] = []; order.push(ev.date); }
+            groups[ev.date].push(ev);
+        });
+
+        order.forEach(function(date) {
+            var p = date.split("-");
+            var d = new Date(+p[0], +p[1]-1, +p[2]);
+            var isToday = (date === todayStr);
+            html += '<div class="day-block"><div class="day-head' +
+                (isToday ? " today" : "") + '">' +
+                '<span class="day-name">' + JS_DAYS[d.getDay()] + '</span>' +
+                '<span class="day-date">' + d.getDate() + ' ' + JS_MONTHS[d.getMonth()] + '</span>' +
+                (isToday ? '<span class="today-tag">Aujourd\'hui</span>' : '') +
+                '</div>';
+            groups[date].forEach(function(ev) { html += eventCard(ev, now); });
+            html += '</div>';
+        });
+
+        // Section « non disponible au centre »
+        if (indispo.length) {
+            html += '<div class="unavailable"><h2>⛔ Non disponible au centre</h2>' +
+                '<div class="hint">Ces événements passent sur des chaînes hors abonnement (' +
+                (DATA.abonnement.non_disponibles || []).join(", ") +
+                ') — non diffusables sur les écrans.</div>';
+            indispo.forEach(function(ev) { html += eventCard(ev, now); });
+            html += '</div>';
+        }
+
+        schedule.innerHTML = html;
+    }
+
+    renderLegend();
+    render();
+    setInterval(render, 60000);            // rafraîchit l'état EN DIRECT chaque minute
+    setInterval(function() {               // recharge la page 1×/h (nouveau programme éventuel)
+        location.reload();
+    }, 3600000);
+    </script>
+</body>
+</html>
