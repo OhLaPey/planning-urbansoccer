@@ -416,9 +416,13 @@
             if (!byChan[ev.chaine]) { byChan[ev.chaine] = []; chanOrder.push(ev.chaine); }
             byChan[ev.chaine].push(ev);
         });
-        // Ordonner les chaînes par 1re diffusion (evts déjà trié par heure)
+        // Ordonner les chaînes par numéro de chaîne croissant
+        // (sans numéro → rejeté en fin de liste, puis ordre alphabétique)
         chanOrder.sort(function(a, b) {
-            return eventStart(byChan[a][0]) - eventStart(byChan[b][0]);
+            var na = parseInt(chanNum(a), 10), nb = parseInt(chanNum(b), 10);
+            var va = isNaN(na) ? Infinity : na, vb = isNaN(nb) ? Infinity : nb;
+            if (va !== vb) return va - vb;
+            return a.localeCompare(b);
         });
 
         var rowsHtml = "";

@@ -26,7 +26,7 @@ les jours ayant au moins une diffusion apparaissent dans le sélecteur.
 
 Chaque journée est présentée en **guide TV horizontal** (comme le planning) :
 - à **gauche**, les **chaînes pertinentes ce jour-là** (uniquement celles qui
-  diffusent quelque chose), avec leur numéro ;
+  diffusent quelque chose), avec leur numéro, **triées par numéro croissant** ;
 - au **centre**, le **détail des diffusions** de chaque chaîne sur l'axe des
   heures, **découpé par programme** (plusieurs barres sur une même ligne si la
   chaîne enchaîne plusieurs diffusions) ;
