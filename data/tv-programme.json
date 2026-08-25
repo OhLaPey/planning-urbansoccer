@@ -125,6 +125,15 @@
     },
     {
       "date": "2026-08-30",
+      "heure": "12:00",
+      "categorie": "padel",
+      "competition": "Premier Padel — P2",
+      "affiche": "Demi-finales",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 180
+    },
+    {
+      "date": "2026-08-30",
       "heure": "17:00",
       "categorie": "rugby",
       "competition": "Top 14 — 2e journée",

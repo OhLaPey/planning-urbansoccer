@@ -24,11 +24,15 @@ Un **sélecteur de jour** (même principe que le planning staff) permet de
 naviguer d'un jour à l'autre ; par défaut, le jour du jour est affiché. Seuls
 les jours ayant au moins une diffusion apparaissent dans le sélecteur.
 
-Chaque journée est présentée en **timeline horizontale** (comme le planning) :
-une ligne par diffusion, une barre colorée par catégorie positionnée sur l'axe
-des heures, avec le n° de chaîne. Le jour même, un **curseur d'heure en direct**
-(trait doré) suit l'heure réelle et se recentre automatiquement ; les
-diffusions en cours sont marquées « ● Direct ».
+Chaque journée est présentée en **guide TV horizontal** (comme le planning) :
+- à **gauche**, les **chaînes pertinentes ce jour-là** (uniquement celles qui
+  diffusent quelque chose), avec leur numéro ;
+- au **centre**, le **détail des diffusions** de chaque chaîne sur l'axe des
+  heures, **découpé par programme** (plusieurs barres sur une même ligne si la
+  chaîne enchaîne plusieurs diffusions) ;
+- barres colorées par catégorie ; le jour même, un **curseur d'heure en direct**
+  (trait doré) suit l'heure réelle et se recentre automatiquement, et les
+  diffusions en cours portent un badge « Direct ».
 
 ## Mettre à jour le programme (chaque semaine)
 

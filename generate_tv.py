@@ -179,11 +179,18 @@ def build_page(data):
             position: sticky; left: 0; z-index: 2;
             background: linear-gradient(90deg, rgba(26,26,26,0.98) 86%, transparent);
         }}
-        .tl-affiche {{ font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap;
-                       overflow: hidden; text-overflow: ellipsis; }}
-        .tl-compet {{ font-size: 9px; font-weight: 800; text-transform: uppercase;
-                      letter-spacing: 0.5px; white-space: nowrap; overflow: hidden;
-                      text-overflow: ellipsis; margin-top: 1px; }}
+        /* Colonne de gauche : chaîne */
+        .tl-chan {{ display: flex; align-items: center; gap: 8px; }}
+        .tl-chan-num {{
+            background: rgba(255,255,255,0.95); color: #111; font-weight: 900;
+            font-size: 14px; min-width: 26px; text-align: center;
+            padding: 3px 6px; border-radius: 4px; flex-shrink: 0;
+        }}
+        .tl-chan-num.clair {{ background: #FF6600; color: #1A1A1A; }}
+        .tl-chan-name {{ font-size: 13px; font-weight: 800; color: #fff; white-space: nowrap;
+                         overflow: hidden; text-overflow: ellipsis; }}
+        .tl-chead {{ font-size: 9px; font-weight: 800; color: #666; text-transform: uppercase;
+                     letter-spacing: 1px; align-self: flex-end; }}
         .tl-markers {{ flex: 1; display: flex; justify-content: space-between; position: relative;
                        padding: 0 0 6px; border-bottom: 1px solid rgba(255,255,255,0.06);
                        margin-bottom: 10px; }}
@@ -195,22 +202,20 @@ def build_page(data):
         .tl-gridline.half {{ border-left: 1px dashed rgba(255,255,255,0.07); }}
         .tl-bar {{
             position: absolute; top: 0; bottom: 0; border-radius: 5px;
-            display: flex; align-items: center; gap: 7px; padding: 0 9px;
-            border-left: 3px solid; overflow: hidden; z-index: 1;
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 0 9px; border-left: 3px solid; overflow: hidden; z-index: 1;
             box-shadow: inset 0 0 10px rgba(255,255,255,0.04);
         }}
         .tl-bar.live {{ box-shadow: 0 0 18px rgba(255,102,0,0.45), inset 0 0 10px rgba(255,255,255,0.06); }}
         .tl-bar.done {{ opacity: 0.5; }}
-        .tl-bar-num {{
-            background: rgba(255,255,255,0.95); color: #111; font-weight: 900;
-            font-size: 13px; min-width: 24px; text-align: center;
-            padding: 2px 6px; border-radius: 4px; flex-shrink: 0;
-        }}
-        .tl-bar-num.clair {{ background: #FF6600; color: #1A1A1A; }}
-        .tl-bar-chan {{ font-size: 12px; font-weight: 800; color: #fff; white-space: nowrap;
-                        overflow: hidden; text-overflow: ellipsis; }}
-        .tl-bar-live {{ font-size: 9px; font-weight: 900; color: #FF6600; margin-left: auto;
-                        flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.5px; }}
+        .tl-prog-title {{ font-size: 13px; font-weight: 800; color: #fff; white-space: nowrap;
+                          overflow: hidden; text-overflow: ellipsis; }}
+        .tl-prog-sub {{ font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.72);
+                        white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }}
+        .tl-prog-live {{ color: #FFD54A; }}
+        .tl-bar-live {{ position: absolute; top: 4px; right: 6px; font-size: 8px; font-weight: 900;
+                        color: #1A1A1A; background: #FF6600; padding: 1px 5px; border-radius: 3px;
+                        text-transform: uppercase; letter-spacing: 0.5px; }}
         /* Curseur d'heure en direct */
         .tl-now {{ position: absolute; top: 0; bottom: 0; width: 2px; z-index: 3; pointer-events: none;
                    border-left: 2px dashed #ffd700;
@@ -458,47 +463,60 @@ def build_page(data):
             markersHtml += '<span class="tl-marker">' + h + 'h</span>';
         }}
         var markersRow = '<div class="tl-row">' +
-            '<div class="tl-name">&nbsp;</div>' +
+            '<div class="tl-name tl-chan"><span class="tl-chead">Chaîne</span></div>' +
             '<div class="tl-markers">' + markersHtml + nowHtml + '</div>' +
             '</div>';
 
-        // Une ligne par diffusion
-        var rowsHtml = "";
+        // ── Une ligne par chaîne pertinente ce jour ──
+        var byChan = {{}}, chanOrder = [];
         evts.forEach(function(ev) {{
-            var s = eventStart(ev);
-            var end = new Date(s.getTime() + eventDuration(ev)*60000);
-            var sh = s.getHours() + s.getMinutes()/60;
-            var eh = sh + eventDuration(ev)/60;
-            var left = ((sh - minH) / range) * 100;
-            var width = ((eh - sh) / range) * 100;
-            if (left < 0) left = 0;
-            if (left + width > 100) width = 100 - left;
+            if (!byChan[ev.chaine]) {{ byChan[ev.chaine] = []; chanOrder.push(ev.chaine); }}
+            byChan[ev.chaine].push(ev);
+        }});
+        // Ordonner les chaînes par 1re diffusion (evts déjà trié par heure)
+        chanOrder.sort(function(a, b) {{
+            return eventStart(byChan[a][0]) - eventStart(byChan[b][0]);
+        }});
 
-            var state = (now >= s && now < end) ? "live" : (now >= end ? "done" : "soon");
-            var cat = catInfo(ev.categorie);
-            var num = chanNum(ev.chaine);
-            var clair = chanClair(ev.chaine);
+        var rowsHtml = "";
+        chanOrder.forEach(function(chaine) {{
+            var num = chanNum(chaine);
+            var clair = chanClair(chaine);
+            var nameCell = '<div class="tl-name tl-chan">' +
+                (num ? '<span class="tl-chan-num' + (clair ? " clair" : "") + '">' + esc(num) + '</span>' : '') +
+                '<span class="tl-chan-name">' + esc(chaine) + '</span>' +
+                '</div>';
 
-            var barCls = "tl-bar" + (state === "live" ? " live" : "") + (state === "done" ? " done" : "");
-            var numHtml = num ? '<span class="tl-bar-num' + (clair ? " clair" : "") + '">' + esc(num) + '</span>' : '';
-            var liveHtml = (state === "live") ? '<span class="tl-bar-live">\\u25CF Direct</span>' : '';
-            var barStyle = 'left:' + left + '%;width:' + width + '%;' +
-                'background:' + hexToRgba(cat.couleur, 0.24) + ';border-color:' + cat.couleur + ';';
-            var barTitle = esc((ev.affiche || "") + " — " + (ev.competition || "") +
-                " · " + (ev.heure || "") + " · " + ev.chaine);
+            var track = '<div class="tl-track">' + gridHtml + nowHtml;
+            byChan[chaine].forEach(function(ev) {{
+                var s = eventStart(ev);
+                var end = new Date(s.getTime() + eventDuration(ev)*60000);
+                var sh = s.getHours() + s.getMinutes()/60;
+                var eh = sh + eventDuration(ev)/60;
+                var left = ((sh - minH) / range) * 100;
+                var width = ((eh - sh) / range) * 100;
+                if (left < 0) left = 0;
+                if (left + width > 100) width = 100 - left;
 
-            rowsHtml += '<div class="tl-row">' +
-                '<div class="tl-name">' +
-                    '<div class="tl-affiche">' + esc(ev.affiche || ev.competition || "") + '</div>' +
-                    '<div class="tl-compet" style="color:' + cat.couleur + '">' +
+                var state = (now >= s && now < end) ? "live" : (now >= end ? "done" : "soon");
+                var cat = catInfo(ev.categorie);
+                var barCls = "tl-bar" + (state === "live" ? " live" : "") + (state === "done" ? " done" : "");
+                var barStyle = 'left:' + left + '%;width:' + width + '%;' +
+                    'background:' + hexToRgba(cat.couleur, 0.26) + ';border-color:' + cat.couleur + ';';
+                var barTitle = esc((ev.heure || "") + " · " + (ev.affiche || "") +
+                    " — " + (ev.competition || "") + " · " + chaine);
+                var liveHtml = (state === "live") ? '<span class="tl-bar-live">Direct</span>' : '';
+
+                track += '<div class="' + barCls + '" style="' + barStyle + '" title="' + barTitle + '">' +
+                    liveHtml +
+                    '<div class="tl-prog-title">' + esc(ev.affiche || ev.competition || "") + '</div>' +
+                    '<div class="tl-prog-sub' + (state === "live" ? " tl-prog-live" : "") + '">' +
                         esc((ev.heure || "") + " · " + (ev.competition || cat.label)) + '</div>' +
-                '</div>' +
-                '<div class="tl-track">' + gridHtml + nowHtml +
-                    '<div class="' + barCls + '" style="' + barStyle + '" title="' + barTitle + '">' +
-                        numHtml + '<span class="tl-bar-chan">' + esc(ev.chaine) + '</span>' + liveHtml +
-                    '</div>' +
-                '</div>' +
-            '</div>';
+                '</div>';
+            }});
+            track += '</div>';
+
+            rowsHtml += '<div class="tl-row">' + nameCell + track + '</div>';
         }});
 
         var inner = '<div class="tl-inner" style="min-width:' + innerMin + 'px">' +

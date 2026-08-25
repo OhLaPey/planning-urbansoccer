@@ -122,11 +122,18 @@
             position: sticky; left: 0; z-index: 2;
             background: linear-gradient(90deg, rgba(26,26,26,0.98) 86%, transparent);
         }
-        .tl-affiche { font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap;
-                       overflow: hidden; text-overflow: ellipsis; }
-        .tl-compet { font-size: 9px; font-weight: 800; text-transform: uppercase;
-                      letter-spacing: 0.5px; white-space: nowrap; overflow: hidden;
-                      text-overflow: ellipsis; margin-top: 1px; }
+        /* Colonne de gauche : chaîne */
+        .tl-chan { display: flex; align-items: center; gap: 8px; }
+        .tl-chan-num {
+            background: rgba(255,255,255,0.95); color: #111; font-weight: 900;
+            font-size: 14px; min-width: 26px; text-align: center;
+            padding: 3px 6px; border-radius: 4px; flex-shrink: 0;
+        }
+        .tl-chan-num.clair { background: #FF6600; color: #1A1A1A; }
+        .tl-chan-name { font-size: 13px; font-weight: 800; color: #fff; white-space: nowrap;
+                         overflow: hidden; text-overflow: ellipsis; }
+        .tl-chead { font-size: 9px; font-weight: 800; color: #666; text-transform: uppercase;
+                     letter-spacing: 1px; align-self: flex-end; }
         .tl-markers { flex: 1; display: flex; justify-content: space-between; position: relative;
                        padding: 0 0 6px; border-bottom: 1px solid rgba(255,255,255,0.06);
                        margin-bottom: 10px; }
@@ -138,22 +145,20 @@
         .tl-gridline.half { border-left: 1px dashed rgba(255,255,255,0.07); }
         .tl-bar {
             position: absolute; top: 0; bottom: 0; border-radius: 5px;
-            display: flex; align-items: center; gap: 7px; padding: 0 9px;
-            border-left: 3px solid; overflow: hidden; z-index: 1;
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 0 9px; border-left: 3px solid; overflow: hidden; z-index: 1;
             box-shadow: inset 0 0 10px rgba(255,255,255,0.04);
         }
         .tl-bar.live { box-shadow: 0 0 18px rgba(255,102,0,0.45), inset 0 0 10px rgba(255,255,255,0.06); }
         .tl-bar.done { opacity: 0.5; }
-        .tl-bar-num {
-            background: rgba(255,255,255,0.95); color: #111; font-weight: 900;
-            font-size: 13px; min-width: 24px; text-align: center;
-            padding: 2px 6px; border-radius: 4px; flex-shrink: 0;
-        }
-        .tl-bar-num.clair { background: #FF6600; color: #1A1A1A; }
-        .tl-bar-chan { font-size: 12px; font-weight: 800; color: #fff; white-space: nowrap;
-                        overflow: hidden; text-overflow: ellipsis; }
-        .tl-bar-live { font-size: 9px; font-weight: 900; color: #FF6600; margin-left: auto;
-                        flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tl-prog-title { font-size: 13px; font-weight: 800; color: #fff; white-space: nowrap;
+                          overflow: hidden; text-overflow: ellipsis; }
+        .tl-prog-sub { font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.72);
+                        white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 1px; }
+        .tl-prog-live { color: #FFD54A; }
+        .tl-bar-live { position: absolute; top: 4px; right: 6px; font-size: 8px; font-weight: 900;
+                        color: #1A1A1A; background: #FF6600; padding: 1px 5px; border-radius: 3px;
+                        text-transform: uppercase; letter-spacing: 0.5px; }
         /* Curseur d'heure en direct */
         .tl-now { position: absolute; top: 0; bottom: 0; width: 2px; z-index: 3; pointer-events: none;
                    border-left: 2px dashed #ffd700;
@@ -221,7 +226,7 @@
     </div>
 
     <script>
-    var DATA = {"meta": {"titre": "Programme TV — Centre UrbanSoccer", "sous_titre": "Diffusion sur les écrans du centre", "updated_at": "2026-08-24", "note": "Événements diffusables sur les chaînes du centre uniquement. Mettez ce fichier à jour chaque semaine puis relancez : python generate_tv.py"}, "abonnement": {"disponibles": ["Canal+", "Canal+ Sport 360", "Canal+ Foot", "beIN Sports 1", "beIN Sports 2", "beIN Sports 3", "TF1", "M6", "France 2", "France 3", "W9", "TMC", "L'Équipe"], "non_disponibles": ["Ligue 1+", "DAZN", "Disney+"]}, "chaines_meta": {"Canal+": {"numero": "4", "couleur": "#0a0a0a", "clair": false}, "Canal+ Sport 360": {"numero": "30", "couleur": "#0a0a0a", "clair": false}, "Canal+ Foot": {"numero": "31", "couleur": "#0a0a0a", "clair": false}, "beIN Sports 1": {"numero": "51", "couleur": "#7b1fa2", "clair": false}, "beIN Sports 2": {"numero": "52", "couleur": "#7b1fa2", "clair": false}, "beIN Sports 3": {"numero": "53", "couleur": "#7b1fa2", "clair": false}, "TF1": {"numero": "1", "couleur": "#1e4fd6", "clair": true}, "France 2": {"numero": "2", "couleur": "#1565c0", "clair": true}, "France 3": {"numero": "3", "couleur": "#1565c0", "clair": true}, "M6": {"numero": "6", "couleur": "#d81f6a", "clair": true}, "W9": {"numero": "9", "couleur": "#e91e63", "clair": true}, "TMC": {"numero": "10", "couleur": "#00897b", "clair": true}, "L'Équipe": {"numero": "21", "couleur": "#c62828", "clair": true}, "Ligue 1+": {"numero": "", "couleur": "#455a64", "clair": false}, "DAZN": {"numero": "", "couleur": "#455a64", "clair": false}, "Disney+": {"numero": "", "couleur": "#455a64", "clair": false}}, "categories": {"ldc": {"label": "Ligue des Champions", "couleur": "#6495ED"}, "coupe": {"label": "Coupes", "couleur": "#FFA500"}, "edf": {"label": "Équipe de France", "couleur": "#66BB6A"}, "foot": {"label": "Football", "couleur": "#FF8C42"}, "padel": {"label": "Padel", "couleur": "#BA55D3"}, "tennis": {"label": "Tennis", "couleur": "#26C6DA"}, "rugby": {"label": "Rugby", "couleur": "#8D6E63"}, "f1": {"label": "Formule 1", "couleur": "#E10600"}, "sport": {"label": "Sport", "couleur": "#78909C"}}, "evenements": [{"date": "2026-08-25", "heure": "21:00", "categorie": "coupe", "competition": "Trophée des Champions", "affiche": "PSG — Marseille", "chaine": "beIN Sports 1"}, {"date": "2026-08-26", "heure": "21:00", "categorie": "ldc", "competition": "Ligue des Champions — Barrages", "affiche": "Match de barrage aller", "chaine": "Canal+"}, {"date": "2026-08-27", "heure": "20:45", "categorie": "foot", "competition": "Ligue 1 — 3e journée", "affiche": "PSG — Lyon", "chaine": "Ligue 1+", "raison": "Ligue 1 uniquement sur Ligue 1+ (hors abonnement)"}, {"date": "2026-08-28", "heure": "19:00", "categorie": "padel", "competition": "Premier Padel — P2", "affiche": "Quarts de finale", "chaine": "Canal+ Sport 360"}, {"date": "2026-08-29", "heure": "17:00", "categorie": "foot", "competition": "Ligue 2 — 3e journée", "affiche": "Guingamp — Bastia", "chaine": "beIN Sports 1"}, {"date": "2026-08-29", "heure": "21:00", "categorie": "foot", "competition": "Premier League", "affiche": "Liverpool — Arsenal", "chaine": "Canal+ Foot"}, {"date": "2026-08-30", "heure": "15:00", "categorie": "f1", "competition": "Formule 1 — GP des Pays-Bas", "affiche": "Course", "chaine": "Canal+", "duree_min": 150}, {"date": "2026-08-30", "heure": "17:00", "categorie": "rugby", "competition": "Top 14 — 2e journée", "affiche": "Toulouse — La Rochelle", "chaine": "Canal+ Sport 360"}, {"date": "2026-08-30", "heure": "20:45", "categorie": "foot", "competition": "Serie A — 1re journée", "affiche": "Inter — Milan AC", "chaine": "DAZN"}, {"date": "2026-08-31", "heure": "16:00", "categorie": "padel", "competition": "Premier Padel — P2", "affiche": "Finale", "chaine": "Canal+ Sport 360"}, {"date": "2026-09-01", "heure": "20:45", "categorie": "foot", "competition": "Championnat d'Europe / Amical", "affiche": "Affiche en clair", "chaine": "L'Équipe"}]};
+    var DATA = {"meta": {"titre": "Programme TV — Centre UrbanSoccer", "sous_titre": "Diffusion sur les écrans du centre", "updated_at": "2026-08-24", "note": "Événements diffusables sur les chaînes du centre uniquement. Mettez ce fichier à jour chaque semaine puis relancez : python generate_tv.py"}, "abonnement": {"disponibles": ["Canal+", "Canal+ Sport 360", "Canal+ Foot", "beIN Sports 1", "beIN Sports 2", "beIN Sports 3", "TF1", "M6", "France 2", "France 3", "W9", "TMC", "L'Équipe"], "non_disponibles": ["Ligue 1+", "DAZN", "Disney+"]}, "chaines_meta": {"Canal+": {"numero": "4", "couleur": "#0a0a0a", "clair": false}, "Canal+ Sport 360": {"numero": "30", "couleur": "#0a0a0a", "clair": false}, "Canal+ Foot": {"numero": "31", "couleur": "#0a0a0a", "clair": false}, "beIN Sports 1": {"numero": "51", "couleur": "#7b1fa2", "clair": false}, "beIN Sports 2": {"numero": "52", "couleur": "#7b1fa2", "clair": false}, "beIN Sports 3": {"numero": "53", "couleur": "#7b1fa2", "clair": false}, "TF1": {"numero": "1", "couleur": "#1e4fd6", "clair": true}, "France 2": {"numero": "2", "couleur": "#1565c0", "clair": true}, "France 3": {"numero": "3", "couleur": "#1565c0", "clair": true}, "M6": {"numero": "6", "couleur": "#d81f6a", "clair": true}, "W9": {"numero": "9", "couleur": "#e91e63", "clair": true}, "TMC": {"numero": "10", "couleur": "#00897b", "clair": true}, "L'Équipe": {"numero": "21", "couleur": "#c62828", "clair": true}, "Ligue 1+": {"numero": "", "couleur": "#455a64", "clair": false}, "DAZN": {"numero": "", "couleur": "#455a64", "clair": false}, "Disney+": {"numero": "", "couleur": "#455a64", "clair": false}}, "categories": {"ldc": {"label": "Ligue des Champions", "couleur": "#6495ED"}, "coupe": {"label": "Coupes", "couleur": "#FFA500"}, "edf": {"label": "Équipe de France", "couleur": "#66BB6A"}, "foot": {"label": "Football", "couleur": "#FF8C42"}, "padel": {"label": "Padel", "couleur": "#BA55D3"}, "tennis": {"label": "Tennis", "couleur": "#26C6DA"}, "rugby": {"label": "Rugby", "couleur": "#8D6E63"}, "f1": {"label": "Formule 1", "couleur": "#E10600"}, "sport": {"label": "Sport", "couleur": "#78909C"}}, "evenements": [{"date": "2026-08-25", "heure": "21:00", "categorie": "coupe", "competition": "Trophée des Champions", "affiche": "PSG — Marseille", "chaine": "beIN Sports 1"}, {"date": "2026-08-26", "heure": "21:00", "categorie": "ldc", "competition": "Ligue des Champions — Barrages", "affiche": "Match de barrage aller", "chaine": "Canal+"}, {"date": "2026-08-27", "heure": "20:45", "categorie": "foot", "competition": "Ligue 1 — 3e journée", "affiche": "PSG — Lyon", "chaine": "Ligue 1+", "raison": "Ligue 1 uniquement sur Ligue 1+ (hors abonnement)"}, {"date": "2026-08-28", "heure": "19:00", "categorie": "padel", "competition": "Premier Padel — P2", "affiche": "Quarts de finale", "chaine": "Canal+ Sport 360"}, {"date": "2026-08-29", "heure": "17:00", "categorie": "foot", "competition": "Ligue 2 — 3e journée", "affiche": "Guingamp — Bastia", "chaine": "beIN Sports 1"}, {"date": "2026-08-29", "heure": "21:00", "categorie": "foot", "competition": "Premier League", "affiche": "Liverpool — Arsenal", "chaine": "Canal+ Foot"}, {"date": "2026-08-30", "heure": "15:00", "categorie": "f1", "competition": "Formule 1 — GP des Pays-Bas", "affiche": "Course", "chaine": "Canal+", "duree_min": 150}, {"date": "2026-08-30", "heure": "12:00", "categorie": "padel", "competition": "Premier Padel — P2", "affiche": "Demi-finales", "chaine": "Canal+ Sport 360", "duree_min": 180}, {"date": "2026-08-30", "heure": "17:00", "categorie": "rugby", "competition": "Top 14 — 2e journée", "affiche": "Toulouse — La Rochelle", "chaine": "Canal+ Sport 360"}, {"date": "2026-08-30", "heure": "20:45", "categorie": "foot", "competition": "Serie A — 1re journée", "affiche": "Inter — Milan AC", "chaine": "DAZN"}, {"date": "2026-08-31", "heure": "16:00", "categorie": "padel", "competition": "Premier Padel — P2", "affiche": "Finale", "chaine": "Canal+ Sport 360"}, {"date": "2026-09-01", "heure": "20:45", "categorie": "foot", "competition": "Championnat d'Europe / Amical", "affiche": "Affiche en clair", "chaine": "L'Équipe"}]};
 
     var JS_DAYS = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
     var JS_DAYS_SHORT = ["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"];
@@ -401,47 +406,60 @@
             markersHtml += '<span class="tl-marker">' + h + 'h</span>';
         }
         var markersRow = '<div class="tl-row">' +
-            '<div class="tl-name">&nbsp;</div>' +
+            '<div class="tl-name tl-chan"><span class="tl-chead">Chaîne</span></div>' +
             '<div class="tl-markers">' + markersHtml + nowHtml + '</div>' +
             '</div>';
 
-        // Une ligne par diffusion
-        var rowsHtml = "";
+        // ── Une ligne par chaîne pertinente ce jour ──
+        var byChan = {}, chanOrder = [];
         evts.forEach(function(ev) {
-            var s = eventStart(ev);
-            var end = new Date(s.getTime() + eventDuration(ev)*60000);
-            var sh = s.getHours() + s.getMinutes()/60;
-            var eh = sh + eventDuration(ev)/60;
-            var left = ((sh - minH) / range) * 100;
-            var width = ((eh - sh) / range) * 100;
-            if (left < 0) left = 0;
-            if (left + width > 100) width = 100 - left;
+            if (!byChan[ev.chaine]) { byChan[ev.chaine] = []; chanOrder.push(ev.chaine); }
+            byChan[ev.chaine].push(ev);
+        });
+        // Ordonner les chaînes par 1re diffusion (evts déjà trié par heure)
+        chanOrder.sort(function(a, b) {
+            return eventStart(byChan[a][0]) - eventStart(byChan[b][0]);
+        });
 
-            var state = (now >= s && now < end) ? "live" : (now >= end ? "done" : "soon");
-            var cat = catInfo(ev.categorie);
-            var num = chanNum(ev.chaine);
-            var clair = chanClair(ev.chaine);
+        var rowsHtml = "";
+        chanOrder.forEach(function(chaine) {
+            var num = chanNum(chaine);
+            var clair = chanClair(chaine);
+            var nameCell = '<div class="tl-name tl-chan">' +
+                (num ? '<span class="tl-chan-num' + (clair ? " clair" : "") + '">' + esc(num) + '</span>' : '') +
+                '<span class="tl-chan-name">' + esc(chaine) + '</span>' +
+                '</div>';
 
-            var barCls = "tl-bar" + (state === "live" ? " live" : "") + (state === "done" ? " done" : "");
-            var numHtml = num ? '<span class="tl-bar-num' + (clair ? " clair" : "") + '">' + esc(num) + '</span>' : '';
-            var liveHtml = (state === "live") ? '<span class="tl-bar-live">\u25CF Direct</span>' : '';
-            var barStyle = 'left:' + left + '%;width:' + width + '%;' +
-                'background:' + hexToRgba(cat.couleur, 0.24) + ';border-color:' + cat.couleur + ';';
-            var barTitle = esc((ev.affiche || "") + " — " + (ev.competition || "") +
-                " · " + (ev.heure || "") + " · " + ev.chaine);
+            var track = '<div class="tl-track">' + gridHtml + nowHtml;
+            byChan[chaine].forEach(function(ev) {
+                var s = eventStart(ev);
+                var end = new Date(s.getTime() + eventDuration(ev)*60000);
+                var sh = s.getHours() + s.getMinutes()/60;
+                var eh = sh + eventDuration(ev)/60;
+                var left = ((sh - minH) / range) * 100;
+                var width = ((eh - sh) / range) * 100;
+                if (left < 0) left = 0;
+                if (left + width > 100) width = 100 - left;
 
-            rowsHtml += '<div class="tl-row">' +
-                '<div class="tl-name">' +
-                    '<div class="tl-affiche">' + esc(ev.affiche || ev.competition || "") + '</div>' +
-                    '<div class="tl-compet" style="color:' + cat.couleur + '">' +
+                var state = (now >= s && now < end) ? "live" : (now >= end ? "done" : "soon");
+                var cat = catInfo(ev.categorie);
+                var barCls = "tl-bar" + (state === "live" ? " live" : "") + (state === "done" ? " done" : "");
+                var barStyle = 'left:' + left + '%;width:' + width + '%;' +
+                    'background:' + hexToRgba(cat.couleur, 0.26) + ';border-color:' + cat.couleur + ';';
+                var barTitle = esc((ev.heure || "") + " · " + (ev.affiche || "") +
+                    " — " + (ev.competition || "") + " · " + chaine);
+                var liveHtml = (state === "live") ? '<span class="tl-bar-live">Direct</span>' : '';
+
+                track += '<div class="' + barCls + '" style="' + barStyle + '" title="' + barTitle + '">' +
+                    liveHtml +
+                    '<div class="tl-prog-title">' + esc(ev.affiche || ev.competition || "") + '</div>' +
+                    '<div class="tl-prog-sub' + (state === "live" ? " tl-prog-live" : "") + '">' +
                         esc((ev.heure || "") + " · " + (ev.competition || cat.label)) + '</div>' +
-                '</div>' +
-                '<div class="tl-track">' + gridHtml + nowHtml +
-                    '<div class="' + barCls + '" style="' + barStyle + '" title="' + barTitle + '">' +
-                        numHtml + '<span class="tl-bar-chan">' + esc(ev.chaine) + '</span>' + liveHtml +
-                    '</div>' +
-                '</div>' +
-            '</div>';
+                '</div>';
+            });
+            track += '</div>';
+
+            rowsHtml += '<div class="tl-row">' + nameCell + track + '</div>';
         });
 
         var inner = '<div class="tl-inner" style="min-width:' + innerMin + 'px">' +
