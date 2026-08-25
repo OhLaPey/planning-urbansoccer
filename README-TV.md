@@ -20,6 +20,10 @@ Une fois publiée sur GitHub Pages : **`.../tv.html`**
 (à afficher en plein écran sur les TV — la page se recharge seule 1×/h et
 rafraîchit l'état « EN DIRECT » chaque minute).
 
+En haut, un bandeau **« En ce moment / À suivre »** affiche en permanence la ou
+les diffusions **en direct** et la **prochaine** (basé sur l'heure réelle, mis à
+jour chaque minute) — l'info la plus utile en un coup d'œil sur un écran mural.
+
 Un **sélecteur de jour** (même principe que le planning staff) permet de
 naviguer d'un jour à l'autre ; par défaut, le jour du jour est affiché. Seuls
 les jours ayant au moins une diffusion apparaissent dans le sélecteur.

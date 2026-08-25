@@ -58,6 +58,29 @@
         }
         .clock .time { color: #FF6600; font-weight: 800; }
 
+        /* ── Bandeau « En ce moment / À suivre » ── */
+        .now-next { display: flex; gap: 10px; margin: 16px 0 4px; }
+        .nn-block { flex: 1; min-width: 0; padding: 12px 15px; border-radius: 8px;
+                     background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); }
+        .nn-live { border-color: rgba(255,102,0,0.35); background: rgba(255,102,0,0.06); }
+        .nn-label { font-size: 10px; font-weight: 800; text-transform: uppercase;
+                     letter-spacing: 1.5px; color: #888; margin-bottom: 9px;
+                     display: flex; align-items: center; gap: 7px; }
+        .nn-live .nn-label { color: #FF6600; }
+        .nn-dot { width: 8px; height: 8px; border-radius: 50%; background: #FF6600;
+                   animation: nowPulse 1.4s ease-in-out infinite; }
+        .nn-item { display: flex; align-items: center; gap: 9px; padding: 4px 0; min-width: 0; }
+        .nn-num { background: rgba(255,255,255,0.95); color: #111; font-weight: 900;
+                   font-size: 12px; min-width: 22px; text-align: center;
+                   padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+        .nn-num.clair { background: #FF6600; color: #1A1A1A; }
+        .nn-time { font-size: 15px; font-weight: 800; color: #FF6600; flex-shrink: 0; }
+        .nn-aff { font-size: 15px; font-weight: 700; color: #fff; white-space: nowrap;
+                   overflow: hidden; text-overflow: ellipsis; }
+        .nn-meta { font-size: 11px; color: #999; font-weight: 600; margin-left: auto;
+                    flex-shrink: 0; white-space: nowrap; }
+        .nn-empty { font-size: 13px; color: #666; font-weight: 600; }
+
         /* ── Légende chaînes ── */
         .legend {
             display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
@@ -198,6 +221,7 @@
 
         @media (max-width: 620px) {
             h1 { font-size: 22px; letter-spacing: 1.5px; }
+            .now-next { flex-direction: column; }
             .tl-name { width: 104px; padding-right: 8px; }
             .tl-affiche { font-size: 12px; }
             .tl-track { height: 38px; }
@@ -213,6 +237,8 @@
             <div class="subtitle">Diffusion sur les écrans du centre</div>
             <div class="clock" id="clock"></div>
         </div>
+
+        <div class="now-next" id="now-next"></div>
 
         <div class="legend" id="legend"></div>
 
@@ -289,6 +315,52 @@
             html += chanBadge(ch);
         });
         wrap.innerHTML = html;
+    }
+
+    function nnChip(chaine) {
+        var num = chanNum(chaine);
+        return num ? '<span class="nn-num' + (chanClair(chaine) ? " clair" : "") + '">' + esc(num) + '</span>' : '';
+    }
+
+    // Bandeau « En ce moment / À suivre » (toujours basé sur l'heure réelle)
+    function renderNowNext() {
+        var el = document.getElementById("now-next");
+        var now = new Date();
+        var todayStr = ymd(now);
+        var all = diffusableEvents();
+        if (!all.length) { el.style.display = "none"; el.innerHTML = ""; return; }
+        el.style.display = "";
+
+        var live = all.filter(function(ev) {
+            if (ev.date !== todayStr) return false;
+            var s = eventStart(ev);
+            var e = new Date(s.getTime() + eventDuration(ev)*60000);
+            return now >= s && now < e;
+        });
+        var upcoming = all.filter(function(ev) { return eventStart(ev) > now; });
+        var next = upcoming.length ? upcoming[0] : null;
+
+        function itemHtml(ev, withTime) {
+            var t = "";
+            if (withTime) {
+                var lbl = (ev.date === todayStr) ? (ev.heure || "") : (dayTabLabel(ev.date) + " · " + (ev.heure || ""));
+                t = '<span class="nn-time">' + esc(lbl) + '</span>';
+            }
+            return '<div class="nn-item">' + t + nnChip(ev.chaine) +
+                '<span class="nn-aff">' + esc(ev.affiche || ev.competition || "") + '</span>' +
+                '<span class="nn-meta">' + esc(ev.chaine) + '</span></div>';
+        }
+
+        var liveInner = live.length
+            ? live.map(function(ev) { return itemHtml(ev, false); }).join("")
+            : '<div class="nn-empty">Aucune diffusion en cours</div>';
+        var nextInner = next
+            ? itemHtml(next, true)
+            : '<div class="nn-empty">Aucune diffusion à venir</div>';
+
+        el.innerHTML =
+            '<div class="nn-block nn-live"><div class="nn-label"><span class="nn-dot"></span>En ce moment</div>' + liveInner + '</div>' +
+            '<div class="nn-block nn-next"><div class="nn-label">À suivre</div>' + nextInner + '</div>';
     }
 
     function esc(s) {
@@ -483,6 +555,7 @@
 
     function rebuild() {
         renderClock();
+        renderNowNext();
         var evts = diffusableEvents();
         STATE.dates = uniqueDates(evts);
 
