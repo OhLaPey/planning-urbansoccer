@@ -48,13 +48,6 @@
         "day": 1
       },
       {
-        "code": "CUP-R",
-        "label": "Cup Régisseur",
-        "start": "2026-09-02T07:30",
-        "end": "2026-09-02T09:45",
-        "day": 2
-      },
-      {
         "code": "VDC",
         "label": "Vie de centre",
         "start": "2026-09-02T09:45",
@@ -537,7 +530,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-08-26 14:47",
+    "updated_at": "2026-09-01 14:31",
     "excel_version": 0
   }
 }
