@@ -280,10 +280,10 @@
         "day": 1
       },
       {
-        "code": "CUP-R",
-        "label": "Cup Régisseur",
-        "start": "2026-09-02T07:30",
-        "end": "2026-09-02T13:00",
+        "code": "FORE",
+        "label": "Formation",
+        "start": "2026-09-02T11:30",
+        "end": "2026-09-02T19:30",
         "day": 2
       },
       {
@@ -530,7 +530,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-09-01 14:31",
+    "updated_at": "2026-09-02 13:49",
     "excel_version": 0
   }
 }
