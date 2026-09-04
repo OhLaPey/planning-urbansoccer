@@ -97,6 +97,13 @@
       {
         "code": "VDC",
         "label": "Vie de centre",
+        "start": "2026-09-15T16:15",
+        "end": "2026-09-15T19:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
         "start": "2026-09-16T11:45",
         "end": "2026-09-16T21:30",
         "day": 2
@@ -107,13 +114,6 @@
         "start": "2026-09-17T11:45",
         "end": "2026-09-17T22:00",
         "day": 3
-      },
-      {
-        "code": "VDC",
-        "label": "Vie de centre",
-        "start": "2026-09-18T11:15",
-        "end": "2026-09-18T14:30",
-        "day": 4
       },
       {
         "code": "VDC",
@@ -394,7 +394,7 @@
         "code": "C-PAD",
         "label": "Cours Padel",
         "start": "2026-09-17T15:45",
-        "end": "2026-09-17T16:45",
+        "end": "2026-09-17T17:30",
         "day": 3
       },
       {
@@ -647,7 +647,7 @@
   },
   "_meta": {
     "source": "Excel",
-    "updated_at": "2026-09-04 13:47",
+    "updated_at": "2026-09-04 16:27",
     "excel_version": 0
   }
 }
