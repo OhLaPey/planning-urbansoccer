@@ -208,4 +208,28 @@ DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
  de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
   les créneaux sont réservés
 END:VEVENT
+BEGIN:VEVENT
+UID:baron-corentin-s37-1@urban7d
+DTSTAMP:20250405T162816Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T140000
+DTEND;TZID=Europe/Paris:20260907T170000
+SUMMARY:Entretien Ménage
+END:VEVENT
+BEGIN:VEVENT
+UID:baron-corentin-s37-2@urban7d
+DTSTAMP:20240102T234500Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T170000
+DTEND;TZID=Europe/Paris:20260907T233000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:baron-corentin-s37-3@urban7d
+DTSTAMP:20250713T052505Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260910T200000
+DTEND;TZID=Europe/Paris:20260911T000000
+SUMMARY:Vie de centre
+END:VEVENT
 END:VCALENDAR

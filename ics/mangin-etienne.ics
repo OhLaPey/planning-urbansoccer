@@ -305,4 +305,28 @@ DESCRIPTION:Remplace CARRERE Peïo\nPlanning 31/08 au 06/09\nSemaine de ren
  r les parents et enfants de l'EDF\n🎂 Animateurs programmés sur les ann
  iversaires\, à suivre si les créneaux sont réservés
 END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s37-1@urban7d
+DTSTAMP:20251031T010605Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T110000
+DTEND;TZID=Europe/Paris:20260907T170000
+SUMMARY:Entretien Ménage
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s37-2@urban7d
+DTSTAMP:20240518T011359Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260909T200000
+DTEND;TZID=Europe/Paris:20260910T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s37-3@urban7d
+DTSTAMP:20240804T012026Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260911T183000
+DTEND;TZID=Europe/Paris:20260912T000000
+SUMMARY:Vie de centre
+END:VEVENT
 END:VCALENDAR
