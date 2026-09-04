@@ -64,6 +64,24 @@ ATTENDANCE_PATTERN = re.compile(
 GRAPH_BASE = "https://graph.microsoft.com/v1.0"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# Fichier optionnel listant les noms de fichiers à NE PAS re-synchroniser
+# depuis SharePoint (un par ligne, # pour commenter). Utile quand un fichier
+# côté SharePoint est mal nommé et écrase à répétition un planning correct.
+SYNC_IGNORE_PATH = os.path.join(SCRIPT_DIR, ".sync-ignore")
+
+
+def load_sync_ignore() -> set:
+    """Retourne l'ensemble des noms de fichiers à ignorer lors de la sync."""
+    ignored = set()
+    if not os.path.isfile(SYNC_IGNORE_PATH):
+        return ignored
+    with open(SYNC_IGNORE_PATH, encoding="utf-8") as f:
+        for raw in f:
+            line = raw.split("#", 1)[0].strip()
+            if line:
+                ignored.add(line)
+    return ignored
+
 
 # ── Authentification Microsoft Graph ─────────────────────────────────────────
 
@@ -143,6 +161,10 @@ def list_planning_files(token: str, drive_id: str, pattern: str = None,
     resp = requests.get(url, headers=graph_headers(token), params=params, timeout=30)
     resp.raise_for_status()
 
+    ignored_names = load_sync_ignore()
+    if ignored_names:
+        print(f"⛔ Fichiers protégés (dans .sync-ignore) : {sorted(ignored_names)}")
+
     files = []
     for item in resp.json().get("value", []):
         name = item.get("name", "")
@@ -155,6 +177,10 @@ def list_planning_files(token: str, drive_id: str, pattern: str = None,
             continue
         # Filtrer par pattern si spécifié
         if pattern and pattern.lower() not in name.lower():
+            continue
+        # Skip les fichiers explicitement protégés
+        if name in ignored_names:
+            print(f"  ⛔ {name} — ignoré (protégé par .sync-ignore)")
             continue
         files.append(item)
 

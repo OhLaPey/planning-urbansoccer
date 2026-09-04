@@ -1,0 +1,10 @@
+# Fichiers exclus de la sync SharePoint → GitHub.
+# Un nom de fichier par ligne (exactement le nom tel qu'il apparaît sur SharePoint).
+# Utilisez # pour commenter. Utile quand un fichier SharePoint est mal nommé
+# et écrase de façon répétée un planning correct côté repo.
+#
+# Pour lever la protection : retirer la ligne et pusher.
+
+# Fichier mal nommé côté SharePoint (contenu Sem 38 sous le nom S37) —
+# à retirer une fois le fichier renommé sur SharePoint en S38.
+Plannings 2026 S37.xlsx
