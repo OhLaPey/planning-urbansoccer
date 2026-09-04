@@ -3863,42 +3863,510 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:donaer-nicolas-s29-1@urban7d
-DTSTAMP:20250401T235129Z
+DTSTAMP:20240305T124229Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T173000
 DTEND;TZID=Europe/Paris:20260714T000000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:donaer-nicolas-s29-2@urban7d
-DTSTAMP:20240504T085309Z
+DTSTAMP:20240823T023906Z
 SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260714T170000
+DTSTART;TZID=Europe/Paris:20260714T180000
 DTEND;TZID=Europe/Paris:20260715T000000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:donaer-nicolas-s29-3@urban7d
-DTSTAMP:20240518T144106Z
+DTSTAMP:20251007T124010Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T100000
 DTEND;TZID=Europe/Paris:20260716T180000
 SUMMARY:VDC MONTAUDRAN
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:donaer-nicolas-s29-4@urban7d
-DTSTAMP:20240207T012630Z
+DTSTAMP:20241003T220906Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T180000
 DTEND;TZID=Europe/Paris:20260717T233000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:donaer-nicolas-s29-5@urban7d
-DTSTAMP:20251019T150024Z
+DTSTAMP:20241121T010832Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260718T150000
 DTEND;TZID=Europe/Paris:20260718T222000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s30-1@urban7d
+DTSTAMP:20251030T204936Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T173000
+DTEND;TZID=Europe/Paris:20260721T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s30-2@urban7d
+DTSTAMP:20241011T085424Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T073000
+DTEND;TZID=Europe/Paris:20260722T100000
+SUMMARY:Cup League
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s30-3@urban7d
+DTSTAMP:20240203T164505Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T100000
+DTEND;TZID=Europe/Paris:20260722T173000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s30-4@urban7d
+DTSTAMP:20250113T020839Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T090000
+DTEND;TZID=Europe/Paris:20260723T174500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s30-5@urban7d
+DTSTAMP:20250903T021125Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260724T173000
+DTEND;TZID=Europe/Paris:20260725T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s30-6@urban7d
+DTSTAMP:20240406T035445Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260725T160000
+DTEND;TZID=Europe/Paris:20260725T224500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s34-1@urban7d
+DTSTAMP:20250302T214422Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260817T160000
+DTEND;TZID=Europe/Paris:20260818T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s34-2@urban7d
+DTSTAMP:20241203T141818Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T170000
+DTEND;TZID=Europe/Paris:20260819T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s34-3@urban7d
+DTSTAMP:20240925T205345Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260819T160000
+DTEND;TZID=Europe/Paris:20260820T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s34-4@urban7d
+DTSTAMP:20250204T160852Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T160000
+DTEND;TZID=Europe/Paris:20260820T220000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s34-5@urban7d
+DTSTAMP:20240408T035150Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260823T084500
+DTEND;TZID=Europe/Paris:20260823T160000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s35-1@urban7d
+DTSTAMP:20250118T054632Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T170000
+DTEND;TZID=Europe/Paris:20260825T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s35-2@urban7d
+DTSTAMP:20250203T203742Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T170000
+DTEND;TZID=Europe/Paris:20260828T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s35-3@urban7d
+DTSTAMP:20240903T165857Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T170000
+DTEND;TZID=Europe/Paris:20260829T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s35-4@urban7d
+DTSTAMP:20250218T134555Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260830T084500
+DTEND;TZID=Europe/Paris:20260830T174500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s36-1@urban7d
+DTSTAMP:20250916T213506Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260901T170000
+DTEND;TZID=Europe/Paris:20260902T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s36-2@urban7d
+DTSTAMP:20241113T004854Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260902T170000
+DTEND;TZID=Europe/Paris:20260903T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s36-3@urban7d
+DTSTAMP:20250116T142710Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260903T170000
+DTEND;TZID=Europe/Paris:20260904T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s36-4@urban7d
+DTSTAMP:20250210T111303Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260905T083000
+DTEND;TZID=Europe/Paris:20260905T160000
+SUMMARY:EDF-A
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s36-5@urban7d
+DTSTAMP:20240303T192750Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260905T160000
+DTEND;TZID=Europe/Paris:20260905T180000
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-1@urban7d
+DTSTAMP:20240915T084515Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T090000
+DTEND;TZID=Europe/Paris:20260907T171500
+SUMMARY:Entretien Ménage
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-2@urban7d
+DTSTAMP:20250222T114333Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T171500
+DTEND;TZID=Europe/Paris:20260907T191500
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-3@urban7d
+DTSTAMP:20241007T081015Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260908T151500
+DTEND;TZID=Europe/Paris:20260909T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-4@urban7d
+DTSTAMP:20240411T110453Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260909T124500
+DTEND;TZID=Europe/Paris:20260909T131500
+SUMMARY:EDF-A
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-5@urban7d
+DTSTAMP:20240312T120036Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260909T131500
+DTEND;TZID=Europe/Paris:20260909T140000
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-6@urban7d
+DTSTAMP:20250803T104228Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260909T140000
+DTEND;TZID=Europe/Paris:20260909T153000
+SUMMARY:EDF-B
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-7@urban7d
+DTSTAMP:20240903T202634Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260909T153000
+DTEND;TZID=Europe/Paris:20260909T164500
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-8@urban7d
+DTSTAMP:20250404T155342Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260909T164500
+DTEND;TZID=Europe/Paris:20260909T184500
+SUMMARY:EDF-B
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-9@urban7d
+DTSTAMP:20250528T042520Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260911T151500
+DTEND;TZID=Europe/Paris:20260911T171500
+SUMMARY:EIA
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-10@urban7d
+DTSTAMP:20241011T193617Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260911T171500
+DTEND;TZID=Europe/Paris:20260911T191500
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-11@urban7d
+DTSTAMP:20241124T142549Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260912T090000
+DTEND;TZID=Europe/Paris:20260912T093000
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-12@urban7d
+DTSTAMP:20250304T190758Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260912T093000
+DTEND;TZID=Europe/Paris:20260912T123000
+SUMMARY:EDF-B
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-13@urban7d
+DTSTAMP:20240531T123626Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260913T151500
+DTEND;TZID=Europe/Paris:20260913T171500
+SUMMARY:Anniversaire
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s37-14@urban7d
+DTSTAMP:20241024T233636Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260913T171500
+DTEND;TZID=Europe/Paris:20260913T222000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-1@urban7d
+DTSTAMP:20240921T163412Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260914T171500
+DTEND;TZID=Europe/Paris:20260914T191500
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-2@urban7d
+DTSTAMP:20250812T020925Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260914T191500
+DTEND;TZID=Europe/Paris:20260915T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-3@urban7d
+DTSTAMP:20240127T085211Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260915T171500
+DTEND;TZID=Europe/Paris:20260915T191500
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-4@urban7d
+DTSTAMP:20251205T051800Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260915T191500
+DTEND;TZID=Europe/Paris:20260916T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-5@urban7d
+DTSTAMP:20240323T075957Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T133000
+DTEND;TZID=Europe/Paris:20260916T140000
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-6@urban7d
+DTSTAMP:20240610T212327Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T140000
+DTEND;TZID=Europe/Paris:20260916T153000
+SUMMARY:EDF-B
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-7@urban7d
+DTSTAMP:20251008T103803Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T153000
+DTEND;TZID=Europe/Paris:20260916T164500
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-8@urban7d
+DTSTAMP:20241001T081724Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T164500
+DTEND;TZID=Europe/Paris:20260916T184500
+SUMMARY:EDF-B
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-9@urban7d
+DTSTAMP:20240926T000118Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T194500
+DTEND;TZID=Europe/Paris:20260917T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-10@urban7d
+DTSTAMP:20240308T044127Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260918T114500
+DTEND;TZID=Europe/Paris:20260918T171500
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-11@urban7d
+DTSTAMP:20240510T032159Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260918T171500
+DTEND;TZID=Europe/Paris:20260918T191500
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-12@urban7d
+DTSTAMP:20240114T230649Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260919T090000
+DTEND;TZID=Europe/Paris:20260919T093000
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:donaer-nicolas-s38-13@urban7d
+DTSTAMP:20240215T064817Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260919T093000
+DTEND;TZID=Europe/Paris:20260919T123000
+SUMMARY:EDF-B
 END:VEVENT
 END:VCALENDAR

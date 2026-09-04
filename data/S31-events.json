@@ -1,0 +1,393 @@
+{
+  "BARON Corentin": {
+    "slug": "baron-corentin",
+    "events": [
+      {
+        "code": "FORE",
+        "label": "Formation",
+        "start": "2026-07-27T16:00",
+        "end": "2026-07-27T18:00",
+        "day": 0
+      },
+      {
+        "code": "FORP",
+        "label": "Formation pratique",
+        "start": "2026-07-27T18:00",
+        "end": "2026-07-28T00:00",
+        "day": 0
+      },
+      {
+        "code": "FORE",
+        "label": "Formation",
+        "start": "2026-07-28T16:00",
+        "end": "2026-07-28T18:00",
+        "day": 1
+      },
+      {
+        "code": "FORP",
+        "label": "Formation pratique",
+        "start": "2026-07-28T18:00",
+        "end": "2026-07-29T00:00",
+        "day": 1
+      }
+    ]
+  },
+  "BOULARDET Lucas": {
+    "slug": "boulardet-lucas",
+    "events": []
+  },
+  "CARRERE Peïo": {
+    "slug": "carrere-peio",
+    "events": []
+  },
+  "CASTELLON Pascaline": {
+    "slug": "castellon-pascaline",
+    "events": []
+  },
+  "CONRAD - stage David": {
+    "slug": "conrad-stage-david",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-27T11:45",
+        "end": "2026-07-27T18:05",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-28T10:00",
+        "end": "2026-07-28T18:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-29T11:45",
+        "end": "2026-07-29T18:05",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-30T11:45",
+        "end": "2026-07-30T22:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-31T11:45",
+        "end": "2026-07-31T17:10",
+        "day": 4
+      }
+    ]
+  },
+  "CRUZEL Quentin": {
+    "slug": "cruzel-quentin",
+    "events": []
+  },
+  "DE NOUEL Maxime": {
+    "slug": "de-nouel-maxime",
+    "events": [
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-07-27T07:30",
+        "end": "2026-07-27T12:30",
+        "day": 0
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-07-27T13:15",
+        "end": "2026-07-27T17:45",
+        "day": 0
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-07-28T08:45",
+        "end": "2026-07-28T12:15",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-28T12:15",
+        "end": "2026-07-28T13:15",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-07-28T13:15",
+        "end": "2026-07-28T17:45",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-07-29T14:45",
+        "end": "2026-07-29T17:15",
+        "day": 2
+      },
+      {
+        "code": "CUP-L",
+        "label": "Cup League",
+        "start": "2026-07-29T17:15",
+        "end": "2026-07-29T18:15",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-29T18:15",
+        "end": "2026-07-30T00:00",
+        "day": 2
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-07-31T13:00",
+        "end": "2026-07-31T18:30",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-01T08:45",
+        "end": "2026-08-01T16:00",
+        "day": 5
+      }
+    ]
+  },
+  "DIVIEN Yohan": {
+    "slug": "divien-yohan",
+    "events": []
+  },
+  "DONAER Nicolas": {
+    "slug": "donaer-nicolas",
+    "events": []
+  },
+  "DOVINA Théo": {
+    "slug": "dovina-theo",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-28T18:00",
+        "end": "2026-07-29T00:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-31T17:30",
+        "end": "2026-08-01T00:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-01T16:00",
+        "end": "2026-08-01T22:45",
+        "day": 5
+      }
+    ]
+  },
+  "GACHET Melissa": {
+    "slug": "gachet-melissa",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-27T18:00",
+        "end": "2026-07-27T23:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-29T18:00",
+        "end": "2026-07-30T00:00",
+        "day": 2
+      }
+    ]
+  },
+  "HEBERT Jean Baptiste": {
+    "slug": "hebert-jean-baptiste",
+    "events": []
+  },
+  "JARGUEL Thomas": {
+    "slug": "jarguel-thomas",
+    "events": [
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-08-02T13:45",
+        "end": "2026-08-02T15:45",
+        "day": 6
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-02T15:45",
+        "end": "2026-08-02T23:30",
+        "day": 6
+      }
+    ]
+  },
+  "LABEFODE Thomas": {
+    "slug": "labefode-thomas",
+    "events": []
+  },
+  "LOUIBA Yacine": {
+    "slug": "louiba-yacine",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-27T18:30",
+        "end": "2026-07-28T00:00",
+        "day": 0
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-07-28T19:00",
+        "end": "2026-07-28T23:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-30T19:30",
+        "end": "2026-07-31T00:00",
+        "day": 3
+      }
+    ]
+  },
+  "MANGIN Etienne": {
+    "slug": "mangin-etienne",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-28T18:30",
+        "end": "2026-07-29T00:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-30T18:00",
+        "end": "2026-07-31T00:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-31T18:30",
+        "end": "2026-07-31T23:30",
+        "day": 4
+      }
+    ]
+  },
+  "MOSTEFA Yanis": {
+    "slug": "mostefa-yanis",
+    "events": []
+  },
+  "ORDONEZ GOMEZ Oceane": {
+    "slug": "ordonez-gomez-oceane",
+    "events": []
+  },
+  "PISTORE Remi": {
+    "slug": "pistore-remi",
+    "events": []
+  },
+  "PUJOL Mathieu": {
+    "slug": "pujol-mathieu",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-27T09:45",
+        "end": "2026-07-27T18:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-29T09:45",
+        "end": "2026-07-29T18:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-30T09:45",
+        "end": "2026-07-30T18:00",
+        "day": 3
+      },
+      {
+        "code": "INVEN",
+        "label": "Inventaire",
+        "start": "2026-07-31T08:00",
+        "end": "2026-07-31T10:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-07-31T10:00",
+        "end": "2026-07-31T18:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-02T08:45",
+        "end": "2026-08-02T16:00",
+        "day": 6
+      }
+    ]
+  },
+  "RABII Mehdi": {
+    "slug": "rabii-mehdi",
+    "events": [
+      {
+        "code": "CUP-A",
+        "label": "CUP-A",
+        "start": "2026-07-28T19:30",
+        "end": "2026-07-28T22:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-02T17:00",
+        "end": "2026-08-02T21:00",
+        "day": 6
+      }
+    ]
+  },
+  "SANGARNE Enzo": {
+    "slug": "sangarne-enzo",
+    "events": []
+  },
+  "TOPPAN Mattis": {
+    "slug": "toppan-mattis",
+    "events": []
+  },
+  "VASSANT Tiffany": {
+    "slug": "vassant-tiffany",
+    "events": []
+  },
+  "_meta": {
+    "source": "Excel",
+    "updated_at": "2026-09-04 13:47",
+    "excel_version": 0
+  }
+}

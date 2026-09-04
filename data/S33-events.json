@@ -1,0 +1,245 @@
+{
+  "BARON Corentin": {
+    "slug": "baron-corentin",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-10T17:00",
+        "end": "2026-08-10T21:30",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-11T17:00",
+        "end": "2026-08-11T21:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-12T17:00",
+        "end": "2026-08-12T21:30",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-15T16:00",
+        "end": "2026-08-15T22:30",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-16T16:00",
+        "end": "2026-08-16T23:30",
+        "day": 6
+      }
+    ]
+  },
+  "BOULARDET Lucas": {
+    "slug": "boulardet-lucas",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-11T20:00",
+        "end": "2026-08-12T00:00",
+        "day": 1
+      }
+    ]
+  },
+  "CARRERE Peïo": {
+    "slug": "carrere-peio",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-10T09:45",
+        "end": "2026-08-10T18:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-11T09:45",
+        "end": "2026-08-11T17:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-12T09:45",
+        "end": "2026-08-12T17:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-13T09:45",
+        "end": "2026-08-13T17:00",
+        "day": 3
+      },
+      {
+        "code": "INVEN",
+        "label": "Inventaire",
+        "start": "2026-08-14T08:00",
+        "end": "2026-08-14T10:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-14T10:00",
+        "end": "2026-08-14T18:00",
+        "day": 4
+      }
+    ]
+  },
+  "CASTELLON Pascaline": {
+    "slug": "castellon-pascaline",
+    "events": []
+  },
+  "CONRAD - stage David": {
+    "slug": "conrad-stage-david",
+    "events": []
+  },
+  "CRUZEL Quentin": {
+    "slug": "cruzel-quentin",
+    "events": []
+  },
+  "DE NOUEL Maxime": {
+    "slug": "de-nouel-maxime",
+    "events": []
+  },
+  "DIVIEN Yohan": {
+    "slug": "divien-yohan",
+    "events": []
+  },
+  "DONAER Nicolas": {
+    "slug": "donaer-nicolas",
+    "events": []
+  },
+  "DOVINA Théo": {
+    "slug": "dovina-theo",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-12T19:30",
+        "end": "2026-08-13T00:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-13T19:30",
+        "end": "2026-08-14T00:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-15T08:45",
+        "end": "2026-08-15T16:00",
+        "day": 5
+      }
+    ]
+  },
+  "GACHET Melissa": {
+    "slug": "gachet-melissa",
+    "events": []
+  },
+  "HEBERT Jean Baptiste": {
+    "slug": "hebert-jean-baptiste",
+    "events": []
+  },
+  "JARGUEL Thomas": {
+    "slug": "jarguel-thomas",
+    "events": []
+  },
+  "KABUNDA NDEKE Marvyn": {
+    "slug": "kabunda-ndeke-marvyn",
+    "events": []
+  },
+  "LABEFODE Thomas": {
+    "slug": "labefode-thomas",
+    "events": []
+  },
+  "LOUIBA Yacine": {
+    "slug": "louiba-yacine",
+    "events": []
+  },
+  "MANGIN Etienne": {
+    "slug": "mangin-etienne",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-10T18:30",
+        "end": "2026-08-11T00:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-13T17:00",
+        "end": "2026-08-13T21:30",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-14T17:00",
+        "end": "2026-08-15T00:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-16T08:45",
+        "end": "2026-08-16T16:00",
+        "day": 6
+      }
+    ]
+  },
+  "MOSTEFA Yanis": {
+    "slug": "mostefa-yanis",
+    "events": []
+  },
+  "ORDONEZ GOMEZ Oceane": {
+    "slug": "ordonez-gomez-oceane",
+    "events": []
+  },
+  "PISTORE Remi": {
+    "slug": "pistore-remi",
+    "events": []
+  },
+  "PUJOL Mathieu": {
+    "slug": "pujol-mathieu",
+    "events": []
+  },
+  "RABII Mehdi": {
+    "slug": "rabii-mehdi",
+    "events": []
+  },
+  "SANGARNE Enzo": {
+    "slug": "sangarne-enzo",
+    "events": []
+  },
+  "TOPPAN Mattis": {
+    "slug": "toppan-mattis",
+    "events": []
+  },
+  "VASSANT Tiffany": {
+    "slug": "vassant-tiffany",
+    "events": []
+  },
+  "_meta": {
+    "source": "Excel",
+    "updated_at": "2026-09-04 13:47",
+    "excel_version": 0
+  }
+}

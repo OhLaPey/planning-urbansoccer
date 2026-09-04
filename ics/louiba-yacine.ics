@@ -584,10 +584,10 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s28-4@urban7d
-DTSTAMP:20240301T042604Z
+DTSTAMP:20251218T011348Z
 SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260710T183000
-DTEND;TZID=Europe/Paris:20260711T000000
+DTSTART;TZID=Europe/Paris:20260710T203000
+DTEND;TZID=Europe/Paris:20260710T240000
 SUMMARY:Vie de centre
 DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
  homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
@@ -598,18 +598,194 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s29-1@urban7d
-DTSTAMP:20240101T023305Z
+DTSTAMP:20250524T063404Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260714T193000
 DTEND;TZID=Europe/Paris:20260714T230000
 SUMMARY:EV-AN
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:louiba-yacine-s29-2@urban7d
-DTSTAMP:20250601T183249Z
+DTSTAMP:20251020T132213Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T200000
 DTEND;TZID=Europe/Paris:20260716T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s30-1@urban7d
+DTSTAMP:20250620T021131Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260721T183000
+DTEND;TZID=Europe/Paris:20260722T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s30-2@urban7d
+DTSTAMP:20241106T053517Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T183000
+DTEND;TZID=Europe/Paris:20260723T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s31-1@urban7d
+DTSTAMP:20241015T061847Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260727T183000
+DTEND;TZID=Europe/Paris:20260728T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s31-2@urban7d
+DTSTAMP:20250512T222901Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260728T190000
+DTEND;TZID=Europe/Paris:20260728T230000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s31-3@urban7d
+DTSTAMP:20241001T133626Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260730T193000
+DTEND;TZID=Europe/Paris:20260731T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s32-1@urban7d
+DTSTAMP:20251210T173757Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260803T183000
+DTEND;TZID=Europe/Paris:20260804T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s32-2@urban7d
+DTSTAMP:20240826T023826Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260806T183000
+DTEND;TZID=Europe/Paris:20260807T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s33-1@urban7d
+DTSTAMP:20241009T033234Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260811T200000
+DTEND;TZID=Europe/Paris:20260811T235900
+SUMMARY:[Remplace Lucas] Vie de centre
+DESCRIPTION:Remplace BOULARDET Lucas
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s35-1@urban7d
+DTSTAMP:20240706T003710Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T183000
+DTEND;TZID=Europe/Paris:20260827T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s35-2@urban7d
+DTSTAMP:20250325T034203Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T200000
+DTEND;TZID=Europe/Paris:20260827T235900
+SUMMARY:[Remplace Corentin] Vie de centre
+DESCRIPTION:Remplace BARON Corentin\nPlanning 24/08 au 30/08\nPotentielle s
+ oirée staff samedi soir\, on en reparle\n⚽ Semaine de stage pour Marvyn
+ \n🥎 Stage de Padel enfants lundi et jeudi\n🏆🥎 Cup Padel : P50 mer
+ credi matin et P50M vendredi soir\n🎂 Retour des anniversaires\, à suiv
+ re si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s36-1@urban7d
+DTSTAMP:20240312T051625Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260831T183000
+DTEND;TZID=Europe/Paris:20260901T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s36-2@urban7d
+DTSTAMP:20240808T152746Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260904T170000
+DTEND;TZID=Europe/Paris:20260904T230000
+SUMMARY:[Remplace Etienne] Vie de centre
+DESCRIPTION:Remplace MANGIN Etienne\nPlanning 31/08 au 06/09\nSemaine de re
+ ntrée scolaire avec un nouveau prof (de padel) avec l'arrivée de Pierre\
+ n🥎 Semaine de stages padel pour les adultes\n📊 Inventaire mardi mati
+ n\n🥎🏆 Cup Padel : P50 mercredi matin et P100 vendredi aprem\n⚽🥎
+ 🎉 Pré-rentrée EDF samedi matin avec distribution des tenues et les di
+ fférents stands. Cela sera accompagné de découvertes de cours padel pou
+ r les parents et enfants de l'EDF\n🎂 Animateurs programmés sur les ann
+ iversaires\, à suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s37-1@urban7d
+DTSTAMP:20250512T051612Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T183000
+DTEND;TZID=Europe/Paris:20260908T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s37-2@urban7d
+DTSTAMP:20240905T213731Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260910T183000
+DTEND;TZID=Europe/Paris:20260910T220000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s38-1@urban7d
+DTSTAMP:20250103T095734Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260914T183000
+DTEND;TZID=Europe/Paris:20260915T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s38-2@urban7d
+DTSTAMP:20240812T222415Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T200000
+DTEND;TZID=Europe/Paris:20260917T000000
 SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR

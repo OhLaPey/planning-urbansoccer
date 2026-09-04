@@ -1296,4 +1296,20 @@ DESCRIPTION:Planning 15/06 au 21/06\nPremière semaine de Mélissa\n\n⚽
  ires. On verra si les créneaux sont réservés mais le WE s'annonce charg
  é
 END:VEVENT
+BEGIN:VEVENT
+UID:cruzel-quentin-s38-1@urban7d
+DTSTAMP:20251025T041124Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T180000
+DTEND;TZID=Europe/Paris:20260917T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:cruzel-quentin-s38-2@urban7d
+DTSTAMP:20240822T112829Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260920T160000
+DTEND;TZID=Europe/Paris:20260920T233000
+SUMMARY:Vie de centre
+END:VEVENT
 END:VCALENDAR

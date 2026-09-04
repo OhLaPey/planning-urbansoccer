@@ -1,0 +1,332 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Planning Urban 7D//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Planning MANGIN Etienne
+X-WR-TIMEZONE:Europe/Paris
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/Paris
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:mangin-etienne-s30-1@urban7d
+DTSTAMP:20240518T120708Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T170000
+DTEND;TZID=Europe/Paris:20260720T190000
+SUMMARY:Formation
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s30-2@urban7d
+DTSTAMP:20250129T145343Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T190000
+DTEND;TZID=Europe/Paris:20260721T000000
+SUMMARY:Formation pratique
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s30-3@urban7d
+DTSTAMP:20250813T064229Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T170000
+DTEND;TZID=Europe/Paris:20260723T190000
+SUMMARY:Formation
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s30-4@urban7d
+DTSTAMP:20250605T102250Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T190000
+DTEND;TZID=Europe/Paris:20260724T000000
+SUMMARY:Formation pratique
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s30-5@urban7d
+DTSTAMP:20241114T124823Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260724T183000
+DTEND;TZID=Europe/Paris:20260724T233000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s31-1@urban7d
+DTSTAMP:20250216T134646Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260728T183000
+DTEND;TZID=Europe/Paris:20260729T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s31-2@urban7d
+DTSTAMP:20240204T110021Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260730T180000
+DTEND;TZID=Europe/Paris:20260731T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s31-3@urban7d
+DTSTAMP:20240306T045132Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260731T183000
+DTEND;TZID=Europe/Paris:20260731T233000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s32-1@urban7d
+DTSTAMP:20240227T091149Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260804T163000
+DTEND;TZID=Europe/Paris:20260805T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s32-2@urban7d
+DTSTAMP:20250820T004027Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260808T160000
+DTEND;TZID=Europe/Paris:20260808T223000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s32-3@urban7d
+DTSTAMP:20250617T130759Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260809T160000
+DTEND;TZID=Europe/Paris:20260809T233000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s33-1@urban7d
+DTSTAMP:20240306T120251Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260810T183000
+DTEND;TZID=Europe/Paris:20260811T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s33-2@urban7d
+DTSTAMP:20240317T061147Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260813T170000
+DTEND;TZID=Europe/Paris:20260813T213000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s33-3@urban7d
+DTSTAMP:20250811T043800Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260814T170000
+DTEND;TZID=Europe/Paris:20260815T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s33-4@urban7d
+DTSTAMP:20240804T211053Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260816T084500
+DTEND;TZID=Europe/Paris:20260816T160000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s35-1@urban7d
+DTSTAMP:20251012T140448Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T170000
+DTEND;TZID=Europe/Paris:20260826T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s35-2@urban7d
+DTSTAMP:20240108T121829Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260829T160000
+DTEND;TZID=Europe/Paris:20260829T223000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s35-3@urban7d
+DTSTAMP:20241013T044329Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260830T131500
+DTEND;TZID=Europe/Paris:20260830T133000
+SUMMARY:FORE ANNIV
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s35-4@urban7d
+DTSTAMP:20250722T023713Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260830T133000
+DTEND;TZID=Europe/Paris:20260830T154500
+SUMMARY:FORP ANNIV
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s35-5@urban7d
+DTSTAMP:20240213T152820Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260830T154500
+DTEND;TZID=Europe/Paris:20260830T174500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s35-6@urban7d
+DTSTAMP:20250720T004620Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260830T174500
+DTEND;TZID=Europe/Paris:20260830T233000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s36-1@urban7d
+DTSTAMP:20240713T004046Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260902T180000
+DTEND;TZID=Europe/Paris:20260902T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s36-2@urban7d
+DTSTAMP:20250417T060135Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260904T170000
+DTEND;TZID=Europe/Paris:20260904T230000
+SUMMARY:[Remplacé par Yacine] Vie de centre
+DESCRIPTION:Remplacé par LOUIBA Yacine\nPlanning 31/08 au 06/09\nSemaine d
+ e rentrée scolaire avec un nouveau prof (de padel) avec l'arrivée de Pie
+ rre\n🥎 Semaine de stages padel pour les adultes\n📊 Inventaire mardi 
+ matin\n🥎🏆 Cup Padel : P50 mercredi matin et P100 vendredi aprem\n⚽
+ 🥎🎉 Pré-rentrée EDF samedi matin avec distribution des tenues et le
+ s différents stands. Cela sera accompagné de découvertes de cours padel
+  pour les parents et enfants de l'EDF\n🎂 Animateurs programmés sur les
+  anniversaires\, à suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s36-3@urban7d
+DTSTAMP:20240412T044924Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260906T180000
+DTEND;TZID=Europe/Paris:20260906T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s36-4@urban7d
+DTSTAMP:20250612T102347Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260903T170000
+DTEND;TZID=Europe/Paris:20260903T235900
+SUMMARY:[Remplace Peïo] Vie de centre
+DESCRIPTION:Remplace CARRERE Peïo\nPlanning 31/08 au 06/09\nSemaine de ren
+ trée scolaire avec un nouveau prof (de padel) avec l'arrivée de Pierre\n
+ 🥎 Semaine de stages padel pour les adultes\n📊 Inventaire mardi matin
+ \n🥎🏆 Cup Padel : P50 mercredi matin et P100 vendredi aprem\n⚽🥎
+ 🎉 Pré-rentrée EDF samedi matin avec distribution des tenues et les di
+ fférents stands. Cela sera accompagné de découvertes de cours padel pou
+ r les parents et enfants de l'EDF\n🎂 Animateurs programmés sur les ann
+ iversaires\, à suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s37-1@urban7d
+DTSTAMP:20251031T010605Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T110000
+DTEND;TZID=Europe/Paris:20260907T170000
+SUMMARY:Entretien Ménage
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s37-2@urban7d
+DTSTAMP:20240518T011359Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260909T200000
+DTEND;TZID=Europe/Paris:20260910T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mangin-etienne-s37-3@urban7d
+DTSTAMP:20240804T012026Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260911T183000
+DTEND;TZID=Europe/Paris:20260912T000000
+SUMMARY:Vie de centre
+END:VEVENT
+END:VCALENDAR

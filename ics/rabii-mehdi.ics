@@ -1369,21 +1369,7 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:rabii-mehdi-s28-2@urban7d
-DTSTAMP:20240209T185341Z
-SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260712T134500
-DTEND;TZID=Europe/Paris:20260712T174500
-SUMMARY:Anniversaire
-DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
- homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
- 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
- Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
- edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés
-END:VEVENT
-BEGIN:VEVENT
-UID:rabii-mehdi-s28-3@urban7d
-DTSTAMP:20241011T194847Z
+DTSTAMP:20240530T031238Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260712T174500
 DTEND;TZID=Europe/Paris:20260712T212000
@@ -1394,5 +1380,107 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
  Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
  edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
   si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:rabii-mehdi-s31-1@urban7d
+DTSTAMP:20241118T095221Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260728T193000
+DTEND;TZID=Europe/Paris:20260728T223000
+SUMMARY:CUP-A
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:rabii-mehdi-s31-2@urban7d
+DTSTAMP:20240112T181255Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260802T170000
+DTEND;TZID=Europe/Paris:20260802T210000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:rabii-mehdi-s36-1@urban7d
+DTSTAMP:20240417T051152Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260905T101500
+DTEND;TZID=Europe/Paris:20260905T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:rabii-mehdi-s36-2@urban7d
+DTSTAMP:20241113T030748Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260905T133000
+DTEND;TZID=Europe/Paris:20260905T173000
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:rabii-mehdi-s36-3@urban7d
+DTSTAMP:20250330T012215Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260906T134500
+DTEND;TZID=Europe/Paris:20260906T174500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:rabii-mehdi-s36-4@urban7d
+DTSTAMP:20250405T232604Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260906T174500
+DTEND;TZID=Europe/Paris:20260906T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:rabii-mehdi-s38-1@urban7d
+DTSTAMP:20241029T095048Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260920T133000
+DTEND;TZID=Europe/Paris:20260920T173000
+SUMMARY:Anniversaire
+END:VEVENT
+BEGIN:VEVENT
+UID:rabii-mehdi-s38-2@urban7d
+DTSTAMP:20250624T083836Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260920T173000
+DTEND;TZID=Europe/Paris:20260920T222000
+SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR
