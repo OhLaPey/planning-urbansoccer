@@ -1131,4 +1131,59 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
  edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
   si les créneaux sont réservés
 END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s31-1@urban7d
+DTSTAMP:20240924T145711Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260802T134500
+DTEND;TZID=Europe/Paris:20260802T154500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s31-2@urban7d
+DTSTAMP:20250530T124405Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260802T154500
+DTEND;TZID=Europe/Paris:20260802T233000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s32-1@urban7d
+DTSTAMP:20240227T045529Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260806T084500
+DTEND;TZID=Europe/Paris:20260806T180000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s32-2@urban7d
+DTSTAMP:20250428T073203Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260807T084500
+DTEND;TZID=Europe/Paris:20260807T180000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s32-3@urban7d
+DTSTAMP:20250118T034430Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260808T084500
+DTEND;TZID=Europe/Paris:20260808T160000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s34-1@urban7d
+DTSTAMP:20240512T135436Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T190000
+DTEND;TZID=Europe/Paris:20260820T235900
+SUMMARY:[Remplace Théo] Vie de centre
+DESCRIPTION:Remplace DOVINA Théo
+END:VEVENT
 END:VCALENDAR

@@ -588,4 +588,841 @@ DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\,
  : P25M vendredi soir\n🎂 Des animateurs sont prévus sur les anniversair
  es. On verra si les créneaux sont réservés mais le WE s'annonce chargé
 END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-1@urban7d
+DTSTAMP:20250409T215943Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T090000
+DTEND;TZID=Europe/Paris:20260720T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-2@urban7d
+DTSTAMP:20241230T185559Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T100000
+DTEND;TZID=Europe/Paris:20260720T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-3@urban7d
+DTSTAMP:20250424T202304Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T130000
+DTEND;TZID=Europe/Paris:20260720T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-4@urban7d
+DTSTAMP:20241122T141932Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T140000
+DTEND;TZID=Europe/Paris:20260720T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-5@urban7d
+DTSTAMP:20240616T082505Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260721T094500
+DTEND;TZID=Europe/Paris:20260721T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-6@urban7d
+DTSTAMP:20250627T185734Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260721T100000
+DTEND;TZID=Europe/Paris:20260721T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-7@urban7d
+DTSTAMP:20240515T234234Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260721T130000
+DTEND;TZID=Europe/Paris:20260721T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-8@urban7d
+DTSTAMP:20240423T202832Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260721T140000
+DTEND;TZID=Europe/Paris:20260721T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-9@urban7d
+DTSTAMP:20251107T124332Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260721T160000
+DTEND;TZID=Europe/Paris:20260721T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-10@urban7d
+DTSTAMP:20251128T200820Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260721T170000
+DTEND;TZID=Europe/Paris:20260721T180000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-11@urban7d
+DTSTAMP:20250216T182825Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T090000
+DTEND;TZID=Europe/Paris:20260722T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-12@urban7d
+DTSTAMP:20240229T020212Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T100000
+DTEND;TZID=Europe/Paris:20260722T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-13@urban7d
+DTSTAMP:20240318T041712Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T130000
+DTEND;TZID=Europe/Paris:20260722T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-14@urban7d
+DTSTAMP:20240728T022315Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T140000
+DTEND;TZID=Europe/Paris:20260722T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-15@urban7d
+DTSTAMP:20240913T192857Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T094500
+DTEND;TZID=Europe/Paris:20260723T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-16@urban7d
+DTSTAMP:20241122T082358Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T100000
+DTEND;TZID=Europe/Paris:20260723T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-17@urban7d
+DTSTAMP:20240517T043646Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T130000
+DTEND;TZID=Europe/Paris:20260723T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-18@urban7d
+DTSTAMP:20240312T071628Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T140000
+DTEND;TZID=Europe/Paris:20260723T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-19@urban7d
+DTSTAMP:20240420T115337Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T160000
+DTEND;TZID=Europe/Paris:20260723T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-20@urban7d
+DTSTAMP:20251112T053915Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T170000
+DTEND;TZID=Europe/Paris:20260723T180000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-21@urban7d
+DTSTAMP:20251023T225113Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T180000
+DTEND;TZID=Europe/Paris:20260723T183000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-22@urban7d
+DTSTAMP:20250516T202147Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260724T090000
+DTEND;TZID=Europe/Paris:20260724T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-23@urban7d
+DTSTAMP:20240202T184323Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260724T100000
+DTEND;TZID=Europe/Paris:20260724T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-24@urban7d
+DTSTAMP:20250508T213129Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260724T130000
+DTEND;TZID=Europe/Paris:20260724T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-25@urban7d
+DTSTAMP:20250822T014023Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260724T140000
+DTEND;TZID=Europe/Paris:20260724T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s30-26@urban7d
+DTSTAMP:20240618T181611Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260724T160000
+DTEND;TZID=Europe/Paris:20260724T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-1@urban7d
+DTSTAMP:20240213T060732Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260817T090000
+DTEND;TZID=Europe/Paris:20260817T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-2@urban7d
+DTSTAMP:20240622T071631Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260817T100000
+DTEND;TZID=Europe/Paris:20260817T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-3@urban7d
+DTSTAMP:20240602T063053Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260817T120000
+DTEND;TZID=Europe/Paris:20260817T130000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-4@urban7d
+DTSTAMP:20251228T201721Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260817T140000
+DTEND;TZID=Europe/Paris:20260817T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-5@urban7d
+DTSTAMP:20250316T231106Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T094500
+DTEND;TZID=Europe/Paris:20260818T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-6@urban7d
+DTSTAMP:20240623T152821Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T100000
+DTEND;TZID=Europe/Paris:20260818T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-7@urban7d
+DTSTAMP:20251030T000739Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T120000
+DTEND;TZID=Europe/Paris:20260818T130000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-8@urban7d
+DTSTAMP:20240215T012932Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T140000
+DTEND;TZID=Europe/Paris:20260818T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-9@urban7d
+DTSTAMP:20250413T124822Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T160000
+DTEND;TZID=Europe/Paris:20260818T170000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-10@urban7d
+DTSTAMP:20250608T153351Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T170000
+DTEND;TZID=Europe/Paris:20260818T180000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-11@urban7d
+DTSTAMP:20240102T205955Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260819T090000
+DTEND;TZID=Europe/Paris:20260819T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-12@urban7d
+DTSTAMP:20240901T144150Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260819T100000
+DTEND;TZID=Europe/Paris:20260819T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-13@urban7d
+DTSTAMP:20250804T042541Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260819T120000
+DTEND;TZID=Europe/Paris:20260819T130000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-14@urban7d
+DTSTAMP:20251118T023842Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260819T140000
+DTEND;TZID=Europe/Paris:20260819T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-15@urban7d
+DTSTAMP:20240212T182008Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T094500
+DTEND;TZID=Europe/Paris:20260820T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-16@urban7d
+DTSTAMP:20240728T084434Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T100000
+DTEND;TZID=Europe/Paris:20260820T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-17@urban7d
+DTSTAMP:20250609T132021Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T120000
+DTEND;TZID=Europe/Paris:20260820T130000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-18@urban7d
+DTSTAMP:20251203T162501Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T140000
+DTEND;TZID=Europe/Paris:20260820T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-19@urban7d
+DTSTAMP:20241121T222657Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T160000
+DTEND;TZID=Europe/Paris:20260820T170000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-20@urban7d
+DTSTAMP:20241009T051540Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T170000
+DTEND;TZID=Europe/Paris:20260820T180000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-21@urban7d
+DTSTAMP:20250815T111608Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260821T090000
+DTEND;TZID=Europe/Paris:20260821T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-22@urban7d
+DTSTAMP:20250730T110910Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260821T100000
+DTEND;TZID=Europe/Paris:20260821T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-23@urban7d
+DTSTAMP:20240911T161614Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260821T120000
+DTEND;TZID=Europe/Paris:20260821T130000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-24@urban7d
+DTSTAMP:20250506T070720Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260821T140000
+DTEND;TZID=Europe/Paris:20260821T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s34-25@urban7d
+DTSTAMP:20250318T110640Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260821T160000
+DTEND;TZID=Europe/Paris:20260821T170000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-1@urban7d
+DTSTAMP:20251130T084108Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T090000
+DTEND;TZID=Europe/Paris:20260824T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-2@urban7d
+DTSTAMP:20251121T231540Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T100000
+DTEND;TZID=Europe/Paris:20260824T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-3@urban7d
+DTSTAMP:20240830T173921Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T120000
+DTEND;TZID=Europe/Paris:20260824T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-4@urban7d
+DTSTAMP:20240325T093315Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T140000
+DTEND;TZID=Europe/Paris:20260824T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-5@urban7d
+DTSTAMP:20241003T055042Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T160000
+DTEND;TZID=Europe/Paris:20260824T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-6@urban7d
+DTSTAMP:20250831T044630Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T170000
+DTEND;TZID=Europe/Paris:20260824T180000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-7@urban7d
+DTSTAMP:20240804T130647Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T090000
+DTEND;TZID=Europe/Paris:20260825T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-8@urban7d
+DTSTAMP:20240717T120438Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T100000
+DTEND;TZID=Europe/Paris:20260825T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-9@urban7d
+DTSTAMP:20240127T075602Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T120000
+DTEND;TZID=Europe/Paris:20260825T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-10@urban7d
+DTSTAMP:20240824T011422Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T140000
+DTEND;TZID=Europe/Paris:20260825T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-11@urban7d
+DTSTAMP:20240204T171106Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T160000
+DTEND;TZID=Europe/Paris:20260825T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-12@urban7d
+DTSTAMP:20250410T233235Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T170000
+DTEND;TZID=Europe/Paris:20260825T180000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-13@urban7d
+DTSTAMP:20251006T085519Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T090000
+DTEND;TZID=Europe/Paris:20260826T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-14@urban7d
+DTSTAMP:20250821T045239Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T100000
+DTEND;TZID=Europe/Paris:20260826T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-15@urban7d
+DTSTAMP:20251201T031640Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T120000
+DTEND;TZID=Europe/Paris:20260826T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-16@urban7d
+DTSTAMP:20240911T211214Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T140000
+DTEND;TZID=Europe/Paris:20260826T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-17@urban7d
+DTSTAMP:20250624T061440Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T160000
+DTEND;TZID=Europe/Paris:20260826T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-18@urban7d
+DTSTAMP:20251006T130411Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T170000
+DTEND;TZID=Europe/Paris:20260826T180000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-19@urban7d
+DTSTAMP:20240721T145510Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T090000
+DTEND;TZID=Europe/Paris:20260827T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-20@urban7d
+DTSTAMP:20240809T022622Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T100000
+DTEND;TZID=Europe/Paris:20260827T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-21@urban7d
+DTSTAMP:20240108T065654Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T120000
+DTEND;TZID=Europe/Paris:20260827T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-22@urban7d
+DTSTAMP:20250709T064205Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T140000
+DTEND;TZID=Europe/Paris:20260827T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-23@urban7d
+DTSTAMP:20241013T160648Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T160000
+DTEND;TZID=Europe/Paris:20260827T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-24@urban7d
+DTSTAMP:20250401T125246Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T170000
+DTEND;TZID=Europe/Paris:20260827T180000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-25@urban7d
+DTSTAMP:20250610T225459Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T090000
+DTEND;TZID=Europe/Paris:20260828T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-26@urban7d
+DTSTAMP:20251218T021538Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T100000
+DTEND;TZID=Europe/Paris:20260828T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-27@urban7d
+DTSTAMP:20250824T165248Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T120000
+DTEND;TZID=Europe/Paris:20260828T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-28@urban7d
+DTSTAMP:20250308T073035Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T140000
+DTEND;TZID=Europe/Paris:20260828T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s35-29@urban7d
+DTSTAMP:20240104T063739Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T160000
+DTEND;TZID=Europe/Paris:20260828T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
 END:VCALENDAR

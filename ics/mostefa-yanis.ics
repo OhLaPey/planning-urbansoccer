@@ -1491,21 +1491,7 @@ DESCRIPTION:Planning 29/06 au 05/07\n🥎 Cours co Padel sur les jours habi
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s28-1@urban7d
-DTSTAMP:20250326T205425Z
-SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260711T134500
-DTEND;TZID=Europe/Paris:20260711T174500
-SUMMARY:Anniversaire
-DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
- homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
- 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
- Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
- edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés
-END:VEVENT
-BEGIN:VEVENT
-UID:mostefa-yanis-s28-2@urban7d
-DTSTAMP:20250511T233006Z
+DTSTAMP:20250406T044255Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260711T174500
 DTEND;TZID=Europe/Paris:20260711T212000
@@ -1519,18 +1505,302 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s29-1@urban7d
-DTSTAMP:20241009T074854Z
+DTSTAMP:20240712T144838Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260718T170000
 DTEND;TZID=Europe/Paris:20260718T203000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:mostefa-yanis-s29-2@urban7d
-DTSTAMP:20251216T153148Z
+DTSTAMP:20250319T072319Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260719T170000
 DTEND;TZID=Europe/Paris:20260719T210000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s30-1@urban7d
+DTSTAMP:20251114T133754Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260725T170000
+DTEND;TZID=Europe/Paris:20260725T203000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s30-2@urban7d
+DTSTAMP:20250808T060834Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260726T170000
+DTEND;TZID=Europe/Paris:20260726T210000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s34-1@urban7d
+DTSTAMP:20251004T015508Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260823T173000
+DTEND;TZID=Europe/Paris:20260823T213000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s34-2@urban7d
+DTSTAMP:20241215T191703Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260822T150000
+DTEND;TZID=Europe/Paris:20260822T223000
+SUMMARY:[Remplace Corentin] Vie de centre
+DESCRIPTION:Remplace BARON Corentin
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s35-1@urban7d
+DTSTAMP:20240202T123942Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260829T134500
+DTEND;TZID=Europe/Paris:20260829T174500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s35-2@urban7d
+DTSTAMP:20250704T193117Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260830T133000
+DTEND;TZID=Europe/Paris:20260830T173000
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s35-3@urban7d
+DTSTAMP:20240206T002451Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260830T173000
+DTEND;TZID=Europe/Paris:20260830T213000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s36-1@urban7d
+DTSTAMP:20240711T114957Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260905T151500
+DTEND;TZID=Europe/Paris:20260905T191500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s36-2@urban7d
+DTSTAMP:20250102T195707Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260905T191500
+DTEND;TZID=Europe/Paris:20260905T213000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s36-3@urban7d
+DTSTAMP:20240314T231515Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260906T094500
+DTEND;TZID=Europe/Paris:20260906T101500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s36-4@urban7d
+DTSTAMP:20250312T133659Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260906T101500
+DTEND;TZID=Europe/Paris:20260906T121500
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s36-5@urban7d
+DTSTAMP:20240617T235811Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260906T121500
+DTEND;TZID=Europe/Paris:20260906T124500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s36-6@urban7d
+DTSTAMP:20251208T023744Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260906T133000
+DTEND;TZID=Europe/Paris:20260906T173000
+SUMMARY:Anniversaire
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s37-1@urban7d
+DTSTAMP:20240608T044140Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T090000
+DTEND;TZID=Europe/Paris:20260907T170000
+SUMMARY:Entretien Ménage
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s37-2@urban7d
+DTSTAMP:20240606T180056Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260912T143000
+DTEND;TZID=Europe/Paris:20260912T173000
+SUMMARY:Anniversaire
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s37-3@urban7d
+DTSTAMP:20240411T032732Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260912T173000
+DTEND;TZID=Europe/Paris:20260912T213000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s37-4@urban7d
+DTSTAMP:20250920T193204Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260913T093000
+DTEND;TZID=Europe/Paris:20260913T101500
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s37-5@urban7d
+DTSTAMP:20250325T204408Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260913T101500
+DTEND;TZID=Europe/Paris:20260913T121500
+SUMMARY:Anniversaire
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s37-6@urban7d
+DTSTAMP:20240802T055553Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260913T121500
+DTEND;TZID=Europe/Paris:20260913T124500
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s37-7@urban7d
+DTSTAMP:20250419T155322Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260913T134500
+DTEND;TZID=Europe/Paris:20260913T174500
+SUMMARY:Anniversaire
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s38-1@urban7d
+DTSTAMP:20240709T064238Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260919T133000
+DTEND;TZID=Europe/Paris:20260919T193000
+SUMMARY:Anniversaire
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s38-2@urban7d
+DTSTAMP:20241001T004249Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260919T193000
+DTEND;TZID=Europe/Paris:20260919T213000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s38-3@urban7d
+DTSTAMP:20250303T011011Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260920T093000
+DTEND;TZID=Europe/Paris:20260920T101500
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s38-4@urban7d
+DTSTAMP:20240731T231811Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260920T101500
+DTEND;TZID=Europe/Paris:20260920T121500
+SUMMARY:Anniversaire
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s38-5@urban7d
+DTSTAMP:20241024T020835Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260920T121500
+DTEND;TZID=Europe/Paris:20260920T124500
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:mostefa-yanis-s38-6@urban7d
+DTSTAMP:20241225T045127Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260920T134500
+DTEND;TZID=Europe/Paris:20260920T174500
+SUMMARY:Anniversaire
 END:VEVENT
 END:VCALENDAR

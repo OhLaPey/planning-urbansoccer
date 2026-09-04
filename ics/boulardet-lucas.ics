@@ -396,4 +396,29 @@ DESCRIPTION:Remplace GACHET Melissa\nPlanning 29/06 au 05/07\n🥎 Cours co
  Des animateurs sont prévus sur les anniversaires. On verra si les crénea
  ux sont réservés
 END:VEVENT
+BEGIN:VEVENT
+UID:boulardet-lucas-s33-1@urban7d
+DTSTAMP:20250516T094011Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260811T200000
+DTEND;TZID=Europe/Paris:20260812T000000
+SUMMARY:[Remplacé par Yacine] Vie de centre
+DESCRIPTION:Remplacé par LOUIBA Yacine
+END:VEVENT
+BEGIN:VEVENT
+UID:boulardet-lucas-s36-1@urban7d
+DTSTAMP:20240114T205203Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260902T200000
+DTEND;TZID=Europe/Paris:20260903T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
 END:VCALENDAR

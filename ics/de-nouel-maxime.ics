@@ -4427,74 +4427,916 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s29-1@urban7d
-DTSTAMP:20250411T192847Z
+DTSTAMP:20251118T180922Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T134500
 DTEND;TZID=Europe/Paris:20260713T174500
 SUMMARY:Cours Padel
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s29-2@urban7d
-DTSTAMP:20250223T231138Z
+DTSTAMP:20250411T013730Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T174500
-DTEND;TZID=Europe/Paris:20260713T233000
-SUMMARY:Vie de centre
+DTEND;TZID=Europe/Paris:20260713T184500
+SUMMARY:Cup League
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:de-nouel-maxime-s29-3@urban7d
-DTSTAMP:20240907T113557Z
+DTSTAMP:20240508T120425Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260713T184500
+DTEND;TZID=Europe/Paris:20260713T233000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s29-4@urban7d
+DTSTAMP:20240703T093733Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T151500
 DTEND;TZID=Europe/Paris:20260715T174500
 SUMMARY:Cours Padel
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
-UID:de-nouel-maxime-s29-4@urban7d
-DTSTAMP:20240420T141337Z
+UID:de-nouel-maxime-s29-5@urban7d
+DTSTAMP:20250119T111051Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T174500
 DTEND;TZID=Europe/Paris:20260716T000000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
-UID:de-nouel-maxime-s29-5@urban7d
-DTSTAMP:20250907T123705Z
+UID:de-nouel-maxime-s29-6@urban7d
+DTSTAMP:20240226T184845Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T084500
 DTEND;TZID=Europe/Paris:20260717T121500
 SUMMARY:Cours Padel
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
-UID:de-nouel-maxime-s29-6@urban7d
-DTSTAMP:20250116T121959Z
+UID:de-nouel-maxime-s29-7@urban7d
+DTSTAMP:20240702T194958Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T121500
 DTEND;TZID=Europe/Paris:20260717T131500
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
-UID:de-nouel-maxime-s29-7@urban7d
-DTSTAMP:20241027T185049Z
+UID:de-nouel-maxime-s29-8@urban7d
+DTSTAMP:20250302T011642Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T131500
 DTEND;TZID=Europe/Paris:20260717T164500
 SUMMARY:Cours Padel
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
-UID:de-nouel-maxime-s29-8@urban7d
-DTSTAMP:20251224T120325Z
+UID:de-nouel-maxime-s29-9@urban7d
+DTSTAMP:20240703T044205Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260718T073000
 DTEND;TZID=Europe/Paris:20260718T123000
 SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
-UID:de-nouel-maxime-s29-9@urban7d
-DTSTAMP:20240429T033110Z
+UID:de-nouel-maxime-s29-10@urban7d
+DTSTAMP:20250315T153821Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260719T084500
 DTEND;TZID=Europe/Paris:20260719T160000
+SUMMARY:[Remplacé par Théo] Vie de centre
+DESCRIPTION:Remplacé par DOVINA Théo\nPlanning 13/07 au 19/07\n⚽ Semain
+ e de stage pour Enzo\n🇫🇷⚽️🔥 On va faire un soirée BBQ pour l
+ a potentielle demi des bleus mardi soir\n🔄 Nicolas en prêt à Montaudr
+ an jeudi en journée\n🥎🏆 Cup Padel : P25M samedi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-1@urban7d
+DTSTAMP:20250327T205151Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T104500
+DTEND;TZID=Europe/Paris:20260720T121500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-2@urban7d
+DTSTAMP:20240304T222633Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T124500
+DTEND;TZID=Europe/Paris:20260720T131500
+SUMMARY:Cup League
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-3@urban7d
+DTSTAMP:20240822T014401Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T131500
+DTEND;TZID=Europe/Paris:20260720T174500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-4@urban7d
+DTSTAMP:20250522T064044Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T073000
+DTEND;TZID=Europe/Paris:20260722T123000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-5@urban7d
+DTSTAMP:20250905T140619Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T131500
+DTEND;TZID=Europe/Paris:20260722T154500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-6@urban7d
+DTSTAMP:20250329T044436Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T144500
+DTEND;TZID=Europe/Paris:20260723T171500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-7@urban7d
+DTSTAMP:20240911T064952Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T171500
+DTEND;TZID=Europe/Paris:20260723T174500
+SUMMARY:Cup League
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-8@urban7d
+DTSTAMP:20250513T033112Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T174500
+DTEND;TZID=Europe/Paris:20260724T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-9@urban7d
+DTSTAMP:20250202T092033Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260724T184500
+DTEND;TZID=Europe/Paris:20260725T001500
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s30-10@urban7d
+DTSTAMP:20251031T191927Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260726T160000
+DTEND;TZID=Europe/Paris:20260726T233000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-1@urban7d
+DTSTAMP:20250930T145737Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260727T073000
+DTEND;TZID=Europe/Paris:20260727T123000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-2@urban7d
+DTSTAMP:20250103T141435Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260727T131500
+DTEND;TZID=Europe/Paris:20260727T174500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-3@urban7d
+DTSTAMP:20250929T202110Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260728T084500
+DTEND;TZID=Europe/Paris:20260728T121500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-4@urban7d
+DTSTAMP:20240110T230131Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260728T121500
+DTEND;TZID=Europe/Paris:20260728T131500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-5@urban7d
+DTSTAMP:20241206T045219Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260728T131500
+DTEND;TZID=Europe/Paris:20260728T174500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-6@urban7d
+DTSTAMP:20241021T051140Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260729T144500
+DTEND;TZID=Europe/Paris:20260729T171500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-7@urban7d
+DTSTAMP:20241019T013034Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260729T171500
+DTEND;TZID=Europe/Paris:20260729T181500
+SUMMARY:Cup League
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-8@urban7d
+DTSTAMP:20250327T133629Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260729T181500
+DTEND;TZID=Europe/Paris:20260730T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-9@urban7d
+DTSTAMP:20240901T142852Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260731T130000
+DTEND;TZID=Europe/Paris:20260731T183000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s31-10@urban7d
+DTSTAMP:20240116T234140Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260801T084500
+DTEND;TZID=Europe/Paris:20260801T160000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-1@urban7d
+DTSTAMP:20250520T120912Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T094500
+DTEND;TZID=Europe/Paris:20260824T121500
+SUMMARY:Stage Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-2@urban7d
+DTSTAMP:20240729T145659Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T124500
+DTEND;TZID=Europe/Paris:20260824T134500
+SUMMARY:Cup League
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-3@urban7d
+DTSTAMP:20241114T100242Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T134500
+DTEND;TZID=Europe/Paris:20260824T161500
+SUMMARY:Stage Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-4@urban7d
+DTSTAMP:20240113T095233Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T161500
+DTEND;TZID=Europe/Paris:20260824T174500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-5@urban7d
+DTSTAMP:20250914T005926Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T084500
+DTEND;TZID=Europe/Paris:20260825T121500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-6@urban7d
+DTSTAMP:20250407T234716Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T131500
+DTEND;TZID=Europe/Paris:20260825T154500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-7@urban7d
+DTSTAMP:20250421T210254Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T073000
+DTEND;TZID=Europe/Paris:20260826T130000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-8@urban7d
+DTSTAMP:20250214T123731Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T134500
+DTEND;TZID=Europe/Paris:20260826T161500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-9@urban7d
+DTSTAMP:20240117T215351Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T094500
+DTEND;TZID=Europe/Paris:20260827T121500
+SUMMARY:Stage Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-10@urban7d
+DTSTAMP:20240930T092620Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T124500
+DTEND;TZID=Europe/Paris:20260827T134500
+SUMMARY:Cup League
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-11@urban7d
+DTSTAMP:20240919T155158Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T134500
+DTEND;TZID=Europe/Paris:20260827T161500
+SUMMARY:Stage Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-12@urban7d
+DTSTAMP:20250316T225343Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T161500
+DTEND;TZID=Europe/Paris:20260827T174500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-13@urban7d
+DTSTAMP:20251023T122351Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T151500
+DTEND;TZID=Europe/Paris:20260828T174500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-14@urban7d
+DTSTAMP:20240808T075222Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T174500
+DTEND;TZID=Europe/Paris:20260828T190000
+SUMMARY:Padel animation
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-15@urban7d
+DTSTAMP:20250715T063632Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T190000
+DTEND;TZID=Europe/Paris:20260829T001500
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s35-16@urban7d
+DTSTAMP:20240121T101650Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260829T111500
+DTEND;TZID=Europe/Paris:20260829T134500
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-1@urban7d
+DTSTAMP:20250305T095754Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260831T094500
+DTEND;TZID=Europe/Paris:20260831T121500
+SUMMARY:Stage Padel
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-2@urban7d
+DTSTAMP:20250108T140738Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260831T131500
+DTEND;TZID=Europe/Paris:20260831T154500
+SUMMARY:Stage Padel
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-3@urban7d
+DTSTAMP:20241031T015026Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260831T154500
+DTEND;TZID=Europe/Paris:20260831T170000
+SUMMARY:Padel animation
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-4@urban7d
+DTSTAMP:20250205T125359Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260901T094500
+DTEND;TZID=Europe/Paris:20260901T121500
+SUMMARY:Stage Padel
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-5@urban7d
+DTSTAMP:20250908T194143Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260901T131500
+DTEND;TZID=Europe/Paris:20260901T154500
+SUMMARY:Stage Padel
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-6@urban7d
+DTSTAMP:20240802T042841Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260901T154500
+DTEND;TZID=Europe/Paris:20260901T193000
+SUMMARY:Padel animation
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-7@urban7d
+DTSTAMP:20240927T032507Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260902T100000
+DTEND;TZID=Europe/Paris:20260902T133000
+SUMMARY:Padel animation
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-8@urban7d
+DTSTAMP:20250811T144430Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260902T133000
+DTEND;TZID=Europe/Paris:20260902T170000
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-9@urban7d
+DTSTAMP:20250113T222745Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260904T100000
+DTEND;TZID=Europe/Paris:20260904T160000
+SUMMARY:Padel animation
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-10@urban7d
+DTSTAMP:20241229T003151Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260905T090000
+DTEND;TZID=Europe/Paris:20260905T153000
+SUMMARY:Cours Padel
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s36-11@urban7d
+DTSTAMP:20250419T125406Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260903T090000
+DTEND;TZID=Europe/Paris:20260903T170000
+SUMMARY:Cup Régisseur
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-1@urban7d
+DTSTAMP:20240402T141510Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T090000
+DTEND;TZID=Europe/Paris:20260907T130000
+SUMMARY:Entretien Ménage
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-2@urban7d
+DTSTAMP:20251217T202746Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T130000
+DTEND;TZID=Europe/Paris:20260907T183000
+SUMMARY:Cup Régisseur
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-3@urban7d
+DTSTAMP:20250625T191739Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260908T094500
+DTEND;TZID=Europe/Paris:20260908T121500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-4@urban7d
+DTSTAMP:20250605T123923Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260908T121500
+DTEND;TZID=Europe/Paris:20260908T134500
+SUMMARY:Padel animation
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-5@urban7d
+DTSTAMP:20250729T104253Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260908T134500
+DTEND;TZID=Europe/Paris:20260908T151500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-6@urban7d
+DTSTAMP:20251130T052421Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260908T151500
+DTEND;TZID=Europe/Paris:20260908T171500
+SUMMARY:EIA
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-7@urban7d
+DTSTAMP:20240618T065727Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260908T171500
+DTEND;TZID=Europe/Paris:20260908T190000
+SUMMARY:Padel animation
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-8@urban7d
+DTSTAMP:20240506T060341Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260910T151500
+DTEND;TZID=Europe/Paris:20260910T174500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-9@urban7d
+DTSTAMP:20251005T220054Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260910T174500
+DTEND;TZID=Europe/Paris:20260911T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-10@urban7d
+DTSTAMP:20250509T030403Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260911T113000
+DTEND;TZID=Europe/Paris:20260911T133000
+SUMMARY:Padel animation
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-11@urban7d
+DTSTAMP:20240918T201958Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260911T133000
+DTEND;TZID=Europe/Paris:20260911T180000
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s37-12@urban7d
+DTSTAMP:20241227T174709Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260913T084500
+DTEND;TZID=Europe/Paris:20260913T160000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-1@urban7d
+DTSTAMP:20250507T050759Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260914T153000
+DTEND;TZID=Europe/Paris:20260914T173000
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-2@urban7d
+DTSTAMP:20241107T205719Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260914T173000
+DTEND;TZID=Europe/Paris:20260914T223000
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-3@urban7d
+DTSTAMP:20251014T163714Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260915T114500
+DTEND;TZID=Europe/Paris:20260915T134500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-4@urban7d
+DTSTAMP:20240120T172252Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260915T143000
+DTEND;TZID=Europe/Paris:20260915T173000
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-5@urban7d
+DTSTAMP:20241124T003246Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260915T173000
+DTEND;TZID=Europe/Paris:20260915T223000
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-6@urban7d
+DTSTAMP:20241001T120600Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T094500
+DTEND;TZID=Europe/Paris:20260916T114500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-7@urban7d
+DTSTAMP:20241017T022347Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T114500
+DTEND;TZID=Europe/Paris:20260916T134500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-8@urban7d
+DTSTAMP:20240731T060417Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T134500
+DTEND;TZID=Europe/Paris:20260916T174500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-9@urban7d
+DTSTAMP:20250117T064540Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260918T091500
+DTEND;TZID=Europe/Paris:20260918T101500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-10@urban7d
+DTSTAMP:20250507T223903Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260918T101500
+DTEND;TZID=Europe/Paris:20260918T121500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-11@urban7d
+DTSTAMP:20250927T091945Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260918T134500
+DTEND;TZID=Europe/Paris:20260918T154500
+SUMMARY:Cours Padel
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-12@urban7d
+DTSTAMP:20251117T085756Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260918T154500
+DTEND;TZID=Europe/Paris:20260918T174500
+SUMMARY:EIA
+END:VEVENT
+BEGIN:VEVENT
+UID:de-nouel-maxime-s38-13@urban7d
+DTSTAMP:20240315T205433Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260919T153000
+DTEND;TZID=Europe/Paris:20260919T223000
 SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR

@@ -364,26 +364,56 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s29-1@urban7d
-DTSTAMP:20240729T164730Z
+DTSTAMP:20240126T143711Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T183000
 DTEND;TZID=Europe/Paris:20260713T233000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s29-2@urban7d
-DTSTAMP:20240407T110750Z
+DTSTAMP:20241226T154327Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260714T183000
 DTEND;TZID=Europe/Paris:20260715T000000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:castellon-pascaline-s29-3@urban7d
-DTSTAMP:20241001T133524Z
+DTSTAMP:20240624T012055Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T200000
 DTEND;TZID=Europe/Paris:20260717T000000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:castellon-pascaline-s30-1@urban7d
+DTSTAMP:20240604T081332Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260721T180000
+DTEND;TZID=Europe/Paris:20260722T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:castellon-pascaline-s32-1@urban7d
+DTSTAMP:20250430T175335Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260808T130000
+DTEND;TZID=Europe/Paris:20260808T183000
+SUMMARY:Cup Régisseur
 END:VEVENT
 END:VCALENDAR

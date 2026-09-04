@@ -1168,242 +1168,578 @@ DESCRIPTION:Planning 22/06 au 28/06\nBelle semaine avec plusieurs events\,
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-1@urban7d
-DTSTAMP:20251121T115800Z
+DTSTAMP:20250718T163811Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T090000
 DTEND;TZID=Europe/Paris:20260713T100000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-2@urban7d
-DTSTAMP:20240224T085014Z
+DTSTAMP:20240722T075252Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T100000
 DTEND;TZID=Europe/Paris:20260713T120000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-3@urban7d
-DTSTAMP:20240821T154726Z
+DTSTAMP:20240311T020116Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T120000
 DTEND;TZID=Europe/Paris:20260713T140000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-4@urban7d
-DTSTAMP:20251230T181020Z
+DTSTAMP:20251116T151121Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T140000
 DTEND;TZID=Europe/Paris:20260713T160000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-5@urban7d
-DTSTAMP:20241020T020041Z
+DTSTAMP:20240510T064618Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T160000
 DTEND;TZID=Europe/Paris:20260713T170000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-6@urban7d
-DTSTAMP:20240215T081436Z
+DTSTAMP:20250921T135833Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T170000
 DTEND;TZID=Europe/Paris:20260713T180000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-7@urban7d
-DTSTAMP:20250930T065533Z
+DTSTAMP:20250924T113433Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260714T090000
 DTEND;TZID=Europe/Paris:20260714T100000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-8@urban7d
-DTSTAMP:20250205T092506Z
+DTSTAMP:20240315T204608Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260714T100000
 DTEND;TZID=Europe/Paris:20260714T120000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-9@urban7d
-DTSTAMP:20241127T061157Z
+DTSTAMP:20240625T071203Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260714T120000
 DTEND;TZID=Europe/Paris:20260714T140000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-10@urban7d
-DTSTAMP:20250823T035524Z
+DTSTAMP:20241002T103204Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260714T140000
 DTEND;TZID=Europe/Paris:20260714T160000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-11@urban7d
-DTSTAMP:20250908T181814Z
+DTSTAMP:20250810T191733Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260714T160000
 DTEND;TZID=Europe/Paris:20260714T170000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-12@urban7d
-DTSTAMP:20240906T095853Z
+DTSTAMP:20250707T131426Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260714T170000
 DTEND;TZID=Europe/Paris:20260714T180000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-13@urban7d
-DTSTAMP:20250623T175750Z
+DTSTAMP:20240207T025325Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T090000
 DTEND;TZID=Europe/Paris:20260715T100000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-14@urban7d
-DTSTAMP:20241017T212019Z
+DTSTAMP:20240623T015834Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T100000
 DTEND;TZID=Europe/Paris:20260715T120000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-15@urban7d
-DTSTAMP:20240525T060223Z
+DTSTAMP:20241025T073931Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T120000
 DTEND;TZID=Europe/Paris:20260715T140000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-16@urban7d
-DTSTAMP:20250307T162048Z
+DTSTAMP:20250127T055117Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T140000
 DTEND;TZID=Europe/Paris:20260715T160000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-17@urban7d
-DTSTAMP:20240905T192932Z
+DTSTAMP:20250319T144646Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T160000
 DTEND;TZID=Europe/Paris:20260715T170000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-18@urban7d
-DTSTAMP:20250704T234539Z
+DTSTAMP:20250302T135353Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T170000
 DTEND;TZID=Europe/Paris:20260715T180000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-19@urban7d
-DTSTAMP:20250305T123623Z
+DTSTAMP:20250207T020740Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T090000
 DTEND;TZID=Europe/Paris:20260716T100000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-20@urban7d
-DTSTAMP:20250711T012441Z
+DTSTAMP:20250217T065722Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T100000
 DTEND;TZID=Europe/Paris:20260716T120000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-21@urban7d
-DTSTAMP:20240404T185605Z
+DTSTAMP:20241210T090028Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T120000
 DTEND;TZID=Europe/Paris:20260716T140000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-22@urban7d
-DTSTAMP:20250915T170206Z
+DTSTAMP:20250823T204942Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T140000
 DTEND;TZID=Europe/Paris:20260716T160000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-23@urban7d
-DTSTAMP:20250820T052924Z
+DTSTAMP:20250606T211136Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T160000
 DTEND;TZID=Europe/Paris:20260716T170000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-24@urban7d
-DTSTAMP:20240909T192947Z
+DTSTAMP:20250728T000511Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T170000
 DTEND;TZID=Europe/Paris:20260716T180000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-25@urban7d
-DTSTAMP:20240830T194454Z
+DTSTAMP:20241229T115457Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T180000
 DTEND;TZID=Europe/Paris:20260716T190000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-26@urban7d
-DTSTAMP:20250114T032104Z
+DTSTAMP:20251119T204513Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T090000
 DTEND;TZID=Europe/Paris:20260717T100000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-27@urban7d
-DTSTAMP:20240212T031708Z
+DTSTAMP:20240525T142116Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T100000
 DTEND;TZID=Europe/Paris:20260717T120000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-28@urban7d
-DTSTAMP:20240814T014413Z
+DTSTAMP:20240908T134932Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T120000
 DTEND;TZID=Europe/Paris:20260717T140000
 SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-29@urban7d
-DTSTAMP:20250709T084245Z
+DTSTAMP:20240102T015912Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T140000
 DTEND;TZID=Europe/Paris:20260717T160000
 SUMMARY:Stage encadrement
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:sangarne-enzo-s29-30@urban7d
-DTSTAMP:20250211T090238Z
+DTSTAMP:20251209T030858Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T160000
 DTEND;TZID=Europe/Paris:20260717T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-1@urban7d
+DTSTAMP:20240316T100526Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260803T090000
+DTEND;TZID=Europe/Paris:20260803T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-2@urban7d
+DTSTAMP:20241108T122248Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260803T100000
+DTEND;TZID=Europe/Paris:20260803T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-3@urban7d
+DTSTAMP:20251024T153006Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260803T130000
+DTEND;TZID=Europe/Paris:20260803T140000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-4@urban7d
+DTSTAMP:20250906T210120Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260803T140000
+DTEND;TZID=Europe/Paris:20260803T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-5@urban7d
+DTSTAMP:20240609T021532Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260803T170000
+DTEND;TZID=Europe/Paris:20260803T180000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-6@urban7d
+DTSTAMP:20240422T125912Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260804T094500
+DTEND;TZID=Europe/Paris:20260804T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-7@urban7d
+DTSTAMP:20240717T171213Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260804T100000
+DTEND;TZID=Europe/Paris:20260804T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-8@urban7d
+DTSTAMP:20250806T213807Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260804T130000
+DTEND;TZID=Europe/Paris:20260804T140000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-9@urban7d
+DTSTAMP:20240427T060248Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260804T140000
+DTEND;TZID=Europe/Paris:20260804T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-10@urban7d
+DTSTAMP:20240209T114144Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260804T160000
+DTEND;TZID=Europe/Paris:20260804T170000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-11@urban7d
+DTSTAMP:20240405T205013Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260804T170000
+DTEND;TZID=Europe/Paris:20260804T180000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-12@urban7d
+DTSTAMP:20251009T145148Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260805T090000
+DTEND;TZID=Europe/Paris:20260805T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-13@urban7d
+DTSTAMP:20241011T101312Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260805T100000
+DTEND;TZID=Europe/Paris:20260805T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-14@urban7d
+DTSTAMP:20251228T211800Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260805T130000
+DTEND;TZID=Europe/Paris:20260805T140000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-15@urban7d
+DTSTAMP:20240327T192501Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260805T140000
+DTEND;TZID=Europe/Paris:20260805T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-16@urban7d
+DTSTAMP:20251126T111727Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260805T170000
+DTEND;TZID=Europe/Paris:20260805T180000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-17@urban7d
+DTSTAMP:20250212T195715Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260806T094500
+DTEND;TZID=Europe/Paris:20260806T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-18@urban7d
+DTSTAMP:20250106T214057Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260806T100000
+DTEND;TZID=Europe/Paris:20260806T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-19@urban7d
+DTSTAMP:20240909T222140Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260806T130000
+DTEND;TZID=Europe/Paris:20260806T140000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-20@urban7d
+DTSTAMP:20240206T195049Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260806T140000
+DTEND;TZID=Europe/Paris:20260806T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-21@urban7d
+DTSTAMP:20240511T212107Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260806T160000
+DTEND;TZID=Europe/Paris:20260806T170000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-22@urban7d
+DTSTAMP:20250602T081150Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260806T170000
+DTEND;TZID=Europe/Paris:20260806T180000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-23@urban7d
+DTSTAMP:20250309T165111Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260807T090000
+DTEND;TZID=Europe/Paris:20260807T100000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-24@urban7d
+DTSTAMP:20250727T145458Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260807T100000
+DTEND;TZID=Europe/Paris:20260807T120000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-25@urban7d
+DTSTAMP:20250608T235751Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260807T130000
+DTEND;TZID=Europe/Paris:20260807T140000
+SUMMARY:Stage
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-26@urban7d
+DTSTAMP:20250316T153413Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260807T140000
+DTEND;TZID=Europe/Paris:20260807T160000
+SUMMARY:Stage encadrement
+END:VEVENT
+BEGIN:VEVENT
+UID:sangarne-enzo-s32-27@urban7d
+DTSTAMP:20240820T131731Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260807T160000
+DTEND;TZID=Europe/Paris:20260807T170000
 SUMMARY:Stage
 END:VEVENT
 END:VCALENDAR

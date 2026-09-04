@@ -1,0 +1,649 @@
+{
+  "BARON Corentin": {
+    "slug": "baron-corentin",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-05T18:00",
+        "end": "2026-08-05T23:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-06T18:00",
+        "end": "2026-08-06T23:00",
+        "day": 3
+      }
+    ]
+  },
+  "BOULARDET Lucas": {
+    "slug": "boulardet-lucas",
+    "events": []
+  },
+  "CARRERE Peïo": {
+    "slug": "carrere-peio",
+    "events": []
+  },
+  "CASTELLON Pascaline": {
+    "slug": "castellon-pascaline",
+    "events": [
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-08-08T13:00",
+        "end": "2026-08-08T18:30",
+        "day": 5
+      }
+    ]
+  },
+  "CONRAD - stage David": {
+    "slug": "conrad-stage-david",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-03T10:45",
+        "end": "2026-08-03T21:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-04T10:15",
+        "end": "2026-08-04T20:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-05T09:00",
+        "end": "2026-08-05T16:30",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-06T11:00",
+        "end": "2026-08-06T15:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-07T11:00",
+        "end": "2026-08-07T15:00",
+        "day": 4
+      }
+    ]
+  },
+  "CRUZEL Quentin": {
+    "slug": "cruzel-quentin",
+    "events": []
+  },
+  "DE NOUEL Maxime": {
+    "slug": "de-nouel-maxime",
+    "events": []
+  },
+  "DIVIEN Yohan": {
+    "slug": "divien-yohan",
+    "events": []
+  },
+  "DONAER Nicolas": {
+    "slug": "donaer-nicolas",
+    "events": []
+  },
+  "DOVINA Théo": {
+    "slug": "dovina-theo",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-05T16:30",
+        "end": "2026-08-06T00:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-07T18:00",
+        "end": "2026-08-08T00:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-09T08:45",
+        "end": "2026-08-09T16:00",
+        "day": 6
+      }
+    ]
+  },
+  "GACHET Melissa": {
+    "slug": "gachet-melissa",
+    "events": []
+  },
+  "HEBERT Jean Baptiste": {
+    "slug": "hebert-jean-baptiste",
+    "events": []
+  },
+  "JARGUEL Thomas": {
+    "slug": "jarguel-thomas",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-06T08:45",
+        "end": "2026-08-06T18:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-07T08:45",
+        "end": "2026-08-07T18:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-08T08:45",
+        "end": "2026-08-08T16:00",
+        "day": 5
+      }
+    ]
+  },
+  "KABUNDA NDEKE Marvyn": {
+    "slug": "kabunda-ndeke-marvyn",
+    "events": []
+  },
+  "LABEFODE Thomas": {
+    "slug": "labefode-thomas",
+    "events": [
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-03T09:00",
+        "end": "2026-08-03T10:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-03T10:00",
+        "end": "2026-08-03T12:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-03T12:00",
+        "end": "2026-08-03T13:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-03T14:00",
+        "end": "2026-08-03T16:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-03T16:00",
+        "end": "2026-08-03T17:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-03T17:00",
+        "end": "2026-08-03T18:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-04T09:00",
+        "end": "2026-08-04T10:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-04T10:00",
+        "end": "2026-08-04T12:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-04T12:00",
+        "end": "2026-08-04T13:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-04T14:00",
+        "end": "2026-08-04T16:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-04T17:00",
+        "end": "2026-08-04T18:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-05T09:45",
+        "end": "2026-08-05T10:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-05T10:00",
+        "end": "2026-08-05T12:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-05T12:00",
+        "end": "2026-08-05T13:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-05T14:00",
+        "end": "2026-08-05T16:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-05T16:00",
+        "end": "2026-08-05T17:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-05T17:00",
+        "end": "2026-08-05T18:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-06T09:00",
+        "end": "2026-08-06T10:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-06T10:00",
+        "end": "2026-08-06T12:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-06T12:00",
+        "end": "2026-08-06T13:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-06T14:00",
+        "end": "2026-08-06T16:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-06T17:00",
+        "end": "2026-08-06T18:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-07T09:45",
+        "end": "2026-08-07T10:00",
+        "day": 4
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-07T10:00",
+        "end": "2026-08-07T12:00",
+        "day": 4
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-07T12:00",
+        "end": "2026-08-07T13:00",
+        "day": 4
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-07T14:00",
+        "end": "2026-08-07T16:00",
+        "day": 4
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-07T16:00",
+        "end": "2026-08-07T17:00",
+        "day": 4
+      }
+    ]
+  },
+  "LOUIBA Yacine": {
+    "slug": "louiba-yacine",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-03T18:30",
+        "end": "2026-08-04T00:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-06T18:30",
+        "end": "2026-08-07T00:00",
+        "day": 3
+      }
+    ]
+  },
+  "MANGIN Etienne": {
+    "slug": "mangin-etienne",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-04T16:30",
+        "end": "2026-08-05T00:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-08T16:00",
+        "end": "2026-08-08T22:30",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-09T16:00",
+        "end": "2026-08-09T23:30",
+        "day": 6
+      }
+    ]
+  },
+  "MOSTEFA Yanis": {
+    "slug": "mostefa-yanis",
+    "events": []
+  },
+  "ORDONEZ GOMEZ Oceane": {
+    "slug": "ordonez-gomez-oceane",
+    "events": []
+  },
+  "PISTORE Remi": {
+    "slug": "pistore-remi",
+    "events": []
+  },
+  "PUJOL Mathieu": {
+    "slug": "pujol-mathieu",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-03T08:45",
+        "end": "2026-08-03T18:30",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-04T08:45",
+        "end": "2026-08-04T16:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-08-05T08:45",
+        "end": "2026-08-05T16:30",
+        "day": 2
+      }
+    ]
+  },
+  "RABII Mehdi": {
+    "slug": "rabii-mehdi",
+    "events": []
+  },
+  "SANGARNE Enzo": {
+    "slug": "sangarne-enzo",
+    "events": [
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-03T09:00",
+        "end": "2026-08-03T10:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-03T10:00",
+        "end": "2026-08-03T12:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-03T13:00",
+        "end": "2026-08-03T14:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-03T14:00",
+        "end": "2026-08-03T16:00",
+        "day": 0
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-03T17:00",
+        "end": "2026-08-03T18:00",
+        "day": 0
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-04T09:45",
+        "end": "2026-08-04T10:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-04T10:00",
+        "end": "2026-08-04T12:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-04T13:00",
+        "end": "2026-08-04T14:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-04T14:00",
+        "end": "2026-08-04T16:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-04T16:00",
+        "end": "2026-08-04T17:00",
+        "day": 1
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-04T17:00",
+        "end": "2026-08-04T18:00",
+        "day": 1
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-05T09:00",
+        "end": "2026-08-05T10:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-05T10:00",
+        "end": "2026-08-05T12:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-05T13:00",
+        "end": "2026-08-05T14:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-05T14:00",
+        "end": "2026-08-05T16:00",
+        "day": 2
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-05T17:00",
+        "end": "2026-08-05T18:00",
+        "day": 2
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-06T09:45",
+        "end": "2026-08-06T10:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-06T10:00",
+        "end": "2026-08-06T12:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-06T13:00",
+        "end": "2026-08-06T14:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-06T14:00",
+        "end": "2026-08-06T16:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-06T16:00",
+        "end": "2026-08-06T17:00",
+        "day": 3
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-06T17:00",
+        "end": "2026-08-06T18:00",
+        "day": 3
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-07T09:00",
+        "end": "2026-08-07T10:00",
+        "day": 4
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-07T10:00",
+        "end": "2026-08-07T12:00",
+        "day": 4
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-07T13:00",
+        "end": "2026-08-07T14:00",
+        "day": 4
+      },
+      {
+        "code": "STA-E",
+        "label": "Stage encadrement",
+        "start": "2026-08-07T14:00",
+        "end": "2026-08-07T16:00",
+        "day": 4
+      },
+      {
+        "code": "STAGE",
+        "label": "Stage",
+        "start": "2026-08-07T16:00",
+        "end": "2026-08-07T17:00",
+        "day": 4
+      }
+    ]
+  },
+  "TOPPAN Mattis": {
+    "slug": "toppan-mattis",
+    "events": []
+  },
+  "VASSANT Tiffany": {
+    "slug": "vassant-tiffany",
+    "events": []
+  },
+  "_meta": {
+    "source": "Excel",
+    "updated_at": "2026-09-04 13:47",
+    "excel_version": 0
+  }
+}

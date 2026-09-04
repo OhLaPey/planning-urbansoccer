@@ -1362,26 +1362,522 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s29-1@urban7d
-DTSTAMP:20250210T142057Z
+DTSTAMP:20250822T024040Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260713T090000
 DTEND;TZID=Europe/Paris:20260713T173000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s29-2@urban7d
-DTSTAMP:20251107T130249Z
+DTSTAMP:20241205T172408Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260715T111500
 DTEND;TZID=Europe/Paris:20260715T213000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:conrad-stage-david-s29-3@urban7d
-DTSTAMP:20240521T003749Z
+DTSTAMP:20250617T221018Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260716T114500
 DTEND;TZID=Europe/Paris:20260716T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s30-1@urban7d
+DTSTAMP:20250529T054811Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260720T111500
+DTEND;TZID=Europe/Paris:20260720T213000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s30-2@urban7d
+DTSTAMP:20241210T185950Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260721T110000
+DTEND;TZID=Europe/Paris:20260721T183000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s30-3@urban7d
+DTSTAMP:20250817T025526Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T114500
+DTEND;TZID=Europe/Paris:20260722T160000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s30-4@urban7d
+DTSTAMP:20240423T111101Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260722T190000
+DTEND;TZID=Europe/Paris:20260722T211000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s30-5@urban7d
+DTSTAMP:20241020T161228Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260723T114500
+DTEND;TZID=Europe/Paris:20260723T180500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s30-6@urban7d
+DTSTAMP:20240605T201138Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260724T113000
+DTEND;TZID=Europe/Paris:20260724T170000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 20/07 au 26/07\n⚽🎉 Semaine de stage pour Yohan et
+  Marvyn\n 🏆🥎 Cup Padel : P50 mercredi matin et P100 samedi soir
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s31-1@urban7d
+DTSTAMP:20240814T064135Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260727T114500
+DTEND;TZID=Europe/Paris:20260727T180500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s31-2@urban7d
+DTSTAMP:20240508T041825Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260728T100000
+DTEND;TZID=Europe/Paris:20260728T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s31-3@urban7d
+DTSTAMP:20240926T032800Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260729T114500
+DTEND;TZID=Europe/Paris:20260729T180500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s31-4@urban7d
+DTSTAMP:20241218T075141Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260730T114500
+DTEND;TZID=Europe/Paris:20260730T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s31-5@urban7d
+DTSTAMP:20250329T135604Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260731T114500
+DTEND;TZID=Europe/Paris:20260731T171000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s32-1@urban7d
+DTSTAMP:20250418T083853Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260803T104500
+DTEND;TZID=Europe/Paris:20260803T210000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s32-2@urban7d
+DTSTAMP:20240524T094632Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260804T101500
+DTEND;TZID=Europe/Paris:20260804T203000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s32-3@urban7d
+DTSTAMP:20240903T115228Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260805T090000
+DTEND;TZID=Europe/Paris:20260805T163000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s32-4@urban7d
+DTSTAMP:20240113T003904Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260806T110000
+DTEND;TZID=Europe/Paris:20260806T150000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s32-5@urban7d
+DTSTAMP:20250118T102349Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260807T110000
+DTEND;TZID=Europe/Paris:20260807T150000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-1@urban7d
+DTSTAMP:20240215T122657Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T114500
+DTEND;TZID=Europe/Paris:20260818T130000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-2@urban7d
+DTSTAMP:20250904T212929Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T130000
+DTEND;TZID=Europe/Paris:20260818T140000
+SUMMARY:COMMS
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-3@urban7d
+DTSTAMP:20250828T195839Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260818T140000
+DTEND;TZID=Europe/Paris:20260818T213000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-4@urban7d
+DTSTAMP:20250608T104844Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260819T114500
+DTEND;TZID=Europe/Paris:20260819T130000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-5@urban7d
+DTSTAMP:20241006T013506Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260819T130000
+DTEND;TZID=Europe/Paris:20260819T140000
+SUMMARY:COMMS
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-6@urban7d
+DTSTAMP:20250503T071459Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260819T140000
+DTEND;TZID=Europe/Paris:20260819T220000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-7@urban7d
+DTSTAMP:20241106T083931Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T114500
+DTEND;TZID=Europe/Paris:20260820T130000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-8@urban7d
+DTSTAMP:20250919T074705Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T130000
+DTEND;TZID=Europe/Paris:20260820T140000
+SUMMARY:COMMS
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-9@urban7d
+DTSTAMP:20250712T183500Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T140000
+DTEND;TZID=Europe/Paris:20260820T180000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s34-10@urban7d
+DTSTAMP:20240524T195429Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260821T113000
+DTEND;TZID=Europe/Paris:20260821T213500
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s35-1@urban7d
+DTSTAMP:20250130T095050Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260824T150000
+DTEND;TZID=Europe/Paris:20260824T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s35-2@urban7d
+DTSTAMP:20251123T012055Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T114500
+DTEND;TZID=Europe/Paris:20260825T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s35-3@urban7d
+DTSTAMP:20240924T204758Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260826T114500
+DTEND;TZID=Europe/Paris:20260826T170000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s35-4@urban7d
+DTSTAMP:20250513T123706Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T100000
+DTEND;TZID=Europe/Paris:20260827T180000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s35-5@urban7d
+DTSTAMP:20251127T191802Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260828T113000
+DTEND;TZID=Europe/Paris:20260828T170000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s36-1@urban7d
+DTSTAMP:20240802T194825Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260831T115000
+DTEND;TZID=Europe/Paris:20260831T160000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s36-2@urban7d
+DTSTAMP:20240909T190053Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260901T115000
+DTEND;TZID=Europe/Paris:20260901T170000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s36-3@urban7d
+DTSTAMP:20250915T202735Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260902T115000
+DTEND;TZID=Europe/Paris:20260902T170000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s36-4@urban7d
+DTSTAMP:20241005T124642Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260903T114500
+DTEND;TZID=Europe/Paris:20260903T213000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s36-5@urban7d
+DTSTAMP:20250624T020255Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260904T114500
+DTEND;TZID=Europe/Paris:20260904T170000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s36-6@urban7d
+DTSTAMP:20241020T112517Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260905T093000
+DTEND;TZID=Europe/Paris:20260905T152000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 31/08 au 06/09\nSemaine de rentrée scolaire avec un n
+ ouveau prof (de padel) avec l'arrivée de Pierre\n🥎 Semaine de stages p
+ adel pour les adultes\n📊 Inventaire mardi matin\n🥎🏆 Cup Padel : P
+ 50 mercredi matin et P100 vendredi aprem\n⚽🥎🎉 Pré-rentrée EDF sa
+ medi matin avec distribution des tenues et les différents stands. Cela se
+ ra accompagné de découvertes de cours padel pour les parents et enfants 
+ de l'EDF\n🎂 Animateurs programmés sur les anniversaires\, à suivre si
+  les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s37-1@urban7d
+DTSTAMP:20251124T230610Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260907T090000
+DTEND;TZID=Europe/Paris:20260907T170000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s37-2@urban7d
+DTSTAMP:20240522T082449Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260908T170000
+DTEND;TZID=Europe/Paris:20260908T220000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s37-3@urban7d
+DTSTAMP:20250207T163154Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260909T114500
+DTEND;TZID=Europe/Paris:20260909T170000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s37-4@urban7d
+DTSTAMP:20240625T165814Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260910T114500
+DTEND;TZID=Europe/Paris:20260910T170000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s37-5@urban7d
+DTSTAMP:20241114T052646Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260911T114500
+DTEND;TZID=Europe/Paris:20260911T171500
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s37-6@urban7d
+DTSTAMP:20240104T095253Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260912T090000
+DTEND;TZID=Europe/Paris:20260912T154000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s38-1@urban7d
+DTSTAMP:20250730T190011Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260914T114500
+DTEND;TZID=Europe/Paris:20260914T183000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s38-2@urban7d
+DTSTAMP:20240414T154014Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260916T114500
+DTEND;TZID=Europe/Paris:20260916T213000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s38-3@urban7d
+DTSTAMP:20240517T212455Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260917T114500
+DTEND;TZID=Europe/Paris:20260917T220000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s38-4@urban7d
+DTSTAMP:20240828T090320Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260918T111500
+DTEND;TZID=Europe/Paris:20260918T143000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:conrad-stage-david-s38-5@urban7d
+DTSTAMP:20251011T144305Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260919T093000
+DTEND;TZID=Europe/Paris:20260919T153000
 SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR

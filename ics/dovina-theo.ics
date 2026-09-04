@@ -437,21 +437,7 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:dovina-theo-s28-3@urban7d
-DTSTAMP:20250520T230845Z
-SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260710T173000
-DTEND;TZID=Europe/Paris:20260711T000000
-SUMMARY:Vie de centre
-DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
- homas\n🥎 Encore quelques cours co de padel de rattrapage\n⚽🇫🇷
- 🔥 On va faire un soirée BBQ pour le potentiel 1/4 des bleus\n🏆🥎 
- Cup Padel : P50 lundi aprem\, P25 mercredi aprem et tournoi avec bbq vendr
- edi soir\n🎂 Des animateurs sont prévus sur les anniversaires. On verra
-  si les créneaux sont réservés
-END:VEVENT
-BEGIN:VEVENT
-UID:dovina-theo-s28-4@urban7d
-DTSTAMP:20250820T024045Z
+DTSTAMP:20250925T184226Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260712T160000
 DTEND;TZID=Europe/Paris:20260712T233000
@@ -465,26 +451,171 @@ DESCRIPTION:Planning 06/07 au 12/07\n⚽ Semaine de stage pour Nicolas et T
 END:VEVENT
 BEGIN:VEVENT
 UID:dovina-theo-s29-1@urban7d
-DTSTAMP:20240927T045941Z
+DTSTAMP:20240321T154530Z
 SEQUENCE:0
-DTSTART;TZID=Europe/Paris:20260716T190000
+DTSTART;TZID=Europe/Paris:20260716T180000
 DTEND;TZID=Europe/Paris:20260717T000000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:dovina-theo-s29-2@urban7d
-DTSTAMP:20251212T015351Z
+DTSTAMP:20240102T145256Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260717T184500
 DTEND;TZID=Europe/Paris:20260718T000000
 SUMMARY:Vie de centre
+DESCRIPTION:Planning 13/07 au 19/07\n⚽ Semaine de stage pour Enzo\n🇫
+ 🇷⚽️🔥 On va faire un soirée BBQ pour la potentielle demi des ble
+ us mardi soir\n🔄 Nicolas en prêt à Montaudran jeudi en journée\n🥎
+ 🏆 Cup Padel : P25M samedi matin
 END:VEVENT
 BEGIN:VEVENT
 UID:dovina-theo-s29-3@urban7d
-DTSTAMP:20240131T101458Z
+DTSTAMP:20241103T012628Z
 SEQUENCE:0
 DTSTART;TZID=Europe/Paris:20260719T160000
 DTEND;TZID=Europe/Paris:20260719T233000
+SUMMARY:[Remplacé par Maxime] Vie de centre
+DESCRIPTION:Remplacé par DE NOUEL Maxime\nPlanning 13/07 au 19/07\n⚽ Sem
+ aine de stage pour Enzo\n🇫🇷⚽️🔥 On va faire un soirée BBQ pou
+ r la potentielle demi des bleus mardi soir\n🔄 Nicolas en prêt à Monta
+ udran jeudi en journée\n🥎🏆 Cup Padel : P25M samedi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s31-1@urban7d
+DTSTAMP:20240717T185852Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260728T180000
+DTEND;TZID=Europe/Paris:20260729T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s31-2@urban7d
+DTSTAMP:20251121T220519Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260731T173000
+DTEND;TZID=Europe/Paris:20260801T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s31-3@urban7d
+DTSTAMP:20240618T204013Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260801T160000
+DTEND;TZID=Europe/Paris:20260801T224500
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 27/07 au 02/08\n⚽ Pas de stage de foot cette semaine
+ \n🥎🏆Cup Padel : P25 lundi matin et P50 vendredi soir\n\n🏆⚽ Summ
+ er Cup mardi pour Yacine et Mehdi\n📊 Inventaire vendredi matin
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s32-1@urban7d
+DTSTAMP:20241228T234315Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260805T163000
+DTEND;TZID=Europe/Paris:20260806T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s32-2@urban7d
+DTSTAMP:20251201T021003Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260807T180000
+DTEND;TZID=Europe/Paris:20260808T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s32-3@urban7d
+DTSTAMP:20250212T161452Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260809T084500
+DTEND;TZID=Europe/Paris:20260809T160000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s33-1@urban7d
+DTSTAMP:20240603T182623Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260812T193000
+DTEND;TZID=Europe/Paris:20260813T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s33-2@urban7d
+DTSTAMP:20240102T143317Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260813T193000
+DTEND;TZID=Europe/Paris:20260814T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s33-3@urban7d
+DTSTAMP:20241013T065930Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260815T084500
+DTEND;TZID=Europe/Paris:20260815T160000
+SUMMARY:[Remplacé par Mattis] Vie de centre
+DESCRIPTION:Remplacé par TOPPAN Mattis
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s34-1@urban7d
+DTSTAMP:20250610T000907Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260820T190000
+DTEND;TZID=Europe/Paris:20260821T000000
+SUMMARY:[Remplacé par Thomas] Vie de centre
+DESCRIPTION:Remplacé par JARGUEL Thomas
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s34-2@urban7d
+DTSTAMP:20250720T013712Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260821T170000
+DTEND;TZID=Europe/Paris:20260822T000000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s35-1@urban7d
+DTSTAMP:20250320T163328Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260825T180000
+DTEND;TZID=Europe/Paris:20260826T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s35-2@urban7d
+DTSTAMP:20251031T053050Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260827T180000
+DTEND;TZID=Europe/Paris:20260827T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
+ , on en reparle\n⚽ Semaine de stage pour Marvyn\n🥎 Stage de Padel enf
+ ants lundi et jeudi\n🏆🥎 Cup Padel : P50 mercredi matin et P50M vendr
+ edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
+ réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:dovina-theo-s38-1@urban7d
+DTSTAMP:20250131T125615Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20260917T200000
+DTEND;TZID=Europe/Paris:20260918T000000
 SUMMARY:Vie de centre
 END:VEVENT
 END:VCALENDAR
