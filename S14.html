@@ -581,6 +581,35 @@
                        background: rgba(255,60,60,0.12); border: 1px solid rgba(255,80,80,0.55);
                        color: #ff6666; font-size: 13px; line-height: 1.45; font-weight: 500; }
         .fb-warning a { color: #ff9999; text-decoration: underline; word-break: break-all; }
+        .staff-filter { display: flex; gap: 6px; align-items: center; margin: 6px 0 10px; }
+        .staff-filter input { flex: 1; padding: 8px 12px; background: rgba(255,255,255,0.05);
+                               border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+                               color: #fff; font-size: 13px; font-family: inherit; outline: none; }
+        .staff-filter input:focus { border-color: rgba(255,102,0,0.5); }
+        .staff-filter button { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+                                border-radius: 6px; color: #ccc; padding: 6px 12px; font-size: 14px;
+                                cursor: pointer; font-family: inherit; }
+        .staff-filter button:hover { background: rgba(255,102,0,0.15); color: #fff; }
+        .timeline-row.hidden-by-filter { display: none; }
+        @media print {
+            body { background: #fff !important; color: #000 !important; }
+            .top-bar, .fb-warning, .week-selector, .view-toggle, .day-tabs,
+            .staff-filter, .no-print, #admin-toolbar, .save-edits-btn,
+            .modal-overlay, .cal-chooser-overlay, .meta-note { display: none !important; }
+            .container { max-width: none !important; padding: 0 !important; }
+            .container::after { display: none !important; }
+            .header h1, .header .subtitle { color: #000 !important; }
+            .header .dates { color: #444 !important; }
+            .timeline { background: #fff !important; }
+            .tl-name { color: #000 !important; font-weight: 600; }
+            .tl-bar { box-shadow: none !important; filter: none !important;
+                       print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .tl-grid-line { border-color: rgba(0,0,0,0.15) !important; }
+            .time-marker { color: #333 !important; }
+            .legend-item { color: #000 !important; }
+            /* Le body normal a font-size 14px, on garde une taille lisible en print */
+            @page { size: A4 landscape; margin: 10mm; }
+        }
     </style>
 </head>
 <body>
@@ -643,6 +672,11 @@
         <!-- ── Vue Journée (timeline) ── -->
         <div id="view-day">
             <div class="day-tabs" id="day-tabs"></div>
+            <div class="staff-filter no-print">
+                <input type="search" id="staff-filter-input" placeholder="🔍 Filtrer par staff…" autocomplete="off" />
+                <button type="button" id="staff-filter-clear" title="Effacer">×</button>
+                <button type="button" id="print-btn" title="Imprimer / PDF">🖨️</button>
+            </div>
             <div class="legend" id="legend"></div>
             <div class="timeline" id="timeline"></div>
         </div>
@@ -793,6 +827,11 @@
             var today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
             var idx = WEEK_DATES.indexOf(today);
             if (idx !== -1) currentDay = idx;
+            // Après 20h, on prépare probablement le lendemain : sauter à J+1
+            // si celui-ci est dans la même semaine (idx+1 valide).
+            if (idx !== -1 && now.getHours() >= 20 && idx + 1 < WEEK_DATES.length) {
+                currentDay = idx + 1;
+            }
         })();
         var currentView = 'day';
 
@@ -872,9 +911,40 @@
 
         // Scroll active day tab into view
         setTimeout(function() {
-            var activeTab = dayTabsEl.querySelector('.day-tab.active');
+            var activeTab = dayTabsEl.querySelectorAll('.day-tab.active')[0];
             if (activeTab) activeTab.scrollIntoView({ inline: 'center', block: 'nearest' });
         }, 0);
+
+        // ── Filtre staff : cache les lignes dont le nom ne match pas ──
+        (function() {
+            var input = document.getElementById('staff-filter-input');
+            var clearBtn = document.getElementById('staff-filter-clear');
+            var printBtn = document.getElementById('print-btn');
+            if (!input) return;
+            function normalize(s) {
+                return (s || '').toString().toLowerCase()
+                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            }
+            function applyFilter() {
+                var q = normalize(input.value.trim());
+                var rows = document.querySelectorAll('#timeline .timeline-row');
+                rows.forEach(function(row) {
+                    var nameEl = row.querySelector('.tl-name');
+                    if (!nameEl) return; // ligne d'en-tête (time markers)
+                    var full = nameEl.getAttribute('title') || '';
+                    var disp = nameEl.textContent || '';
+                    var match = !q || normalize(full).indexOf(q) !== -1 || normalize(disp).indexOf(q) !== -1;
+                    row.classList.toggle('hidden-by-filter', !match);
+                });
+            }
+            input.addEventListener('input', applyFilter);
+            input.addEventListener('keydown', function(e) { if (e.key === 'Escape') { input.value = ''; applyFilter(); } });
+            if (clearBtn) clearBtn.addEventListener('click', function() { input.value = ''; applyFilter(); input.focus(); });
+            if (printBtn) printBtn.addEventListener('click', function() { window.print(); });
+            // Re-appliquer le filtre à chaque re-render de la timeline
+            var origRender = window.renderTimeline;
+            window.__reapplyStaffFilter = applyFilter;
+        })();
 
         // ── Legend ── Build code-to-label map from all events
         var CODE_LABELS = {};
@@ -1115,6 +1185,9 @@
             });
 
             tl.appendChild(inner);
+
+            // Ré-appliquer le filtre staff après chaque re-render
+            if (typeof window.__reapplyStaffFilter === 'function') window.__reapplyStaffFilter();
 
             // Auto-scroll to current hour if viewing today + draw now-line
             var _now = new Date();
