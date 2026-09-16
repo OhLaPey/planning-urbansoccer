@@ -630,6 +630,7 @@
             <a href="#" class="week-tab active" data-end="2026-09-06">S36</a>
             <a href="S37.html" class="week-tab" data-end="2026-09-13">S37</a>
             <a href="S38.html" class="week-tab" data-end="2026-09-20">S38</a>
+            <a href="S39.html" class="week-tab" data-end="2026-09-27">S39</a>
         </div>
 
         <div class="week-notes" id="week-notes"></div>
@@ -796,7 +797,39 @@
         var currentView = 'day';
 
         function getColor(code) { return COLORS[code] || DEFAULT_C; }
-        function getFirstName(n) { var p=n.split(' '); for(var i=0;i<p.length;i++){ if(p[i]!==p[i].toUpperCase()) return p.slice(i).join(' '); } return p[p.length-1]; }
+        function _rawFirstName(n) { var p=n.split(' '); for(var i=0;i<p.length;i++){ if(p[i]!==p[i].toUpperCase()) return p.slice(i).join(' '); } return p[p.length-1]; }
+        function _lastNameInitial(n) {
+            // Prend la première partie du nom qui est en MAJUSCULES (le nom de famille).
+            var p = n.split(' ');
+            for (var i = 0; i < p.length; i++) {
+                if (p[i] && p[i] === p[i].toUpperCase()) return p[i].charAt(0);
+            }
+            return (p[0] || '').charAt(0);
+        }
+        // Précalcule un mapping fullName -> displayName. Si deux staffs ont
+        // le même prénom, on distingue par l'initiale du nom (ex. "Pierre G.").
+        var _displayNames = (function() {
+            var byFirst = {};
+            Object.keys(DATA).forEach(function(n) {
+                if (n === '_codeNames' || n === '_meta') return;
+                var f = _rawFirstName(n);
+                (byFirst[f] = byFirst[f] || []).push(n);
+            });
+            var map = {};
+            Object.keys(byFirst).forEach(function(f) {
+                var names = byFirst[f];
+                if (names.length === 1) {
+                    map[names[0]] = f;
+                } else {
+                    names.forEach(function(n) {
+                        var initial = _lastNameInitial(n);
+                        map[n] = initial ? f + ' ' + initial + '.' : f;
+                    });
+                }
+            });
+            return map;
+        })();
+        function getFirstName(n) { return _displayNames[n] || _rawFirstName(n); }
 
         // ── Replacement matching ──
         function getReplacements() {

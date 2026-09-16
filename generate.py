@@ -1386,7 +1386,39 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
         var currentView = 'day';
 
         function getColor(code) {{ return COLORS[code] || DEFAULT_C; }}
-        function getFirstName(n) {{ var p=n.split(' '); for(var i=0;i<p.length;i++){{ if(p[i]!==p[i].toUpperCase()) return p.slice(i).join(' '); }} return p[p.length-1]; }}
+        function _rawFirstName(n) {{ var p=n.split(' '); for(var i=0;i<p.length;i++){{ if(p[i]!==p[i].toUpperCase()) return p.slice(i).join(' '); }} return p[p.length-1]; }}
+        function _lastNameInitial(n) {{
+            // Prend la première partie du nom qui est en MAJUSCULES (le nom de famille).
+            var p = n.split(' ');
+            for (var i = 0; i < p.length; i++) {{
+                if (p[i] && p[i] === p[i].toUpperCase()) return p[i].charAt(0);
+            }}
+            return (p[0] || '').charAt(0);
+        }}
+        // Précalcule un mapping fullName -> displayName. Si deux staffs ont
+        // le même prénom, on distingue par l'initiale du nom (ex. "Pierre G.").
+        var _displayNames = (function() {{
+            var byFirst = {{}};
+            Object.keys(DATA).forEach(function(n) {{
+                if (n === '_codeNames' || n === '_meta') return;
+                var f = _rawFirstName(n);
+                (byFirst[f] = byFirst[f] || []).push(n);
+            }});
+            var map = {{}};
+            Object.keys(byFirst).forEach(function(f) {{
+                var names = byFirst[f];
+                if (names.length === 1) {{
+                    map[names[0]] = f;
+                }} else {{
+                    names.forEach(function(n) {{
+                        var initial = _lastNameInitial(n);
+                        map[n] = initial ? f + ' ' + initial + '.' : f;
+                    }});
+                }}
+            }});
+            return map;
+        }})();
+        function getFirstName(n) {{ return _displayNames[n] || _rawFirstName(n); }}
 
         // ── Replacement matching ──
         function getReplacements() {{
