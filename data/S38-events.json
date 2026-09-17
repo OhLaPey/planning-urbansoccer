@@ -485,15 +485,15 @@
       {
         "code": "ANNIV",
         "label": "Anniversaire",
-        "start": "2026-09-19T13:30",
-        "end": "2026-09-19T19:30",
+        "start": "2026-09-19T15:15",
+        "end": "2026-09-19T17:15",
         "day": 5
       },
       {
         "code": "VDC",
         "label": "Vie de centre",
-        "start": "2026-09-19T19:30",
-        "end": "2026-09-19T21:30",
+        "start": "2026-09-19T17:15",
+        "end": "2026-09-19T18:30",
         "day": 5
       },
       {
@@ -640,7 +640,7 @@
   },
   "_meta": {
     "source": "Modif admin",
-    "updated_at": "2026-09-16 18:50",
+    "updated_at": "2026-09-17 18:28",
     "excel_version": 0
   }
 }
