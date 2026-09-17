@@ -1518,17 +1518,26 @@
                 body.innerHTML = '<div class="no-events">Repos cette semaine</div>';
             } else {
                 // Total weekly hours footer (brut / net)
-                var totalH = computeWeeklyHours(emp);
+                var totalH = computeWeeklyHours(emp, name);
                 var footer = document.createElement('div');
                 footer.className = 'modal-hours-total';
-                if (totalH.pause > 0) {
-                    footer.innerHTML =
-                        '<div class="hours-line">Heures brut : <strong>' + formatHours(totalH.brut) + '</strong></div>' +
-                        '<div class="hours-line pause">Pauses (20min / 6h) : <strong>−' + formatHours(totalH.pause) + '</strong></div>' +
-                        '<div class="hours-line net">Heures net : <strong>' + formatHours(totalH.net) + '</strong></div>';
+                var lines = [];
+                if (totalH.replRemoved > 0 || totalH.replAdded > 0) {
+                    lines.push('<div class="hours-line">Créneaux propres : <strong>' + formatHours(totalH.brutOwn) + '</strong></div>');
+                    if (totalH.replAdded > 0) lines.push('<div class="hours-line" style="color:#51cf66;">Remplaçant : <strong>+' + formatHours(totalH.replAdded) + '</strong></div>');
+                    if (totalH.replRemoved > 0) lines.push('<div class="hours-line" style="color:#ff6b6b;">Remplacé : <strong>−' + formatHours(totalH.replRemoved) + '</strong></div>');
+                    lines.push('<div class="hours-line">Heures brut effectives : <strong>' + formatHours(totalH.brut) + '</strong></div>');
                 } else {
-                    footer.innerHTML = 'Total semaine : <strong>' + formatHours(totalH.brut) + '</strong>';
+                    lines.push('<div class="hours-line">Heures brut : <strong>' + formatHours(totalH.brut) + '</strong></div>');
                 }
+                if (totalH.pause > 0) {
+                    lines.push('<div class="hours-line pause">Pauses (20min / 6h) : <strong>−' + formatHours(totalH.pause) + '</strong></div>');
+                    lines.push('<div class="hours-line net">Heures net : <strong>' + formatHours(totalH.net) + '</strong></div>');
+                } else if (!(totalH.replRemoved > 0 || totalH.replAdded > 0)) {
+                    // Cas simple : ni pause ni remplacement — on avait juste un total
+                    lines = ['Total semaine : <strong>' + formatHours(totalH.brut) + '</strong>'];
+                }
+                footer.innerHTML = lines.join('');
                 body.appendChild(footer);
             }
 
@@ -1543,15 +1552,61 @@
         }
 
         // ── Compute weekly hours per employee and display badges ──
-        function computeWeeklyHours(emp) {
-            var brut = 0;
+        // Retourne l'ajustement d'heures dû aux remplacements pour un staff :
+        //   removed = somme des heures où il est OUT (barre .replaced) — ces
+        //             heures sont dans ses events mais quelqu'un d'autre les fait
+        //   added   = somme des heures où il est IN (remplace qqun) et qu'il n'a
+        //             pas déjà de créneau propre couvrant cette plage
+        function computeReplacementDelta(emp, name) {
+            var removed = 0, added = 0;
+            if (!name) return { removed: 0, added: 0 };
+            var repls = getReplacements();
+            for (var i = 0; i < repls.length; i++) {
+                var r = repls[i];
+                var dateStr = r.date;
+                if (!dateStr) continue;
+                var rs = new Date(dateStr + 'T' + r.start).getTime();
+                var re = new Date(dateStr + 'T' + r.end).getTime();
+                if (re <= rs) re += 24 * 3600 * 1000; // passage minuit
+                if (name === r.out) {
+                    // Retire l'intersection avec ses propres events
+                    emp.events.forEach(function(ev) {
+                        var es = new Date(ev.start).getTime();
+                        var ee = new Date(ev.end).getTime();
+                        var interS = Math.max(es, rs), interE = Math.min(ee, re);
+                        if (interE > interS) removed += (interE - interS) / 3600000;
+                    });
+                } else if (name === r['in']) {
+                    // Ajoute la fenêtre du remplacement moins ce qu'il fait déjà
+                    var covered = 0;
+                    emp.events.forEach(function(ev) {
+                        var es = new Date(ev.start).getTime();
+                        var ee = new Date(ev.end).getTime();
+                        var interS = Math.max(es, rs), interE = Math.min(ee, re);
+                        if (interE > interS) covered += (interE - interS);
+                    });
+                    var winMs = re - rs;
+                    var extra = (winMs - covered) / 3600000;
+                    if (extra > 0) added += extra;
+                }
+            }
+            return { removed: removed, added: added };
+        }
+
+        function computeWeeklyHours(emp, name) {
+            var brutOwn = 0;
             emp.events.forEach(function(ev) {
                 var s = new Date(ev.start);
                 var e = new Date(ev.end);
-                brut += (e - s) / (1000 * 60 * 60);
+                brutOwn += (e - s) / (1000 * 60 * 60);
             });
+            var delta = computeReplacementDelta(emp, name);
+            var brut = brutOwn - delta.removed + delta.added;
             var pauseH = computeWeeklyPause(emp);
-            return { brut: brut, net: brut - pauseH, pause: pauseH };
+            return {
+                brut: brut, net: brut - pauseH, pause: pauseH,
+                brutOwn: brutOwn, replRemoved: delta.removed, replAdded: delta.added
+            };
         }
         // Compute total pause deduction for an employee's week.
         // Rule: per day, merge consecutive/overlapping shifts into continuous
@@ -1593,11 +1648,12 @@
         }
         function updateHoursBadges() {
             document.querySelectorAll('.employee-btn[data-name]').forEach(function(btn) {
-                var emp = DATA[btn.getAttribute('data-name')];
+                var name = btn.getAttribute('data-name');
+                var emp = DATA[name];
                 if (!emp) return;
                 // Remove old badges
                 btn.querySelectorAll('.hours-badge').forEach(function(b) { b.remove(); });
-                var h = computeWeeklyHours(emp);
+                var h = computeWeeklyHours(emp, name);
                 var badge = document.createElement('span');
                 badge.className = 'badge hours-badge';
                 if (h.pause > 0) {
@@ -3142,13 +3198,108 @@
             if (el) el.remove();
         }
 
+        // ── RH / cohérence : détection de chevauchements et dépassement 48h ──
+        function checkOverlap(name, dateStr, startISO, endISO, ignoreEv) {
+            var emp = DATA[name];
+            if (!emp) return [];
+            var ns = new Date(startISO).getTime();
+            var ne = new Date(endISO).getTime();
+            var out = [];
+            emp.events.forEach(function(ev) {
+                if (ev === ignoreEv) return;
+                if (ev.start.substring(0, 10) !== dateStr.substring(0, 10)) return;
+                var es = new Date(ev.start).getTime();
+                var ee = new Date(ev.end).getTime();
+                if (es < ne && ee > ns) {
+                    out.push({ start: ev.start.substring(11,16), end: ev.end.substring(11,16), code: ev.code });
+                }
+            });
+            return out;
+        }
+
+        // Vérifie les fenêtres 7 jours glissants qui incluraient un nouveau
+        // créneau, en tenant compte des heures propres + effet des remplacements.
+        function check48hRolling(name, extraStartISO, extraEndISO) {
+            var emp = DATA[name];
+            if (!emp) return { worstMargin: null };
+            var extraHours = (new Date(extraEndISO).getTime() - new Date(extraStartISO).getTime()) / 3600000;
+            var extraDate = extraStartISO.substring(0, 10);
+            var target = new Date(extraDate + 'T00:00');
+            var worst = 999;
+            var worstWin = null;
+            for (var off = 0; off < 7; off++) {
+                var winStart = new Date(target); winStart.setDate(winStart.getDate() - (6 - off));
+                var winEnd = new Date(winStart); winEnd.setDate(winEnd.getDate() + 7);
+                var total = 0;
+                emp.events.forEach(function(ev) {
+                    var es = new Date(ev.start).getTime();
+                    var ee = new Date(ev.end).getTime();
+                    var interS = Math.max(es, winStart.getTime()), interE = Math.min(ee, winEnd.getTime());
+                    if (interE > interS) total += (interE - interS) / 3600000;
+                });
+                total += extraHours; // ajoute le nouveau créneau
+                var margin = 48 - total;
+                if (margin < worst) { worst = margin; worstWin = { start: winStart, end: winEnd, hours: total }; }
+            }
+            return { worstMargin: worst, worstWindow: worstWin };
+        }
+
+        // Petit dialogue "Continuer / Annuler" avec message HTML libre.
+        function showEditWarning(htmlMsg, onProceed, onCancel) {
+            var overlay = document.createElement('div');
+            overlay.className = 'confirm-overlay';
+            overlay.innerHTML =
+                '<div class="confirm-dialog">' +
+                    '<div class="confirm-icon">⚠️</div>' +
+                    '<div class="confirm-msg">' + htmlMsg + '</div>' +
+                    '<div class="confirm-actions">' +
+                        '<button class="btn-confirm-save">Continuer quand même</button>' +
+                        '<button class="btn-confirm-cancel">Annuler</button>' +
+                    '</div>' +
+                '</div>';
+            document.body.appendChild(overlay);
+            overlay.querySelector('.btn-confirm-save').onclick = function() { overlay.remove(); if (onProceed) onProceed(); };
+            overlay.querySelector('.btn-confirm-cancel').onclick = function() { overlay.remove(); if (onCancel) onCancel(); };
+            overlay.onclick = function(e) { if (e.target === overlay) { overlay.remove(); if (onCancel) onCancel(); } };
+        }
+
+        // Concatène les warnings applicables à un projet d'édition. Retourne
+        // null si RAS, sinon une string HTML prête à être injectée.
+        function buildEditWarnings(name, startISO, endISO, ignoreEv) {
+            var msgs = [];
+            var overlaps = checkOverlap(name, startISO.substring(0,10), startISO, endISO, ignoreEv);
+            if (overlaps.length) {
+                msgs.push('<strong>Chevauchement</strong> avec créneaux existants de ' + getFirstName(name) + ' : ' +
+                    overlaps.map(function(o) { return o.start + '–' + o.end + ' ' + o.code; }).join(', '));
+            }
+            var check = check48hRolling(name, startISO, endISO);
+            if (check.worstMargin !== null && check.worstMargin < 0) {
+                var w = check.worstWindow;
+                var fmt = function(d) { return String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0'); };
+                var end = new Date(w.end); end.setDate(end.getDate() - 1);
+                msgs.push('<strong>Dépassement 48h/7j</strong> sur ' + fmt(w.start) + ' → ' + fmt(end) +
+                    ' : ' + formatHours(w.hours) + ' (' + formatHours(-check.worstMargin) + ' au-dessus)');
+            }
+            return msgs.length ? msgs.map(function(m) { return '<div style="margin:6px 0;">' + m + '</div>'; }).join('') : null;
+        }
+
         function applyTimeEdit(empName, ev, newStart, newEnd) {
             var dateStr = ev.start.substring(0, 11);
-            ev.start = dateStr + newStart;
-            ev.end = dateStr + newEnd;
-            renderTimeline();
-            updateHoursBadges();
-            pushDataAfterEdit();
+            var newStartISO = dateStr + newStart;
+            var newEndISO = dateStr + newEnd;
+            function commit() {
+                ev.start = newStartISO;
+                ev.end = newEndISO;
+                renderTimeline();
+                updateHoursBadges();
+                pushDataAfterEdit();
+            }
+            var warn = buildEditWarnings(empName, newStartISO, newEndISO, ev);
+            if (warn) {
+                showEditWarning(warn, commit);
+            } else {
+                commit();
+            }
         }
 
         function pushDataToGitHub(cb) {
