@@ -2723,6 +2723,35 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             return getToken();
         }}
 
+        // ── Patterns de remplacement : mémoire locale des paires OUT→IN ──
+        // Format en localStorage : {{ "NOM OUT": {{ "NOM IN": count, … }}, … }}
+        var REPL_PATTERN_KEY = 'planning-repl-patterns-v1';
+        function loadReplPatterns() {{
+            var patterns = {{}};
+            try {{
+                var stored = localStorage.getItem(REPL_PATTERN_KEY);
+                if (stored) patterns = JSON.parse(stored) || {{}};
+            }} catch (e) {{ patterns = {{}}; }}
+            // Enrichit avec les remplacements de la semaine courante (garantit
+            // qu'un remplacement déjà fait est mis en avant même sans historique).
+            var repls = (notesWork && notesWork.replacements) || [];
+            repls.forEach(function(r) {{
+                if (!r.out || !r['in']) return;
+                if (!patterns[r.out]) patterns[r.out] = {{}};
+                if (!patterns[r.out][r['in']]) patterns[r.out][r['in']] = 0.5;
+            }});
+            return patterns;
+        }}
+        function bumpReplPattern(out, inn) {{
+            if (!out || !inn) return;
+            var stored;
+            try {{ stored = JSON.parse(localStorage.getItem(REPL_PATTERN_KEY) || '{{}}'); }}
+            catch (e) {{ stored = {{}}; }}
+            if (!stored[out]) stored[out] = {{}};
+            stored[out][inn] = (stored[out][inn] || 0) + 1;
+            try {{ localStorage.setItem(REPL_PATTERN_KEY, JSON.stringify(stored)); }} catch (e) {{ /* quota ou disabled */ }}
+        }}
+
         function renderNotes() {{
             var data = notesWork;
             notesEl.innerHTML = '';
@@ -2901,7 +2930,18 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             addReplBtn.textContent = '+ Ajouter un remplacement';
             addReplBtn.onclick = function() {{
                 // Build employee list from DATA
-                var names = Object.keys(DATA).filter(function(n) {{ return n !== '_codeNames'; }}).sort();
+                var names = Object.keys(DATA).filter(function(n) {{ return n !== '_codeNames' && n !== '_meta'; }}).sort();
+                // Charge les patterns "OUT → IN" mémorisés (semaine courante + localStorage)
+                var replPatterns = loadReplPatterns();
+                function sortInByPattern(outName) {{
+                    if (!outName) return names.slice();
+                    var counts = replPatterns[outName] || {{}};
+                    return names.slice().sort(function(a, b) {{
+                        var ca = counts[a] || 0, cb = counts[b] || 0;
+                        if (ca !== cb) return cb - ca; // fréquence desc
+                        return a.localeCompare(b);     // puis alpha
+                    }});
+                }}
                 var form = document.createElement('div');
                 form.className = 'note-card replacement';
                 form.innerHTML = '<div class="note-header"><span class="note-label replacement">Nouveau remplacement</span></div>';
@@ -2955,19 +2995,31 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                 outRow.appendChild(outSel);
                 formBody.appendChild(outRow);
 
-                // "In" row
+                // "In" row \u2014 r\u00e9ordonn\u00e9 selon les patterns quand outSel change
                 var inRow = document.createElement('div');
                 inRow.className = 'repl-row';
                 inRow.innerHTML = '<label>Entre</label>';
                 var inSel = document.createElement('select');
-                var inDef = document.createElement('option');
-                inDef.value = ''; inDef.textContent = 'Rempla\u00e7ant(e)...';
-                inSel.appendChild(inDef);
-                names.forEach(function(n) {{
-                    var opt = document.createElement('option');
-                    opt.value = n; opt.textContent = n;
-                    inSel.appendChild(opt);
-                }});
+                function refreshInOptions() {{
+                    var prev = inSel.value;
+                    inSel.innerHTML = '';
+                    var inDef = document.createElement('option');
+                    inDef.value = ''; inDef.textContent = 'Rempla\u00e7ant(e)...';
+                    inSel.appendChild(inDef);
+                    var counts = outSel.value ? (replPatterns[outSel.value] || {{}}) : {{}};
+                    var ordered = sortInByPattern(outSel.value);
+                    ordered.forEach(function(n) {{
+                        if (n === outSel.value) return; // pas se remplacer soi-m\u00eame
+                        var opt = document.createElement('option');
+                        opt.value = n;
+                        var c = counts[n] || 0;
+                        opt.textContent = c > 0 ? n + ' (x' + c + ')' : n;
+                        if (n === prev) opt.selected = true;
+                        inSel.appendChild(opt);
+                    }});
+                }}
+                refreshInOptions();
+                outSel.addEventListener('change', refreshInOptions);
                 inRow.appendChild(inSel);
                 formBody.appendChild(inRow);
 
@@ -3030,6 +3082,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                         start: startInput.value,
                         end: endInput.value
                     }});
+                    bumpReplPattern(outSel.value, inSel.value);
                     notesDirty = true; saveNotesLocal();
                     renderNotes();
                     renderTimeline();
@@ -3754,7 +3807,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                 btn.className = 'save-edits-btn saving';
             }}
             var statusEl = document.getElementById('edit-status');
-            pushDataToGitHub(function(ok, updatedAt) {{
+            pushDataToGitHub(function(ok, updatedAt, reason) {{
                 if (ok) {{
                     _editsDirty = false;
                     updateUnsavedBanner();
@@ -3770,6 +3823,12 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                         btn.textContent = 'Sauvegard\u00e9 \u2714';
                         btn.className = 'save-edits-btn saved';
                         setTimeout(function() {{ updateSaveButton(); }}, 2000);
+                    }}
+                }} else if (reason === 'collision') {{
+                    if (btn) {{
+                        btn.disabled = false;
+                        btn.textContent = 'Enregistrer';
+                        btn.className = 'save-edits-btn dirty';
                     }}
                 }} else {{
                     if (btn) {{
@@ -3892,6 +3951,12 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             }}
         }}
 
+        // Timestamp du dernier state connu de la semaine côté serveur.
+        // Initialisé au moment où la page est rendue, mis à jour après chaque
+        // save réussi. Permet de détecter qu'un autre admin a poussé pendant
+        // qu'on éditait (voir showEditWarning collision dans pushDataToGitHub).
+        var _lastKnownUpdatedAt = (DATA && DATA._meta && DATA._meta.updated_at) || null;
+
         function pushDataToGitHub(cb) {{
             var token = ensureToken();
             if (!token) {{ cb(false); return; }}
@@ -3920,20 +3985,14 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             var dataPath = 'data/S{week_num}-events.json';
             var apiUrl = 'https://api.github.com/repos/' + REPO + '/contents/' + dataPath;
 
-            // Get current SHA
-            fetch(apiUrl, {{
-                headers: {{ 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }}
-            }})
-            .then(function(r) {{ return r.ok ? r.json() : {{ sha: null }}; }})
-            .then(function(file) {{
+            function doPut(fileSha) {{
                 var body = {{
                     message: 'MAJ cr\u00e9neaux S{week_num} depuis la page',
                     content: content,
                     branch: 'main'
                 }};
-                if (file.sha) body.sha = file.sha;
-
-                return fetch(apiUrl, {{
+                if (fileSha) body.sha = fileSha;
+                fetch(apiUrl, {{
                     method: 'PUT',
                     headers: {{
                         'Authorization': 'Bearer ' + token,
@@ -3941,14 +4000,49 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                         'Content-Type': 'application/json'
                     }},
                     body: JSON.stringify(body)
-                }});
+                }})
+                .then(function(r) {{
+                    var ok = r.ok;
+                    setTimeout(function() {{
+                        if (ok) _lastKnownUpdatedAt = updatedAt;
+                        cb(ok, updatedAt);
+                    }}, 0);
+                }})
+                .catch(function() {{ setTimeout(function() {{ cb(false); }}, 0); }});
+            }}
+
+            // Get current SHA + d\u00e9tecter les collisions d'\u00e9dition (quelqu'un
+            // d'autre a pouss\u00e9 une modif depuis qu'on a charg\u00e9 la page).
+            fetch(apiUrl, {{
+                headers: {{ 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }}
             }})
-            .then(function(r) {{
-                // Schedule the success/error callback outside the promise chain so
-                // a throw inside cb() doesn't fall into the catch() and trigger a
-                // second cb(false).
-                var ok = r.ok;
-                setTimeout(function() {{ cb(ok, updatedAt); }}, 0);
+            .then(function(r) {{ return r.ok ? r.json() : {{ sha: null }}; }})
+            .then(function(file) {{
+                var serverUpdatedAt = null;
+                try {{
+                    if (file && file.content) {{
+                        var decoded = decodeURIComponent(escape(atob(file.content.replace(/\\n/g, ''))));
+                        var parsed = JSON.parse(decoded);
+                        serverUpdatedAt = (parsed._meta || {{}}).updated_at || null;
+                    }}
+                }} catch (e) {{ /* ignore */ }}
+
+                var baseline = _lastKnownUpdatedAt || (DATA._meta || {{}}).updated_at || null;
+                var collisionDetected = serverUpdatedAt && baseline && serverUpdatedAt !== baseline;
+
+                if (collisionDetected) {{
+                    showEditWarning(
+                        '<strong>Modif conflictuelle d\u00e9tect\u00e9e</strong><br>' +
+                        'Quelqu\\'un a modifi\u00e9 cette semaine (MAJ ' + serverUpdatedAt + ') ' +
+                        'pendant que tu \u00e9ditais (charg\u00e9 \u00e0 ' + baseline + ').<br><br>' +
+                        '<em>Continuer</em> \u00e9crasera ces modifs. ' +
+                        '<em>Annuler</em> te laisse recharger la page pour repartir de la version fra\u00eeche.',
+                        function() {{ doPut(file.sha); }},
+                        function() {{ setTimeout(function() {{ cb(false, null, 'collision'); }}, 0); }}
+                    );
+                }} else {{
+                    doPut(file.sha);
+                }}
             }})
             .catch(function() {{ setTimeout(function() {{ cb(false); }}, 0); }});
         }}
