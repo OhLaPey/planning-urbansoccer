@@ -1,0 +1,20 @@
+{
+  "comment": "",
+  "updates": [],
+  "replacements": [
+    {
+      "date": "2026-09-26",
+      "out": "CRUZEL Quentin",
+      "in": "CARRERE Peïo",
+      "start": "15:30",
+      "end": "22:30"
+    },
+    {
+      "date": "2026-09-27",
+      "out": "CARRERE Peïo",
+      "in": "CRUZEL Quentin",
+      "start": "08:45",
+      "end": "17:30"
+    }
+  ]
+}
