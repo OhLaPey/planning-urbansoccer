@@ -2653,8 +2653,14 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                 }} else if (a.type === 'schedule') {{
                     var staff = a.staff;
                     if (DATA[staff]) {{
-                        var startISO = dateStr + 'T' + (a.start || '09:00');
-                        var endISO = dateStr + 'T' + (a.end || '17:00');
+                        var aStart = a.start || '09:00';
+                        var aEnd = a.end || '17:00';
+                        var startISO = dateStr + 'T' + aStart;
+                        // Si l'heure de fin est <= début → créneau passe minuit,
+                        // on bumpe la date de fin au lendemain (sinon DTEND<=DTSTART
+                        // dans l'ICS et iOS Calendar ignore le créneau).
+                        var endDatePrefix = (aEnd <= aStart) ? nextDayIsoPrefix(dateStr + 'T') : (dateStr + 'T');
+                        var endISO = endDatePrefix + aEnd;
                         var newStartT = new Date(startISO).getTime();
                         var newEndT = new Date(endISO).getTime();
                         // Apply non-overlap rule: the pasted MAJ takes priority over
@@ -3932,10 +3938,27 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             return msgs.length ? msgs.map(function(m) {{ return '<div style="margin:6px 0;">' + m + '</div>'; }}).join('') : null;
         }}
 
+        // Retourne le préfixe ISO "YYYY-MM-DDT" du lendemain de la date passée
+        // en préfixe (ex : "2026-09-25T" → "2026-09-26T"). Évite Date.toISOString
+        // pour ne pas être piégé par les fuseaux.
+        function nextDayIsoPrefix(datePrefix) {{
+            var p = datePrefix.substring(0, 10).split('-');
+            var d = new Date(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10));
+            d.setDate(d.getDate() + 1);
+            var y = d.getFullYear();
+            var m = String(d.getMonth() + 1).padStart(2, '0');
+            var day = String(d.getDate()).padStart(2, '0');
+            return y + '-' + m + '-' + day + 'T';
+        }}
+
         function applyTimeEdit(empName, ev, newStart, newEnd) {{
-            var dateStr = ev.start.substring(0, 11);
-            var newStartISO = dateStr + newStart;
-            var newEndISO = dateStr + newEnd;
+            var startPrefix = ev.start.substring(0, 11);
+            var newStartISO = startPrefix + newStart;
+            // Si l'heure de fin est <= l'heure de début, le créneau franchit
+            // minuit ; on positionne la date de fin au lendemain sinon iOS
+            // Calendar rejette l'event (DTEND <= DTSTART).
+            var endPrefix = (newEnd <= newStart) ? nextDayIsoPrefix(startPrefix) : startPrefix;
+            var newEndISO = endPrefix + newEnd;
             function commit() {{
                 ev.start = newStartISO;
                 ev.end = newEndISO;
