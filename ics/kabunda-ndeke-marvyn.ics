@@ -1425,4 +1425,12 @@ DESCRIPTION:Planning 24/08 au 30/08\nPotentielle soirée staff samedi soir\
  edi soir\n🎂 Retour des anniversaires\, à suivre si les créneaux sont 
  réservés
 END:VEVENT
+BEGIN:VEVENT
+UID:kabunda-ndeke-marvyn-s40-1@urban7d
+DTSTAMP:20240210T063503Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261004T134500
+DTEND;TZID=Europe/Paris:20261004T174500
+SUMMARY:Anniversaire
+END:VEVENT
 END:VCALENDAR
