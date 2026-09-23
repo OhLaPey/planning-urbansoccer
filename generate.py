@@ -581,7 +581,7 @@ def load_week_notes(week_num):
     return {"comment": "", "updates": []}
 
 
-def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, web_data=None):
+def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, web_data=None, all_codes=None):
     """Génère la page HTML avec preview timeline + vue individuelle + abonnement."""
     date_range = format_date_range(year, week_num)
 
@@ -600,6 +600,13 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
     meta_json = json.dumps(meta, ensure_ascii=False)
     colors_json = json.dumps(CODE_COLORS, ensure_ascii=False)
     default_color_json = json.dumps(DEFAULT_COLOR, ensure_ascii=False)
+    # Union de tous les codes rencontrés (historique + palette),
+    # embarqué comme ALL_CODES {code: label} pour peupler les sélecteurs.
+    all_codes_map = {c: c for c in CODE_COLORS}
+    if all_codes:
+        for c, l in all_codes.items():
+            all_codes_map[c] = l or c
+    all_codes_json = json.dumps(all_codes_map, ensure_ascii=False)
     notes_data = load_week_notes(week_num)
     notes_json = json.dumps(notes_data, ensure_ascii=False)
 
@@ -1394,6 +1401,7 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
         try {{ localStorage.removeItem('planning-edits-S{week_num}'); }} catch(e) {{}}
         var COLORS = {colors_json};
         var DEFAULT_C = {default_color_json};
+        var ALL_CODES = {all_codes_json};
         var DAYS = {day_labels_json};
         var DAYS_FULL = {day_labels_full_json};
         var WEEK_DATES = {week_dates_json};
@@ -2339,7 +2347,15 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
         var _dayMap = {{ 'lundi': 0, 'mardi': 1, 'mercredi': 2, 'jeudi': 3,
                          'vendredi': 4, 'samedi': 5, 'dimanche': 6 }};
         var _dayLabelsShort = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
-        var _codeList = Object.keys(COLORS);
+        // Union COLORS (palette) + ALL_CODES (tous les codes historiques) — évite
+        // que le sélecteur ne propose qu'une palette figée alors que les Excel
+        // sources contiennent des variantes (EV-LO LDC, VDC MONTAUDRAN, etc.).
+        var _codeList = (function() {{
+            var seen = {{}}, list = [];
+            Object.keys(COLORS).forEach(function(c) {{ if (!seen[c]) {{ seen[c]=1; list.push(c); }} }});
+            Object.keys(ALL_CODES || {{}}).forEach(function(c) {{ if (!seen[c]) {{ seen[c]=1; list.push(c); }} }});
+            return list.sort();
+        }})();
 
         function _findStaff(word) {{ return _nameMap[word.toLowerCase()] || null; }}
 
@@ -2498,10 +2514,12 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             WEEK_DATES.forEach(function(d, i) {{
                 dayOpts += '<option value="' + i + '">' + _dayLabelsShort[i] + ' ' + d.split('-')[2] + '</option>';
             }});
-            // Build code <option> list
+            // Build code <option> list — libellé au format "CODE — Label complet"
+            // pour reconnaître ANNIV / Anniversaire, EV-LO / Événement logistique…
             var codeOpts = '';
             _codeList.forEach(function(c) {{
-                codeOpts += '<option value="' + c + '">' + c + '</option>';
+                var lbl = (ALL_CODES && ALL_CODES[c] && ALL_CODES[c] !== c) ? (c + ' — ' + escHtml(ALL_CODES[c])) : c;
+                codeOpts += '<option value="' + c + '">' + lbl + '</option>';
             }});
 
             var overlay = document.createElement('div');
@@ -4623,6 +4641,35 @@ def main():
     for wn in all_weeks:
         all_week_notes[wn] = load_week_notes(wn)
 
+    # ── Collecter tous les codes rencontrés (Excel courant + JSON persistés) ──
+    # Le sélecteur "Activité" de l'éditeur les proposera tous.
+    all_codes = {}
+    for evts in all_employee_events.values():
+        for e in evts:
+            code = e.get("code")
+            if not code:
+                continue
+            all_codes.setdefault(code, e.get("label") or code)
+    # Compléter avec les codes des data/*-events.json déjà persistés (modifs web
+    # non couvertes par les Excel courants — notamment les codes composés que
+    # les admins ont saisis à la main).
+    for wn in all_weeks:
+        p = f"data/S{wn}-events.json"
+        if not os.path.exists(p):
+            continue
+        try:
+            with open(p, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            continue
+        for n, emp in existing.items():
+            if n.startswith("_") or not isinstance(emp, dict):
+                continue
+            for ev in emp.get("events", []):
+                code = ev.get("code")
+                if code:
+                    all_codes.setdefault(code, ev.get("label") or code)
+
     # ── Injecter les créneaux virtuels pour les remplaçants sans événement ce jour ──
     for wn in all_weeks:
         notes = all_week_notes.get(wn, {})
@@ -4753,9 +4800,9 @@ def main():
 
         # HTML — utiliser les données web si disponibles, sinon Excel
         if web_events:
-            html_content = generate_html(employees, week_num, year, all_weeks, excel_version=excel_ver, web_data=web_events)
+            html_content = generate_html(employees, week_num, year, all_weeks, excel_version=excel_ver, web_data=web_events, all_codes=all_codes)
         else:
-            html_content = generate_html(employees, week_num, year, all_weeks, excel_version=excel_ver)
+            html_content = generate_html(employees, week_num, year, all_weeks, excel_version=excel_ver, all_codes=all_codes)
         html_path = f"S{week_num}.html"
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(html_content)

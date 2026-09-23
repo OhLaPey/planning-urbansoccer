@@ -806,6 +806,7 @@
         try { localStorage.removeItem('planning-edits-S34'); } catch(e) {}
         var COLORS = {"VDC": {"bg": "rgba(255,102,0,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FOR-E": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FOR-P": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}, "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "ENT-M": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EDF-A": {"bg": "rgba(0,112,192,0.40)", "border": "#0070c0", "text": "#60b0ff"}, "EDF-B": {"bg": "rgba(0,112,192,0.40)", "border": "#0070c0", "text": "#60b0ff"}, "EDF-C": {"bg": "rgba(0,112,192,0.40)", "border": "#0070c0", "text": "#60b0ff"}, "COMMD": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-LO": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "VIS-M": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FORE": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FORP": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}};
         var DEFAULT_C = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"};
+        var ALL_CODES = {"VDC": "Vie de centre", "L-REG": "Régisseur League", "CUP-L": "Cup League", "CUP-R": "Cup Régisseur", "STAGE": "Stage", "STA-E": "Stage encadrement", "C-PAD": "Cours Padel", "PAD-A": "Padel animation", "ANNIV": "Anniversaire", "INVEN": "Inventaire", "MAL": "Maladie", "REU": "Réunion", "EV-RE": "Événement régisseur", "AIDE": "Aide", "P25M": "P25M", "PSG": "PSG", "L-ARB": "L-ARB", "FOR-E": "FOR-E", "FOR-P": "FOR-P", "STA-P": "Stage Padel", "ENT-M": "Entretien Ménage", "EDF-A": "EDF-A", "EDF-B": "EDF-B", "EDF-C": "EDF-C", "COMMD": "Commercialisation", "EV-LO": "Événement logistique", "VIS-M": "Visite médicale", "FORE": "Formation", "FORP": "Formation pratique", "EIA": "EIA", "TRAJE": "TRAJE", "L-REG PADEL": "L-REG PADEL", "EV-LO LDC": "EV-LO LDC", "AIDE ANNIV": "AIDE ANNIV", "COMMS": "COMMS", "EV-AN": "EV-AN", "AIDE - ANNIV": "AIDE - ANNIV", "VDC MONTAUDRAN": "VDC MONTAUDRAN", "L-ARB MONTAUDRAN": "L-ARB MONTAUDRAN", "CUP-A": "CUP-A", "ANNIV PADEL": "ANNIV PADEL", "FORE ANNIV": "FORE ANNIV", "FORP ANNIV": "FORP ANNIV", "FORP Baby": "FORP Baby", "FORP EDF": "FORP EDF", "FORP Anniv": "FORP Anniv", "FORE-ARB": "FORE-ARB", "FORP-ARB": "FORP-ARB", "FORE VDC": "FORE VDC", "FORP VDC": "FORP VDC", "FORE EDF": "FORE EDF"};
         var DAYS = ["Lun 17", "Mar 18", "Mer 19", "Jeu 20", "Ven 21", "Sam 22", "Dim 23"];
         var DAYS_FULL = ["Lundi 17/08", "Mardi 18/08", "Mercredi 19/08", "Jeudi 20/08", "Vendredi 21/08", "Samedi 22/08", "Dimanche 23/08"];
         var WEEK_DATES = ["2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23"];
@@ -1751,7 +1752,15 @@
         var _dayMap = { 'lundi': 0, 'mardi': 1, 'mercredi': 2, 'jeudi': 3,
                          'vendredi': 4, 'samedi': 5, 'dimanche': 6 };
         var _dayLabelsShort = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
-        var _codeList = Object.keys(COLORS);
+        // Union COLORS (palette) + ALL_CODES (tous les codes historiques) — évite
+        // que le sélecteur ne propose qu'une palette figée alors que les Excel
+        // sources contiennent des variantes (EV-LO LDC, VDC MONTAUDRAN, etc.).
+        var _codeList = (function() {
+            var seen = {}, list = [];
+            Object.keys(COLORS).forEach(function(c) { if (!seen[c]) { seen[c]=1; list.push(c); } });
+            Object.keys(ALL_CODES || {}).forEach(function(c) { if (!seen[c]) { seen[c]=1; list.push(c); } });
+            return list.sort();
+        })();
 
         function _findStaff(word) { return _nameMap[word.toLowerCase()] || null; }
 
@@ -1910,10 +1919,12 @@
             WEEK_DATES.forEach(function(d, i) {
                 dayOpts += '<option value="' + i + '">' + _dayLabelsShort[i] + ' ' + d.split('-')[2] + '</option>';
             });
-            // Build code <option> list
+            // Build code <option> list — libellé au format "CODE — Label complet"
+            // pour reconnaître ANNIV / Anniversaire, EV-LO / Événement logistique…
             var codeOpts = '';
             _codeList.forEach(function(c) {
-                codeOpts += '<option value="' + c + '">' + c + '</option>';
+                var lbl = (ALL_CODES && ALL_CODES[c] && ALL_CODES[c] !== c) ? (c + ' — ' + escHtml(ALL_CODES[c])) : c;
+                codeOpts += '<option value="' + c + '">' + lbl + '</option>';
             });
 
             var overlay = document.createElement('div');
