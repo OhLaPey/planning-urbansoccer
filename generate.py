@@ -600,12 +600,25 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
     meta_json = json.dumps(meta, ensure_ascii=False)
     colors_json = json.dumps(CODE_COLORS, ensure_ascii=False)
     default_color_json = json.dumps(DEFAULT_COLOR, ensure_ascii=False)
-    # Union de tous les codes rencontrés (historique + palette),
-    # embarqué comme ALL_CODES {code: label} pour peupler les sélecteurs.
-    all_codes_map = {c: c for c in CODE_COLORS}
+    # Union de tous les codes rencontrés (historique + palette), embarqué comme
+    # ALL_CODES {code: {label, count}} pour que le sélecteur puisse trier par
+    # fréquence décroissante. Les codes de la palette non vus dans l'historique
+    # ont count = 0 (donc en queue de liste).
+    all_codes_map = {c: {"label": c, "count": 0} for c in CODE_COLORS}
     if all_codes:
-        for c, l in all_codes.items():
-            all_codes_map[c] = l or c
+        for c, info in all_codes.items():
+            if isinstance(info, dict):
+                # nouveau format {label, count}
+                existing = all_codes_map.get(c)
+                if existing:
+                    existing["count"] = existing.get("count", 0) + info.get("count", 0)
+                    if info.get("label") and info["label"] != c:
+                        existing["label"] = info["label"]
+                else:
+                    all_codes_map[c] = {"label": info.get("label") or c, "count": info.get("count", 0)}
+            else:
+                # tolérance : ancien format {code: label}
+                all_codes_map[c] = {"label": info or c, "count": all_codes_map.get(c, {}).get("count", 0)}
     all_codes_json = json.dumps(all_codes_map, ensure_ascii=False)
     notes_data = load_week_notes(week_num)
     notes_json = json.dumps(notes_data, ensure_ascii=False)
@@ -2347,14 +2360,26 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
         var _dayMap = {{ 'lundi': 0, 'mardi': 1, 'mercredi': 2, 'jeudi': 3,
                          'vendredi': 4, 'samedi': 5, 'dimanche': 6 }};
         var _dayLabelsShort = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
-        // Union COLORS (palette) + ALL_CODES (tous les codes historiques) — évite
-        // que le sélecteur ne propose qu'une palette figée alors que les Excel
-        // sources contiennent des variantes (EV-LO LDC, VDC MONTAUDRAN, etc.).
+        // Union COLORS (palette) + ALL_CODES (codes historiques), triée par
+        // fréquence d'usage descendante (les plus utilisés d'abord). Ex-aequo
+        // départagés alphabétiquement pour rester stable entre régénérations.
+        // ALL_CODES peut être au nouveau format {{code: {{label, count}}}} ou à
+        // l'ancien format {{code: label}} — on tolère les deux.
+        function _codeMeta(c) {{
+            var entry = (ALL_CODES && ALL_CODES[c]) || null;
+            if (entry && typeof entry === 'object') return {{ label: entry.label || c, count: entry.count || 0 }};
+            if (typeof entry === 'string') return {{ label: entry || c, count: 0 }};
+            return {{ label: c, count: 0 }};
+        }}
         var _codeList = (function() {{
             var seen = {{}}, list = [];
             Object.keys(COLORS).forEach(function(c) {{ if (!seen[c]) {{ seen[c]=1; list.push(c); }} }});
             Object.keys(ALL_CODES || {{}}).forEach(function(c) {{ if (!seen[c]) {{ seen[c]=1; list.push(c); }} }});
-            return list.sort();
+            return list.sort(function(a, b) {{
+                var ca = _codeMeta(a).count, cb = _codeMeta(b).count;
+                if (ca !== cb) return cb - ca;
+                return a.localeCompare(b);
+            }});
         }})();
 
         function _findStaff(word) {{ return _nameMap[word.toLowerCase()] || null; }}
@@ -2514,11 +2539,12 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
             WEEK_DATES.forEach(function(d, i) {{
                 dayOpts += '<option value="' + i + '">' + _dayLabelsShort[i] + ' ' + d.split('-')[2] + '</option>';
             }});
-            // Build code <option> list — libellé au format "CODE — Label complet"
-            // pour reconnaître ANNIV / Anniversaire, EV-LO / Événement logistique…
+            // Build code <option> list — ordre = fréquence historique décroissante.
+            // Libellé "CODE — Label complet" quand un label différent existe.
             var codeOpts = '';
             _codeList.forEach(function(c) {{
-                var lbl = (ALL_CODES && ALL_CODES[c] && ALL_CODES[c] !== c) ? (c + ' — ' + escHtml(ALL_CODES[c])) : c;
+                var meta = _codeMeta(c);
+                var lbl = (meta.label && meta.label !== c) ? (c + ' — ' + escHtml(meta.label)) : c;
                 codeOpts += '<option value="' + c + '">' + lbl + '</option>';
             }});
 
@@ -4642,14 +4668,23 @@ def main():
         all_week_notes[wn] = load_week_notes(wn)
 
     # ── Collecter tous les codes rencontrés (Excel courant + JSON persistés) ──
-    # Le sélecteur "Activité" de l'éditeur les proposera tous.
-    all_codes = {}
+    # Le sélecteur "Activité" de l'éditeur les proposera, ordonnés par fréquence
+    # d'usage historique. On garde le label le plus complet pour chaque code
+    # (préfère un label != code).
+    all_codes = {}  # {code: {"label": str, "count": int}}
+
+    def _bump_code(code, label):
+        if not code:
+            return
+        entry = all_codes.setdefault(code, {"label": code, "count": 0})
+        entry["count"] += 1
+        # Préférer un label descriptif (différent du code) s'il en apparaît un.
+        if label and label != code and entry["label"] == code:
+            entry["label"] = label
+
     for evts in all_employee_events.values():
         for e in evts:
-            code = e.get("code")
-            if not code:
-                continue
-            all_codes.setdefault(code, e.get("label") or code)
+            _bump_code(e.get("code"), e.get("label"))
     # Compléter avec les codes des data/*-events.json déjà persistés (modifs web
     # non couvertes par les Excel courants — notamment les codes composés que
     # les admins ont saisis à la main).
@@ -4666,9 +4701,7 @@ def main():
             if n.startswith("_") or not isinstance(emp, dict):
                 continue
             for ev in emp.get("events", []):
-                code = ev.get("code")
-                if code:
-                    all_codes.setdefault(code, ev.get("label") or code)
+                _bump_code(ev.get("code"), ev.get("label"))
 
     # ── Injecter les créneaux virtuels pour les remplaçants sans événement ce jour ──
     for wn in all_weeks:
