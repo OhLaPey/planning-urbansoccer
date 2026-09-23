@@ -93,6 +93,37 @@ Chaque journée est présentée en **guide TV horizontal** (comme le planning) :
 | `duree_min`   | non         | durée de la barre en minutes (déf. 130) |
 | `diffusable`  | non         | `false` pour forcer le masquage  |
 
+## Pré-remplissage automatique depuis un flux XMLTV (optionnel, prototype)
+
+Pour éviter la saisie manuelle, `prefill_tv_from_xmltv.py` génère un **brouillon**
+à partir d'un guide TV au format **XMLTV** :
+
+```bash
+python prefill_tv_from_xmltv.py --source https://exemple/guide.xml.gz --days 7
+# → écrit data/tv-programme.draft.json
+```
+
+Il ne garde que **les chaînes du centre** (via `data/xmltv-mapping.json` +
+`abonnement.disponibles`) et **les programmes sport pertinents** (genre XMLTV ou
+mots-clés), devine la catégorie et exclut la Ligue 1. **Il n'écrit jamais le
+fichier final** : vous relisez le brouillon, retirez ce qui n'a pas d'intérêt,
+corrigez les libellés, puis renommez `tv-programme.draft.json` en
+`tv-programme.json` et lancez `generate_tv.py`.
+
+À faire une fois :
+1. Choisir un flux XMLTV (voir plus bas) et confirmer les **id de chaînes** dans
+   `data/xmltv-mapping.json` (ouvrez le XMLTV, copiez les vrais `<channel id="…">`).
+2. Lancer le script, vérifier le rapport « chaînes trouvées dans le flux ».
+
+Sources XMLTV françaises (gratuites, **non-officielles**, fragiles, zone grise
+côté conditions d'utilisation) : [XML-TV-Fr](https://github.com/racacax/XML-TV-Fr),
+[xmltvfr.fr](https://xmltvfr.fr/), [GlobeTV EPG](https://github.com/globetvapp/epg),
+[Digital3d](https://www.digital3d.com/Comment/See/54) (compte + clé). Aucune API
+officielle des diffuseurs ou de Télé-Loisirs n'existe pour cet usage.
+
+> Le pré-remplissage devine ; il **ne remplace pas la relecture**. Un flux liste
+> tout le programme d'une chaîne, pas « le match à mettre à l'écran ».
+
 ## Chaînes et numéros
 
 Les numéros sont dans `chaines_meta` (`"numero"`).
