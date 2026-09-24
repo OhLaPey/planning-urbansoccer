@@ -98,6 +98,16 @@ def build_page(data):
         }}
 
         /* ── Header ── */
+        .back-link {{
+            position: fixed; left: 16px; top: 16px; z-index: 90;
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 14px; border-radius: 40px; text-decoration: none;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+            color: #bbb; font-size: 12px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px; transition: all 0.2s;
+        }}
+        .back-link:hover {{ background: rgba(255,102,0,0.12); border-color: rgba(255,102,0,0.4); color: #FF6600; }}
+        @media (max-width: 600px) {{ .back-link {{ left: 12px; top: 12px; padding: 7px 11px; font-size: 11px; }} }}
         .header {{ text-align: center; padding: 22px 10px 10px; }}
         .header .tv-icon {{ font-size: 24px; }}
         h1 {{
@@ -288,6 +298,7 @@ def build_page(data):
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="back-link">← Planning</a>
         <div class="header">
             <div class="tv-icon">📺</div>
             <h1>Programme TV</h1>
