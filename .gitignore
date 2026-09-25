@@ -15,3 +15,6 @@ sync-watcher.log
 PSG Academy*.xlsx
 Suivi des présences*.xlsx
 Suivi*presences*.xlsx
+
+# Brouillon de programme TV généré par prefill_tv_from_xmltv.py (à relire, pas à committer)
+data/tv-programme.draft.json
