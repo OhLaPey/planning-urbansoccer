@@ -1,17 +1,17 @@
 {
-  "_note": "Identifiant de chaîne dans le flux XMLTV → nom de chaîne du centre (doit exister dans tv-programme.json > chaines_meta). À VÉRIFIER selon le flux choisi : ouvrez le XMLTV et copiez les vrais id des balises <channel id=\"...\">. Les id ci-dessous suivent la convention XML-TV-Fr (ex. 'C192.telerama.fr') et sont des EXEMPLES à corriger.",
+  "_note": "Identifiant de chaîne dans le flux XMLTV → nom de chaîne du centre (doit exister dans tv-programme.json > chaines_meta). Ids réels du flux crisvale/channels-and-epg (france.xml.gz).",
 
-  "Canal+.fr": "Canal+",
-  "CanalplusSport.fr": "Canal+ Sport 360",
-  "CanalplusFoot.fr": "Canal+ Foot",
-  "beINSPORTS1.fr": "beIN Sports 1",
-  "beINSPORTS2.fr": "beIN Sports 2",
-  "beINSPORTS3.fr": "beIN Sports 3",
+  "CANAL+.fr": "Canal+",
+  "CANAL+SPORT360.fr": "Canal+ Sport 360",
+  "CANAL+FOOT.fr": "Canal+ Foot",
+  "BEIN.SPORTS.1.fr": "beIN Sports 1",
+  "BEIN.SPORTS.2.fr": "beIN Sports 2",
+  "BEIN.SPORTS.3.fr": "beIN Sports 3",
   "TF1.fr": "TF1",
-  "France2.fr": "France 2",
-  "France3.fr": "France 3",
+  "FRANCE.2.fr": "France 2",
+  "FRANCE.3.fr": "France 3",
   "M6.fr": "M6",
   "W9.fr": "W9",
   "TMC.fr": "TMC",
-  "LEquipe.fr": "L'Équipe"
+  "La.chaine.l’Équipe.fr": "L'Équipe"
 }

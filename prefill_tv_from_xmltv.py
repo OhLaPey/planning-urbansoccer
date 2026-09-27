@@ -59,8 +59,8 @@ CATEGORY_RULES = [
                 r"tournoi des (6|six) nations"]),
     ("tennis", [r"tennis", r"roland[- ]garros", r"wimbledon", r"open d'australie",
                 r"us open", r"atp\b", r"wta\b", r"coupe davis"]),
-    ("foot",   [r"football", r"foot\b", r"ligue 2", r"premier league",
-                r"bundesliga", r"serie a", r"liga\b", r"match", r"j\d{1,2}\b"]),
+    ("foot",   [r"football", r"\bfoot\b", r"ligue 2", r"premier league",
+                r"bundesliga", r"serie a", r"\bliga\b"]),
     ("sport",  [r"basket", r"handball", r"volley", r"cyclisme", r"athlétisme",
                 r"natation", r"jeux olympiques", r"boxe", r"mma", r"golf"]),
 ]
@@ -69,8 +69,12 @@ CATEGORY_RULES = [
 SPORT_GENRES = {"sport", "sports", "sporting event", "football", "rugby",
                 "tennis", "basketball", "match", "compétition"}
 
-# Ne jamais proposer (règle éditoriale du centre)
-EXCLUDE_KEYWORDS = [r"ligue 1\b", r"\bl1\b"]
+# Ne jamais proposer (règle éditoriale du centre + magazines / rediffusions)
+EXCLUDE_KEYWORDS = [
+    r"ligue 1\b", r"\bl1\b",
+    r"téléfoot", r"telefoot", r"l'after", r"foot manager", r"\bextra\b",
+    r"classiques", r"le film des", r"magazine", r"rediff", r"talk", r"débrief",
+]
 
 
 def log(msg):
@@ -205,10 +209,11 @@ def main():
 
     out = {
         "_meta": {
-            "titre": prog.get("_meta", {}).get("titre", "Programme TV"),
+            **prog.get("_meta", {}),
+            "updated_at": datetime.now().strftime("%Y-%m-%d"),
             "source": f"XMLTV — {args.source}",
             "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
-            "note": "BROUILLON à relire/élaguer, puis renommer en tv-programme.json.",
+            "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
         },
         "abonnement": prog.get("abonnement", {}),
         "chaines_meta": prog.get("chaines_meta", {}),
