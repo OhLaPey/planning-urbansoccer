@@ -2,10 +2,10 @@
   "_meta": {
     "titre": "Programme TV — Centre UrbanSoccer",
     "sous_titre": "Diffusion sur les écrans du centre",
-    "updated_at": "2026-08-24",
+    "updated_at": "2026-09-27",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-09-27 21:34"
+    "generated_at": "2026-09-27 21:40"
   },
   "abonnement": {
     "disponibles": [
