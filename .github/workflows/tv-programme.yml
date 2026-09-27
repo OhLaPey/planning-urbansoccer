@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: tv-programme
@@ -38,15 +39,26 @@ jobs:
         run: python generate_tv.py
 
       - name: Commiter si changement
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/tv-programme.json tv.html
           if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Aucun changement de programme."
           else
             git commit -m "MAJ programme TV (auto XMLTV)"
             # Rebase au cas où main aurait bougé (sync SharePoint), puis push.
             git pull --rebase --autostash origin main || true
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Déclencher le déploiement GitHub Pages
+        # Un push par le GITHUB_TOKEN ne redéclenche pas generate.yml (protection
+        # anti-boucle) : on lance donc le déploiement explicitement.
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run generate.yml --ref main
