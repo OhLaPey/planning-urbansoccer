@@ -1,0 +1,168 @@
+{
+  "_meta": {
+    "titre": "Programme TV — Centre UrbanSoccer",
+    "sous_titre": "Diffusion sur les écrans du centre",
+    "updated_at": "2026-08-24",
+    "note": "Événements diffusables sur les chaînes du centre uniquement. Mettez ce fichier à jour chaque semaine puis relancez : python generate_tv.py"
+  },
+
+  "abonnement": {
+    "disponibles": [
+      "Canal+",
+      "Canal+ Sport 360",
+      "Canal+ Foot",
+      "beIN Sports 1",
+      "beIN Sports 2",
+      "beIN Sports 3",
+      "TF1",
+      "M6",
+      "France 2",
+      "France 3",
+      "W9",
+      "TMC",
+      "L'Équipe"
+    ],
+    "non_disponibles": [
+      "Ligue 1+",
+      "DAZN",
+      "Disney+"
+    ]
+  },
+
+  "_note_numeros": "Les numéros Canal+/beIN dépendent du décodeur/box du centre — À VÉRIFIER sur place. Les chaînes en clair (TNT) sont nationales et fiables.",
+  "chaines_meta": {
+    "Canal+":            { "numero": "4",  "couleur": "#0a0a0a", "clair": false },
+    "Canal+ Sport 360":  { "numero": "30", "couleur": "#0a0a0a", "clair": false },
+    "Canal+ Foot":       { "numero": "31", "couleur": "#0a0a0a", "clair": false },
+    "beIN Sports 1":     { "numero": "51", "couleur": "#7b1fa2", "clair": false },
+    "beIN Sports 2":     { "numero": "52", "couleur": "#7b1fa2", "clair": false },
+    "beIN Sports 3":     { "numero": "53", "couleur": "#7b1fa2", "clair": false },
+    "TF1":               { "numero": "1",  "couleur": "#1e4fd6", "clair": true },
+    "France 2":          { "numero": "2",  "couleur": "#1565c0", "clair": true },
+    "France 3":          { "numero": "3",  "couleur": "#1565c0", "clair": true },
+    "M6":                { "numero": "6",  "couleur": "#d81f6a", "clair": true },
+    "W9":                { "numero": "9",  "couleur": "#e91e63", "clair": true },
+    "TMC":               { "numero": "10", "couleur": "#00897b", "clair": true },
+    "L'Équipe":          { "numero": "21", "couleur": "#c62828", "clair": true },
+    "Ligue 1+":          { "numero": "",   "couleur": "#455a64", "clair": false },
+    "DAZN":              { "numero": "",   "couleur": "#455a64", "clair": false },
+    "Disney+":           { "numero": "",   "couleur": "#455a64", "clair": false }
+  },
+
+  "categories": {
+    "ldc":    { "label": "Ligue des Champions", "couleur": "#6495ED" },
+    "coupe":  { "label": "Coupes",              "couleur": "#FFA500" },
+    "edf":    { "label": "Équipe de France",    "couleur": "#66BB6A" },
+    "foot":   { "label": "Football",            "couleur": "#FF8C42" },
+    "padel":  { "label": "Padel",               "couleur": "#BA55D3" },
+    "tennis": { "label": "Tennis",              "couleur": "#26C6DA" },
+    "rugby":  { "label": "Rugby",               "couleur": "#8D6E63" },
+    "f1":     { "label": "Formule 1",           "couleur": "#E10600" },
+    "sport":  { "label": "Sport",               "couleur": "#78909C" }
+  },
+
+  "regle_diffusion": "Droits 2026-27 : Ligue 1 = 100% Ligue 1+ (hors abonnement). beIN garde Ligue 2 (diffusable), Bundesliga, Coupe de France. Canal+ = LDC, Premier League, Europa, Top 14, F1, Premier Padel. Hors abonnement : Ligue 1+ (L1), DAZN (Serie A), DAZN+Disney+ (Liga — beIN a perdu la Liga en 2026). Garde-fou : 'diffusable': false pour retirer un événement même sur chaîne dispo.",
+
+  "_exemple": "Les événements ci-dessous sont des EXEMPLES à remplacer chaque semaine par le vrai programme. Le champ 'chaine' détermine si l'événement est diffusable au centre (voir abonnement.disponibles).",
+  "evenements": [
+    {
+      "date": "2026-08-25",
+      "heure": "21:00",
+      "categorie": "coupe",
+      "competition": "Trophée des Champions",
+      "affiche": "PSG — Marseille",
+      "chaine": "beIN Sports 1"
+    },
+    {
+      "date": "2026-08-26",
+      "heure": "21:00",
+      "categorie": "ldc",
+      "competition": "Ligue des Champions — Barrages",
+      "affiche": "Match de barrage aller",
+      "chaine": "Canal+"
+    },
+    {
+      "date": "2026-08-27",
+      "heure": "20:45",
+      "categorie": "foot",
+      "competition": "Ligue 1 — 3e journée",
+      "affiche": "PSG — Lyon",
+      "chaine": "Ligue 1+",
+      "raison": "Ligue 1 uniquement sur Ligue 1+ (hors abonnement)"
+    },
+    {
+      "date": "2026-08-28",
+      "heure": "19:00",
+      "categorie": "padel",
+      "competition": "Premier Padel — P2",
+      "affiche": "Quarts de finale",
+      "chaine": "Canal+ Sport 360"
+    },
+    {
+      "date": "2026-08-29",
+      "heure": "17:00",
+      "categorie": "foot",
+      "competition": "Ligue 2 — 3e journée",
+      "affiche": "Guingamp — Bastia",
+      "chaine": "beIN Sports 1"
+    },
+    {
+      "date": "2026-08-29",
+      "heure": "21:00",
+      "categorie": "foot",
+      "competition": "Premier League",
+      "affiche": "Liverpool — Arsenal",
+      "chaine": "Canal+ Foot"
+    },
+    {
+      "date": "2026-08-30",
+      "heure": "15:00",
+      "categorie": "f1",
+      "competition": "Formule 1 — GP des Pays-Bas",
+      "affiche": "Course",
+      "chaine": "Canal+",
+      "duree_min": 150
+    },
+    {
+      "date": "2026-08-30",
+      "heure": "12:00",
+      "categorie": "padel",
+      "competition": "Premier Padel — P2",
+      "affiche": "Demi-finales",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 180
+    },
+    {
+      "date": "2026-08-30",
+      "heure": "17:00",
+      "categorie": "rugby",
+      "competition": "Top 14 — 2e journée",
+      "affiche": "Toulouse — La Rochelle",
+      "chaine": "Canal+ Sport 360"
+    },
+    {
+      "date": "2026-08-30",
+      "heure": "20:45",
+      "categorie": "foot",
+      "competition": "Serie A — 1re journée",
+      "affiche": "Inter — Milan AC",
+      "chaine": "DAZN"
+    },
+    {
+      "date": "2026-08-31",
+      "heure": "16:00",
+      "categorie": "padel",
+      "competition": "Premier Padel — P2",
+      "affiche": "Finale",
+      "chaine": "Canal+ Sport 360"
+    },
+    {
+      "date": "2026-09-01",
+      "heure": "20:45",
+      "categorie": "foot",
+      "competition": "Championnat d'Europe / Amical",
+      "affiche": "Affiche en clair",
+      "chaine": "L'Équipe"
+    }
+  ]
+}

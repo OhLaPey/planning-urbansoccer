@@ -60,6 +60,24 @@
         .top-bar .eval-btn:hover { background: rgba(255,102,0,0.1);
                                      border-color: rgba(255,102,0,0.5); }
 
+        /* ── Bouton flottant « Programme TV » (bas à droite) ── */
+        .tv-fab {
+            position: fixed; right: 16px; bottom: 16px; z-index: 90;
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 18px; border-radius: 40px;
+            background: #FF6600; color: #1A1A1A; text-decoration: none;
+            font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            box-shadow: 0 4px 18px rgba(255,102,0,0.45);
+            transition: all 0.2s;
+        }
+        .tv-fab:hover { background: #ff8a3d; transform: translateY(-2px);
+                          box-shadow: 0 6px 22px rgba(255,102,0,0.6); }
+        .tv-fab .tv-fab-ico { font-size: 17px; }
+        @media (max-width: 600px) {
+            .tv-fab { padding: 11px 15px; font-size: 12px; right: 12px; bottom: 12px; }
+        }
+
         /* ── Header ── */
         .header { text-align: center; margin-bottom: 12px; padding: 10px 10px 8px; }
         h1 { font-family: 'Montserrat', sans-serif;
@@ -594,7 +612,7 @@
         @media print {
             body { background: #fff !important; color: #000 !important; }
             .top-bar, .fb-warning, .week-selector, .view-toggle, .day-tabs,
-            .staff-filter, .no-print, #admin-toolbar, .save-edits-btn,
+            .staff-filter, .no-print, #admin-toolbar, .save-edits-btn, .tv-fab,
             .modal-overlay, .cal-chooser-overlay, .meta-note { display: none !important; }
             .container { max-width: none !important; padding: 0 !important; }
             .container::after { display: none !important; }
@@ -618,6 +636,7 @@
             <button class="admin-btn" id="admin-btn" title="Mode admin">Admin</button>
             <a href="evaluation-arbitre.html" class="eval-btn" id="eval-btn" title="Fiche d'évaluation arbitre">Éval Arbitre</a>
         </div>
+        <a href="tv.html" class="tv-fab" title="Programme TV du centre"><span class="tv-fab-ico">📺</span> Programme TV</a>
         <div class="header">
             <h1>Planning Urban 7D</h1>
             <p class="subtitle">Semaine 19</p>
@@ -661,6 +680,7 @@
             <a href="S38.html" class="week-tab" data-end="2026-09-20">S38</a>
             <a href="S39.html" class="week-tab" data-end="2026-09-27">S39</a>
             <a href="S40.html" class="week-tab" data-end="2026-10-04">S40</a>
+            <a href="S41.html" class="week-tab" data-end="2026-10-11">S41</a>
         </div>
 
         <div class="week-notes" id="week-notes"></div>
@@ -807,7 +827,7 @@
         try { localStorage.removeItem('planning-edits-S19'); } catch(e) {}
         var COLORS = {"VDC": {"bg": "rgba(255,102,0,0.35)", "border": "#ff7832", "text": "#ffb080"}, "L-REG": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "CUP-L": {"bg": "rgba(255,255,255,0.25)", "border": "#ffffff", "text": "#ffffff"}, "CUP-R": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "STAGE": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "STA-E": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "C-PAD": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "PAD-A": {"bg": "rgba(180,180,180,0.30)", "border": "#b4b4b4", "text": "#d0d0d0"}, "ANNIV": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "INVEN": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "MAL": {"bg": "rgba(255,80,80,0.35)", "border": "#ff5050", "text": "#ff8080"}, "REU": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-RE": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "AIDE": {"bg": "rgba(0,176,240,0.40)", "border": "#00b0f0", "text": "#60d0ff"}, "P25M": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "PSG": {"bg": "rgba(255,102,0,0.40)", "border": "#ff7832", "text": "#ff9850"}, "L-ARB": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FOR-E": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FOR-P": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}, "STA-P": {"bg": "rgba(100,230,255,0.30)", "border": "#64e6ff", "text": "#a0f0ff"}, "ENT-M": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EDF-A": {"bg": "rgba(0,112,192,0.40)", "border": "#0070c0", "text": "#60b0ff"}, "EDF-B": {"bg": "rgba(0,112,192,0.40)", "border": "#0070c0", "text": "#60b0ff"}, "EDF-C": {"bg": "rgba(0,112,192,0.40)", "border": "#0070c0", "text": "#60b0ff"}, "COMMD": {"bg": "rgba(255,192,0,0.40)", "border": "#ffc000", "text": "#ffd060"}, "EV-LO": {"bg": "rgba(100,220,60,0.35)", "border": "#64dc3c", "text": "#90ff70"}, "VIS-M": {"bg": "rgba(180,100,255,0.35)", "border": "#b464ff", "text": "#d4a0ff"}, "FORE": {"bg": "rgba(255,200,50,0.35)", "border": "#ffc832", "text": "#ffe080"}, "FORP": {"bg": "rgba(50,200,120,0.35)", "border": "#32c878", "text": "#80ffb0"}};
         var DEFAULT_C = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"};
-        var ALL_CODES = {"VDC": {"label": "Vie de centre", "count": 2037}, "L-REG": {"label": "Régisseur League", "count": 80}, "CUP-L": {"label": "Cup League", "count": 119}, "CUP-R": {"label": "Cup Régisseur", "count": 120}, "STAGE": {"label": "Stage", "count": 558}, "STA-E": {"label": "Stage encadrement", "count": 424}, "C-PAD": {"label": "Cours Padel", "count": 430}, "PAD-A": {"label": "Padel animation", "count": 88}, "ANNIV": {"label": "Anniversaire", "count": 318}, "INVEN": {"label": "Inventaire", "count": 34}, "MAL": {"label": "Maladie", "count": 2}, "REU": {"label": "Réunion", "count": 38}, "EV-RE": {"label": "Événement régisseur", "count": 24}, "AIDE": {"label": "Aide", "count": 28}, "P25M": {"label": "P25M", "count": 0}, "PSG": {"label": "PSG", "count": 0}, "L-ARB": {"label": "L-ARB", "count": 196}, "FOR-E": {"label": "FOR-E", "count": 0}, "FOR-P": {"label": "FOR-P", "count": 0}, "STA-P": {"label": "Stage Padel", "count": 26}, "ENT-M": {"label": "Entretien Ménage", "count": 24}, "EDF-A": {"label": "EDF-A", "count": 26}, "EDF-B": {"label": "EDF-B", "count": 94}, "EDF-C": {"label": "EDF-C", "count": 484}, "COMMD": {"label": "Commercialisation", "count": 12}, "EV-LO": {"label": "Événement logistique", "count": 46}, "VIS-M": {"label": "Visite médicale", "count": 4}, "FORE": {"label": "Formation", "count": 36}, "FORP": {"label": "Formation pratique", "count": 41}, "EIA": {"label": "EIA", "count": 68}, "TRAJE": {"label": "TRAJE", "count": 16}, "L-REG PADEL": {"label": "L-REG PADEL", "count": 2}, "EV-LO LDC": {"label": "EV-LO LDC", "count": 2}, "AIDE ANNIV": {"label": "AIDE ANNIV", "count": 2}, "COMMS": {"label": "COMMS", "count": 24}, "EV-AN": {"label": "EV-AN", "count": 24}, "AIDE - ANNIV": {"label": "AIDE - ANNIV", "count": 2}, "VDC MONTAUDRAN": {"label": "VDC MONTAUDRAN", "count": 2}, "L-ARB MONTAUDRAN": {"label": "L-ARB MONTAUDRAN", "count": 2}, "CUP-A": {"label": "CUP-A", "count": 3}, "ANNIV PADEL": {"label": "ANNIV PADEL", "count": 1}, "FORE ANNIV": {"label": "FORE ANNIV", "count": 6}, "FORP ANNIV": {"label": "FORP ANNIV", "count": 6}, "FORP Baby": {"label": "FORP Baby", "count": 2}, "FORP EDF": {"label": "FORP EDF", "count": 4}, "FORP Anniv": {"label": "FORP Anniv", "count": 2}, "FORE-ARB": {"label": "FORE-ARB", "count": 2}, "FORP-ARB": {"label": "FORP-ARB", "count": 4}, "FORE VDC": {"label": "FORE VDC", "count": 6}, "FORP VDC": {"label": "FORP VDC", "count": 6}, "FORE EDF": {"label": "FORE EDF", "count": 2}};
+        var ALL_CODES = {"VDC": {"label": "Vie de centre", "count": 2069}, "L-REG": {"label": "Régisseur League", "count": 80}, "CUP-L": {"label": "Cup League", "count": 119}, "CUP-R": {"label": "Cup Régisseur", "count": 121}, "STAGE": {"label": "Stage", "count": 558}, "STA-E": {"label": "Stage encadrement", "count": 424}, "C-PAD": {"label": "Cours Padel", "count": 447}, "PAD-A": {"label": "Padel animation", "count": 88}, "ANNIV": {"label": "Anniversaire", "count": 323}, "INVEN": {"label": "Inventaire", "count": 34}, "MAL": {"label": "Maladie", "count": 2}, "REU": {"label": "Réunion", "count": 38}, "EV-RE": {"label": "Événement régisseur", "count": 24}, "AIDE": {"label": "Aide", "count": 30}, "P25M": {"label": "P25M", "count": 0}, "PSG": {"label": "PSG", "count": 0}, "L-ARB": {"label": "L-ARB", "count": 200}, "FOR-E": {"label": "FOR-E", "count": 0}, "FOR-P": {"label": "FOR-P", "count": 0}, "STA-P": {"label": "Stage Padel", "count": 26}, "ENT-M": {"label": "Entretien Ménage", "count": 24}, "EDF-A": {"label": "EDF-A", "count": 27}, "EDF-B": {"label": "EDF-B", "count": 97}, "EDF-C": {"label": "EDF-C", "count": 500}, "COMMD": {"label": "Commercialisation", "count": 12}, "EV-LO": {"label": "Événement logistique", "count": 47}, "VIS-M": {"label": "Visite médicale", "count": 4}, "FORE": {"label": "Formation", "count": 36}, "FORP": {"label": "Formation pratique", "count": 41}, "EIA": {"label": "EIA", "count": 68}, "TRAJE": {"label": "TRAJE", "count": 16}, "L-REG PADEL": {"label": "L-REG PADEL", "count": 2}, "EV-LO LDC": {"label": "EV-LO LDC", "count": 2}, "AIDE ANNIV": {"label": "AIDE ANNIV", "count": 2}, "COMMS": {"label": "COMMS", "count": 24}, "EV-AN": {"label": "EV-AN", "count": 24}, "AIDE - ANNIV": {"label": "AIDE - ANNIV", "count": 2}, "VDC MONTAUDRAN": {"label": "VDC MONTAUDRAN", "count": 2}, "L-ARB MONTAUDRAN": {"label": "L-ARB MONTAUDRAN", "count": 2}, "CUP-A": {"label": "CUP-A", "count": 3}, "ANNIV PADEL": {"label": "ANNIV PADEL", "count": 1}, "FORE ANNIV": {"label": "FORE ANNIV", "count": 6}, "FORP ANNIV": {"label": "FORP ANNIV", "count": 6}, "FORP Baby": {"label": "FORP Baby", "count": 2}, "FORP EDF": {"label": "FORP EDF", "count": 4}, "FORP Anniv": {"label": "FORP Anniv", "count": 2}, "FORE-ARB": {"label": "FORE-ARB", "count": 2}, "FORP-ARB": {"label": "FORP-ARB", "count": 4}, "FORE VDC": {"label": "FORE VDC", "count": 6}, "FORP VDC": {"label": "FORP VDC", "count": 6}, "FORE EDF": {"label": "FORE EDF", "count": 2}};
         var DAYS = ["Lun 04", "Mar 05", "Mer 06", "Jeu 07", "Ven 08", "Sam 09", "Dim 10"];
         var DAYS_FULL = ["Lundi 04/05", "Mardi 05/05", "Mercredi 06/05", "Jeudi 07/05", "Vendredi 08/05", "Samedi 09/05", "Dimanche 10/05"];
         var WEEK_DATES = ["2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10"];
