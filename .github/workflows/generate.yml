@@ -37,6 +37,10 @@ jobs:
         run: python regen_ics.py
         continue-on-error: true
 
+      - name: Générer la page Programme TV
+        run: python generate_tv.py
+        continue-on-error: true
+
       - name: Sauvegarder les pages présences avant generate
         run: |
           mkdir -p _presences_backup
@@ -53,6 +57,7 @@ jobs:
           cp -r data/ _site/data/
           cp index.html _site/
           cp S*.html _site/
+          cp tv.html _site/ 2>/dev/null || true
           cp bg-team.jpg _site/ 2>/dev/null || true
           cp bg-psg.jpg _site/ 2>/dev/null || true
           cp presences*.html _site/ 2>/dev/null || true
