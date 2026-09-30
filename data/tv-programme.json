@@ -2,10 +2,10 @@
   "_meta": {
     "titre": "Programme TV — Centre UrbanSoccer",
     "sous_titre": "Diffusion sur les écrans du centre",
-    "updated_at": "2026-09-29",
+    "updated_at": "2026-09-30",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-09-29 11:14"
+    "generated_at": "2026-09-30 11:02"
   },
   "abonnement": {
     "disponibles": [
@@ -151,465 +151,6 @@
   },
   "evenements": [
     {
-      "date": "2026-09-29",
-      "heure": "00:00",
-      "categorie": "foot",
-      "competition": "Football : Süper Lig",
-      "affiche": "Football : Süper Lig",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "00:00",
-      "categorie": "foot",
-      "competition": "Football américain : NFL",
-      "affiche": "Football américain : NFL",
-      "chaine": "beIN Sports 3",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "00:40",
-      "categorie": "foot",
-      "competition": "Football : Ligue des Nations UEFA - Belgique / France",
-      "affiche": "Football : Ligue des Nations UEFA - Belgique / France",
-      "chaine": "L'Équipe",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "01:16",
-      "categorie": "ldc",
-      "competition": "Champions League Weekly",
-      "affiche": "Champions League Weekly",
-      "chaine": "Canal+ Foot",
-      "duree_min": 26
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "01:30",
-      "categorie": "f1",
-      "competition": "Lundi Grand Prix",
-      "affiche": "Lundi Grand Prix",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 62
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "01:42",
-      "categorie": "foot",
-      "competition": "Football : Premier League",
-      "affiche": "Football : Premier League",
-      "chaine": "Canal+ Foot",
-      "duree_min": 97
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "02:00",
-      "categorie": "foot",
-      "competition": "Football : Coupe de la Ligue anglaise",
-      "affiche": "Football : Coupe de la Ligue anglaise",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "02:15",
-      "categorie": "foot",
-      "competition": "Football américain : NFL",
-      "affiche": "Football américain : NFL",
-      "chaine": "beIN Sports 1",
-      "duree_min": 180
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "02:32",
-      "categorie": "sport",
-      "competition": "MMA : ARES Fighting Championship",
-      "affiche": "MMA : ARES Fighting Championship",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "06:00",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "06:00",
-      "categorie": "foot",
-      "competition": "Football : Coupe de la Ligue anglaise",
-      "affiche": "Football : Coupe de la Ligue anglaise",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "07:35",
-      "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 61
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "08:00",
-      "categorie": "f1",
-      "competition": "Lundi Grand Prix",
-      "affiche": "Lundi Grand Prix",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "08:00",
-      "categorie": "foot",
-      "competition": "Football : Ligue 2 BKT",
-      "affiche": "Football : Ligue 2 BKT",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "08:00",
-      "categorie": "sport",
-      "competition": "Basket-ball : Euroligue masculine",
-      "affiche": "Basket-ball : Euroligue masculine",
-      "chaine": "beIN Sports 3",
-      "duree_min": 210
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "08:36",
-      "categorie": "foot",
-      "competition": "Premier League Review",
-      "affiche": "Premier League Review",
-      "chaine": "Canal+ Foot",
-      "duree_min": 54
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "09:00",
-      "categorie": "sport",
-      "competition": "Rallye : WRC, Rallye du Chili",
-      "affiche": "Rallye : WRC, Rallye du Chili",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "09:00",
-      "categorie": "sport",
-      "competition": "Basket-ball : NBA",
-      "affiche": "Basket-ball : NBA",
-      "chaine": "beIN Sports 1",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "10:00",
-      "categorie": "foot",
-      "competition": "Football : Süper Lig",
-      "affiche": "Football : Süper Lig",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "10:30",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 1",
-      "duree_min": 240
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "10:58",
-      "categorie": "ldc",
-      "competition": "Football : Ligue des champions",
-      "affiche": "Football : Ligue des champions",
-      "chaine": "Canal+ Foot",
-      "duree_min": 103
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "11:30",
-      "categorie": "tennis",
-      "competition": "Tennis : Billie Jean King Cup",
-      "affiche": "Tennis : Billie Jean King Cup",
-      "chaine": "beIN Sports 3",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "12:00",
-      "categorie": "foot",
-      "competition": "Football : Bundesliga",
-      "affiche": "Football : Bundesliga",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "12:45",
-      "categorie": "f1",
-      "competition": "Lundi Grand Prix",
-      "affiche": "Lundi Grand Prix",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "13:15",
-      "categorie": "sport",
-      "competition": "Handball : Daikin StarLigue",
-      "affiche": "Handball : Daikin StarLigue",
-      "chaine": "beIN Sports 3",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "13:38",
-      "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 62
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "14:30",
-      "categorie": "sport",
-      "competition": "VTT : Coupe du monde de descente",
-      "affiche": "VTT : Coupe du monde de descente",
-      "chaine": "L'Équipe",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "15:00",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "15:00",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "15:00",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 3",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "15:30",
-      "categorie": "ldc",
-      "competition": "Champions League Weekly",
-      "affiche": "Champions League Weekly",
-      "chaine": "Canal+ Foot",
-      "duree_min": 26
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "15:56",
-      "categorie": "ldc",
-      "competition": "Football : Ligue des champions",
-      "affiche": "Football : Ligue des champions",
-      "chaine": "Canal+ Foot",
-      "duree_min": 200
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "16:59",
-      "categorie": "sport",
-      "competition": "Rallye : WRC, Rallye du Chili",
-      "affiche": "Rallye : WRC, Rallye du Chili",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 51
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "17:00",
-      "categorie": "sport",
-      "competition": "L'Equipe de choc",
-      "affiche": "L'Equipe de choc",
-      "chaine": "L'Équipe",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "17:00",
-      "categorie": "foot",
-      "competition": "Football : Coupe de la Ligue anglaise",
-      "affiche": "Football : Coupe de la Ligue anglaise",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "18:00",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "18:00",
-      "categorie": "foot",
-      "competition": "Football américain : NFL",
-      "affiche": "Football américain : NFL",
-      "chaine": "beIN Sports 3",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "18:30",
-      "categorie": "sport",
-      "competition": "L'Equipe de Greg",
-      "affiche": "L'Equipe de Greg",
-      "chaine": "L'Équipe",
-      "duree_min": 129
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "19:16",
-      "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 64
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "20:20",
-      "categorie": "foot",
-      "competition": "Jour de foot",
-      "affiche": "Jour de foot",
-      "chaine": "Canal+ Foot",
-      "duree_min": 34
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "20:30",
-      "categorie": "sport",
-      "competition": "Basket-ball : avant-match",
-      "affiche": "Basket-ball : avant-match",
-      "chaine": "beIN Sports 1",
-      "duree_min": 15
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "20:39",
-      "categorie": "foot",
-      "competition": "Football : Ligue des Nations UEFA - Multiplex",
-      "affiche": "Football : Ligue des Nations UEFA - Multiplex",
-      "chaine": "L'Équipe",
-      "duree_min": 126
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "20:45",
-      "categorie": "sport",
-      "competition": "Basket-ball : Euroligue masculine",
-      "affiche": "Basket-ball : Euroligue masculine",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "21:00",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "21:00",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 3",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "22:45",
-      "categorie": "sport",
-      "competition": "L'Equipe du soir",
-      "affiche": "L'Equipe du soir",
-      "chaine": "L'Équipe",
-      "duree_min": 202
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "22:50",
-      "categorie": "f1",
-      "competition": "Formule 1 : La fabrique des rêves",
-      "affiche": "Formule 1 : La fabrique des rêves",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 28
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "23:00",
-      "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 61
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "23:00",
-      "categorie": "sport",
-      "competition": "Hockey sur glace : NHL",
-      "affiche": "Hockey sur glace : NHL",
-      "chaine": "beIN Sports 1",
-      "duree_min": 180
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "23:00",
-      "categorie": "rugby",
-      "competition": "Rugby à XIII : NRL",
-      "affiche": "Rugby à XIII : NRL",
-      "chaine": "beIN Sports 3",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-09-29",
-      "heure": "23:18",
-      "categorie": "f1",
-      "competition": "Lundi Grand Prix",
-      "affiche": "Lundi Grand Prix",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 72
-    },
-    {
       "date": "2026-09-30",
       "heure": "00:00",
       "categorie": "foot",
@@ -643,7 +184,7 @@
       "competition": "Rallye : WRC, Rallye du Chili",
       "affiche": "Rallye : WRC, Rallye du Chili",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 150
+      "duree_min": 152
     },
     {
       "date": "2026-09-30",
@@ -670,7 +211,25 @@
       "competition": "Tennis : Tournoi WTA de Pékin",
       "affiche": "Tennis : Tournoi WTA de Pékin",
       "chaine": "beIN Sports 3",
-      "duree_min": 240
+      "duree_min": 720
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "06:00",
+      "categorie": "foot",
+      "competition": "Football : Qualifications de la CAN",
+      "affiche": "Football : Qualifications de la CAN",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "06:00",
+      "categorie": "foot",
+      "competition": "Football : Ligue 2 BKT",
+      "affiche": "Football : Ligue 2 BKT",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
     },
     {
       "date": "2026-09-30",
@@ -683,12 +242,165 @@
     },
     {
       "date": "2026-09-30",
+      "heure": "07:20",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 61
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "08:00",
+      "categorie": "foot",
+      "competition": "Football : Süper Lig",
+      "affiche": "Football : Süper Lig",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "08:35",
+      "categorie": "sport",
+      "competition": "Rallye : WRC, Rallye du Chili",
+      "affiche": "Rallye : WRC, Rallye du Chili",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 52
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "08:41",
+      "categorie": "ldc",
+      "competition": "Football : Ligue des champions",
+      "affiche": "Football : Ligue des champions",
+      "chaine": "Canal+ Foot",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "09:00",
+      "categorie": "sport",
+      "competition": "Basket-ball : NBA",
+      "affiche": "Basket-ball : NBA",
+      "chaine": "beIN Sports 1",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "09:27",
+      "categorie": "sport",
+      "competition": "Voile : Coupe de l'America, Régate préliminaire",
+      "affiche": "Voile : Coupe de l'America, Régate préliminaire",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 168
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "10:00",
+      "categorie": "foot",
+      "competition": "Football : Bundesliga",
+      "affiche": "Football : Bundesliga",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "10:26",
+      "categorie": "foot",
+      "competition": "Histoires de Premier League",
+      "affiche": "Histoires de Premier League",
+      "chaine": "Canal+ Foot",
+      "duree_min": 27
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "10:53",
+      "categorie": "ldc",
+      "competition": "Football : Ligue des champions",
+      "affiche": "Football : Ligue des champions",
+      "chaine": "Canal+ Foot",
+      "duree_min": 102
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "11:00",
+      "categorie": "sport",
+      "competition": "Basket-ball : WNBA",
+      "affiche": "Basket-ball : WNBA",
+      "chaine": "beIN Sports 1",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "12:00",
+      "categorie": "foot",
+      "competition": "Football : Championnat du Portugal",
+      "affiche": "Football : Championnat du Portugal",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "12:35",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 61
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "13:52",
+      "categorie": "f1",
+      "competition": "Voile : Grand Prix de Genève",
+      "affiche": "Voile : Grand Prix de Genève",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 116
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "14:00",
+      "categorie": "foot",
+      "competition": "Football : Qualifications de la CAN",
+      "affiche": "Football : Qualifications de la CAN",
+      "chaine": "beIN Sports 1",
+      "duree_min": 240
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "14:00",
+      "categorie": "foot",
+      "competition": "Football : Ligue 2 BKT",
+      "affiche": "Football : Ligue 2 BKT",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-09-30",
       "heure": "15:01",
       "categorie": "foot",
       "competition": "Football : Ligue des Nations UEFA - Espagne / Croatie",
       "affiche": "Football : Ligue des Nations UEFA - Espagne / Croatie",
       "chaine": "L'Équipe",
       "duree_min": 119
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "16:30",
+      "categorie": "sport",
+      "competition": "Rallye : WRC, Rallye Italie Sardaigne",
+      "affiche": "Rallye : WRC, Rallye Italie Sardaigne",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 27
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "16:57",
+      "categorie": "padel",
+      "competition": "Soir de padel",
+      "affiche": "Soir de padel",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 63
     },
     {
       "date": "2026-09-30",
@@ -701,12 +413,93 @@
     },
     {
       "date": "2026-09-30",
+      "heure": "17:36",
+      "categorie": "ldc",
+      "competition": "Football : Ligue des champions",
+      "affiche": "Football : Ligue des champions",
+      "chaine": "Canal+ Foot",
+      "duree_min": 101
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "17:45",
+      "categorie": "sport",
+      "competition": "Basket-ball : Euroligue masculine",
+      "affiche": "Basket-ball : Euroligue masculine",
+      "chaine": "beIN Sports 3",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "18:00",
+      "categorie": "sport",
+      "competition": "Baseball : MLB",
+      "affiche": "Baseball : MLB",
+      "chaine": "beIN Sports 2",
+      "duree_min": 300
+    },
+    {
+      "date": "2026-09-30",
       "heure": "18:30",
       "categorie": "sport",
       "competition": "L'Equipe de Greg",
       "affiche": "L'Equipe de Greg",
       "chaine": "L'Équipe",
       "duree_min": 144
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "19:06",
+      "categorie": "f1",
+      "competition": "Lundi Grand Prix",
+      "affiche": "Lundi Grand Prix",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 62
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "19:17",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 63
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "19:30",
+      "categorie": "rugby",
+      "competition": "Rugby à XIII : NRL",
+      "affiche": "Rugby à XIII : NRL",
+      "chaine": "beIN Sports 3",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "20:08",
+      "categorie": "sport",
+      "competition": "Rallye : WRC, Rallye du Chili",
+      "affiche": "Rallye : WRC, Rallye du Chili",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "20:15",
+      "categorie": "sport",
+      "competition": "Basket-ball : Euroligue masculine",
+      "affiche": "Basket-ball : Euroligue masculine",
+      "chaine": "beIN Sports 1",
+      "duree_min": 135
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "20:20",
+      "categorie": "foot",
+      "competition": "Jour de foot",
+      "affiche": "Jour de foot",
+      "chaine": "Canal+ Foot",
+      "duree_min": 34
     },
     {
       "date": "2026-09-30",
@@ -719,12 +512,129 @@
     },
     {
       "date": "2026-09-30",
+      "heure": "21:03",
+      "categorie": "rugby",
+      "competition": "La nuit du rugby",
+      "affiche": "La nuit du rugby",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 91
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "21:30",
+      "categorie": "foot",
+      "competition": "Football américain : NFL",
+      "affiche": "Football américain : NFL",
+      "chaine": "beIN Sports 3",
+      "duree_min": 300
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "22:02",
+      "categorie": "foot",
+      "competition": "Histoires de Premier League",
+      "affiche": "Histoires de Premier League",
+      "chaine": "Canal+ Foot",
+      "duree_min": 27
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "22:34",
+      "categorie": "rugby",
+      "competition": "Més que une finale - 2016, le Top 14 illumine le Camp Nou",
+      "affiche": "Més que une finale - 2016, le Top 14 illumine le Camp Nou",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 31
+    },
+    {
+      "date": "2026-09-30",
+      "heure": "23:00",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 61
+    },
+    {
+      "date": "2026-09-30",
       "heure": "23:00",
       "categorie": "sport",
       "competition": "L'Equipe du soir",
       "affiche": "L'Equipe du soir",
       "chaine": "L'Équipe",
       "duree_min": 187
+    },
+    {
+      "date": "2026-10-01",
+      "heure": "00:00",
+      "categorie": "foot",
+      "competition": "Football : Championnat du Portugal",
+      "affiche": "Football : Championnat du Portugal",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-01",
+      "heure": "00:00",
+      "categorie": "foot",
+      "competition": "Football : Coupe de la Ligue anglaise",
+      "affiche": "Football : Coupe de la Ligue anglaise",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-01",
+      "heure": "00:01",
+      "categorie": "foot",
+      "competition": "Football : Premier League",
+      "affiche": "Football : Premier League",
+      "chaine": "Canal+ Foot",
+      "duree_min": 102
+    },
+    {
+      "date": "2026-10-01",
+      "heure": "02:00",
+      "categorie": "foot",
+      "competition": "Football : Ligue 2 BKT",
+      "affiche": "Football : Ligue 2 BKT",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-01",
+      "heure": "02:00",
+      "categorie": "foot",
+      "competition": "Football : Championnat du Portugal",
+      "affiche": "Football : Championnat du Portugal",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-01",
+      "heure": "02:35",
+      "categorie": "f1",
+      "competition": "Voile : Grand Prix de Genève",
+      "affiche": "Voile : Grand Prix de Genève",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-10-01",
+      "heure": "04:00",
+      "categorie": "foot",
+      "competition": "Football : Coupe de la Ligue anglaise",
+      "affiche": "Football : Coupe de la Ligue anglaise",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-01",
+      "heure": "05:00",
+      "categorie": "tennis",
+      "competition": "Tennis : Tournoi WTA de Pékin",
+      "affiche": "Tennis : Tournoi WTA de Pékin",
+      "chaine": "beIN Sports 3",
+      "duree_min": 240
     },
     {
       "date": "2026-10-01",
