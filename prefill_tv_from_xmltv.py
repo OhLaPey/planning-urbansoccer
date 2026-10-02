@@ -13,9 +13,9 @@ Chaîne de traitement :
 Le script :
   1. télécharge (ou lit) un guide XMLTV (gzip ou xml) ;
   2. ne garde que les chaînes du centre (via le mapping + abonnement.disponibles) ;
-  3. ne garde que les programmes « sport » pertinents (genre ou mots-clés) ;
-  4. devine la catégorie (ldc / coupe / edf / foot / padel / tennis / rugby / f1…) ;
-  5. écrit un brouillon au schéma de data/tv-programme.json.
+  3. garde TOUS les programmes de ces chaînes (films, séries, infos, sport…) ;
+  4. devine la catégorie/genre pour le code couleur ;
+  5. écrit le programme au schéma de data/tv-programme.json.
 
 C'est un ASSISTANT de saisie : l'équipe relit le brouillon, retire ce qui n'a
 pas d'intérêt, corrige les libellés, puis renomme le brouillon en
@@ -45,35 +45,68 @@ PROG_PATH = os.path.join(DATA_DIR, "tv-programme.json")
 MAPPING_PATH = os.path.join(DATA_DIR, "xmltv-mapping.json")
 DEFAULT_OUT = os.path.join(DATA_DIR, "tv-programme.draft.json")
 
-# ── Détection sport + catégorie à partir du titre / genre XMLTV ──────────────
-# Ordre important : la première règle qui matche gagne.
-CATEGORY_RULES = [
-    ("ldc",    [r"ligue des champions", r"champions league", r"c1\b", r"ucl\b"]),
+# ── Catégories (code → libellé + couleur) écrites dans le fichier de sortie ───
+CATEGORIES = {
+    "ldc":    {"label": "Ligue des Champions", "couleur": "#6495ED"},
+    "coupe":  {"label": "Coupes",              "couleur": "#FFA500"},
+    "edf":    {"label": "Équipe de France",    "couleur": "#66BB6A"},
+    "foot":   {"label": "Football",            "couleur": "#FF8C42"},
+    "padel":  {"label": "Padel",               "couleur": "#BA55D3"},
+    "tennis": {"label": "Tennis",              "couleur": "#26C6DA"},
+    "rugby":  {"label": "Rugby",               "couleur": "#8D6E63"},
+    "f1":     {"label": "Formule 1",           "couleur": "#E10600"},
+    "sport":  {"label": "Sport",               "couleur": "#78909C"},
+    "film":   {"label": "Film",                "couleur": "#5C6BC0"},
+    "serie":  {"label": "Série",               "couleur": "#7E57C2"},
+    "info":   {"label": "Info",                "couleur": "#42A5F5"},
+    "mag":    {"label": "Divertissement",      "couleur": "#EC407A"},
+    "doc":    {"label": "Documentaire",        "couleur": "#9CCC65"},
+    "jeunesse": {"label": "Jeunesse",          "couleur": "#FFCA28"},
+    "culture": {"label": "Culture",            "couleur": "#26A69A"},
+    "autre":  {"label": "Programme",           "couleur": "#90A4AE"},
+}
+
+# ── Sous-catégories sport (affinage par mots-clés du titre) ───────────────────
+SPORT_RULES = [
+    ("ldc",    [r"ligue des champions", r"champions league", r"\bc1\b", r"\bucl\b"]),
     ("coupe",  [r"coupe de france", r"europa league", r"conference league",
                 r"coupe d'europe", r"trophée des champions", r"supercoupe"]),
-    ("edf",    [r"équipe de france", r"equipe de france", r"bleus",
+    ("edf",    [r"équipe de france", r"equipe de france", r"\bbleus\b",
                 r"éliminatoires", r"eliminatoires", r"nations league"]),
-    ("padel",  [r"padel", r"premier padel"]),
+    ("padel",  [r"padel"]),
     ("f1",     [r"formule 1", r"formula 1", r"\bf1\b", r"grand prix", r"\bgp\b"]),
-    ("rugby",  [r"rugby", r"top 14", r"champions cup", r"xv de france", r"six nations",
-                r"tournoi des (6|six) nations"]),
+    ("rugby",  [r"rugby", r"top 14", r"champions cup", r"xv de france", r"six nations"]),
     ("tennis", [r"tennis", r"roland[- ]garros", r"wimbledon", r"open d'australie",
-                r"us open", r"atp\b", r"wta\b", r"coupe davis"]),
+                r"\bus open\b", r"\batp\b", r"\bwta\b", r"coupe davis"]),
     ("foot",   [r"football", r"\bfoot\b", r"ligue 2", r"premier league",
                 r"bundesliga", r"serie a", r"\bliga\b"]),
-    ("sport",  [r"basket", r"handball", r"volley", r"cyclisme", r"athlétisme",
-                r"natation", r"jeux olympiques", r"boxe", r"mma", r"golf"]),
+    ("sport",  [r"basket", r"handball", r"\bhand\b", r"volley", r"cyclisme",
+                r"athlétisme", r"natation", r"jeux olympiques", r"\bjo\b",
+                r"boxe", r"\bmma\b", r"golf", r"ski", r"biathlon", r"moto",
+                r"rallye", r"nba\b", r"nfl\b", r"\bufc\b"]),
 ]
+# Mots-clés indiquant un genre sport (dans les balises <category> du flux)
+SPORT_GENRE_KEYS = ["sport", "football", "rugby", "tennis", "basket", "hand",
+                    "volley", "cyclisme", "athlétisme", "athletisme", "match",
+                    "compétition", "competition", "formule"]
 
-# Genres XMLTV considérés comme « sport »
-SPORT_GENRES = {"sport", "sports", "sporting event", "football", "rugby",
-                "tennis", "basketball", "match", "compétition"}
-
-# Ne jamais proposer (règle éditoriale du centre + magazines / rediffusions)
-EXCLUDE_KEYWORDS = [
-    r"ligue 1\b", r"\bl1\b",
-    r"téléfoot", r"telefoot", r"l'after", r"foot manager", r"\bextra\b",
-    r"classiques", r"le film des", r"magazine", r"rediff", r"talk", r"débrief",
+# ── Genres XMLTV (non-sport) → catégorie. Ordre important. ────────────────────
+GENRE_MAP = [
+    ("jeunesse", ["jeunesse", "enfant", "dessin animé", "dessin anime",
+                  "animation", "manga", "anime"]),
+    ("film",     ["téléfilm", "telefilm", "film", "cinéma", "cinema",
+                  "long métrage", "long metrage", "court métrage"]),
+    ("serie",    ["série", "serie", "feuilleton", "soap", "saga", "sitcom"]),
+    ("info",     ["information", "journal", "météo", "meteo", "politique",
+                  "débat", "debat", "actualité", "actualite", "\binfo\b"]),
+    ("doc",      ["documentaire", "reportage", "découverte", "decouverte",
+                  "nature", "animalier", "histoire", "société", "societe",
+                  "science"]),
+    ("culture",  ["musique", "concert", "théâtre", "theatre", "opéra", "opera",
+                  "spectacle", "\bart\b", "culture", "danse"]),
+    ("mag",      ["magazine", "divertissement", "talk", "\bjeu\b", "téléréalité",
+                  "telerealite", "variété", "variete", "humour", "cuisine",
+                  "téléachat", "teleachat", "émission", "emission"]),
 ]
 
 
@@ -113,18 +146,23 @@ def parse_xmltv_time(s):
     return datetime.strptime(m.group(1), "%Y%m%d%H%M%S")
 
 
-def guess_category(text):
-    low = text.lower()
-    for cat, patterns in CATEGORY_RULES:
-        for p in patterns:
-            if re.search(p, low):
+def guess_category(title, subtitle, genres):
+    """Classe un programme (sport affiné, sinon genre, sinon 'autre')."""
+    text = f"{title} {subtitle}".lower()
+    genre_str = " ".join(genres).lower()
+
+    is_sport = any(k in genre_str for k in SPORT_GENRE_KEYS) or \
+        any(re.search(p, text) for _, pats in SPORT_RULES for p in pats)
+    if is_sport:
+        for cat, patterns in SPORT_RULES:
+            if any(re.search(p, text) for p in patterns):
                 return cat
-    return None
+        return "sport"
 
-
-def is_excluded(text):
-    low = text.lower()
-    return any(re.search(p, low) for p in EXCLUDE_KEYWORDS)
+    for cat, keys in GENRE_MAP:
+        if any(re.search(k, genre_str) for k in keys):
+            return cat
+    return "autre"
 
 
 def iter_programmes(xml_text):
@@ -180,18 +218,9 @@ def main():
         if not (date_min <= start.date() < date_max):
             continue
 
-        text = f"{title} {subtitle}"
-        if is_excluded(text):
-            continue
+        cat = guess_category(title, subtitle, genres)
 
-        is_sport_genre = any(g in SPORT_GENRES for g in genres)
-        cat = guess_category(text)
-        if not is_sport_genre and not cat:
-            continue  # ni genre sport, ni mot-clé reconnu → ignoré
-        if not cat:
-            cat = "sport"
-
-        duree = 130
+        duree = 60
         if stop and stop > start:
             duree = int((stop - start).total_seconds() // 60)
 
@@ -217,7 +246,7 @@ def main():
         },
         "abonnement": prog.get("abonnement", {}),
         "chaines_meta": prog.get("chaines_meta", {}),
-        "categories": prog.get("categories", {}),
+        "categories": CATEGORIES,
         "evenements": kept,
     }
     with open(args.out, "w", encoding="utf-8") as f:
