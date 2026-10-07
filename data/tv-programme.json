@@ -2,10 +2,10 @@
   "_meta": {
     "titre": "Programme TV — Centre UrbanSoccer",
     "sous_titre": "Diffusion sur les écrans du centre",
-    "updated_at": "2026-10-06",
+    "updated_at": "2026-10-07",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-06 11:53"
+    "generated_at": "2026-10-07 11:39"
   },
   "abonnement": {
     "disponibles": [
@@ -183,2400 +183,6 @@
   },
   "evenements": [
     {
-      "date": "2026-10-06",
-      "heure": "00:00",
-      "categorie": "autre",
-      "competition": "Les Français, l'amour et le sexe : comment tout a changé ?",
-      "affiche": "Les Français, l'amour et le sexe : comment tout a changé ?",
-      "chaine": "M6",
-      "duree_min": 145
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "00:00",
-      "categorie": "serie",
-      "competition": "New York Unité Spéciale - 20x22",
-      "affiche": "New York Unité Spéciale - 20x22",
-      "chaine": "TF1",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "00:00",
-      "categorie": "foot",
-      "competition": "Football : Bundesliga",
-      "affiche": "Football : Bundesliga",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "00:00",
-      "categorie": "foot",
-      "competition": "Football : Coupe de la Ligue anglaise",
-      "affiche": "Football : Coupe de la Ligue anglaise",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "00:04",
-      "categorie": "film",
-      "competition": "Bugonia",
-      "affiche": "Bugonia",
-      "chaine": "Canal+",
-      "duree_min": 115
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "00:26",
-      "categorie": "autre",
-      "competition": "Zapsport 360",
-      "affiche": "Zapsport 360",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 4
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "00:30",
-      "categorie": "autre",
-      "competition": "Le JT",
-      "affiche": "Le JT",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "00:36",
-      "categorie": "foot",
-      "competition": "Football : Ligue des Nations UEFA - France / Belgique",
-      "affiche": "Football : Ligue des Nations UEFA - France / Belgique",
-      "chaine": "L'Équipe",
-      "duree_min": 121
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "00:50",
-      "categorie": "serie",
-      "competition": "New York Unité Spéciale - 1x20",
-      "affiche": "New York Unité Spéciale - 1x20",
-      "chaine": "TF1",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "00:55",
-      "categorie": "autre",
-      "competition": "Journal Météo climat",
-      "affiche": "Journal Météo climat",
-      "chaine": "France 3",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "01:00",
-      "categorie": "tennis",
-      "competition": "Tennis : French Riviera Open",
-      "affiche": "Tennis : French Riviera Open",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 109
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "01:00",
-      "categorie": "autre",
-      "competition": "La carte aux trésors",
-      "affiche": "La carte aux trésors",
-      "chaine": "France 3",
-      "duree_min": 135
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "01:00",
-      "categorie": "ldc",
-      "competition": "Handball : Ligue des champions féminine EHF",
-      "affiche": "Handball : Ligue des champions féminine EHF",
-      "chaine": "beIN Sports 3",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "01:05",
-      "categorie": "autre",
-      "competition": "Fin des programmes",
-      "affiche": "Fin des programmes",
-      "chaine": "Canal+ Foot",
-      "duree_min": 373
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "01:05",
-      "categorie": "autre",
-      "competition": "Expression directe",
-      "affiche": "Expression directe",
-      "chaine": "France 2",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "01:14",
-      "categorie": "autre",
-      "competition": "Programmes de la nuit",
-      "affiche": "Programmes de la nuit",
-      "chaine": "TMC",
-      "duree_min": 296
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "01:15",
-      "categorie": "film",
-      "competition": "Un père idéal",
-      "affiche": "Un père idéal",
-      "chaine": "France 2",
-      "duree_min": 85
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "01:40",
-      "categorie": "autre",
-      "competition": "Programmes de la nuit",
-      "affiche": "Programmes de la nuit",
-      "chaine": "TF1",
-      "duree_min": 250
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "01:59",
-      "categorie": "film",
-      "competition": "Muganga - Celui qui soigne",
-      "affiche": "Muganga - Celui qui soigne",
-      "chaine": "Canal+",
-      "duree_min": 103
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:00",
-      "categorie": "autre",
-      "competition": "Ça se passe sur beIN SPORTS",
-      "affiche": "Ça se passe sur beIN SPORTS",
-      "chaine": "beIN Sports 1",
-      "duree_min": 15
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:00",
-      "categorie": "foot",
-      "competition": "Football : Bundesliga",
-      "affiche": "Football : Bundesliga",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:15",
-      "categorie": "foot",
-      "competition": "Football américain : NFL",
-      "affiche": "Football américain : NFL",
-      "chaine": "beIN Sports 1",
-      "duree_min": 180
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:25",
-      "categorie": "autre",
-      "competition": "Programmes de la nuit",
-      "affiche": "Programmes de la nuit",
-      "chaine": "M6",
-      "duree_min": 215
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:30",
-      "categorie": "autre",
-      "competition": "Programmes de la nuit",
-      "affiche": "Programmes de la nuit",
-      "chaine": "W9",
-      "duree_min": 210
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:30",
-      "categorie": "sport",
-      "competition": "Handball : Daikin StarLigue",
-      "affiche": "Handball : Daikin StarLigue",
-      "chaine": "beIN Sports 3",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:37",
-      "categorie": "autre",
-      "competition": "Programmes de la nuit",
-      "affiche": "Programmes de la nuit",
-      "chaine": "L'Équipe",
-      "duree_min": 143
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:40",
-      "categorie": "autre",
-      "competition": "Journal Météo climat outre-mer",
-      "affiche": "Journal Météo climat outre-mer",
-      "chaine": "France 2",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:45",
-      "categorie": "autre",
-      "competition": "Ça commence aujourd'hui",
-      "affiche": "Ça commence aujourd'hui",
-      "chaine": "France 2",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "02:49",
-      "categorie": "f1",
-      "competition": "Lundi Grand Prix",
-      "affiche": "Lundi Grand Prix",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 71
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "03:15",
-      "categorie": "autre",
-      "competition": "Samedi d'en rire",
-      "affiche": "Samedi d'en rire",
-      "chaine": "France 3",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "03:42",
-      "categorie": "film",
-      "competition": "In Articulo Mortis",
-      "affiche": "In Articulo Mortis",
-      "chaine": "Canal+",
-      "duree_min": 19
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "03:45",
-      "categorie": "autre",
-      "competition": "Affaire conclue, tout le monde a quelque chose à vendre",
-      "affiche": "Affaire conclue, tout le monde a quelque chose à vendre",
-      "chaine": "France 2",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:00",
-      "categorie": "autre",
-      "competition": "Fin des programmes",
-      "affiche": "Fin des programmes",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:00",
-      "categorie": "autre",
-      "competition": "Introduction de Federer au Hall of Fame",
-      "affiche": "Introduction de Federer au Hall of Fame",
-      "chaine": "beIN Sports 2",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:00",
-      "categorie": "autre",
-      "competition": "Double étoilé",
-      "affiche": "Double étoilé",
-      "chaine": "beIN Sports 3",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:01",
-      "categorie": "autre",
-      "competition": "Saturday Night Live",
-      "affiche": "Saturday Night Live",
-      "chaine": "Canal+",
-      "duree_min": 70
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:10",
-      "categorie": "autre",
-      "competition": "Un si grand soleil",
-      "affiche": "Un si grand soleil",
-      "chaine": "France 3",
-      "duree_min": 25
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:35",
-      "categorie": "autre",
-      "competition": "Le trafic des tortues",
-      "affiche": "Le trafic des tortues",
-      "chaine": "France 2",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:35",
-      "categorie": "autre",
-      "competition": "Les matinales",
-      "affiche": "Les matinales",
-      "chaine": "France 3",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:40",
-      "categorie": "autre",
-      "competition": "Slam",
-      "affiche": "Slam",
-      "chaine": "France 3",
-      "duree_min": 81
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:45",
-      "categorie": "autre",
-      "competition": "Pays et marchés du monde",
-      "affiche": "Pays et marchés du monde",
-      "chaine": "France 2",
-      "duree_min": 25
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "04:45",
-      "categorie": "autre",
-      "competition": "Ça se passe sur beIN SPORTS",
-      "affiche": "Ça se passe sur beIN SPORTS",
-      "chaine": "beIN Sports 3",
-      "duree_min": 15
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "05:00",
-      "categorie": "autre",
-      "competition": "Programmes de la nuit",
-      "affiche": "Programmes de la nuit",
-      "chaine": "L'Équipe",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "05:00",
-      "categorie": "sport",
-      "competition": "Volley-ball : le film des finales LNV",
-      "affiche": "Volley-ball : le film des finales LNV",
-      "chaine": "beIN Sports 2",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "05:00",
-      "categorie": "tennis",
-      "competition": "Tennis : Tournoi WTA de Pékin",
-      "affiche": "Tennis : Tournoi WTA de Pékin",
-      "chaine": "beIN Sports 3",
-      "duree_min": 600
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "05:10",
-      "categorie": "autre",
-      "competition": "Tout le monde veut prendre sa place",
-      "affiche": "Tout le monde veut prendre sa place",
-      "chaine": "France 2",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "05:11",
-      "categorie": "autre",
-      "competition": "Strikers",
-      "affiche": "Strikers",
-      "chaine": "Canal+",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "05:15",
-      "categorie": "autre",
-      "competition": "Ça se passe sur beIN SPORTS",
-      "affiche": "Ça se passe sur beIN SPORTS",
-      "chaine": "beIN Sports 1",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "05:45",
-      "categorie": "autre",
-      "competition": "Ça se passe sur beIN SPORTS",
-      "affiche": "Ça se passe sur beIN SPORTS",
-      "chaine": "beIN Sports 2",
-      "duree_min": 15
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "05:50",
-      "categorie": "jeunesse",
-      "competition": "TFou",
-      "affiche": "TFou",
-      "chaine": "TF1",
-      "duree_min": 65
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:00",
-      "categorie": "autre",
-      "competition": "La matinale",
-      "affiche": "La matinale",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:00",
-      "categorie": "autre",
-      "competition": "Le 6h info",
-      "affiche": "Le 6h info",
-      "chaine": "France 2",
-      "duree_min": 35
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:00",
-      "categorie": "sport",
-      "competition": "L'Equipe du soir",
-      "affiche": "L'Equipe du soir",
-      "chaine": "L'Équipe",
-      "duree_min": 240
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:00",
-      "categorie": "autre",
-      "competition": "Scènes de ménages",
-      "affiche": "Scènes de ménages",
-      "chaine": "M6",
-      "duree_min": 125
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:00",
-      "categorie": "autre",
-      "competition": "Wake Up",
-      "affiche": "Wake Up",
-      "chaine": "W9",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:00",
-      "categorie": "foot",
-      "competition": "Football : Championnat du Portugal",
-      "affiche": "Football : Championnat du Portugal",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:00",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 2",
-      "duree_min": 840
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:01",
-      "categorie": "autre",
-      "competition": "Alors on bouge en région",
-      "affiche": "Alors on bouge en région",
-      "chaine": "France 3",
-      "duree_min": 29
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:10",
-      "categorie": "serie",
-      "competition": "Sous le soleil - 12x09",
-      "affiche": "Sous le soleil - 12x09",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:30",
-      "categorie": "autre",
-      "competition": "ICI Matin",
-      "affiche": "ICI Matin",
-      "chaine": "France 3",
-      "duree_min": 155
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:35",
-      "categorie": "autre",
-      "competition": "Télématin",
-      "affiche": "Télématin",
-      "chaine": "France 2",
-      "duree_min": 85
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:41",
-      "categorie": "autre",
-      "competition": "Clique",
-      "affiche": "Clique",
-      "chaine": "Canal+",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "06:55",
-      "categorie": "info",
-      "competition": "Bonjour ! La Matinale TF1",
-      "affiche": "Bonjour ! La Matinale TF1",
-      "chaine": "TF1",
-      "duree_min": 185
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "07:00",
-      "categorie": "autre",
-      "competition": "Le double expresso RTL2",
-      "affiche": "Le double expresso RTL2",
-      "chaine": "W9",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "07:05",
-      "categorie": "serie",
-      "competition": "Sous le soleil - 12x10",
-      "affiche": "Sous le soleil - 12x10",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "07:18",
-      "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 61
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "07:36",
-      "categorie": "autre",
-      "competition": "En aparté",
-      "affiche": "En aparté",
-      "chaine": "Canal+",
-      "duree_min": 32
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "08:00",
-      "categorie": "f1",
-      "competition": "Lundi Grand Prix",
-      "affiche": "Lundi Grand Prix",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 62
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "08:00",
-      "categorie": "autre",
-      "competition": "Journal 08h00",
-      "affiche": "Journal 08h00",
-      "chaine": "France 2",
-      "duree_min": 17
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "08:00",
-      "categorie": "serie",
-      "competition": "Sous le soleil - 12x11",
-      "affiche": "Sous le soleil - 12x11",
-      "chaine": "TMC",
-      "duree_min": 65
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "08:00",
-      "categorie": "autre",
-      "competition": "Double étoilé",
-      "affiche": "Double étoilé",
-      "chaine": "beIN Sports 1",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "08:05",
-      "categorie": "autre",
-      "competition": "My boutique Téléshop'",
-      "affiche": "My boutique Téléshop'",
-      "chaine": "M6",
-      "duree_min": 100
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "08:08",
-      "categorie": "film",
-      "competition": "Des preuves d'amour",
-      "affiche": "Des preuves d'amour",
-      "chaine": "Canal+",
-      "duree_min": 106
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "08:17",
-      "categorie": "autre",
-      "competition": "Télématin",
-      "affiche": "Télématin",
-      "chaine": "France 2",
-      "duree_min": 63
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "08:19",
-      "categorie": "foot",
-      "competition": "Football : Premier League",
-      "affiche": "Football : Premier League",
-      "chaine": "Canal+ Foot",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "08:45",
-      "categorie": "autre",
-      "competition": "Sport50",
-      "affiche": "Sport50",
-      "chaine": "beIN Sports 1",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:00",
-      "categorie": "autre",
-      "competition": "Kaamelott",
-      "affiche": "Kaamelott",
-      "chaine": "W9",
-      "duree_min": 180
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:02",
-      "categorie": "sport",
-      "competition": "Rallye Club",
-      "affiche": "Rallye Club",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 27
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:05",
-      "categorie": "autre",
-      "competition": "ICI dans votre région",
-      "affiche": "ICI dans votre région",
-      "chaine": "France 3",
-      "duree_min": 80
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:05",
-      "categorie": "serie",
-      "competition": "Sous le soleil - 12x12",
-      "affiche": "Sous le soleil - 12x12",
-      "chaine": "TMC",
-      "duree_min": 65
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:15",
-      "categorie": "sport",
-      "competition": "Basket-ball : NBA",
-      "affiche": "Basket-ball : NBA",
-      "chaine": "beIN Sports 1",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:20",
-      "categorie": "autre",
-      "competition": "Télématin, la suite",
-      "affiche": "Télématin, la suite",
-      "chaine": "France 2",
-      "duree_min": 80
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:29",
-      "categorie": "sport",
-      "competition": "Rallye : ERC, Rallye du Royaume-Uni",
-      "affiche": "Rallye : ERC, Rallye du Royaume-Uni",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 27
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:45",
-      "categorie": "autre",
-      "competition": "Ça peut vous arriver",
-      "affiche": "Ça peut vous arriver",
-      "chaine": "M6",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:54",
-      "categorie": "film",
-      "competition": "Dossier 137",
-      "affiche": "Dossier 137",
-      "chaine": "Canal+",
-      "duree_min": 113
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "09:56",
-      "categorie": "sport",
-      "competition": "Rallye : WRC, Rallye Italie Sardaigne",
-      "affiche": "Rallye : WRC, Rallye Italie Sardaigne",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 139
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "10:00",
-      "categorie": "autre",
-      "competition": "V6",
-      "affiche": "V6",
-      "chaine": "L'Équipe",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "10:00",
-      "categorie": "info",
-      "competition": "Bonjour ! Avec vous",
-      "affiche": "Bonjour ! Avec vous",
-      "chaine": "TF1",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "10:04",
-      "categorie": "autre",
-      "competition": "Giroud : Le dîner des 40 ans",
-      "affiche": "Giroud : Le dîner des 40 ans",
-      "chaine": "Canal+ Foot",
-      "duree_min": 67
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "10:10",
-      "categorie": "serie",
-      "competition": "Drop Dead Diva - 3x07",
-      "affiche": "Drop Dead Diva - 3x07",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "10:25",
-      "categorie": "autre",
-      "competition": "La p'tite librairie",
-      "affiche": "La p'tite librairie",
-      "chaine": "France 3",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "10:30",
-      "categorie": "autre",
-      "competition": "Escales en France",
-      "affiche": "Escales en France",
-      "chaine": "France 3",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "10:40",
-      "categorie": "autre",
-      "competition": "Journal Météo climat outre-mer",
-      "affiche": "Journal Météo climat outre-mer",
-      "chaine": "France 2",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "10:50",
-      "categorie": "autre",
-      "competition": "Chacun son tour",
-      "affiche": "Chacun son tour",
-      "chaine": "France 2",
-      "duree_min": 65
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "10:55",
-      "categorie": "autre",
-      "competition": "Les Feux de l'amour",
-      "affiche": "Les Feux de l'amour",
-      "chaine": "TF1",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:00",
-      "categorie": "autre",
-      "competition": "C'est succulent !",
-      "affiche": "C'est succulent !",
-      "chaine": "France 3",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:00",
-      "categorie": "sport",
-      "competition": "Basket-ball : Pré-saison NBA",
-      "affiche": "Basket-ball : Pré-saison NBA",
-      "chaine": "beIN Sports 1",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:05",
-      "categorie": "serie",
-      "competition": "Drop Dead Diva - 3x08",
-      "affiche": "Drop Dead Diva - 3x08",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:11",
-      "categorie": "foot",
-      "competition": "Football : Arkema Première Ligue",
-      "affiche": "Football : Arkema Première Ligue",
-      "chaine": "Canal+ Foot",
-      "duree_min": 103
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:30",
-      "categorie": "autre",
-      "competition": "Ça peut vous arriver chez vous",
-      "affiche": "Ça peut vous arriver chez vous",
-      "chaine": "M6",
-      "duree_min": 70
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:45",
-      "categorie": "autre",
-      "competition": "Petits plats en équilibre",
-      "affiche": "Petits plats en équilibre",
-      "chaine": "TF1",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:47",
-      "categorie": "autre",
-      "competition": "La boîte à questions",
-      "affiche": "La boîte à questions",
-      "chaine": "Canal+",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:50",
-      "categorie": "autre",
-      "competition": "Les douze coups de midi",
-      "affiche": "Les douze coups de midi",
-      "chaine": "TF1",
-      "duree_min": 65
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:52",
-      "categorie": "autre",
-      "competition": "En aparté",
-      "affiche": "En aparté",
-      "chaine": "Canal+",
-      "duree_min": 33
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "11:55",
-      "categorie": "autre",
-      "competition": "Tout le monde veut prendre sa place",
-      "affiche": "Tout le monde veut prendre sa place",
-      "chaine": "France 2",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:00",
-      "categorie": "info",
-      "competition": "Météo",
-      "affiche": "Météo",
-      "chaine": "France 3",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:00",
-      "categorie": "tennis",
-      "competition": "Tennis de table : WTT China Smash",
-      "affiche": "Tennis de table : WTT China Smash",
-      "chaine": "L'Équipe",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:00",
-      "categorie": "serie",
-      "competition": "Drop Dead Diva - 3x09",
-      "affiche": "Drop Dead Diva - 3x09",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:00",
-      "categorie": "serie",
-      "competition": "NCIS - 12x17",
-      "affiche": "NCIS - 12x17",
-      "chaine": "W9",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:05",
-      "categorie": "autre",
-      "competition": "Outremer.l'info",
-      "affiche": "Outremer.l'info",
-      "chaine": "France 3",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:15",
-      "categorie": "autre",
-      "competition": "Le JT",
-      "affiche": "Le JT",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:15",
-      "categorie": "autre",
-      "competition": "La p'tite librairie",
-      "affiche": "La p'tite librairie",
-      "chaine": "France 3",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:25",
-      "categorie": "autre",
-      "competition": "Clique",
-      "affiche": "Clique",
-      "chaine": "Canal+",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:25",
-      "categorie": "autre",
-      "competition": "Dans le rétro",
-      "affiche": "Dans le rétro",
-      "chaine": "France 3",
-      "duree_min": 1
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:26",
-      "categorie": "autre",
-      "competition": "ICI 12/13",
-      "affiche": "ICI 12/13",
-      "chaine": "France 3",
-      "duree_min": 29
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:40",
-      "categorie": "info",
-      "competition": "Météo",
-      "affiche": "Météo",
-      "chaine": "M6",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:45",
-      "categorie": "f1",
-      "competition": "Lundi Grand Prix",
-      "affiche": "Lundi Grand Prix",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 62
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:45",
-      "categorie": "autre",
-      "competition": "La minute des Maternelles",
-      "affiche": "La minute des Maternelles",
-      "chaine": "France 2",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:45",
-      "categorie": "autre",
-      "competition": "Le 12.45",
-      "affiche": "Le 12.45",
-      "chaine": "M6",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:45",
-      "categorie": "autre",
-      "competition": "Ça se passe sur beIN SPORTS",
-      "affiche": "Ça se passe sur beIN SPORTS",
-      "chaine": "beIN Sports 1",
-      "duree_min": 15
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:50",
-      "categorie": "serie",
-      "competition": "NCIS - 12x18",
-      "affiche": "NCIS - 12x18",
-      "chaine": "W9",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:54",
-      "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 61
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:55",
-      "categorie": "autre",
-      "competition": "Journal Météo climat",
-      "affiche": "Journal Météo climat",
-      "chaine": "France 2",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:55",
-      "categorie": "autre",
-      "competition": "Météo à la carte",
-      "affiche": "Météo à la carte",
-      "chaine": "France 3",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:55",
-      "categorie": "autre",
-      "competition": "Petits plats en équilibre",
-      "affiche": "Petits plats en équilibre",
-      "chaine": "TF1",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "12:55",
-      "categorie": "serie",
-      "competition": "Drop Dead Diva - 3x10",
-      "affiche": "Drop Dead Diva - 3x10",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:00",
-      "categorie": "autre",
-      "competition": "Journal 13h00",
-      "affiche": "Journal 13h00",
-      "chaine": "France 2",
-      "duree_min": 40
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:00",
-      "categorie": "autre",
-      "competition": "JT 13h",
-      "affiche": "JT 13h",
-      "chaine": "TF1",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:00",
-      "categorie": "foot",
-      "competition": "Football : Bundesliga",
-      "affiche": "Football : Bundesliga",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:20",
-      "categorie": "serie",
-      "competition": "Ceci n'est pas un crime - 1x04",
-      "affiche": "Ceci n'est pas un crime - 1x04",
-      "chaine": "Canal+",
-      "duree_min": 54
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:35",
-      "categorie": "autre",
-      "competition": "Scènes de ménages",
-      "affiche": "Scènes de ménages",
-      "chaine": "M6",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:40",
-      "categorie": "autre",
-      "competition": "Journal Météo climat",
-      "affiche": "Journal Météo climat",
-      "chaine": "France 2",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:40",
-      "categorie": "autre",
-      "competition": "Un jour, un doc",
-      "affiche": "Un jour, un doc",
-      "chaine": "M6",
-      "duree_min": 225
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:40",
-      "categorie": "serie",
-      "competition": "NCIS - 12x19",
-      "affiche": "NCIS - 12x19",
-      "chaine": "W9",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:45",
-      "categorie": "autre",
-      "competition": "La p'tite librairie",
-      "affiche": "La p'tite librairie",
-      "chaine": "France 2",
-      "duree_min": 2
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:47",
-      "categorie": "autre",
-      "competition": "Zapsport 360",
-      "affiche": "Zapsport 360",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 4
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:47",
-      "categorie": "autre",
-      "competition": "Expression directe",
-      "affiche": "Expression directe",
-      "chaine": "France 2",
-      "duree_min": 8
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:50",
-      "categorie": "autre",
-      "competition": "Petits plats en équilibre",
-      "affiche": "Petits plats en équilibre",
-      "chaine": "TF1",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:50",
-      "categorie": "autre",
-      "competition": "Petits plats en équilibre",
-      "affiche": "Petits plats en équilibre",
-      "chaine": "TMC",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:51",
-      "categorie": "autre",
-      "competition": "La clinique des sports",
-      "affiche": "La clinique des sports",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 66
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:55",
-      "categorie": "autre",
-      "competition": "Cityzen Pep",
-      "affiche": "Cityzen Pep",
-      "chaine": "Canal+ Foot",
-      "duree_min": 79
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:55",
-      "categorie": "autre",
-      "competition": "Ça commence aujourd'hui",
-      "affiche": "Ça commence aujourd'hui",
-      "chaine": "France 2",
-      "duree_min": 70
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:55",
-      "categorie": "autre",
-      "competition": "Météo à la carte (la suite)",
-      "affiche": "Météo à la carte (la suite)",
-      "chaine": "France 3",
-      "duree_min": 35
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:55",
-      "categorie": "info",
-      "competition": "Météo",
-      "affiche": "Météo",
-      "chaine": "TF1",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "13:55",
-      "categorie": "serie",
-      "competition": "Mentalist - 5x10",
-      "affiche": "Mentalist - 5x10",
-      "chaine": "TMC",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "14:00",
-      "categorie": "autre",
-      "competition": "Plus belle la vie, encore plus belle",
-      "affiche": "Plus belle la vie, encore plus belle",
-      "chaine": "TF1",
-      "duree_min": 25
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "14:14",
-      "categorie": "serie",
-      "competition": "Ceci n'est pas un crime - 1x05",
-      "affiche": "Ceci n'est pas un crime - 1x05",
-      "chaine": "Canal+",
-      "duree_min": 52
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "14:25",
-      "categorie": "film",
-      "competition": "Les murs ont des secrets",
-      "affiche": "Les murs ont des secrets",
-      "chaine": "TF1",
-      "duree_min": 95
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "14:30",
-      "categorie": "serie",
-      "competition": "Rex - 16x04",
-      "affiche": "Rex - 16x04",
-      "chaine": "France 3",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "14:30",
-      "categorie": "sport",
-      "competition": "Cyclisme : avant-course",
-      "affiche": "Cyclisme : avant-course",
-      "chaine": "L'Équipe",
-      "duree_min": 20
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "14:30",
-      "categorie": "serie",
-      "competition": "NCIS - 12x20",
-      "affiche": "NCIS - 12x20",
-      "chaine": "W9",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "14:45",
-      "categorie": "serie",
-      "competition": "Mentalist - 5x11",
-      "affiche": "Mentalist - 5x11",
-      "chaine": "TMC",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "14:50",
-      "categorie": "sport",
-      "competition": "Cyclisme : Championnats d'Europe sur route",
-      "affiche": "Cyclisme : Championnats d'Europe sur route",
-      "chaine": "L'Équipe",
-      "duree_min": 145
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "14:57",
-      "categorie": "autre",
-      "competition": "05/06/2027 En route pour Madrid",
-      "affiche": "05/06/2027 En route pour Madrid",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 19
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:00",
-      "categorie": "foot",
-      "competition": "Football : Coupe de la Ligue anglaise",
-      "affiche": "Football : Coupe de la Ligue anglaise",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:00",
-      "categorie": "foot",
-      "competition": "Football américain : NFL",
-      "affiche": "Football américain : NFL",
-      "chaine": "beIN Sports 3",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:05",
-      "categorie": "autre",
-      "competition": "Le Mag de la santé",
-      "affiche": "Le Mag de la santé",
-      "chaine": "France 2",
-      "duree_min": 80
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:06",
-      "categorie": "serie",
-      "competition": "Ceci n'est pas un crime - 1x06",
-      "affiche": "Ceci n'est pas un crime - 1x06",
-      "chaine": "Canal+",
-      "duree_min": 54
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:14",
-      "categorie": "ldc",
-      "competition": "Football : Ligue des champions",
-      "affiche": "Football : Ligue des champions",
-      "chaine": "Canal+ Foot",
-      "duree_min": 102
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:16",
-      "categorie": "foot",
-      "competition": "Les acrobates du football",
-      "affiche": "Les acrobates du football",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 29
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:30",
-      "categorie": "serie",
-      "competition": "Rex - 16x05",
-      "affiche": "Rex - 16x05",
-      "chaine": "France 3",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:30",
-      "categorie": "serie",
-      "competition": "NCIS - 12x21",
-      "affiche": "NCIS - 12x21",
-      "chaine": "W9",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:35",
-      "categorie": "serie",
-      "competition": "Mentalist - 5x12",
-      "affiche": "Mentalist - 5x12",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "15:45",
-      "categorie": "autre",
-      "competition": "Le JT",
-      "affiche": "Le JT",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "16:00",
-      "categorie": "autre",
-      "competition": "Super plan",
-      "affiche": "Super plan",
-      "chaine": "Canal+",
-      "duree_min": 31
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "16:00",
-      "categorie": "film",
-      "competition": "La soeur de trop",
-      "affiche": "La soeur de trop",
-      "chaine": "TF1",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "16:25",
-      "categorie": "autre",
-      "competition": "Affaire conclue, tout le monde a quelque chose à vendre",
-      "affiche": "Affaire conclue, tout le monde a quelque chose à vendre",
-      "chaine": "France 2",
-      "duree_min": 100
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "16:30",
-      "categorie": "f1",
-      "competition": "Moto 2 : Grand Prix du Japon",
-      "affiche": "Moto 2 : Grand Prix du Japon",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 59
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "16:30",
-      "categorie": "serie",
-      "competition": "Rex - 13x10",
-      "affiche": "Rex - 13x10",
-      "chaine": "France 3",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "16:30",
-      "categorie": "serie",
-      "competition": "Mentalist - 5x13",
-      "affiche": "Mentalist - 5x13",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "16:30",
-      "categorie": "serie",
-      "competition": "NCIS - 13x09",
-      "affiche": "NCIS - 13x09",
-      "chaine": "W9",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "16:31",
-      "categorie": "film",
-      "competition": "Nuremberg",
-      "affiche": "Nuremberg",
-      "chaine": "Canal+",
-      "duree_min": 143
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "16:56",
-      "categorie": "foot",
-      "competition": "Fractionné Football",
-      "affiche": "Fractionné Football",
-      "chaine": "Canal+ Foot",
-      "duree_min": 14
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:00",
-      "categorie": "autre",
-      "competition": "A point",
-      "affiche": "A point",
-      "chaine": "beIN Sports 1",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:10",
-      "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 61
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:15",
-      "categorie": "sport",
-      "competition": "L'Equipe de choc",
-      "affiche": "L'Equipe de choc",
-      "chaine": "L'Équipe",
-      "duree_min": 75
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:25",
-      "categorie": "autre",
-      "competition": "Slam",
-      "affiche": "Slam",
-      "chaine": "France 3",
-      "duree_min": 85
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:25",
-      "categorie": "autre",
-      "competition": "La roue de la fortune",
-      "affiche": "La roue de la fortune",
-      "chaine": "M6",
-      "duree_min": 70
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:25",
-      "categorie": "serie",
-      "competition": "Mentalist - 5x14",
-      "affiche": "Mentalist - 5x14",
-      "chaine": "TMC",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:25",
-      "categorie": "autre",
-      "competition": "Les apprentis aventuriers",
-      "affiche": "Les apprentis aventuriers",
-      "chaine": "W9",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:29",
-      "categorie": "f1",
-      "competition": "Sail GP : Racing on the Edge",
-      "affiche": "Sail GP : Racing on the Edge",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 27
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:30",
-      "categorie": "autre",
-      "competition": "Familles nombreuses : la vie en XXL",
-      "affiche": "Familles nombreuses : la vie en XXL",
-      "chaine": "TF1",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:30",
-      "categorie": "sport",
-      "competition": "Basket-ball : Euroligue masculine",
-      "affiche": "Basket-ball : Euroligue masculine",
-      "chaine": "beIN Sports 3",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:45",
-      "categorie": "autre",
-      "competition": "Ça se passe sur beIN SPORTS",
-      "affiche": "Ça se passe sur beIN SPORTS",
-      "chaine": "beIN Sports 1",
-      "duree_min": 15
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "17:56",
-      "categorie": "autre",
-      "competition": "Zapsport 360",
-      "affiche": "Zapsport 360",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 4
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:00",
-      "categorie": "autre",
-      "competition": "Club 360",
-      "affiche": "Club 360",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:00",
-      "categorie": "foot",
-      "competition": "Football américain : NCAA",
-      "affiche": "Football américain : NCAA",
-      "chaine": "beIN Sports 1",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:05",
-      "categorie": "autre",
-      "competition": "Tout le monde a son mot à dire",
-      "affiche": "Tout le monde a son mot à dire",
-      "chaine": "France 2",
-      "duree_min": 35
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:11",
-      "categorie": "autre",
-      "competition": "Histoire de Champions",
-      "affiche": "Histoire de Champions",
-      "chaine": "Canal+ Foot",
-      "duree_min": 94
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:15",
-      "categorie": "autre",
-      "competition": "Petits plats en équilibre",
-      "affiche": "Petits plats en équilibre",
-      "chaine": "TMC",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:20",
-      "categorie": "autre",
-      "competition": "L'avant Quotidien",
-      "affiche": "L'avant Quotidien",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:20",
-      "categorie": "autre",
-      "competition": "Tout beau, tout n9uf",
-      "affiche": "Tout beau, tout n9uf",
-      "chaine": "W9",
-      "duree_min": 175
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:30",
-      "categorie": "sport",
-      "competition": "L'Equipe de Greg",
-      "affiche": "L'Equipe de Greg",
-      "chaine": "L'Équipe",
-      "duree_min": 129
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:30",
-      "categorie": "serie",
-      "competition": "Ici tout commence - 7x1539",
-      "affiche": "Ici tout commence - 7x1539",
-      "chaine": "TF1",
-      "duree_min": 40
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:35",
-      "categorie": "autre",
-      "competition": "La meilleure cuisine régionale, c'est chez moi !",
-      "affiche": "La meilleure cuisine régionale, c'est chez moi !",
-      "chaine": "M6",
-      "duree_min": 65
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:40",
-      "categorie": "autre",
-      "competition": "N'oubliez pas les paroles",
-      "affiche": "N'oubliez pas les paroles",
-      "chaine": "France 2",
-      "duree_min": 75
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:50",
-      "categorie": "autre",
-      "competition": "Journal Météo climat",
-      "affiche": "Journal Météo climat",
-      "chaine": "France 3",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:54",
-      "categorie": "autre",
-      "competition": "La boîte à questions",
-      "affiche": "La boîte à questions",
-      "chaine": "Canal+",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "18:59",
-      "categorie": "autre",
-      "competition": "En aparté",
-      "affiche": "En aparté",
-      "chaine": "Canal+",
-      "duree_min": 34
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:00",
-      "categorie": "autre",
-      "competition": "Dans le rétro",
-      "affiche": "Dans le rétro",
-      "chaine": "France 3",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:10",
-      "categorie": "autre",
-      "competition": "Le journal des talents",
-      "affiche": "Le journal des talents",
-      "chaine": "France 3",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:10",
-      "categorie": "serie",
-      "competition": "Demain nous appartient - 10x2307",
-      "affiche": "Demain nous appartient - 10x2307",
-      "chaine": "TF1",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:15",
-      "categorie": "autre",
-      "competition": "ICI 19/20 édition toutes régions",
-      "affiche": "ICI 19/20 édition toutes régions",
-      "chaine": "France 3",
-      "duree_min": 35
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:15",
-      "categorie": "autre",
-      "competition": "Quotidien, première partie",
-      "affiche": "Quotidien, première partie",
-      "chaine": "TMC",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:15",
-      "categorie": "sport",
-      "competition": "Handball : Daikin StarLigue",
-      "affiche": "Handball : Daikin StarLigue",
-      "chaine": "beIN Sports 3",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:30",
-      "categorie": "autre",
-      "competition": "La boutique",
-      "affiche": "La boutique",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:33",
-      "categorie": "autre",
-      "competition": "Clique",
-      "affiche": "Clique",
-      "chaine": "Canal+",
-      "duree_min": 58
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:40",
-      "categorie": "info",
-      "competition": "Météo",
-      "affiche": "Météo",
-      "chaine": "M6",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:45",
-      "categorie": "foot",
-      "competition": "Jour de foot",
-      "affiche": "Jour de foot",
-      "chaine": "Canal+ Foot",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:45",
-      "categorie": "autre",
-      "competition": "Le 19.45",
-      "affiche": "Le 19.45",
-      "chaine": "M6",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:50",
-      "categorie": "autre",
-      "competition": "On vous emmène ici",
-      "affiche": "On vous emmène ici",
-      "chaine": "France 3",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:55",
-      "categorie": "autre",
-      "competition": "Journal Météo climat",
-      "affiche": "Journal Météo climat",
-      "chaine": "France 2",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "19:55",
-      "categorie": "info",
-      "competition": "Météo",
-      "affiche": "Météo",
-      "chaine": "TF1",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:00",
-      "categorie": "padel",
-      "competition": "Soir de padel",
-      "affiche": "Soir de padel",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 64
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:00",
-      "categorie": "autre",
-      "competition": "Journal 20h00",
-      "affiche": "Journal 20h00",
-      "chaine": "France 2",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:00",
-      "categorie": "autre",
-      "competition": "Stade 2 la quotidienne",
-      "affiche": "Stade 2 la quotidienne",
-      "chaine": "France 3",
-      "duree_min": 20
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:00",
-      "categorie": "autre",
-      "competition": "JT 20h",
-      "affiche": "JT 20h",
-      "chaine": "TF1",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:00",
-      "categorie": "foot",
-      "competition": "Ligue 2 Extra",
-      "affiche": "Ligue 2 Extra",
-      "chaine": "beIN Sports 2",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:10",
-      "categorie": "autre",
-      "competition": "Quotidien, deuxième partie",
-      "affiche": "Quotidien, deuxième partie",
-      "chaine": "TMC",
-      "duree_min": 35
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:15",
-      "categorie": "autre",
-      "competition": "Pirès, la soirée des légendes",
-      "affiche": "Pirès, la soirée des légendes",
-      "chaine": "Canal+ Foot",
-      "duree_min": 180
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:20",
-      "categorie": "autre",
-      "competition": "Météo régionale",
-      "affiche": "Météo régionale",
-      "chaine": "France 3",
-      "duree_min": 1
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:21",
-      "categorie": "autre",
-      "competition": "Le journal des talents",
-      "affiche": "Le journal des talents",
-      "chaine": "France 3",
-      "duree_min": 4
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:25",
-      "categorie": "autre",
-      "competition": "Un si grand soleil",
-      "affiche": "Un si grand soleil",
-      "chaine": "France 3",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:30",
-      "categorie": "foot",
-      "competition": "Football américain : NFL",
-      "affiche": "Football américain : NFL",
-      "chaine": "beIN Sports 1",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:31",
-      "categorie": "autre",
-      "competition": "En aparté",
-      "affiche": "En aparté",
-      "chaine": "Canal+",
-      "duree_min": 39
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:39",
-      "categorie": "foot",
-      "competition": "Football : Ligue des Nations UEFA - Multiplex",
-      "affiche": "Football : Ligue des Nations UEFA - Multiplex",
-      "chaine": "L'Équipe",
-      "duree_min": 126
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:40",
-      "categorie": "autre",
-      "competition": "Scènes de ménages",
-      "affiche": "Scènes de ménages",
-      "chaine": "M6",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:45",
-      "categorie": "autre",
-      "competition": "Petits plats en équilibre",
-      "affiche": "Petits plats en équilibre",
-      "chaine": "TF1",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:45",
-      "categorie": "autre",
-      "competition": "Quotidien",
-      "affiche": "Quotidien",
-      "chaine": "TMC",
-      "duree_min": 40
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:45",
-      "categorie": "autre",
-      "competition": "Ça se passe sur beIN SPORTS",
-      "affiche": "Ça se passe sur beIN SPORTS",
-      "chaine": "beIN Sports 2",
-      "duree_min": 15
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:45",
-      "categorie": "rugby",
-      "competition": "Rugby à XIII : NRL",
-      "affiche": "Rugby à XIII : NRL",
-      "chaine": "beIN Sports 3",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:50",
-      "categorie": "autre",
-      "competition": "My Million",
-      "affiche": "My Million",
-      "chaine": "TF1",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "20:55",
-      "categorie": "info",
-      "competition": "Météo",
-      "affiche": "Météo",
-      "chaine": "TF1",
-      "duree_min": 10
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:00",
-      "categorie": "autre",
-      "competition": "Journal Météo climat",
-      "affiche": "Journal Météo climat",
-      "chaine": "France 2",
-      "duree_min": 4
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:00",
-      "categorie": "autre",
-      "competition": "Sport50",
-      "affiche": "Sport50",
-      "chaine": "beIN Sports 2",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:04",
-      "categorie": "tennis",
-      "competition": "Tennis : French Riviera Open",
-      "affiche": "Tennis : French Riviera Open",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 121
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:04",
-      "categorie": "autre",
-      "competition": "Voyage au coeur du patrimoine",
-      "affiche": "Voyage au coeur du patrimoine",
-      "chaine": "France 2",
-      "duree_min": 1
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:05",
-      "categorie": "autre",
-      "competition": "Basique, l'essentiel de la musique",
-      "affiche": "Basique, l'essentiel de la musique",
-      "chaine": "France 2",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:05",
-      "categorie": "autre",
-      "competition": "Petits plats en équilibre",
-      "affiche": "Petits plats en équilibre",
-      "chaine": "TF1",
-      "duree_min": 5
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:10",
-      "categorie": "film",
-      "competition": "Hamnet",
-      "affiche": "Hamnet",
-      "chaine": "Canal+",
-      "duree_min": 123
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:10",
-      "categorie": "autre",
-      "competition": "Après la colère",
-      "affiche": "Après la colère",
-      "chaine": "France 2",
-      "duree_min": 95
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:10",
-      "categorie": "serie",
-      "competition": "La stagiaire - 11x06",
-      "affiche": "La stagiaire - 11x06",
-      "chaine": "France 3",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:10",
-      "categorie": "serie",
-      "competition": "9-1-1 - 9x10",
-      "affiche": "9-1-1 - 9x10",
-      "chaine": "M6",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:10",
-      "categorie": "autre",
-      "competition": "Koh-Lanta",
-      "affiche": "Koh-Lanta",
-      "chaine": "TF1",
-      "duree_min": 125
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:15",
-      "categorie": "autre",
-      "competition": "La grosse rigolade",
-      "affiche": "La grosse rigolade",
-      "chaine": "W9",
-      "duree_min": 425
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:25",
-      "categorie": "autre",
-      "competition": "21h Médias",
-      "affiche": "21h Médias",
-      "chaine": "TMC",
-      "duree_min": 95
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:30",
-      "categorie": "autre",
-      "competition": "beIN Zap",
-      "affiche": "beIN Zap",
-      "chaine": "beIN Sports 2",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "21:55",
-      "categorie": "serie",
-      "competition": "9-1-1 - 9x11",
-      "affiche": "9-1-1 - 9x11",
-      "chaine": "M6",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "22:00",
-      "categorie": "serie",
-      "competition": "La stagiaire - 10x06",
-      "affiche": "La stagiaire - 10x06",
-      "chaine": "France 3",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "22:00",
-      "categorie": "foot",
-      "competition": "Football : Coupe de la Ligue anglaise",
-      "affiche": "Football : Coupe de la Ligue anglaise",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "22:45",
-      "categorie": "autre",
-      "competition": "Justice en France",
-      "affiche": "Justice en France",
-      "chaine": "France 2",
-      "duree_min": 205
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "22:45",
-      "categorie": "serie",
-      "competition": "La stagiaire - 11x05",
-      "affiche": "La stagiaire - 11x05",
-      "chaine": "France 3",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "22:45",
-      "categorie": "sport",
-      "competition": "L'Equipe du soir",
-      "affiche": "L'Equipe du soir",
-      "chaine": "L'Équipe",
-      "duree_min": 203
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "22:45",
-      "categorie": "ldc",
-      "competition": "Handball : Ligue des champions féminine EHF",
-      "affiche": "Handball : Ligue des champions féminine EHF",
-      "chaine": "beIN Sports 3",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "22:50",
-      "categorie": "serie",
-      "competition": "9-1-1 - 7x07",
-      "affiche": "9-1-1 - 7x07",
-      "chaine": "M6",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:00",
-      "categorie": "autre",
-      "competition": "90' Enquêtes",
-      "affiche": "90' Enquêtes",
-      "chaine": "TMC",
-      "duree_min": 91
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:00",
-      "categorie": "sport",
-      "competition": "NFL Extra",
-      "affiche": "NFL Extra",
-      "chaine": "beIN Sports 1",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:05",
-      "categorie": "autre",
-      "competition": "De chair et d'acier",
-      "affiche": "De chair et d'acier",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 78
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:13",
-      "categorie": "autre",
-      "competition": "Super plan",
-      "affiche": "Super plan",
-      "chaine": "Canal+",
-      "duree_min": 27
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:15",
-      "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:15",
-      "categorie": "autre",
-      "competition": "Une famille en or",
-      "affiche": "Une famille en or",
-      "chaine": "TF1",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:35",
-      "categorie": "serie",
-      "competition": "La stagiaire - 11x06",
-      "affiche": "La stagiaire - 11x06",
-      "chaine": "France 3",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:35",
-      "categorie": "serie",
-      "competition": "9-1-1 - 7x08",
-      "affiche": "9-1-1 - 7x08",
-      "chaine": "M6",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:40",
-      "categorie": "film",
-      "competition": "“Hurlevent”",
-      "affiche": "“Hurlevent”",
-      "chaine": "Canal+",
-      "duree_min": 132
-    },
-    {
-      "date": "2026-10-06",
-      "heure": "23:45",
-      "categorie": "sport",
-      "competition": "Volley-ball : le film des finales LNV",
-      "affiche": "Volley-ball : le film des finales LNV",
-      "chaine": "beIN Sports 1",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-10-07",
-      "heure": "00:00",
-      "categorie": "autre",
-      "competition": "Strikers",
-      "affiche": "Strikers",
-      "chaine": "Canal+ Foot",
-      "duree_min": 39
-    },
-    {
       "date": "2026-10-07",
       "heure": "00:00",
       "categorie": "sport",
@@ -2587,21 +193,21 @@
     },
     {
       "date": "2026-10-07",
+      "heure": "00:01",
+      "categorie": "autre",
+      "competition": "Strikers",
+      "affiche": "Strikers",
+      "chaine": "Canal+ Foot",
+      "duree_min": 38
+    },
+    {
+      "date": "2026-10-07",
       "heure": "00:15",
       "categorie": "foot",
       "competition": "Football américain : NFL",
       "affiche": "Football américain : NFL",
       "chaine": "beIN Sports 3",
       "duree_min": 150
-    },
-    {
-      "date": "2026-10-07",
-      "heure": "00:23",
-      "categorie": "autre",
-      "competition": "Zapsport 360",
-      "affiche": "Zapsport 360",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 7
     },
     {
       "date": "2026-10-07",
@@ -2620,15 +226,6 @@
       "affiche": "9-1-1 - 6x03",
       "chaine": "M6",
       "duree_min": 55
-    },
-    {
-      "date": "2026-10-07",
-      "heure": "00:30",
-      "categorie": "autre",
-      "competition": "Le JT",
-      "affiche": "Le JT",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 30
     },
     {
       "date": "2026-10-07",
@@ -2664,7 +261,16 @@
       "competition": "Fin des programmes",
       "affiche": "Fin des programmes",
       "chaine": "Canal+ Foot",
-      "duree_min": 401
+      "duree_min": 396
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "00:45",
+      "categorie": "autre",
+      "competition": "Le JT",
+      "affiche": "Le JT",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 45
     },
     {
       "date": "2026-10-07",
@@ -2674,15 +280,6 @@
       "affiche": "How to Breathe out of Water",
       "chaine": "France 3",
       "duree_min": 15
-    },
-    {
-      "date": "2026-10-07",
-      "heure": "01:00",
-      "categorie": "tennis",
-      "competition": "Tennis : French Riviera Open",
-      "affiche": "Tennis : French Riviera Open",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 119
     },
     {
       "date": "2026-10-07",
@@ -2719,6 +316,15 @@
       "affiche": "9-1-1 - 4x02",
       "chaine": "M6",
       "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "01:30",
+      "categorie": "tennis",
+      "competition": "Tennis : French Riviera Open",
+      "affiche": "Tennis : French Riviera Open",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 98
     },
     {
       "date": "2026-10-07",
@@ -2790,16 +396,7 @@
       "competition": "Ça se passe sur beIN SPORTS",
       "affiche": "Ça se passe sur beIN SPORTS",
       "chaine": "beIN Sports 3",
-      "duree_min": 195
-    },
-    {
-      "date": "2026-10-07",
-      "heure": "02:59",
-      "categorie": "padel",
-      "competition": "Soir de padel",
-      "affiche": "Soir de padel",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 60
+      "duree_min": 255
     },
     {
       "date": "2026-10-07",
@@ -2809,6 +406,15 @@
       "affiche": "Au-delà des sommets",
       "chaine": "beIN Sports 2",
       "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "03:08",
+      "categorie": "padel",
+      "competition": "Soir de padel",
+      "affiche": "Soir de padel",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 60
     },
     {
       "date": "2026-10-07",
@@ -2848,15 +454,6 @@
     },
     {
       "date": "2026-10-07",
-      "heure": "03:59",
-      "categorie": "autre",
-      "competition": "Fin des programmes",
-      "affiche": "Fin des programmes",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 121
-    },
-    {
-      "date": "2026-10-07",
       "heure": "04:00",
       "categorie": "autre",
       "competition": "Passion sous pression",
@@ -2872,6 +469,15 @@
       "affiche": "Tous les buts de la coupe du monde",
       "chaine": "beIN Sports 2",
       "duree_min": 90
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "04:08",
+      "categorie": "autre",
+      "competition": "Fin des programmes",
+      "affiche": "Fin des programmes",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 112
     },
     {
       "date": "2026-10-07",
@@ -2925,7 +531,7 @@
       "competition": "Slam",
       "affiche": "Slam",
       "chaine": "France 3",
-      "duree_min": 40
+      "duree_min": 81
     },
     {
       "date": "2026-10-07",
@@ -2956,12 +562,381 @@
     },
     {
       "date": "2026-10-07",
+      "heure": "05:10",
+      "categorie": "autre",
+      "competition": "L'enfant de la forêt",
+      "affiche": "L'enfant de la forêt",
+      "chaine": "Canal+",
+      "duree_min": 54
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "05:10",
+      "categorie": "autre",
+      "competition": "Tout le monde veut prendre sa place",
+      "affiche": "Tout le monde veut prendre sa place",
+      "chaine": "France 2",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "05:30",
+      "categorie": "autre",
+      "competition": "Sport50",
+      "affiche": "Sport50",
+      "chaine": "beIN Sports 2",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "05:45",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 1",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "05:50",
+      "categorie": "jeunesse",
+      "competition": "TFou",
+      "affiche": "TFou",
+      "chaine": "TF1",
+      "duree_min": 65
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:00",
+      "categorie": "autre",
+      "competition": "La matinale",
+      "affiche": "La matinale",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:00",
+      "categorie": "autre",
+      "competition": "Le 6h info",
+      "affiche": "Le 6h info",
+      "chaine": "France 2",
+      "duree_min": 35
+    },
+    {
+      "date": "2026-10-07",
       "heure": "06:00",
       "categorie": "sport",
       "competition": "L'Equipe du soir",
       "affiche": "L'Equipe du soir",
       "chaine": "L'Équipe",
       "duree_min": 240
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:00",
+      "categorie": "autre",
+      "competition": "Scènes de ménages",
+      "affiche": "Scènes de ménages",
+      "chaine": "M6",
+      "duree_min": 125
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:00",
+      "categorie": "autre",
+      "competition": "Wake Up",
+      "affiche": "Wake Up",
+      "chaine": "W9",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:00",
+      "categorie": "foot",
+      "competition": "Football : Süper Lig",
+      "affiche": "Football : Süper Lig",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:00",
+      "categorie": "foot",
+      "competition": "Football : Qualifications de la CAN",
+      "affiche": "Football : Qualifications de la CAN",
+      "chaine": "beIN Sports 2",
+      "duree_min": 720
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:01",
+      "categorie": "autre",
+      "competition": "Alors on bouge en région",
+      "affiche": "Alors on bouge en région",
+      "chaine": "France 3",
+      "duree_min": 29
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:04",
+      "categorie": "autre",
+      "competition": "Le cercle",
+      "affiche": "Le cercle",
+      "chaine": "Canal+",
+      "duree_min": 46
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:10",
+      "categorie": "serie",
+      "competition": "Sous le soleil - 12x10",
+      "affiche": "Sous le soleil - 12x10",
+      "chaine": "TMC",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:30",
+      "categorie": "autre",
+      "competition": "ICI Matin",
+      "affiche": "ICI Matin",
+      "chaine": "France 3",
+      "duree_min": 155
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:35",
+      "categorie": "autre",
+      "competition": "Télématin",
+      "affiche": "Télématin",
+      "chaine": "France 2",
+      "duree_min": 85
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:50",
+      "categorie": "autre",
+      "competition": "Clique",
+      "affiche": "Clique",
+      "chaine": "Canal+",
+      "duree_min": 53
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "06:55",
+      "categorie": "info",
+      "competition": "Bonjour ! La Matinale TF1",
+      "affiche": "Bonjour ! La Matinale TF1",
+      "chaine": "TF1",
+      "duree_min": 185
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "07:00",
+      "categorie": "autre",
+      "competition": "Le double expresso RTL2",
+      "affiche": "Le double expresso RTL2",
+      "chaine": "W9",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "07:00",
+      "categorie": "tennis",
+      "competition": "Tennis : Tournoi WTA de Pékin",
+      "affiche": "Tennis : Tournoi WTA de Pékin",
+      "chaine": "beIN Sports 3",
+      "duree_min": 660
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "07:05",
+      "categorie": "serie",
+      "competition": "Sous le soleil - 12x11",
+      "affiche": "Sous le soleil - 12x11",
+      "chaine": "TMC",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "07:15",
+      "categorie": "autre",
+      "competition": "Pirès, la soirée des légendes",
+      "affiche": "Pirès, la soirée des légendes",
+      "chaine": "Canal+ Foot",
+      "duree_min": 148
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "07:43",
+      "categorie": "autre",
+      "competition": "En aparté",
+      "affiche": "En aparté",
+      "chaine": "Canal+",
+      "duree_min": 32
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "07:45",
+      "categorie": "sport",
+      "competition": "Rallye : WRC, Rallye Italie Sardaigne",
+      "affiche": "Rallye : WRC, Rallye Italie Sardaigne",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 99
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "08:00",
+      "categorie": "autre",
+      "competition": "Journal 08h00",
+      "affiche": "Journal 08h00",
+      "chaine": "France 2",
+      "duree_min": 17
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "08:00",
+      "categorie": "serie",
+      "competition": "Sous le soleil - 12x12",
+      "affiche": "Sous le soleil - 12x12",
+      "chaine": "TMC",
+      "duree_min": 65
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "08:00",
+      "categorie": "autre",
+      "competition": "XXI, le sport des solutions",
+      "affiche": "XXI, le sport des solutions",
+      "chaine": "beIN Sports 1",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "08:05",
+      "categorie": "autre",
+      "competition": "My boutique Téléshop'",
+      "affiche": "My boutique Téléshop'",
+      "chaine": "M6",
+      "duree_min": 100
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "08:15",
+      "categorie": "film",
+      "competition": "Gabby et la Maison Magique - Le Film",
+      "affiche": "Gabby et la Maison Magique - Le Film",
+      "chaine": "Canal+",
+      "duree_min": 95
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "08:17",
+      "categorie": "autre",
+      "competition": "Télématin",
+      "affiche": "Télématin",
+      "chaine": "France 2",
+      "duree_min": 63
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:00",
+      "categorie": "autre",
+      "competition": "Kaamelott",
+      "affiche": "Kaamelott",
+      "chaine": "W9",
+      "duree_min": 180
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:00",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 1",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:05",
+      "categorie": "autre",
+      "competition": "ICI dans votre région",
+      "affiche": "ICI dans votre région",
+      "chaine": "France 3",
+      "duree_min": 80
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:05",
+      "categorie": "serie",
+      "competition": "Sous le soleil - 12x13",
+      "affiche": "Sous le soleil - 12x13",
+      "chaine": "TMC",
+      "duree_min": 65
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:15",
+      "categorie": "sport",
+      "competition": "Basket-ball : NBA",
+      "affiche": "Basket-ball : NBA",
+      "chaine": "beIN Sports 1",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:20",
+      "categorie": "autre",
+      "competition": "Télématin, la suite",
+      "affiche": "Télématin, la suite",
+      "chaine": "France 2",
+      "duree_min": 80
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:24",
+      "categorie": "autre",
+      "competition": "Zapsport 360",
+      "affiche": "Zapsport 360",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 6
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:30",
+      "categorie": "padel",
+      "competition": "Soir de padel",
+      "affiche": "Soir de padel",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 61
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:43",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 46
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:45",
+      "categorie": "autre",
+      "competition": "Ça peut vous arriver",
+      "affiche": "Ça peut vous arriver",
+      "chaine": "M6",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "09:50",
+      "categorie": "autre",
+      "competition": "Jamel Comedy Club",
+      "affiche": "Jamel Comedy Club",
+      "chaine": "Canal+",
+      "duree_min": 31
     },
     {
       "date": "2026-10-07",
@@ -2974,12 +949,534 @@
     },
     {
       "date": "2026-10-07",
+      "heure": "10:00",
+      "categorie": "info",
+      "competition": "Bonjour ! Avec vous",
+      "affiche": "Bonjour ! Avec vous",
+      "chaine": "TF1",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:10",
+      "categorie": "serie",
+      "competition": "Drop Dead Diva - 3x09",
+      "affiche": "Drop Dead Diva - 3x09",
+      "chaine": "TMC",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:21",
+      "categorie": "film",
+      "competition": "Le Crime du 3e étage",
+      "affiche": "Le Crime du 3e étage",
+      "chaine": "Canal+",
+      "duree_min": 101
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:25",
+      "categorie": "autre",
+      "competition": "La p'tite librairie",
+      "affiche": "La p'tite librairie",
+      "chaine": "France 3",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:29",
+      "categorie": "autre",
+      "competition": "Décrypté",
+      "affiche": "Décrypté",
+      "chaine": "Canal+ Foot",
+      "duree_min": 25
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:30",
+      "categorie": "autre",
+      "competition": "Escales en France",
+      "affiche": "Escales en France",
+      "chaine": "France 3",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:31",
+      "categorie": "autre",
+      "competition": "Trail 360",
+      "affiche": "Trail 360",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 89
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:40",
+      "categorie": "autre",
+      "competition": "Journal Météo climat outre-mer",
+      "affiche": "Journal Météo climat outre-mer",
+      "chaine": "France 2",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:50",
+      "categorie": "autre",
+      "competition": "Chacun son tour",
+      "affiche": "Chacun son tour",
+      "chaine": "France 2",
+      "duree_min": 65
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:54",
+      "categorie": "ldc",
+      "competition": "Champions League Weekly",
+      "affiche": "Champions League Weekly",
+      "chaine": "Canal+ Foot",
+      "duree_min": 26
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "10:55",
+      "categorie": "autre",
+      "competition": "Les Feux de l'amour",
+      "affiche": "Les Feux de l'amour",
+      "chaine": "TF1",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "11:00",
+      "categorie": "autre",
+      "competition": "C'est succulent !",
+      "affiche": "C'est succulent !",
+      "chaine": "France 3",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "11:00",
+      "categorie": "sport",
+      "competition": "Basket-ball : Pré-saison NBA",
+      "affiche": "Basket-ball : Pré-saison NBA",
+      "chaine": "beIN Sports 1",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "11:05",
+      "categorie": "serie",
+      "competition": "Drop Dead Diva - 3x10",
+      "affiche": "Drop Dead Diva - 3x10",
+      "chaine": "TMC",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "11:20",
+      "categorie": "foot",
+      "competition": "Football : Arkema Première Ligue",
+      "affiche": "Football : Arkema Première Ligue",
+      "chaine": "Canal+ Foot",
+      "duree_min": 103
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "11:30",
+      "categorie": "autre",
+      "competition": "Ça peut vous arriver chez vous",
+      "affiche": "Ça peut vous arriver chez vous",
+      "chaine": "M6",
+      "duree_min": 70
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "11:45",
+      "categorie": "autre",
+      "competition": "Petits plats en équilibre",
+      "affiche": "Petits plats en équilibre",
+      "chaine": "TF1",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "11:50",
+      "categorie": "autre",
+      "competition": "Les douze coups de midi",
+      "affiche": "Les douze coups de midi",
+      "chaine": "TF1",
+      "duree_min": 65
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "11:55",
+      "categorie": "autre",
+      "competition": "Tout le monde veut prendre sa place",
+      "affiche": "Tout le monde veut prendre sa place",
+      "chaine": "France 2",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:00",
+      "categorie": "autre",
+      "competition": "Le JT",
+      "affiche": "Le JT",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:00",
+      "categorie": "info",
+      "competition": "Météo",
+      "affiche": "Météo",
+      "chaine": "France 3",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
       "heure": "12:00",
       "categorie": "tennis",
       "competition": "Tennis de table : WTT China Smash",
       "affiche": "Tennis de table : WTT China Smash",
       "chaine": "L'Équipe",
       "duree_min": 150
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:00",
+      "categorie": "serie",
+      "competition": "Drop Dead Diva - 3x11",
+      "affiche": "Drop Dead Diva - 3x11",
+      "chaine": "TMC",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:00",
+      "categorie": "serie",
+      "competition": "NCIS - 13x01",
+      "affiche": "NCIS - 13x01",
+      "chaine": "W9",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:02",
+      "categorie": "autre",
+      "competition": "La boîte à questions",
+      "affiche": "La boîte à questions",
+      "chaine": "Canal+",
+      "duree_min": 8
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:05",
+      "categorie": "autre",
+      "competition": "Outremer.l'info",
+      "affiche": "Outremer.l'info",
+      "chaine": "France 3",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:10",
+      "categorie": "autre",
+      "competition": "En aparté",
+      "affiche": "En aparté",
+      "chaine": "Canal+",
+      "duree_min": 32
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:15",
+      "categorie": "autre",
+      "competition": "La p'tite librairie",
+      "affiche": "La p'tite librairie",
+      "chaine": "France 3",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:25",
+      "categorie": "autre",
+      "competition": "Dans le rétro",
+      "affiche": "Dans le rétro",
+      "chaine": "France 3",
+      "duree_min": 1
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:26",
+      "categorie": "autre",
+      "competition": "ICI 12/13",
+      "affiche": "ICI 12/13",
+      "chaine": "France 3",
+      "duree_min": 29
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:30",
+      "categorie": "autre",
+      "competition": "Pirès, la soirée des légendes",
+      "affiche": "Pirès, la soirée des légendes",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 148
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:40",
+      "categorie": "info",
+      "competition": "Météo",
+      "affiche": "Météo",
+      "chaine": "M6",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:42",
+      "categorie": "autre",
+      "competition": "Clique",
+      "affiche": "Clique",
+      "chaine": "Canal+",
+      "duree_min": 53
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:45",
+      "categorie": "autre",
+      "competition": "La minute des Maternelles",
+      "affiche": "La minute des Maternelles",
+      "chaine": "France 2",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:45",
+      "categorie": "autre",
+      "competition": "Le 12.45",
+      "affiche": "Le 12.45",
+      "chaine": "M6",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:45",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 1",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:50",
+      "categorie": "serie",
+      "competition": "NCIS - 13x02",
+      "affiche": "NCIS - 13x02",
+      "chaine": "W9",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:55",
+      "categorie": "autre",
+      "competition": "Journal Météo climat",
+      "affiche": "Journal Météo climat",
+      "chaine": "France 2",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:55",
+      "categorie": "autre",
+      "competition": "Météo à la carte",
+      "affiche": "Météo à la carte",
+      "chaine": "France 3",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:55",
+      "categorie": "autre",
+      "competition": "Petits plats en équilibre",
+      "affiche": "Petits plats en équilibre",
+      "chaine": "TF1",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "12:55",
+      "categorie": "autre",
+      "competition": "Petits plats en équilibre",
+      "affiche": "Petits plats en équilibre",
+      "chaine": "TMC",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:00",
+      "categorie": "autre",
+      "competition": "Journal 13h00",
+      "affiche": "Journal 13h00",
+      "chaine": "France 2",
+      "duree_min": 40
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:00",
+      "categorie": "autre",
+      "competition": "JT 13h",
+      "affiche": "JT 13h",
+      "chaine": "TF1",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:00",
+      "categorie": "serie",
+      "competition": "Camping Paradis - 1x06",
+      "affiche": "Camping Paradis - 1x06",
+      "chaine": "TMC",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:00",
+      "categorie": "foot",
+      "competition": "Football : Championnat du Portugal",
+      "affiche": "Football : Championnat du Portugal",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:03",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 47
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:35",
+      "categorie": "film",
+      "competition": "Hopper et le Secret de la Marmotte",
+      "affiche": "Hopper et le Secret de la Marmotte",
+      "chaine": "Canal+",
+      "duree_min": 91
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:35",
+      "categorie": "autre",
+      "competition": "Scènes de ménages",
+      "affiche": "Scènes de ménages",
+      "chaine": "M6",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:40",
+      "categorie": "autre",
+      "competition": "Journal Météo climat",
+      "affiche": "Journal Météo climat",
+      "chaine": "France 2",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:40",
+      "categorie": "autre",
+      "competition": "Un jour, un doc",
+      "affiche": "Un jour, un doc",
+      "chaine": "M6",
+      "duree_min": 225
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:40",
+      "categorie": "serie",
+      "competition": "NCIS - 13x03",
+      "affiche": "NCIS - 13x03",
+      "chaine": "W9",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:45",
+      "categorie": "autre",
+      "competition": "La p'tite librairie",
+      "affiche": "La p'tite librairie",
+      "chaine": "France 2",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:50",
+      "categorie": "autre",
+      "competition": "Platini",
+      "affiche": "Platini",
+      "chaine": "Canal+ Foot",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:50",
+      "categorie": "autre",
+      "competition": "Petits plats en équilibre",
+      "affiche": "Petits plats en équilibre",
+      "chaine": "TF1",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:55",
+      "categorie": "autre",
+      "competition": "Ça commence aujourd'hui",
+      "affiche": "Ça commence aujourd'hui",
+      "chaine": "France 2",
+      "duree_min": 70
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:55",
+      "categorie": "autre",
+      "competition": "Météo à la carte (la suite)",
+      "affiche": "Météo à la carte (la suite)",
+      "chaine": "France 3",
+      "duree_min": 40
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "13:55",
+      "categorie": "info",
+      "competition": "Météo",
+      "affiche": "Météo",
+      "chaine": "TF1",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "14:00",
+      "categorie": "autre",
+      "competition": "Plus belle la vie, encore plus belle",
+      "affiche": "Plus belle la vie, encore plus belle",
+      "chaine": "TF1",
+      "duree_min": 25
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "14:25",
+      "categorie": "film",
+      "competition": "La récolte des amoureux",
+      "affiche": "La récolte des amoureux",
+      "chaine": "TF1",
+      "duree_min": 95
     },
     {
       "date": "2026-10-07",
@@ -2992,12 +1489,345 @@
     },
     {
       "date": "2026-10-07",
+      "heure": "14:30",
+      "categorie": "serie",
+      "competition": "NCIS - 13x04",
+      "affiche": "NCIS - 13x04",
+      "chaine": "W9",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "14:35",
+      "categorie": "serie",
+      "competition": "Rex - 16x06",
+      "affiche": "Rex - 16x06",
+      "chaine": "France 3",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "14:45",
+      "categorie": "serie",
+      "competition": "Camping Paradis - 17x04",
+      "affiche": "Camping Paradis - 17x04",
+      "chaine": "TMC",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "14:58",
+      "categorie": "autre",
+      "competition": "Zapsport 360",
+      "affiche": "Zapsport 360",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 7
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "15:00",
+      "categorie": "foot",
+      "competition": "Ligue 2 Extra",
+      "affiche": "Ligue 2 Extra",
+      "chaine": "beIN Sports 1",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "15:05",
+      "categorie": "sport",
+      "competition": "Rallye : WRC, Rallye Italie Sardaigne",
+      "affiche": "Rallye : WRC, Rallye Italie Sardaigne",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "15:05",
+      "categorie": "autre",
+      "competition": "Le Mag de la santé",
+      "affiche": "Le Mag de la santé",
+      "chaine": "France 2",
+      "duree_min": 80
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "15:06",
+      "categorie": "film",
+      "competition": "Insaisissables 3",
+      "affiche": "Insaisissables 3",
+      "chaine": "Canal+",
+      "duree_min": 109
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "15:20",
+      "categorie": "autre",
+      "competition": "05/06/2027 En route pour Madrid",
+      "affiche": "05/06/2027 En route pour Madrid",
+      "chaine": "Canal+ Foot",
+      "duree_min": 16
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "15:30",
+      "categorie": "serie",
+      "competition": "NCIS - 13x05",
+      "affiche": "NCIS - 13x05",
+      "chaine": "W9",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "15:35",
+      "categorie": "serie",
+      "competition": "Rex - 13x11",
+      "affiche": "Rex - 13x11",
+      "chaine": "France 3",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "15:36",
+      "categorie": "autre",
+      "competition": "Histoire de Champions",
+      "affiche": "Histoire de Champions",
+      "chaine": "Canal+ Foot",
+      "duree_min": 87
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "15:45",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 1",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "16:00",
+      "categorie": "autre",
+      "competition": "Le JT",
+      "affiche": "Le JT",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "16:00",
+      "categorie": "film",
+      "competition": "Un associé à croquer",
+      "affiche": "Un associé à croquer",
+      "chaine": "TF1",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "16:00",
+      "categorie": "foot",
+      "competition": "Football : Coupe de la Ligue anglaise",
+      "affiche": "Football : Coupe de la Ligue anglaise",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "16:25",
+      "categorie": "autre",
+      "competition": "Affaire conclue, tout le monde a quelque chose à vendre",
+      "affiche": "Affaire conclue, tout le monde a quelque chose à vendre",
+      "chaine": "France 2",
+      "duree_min": 100
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "16:30",
+      "categorie": "serie",
+      "competition": "Rex - 13x12",
+      "affiche": "Rex - 13x12",
+      "chaine": "France 3",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "16:30",
+      "categorie": "serie",
+      "competition": "Camping Paradis - 2x01",
+      "affiche": "Camping Paradis - 2x01",
+      "chaine": "TMC",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "16:30",
+      "categorie": "serie",
+      "competition": "NCIS - 13x10",
+      "affiche": "NCIS - 13x10",
+      "chaine": "W9",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "16:45",
+      "categorie": "f1",
+      "competition": "Moto GP : Grand Prix du Japon",
+      "affiche": "Moto GP : Grand Prix du Japon",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 48
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "16:55",
+      "categorie": "autre",
+      "competition": "L'hebd'Hollywood",
+      "affiche": "L'hebd'Hollywood",
+      "chaine": "Canal+",
+      "duree_min": 14
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "17:03",
+      "categorie": "autre",
+      "competition": "Pirès, la soirée des légendes",
+      "affiche": "Pirès, la soirée des légendes",
+      "chaine": "Canal+ Foot",
+      "duree_min": 148
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "17:09",
+      "categorie": "film",
+      "competition": "Karate Kid : Legends",
+      "affiche": "Karate Kid : Legends",
+      "chaine": "Canal+",
+      "duree_min": 91
+    },
+    {
+      "date": "2026-10-07",
       "heure": "17:15",
       "categorie": "sport",
       "competition": "L'Equipe de choc",
       "affiche": "L'Equipe de choc",
       "chaine": "L'Équipe",
       "duree_min": 75
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "17:25",
+      "categorie": "autre",
+      "competition": "Slam",
+      "affiche": "Slam",
+      "chaine": "France 3",
+      "duree_min": 85
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "17:25",
+      "categorie": "autre",
+      "competition": "La roue de la fortune",
+      "affiche": "La roue de la fortune",
+      "chaine": "M6",
+      "duree_min": 70
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "17:25",
+      "categorie": "autre",
+      "competition": "Les apprentis aventuriers",
+      "affiche": "Les apprentis aventuriers",
+      "chaine": "W9",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "17:30",
+      "categorie": "autre",
+      "competition": "Familles nombreuses : la vie en XXL",
+      "affiche": "Familles nombreuses : la vie en XXL",
+      "chaine": "TF1",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "17:33",
+      "categorie": "sport",
+      "competition": "Débrief Moto",
+      "affiche": "Débrief Moto",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 27
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:00",
+      "categorie": "autre",
+      "competition": "Club 360",
+      "affiche": "Club 360",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:00",
+      "categorie": "autre",
+      "competition": "Double étoilé",
+      "affiche": "Double étoilé",
+      "chaine": "beIN Sports 1",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:00",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 2",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:00",
+      "categorie": "autre",
+      "competition": "Double étoilé",
+      "affiche": "Double étoilé",
+      "chaine": "beIN Sports 3",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:05",
+      "categorie": "autre",
+      "competition": "Tout le monde a son mot à dire",
+      "affiche": "Tout le monde a son mot à dire",
+      "chaine": "France 2",
+      "duree_min": 35
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:15",
+      "categorie": "autre",
+      "competition": "Petits plats en équilibre",
+      "affiche": "Petits plats en équilibre",
+      "chaine": "TMC",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:20",
+      "categorie": "autre",
+      "competition": "L'avant Quotidien",
+      "affiche": "L'avant Quotidien",
+      "chaine": "TMC",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:20",
+      "categorie": "autre",
+      "competition": "Tout beau, tout n9uf",
+      "affiche": "Tout beau, tout n9uf",
+      "chaine": "W9",
+      "duree_min": 185
     },
     {
       "date": "2026-10-07",
@@ -3010,6 +1840,528 @@
     },
     {
       "date": "2026-10-07",
+      "heure": "18:30",
+      "categorie": "serie",
+      "competition": "Ici tout commence - 7x1540",
+      "affiche": "Ici tout commence - 7x1540",
+      "chaine": "TF1",
+      "duree_min": 40
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:30",
+      "categorie": "sport",
+      "competition": "Baseball : MLB",
+      "affiche": "Baseball : MLB",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:35",
+      "categorie": "autre",
+      "competition": "La meilleure cuisine régionale, c'est chez moi !",
+      "affiche": "La meilleure cuisine régionale, c'est chez moi !",
+      "chaine": "M6",
+      "duree_min": 65
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:40",
+      "categorie": "autre",
+      "competition": "La boîte à questions",
+      "affiche": "La boîte à questions",
+      "chaine": "Canal+",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:40",
+      "categorie": "autre",
+      "competition": "N'oubliez pas les paroles",
+      "affiche": "N'oubliez pas les paroles",
+      "chaine": "France 2",
+      "duree_min": 75
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:45",
+      "categorie": "autre",
+      "competition": "Têtàtête(s)",
+      "affiche": "Têtàtête(s)",
+      "chaine": "Canal+",
+      "duree_min": 14
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:45",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 1",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:45",
+      "categorie": "autre",
+      "competition": "XXI, le sport des solutions",
+      "affiche": "XXI, le sport des solutions",
+      "chaine": "beIN Sports 3",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:50",
+      "categorie": "autre",
+      "competition": "Journal Météo climat",
+      "affiche": "Journal Météo climat",
+      "chaine": "France 3",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "18:59",
+      "categorie": "autre",
+      "competition": "En aparté",
+      "affiche": "En aparté",
+      "chaine": "Canal+",
+      "duree_min": 35
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:00",
+      "categorie": "autre",
+      "competition": "Zapsport 360",
+      "affiche": "Zapsport 360",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 3
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:00",
+      "categorie": "autre",
+      "competition": "Dans le rétro",
+      "affiche": "Dans le rétro",
+      "chaine": "France 3",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:00",
+      "categorie": "autre",
+      "competition": "Salon VIP",
+      "affiche": "Salon VIP",
+      "chaine": "beIN Sports 1",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:03",
+      "categorie": "f1",
+      "competition": "Voile : Grand Prix de Genève",
+      "affiche": "Voile : Grand Prix de Genève",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 53
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:10",
+      "categorie": "autre",
+      "competition": "Le journal des talents",
+      "affiche": "Le journal des talents",
+      "chaine": "France 3",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:10",
+      "categorie": "serie",
+      "competition": "Demain nous appartient - 10x2308",
+      "affiche": "Demain nous appartient - 10x2308",
+      "chaine": "TF1",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:15",
+      "categorie": "autre",
+      "competition": "ICI 19/20 édition toutes régions",
+      "affiche": "ICI 19/20 édition toutes régions",
+      "chaine": "France 3",
+      "duree_min": 35
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:15",
+      "categorie": "autre",
+      "competition": "Quotidien, première partie",
+      "affiche": "Quotidien, première partie",
+      "chaine": "TMC",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:30",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 1",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:31",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 49
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:34",
+      "categorie": "autre",
+      "competition": "Clique",
+      "affiche": "Clique",
+      "chaine": "Canal+",
+      "duree_min": 57
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:40",
+      "categorie": "info",
+      "competition": "Météo",
+      "affiche": "Météo",
+      "chaine": "M6",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:45",
+      "categorie": "autre",
+      "competition": "Le 19.45",
+      "affiche": "Le 19.45",
+      "chaine": "M6",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:45",
+      "categorie": "sport",
+      "competition": "NFL Extra",
+      "affiche": "NFL Extra",
+      "chaine": "beIN Sports 1",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:45",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 3",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:50",
+      "categorie": "autre",
+      "competition": "On vous emmène ici",
+      "affiche": "On vous emmène ici",
+      "chaine": "France 3",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:55",
+      "categorie": "autre",
+      "competition": "Journal Météo climat",
+      "affiche": "Journal Météo climat",
+      "chaine": "France 2",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:55",
+      "categorie": "info",
+      "competition": "Météo",
+      "affiche": "Météo",
+      "chaine": "TF1",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "19:56",
+      "categorie": "f1",
+      "competition": "Lundi Grand Prix",
+      "affiche": "Lundi Grand Prix",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 64
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:00",
+      "categorie": "autre",
+      "competition": "Journal 20h00",
+      "affiche": "Journal 20h00",
+      "chaine": "France 2",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:00",
+      "categorie": "autre",
+      "competition": "Stade 2 la quotidienne",
+      "affiche": "Stade 2 la quotidienne",
+      "chaine": "France 3",
+      "duree_min": 20
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:00",
+      "categorie": "autre",
+      "competition": "JT 20h",
+      "affiche": "JT 20h",
+      "chaine": "TF1",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:00",
+      "categorie": "sport",
+      "competition": "Handball : avant-match",
+      "affiche": "Handball : avant-match",
+      "chaine": "beIN Sports 3",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:10",
+      "categorie": "autre",
+      "competition": "Quotidien, deuxième partie",
+      "affiche": "Quotidien, deuxième partie",
+      "chaine": "TMC",
+      "duree_min": 35
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:15",
+      "categorie": "sport",
+      "competition": "Handball : Championnat de France féminin",
+      "affiche": "Handball : Championnat de France féminin",
+      "chaine": "beIN Sports 3",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:20",
+      "categorie": "foot",
+      "competition": "Jour de foot",
+      "affiche": "Jour de foot",
+      "chaine": "Canal+ Foot",
+      "duree_min": 33
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:20",
+      "categorie": "autre",
+      "competition": "Météo régionale",
+      "affiche": "Météo régionale",
+      "chaine": "France 3",
+      "duree_min": 1
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:21",
+      "categorie": "autre",
+      "competition": "Le journal des talents",
+      "affiche": "Le journal des talents",
+      "chaine": "France 3",
+      "duree_min": 4
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:25",
+      "categorie": "autre",
+      "competition": "Un si grand soleil",
+      "affiche": "Un si grand soleil",
+      "chaine": "France 3",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:30",
+      "categorie": "sport",
+      "competition": "Basket-ball : avant-match",
+      "affiche": "Basket-ball : avant-match",
+      "chaine": "beIN Sports 1",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:30",
+      "categorie": "sport",
+      "competition": "Handball : avant-match",
+      "affiche": "Handball : avant-match",
+      "chaine": "beIN Sports 2",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:31",
+      "categorie": "autre",
+      "competition": "En aparté",
+      "affiche": "En aparté",
+      "chaine": "Canal+",
+      "duree_min": 38
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:40",
+      "categorie": "autre",
+      "competition": "Scènes de ménages",
+      "affiche": "Scènes de ménages",
+      "chaine": "M6",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:45",
+      "categorie": "autre",
+      "competition": "Petits plats en équilibre",
+      "affiche": "Petits plats en équilibre",
+      "chaine": "TF1",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:45",
+      "categorie": "autre",
+      "competition": "Quotidien",
+      "affiche": "Quotidien",
+      "chaine": "TMC",
+      "duree_min": 40
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:45",
+      "categorie": "sport",
+      "competition": "Basket-ball : Euroligue masculine",
+      "affiche": "Basket-ball : Euroligue masculine",
+      "chaine": "beIN Sports 1",
+      "duree_min": 135
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:45",
+      "categorie": "ldc",
+      "competition": "Handball : Ligue des champions",
+      "affiche": "Handball : Ligue des champions",
+      "chaine": "beIN Sports 2",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:50",
+      "categorie": "autre",
+      "competition": "Tirage du Loto",
+      "affiche": "Tirage du Loto",
+      "chaine": "TF1",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:53",
+      "categorie": "autre",
+      "competition": "Histoire de Champions",
+      "affiche": "Histoire de Champions",
+      "chaine": "Canal+ Foot",
+      "duree_min": 94
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "20:55",
+      "categorie": "info",
+      "competition": "Météo",
+      "affiche": "Météo",
+      "chaine": "TF1",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:00",
+      "categorie": "autre",
+      "competition": "Générations Intérieur Sport",
+      "affiche": "Générations Intérieur Sport",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 79
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:00",
+      "categorie": "autre",
+      "competition": "Journal Météo climat",
+      "affiche": "Journal Météo climat",
+      "chaine": "France 2",
+      "duree_min": 4
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:04",
+      "categorie": "autre",
+      "competition": "Voyage au coeur du patrimoine",
+      "affiche": "Voyage au coeur du patrimoine",
+      "chaine": "France 2",
+      "duree_min": 1
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:05",
+      "categorie": "autre",
+      "competition": "Basique, l'essentiel de la musique",
+      "affiche": "Basique, l'essentiel de la musique",
+      "chaine": "France 2",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:05",
+      "categorie": "autre",
+      "competition": "Koh-Lanta All Stars, les moments cultes",
+      "affiche": "Koh-Lanta All Stars, les moments cultes",
+      "chaine": "TF1",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:09",
+      "categorie": "film",
+      "competition": "L'Intermédiaire",
+      "affiche": "L'Intermédiaire",
+      "chaine": "Canal+",
+      "duree_min": 110
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:10",
+      "categorie": "serie",
+      "competition": "Soeurs - 1x03",
+      "affiche": "Soeurs - 1x03",
+      "chaine": "France 2",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:10",
+      "categorie": "autre",
+      "competition": "Secrets d'histoire",
+      "affiche": "Secrets d'histoire",
+      "chaine": "France 3",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-07",
       "heure": "21:10",
       "categorie": "foot",
       "competition": "Football : Match amical international - Argentine - Bénin",
@@ -3019,12 +2371,372 @@
     },
     {
       "date": "2026-10-07",
+      "heure": "21:10",
+      "categorie": "autre",
+      "competition": "La France a un incroyable talent",
+      "affiche": "La France a un incroyable talent",
+      "chaine": "M6",
+      "duree_min": 100
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:10",
+      "categorie": "serie",
+      "competition": "Tracker - 2x20",
+      "affiche": "Tracker - 2x20",
+      "chaine": "TF1",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:25",
+      "categorie": "film",
+      "competition": "Super-héros malgré lui",
+      "affiche": "Super-héros malgré lui",
+      "chaine": "TMC",
+      "duree_min": 100
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:25",
+      "categorie": "autre",
+      "competition": "Enquêtes criminelles",
+      "affiche": "Enquêtes criminelles",
+      "chaine": "W9",
+      "duree_min": 365
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "21:55",
+      "categorie": "serie",
+      "competition": "Tracker - 3x01",
+      "affiche": "Tracker - 3x01",
+      "chaine": "TF1",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:00",
+      "categorie": "serie",
+      "competition": "Soeurs - 1x04",
+      "affiche": "Soeurs - 1x04",
+      "chaine": "France 2",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:00",
+      "categorie": "sport",
+      "competition": "Baseball : MLB",
+      "affiche": "Baseball : MLB",
+      "chaine": "beIN Sports 3",
+      "duree_min": 180
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:15",
+      "categorie": "foot",
+      "competition": "Football : Bundesliga",
+      "affiche": "Football : Bundesliga",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:19",
+      "categorie": "autre",
+      "competition": "Formula One, le mag",
+      "affiche": "Formula One, le mag",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:27",
+      "categorie": "autre",
+      "competition": "La boutique",
+      "affiche": "La boutique",
+      "chaine": "Canal+ Foot",
+      "duree_min": 33
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:49",
+      "categorie": "sport",
+      "competition": "Rallye : WRC, Rallye Italie Sardaigne",
+      "affiche": "Rallye : WRC, Rallye Italie Sardaigne",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 54
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:50",
+      "categorie": "serie",
+      "competition": "Tout pour Agnès - 1x03",
+      "affiche": "Tout pour Agnès - 1x03",
+      "chaine": "France 2",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:50",
+      "categorie": "autre",
+      "competition": "La France a un incroyable talent, ça continue",
+      "affiche": "La France a un incroyable talent, ça continue",
+      "chaine": "M6",
+      "duree_min": 65
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:55",
+      "categorie": "serie",
+      "competition": "Tracker - 1x13",
+      "affiche": "Tracker - 1x13",
+      "chaine": "TF1",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "22:59",
+      "categorie": "film",
+      "competition": "Nuremberg",
+      "affiche": "Nuremberg",
+      "chaine": "Canal+",
+      "duree_min": 143
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "23:00",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 61
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "23:00",
+      "categorie": "foot",
+      "competition": "Football : Ligue 2 BKT",
+      "affiche": "Football : Ligue 2 BKT",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "23:05",
+      "categorie": "autre",
+      "competition": "90' Enquêtes",
+      "affiche": "90' Enquêtes",
+      "chaine": "TMC",
+      "duree_min": 109
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "23:10",
+      "categorie": "film",
+      "competition": "Starbucks sans filtre",
+      "affiche": "Starbucks sans filtre",
+      "chaine": "France 3",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
       "heure": "23:10",
       "categorie": "sport",
       "competition": "L'Equipe du soir",
       "affiche": "L'Equipe du soir",
       "chaine": "L'Équipe",
       "duree_min": 177
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "23:35",
+      "categorie": "serie",
+      "competition": "Tout pour Agnès - 1x04",
+      "affiche": "Tout pour Agnès - 1x04",
+      "chaine": "France 2",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "23:40",
+      "categorie": "serie",
+      "competition": "Tracker - 2x01",
+      "affiche": "Tracker - 2x01",
+      "chaine": "TF1",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "23:43",
+      "categorie": "sport",
+      "competition": "Rallye Club",
+      "affiche": "Rallye Club",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 32
+    },
+    {
+      "date": "2026-10-07",
+      "heure": "23:55",
+      "categorie": "autre",
+      "competition": "Les incroyables talents sont éternels",
+      "affiche": "Les incroyables talents sont éternels",
+      "chaine": "M6",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:01",
+      "categorie": "autre",
+      "competition": "Strikers",
+      "affiche": "Strikers",
+      "chaine": "Canal+ Foot",
+      "duree_min": 43
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:05",
+      "categorie": "autre",
+      "competition": "Des racines et des ailes",
+      "affiche": "Des racines et des ailes",
+      "chaine": "France 3",
+      "duree_min": 115
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:15",
+      "categorie": "autre",
+      "competition": "Le JT",
+      "affiche": "Le JT",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:15",
+      "categorie": "foot",
+      "competition": "Football : Championnat du Portugal",
+      "affiche": "Football : Championnat du Portugal",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:30",
+      "categorie": "serie",
+      "competition": "Les évaporés - 1x04",
+      "affiche": "Les évaporés - 1x04",
+      "chaine": "France 2",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:35",
+      "categorie": "autre",
+      "competition": "Programmes de la nuit",
+      "affiche": "Programmes de la nuit",
+      "chaine": "TF1",
+      "duree_min": 315
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:44",
+      "categorie": "autre",
+      "competition": "Fin des programmes",
+      "affiche": "Fin des programmes",
+      "chaine": "Canal+ Foot",
+      "duree_min": 398
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:45",
+      "categorie": "f1",
+      "competition": "Formule 1 : Grand Prix de Bahreïn",
+      "affiche": "Formule 1 : Grand Prix de Bahreïn",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 110
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:45",
+      "categorie": "autre",
+      "competition": "Les incroyables talents de la musique",
+      "affiche": "Les incroyables talents de la musique",
+      "chaine": "M6",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "00:54",
+      "categorie": "autre",
+      "competition": "Programmes de la nuit",
+      "affiche": "Programmes de la nuit",
+      "chaine": "TMC",
+      "duree_min": 316
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "01:00",
+      "categorie": "foot",
+      "competition": "Football : Coupe de la Ligue anglaise",
+      "affiche": "Football : Coupe de la Ligue anglaise",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "01:00",
+      "categorie": "rugby",
+      "competition": "Rugby à XIII : NRL",
+      "affiche": "Rugby à XIII : NRL",
+      "chaine": "beIN Sports 3",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "01:20",
+      "categorie": "serie",
+      "competition": "Les évaporés - 1x05",
+      "affiche": "Les évaporés - 1x05",
+      "chaine": "France 2",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "01:22",
+      "categorie": "serie",
+      "competition": "Apollo Has Fallen - 2x05",
+      "affiche": "Apollo Has Fallen - 2x05",
+      "chaine": "Canal+",
+      "duree_min": 46
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "01:35",
+      "categorie": "autre",
+      "competition": "Programmes de la nuit",
+      "affiche": "Programmes de la nuit",
+      "chaine": "M6",
+      "duree_min": 265
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "02:00",
+      "categorie": "autre",
+      "competition": "Journal Météo climat",
+      "affiche": "Journal Météo climat",
+      "chaine": "France 3",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "02:05",
+      "categorie": "autre",
+      "competition": "La leçon de violon",
+      "affiche": "La leçon de violon",
+      "chaine": "France 3",
+      "duree_min": 85
     },
     {
       "date": "2026-10-08",
@@ -3037,12 +2749,210 @@
     },
     {
       "date": "2026-10-08",
+      "heure": "02:08",
+      "categorie": "film",
+      "competition": "Together",
+      "affiche": "Together",
+      "chaine": "Canal+",
+      "duree_min": 99
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "02:15",
+      "categorie": "serie",
+      "competition": "Les évaporés - 1x06",
+      "affiche": "Les évaporés - 1x06",
+      "chaine": "France 2",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "02:15",
+      "categorie": "foot",
+      "competition": "Football : Qualifications de la CAN",
+      "affiche": "Football : Qualifications de la CAN",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "02:35",
+      "categorie": "autre",
+      "competition": "Le Podium",
+      "affiche": "Le Podium",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 11
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "02:46",
+      "categorie": "autre",
+      "competition": "Formula One, le mag",
+      "affiche": "Formula One, le mag",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "03:00",
+      "categorie": "foot",
+      "competition": "Football : Süper Lig",
+      "affiche": "Football : Süper Lig",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "03:00",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 3",
+      "duree_min": 180
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "03:05",
+      "categorie": "autre",
+      "competition": "Journal Météo climat outre-mer",
+      "affiche": "Journal Météo climat outre-mer",
+      "chaine": "France 2",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "03:10",
+      "categorie": "autre",
+      "competition": "Emissions religieuses",
+      "affiche": "Emissions religieuses",
+      "chaine": "France 2",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "03:16",
+      "categorie": "f1",
+      "competition": "Voile : Grand Prix de Genève",
+      "affiche": "Voile : Grand Prix de Genève",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 52
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "03:30",
+      "categorie": "autre",
+      "competition": "Julien, un chamelier chez les Ch'tis",
+      "affiche": "Julien, un chamelier chez les Ch'tis",
+      "chaine": "France 3",
+      "duree_min": 55
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "03:30",
+      "categorie": "autre",
+      "competition": "Programmes de la nuit",
+      "affiche": "Programmes de la nuit",
+      "chaine": "W9",
+      "duree_min": 150
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "03:47",
+      "categorie": "film",
+      "competition": "La Voie du serpent",
+      "affiche": "La Voie du serpent",
+      "chaine": "Canal+",
+      "duree_min": 110
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "03:55",
+      "categorie": "autre",
+      "competition": "Voyage au bout du monde",
+      "affiche": "Voyage au bout du monde",
+      "chaine": "France 2",
+      "duree_min": 50
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "04:08",
+      "categorie": "autre",
+      "competition": "Fin des programmes",
+      "affiche": "Fin des programmes",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 112
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "04:15",
+      "categorie": "autre",
+      "competition": "Passion sous pression",
+      "affiche": "Passion sous pression",
+      "chaine": "beIN Sports 2",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "04:25",
+      "categorie": "autre",
+      "competition": "La p'tite librairie",
+      "affiche": "La p'tite librairie",
+      "chaine": "France 3",
+      "duree_min": 5
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "04:30",
+      "categorie": "autre",
+      "competition": "Les matinales",
+      "affiche": "Les matinales",
+      "chaine": "France 3",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "04:40",
+      "categorie": "autre",
+      "competition": "Slam",
+      "affiche": "Slam",
+      "chaine": "France 3",
+      "duree_min": 40
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "04:45",
+      "categorie": "autre",
+      "competition": "Courant d'art",
+      "affiche": "Courant d'art",
+      "chaine": "France 2",
+      "duree_min": 15
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "05:00",
+      "categorie": "autre",
+      "competition": "Pays et marchés du monde",
+      "affiche": "Pays et marchés du monde",
+      "chaine": "France 2",
+      "duree_min": 10
+    },
+    {
+      "date": "2026-10-08",
       "heure": "05:00",
       "categorie": "autre",
       "competition": "Programmes de la nuit",
       "affiche": "Programmes de la nuit",
       "chaine": "L'Équipe",
       "duree_min": 60
+    },
+    {
+      "date": "2026-10-08",
+      "heure": "05:00",
+      "categorie": "autre",
+      "competition": "A point",
+      "affiche": "A point",
+      "chaine": "beIN Sports 1",
+      "duree_min": 45
     },
     {
       "date": "2026-10-08",
