@@ -13,7 +13,9 @@ Chaîne de traitement :
 Le script :
   1. télécharge (ou lit) un guide XMLTV (gzip ou xml) ;
   2. ne garde que les chaînes du centre (via le mapping + abonnement.disponibles) ;
-  3. garde TOUS les programmes de ces chaînes (films, séries, infos, sport…) ;
+  3. garde les programmes des chaînes du centre : TOUT sur les chaînes
+     sport (Canal+, beIN, L'Équipe…), uniquement le SPORT sur les chaînes
+     généralistes TNT (TF1, France 2/3, M6, W9, TMC) ;
   4. devine la catégorie/genre pour le code couleur ;
   5. écrit le programme au schéma de data/tv-programme.json.
 
@@ -89,6 +91,15 @@ SPORT_RULES = [
 SPORT_GENRE_KEYS = ["sport", "football", "rugby", "tennis", "basket", "hand",
                     "volley", "cyclisme", "athlétisme", "athletisme", "match",
                     "compétition", "competition", "formule"]
+
+# Catégories considérées comme « sport »
+SPORT_CATEGORIES = {"ldc", "coupe", "edf", "foot", "padel", "tennis",
+                    "rugby", "f1", "sport"}
+
+# Chaînes généralistes (TNT) : on ne garde QUE leurs programmes sport.
+# Les autres chaînes du centre (Canal+, Canal+ Sport/Foot, beIN, L'Équipe)
+# gardent TOUS leurs programmes.
+SPORT_ONLY_CHANNELS = {"TF1", "France 2", "France 3", "M6", "W9", "TMC"}
 
 # ── Genres XMLTV (non-sport) → catégorie. Ordre important. ────────────────────
 GENRE_MAP = [
@@ -219,6 +230,10 @@ def main():
             continue
 
         cat = guess_category(title, subtitle, genres)
+
+        # Chaînes généralistes (TNT) : on ne garde que le sport.
+        if mapping[channel] in SPORT_ONLY_CHANNELS and cat not in SPORT_CATEGORIES:
+            continue
 
         duree = 60
         if stop and stop > start:
