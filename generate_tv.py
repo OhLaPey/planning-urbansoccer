@@ -662,6 +662,24 @@ def build_page(data):
             return a.localeCompare(b);
         }});
 
+        // Le jour même : masquer les chaînes sans diffusion dans l'heure qui vient.
+        if (isToday) {{
+            var winStart = now.getTime();
+            var winEnd = winStart + 60*60000;
+            chanOrder = chanOrder.filter(function(chaine) {{
+                return byChan[chaine].some(function(ev) {{
+                    var s = eventStart(ev).getTime();
+                    var e = s + eventDuration(ev)*60000;
+                    return s < winEnd && e > winStart;  // chevauche [maintenant, +1h]
+                }});
+            }});
+            if (!chanOrder.length) {{
+                schedule.innerHTML = headHtml + '<div class="empty-state"><div class="big">📺</div>' +
+                    '<p>Aucune diffusion dans l\\'heure qui vient.</p></div>';
+                return;
+            }}
+        }}
+
         var rowsHtml = "";
         chanOrder.forEach(function(chaine) {{
             var num = chanNum(chaine);
