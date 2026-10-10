@@ -6,7 +6,8 @@ name: MAJ programme TV (auto XMLTV)
 
 on:
   schedule:
-    - cron: '0 5 * * *'   # ~07:00 Paris (heure d'hiver) / 07:00-08:00 selon saison
+    - cron: '0 5 * * *'    # ~07:00 Paris (matin)
+    - cron: '0 15 * * *'   # ~17:00 Paris (après-midi)
   workflow_dispatch:
 
 permissions:

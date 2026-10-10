@@ -23,6 +23,7 @@ from datetime import datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(HERE, "data", "tv-programme.json")
+SELECTION_PATH = os.path.join(HERE, "data", "tv-selection.json")
 OUTPUT_PATH = os.path.join(HERE, "tv.html")
 
 FRENCH_DAYS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
@@ -45,6 +46,17 @@ def build_page(data):
     sous_titre = meta.get("sous_titre", "")
     updated_at = meta.get("updated_at", "")
 
+    # Sélection manuelle (ajouts / exclus) pour la section du haut — fichier
+    # NON écrasé par la mise à jour automatique.
+    selection = {"ajouts": [], "exclus": []}
+    try:
+        with open(SELECTION_PATH, "r", encoding="utf-8") as f:
+            sel = json.load(f)
+        selection["ajouts"] = sel.get("ajouts", [])
+        selection["exclus"] = sel.get("exclus", [])
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+
     # On ne pousse dans la page que ce dont le client a besoin.
     payload = {
         "meta": meta,
@@ -52,6 +64,7 @@ def build_page(data):
         "chaines_meta": data.get("chaines_meta", {}),
         "categories": data.get("categories", {}),
         "evenements": data.get("evenements", []),
+        "selection": selection,
     }
     data_json = json.dumps(payload, ensure_ascii=False)
 
@@ -143,6 +156,7 @@ def build_page(data):
             min-width: 86px; text-align: center;
         }}
         .hl-when {{ font-size: 12px; font-weight: 800; color: #FFD54A; flex-shrink: 0; min-width: 96px; }}
+        .hl-when-live {{ color: #FF6600; }}
         .hl-aff {{ font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap;
                    overflow: hidden; text-overflow: ellipsis; }}
         .hl-meta {{ display: flex; align-items: center; gap: 6px; margin-left: auto;
@@ -335,10 +349,6 @@ def build_page(data):
 
         <div class="highlights" id="highlights"></div>
 
-        <div class="now-next" id="now-next"></div>
-
-        <div class="legend" id="legend"></div>
-
         <div class="day-tabs" id="day-tabs"></div>
 
         <div id="schedule"></div>
@@ -421,31 +431,55 @@ def build_page(data):
 
     // Bandeau « À ne pas manquer » : événements majeurs + padel (à venir / en cours)
     var MAJOR_CATS = {{ ldc: 1, coupe: 1, edf: 1, padel: 1, f1: 1 }};
+    function evKey(ev) {{ return ev.date + "|" + (ev.heure || "") + "|" + (ev.affiche || ev.competition || ""); }}
+    function isExcluded(ev) {{
+        var exc = (DATA.selection && DATA.selection.exclus) || [];
+        var t = ((ev.affiche || "") + " " + (ev.competition || "")).toLowerCase();
+        return exc.some(function(x) {{ return x && t.indexOf(String(x).toLowerCase()) !== -1; }});
+    }}
+
+    // Section unique du haut : « À suivre · À ne pas manquer »
+    // = ajouts manuels (épinglés) + événements majeurs/padel automatiques,
+    //   moins les exclusions. Éditable via data/tv-selection.json.
     function renderHighlights() {{
         var el = document.getElementById("highlights");
         var now = new Date();
         var todayStr = ymd(now);
-        var maj = diffusableEvents().filter(function(ev) {{
-            if (!MAJOR_CATS[ev.categorie]) return false;
+        function notFinished(ev) {{
             var s = eventStart(ev);
-            var e = new Date(s.getTime() + eventDuration(ev)*60000);
-            return e > now;  // pas encore terminé
-        }}).slice(0, 6);
+            return new Date(s.getTime() + eventDuration(ev)*60000) > now;
+        }}
 
-        if (!maj.length) {{ el.style.display = "none"; el.innerHTML = ""; return; }}
+        var pins = ((DATA.selection && DATA.selection.ajouts) || []).filter(function(ev) {{
+            return ev && ev.date && notFinished(ev) && !isExcluded(ev);
+        }});
+        var pinKeys = {{}};
+        pins.forEach(function(ev) {{ pinKeys[evKey(ev)] = 1; }});
+
+        var auto = diffusableEvents().filter(function(ev) {{
+            return MAJOR_CATS[ev.categorie] && notFinished(ev) && !isExcluded(ev) && !pinKeys[evKey(ev)];
+        }});
+
+        var items = pins.map(function(ev) {{ return {{ ev: ev, pinned: true }}; }})
+            .concat(auto.map(function(ev) {{ return {{ ev: ev, pinned: false }}; }}));
+        items.sort(function(a, b) {{ return eventStart(a.ev) - eventStart(b.ev); }});
+        items = items.slice(0, 8);
+
+        if (!items.length) {{ el.style.display = "none"; el.innerHTML = ""; return; }}
         el.style.display = "";
 
-        var html = '<div class="hl-title">⭐ À ne pas manquer · Événements majeurs &amp; Padel</div>' +
-                   '<div class="hl-list">';
-        maj.forEach(function(ev) {{
-            var cat = catInfo(ev.categorie);
-            var s = eventStart(ev);
-            var when = (ev.date === todayStr ? "Auj." : (JS_DAYS_SHORT[s.getDay()] + " " + pad(s.getDate()))) +
-                       " · " + (ev.heure || "");
+        var html = '<div class="hl-title">⭐ À suivre · À ne pas manquer</div><div class="hl-list">';
+        items.forEach(function(it) {{
+            var ev = it.ev, cat = catInfo(ev.categorie), s = eventStart(ev);
+            var e = new Date(s.getTime() + eventDuration(ev)*60000);
+            var live = (now >= s && now < e);
+            var when = live ? "\\u25CF EN DIRECT"
+                : (ev.date === todayStr ? "Auj." : (JS_DAYS_SHORT[s.getDay()] + " " + pad(s.getDate()))) +
+                  " · " + (ev.heure || "");
             html += '<div class="hl-item">' +
                 '<span class="hl-cat" style="background:' + cat.couleur + '">' + esc(cat.label) + '</span>' +
-                '<span class="hl-when">' + esc(when) + '</span>' +
-                '<span class="hl-aff">' + esc(ev.affiche || ev.competition || "") + '</span>' +
+                '<span class="hl-when' + (live ? " hl-when-live" : "") + '">' + esc(when) + '</span>' +
+                '<span class="hl-aff">' + (it.pinned ? "📌 " : "") + esc(ev.affiche || ev.competition || "") + '</span>' +
                 '<span class="hl-meta">' + nnChip(ev.chaine) + '<span>' + esc(ev.chaine) + '</span></span>' +
             '</div>';
         }});
@@ -687,7 +721,6 @@ def build_page(data):
     function rebuild() {{
         renderClock();
         renderHighlights();
-        renderNowNext();
         var evts = diffusableEvents();
         STATE.dates = uniqueDates(evts);
 
@@ -708,7 +741,6 @@ def build_page(data):
         renderDay();
     }}
 
-    renderLegend();
     rebuild();
     setInterval(rebuild, 60000);           // rafraîchit l'état EN DIRECT + jours chaque minute
     setInterval(function() {{               // recharge la page 1×/h (nouveau programme éventuel)
