@@ -582,7 +582,7 @@ def build_page(data):
         var range = maxH - minH;
 
         var isDesktop = window.innerWidth >= 900;
-        var pxPerHour = isDesktop ? 92 : 50;
+        var pxPerHour = isDesktop ? 220 : 150;
         var nameW = isDesktop ? 168 : 104;
         var innerMin = nameW + range * pxPerHour;
 
