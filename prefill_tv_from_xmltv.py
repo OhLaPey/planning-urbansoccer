@@ -76,7 +76,7 @@ SPORT_RULES = [
     ("edf",    [r"équipe de france", r"equipe de france", r"\bbleus\b",
                 r"éliminatoires", r"eliminatoires", r"nations league"]),
     ("padel",  [r"padel"]),
-    ("f1",     [r"formule 1", r"formula 1", r"\bf1\b", r"grand prix", r"\bgp\b"]),
+    ("f1",     [r"formule 1", r"formula 1", r"\bf1\b"]),
     ("rugby",  [r"rugby", r"top 14", r"champions cup", r"xv de france", r"six nations"]),
     ("tennis", [r"tennis", r"roland[- ]garros", r"wimbledon", r"open d'australie",
                 r"\bus open\b", r"\batp\b", r"\bwta\b", r"coupe davis"]),
