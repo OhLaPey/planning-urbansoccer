@@ -239,6 +239,10 @@ def main():
         if stop and stop > start:
             duree = int((stop - start).total_seconds() // 60)
 
+        # On retire les petits programmes (< 30 min) : flashs, pastilles, bandes-annonces…
+        if duree < 30:
+            continue
+
         kept.append({
             "date": start.strftime("%Y-%m-%d"),
             "heure": start.strftime("%H:%M"),
