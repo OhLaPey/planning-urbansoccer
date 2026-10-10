@@ -602,17 +602,11 @@ def build_page(data):
             return;
         }}
 
-        // ── Plage horaire de la journée (début = 1re diffusion, fin = +durée) ──
-        var minH = 24, maxH = 0;
-        evts.forEach(function(ev) {{
-            var s = eventStart(ev);
-            var sh = s.getHours() + s.getMinutes()/60;
-            var eh = sh + eventDuration(ev)/60;
-            if (sh < minH) minH = sh;
-            if (eh > maxH) maxH = eh;
-        }});
-        minH = Math.floor(minH); maxH = Math.ceil(maxH);
-        if (maxH <= minH) maxH = minH + 1;
+        // ── Plage horaire = horaires d'ouverture du centre ──
+        // 9h → minuit en semaine, 9h → 23h le week-end (samedi/dimanche).
+        var dow = d.getDay(); // 0=dim … 6=sam
+        var minH = 9;
+        var maxH = (dow === 0 || dow === 6) ? 23 : 24;
         var range = maxH - minH;
 
         var isDesktop = window.innerWidth >= 900;
@@ -697,8 +691,9 @@ def build_page(data):
                 var eh = sh + eventDuration(ev)/60;
                 var left = ((sh - minH) / range) * 100;
                 var width = ((eh - sh) / range) * 100;
-                if (left < 0) left = 0;
-                if (left + width > 100) width = 100 - left;
+                if (left < 0) {{ width += left; left = 0; }}      // coupe la partie avant 9h
+                if (left + width > 100) width = 100 - left;       // coupe après la fermeture
+                if (width <= 0) return;                            // entièrement hors ouverture
 
                 var state = (now >= s && now < end) ? "live" : (now >= end ? "done" : "soon");
                 var cat = catInfo(ev.categorie);

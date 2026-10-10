@@ -101,6 +101,16 @@ SPORT_CATEGORIES = {"ldc", "coupe", "edf", "foot", "padel", "tennis",
 # gardent TOUS leurs programmes.
 SPORT_ONLY_CHANNELS = {"TF1", "France 2", "France 3", "M6", "W9", "TMC"}
 
+# Titres « vides » / remplissage à ignorer (surtout Canal+ Live numérotés) :
+# bandeaux d'attente, annonces « À venir : … », marqueurs « Terminé : … ».
+FILLER_TITLES = [
+    r"vivez en direct",
+    r"^\s*(a|à)\W*venir\b",
+    r"^\s*termin",
+    r"^\s*fin des programmes",
+    r"programmes de la nuit",
+]
+
 # ── Genres XMLTV (non-sport) → catégorie. Ordre important. ────────────────────
 GENRE_MAP = [
     ("jeunesse", ["jeunesse", "enfant", "dessin animé", "dessin anime",
@@ -231,6 +241,11 @@ def main():
 
         cat = guess_category(title, subtitle, genres)
 
+        # Programmes « vides » / remplissage (Canal+ Live en attente…) → ignorés.
+        _t = (title or subtitle or "").lower()
+        if any(re.search(p, _t) for p in FILLER_TITLES):
+            continue
+
         # Chaînes généralistes (TNT) : on ne garde que le sport.
         if mapping[channel] in SPORT_ONLY_CHANNELS and cat not in SPORT_CATEGORIES:
             continue
@@ -241,6 +256,14 @@ def main():
 
         # On retire les petits programmes (< 30 min) : flashs, pastilles, bandes-annonces…
         if duree < 30:
+            continue
+
+        # Horaires d'ouverture du centre : 9h → minuit en semaine, 9h → 23h le week-end.
+        # On ne garde que ce qui chevauche ce créneau.
+        close_h = 23 if start.weekday() >= 5 else 24
+        sh = start.hour + start.minute / 60
+        eh = sh + duree / 60
+        if not (sh < close_h and eh > 9):
             continue
 
         kept.append({
