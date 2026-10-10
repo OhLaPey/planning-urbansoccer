@@ -62,6 +62,36 @@ Chaque journée est présentée en **guide TV horizontal** (comme le planning) :
 
 4. Commit + push sur `main` → GitHub Pages met la page à jour.
 
+## Section du haut « À suivre · À ne pas manquer »
+
+En haut de la page, une **seule section** met en avant les événements majeurs
+(Ligue des Champions, Coupes, Équipe de France, Formule 1) et le padel à venir,
+avec marquage **● EN DIRECT** pour ce qui est en cours.
+
+Elle est **éditable** via `data/tv-selection.json` (fichier **non écrasé** par la
+mise à jour automatique) :
+
+- **`ajouts`** : programmes à **épingler** (affichés avec 📌), même s'ils ne sont
+  pas des « événements majeurs ». Même schéma qu'un événement (`date`, `heure`,
+  `categorie`, `competition`, `affiche`, `chaine`, `duree_min`).
+- **`exclus`** : liste de **textes** ; toute mise en avant automatique dont
+  l'affiche ou la compétition contient l'un de ces textes est **masquée**.
+
+Exemple :
+
+```json
+{
+  "ajouts": [
+    { "date": "2026-10-15", "heure": "21:00", "categorie": "ldc",
+      "competition": "Ligue des Champions", "affiche": "PSG — Leverkusen",
+      "chaine": "Canal+", "duree_min": 120 }
+  ],
+  "exclus": ["Handball : Ligue des champions"]
+}
+```
+
+Après édition, relancer `python generate_tv.py` (ou laisser la mise à jour auto).
+
 ## Règle de diffusion
 
 - Un événement n'est affiché **que si sa `chaine` figure dans

@@ -1,0 +1,7 @@
+{
+  "_note": "Section « À suivre · À ne pas manquer » en haut de la page TV. Ce fichier N'EST PAS écrasé par la mise à jour automatique.",
+  "_aide": "ajouts = programmes à épingler (affichés en haut avec 📌). exclus = liste de textes ; toute mise en avant AUTO dont l'affiche ou la compétition contient l'un de ces textes est masquée.",
+  "_exemple_ajout": { "date": "2026-10-15", "heure": "21:00", "categorie": "ldc", "competition": "Ligue des Champions", "affiche": "PSG — Leverkusen", "chaine": "Canal+", "duree_min": 120 },
+  "ajouts": [],
+  "exclus": []
+}
