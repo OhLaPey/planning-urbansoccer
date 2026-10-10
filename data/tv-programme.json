@@ -5,7 +5,7 @@
     "updated_at": "2026-10-10",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-10 11:46"
+    "generated_at": "2026-10-10 12:18"
   },
   "abonnement": {
     "disponibles": [
@@ -622,15 +622,6 @@
     },
     {
       "date": "2026-10-10",
-      "heure": "13:30",
-      "categorie": "foot",
-      "competition": "Avant-match Ligue 2",
-      "affiche": "Avant-match Ligue 2",
-      "chaine": "beIN Sports 1",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-10",
       "heure": "13:40",
       "categorie": "sport",
       "competition": "Débrief Moto",
@@ -1006,15 +997,6 @@
       "affiche": "Intérieur sport",
       "chaine": "Canal+",
       "duree_min": 34
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "19:15",
-      "categorie": "foot",
-      "competition": "Avant-match Ligue 2",
-      "affiche": "Avant-match Ligue 2",
-      "chaine": "beIN Sports 1",
-      "duree_min": 45
     },
     {
       "date": "2026-10-10",

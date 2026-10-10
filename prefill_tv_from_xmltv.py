@@ -109,6 +109,8 @@ FILLER_TITLES = [
     r"^\s*termin",
     r"^\s*fin des programmes",
     r"programmes de la nuit",
+    r"avant[\s-]*match",
+    r"apr[eè]s[\s-]*match",
 ]
 
 # ── Genres XMLTV (non-sport) → catégorie. Ordre important. ────────────────────
