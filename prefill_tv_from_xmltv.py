@@ -187,7 +187,7 @@ def guess_category(title, subtitle, genres):
 
 
 def iter_programmes(xml_text):
-    """Yield (channel_id, start, stop, title, subtitle, genres[]) depuis le XMLTV."""
+    """Yield (channel_id, start, stop, title, subtitle, genres[], desc) depuis le XMLTV."""
     import xml.etree.ElementTree as ET
     for _, elem in ET.iterparse(io.StringIO(xml_text), events=("end",)):
         if elem.tag != "programme":
@@ -197,9 +197,33 @@ def iter_programmes(xml_text):
         stop = parse_xmltv_time(elem.get("stop", ""))
         title = (elem.findtext("title") or "").strip()
         subtitle = (elem.findtext("sub-title") or "").strip()
+        desc = (elem.findtext("desc") or "").strip()
         genres = [(c.text or "").strip().lower() for c in elem.findall("category")]
-        yield channel, start, stop, title, subtitle, genres
+        yield channel, start, stop, title, subtitle, genres, desc
         elem.clear()
+
+
+# Extraction des équipes depuis la description (« … entre X et Y … »), pour
+# qualifier les matchs au titre générique (ex. « Football : Ligue 2 BKT »).
+_TEAMS_RE = re.compile(r"\bentre\s+(.+?)\s+et\s+(.+?)\s*[\.,;:]", re.I)
+
+def teams_from_desc(desc):
+    m = _TEAMS_RE.search(desc or "")
+    if not m:
+        return None
+    a, b = m.group(1).strip(" .,:;"), m.group(2).strip(" .,:;")
+    # Rejette les tournures en prose (« la star … », « les stars … »).
+    bad = ("la ", "le ", "les ", "l'", "un ", "une ", "du ", "des ", "de ",
+           "ce ", "cette ", "leur ", "son ", "sa ", "ses ")
+    for name in (a, b):
+        low = name.lower()
+        if low.startswith(bad) or len(name) < 2 or len(name) > 28 or "\n" in name:
+            return None
+    return a + " / " + b
+
+def has_teams(text):
+    return bool(re.search(r" / | - | vs | – ", text or "", re.I))
+
 
 
 def main():
@@ -230,7 +254,7 @@ def main():
 
     kept = []
     seen_channels = set()
-    for channel, start, stop, title, subtitle, genres in iter_programmes(xml_text):
+    for channel, start, stop, title, subtitle, genres, desc in iter_programmes(xml_text):
         if channel not in mapping:
             continue
         seen_channels.add(channel)
@@ -266,17 +290,57 @@ def main():
         if not (sh < close_h and eh > 9):
             continue
 
+        affiche = subtitle or title
+        competition = title or subtitle
+        # Qualifier un match au titre générique : récupérer les équipes du desc.
+        if cat in ("foot", "ldc", "coupe", "edf", "rugby") and not has_teams(affiche):
+            t = teams_from_desc(desc)
+            if t:
+                affiche = t
+
         kept.append({
             "date": start.strftime("%Y-%m-%d"),
             "heure": start.strftime("%H:%M"),
             "categorie": cat,
-            "competition": title or subtitle,
-            "affiche": subtitle or title,
+            "competition": competition,
+            "affiche": affiche,
             "chaine": mapping[channel],
             "duree_min": duree,
         })
 
-    kept.sort(key=lambda e: (e["date"], e["heure"], e["chaine"]))
+    # ── Déduplication : même affiche + créneaux qui se chevauchent → une seule
+    #    entrée (chaîne au plus petit numéro conservée). ──
+    def chan_num_val(name):
+        try:
+            return int(prog.get("chaines_meta", {}).get(name, {}).get("numero") or 10**6)
+        except (TypeError, ValueError):
+            return 10**6
+
+    def norm_aff(s):
+        return re.sub(r"\s+", " ", (s or "").strip().lower())
+
+    def ev_bounds(e):
+        s = datetime.strptime(e["date"] + " " + e["heure"], "%Y-%m-%d %H:%M")
+        return s, s + timedelta(minutes=e["duree_min"])
+
+    kept.sort(key=lambda e: (e["date"], norm_aff(e["affiche"]), e["heure"], chan_num_val(e["chaine"])))
+    deduped = []
+    for e in kept:
+        es, ee = ev_bounds(e)
+        dup = False
+        for a in deduped:
+            if a["date"] != e["date"] or norm_aff(a["affiche"]) != norm_aff(e["affiche"]):
+                continue
+            as_, ae = ev_bounds(a)
+            if as_ < ee and ae > es:  # chevauchement temporel → doublon
+                dup = True
+                break
+        if not dup:
+            deduped.append(e)
+    n_dups = len(kept) - len(deduped)
+    kept = deduped
+
+    kept.sort(key=lambda e: (e["date"], e["heure"], chan_num_val(e["chaine"])))
 
     out = {
         "_meta": {
