@@ -310,8 +310,10 @@ def main():
             "duree_min": duree,
         })
 
-    # ── Déduplication : même affiche + créneaux qui se chevauchent → une seule
-    #    entrée (chaîne au plus petit numéro conservée). ──
+    # ── Déduplication + rediffusions ──
+    #  • même chaîne + même jour + même affiche  → rediffusion (on garde la 1re) ;
+    #  • chaînes différentes + créneaux qui se chevauchent → même match en
+    #    simultané (on garde la chaîne au plus petit numéro).
     def chan_num_val(name):
         try:
             return int(prog.get("chaines_meta", {}).get(name, {}).get("numero") or 10**6)
@@ -333,8 +335,11 @@ def main():
         for a in deduped:
             if a["date"] != e["date"] or norm_aff(a["affiche"]) != norm_aff(e["affiche"]):
                 continue
+            if a["chaine"] == e["chaine"]:
+                dup = True  # rediffusion sur la même chaîne le même jour
+                break
             as_, ae = ev_bounds(a)
-            if as_ < ee and ae > es:  # chevauchement temporel → doublon
+            if as_ < ee and ae > es:  # même programme en simultané sur une autre chaîne
                 dup = True
                 break
         if not dup:
