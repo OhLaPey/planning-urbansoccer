@@ -5,7 +5,7 @@
     "updated_at": "2026-10-10",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-10 10:45"
+    "generated_at": "2026-10-10 10:51"
   },
   "abonnement": {
     "disponibles": [
@@ -239,7 +239,7 @@
     {
       "date": "2026-10-10",
       "heure": "01:12",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto GP : Grand Prix d'Indonésie",
       "affiche": "Moto GP : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -293,7 +293,7 @@
     {
       "date": "2026-10-10",
       "heure": "02:34",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto 3 : Grand Prix d'Indonésie",
       "affiche": "Moto 3 : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -311,7 +311,7 @@
     {
       "date": "2026-10-10",
       "heure": "03:20",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto 2 : Grand Prix d'Indonésie",
       "affiche": "Moto 2 : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -329,7 +329,7 @@
     {
       "date": "2026-10-10",
       "heure": "04:00",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto GP : Grand Prix d'Indonésie",
       "affiche": "Moto GP : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -419,7 +419,7 @@
     {
       "date": "2026-10-10",
       "heure": "05:57",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto 3 : Grand Prix d'Indonésie",
       "affiche": "Moto 3 : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -482,7 +482,7 @@
     {
       "date": "2026-10-10",
       "heure": "06:40",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto 3 : Grand Prix d'Indonésie",
       "affiche": "Moto 3 : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -518,7 +518,7 @@
     {
       "date": "2026-10-10",
       "heure": "07:35",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto 2 : Grand Prix d'Indonésie",
       "affiche": "Moto 2 : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -599,7 +599,7 @@
     {
       "date": "2026-10-10",
       "heure": "08:55",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto GP : Grand Prix d'Indonésie",
       "affiche": "Moto GP : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -869,7 +869,7 @@
     {
       "date": "2026-10-10",
       "heure": "13:10",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto GP : Grand Prix d'Indonésie",
       "affiche": "Moto GP : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -1274,7 +1274,7 @@
     {
       "date": "2026-10-10",
       "heure": "20:02",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Voile : Grand Prix de Genève",
       "affiche": "Voile : Grand Prix de Genève",
       "chaine": "Canal+ Sport 360",
@@ -1364,7 +1364,7 @@
     {
       "date": "2026-10-10",
       "heure": "21:20",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto GP : Grand Prix d'Indonésie",
       "affiche": "Moto GP : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -1571,7 +1571,7 @@
     {
       "date": "2026-10-11",
       "heure": "03:26",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto GP : Grand Prix d'Indonésie",
       "affiche": "Moto GP : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",
@@ -1616,7 +1616,7 @@
     {
       "date": "2026-10-11",
       "heure": "04:35",
-      "categorie": "f1",
+      "categorie": "sport",
       "competition": "Moto GP : Grand Prix d'Indonésie",
       "affiche": "Moto GP : Grand Prix d'Indonésie",
       "chaine": "Canal+ Sport 360",

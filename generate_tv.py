@@ -125,6 +125,33 @@ def build_page(data):
         }}
         .clock .time {{ color: #FF6600; font-weight: 800; }}
 
+        /* ── Bandeau « À ne pas manquer » (événements majeurs + padel) ── */
+        .highlights {{
+            margin: 16px 0 4px; padding: 13px 16px; border-radius: 8px;
+            background: linear-gradient(135deg, rgba(255,102,0,0.14), rgba(255,102,0,0.03));
+            border: 1px solid rgba(255,102,0,0.35);
+        }}
+        .hl-title {{
+            font-size: 11px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 1.5px; color: #FF6600; margin-bottom: 10px;
+        }}
+        .hl-list {{ display: flex; flex-direction: column; gap: 7px; }}
+        .hl-item {{ display: flex; align-items: center; gap: 10px; min-width: 0; }}
+        .hl-cat {{
+            font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px;
+            padding: 2px 8px; border-radius: 4px; color: #1A1A1A; flex-shrink: 0;
+            min-width: 86px; text-align: center;
+        }}
+        .hl-when {{ font-size: 12px; font-weight: 800; color: #FFD54A; flex-shrink: 0; min-width: 96px; }}
+        .hl-aff {{ font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap;
+                   overflow: hidden; text-overflow: ellipsis; }}
+        .hl-meta {{ display: flex; align-items: center; gap: 6px; margin-left: auto;
+                    flex-shrink: 0; font-size: 11px; color: #aaa; white-space: nowrap; }}
+        @media (max-width: 620px) {{
+            .hl-item {{ flex-wrap: wrap; gap: 5px 8px; }}
+            .hl-meta {{ margin-left: 0; }}
+        }}
+
         /* ── Bandeau « En ce moment / À suivre » ── */
         .now-next {{ display: flex; gap: 10px; margin: 16px 0 4px; }}
         .nn-block {{ flex: 1; min-width: 0; padding: 12px 15px; border-radius: 8px;
@@ -306,6 +333,8 @@ def build_page(data):
             <div class="clock" id="clock"></div>
         </div>
 
+        <div class="highlights" id="highlights"></div>
+
         <div class="now-next" id="now-next"></div>
 
         <div class="legend" id="legend"></div>
@@ -388,6 +417,40 @@ def build_page(data):
     function nnChip(chaine) {{
         var num = chanNum(chaine);
         return num ? '<span class="nn-num' + (chanClair(chaine) ? " clair" : "") + '">' + esc(num) + '</span>' : '';
+    }}
+
+    // Bandeau « À ne pas manquer » : événements majeurs + padel (à venir / en cours)
+    var MAJOR_CATS = {{ ldc: 1, coupe: 1, edf: 1, padel: 1, f1: 1 }};
+    function renderHighlights() {{
+        var el = document.getElementById("highlights");
+        var now = new Date();
+        var todayStr = ymd(now);
+        var maj = diffusableEvents().filter(function(ev) {{
+            if (!MAJOR_CATS[ev.categorie]) return false;
+            var s = eventStart(ev);
+            var e = new Date(s.getTime() + eventDuration(ev)*60000);
+            return e > now;  // pas encore terminé
+        }}).slice(0, 6);
+
+        if (!maj.length) {{ el.style.display = "none"; el.innerHTML = ""; return; }}
+        el.style.display = "";
+
+        var html = '<div class="hl-title">⭐ À ne pas manquer · Événements majeurs &amp; Padel</div>' +
+                   '<div class="hl-list">';
+        maj.forEach(function(ev) {{
+            var cat = catInfo(ev.categorie);
+            var s = eventStart(ev);
+            var when = (ev.date === todayStr ? "Auj." : (JS_DAYS_SHORT[s.getDay()] + " " + pad(s.getDate()))) +
+                       " · " + (ev.heure || "");
+            html += '<div class="hl-item">' +
+                '<span class="hl-cat" style="background:' + cat.couleur + '">' + esc(cat.label) + '</span>' +
+                '<span class="hl-when">' + esc(when) + '</span>' +
+                '<span class="hl-aff">' + esc(ev.affiche || ev.competition || "") + '</span>' +
+                '<span class="hl-meta">' + nnChip(ev.chaine) + '<span>' + esc(ev.chaine) + '</span></span>' +
+            '</div>';
+        }});
+        html += '</div>';
+        el.innerHTML = html;
     }}
 
     // Bandeau « En ce moment / À suivre » (toujours basé sur l'heure réelle)
@@ -623,6 +686,7 @@ def build_page(data):
 
     function rebuild() {{
         renderClock();
+        renderHighlights();
         renderNowNext();
         var evts = diffusableEvents();
         STATE.dates = uniqueDates(evts);
