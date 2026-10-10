@@ -5,7 +5,7 @@
     "updated_at": "2026-10-10",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-10 12:18"
+    "generated_at": "2026-10-10 12:27"
   },
   "abonnement": {
     "disponibles": [
@@ -595,15 +595,6 @@
     },
     {
       "date": "2026-10-10",
-      "heure": "13:10",
-      "categorie": "sport",
-      "competition": "Moto GP : Grand Prix d'Indonésie",
-      "affiche": "Moto GP : Grand Prix d'Indonésie",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-10-10",
       "heure": "13:25",
       "categorie": "foot",
       "competition": "Football : Premier League",
@@ -619,15 +610,6 @@
       "affiche": "Arsenal / Leeds",
       "chaine": "Canal+ Premier League",
       "duree_min": 132
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "13:40",
-      "categorie": "sport",
-      "competition": "Débrief Moto",
-      "affiche": "Débrief Moto",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 40
     },
     {
       "date": "2026-10-10",
@@ -673,15 +655,6 @@
       "affiche": "Cyclisme : Championnats du monde de gravel",
       "chaine": "L'Équipe",
       "duree_min": 120
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "14:40",
-      "categorie": "f1",
-      "competition": "Formule 1 : Grand Prix de Singapour",
-      "affiche": "Formule 1 : Grand Prix de Singapour",
-      "chaine": "Canal+ Sport",
-      "duree_min": 101
     },
     {
       "date": "2026-10-10",
@@ -910,39 +883,12 @@
     },
     {
       "date": "2026-10-10",
-      "heure": "18:15",
-      "categorie": "foot",
-      "competition": "Football : Bundesliga",
-      "affiche": "Football : Bundesliga",
-      "chaine": "beIN Sports 2",
-      "duree_min": 135
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "18:25",
-      "categorie": "foot",
-      "competition": "Football : Premier League",
-      "affiche": "Football : Premier League",
-      "chaine": "Canal+ Foot",
-      "duree_min": 127
-    },
-    {
-      "date": "2026-10-10",
       "heure": "18:25",
       "categorie": "sport",
       "competition": "Manchester United / Tottenham",
       "affiche": "Manchester United / Tottenham",
       "chaine": "Canal+ Premier League",
       "duree_min": 125
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "18:30",
-      "categorie": "sport",
-      "competition": "NFL Extra",
-      "affiche": "NFL Extra",
-      "chaine": "beIN Sports 1",
-      "duree_min": 45
     },
     {
       "date": "2026-10-10",
@@ -1009,15 +955,6 @@
     },
     {
       "date": "2026-10-10",
-      "heure": "20:00",
-      "categorie": "foot",
-      "competition": "Football : Ligue 2 BKT",
-      "affiche": "Metz / Saint-Etienne",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-10",
       "heure": "20:02",
       "categorie": "sport",
       "competition": "Voile : Grand Prix de Genève",
@@ -1055,24 +992,6 @@
     {
       "date": "2026-10-10",
       "heure": "21:00",
-      "categorie": "rugby",
-      "competition": "Rugby : Top 14",
-      "affiche": "Rugby : Top 14",
-      "chaine": "Canal+",
-      "duree_min": 117
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "21:00",
-      "categorie": "f1",
-      "competition": "Formule 1 : Grand Prix de Singapour",
-      "affiche": "Formule 1 : Grand Prix de Singapour",
-      "chaine": "Canal+ Sport",
-      "duree_min": 202
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "21:00",
       "categorie": "autre",
       "competition": "beIN Zap",
       "affiche": "beIN Zap",
@@ -1087,33 +1006,6 @@
       "affiche": "ASM Clermont / Bordeaux-Bègles",
       "chaine": "Canal+ Live 1",
       "duree_min": 116
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "21:01",
-      "categorie": "foot",
-      "competition": "Football : Premier League",
-      "affiche": "Football : Premier League",
-      "chaine": "Canal+ Foot",
-      "duree_min": 309
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "21:20",
-      "categorie": "sport",
-      "competition": "Moto GP : Grand Prix d'Indonésie",
-      "affiche": "Moto GP : Grand Prix d'Indonésie",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 31
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "21:51",
-      "categorie": "sport",
-      "competition": "Débrief Moto",
-      "affiche": "Débrief Moto",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 34
     },
     {
       "date": "2026-10-10",
@@ -1141,15 +1033,6 @@
       "affiche": "Générations Intérieur Sport",
       "chaine": "Canal+ Sport 360",
       "duree_min": 68
-    },
-    {
-      "date": "2026-10-10",
-      "heure": "22:30",
-      "categorie": "foot",
-      "competition": "Football : Qualifications de la CAN",
-      "affiche": "Football : Qualifications de la CAN",
-      "chaine": "beIN Sports 2",
-      "duree_min": 360
     },
     {
       "date": "2026-10-10",
@@ -1324,15 +1207,6 @@
     },
     {
       "date": "2026-10-11",
-      "heure": "21:13",
-      "categorie": "sport",
-      "competition": "Liverpool / Manchester City",
-      "affiche": "Liverpool / Manchester City",
-      "chaine": "Canal+ Premier League",
-      "duree_min": 101
-    },
-    {
-      "date": "2026-10-11",
       "heure": "22:25",
       "categorie": "foot",
       "competition": "Football américain : NFL - Seattle Seahawks / San Francisco 49ers",
@@ -1423,30 +1297,12 @@
     },
     {
       "date": "2026-10-12",
-      "heure": "15:00",
-      "categorie": "autre",
-      "competition": "Design auto",
-      "affiche": "Design auto",
-      "chaine": "L'Équipe",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-12",
       "heure": "15:46",
       "categorie": "sport",
       "competition": "Ipswich Town / Fulham",
       "affiche": "Ipswich Town / Fulham",
       "chaine": "Canal+ Premier League",
       "duree_min": 102
-    },
-    {
-      "date": "2026-10-12",
-      "heure": "16:00",
-      "categorie": "autre",
-      "competition": "Design auto",
-      "affiche": "Design auto",
-      "chaine": "L'Équipe",
-      "duree_min": 60
     },
     {
       "date": "2026-10-12",
@@ -1550,24 +1406,6 @@
     {
       "date": "2026-10-13",
       "heure": "14:00",
-      "categorie": "autre",
-      "competition": "Design auto",
-      "affiche": "Design auto",
-      "chaine": "L'Équipe",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-13",
-      "heure": "15:00",
-      "categorie": "autre",
-      "competition": "Design auto",
-      "affiche": "Design auto",
-      "chaine": "L'Équipe",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-10-13",
-      "heure": "16:00",
       "categorie": "autre",
       "competition": "Design auto",
       "affiche": "Design auto",
@@ -1848,15 +1686,6 @@
       "date": "2026-10-14",
       "heure": "21:00",
       "categorie": "sport",
-      "competition": "AS Roma / Real Madrid",
-      "affiche": "AS Roma / Real Madrid",
-      "chaine": "Canal+ Live 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-10-14",
-      "heure": "21:00",
-      "categorie": "sport",
       "competition": "Aston Villa / Fenerbahçe",
       "affiche": "Aston Villa / Fenerbahçe",
       "chaine": "Canal+ Live 3",
@@ -1870,15 +1699,6 @@
       "affiche": "Canal Champions Club le debrief",
       "chaine": "Canal+ Live 1",
       "duree_min": 60
-    },
-    {
-      "date": "2026-10-14",
-      "heure": "23:00",
-      "categorie": "sport",
-      "competition": "L'Equipe du soir",
-      "affiche": "L'Equipe du soir",
-      "chaine": "L'Équipe",
-      "duree_min": 187
     },
     {
       "date": "2026-10-15",
@@ -2268,15 +2088,6 @@
       "duree_min": 60
     },
     {
-      "date": "2026-10-15",
-      "heure": "23:10",
-      "categorie": "sport",
-      "competition": "L'Equipe du soir",
-      "affiche": "L'Equipe du soir",
-      "chaine": "L'Équipe",
-      "duree_min": 177
-    },
-    {
       "date": "2026-10-16",
       "heure": "06:01",
       "categorie": "sport",
@@ -2338,15 +2149,6 @@
       "affiche": "Courses de caisses à savon",
       "chaine": "L'Équipe",
       "duree_min": 150
-    },
-    {
-      "date": "2026-10-16",
-      "heure": "23:10",
-      "categorie": "sport",
-      "competition": "L'Equipe du soir",
-      "affiche": "L'Equipe du soir",
-      "chaine": "L'Équipe",
-      "duree_min": 87
     }
   ]
 }
