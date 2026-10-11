@@ -5,7 +5,7 @@
     "updated_at": "2026-10-11",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-11 11:20"
+    "generated_at": "2026-10-11 19:22"
   },
   "abonnement": {
     "disponibles": [
@@ -2087,6 +2087,5 @@
       "chaine": "Canal+ Live 1",
       "duree_min": 30
     }
-  ],
-  "_note_numeros": "Plan Canal+ (vue TNT du décodeur). Canal+ Live et beIN Sports Max : estimation à confirmer sur le boîtier du centre."
+  ]
 }
