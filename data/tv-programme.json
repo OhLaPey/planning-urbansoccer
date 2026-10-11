@@ -64,27 +64,27 @@
       "clair": false
     },
     "Canal+ Sport 360": {
-      "numero": "30",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Foot": {
       "numero": "31",
       "couleur": "#0a0a0a",
       "clair": false
     },
+    "Canal+ Foot": {
+      "numero": "32",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
     "beIN Sports 1": {
-      "numero": "51",
+      "numero": "96",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports 2": {
-      "numero": "52",
+      "numero": "97",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports 3": {
-      "numero": "53",
+      "numero": "98",
       "couleur": "#7b1fa2",
       "clair": false
     },
@@ -139,7 +139,7 @@
       "clair": false
     },
     "Canal+ Sport": {
-      "numero": "32",
+      "numero": "33",
       "couleur": "#0a0a0a",
       "clair": false
     },
@@ -149,132 +149,132 @@
       "clair": false
     },
     "Canal+ Live 1": {
-      "numero": "101",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Live 2": {
-      "numero": "102",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Live 3": {
-      "numero": "103",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Live 4": {
-      "numero": "104",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Live 5": {
-      "numero": "105",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Live 6": {
-      "numero": "106",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Live 7": {
-      "numero": "107",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Live 8": {
-      "numero": "108",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Live 9": {
-      "numero": "109",
-      "couleur": "#0a0a0a",
-      "clair": false
-    },
-    "Canal+ Live 10": {
       "numero": "110",
       "couleur": "#0a0a0a",
       "clair": false
     },
-    "Canal+ Live 11": {
+    "Canal+ Live 2": {
       "numero": "111",
       "couleur": "#0a0a0a",
       "clair": false
     },
-    "Canal+ Live 12": {
+    "Canal+ Live 3": {
       "numero": "112",
       "couleur": "#0a0a0a",
       "clair": false
     },
-    "Canal+ Live 13": {
+    "Canal+ Live 4": {
       "numero": "113",
       "couleur": "#0a0a0a",
       "clair": false
     },
-    "Canal+ Live 14": {
+    "Canal+ Live 5": {
       "numero": "114",
       "couleur": "#0a0a0a",
       "clair": false
     },
-    "Canal+ Live 15": {
+    "Canal+ Live 6": {
       "numero": "115",
       "couleur": "#0a0a0a",
       "clair": false
     },
-    "Canal+ Live 16": {
+    "Canal+ Live 7": {
       "numero": "116",
       "couleur": "#0a0a0a",
       "clair": false
     },
-    "Canal+ Live 17": {
+    "Canal+ Live 8": {
       "numero": "117",
       "couleur": "#0a0a0a",
       "clair": false
     },
-    "Canal+ Live 18": {
+    "Canal+ Live 9": {
       "numero": "118",
       "couleur": "#0a0a0a",
       "clair": false
     },
-    "Canal+ Live 19": {
+    "Canal+ Live 10": {
       "numero": "119",
       "couleur": "#0a0a0a",
       "clair": false
     },
+    "Canal+ Live 11": {
+      "numero": "120",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
+    "Canal+ Live 12": {
+      "numero": "121",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
+    "Canal+ Live 13": {
+      "numero": "122",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
+    "Canal+ Live 14": {
+      "numero": "123",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
+    "Canal+ Live 15": {
+      "numero": "124",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
+    "Canal+ Live 16": {
+      "numero": "125",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
+    "Canal+ Live 17": {
+      "numero": "126",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
+    "Canal+ Live 18": {
+      "numero": "127",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
+    "Canal+ Live 19": {
+      "numero": "128",
+      "couleur": "#0a0a0a",
+      "clair": false
+    },
     "beIN Sports Max 4": {
-      "numero": "54",
+      "numero": "99",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 5": {
-      "numero": "55",
+      "numero": "100",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 6": {
-      "numero": "56",
+      "numero": "101",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 7": {
-      "numero": "57",
+      "numero": "102",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 8": {
-      "numero": "58",
+      "numero": "103",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 9": {
-      "numero": "59",
+      "numero": "104",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 10": {
-      "numero": "60",
+      "numero": "105",
       "couleur": "#7b1fa2",
       "clair": false
     }
@@ -2087,5 +2087,6 @@
       "chaine": "Canal+ Live 1",
       "duree_min": 30
     }
-  ]
+  ],
+  "_note_numeros": "Plan Canal+ (vue TNT du décodeur). Canal+ Live et beIN Sports Max : estimation à confirmer sur le boîtier du centre."
 }
