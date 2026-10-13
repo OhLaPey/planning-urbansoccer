@@ -64,27 +64,27 @@
       "clair": false
     },
     "Canal+ Sport 360": {
-      "numero": "31",
+      "numero": "10",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Foot": {
-      "numero": "32",
+      "numero": "11",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "beIN Sports 1": {
-      "numero": "96",
+      "numero": "66",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports 2": {
-      "numero": "97",
+      "numero": "67",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports 3": {
-      "numero": "98",
+      "numero": "68",
       "couleur": "#7b1fa2",
       "clair": false
     },
@@ -114,7 +114,7 @@
       "clair": true
     },
     "TMC": {
-      "numero": "10",
+      "numero": "",
       "couleur": "#00897b",
       "clair": true
     },
@@ -139,142 +139,142 @@
       "clair": false
     },
     "Canal+ Sport": {
-      "numero": "33",
+      "numero": "12",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Premier League": {
-      "numero": "34",
+      "numero": "",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 1": {
-      "numero": "110",
+      "numero": "101",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 2": {
-      "numero": "111",
+      "numero": "102",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 3": {
-      "numero": "112",
+      "numero": "103",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 4": {
-      "numero": "113",
+      "numero": "104",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 5": {
-      "numero": "114",
+      "numero": "105",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 6": {
-      "numero": "115",
+      "numero": "106",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 7": {
-      "numero": "116",
+      "numero": "107",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 8": {
-      "numero": "117",
+      "numero": "108",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 9": {
-      "numero": "118",
+      "numero": "109",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 10": {
-      "numero": "119",
+      "numero": "110",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 11": {
-      "numero": "120",
+      "numero": "111",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 12": {
-      "numero": "121",
+      "numero": "112",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 13": {
-      "numero": "122",
+      "numero": "113",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 14": {
-      "numero": "123",
+      "numero": "114",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 15": {
-      "numero": "124",
+      "numero": "115",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 16": {
-      "numero": "125",
+      "numero": "116",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 17": {
-      "numero": "126",
+      "numero": "117",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 18": {
-      "numero": "127",
+      "numero": "118",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "Canal+ Live 19": {
-      "numero": "128",
+      "numero": "119",
       "couleur": "#0a0a0a",
       "clair": false
     },
     "beIN Sports Max 4": {
-      "numero": "99",
+      "numero": "",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 5": {
-      "numero": "100",
+      "numero": "",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 6": {
-      "numero": "101",
+      "numero": "",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 7": {
-      "numero": "102",
+      "numero": "",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 8": {
-      "numero": "103",
+      "numero": "",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 9": {
-      "numero": "104",
+      "numero": "",
       "couleur": "#7b1fa2",
       "clair": false
     },
     "beIN Sports Max 10": {
-      "numero": "105",
+      "numero": "",
       "couleur": "#7b1fa2",
       "clair": false
     }
@@ -2321,5 +2321,6 @@
       "chaine": "Canal+ Live 1",
       "duree_min": 30
     }
-  ]
+  ],
+  "_note_numeros": "Numéros réels du boîtier Canal+ du centre (numérotation Canal). À confirmer : TMC, Canal+ Premier League, beIN Sports Max 4-10 (non visibles sur les captures)."
 }
