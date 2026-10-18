@@ -5,7 +5,7 @@
     "updated_at": "2026-10-18",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-18 09:25"
+    "generated_at": "2026-10-18 17:52"
   },
   "abonnement": {
     "disponibles": [
@@ -356,7 +356,7 @@
       "categorie": "autre",
       "competition": "beIN SPORTS, le plus grand des spectacles",
       "affiche": "beIN SPORTS, le plus grand des spectacles",
-      "chaine": "beIN Sports Max 9",
+      "chaine": "beIN Sports Max 8",
       "duree_min": 1980
     },
     {
