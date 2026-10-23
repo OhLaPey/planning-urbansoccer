@@ -5,7 +5,7 @@
     "updated_at": "2026-10-23",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-23 09:52"
+    "generated_at": "2026-10-23 18:54"
   },
   "abonnement": {
     "disponibles": [
@@ -402,7 +402,7 @@
       "competition": "Rugby : Pro D2",
       "affiche": "Rugby : Pro D2",
       "chaine": "Canal+ Sport",
-      "duree_min": 102
+      "duree_min": 103
     },
     {
       "date": "2026-10-23",
@@ -451,12 +451,12 @@
     },
     {
       "date": "2026-10-23",
-      "heure": "09:45",
+      "heure": "09:47",
       "categorie": "rugby",
       "competition": "Rugby : Championnat national des provinces néo-zélandaises",
       "affiche": "Rugby : Championnat national des provinces néo-zélandaises",
       "chaine": "Canal+ Sport",
-      "duree_min": 102
+      "duree_min": 95
     },
     {
       "date": "2026-10-23",
@@ -505,12 +505,21 @@
     },
     {
       "date": "2026-10-23",
-      "heure": "11:27",
+      "heure": "11:22",
       "categorie": "autre",
       "competition": "Fast Life Laurent Dupin",
       "affiche": "Fast Life Laurent Dupin",
       "chaine": "Canal+ Sport",
       "duree_min": 37
+    },
+    {
+      "date": "2026-10-23",
+      "heure": "11:59",
+      "categorie": "f1",
+      "competition": "On Board F1",
+      "affiche": "On Board F1",
+      "chaine": "Canal+ Sport",
+      "duree_min": 35
     },
     {
       "date": "2026-10-23",
@@ -538,15 +547,6 @@
       "affiche": "Metz / Saint-Etienne",
       "chaine": "beIN Sports 2",
       "duree_min": 120
-    },
-    {
-      "date": "2026-10-23",
-      "heure": "12:04",
-      "categorie": "f1",
-      "competition": "On Board F1",
-      "affiche": "On Board F1",
-      "chaine": "Canal+ Sport",
-      "duree_min": 32
     },
     {
       "date": "2026-10-23",
@@ -586,7 +586,7 @@
     },
     {
       "date": "2026-10-23",
-      "heure": "13:08",
+      "heure": "13:05",
       "categorie": "rugby",
       "competition": "Histoire de champions rugby",
       "affiche": "Histoire de champions rugby",
@@ -631,7 +631,7 @@
     },
     {
       "date": "2026-10-23",
-      "heure": "14:41",
+      "heure": "14:38",
       "categorie": "rugby",
       "competition": "Rugby : Bledisloe Cup",
       "affiche": "Rugby : Bledisloe Cup",
