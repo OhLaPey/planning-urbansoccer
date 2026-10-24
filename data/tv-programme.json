@@ -5,7 +5,7 @@
     "updated_at": "2026-10-24",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-24 09:22"
+    "generated_at": "2026-10-24 17:55"
   },
   "abonnement": {
     "disponibles": [
@@ -379,12 +379,12 @@
     },
     {
       "date": "2026-10-24",
-      "heure": "07:22",
+      "heure": "07:19",
       "categorie": "foot",
       "competition": "Football : Arkema Première Ligue",
       "affiche": "Football : Arkema Première Ligue",
       "chaine": "Canal+ Foot",
-      "duree_min": 105
+      "duree_min": 104
     },
     {
       "date": "2026-10-24",
@@ -424,7 +424,7 @@
     },
     {
       "date": "2026-10-24",
-      "heure": "09:07",
+      "heure": "09:03",
       "categorie": "foot",
       "competition": "Football : Premier League",
       "affiche": "Football : Premier League",
@@ -505,12 +505,12 @@
     },
     {
       "date": "2026-10-24",
-      "heure": "10:50",
+      "heure": "10:46",
       "categorie": "autre",
       "competition": "Détective Mathoux",
       "affiche": "Détective Mathoux",
       "chaine": "Canal+ Foot",
-      "duree_min": 40
+      "duree_min": 41
     },
     {
       "date": "2026-10-24",
