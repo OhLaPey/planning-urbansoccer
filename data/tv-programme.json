@@ -5,7 +5,7 @@
     "updated_at": "2026-10-26",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-26 10:54"
+    "generated_at": "2026-10-26 20:20"
   },
   "abonnement": {
     "disponibles": [
@@ -357,7 +357,7 @@
       "competition": "La Premier League sur Canal+",
       "affiche": "La Premier League sur Canal+",
       "chaine": "Canal+ Premier League",
-      "duree_min": 3097
+      "duree_min": 4537
     },
     {
       "date": "2026-10-26",
@@ -406,21 +406,21 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "08:14",
-      "categorie": "film",
-      "competition": "Fackham Hall",
-      "affiche": "Fackham Hall",
-      "chaine": "Canal+",
-      "duree_min": 93
-    },
-    {
-      "date": "2026-10-26",
       "heure": "08:15",
       "categorie": "foot",
       "competition": "Football américain : NFL",
       "affiche": "Football américain : NFL",
       "chaine": "beIN Sports 3",
       "duree_min": 600
+    },
+    {
+      "date": "2026-10-26",
+      "heure": "08:16",
+      "categorie": "film",
+      "competition": "Fackham Hall",
+      "affiche": "Fackham Hall",
+      "chaine": "Canal+",
+      "duree_min": 93
     },
     {
       "date": "2026-10-26",
@@ -433,7 +433,7 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "08:54",
+      "heure": "08:31",
       "categorie": "rugby",
       "competition": "Rugby : Elite 1 féminine",
       "affiche": "Rugby : Elite 1 féminine",
@@ -451,7 +451,7 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "09:47",
+      "heure": "09:49",
       "categorie": "film",
       "competition": "Gérald le Conquérant",
       "affiche": "Gérald le Conquérant",
@@ -487,7 +487,7 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "10:37",
+      "heure": "10:14",
       "categorie": "rugby",
       "competition": "Rugby : Top 14",
       "affiche": "Rugby : Top 14",
@@ -514,7 +514,7 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "11:08",
+      "heure": "11:10",
       "categorie": "autre",
       "competition": "Jamel Comedy Club",
       "affiche": "Jamel Comedy Club",
@@ -559,12 +559,21 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "11:53",
+      "heure": "11:55",
       "categorie": "autre",
       "competition": "En aparté",
       "affiche": "En aparté",
       "chaine": "Canal+",
-      "duree_min": 32
+      "duree_min": 31
+    },
+    {
+      "date": "2026-10-26",
+      "heure": "11:59",
+      "categorie": "rugby",
+      "competition": "Canal Rugby Club - 1re édition",
+      "affiche": "Canal Rugby Club - 1re édition",
+      "chaine": "Canal+ Sport",
+      "duree_min": 71
     },
     {
       "date": "2026-10-26",
@@ -577,16 +586,7 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "12:22",
-      "categorie": "rugby",
-      "competition": "Canal Rugby Club - 1re édition",
-      "affiche": "Canal Rugby Club - 1re édition",
-      "chaine": "Canal+ Sport",
-      "duree_min": 71
-    },
-    {
-      "date": "2026-10-26",
-      "heure": "12:25",
+      "heure": "12:26",
       "categorie": "autre",
       "competition": "Clique",
       "affiche": "Clique",
@@ -622,12 +622,12 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "13:17",
+      "heure": "13:18",
       "categorie": "film",
       "competition": "Hamnet",
       "affiche": "Hamnet",
       "chaine": "Canal+",
-      "duree_min": 122
+      "duree_min": 123
     },
     {
       "date": "2026-10-26",
@@ -667,6 +667,15 @@
     },
     {
       "date": "2026-10-26",
+      "heure": "14:53",
+      "categorie": "rugby",
+      "competition": "Rugby : Championnat national des provinces néo-zélandaises",
+      "affiche": "Rugby : Championnat national des provinces néo-zélandaises",
+      "chaine": "Canal+ Sport",
+      "duree_min": 103
+    },
+    {
+      "date": "2026-10-26",
       "heure": "15:00",
       "categorie": "sport",
       "competition": "L'Equipe de choc",
@@ -685,16 +694,7 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "15:16",
-      "categorie": "rugby",
-      "competition": "Rugby : Championnat national des provinces néo-zélandaises",
-      "affiche": "Rugby : Championnat national des provinces néo-zélandaises",
-      "chaine": "Canal+ Sport",
-      "duree_min": 101
-    },
-    {
-      "date": "2026-10-26",
-      "heure": "15:19",
+      "heure": "15:21",
       "categorie": "film",
       "competition": "“Hurlevent”",
       "affiche": "“Hurlevent”",
@@ -757,7 +757,7 @@
     },
     {
       "date": "2026-10-26",
-      "heure": "17:32",
+      "heure": "17:34",
       "categorie": "film",
       "competition": "Maigret et le mort amoureux",
       "affiche": "Maigret et le mort amoureux",
@@ -1000,12 +1000,111 @@
     },
     {
       "date": "2026-10-27",
+      "heure": "03:00",
+      "categorie": "tennis",
+      "competition": "Tennis : Tournoi WTA de Tokyo",
+      "affiche": "Tennis : Tournoi WTA de Tokyo",
+      "chaine": "beIN Sports 3",
+      "duree_min": 540
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "04:00",
+      "categorie": "autre",
+      "competition": "beIN SPORTS, le plus grand des spectacles",
+      "affiche": "beIN SPORTS, le plus grand des spectacles",
+      "chaine": "beIN Sports Max 4",
+      "duree_min": 834
+    },
+    {
+      "date": "2026-10-27",
       "heure": "06:00",
       "categorie": "sport",
       "competition": "L'Equipe du soir",
       "affiche": "L'Equipe du soir",
       "chaine": "L'Équipe",
       "duree_min": 240
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "07:13",
+      "categorie": "rugby",
+      "competition": "Rugby : Top 14",
+      "affiche": "Rugby : Top 14",
+      "chaine": "Canal+ Sport",
+      "duree_min": 207
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "07:39",
+      "categorie": "foot",
+      "competition": "Football : Premier League",
+      "affiche": "Football : Premier League",
+      "chaine": "Canal+ Foot",
+      "duree_min": 103
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "08:00",
+      "categorie": "autre",
+      "competition": "Lundi Grand Prix",
+      "affiche": "Lundi Grand Prix",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 62
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "08:00",
+      "categorie": "foot",
+      "competition": "Football : Süper Lig",
+      "affiche": "Football : Süper Lig",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "08:17",
+      "categorie": "film",
+      "competition": "100 Millions !",
+      "affiche": "100 Millions !",
+      "chaine": "Canal+",
+      "duree_min": 92
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "09:02",
+      "categorie": "autre",
+      "competition": "05/06/2027 En route pour Madrid",
+      "affiche": "05/06/2027 En route pour Madrid",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 43
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "09:15",
+      "categorie": "sport",
+      "competition": "Basket-ball : WNBA",
+      "affiche": "Basket-ball : WNBA",
+      "chaine": "beIN Sports 1",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "09:22",
+      "categorie": "foot",
+      "competition": "Football : Arkema Première Ligue",
+      "affiche": "Football : Arkema Première Ligue",
+      "chaine": "Canal+ Foot",
+      "duree_min": 205
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "09:45",
+      "categorie": "autre",
+      "competition": "Générations Intérieur Sport",
+      "affiche": "Générations Intérieur Sport",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 76
     },
     {
       "date": "2026-10-27",
@@ -1018,6 +1117,60 @@
     },
     {
       "date": "2026-10-27",
+      "heure": "10:00",
+      "categorie": "foot",
+      "competition": "Football : Bundesliga",
+      "affiche": "Football : Bundesliga",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "10:03",
+      "categorie": "film",
+      "competition": "Regretting You",
+      "affiche": "Regretting You",
+      "chaine": "Canal+",
+      "duree_min": 113
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "10:40",
+      "categorie": "rugby",
+      "competition": "Canal Rugby Club",
+      "affiche": "Canal Rugby Club",
+      "chaine": "Canal+ Sport",
+      "duree_min": 32
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "11:00",
+      "categorie": "sport",
+      "competition": "Basket-ball : NBA",
+      "affiche": "Basket-ball : NBA",
+      "chaine": "beIN Sports 1",
+      "duree_min": 105
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "11:01",
+      "categorie": "autre",
+      "competition": "Formula One, le mag",
+      "affiche": "Formula One, le mag",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 31
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "12:00",
+      "categorie": "autre",
+      "competition": "Le JT",
+      "affiche": "Le JT",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-27",
       "heure": "12:00",
       "categorie": "tennis",
       "competition": "Tennis de table : WTT Champions de Montpellier",
@@ -1027,11 +1180,227 @@
     },
     {
       "date": "2026-10-27",
+      "heure": "12:00",
+      "categorie": "foot",
+      "competition": "Football : Ligue 2 BKT",
+      "affiche": "Metz / Saint-Etienne",
+      "chaine": "beIN Sports 2",
+      "duree_min": 240
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "12:00",
+      "categorie": "sport",
+      "competition": "Baseball : MLB",
+      "affiche": "Baseball : MLB",
+      "chaine": "beIN Sports 3",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "12:01",
+      "categorie": "autre",
+      "competition": "En aparté",
+      "affiche": "En aparté",
+      "chaine": "Canal+",
+      "duree_min": 31
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "12:32",
+      "categorie": "autre",
+      "competition": "Clique",
+      "affiche": "Clique",
+      "chaine": "Canal+",
+      "duree_min": 54
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "12:45",
+      "categorie": "sport",
+      "competition": "NBA Extra",
+      "affiche": "NBA Extra",
+      "chaine": "beIN Sports 1",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "12:47",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 61
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "13:19",
+      "categorie": "sport",
+      "competition": "Golf : Championnat des Bermudes",
+      "affiche": "Golf : Championnat des Bermudes",
+      "chaine": "Canal+ Sport",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "13:26",
+      "categorie": "sport",
+      "competition": "L'Affaire Bojarski",
+      "affiche": "L'Affaire Bojarski",
+      "chaine": "Canal+",
+      "duree_min": 124
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "13:30",
+      "categorie": "foot",
+      "competition": "Football : Süper Lig",
+      "affiche": "Football : Süper Lig",
+      "chaine": "beIN Sports 1",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "13:48",
+      "categorie": "autre",
+      "competition": "Histoire de Champions",
+      "affiche": "Histoire de Champions",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 117
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "14:00",
+      "categorie": "foot",
+      "competition": "Football américain : NFL",
+      "affiche": "Football américain : NFL",
+      "chaine": "beIN Sports 3",
+      "duree_min": 150
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "15:19",
+      "categorie": "rugby",
+      "competition": "Rugby : Pro D2",
+      "affiche": "Rugby : Pro D2",
+      "chaine": "Canal+ Sport",
+      "duree_min": 102
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "15:30",
+      "categorie": "film",
+      "competition": "La Voie du serpent",
+      "affiche": "La Voie du serpent",
+      "chaine": "Canal+",
+      "duree_min": 110
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "15:30",
+      "categorie": "autre",
+      "competition": "Made in England",
+      "affiche": "Made in England",
+      "chaine": "beIN Sports 1",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "16:00",
+      "categorie": "foot",
+      "competition": "Football : Championnat du Portugal",
+      "affiche": "Football : Championnat du Portugal",
+      "chaine": "beIN Sports 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "16:15",
+      "categorie": "autre",
+      "competition": "This is Paris",
+      "affiche": "This is Paris",
+      "chaine": "beIN Sports 1",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "16:30",
+      "categorie": "sport",
+      "competition": "Moto 2 : Grand Prix d'Australie",
+      "affiche": "Moto 2 : Grand Prix d'Australie",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 59
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "16:30",
+      "categorie": "sport",
+      "competition": "Basket-ball : NBA",
+      "affiche": "Basket-ball : NBA",
+      "chaine": "beIN Sports 3",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "16:45",
+      "categorie": "sport",
+      "competition": "Basket-ball : Euroligue masculine",
+      "affiche": "Basket-ball : Euroligue masculine",
+      "chaine": "beIN Sports 1",
+      "duree_min": 150
+    },
+    {
+      "date": "2026-10-27",
       "heure": "17:00",
       "categorie": "sport",
       "competition": "L'Equipe de choc",
       "affiche": "L'Equipe de choc",
       "chaine": "L'Équipe",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "17:07",
+      "categorie": "sport",
+      "competition": "Rallye : WRC, Rallye Italie Sardaigne",
+      "affiche": "Rallye : WRC, Rallye Italie Sardaigne",
+      "chaine": "Canal+ Sport",
+      "duree_min": 52
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "17:20",
+      "categorie": "film",
+      "competition": "Mikaela",
+      "affiche": "Mikaela",
+      "chaine": "Canal+",
+      "duree_min": 87
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "17:54",
+      "categorie": "foot",
+      "competition": "Football : Coupe d'Allemagne",
+      "affiche": "Football : Coupe d'Allemagne",
+      "chaine": "beIN Sports Max 4",
+      "duree_min": 126
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "17:59",
+      "categorie": "f1",
+      "competition": "Formule 1 : Grand Prix des Etats-Unis",
+      "affiche": "Formule 1 : Grand Prix des Etats-Unis",
+      "chaine": "Canal+ Sport",
+      "duree_min": 107
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "18:00",
+      "categorie": "autre",
+      "competition": "Club 360",
+      "affiche": "Club 360",
+      "chaine": "Canal+ Sport 360",
       "duree_min": 90
     },
     {
@@ -1045,10 +1414,253 @@
     },
     {
       "date": "2026-10-27",
+      "heure": "18:30",
+      "categorie": "sport",
+      "competition": "NBA Extra",
+      "affiche": "NBA Extra",
+      "chaine": "beIN Sports 3",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "19:15",
+      "categorie": "autre",
+      "competition": "A point",
+      "affiche": "A point",
+      "chaine": "beIN Sports 1",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "19:15",
+      "categorie": "autre",
+      "competition": "beIN STORY",
+      "affiche": "beIN STORY",
+      "chaine": "beIN Sports 3",
+      "duree_min": 75
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "19:57",
+      "categorie": "autre",
+      "competition": "Formula One, le mag",
+      "affiche": "Formula One, le mag",
+      "chaine": "Canal+ Sport",
+      "duree_min": 31
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "20:00",
+      "categorie": "autre",
+      "competition": "This is Paris",
+      "affiche": "This is Paris",
+      "chaine": "beIN Sports 2",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "20:00",
+      "categorie": "autre",
+      "competition": "beIN SPORTS, le plus grand des spectacles",
+      "affiche": "beIN SPORTS, le plus grand des spectacles",
+      "chaine": "beIN Sports Max 5",
+      "duree_min": 39
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "20:15",
+      "categorie": "autre",
+      "competition": "Ça se passe sur beIN SPORTS",
+      "affiche": "Ça se passe sur beIN SPORTS",
+      "chaine": "beIN Sports 1",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "20:17",
+      "categorie": "foot",
+      "competition": "Jour de foot",
+      "affiche": "Jour de foot",
+      "chaine": "Canal+ Foot",
+      "duree_min": 36
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "20:30",
+      "categorie": "autre",
+      "competition": "Made in England",
+      "affiche": "Made in England",
+      "chaine": "beIN Sports 2",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "20:39",
+      "categorie": "foot",
+      "competition": "Football : Coupe d'Allemagne",
+      "affiche": "Football : Coupe d'Allemagne",
+      "chaine": "beIN Sports Max 5",
+      "duree_min": 126
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "20:39",
+      "categorie": "foot",
+      "competition": "Football : Coupe de la Ligue anglaise",
+      "affiche": "Football : Coupe de la Ligue anglaise",
+      "chaine": "beIN Sports Max 4",
+      "duree_min": 126
+    },
+    {
+      "date": "2026-10-27",
       "heure": "20:42",
       "categorie": "foot",
       "competition": "Football : Coupe d'Allemagne - Borussia Dortmund / Werder Brême",
       "affiche": "Football : Coupe d'Allemagne - Borussia Dortmund / Werder Brême",
+      "chaine": "L'Équipe",
+      "duree_min": 121
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "20:45",
+      "categorie": "sport",
+      "competition": "Basket-ball : Euroligue masculine",
+      "affiche": "Basket-ball : Euroligue masculine",
+      "chaine": "beIN Sports 3",
+      "duree_min": 150
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "20:53",
+      "categorie": "autre",
+      "competition": "Histoire de Champions",
+      "affiche": "Histoire de Champions",
+      "chaine": "Canal+ Foot",
+      "duree_min": 88
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "21:00",
+      "categorie": "rugby",
+      "competition": "Rugby : Championnat national des provinces néo-zélandaises",
+      "affiche": "Rugby : Championnat national des provinces néo-zélandaises",
+      "chaine": "Canal+ Sport",
+      "duree_min": 101
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "21:01",
+      "categorie": "sport",
+      "competition": "MMA : ARES Fighting Championship",
+      "affiche": "MMA : ARES Fighting Championship",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 94
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "21:10",
+      "categorie": "film",
+      "competition": "Les Rayons et les Ombres",
+      "affiche": "Les Rayons et les Ombres",
+      "chaine": "Canal+",
+      "duree_min": 193
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "22:35",
+      "categorie": "autre",
+      "competition": "Destin de guerrier",
+      "affiche": "Destin de guerrier",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 61
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "22:45",
+      "categorie": "autre",
+      "competition": "beIN SPORTS, le plus grand des spectacles",
+      "affiche": "beIN SPORTS, le plus grand des spectacles",
+      "chaine": "beIN Sports Max 6",
+      "duree_min": 615
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "23:00",
+      "categorie": "sport",
+      "competition": "NFL Extra",
+      "affiche": "NFL Extra",
+      "chaine": "beIN Sports 1",
+      "duree_min": 45
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "23:00",
+      "categorie": "tennis",
+      "competition": "Tennis : Tournoi ATP de Lyon",
+      "affiche": "Tennis : Tournoi ATP de Lyon",
+      "chaine": "beIN Sports 2",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "23:15",
+      "categorie": "sport",
+      "competition": "Volley-ball : Alterna VOLSTAR",
+      "affiche": "Volley-ball : Alterna VOLSTAR",
+      "chaine": "beIN Sports 3",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-28",
+      "heure": "06:00",
+      "categorie": "sport",
+      "competition": "L'Equipe du soir",
+      "affiche": "L'Equipe du soir",
+      "chaine": "L'Équipe",
+      "duree_min": 240
+    },
+    {
+      "date": "2026-10-28",
+      "heure": "10:00",
+      "categorie": "autre",
+      "competition": "V6",
+      "affiche": "V6",
+      "chaine": "L'Équipe",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-10-28",
+      "heure": "12:00",
+      "categorie": "tennis",
+      "competition": "Tennis de table : WTT Champions de Montpellier",
+      "affiche": "Tennis de table : WTT Champions de Montpellier",
+      "chaine": "L'Équipe",
+      "duree_min": 300
+    },
+    {
+      "date": "2026-10-28",
+      "heure": "17:00",
+      "categorie": "sport",
+      "competition": "L'Equipe de choc",
+      "affiche": "L'Equipe de choc",
+      "chaine": "L'Équipe",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-10-28",
+      "heure": "18:30",
+      "categorie": "sport",
+      "competition": "L'Equipe de Greg",
+      "affiche": "L'Equipe de Greg",
+      "chaine": "L'Équipe",
+      "duree_min": 132
+    },
+    {
+      "date": "2026-10-28",
+      "heure": "20:42",
+      "categorie": "foot",
+      "competition": "Football : Coupe d'Allemagne - Bayern Munich / Magdebourg",
+      "affiche": "Football : Coupe d'Allemagne - Bayern Munich / Magdebourg",
       "chaine": "L'Équipe",
       "duree_min": 121
     }
