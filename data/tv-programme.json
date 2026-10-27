@@ -5,7 +5,7 @@
     "updated_at": "2026-10-27",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-27 10:18"
+    "generated_at": "2026-10-27 19:53"
   },
   "abonnement": {
     "disponibles": [
@@ -379,21 +379,21 @@
     },
     {
       "date": "2026-10-27",
-      "heure": "07:04",
+      "heure": "07:27",
       "categorie": "rugby",
       "competition": "Rugby : Top 14",
       "affiche": "Rugby : Top 14",
       "chaine": "Canal+ Sport",
-      "duree_min": 210
+      "duree_min": 211
     },
     {
       "date": "2026-10-27",
-      "heure": "07:39",
+      "heure": "07:34",
       "categorie": "foot",
       "competition": "Football : Premier League",
       "affiche": "Football : Premier League",
       "chaine": "Canal+ Foot",
-      "duree_min": 103
+      "duree_min": 104
     },
     {
       "date": "2026-10-27",
@@ -442,12 +442,12 @@
     },
     {
       "date": "2026-10-27",
-      "heure": "09:22",
+      "heure": "09:18",
       "categorie": "foot",
       "competition": "Football : Arkema Première Ligue",
       "affiche": "Football : Arkema Première Ligue",
       "chaine": "Canal+ Foot",
-      "duree_min": 205
+      "duree_min": 210
     },
     {
       "date": "2026-10-27",
@@ -487,12 +487,12 @@
     },
     {
       "date": "2026-10-27",
-      "heure": "10:34",
+      "heure": "10:58",
       "categorie": "rugby",
       "competition": "Canal Rugby Club",
       "affiche": "Canal Rugby Club",
       "chaine": "Canal+ Sport",
-      "duree_min": 35
+      "duree_min": 34
     },
     {
       "date": "2026-10-27",
@@ -577,21 +577,12 @@
     },
     {
       "date": "2026-10-27",
-      "heure": "12:47",
+      "heure": "12:48",
       "categorie": "foot",
       "competition": "Late Football Club",
       "affiche": "Late Football Club",
       "chaine": "Canal+ Foot",
       "duree_min": 61
-    },
-    {
-      "date": "2026-10-27",
-      "heure": "13:14",
-      "categorie": "sport",
-      "competition": "Golf : Championnat des Bermudes",
-      "affiche": "Golf : Championnat des Bermudes",
-      "chaine": "Canal+ Sport",
-      "duree_min": 122
     },
     {
       "date": "2026-10-27",
@@ -613,6 +604,15 @@
     },
     {
       "date": "2026-10-27",
+      "heure": "13:34",
+      "categorie": "sport",
+      "competition": "Golf : Championnat des Bermudes",
+      "affiche": "Golf : Championnat des Bermudes",
+      "chaine": "Canal+ Sport",
+      "duree_min": 36
+    },
+    {
+      "date": "2026-10-27",
       "heure": "13:45",
       "categorie": "autre",
       "competition": "Histoire de Champions",
@@ -631,12 +631,21 @@
     },
     {
       "date": "2026-10-27",
-      "heure": "15:16",
+      "heure": "14:10",
+      "categorie": "sport",
+      "competition": "Golf+, le mag",
+      "affiche": "Golf+, le mag",
+      "chaine": "Canal+ Sport",
+      "duree_min": 59
+    },
+    {
+      "date": "2026-10-27",
+      "heure": "15:09",
       "categorie": "rugby",
       "competition": "Rugby : Pro D2",
       "affiche": "Rugby : Pro D2",
       "chaine": "Canal+ Sport",
-      "duree_min": 104
+      "duree_min": 95
     },
     {
       "date": "2026-10-27",
@@ -694,21 +703,21 @@
     },
     {
       "date": "2026-10-27",
+      "heure": "16:44",
+      "categorie": "sport",
+      "competition": "Rallye : WRC, Rallye Italie Sardaigne",
+      "affiche": "Rallye : WRC, Rallye Italie Sardaigne",
+      "chaine": "Canal+ Sport",
+      "duree_min": 53
+    },
+    {
+      "date": "2026-10-27",
       "heure": "16:45",
       "categorie": "sport",
       "competition": "Basket-ball : Euroligue masculine",
       "affiche": "Basket-ball : Euroligue masculine",
       "chaine": "beIN Sports 1",
       "duree_min": 150
-    },
-    {
-      "date": "2026-10-27",
-      "heure": "17:00",
-      "categorie": "sport",
-      "competition": "Rallye : WRC, Rallye Italie Sardaigne",
-      "affiche": "Rallye : WRC, Rallye Italie Sardaigne",
-      "chaine": "Canal+ Sport",
-      "duree_min": 52
     },
     {
       "date": "2026-10-27",
@@ -730,7 +739,7 @@
     },
     {
       "date": "2026-10-27",
-      "heure": "17:52",
+      "heure": "17:51",
       "categorie": "f1",
       "competition": "Formule 1 : Grand Prix des Etats-Unis",
       "affiche": "Formule 1 : Grand Prix des Etats-Unis",
@@ -811,6 +820,15 @@
     },
     {
       "date": "2026-10-27",
+      "heure": "20:06",
+      "categorie": "autre",
+      "competition": "Kimi Antonelli",
+      "affiche": "Kimi Antonelli",
+      "chaine": "Canal+ Sport",
+      "duree_min": 32
+    },
+    {
+      "date": "2026-10-27",
       "heure": "20:15",
       "categorie": "autre",
       "competition": "Ça se passe sur beIN SPORTS",
@@ -825,7 +843,7 @@
       "competition": "Jour de foot",
       "affiche": "Jour de foot",
       "chaine": "Canal+ Foot",
-      "duree_min": 36
+      "duree_min": 35
     },
     {
       "date": "2026-10-27",
@@ -874,12 +892,12 @@
     },
     {
       "date": "2026-10-27",
-      "heure": "20:53",
+      "heure": "20:52",
       "categorie": "autre",
       "competition": "Histoire de Champions",
       "affiche": "Histoire de Champions",
       "chaine": "Canal+ Foot",
-      "duree_min": 88
+      "duree_min": 87
     },
     {
       "date": "2026-10-27",
@@ -897,7 +915,7 @@
       "competition": "Rugby : Championnat national des provinces néo-zélandaises",
       "affiche": "Rugby : Championnat national des provinces néo-zélandaises",
       "chaine": "Canal+ Sport",
-      "duree_min": 102
+      "duree_min": 98
     },
     {
       "date": "2026-10-27",
@@ -991,21 +1009,21 @@
     },
     {
       "date": "2026-10-28",
+      "heure": "07:22",
+      "categorie": "autre",
+      "competition": "Histoire de Champions",
+      "affiche": "Histoire de Champions",
+      "chaine": "Canal+ Foot",
+      "duree_min": 115
+    },
+    {
+      "date": "2026-10-28",
       "heure": "07:23",
       "categorie": "rugby",
       "competition": "Rugby : Pro D2",
       "affiche": "Rugby : Pro D2",
       "chaine": "Canal+ Sport",
       "duree_min": 204
-    },
-    {
-      "date": "2026-10-28",
-      "heure": "07:26",
-      "categorie": "autre",
-      "competition": "Histoire de Champions",
-      "affiche": "Histoire de Champions",
-      "chaine": "Canal+ Foot",
-      "duree_min": 119
     },
     {
       "date": "2026-10-28",
@@ -1032,7 +1050,7 @@
       "competition": "La bonne étoile",
       "affiche": "La bonne étoile",
       "chaine": "Canal+",
-      "duree_min": 101
+      "duree_min": 103
     },
     {
       "date": "2026-10-28",
@@ -1054,16 +1072,16 @@
     },
     {
       "date": "2026-10-28",
-      "heure": "09:25",
+      "heure": "09:17",
       "categorie": "foot",
       "competition": "Football : Premier League",
       "affiche": "Football : Premier League",
       "chaine": "Canal+ Foot",
-      "duree_min": 206
+      "duree_min": 210
     },
     {
       "date": "2026-10-28",
-      "heure": "09:58",
+      "heure": "10:00",
       "categorie": "film",
       "competition": "Les Enfants de la Résistance",
       "affiche": "Les Enfants de la Résistance",
@@ -1108,7 +1126,7 @@
     },
     {
       "date": "2026-10-28",
-      "heure": "11:36",
+      "heure": "11:38",
       "categorie": "autre",
       "competition": "Artus : Son p'tit truc en plus",
       "affiche": "Artus : Son p'tit truc en plus",
@@ -1153,7 +1171,7 @@
     },
     {
       "date": "2026-10-28",
-      "heure": "12:11",
+      "heure": "12:14",
       "categorie": "autre",
       "competition": "En aparté",
       "affiche": "En aparté",
@@ -1171,15 +1189,6 @@
     },
     {
       "date": "2026-10-28",
-      "heure": "12:43",
-      "categorie": "autre",
-      "competition": "Clique",
-      "affiche": "Clique",
-      "chaine": "Canal+",
-      "duree_min": 54
-    },
-    {
-      "date": "2026-10-28",
       "heure": "12:45",
       "categorie": "sport",
       "competition": "NBA Extra",
@@ -1189,12 +1198,21 @@
     },
     {
       "date": "2026-10-28",
-      "heure": "12:51",
+      "heure": "12:46",
+      "categorie": "autre",
+      "competition": "Clique",
+      "affiche": "Clique",
+      "chaine": "Canal+",
+      "duree_min": 54
+    },
+    {
+      "date": "2026-10-28",
+      "heure": "12:47",
       "categorie": "foot",
       "competition": "Late Football Club",
       "affiche": "Late Football Club",
       "chaine": "Canal+ Foot",
-      "duree_min": 60
+      "duree_min": 61
     },
     {
       "date": "2026-10-28",
@@ -1225,7 +1243,7 @@
     },
     {
       "date": "2026-10-28",
-      "heure": "13:37",
+      "heure": "13:40",
       "categorie": "film",
       "competition": "Chasse gardée 2",
       "affiche": "Chasse gardée 2",
@@ -1280,20 +1298,20 @@
     {
       "date": "2026-10-28",
       "heure": "15:15",
-      "categorie": "film",
-      "competition": "T'as pas changé",
-      "affiche": "T'as pas changé",
-      "chaine": "Canal+",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-10-28",
-      "heure": "15:15",
       "categorie": "sport",
       "competition": "Rallye : ERC, Rallye du Portugal",
       "affiche": "Rallye : ERC, Rallye du Portugal",
       "chaine": "Canal+ Sport 360",
       "duree_min": 30
+    },
+    {
+      "date": "2026-10-28",
+      "heure": "15:18",
+      "categorie": "film",
+      "competition": "T'as pas changé",
+      "affiche": "T'as pas changé",
+      "chaine": "Canal+",
+      "duree_min": 104
     },
     {
       "date": "2026-10-28",
@@ -1343,15 +1361,6 @@
     {
       "date": "2026-10-28",
       "heure": "17:00",
-      "categorie": "autre",
-      "competition": "Guillermo Guiz - La formidable ascension sociale temporaire de Guy Verstraeten",
-      "affiche": "Guillermo Guiz - La formidable ascension sociale temporaire de Guy Verstraeten",
-      "chaine": "Canal+",
-      "duree_min": 95
-    },
-    {
-      "date": "2026-10-28",
-      "heure": "17:00",
       "categorie": "sport",
       "competition": "L'Equipe de choc",
       "affiche": "L'Equipe de choc",
@@ -1366,6 +1375,15 @@
       "affiche": "Football : Coupe d'Allemagne",
       "chaine": "beIN Sports 1",
       "duree_min": 120
+    },
+    {
+      "date": "2026-10-28",
+      "heure": "17:02",
+      "categorie": "autre",
+      "competition": "Guillermo Guiz - La formidable ascension sociale temporaire de Guy Verstraeten",
+      "affiche": "Guillermo Guiz - La formidable ascension sociale temporaire de Guy Verstraeten",
+      "chaine": "Canal+",
+      "duree_min": 96
     },
     {
       "date": "2026-10-28",
@@ -1563,7 +1581,7 @@
       "competition": "beIN SPORTS, le plus grand des spectacles",
       "affiche": "beIN SPORTS, le plus grand des spectacles",
       "chaine": "beIN Sports Max 6",
-      "duree_min": 150
+      "duree_min": 630
     },
     {
       "date": "2026-10-28",
