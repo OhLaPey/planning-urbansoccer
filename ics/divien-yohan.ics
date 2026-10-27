@@ -2003,4 +2003,304 @@ DTSTART;TZID=Europe/Paris:20261003T090000
 DTEND;TZID=Europe/Paris:20261003T130000
 SUMMARY:EDF-C
 END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s41-1@urban7d
+DTSTAMP:20240312T193313Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261010T090000
+DTEND;TZID=Europe/Paris:20261010T130000
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s42-1@urban7d
+DTSTAMP:20241025T104618Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261017T090000
+DTEND;TZID=Europe/Paris:20261017T130000
+SUMMARY:EDF-C
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-1@urban7d
+DTSTAMP:20251226T225752Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261019T090000
+DTEND;TZID=Europe/Paris:20261019T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-2@urban7d
+DTSTAMP:20250423T134945Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261019T100000
+DTEND;TZID=Europe/Paris:20261019T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-3@urban7d
+DTSTAMP:20241205T105721Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261019T130000
+DTEND;TZID=Europe/Paris:20261019T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-4@urban7d
+DTSTAMP:20250810T105615Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261019T140000
+DTEND;TZID=Europe/Paris:20261019T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-5@urban7d
+DTSTAMP:20241122T214507Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261019T160000
+DTEND;TZID=Europe/Paris:20261019T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-6@urban7d
+DTSTAMP:20240319T020649Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261019T170000
+DTEND;TZID=Europe/Paris:20261019T180000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-7@urban7d
+DTSTAMP:20240517T174703Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261020T090000
+DTEND;TZID=Europe/Paris:20261020T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-8@urban7d
+DTSTAMP:20251213T234849Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261020T100000
+DTEND;TZID=Europe/Paris:20261020T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-9@urban7d
+DTSTAMP:20241217T061408Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261020T130000
+DTEND;TZID=Europe/Paris:20261020T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-10@urban7d
+DTSTAMP:20250315T034456Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261020T140000
+DTEND;TZID=Europe/Paris:20261020T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-11@urban7d
+DTSTAMP:20241005T011529Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261021T100000
+DTEND;TZID=Europe/Paris:20261021T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-12@urban7d
+DTSTAMP:20240625T112110Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261021T130000
+DTEND;TZID=Europe/Paris:20261021T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-13@urban7d
+DTSTAMP:20250508T063312Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261021T140000
+DTEND;TZID=Europe/Paris:20261021T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-14@urban7d
+DTSTAMP:20241014T224445Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261021T160000
+DTEND;TZID=Europe/Paris:20261021T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-15@urban7d
+DTSTAMP:20240616T181434Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261021T170000
+DTEND;TZID=Europe/Paris:20261021T180000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-16@urban7d
+DTSTAMP:20240808T203424Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261022T090000
+DTEND;TZID=Europe/Paris:20261022T100000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-17@urban7d
+DTSTAMP:20250308T183610Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261022T100000
+DTEND;TZID=Europe/Paris:20261022T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-18@urban7d
+DTSTAMP:20240305T164141Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261022T130000
+DTEND;TZID=Europe/Paris:20261022T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-19@urban7d
+DTSTAMP:20240807T144646Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261022T140000
+DTEND;TZID=Europe/Paris:20261022T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-20@urban7d
+DTSTAMP:20241118T142304Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261023T100000
+DTEND;TZID=Europe/Paris:20261023T120000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-21@urban7d
+DTSTAMP:20241125T041842Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261023T130000
+DTEND;TZID=Europe/Paris:20261023T140000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-22@urban7d
+DTSTAMP:20240129T210919Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261023T140000
+DTEND;TZID=Europe/Paris:20261023T160000
+SUMMARY:Stage encadrement
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s43-23@urban7d
+DTSTAMP:20240408T083617Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261023T160000
+DTEND;TZID=Europe/Paris:20261023T170000
+SUMMARY:Stage
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:divien-yohan-s45-1@urban7d
+DTSTAMP:20251101T011927Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261107T090000
+DTEND;TZID=Europe/Paris:20261107T130000
+SUMMARY:EDF-C
+END:VEVENT
 END:VCALENDAR
