@@ -1194,4 +1194,56 @@ DTSTART;TZID=Europe/Paris:20260927T153000
 DTEND;TZID=Europe/Paris:20260927T220000
 SUMMARY:Vie de centre
 END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s41-1@urban7d
+DTSTAMP:20250427T113001Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261011T153000
+DTEND;TZID=Europe/Paris:20261011T173000
+SUMMARY:Aide
+END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s41-2@urban7d
+DTSTAMP:20250818T011325Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261011T173000
+DTEND;TZID=Europe/Paris:20261011T220000
+SUMMARY:Vie de centre
+END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s43-1@urban7d
+DTSTAMP:20251218T075938Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261019T190000
+DTEND;TZID=Europe/Paris:20261020T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s43-2@urban7d
+DTSTAMP:20240229T043341Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261020T180000
+DTEND;TZID=Europe/Paris:20261020T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s43-3@urban7d
+DTSTAMP:20250630T182813Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261021T180000
+DTEND;TZID=Europe/Paris:20261021T220000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
 END:VCALENDAR

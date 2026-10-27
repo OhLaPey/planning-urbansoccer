@@ -1,0 +1,427 @@
+{
+  "BARON Corentin": {
+    "slug": "baron-corentin",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-28T20:00",
+        "end": "2026-10-29T00:00",
+        "day": 2
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-10-31T13:45",
+        "end": "2026-10-31T17:45",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-31T17:45",
+        "end": "2026-10-31T22:20",
+        "day": 5
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-11-01T17:30",
+        "end": "2026-11-01T22:20",
+        "day": 6
+      }
+    ]
+  },
+  "BONNET Mateo": {
+    "slug": "bonnet-mateo",
+    "events": []
+  },
+  "CARRERE Peïo": {
+    "slug": "carrere-peio",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-26T17:00",
+        "end": "2026-10-27T00:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-27T17:00",
+        "end": "2026-10-28T00:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-29T11:45",
+        "end": "2026-10-29T22:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-30T09:45",
+        "end": "2026-10-30T18:00",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-31T08:45",
+        "end": "2026-10-31T17:30",
+        "day": 5
+      }
+    ]
+  },
+  "CASTELLON Pascaline": {
+    "slug": "castellon-pascaline",
+    "events": []
+  },
+  "CRUZEL Quentin": {
+    "slug": "cruzel-quentin",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-29T20:00",
+        "end": "2026-10-30T00:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-30T18:30",
+        "end": "2026-10-31T00:00",
+        "day": 4
+      }
+    ]
+  },
+  "DE NOUEL Maxime": {
+    "slug": "de-nouel-maxime",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-26T18:00",
+        "end": "2026-10-27T00:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-27T11:45",
+        "end": "2026-10-27T13:45",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-10-27T13:45",
+        "end": "2026-10-27T17:15",
+        "day": 1
+      },
+      {
+        "code": "CUP-L",
+        "label": "Cup League",
+        "start": "2026-10-27T17:15",
+        "end": "2026-10-27T17:45",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-27T17:45",
+        "end": "2026-10-27T21:30",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-28T18:00",
+        "end": "2026-10-29T00:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-29T11:45",
+        "end": "2026-10-29T13:45",
+        "day": 3
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-10-29T13:45",
+        "end": "2026-10-29T17:15",
+        "day": 3
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-10-30T19:00",
+        "end": "2026-10-31T00:30",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-11-01T15:30",
+        "end": "2026-11-01T23:30",
+        "day": 6
+      }
+    ]
+  },
+  "DIVIEN Yohan": {
+    "slug": "divien-yohan",
+    "events": []
+  },
+  "DONAER Nicolas": {
+    "slug": "donaer-nicolas",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-28T11:45",
+        "end": "2026-10-28T15:15",
+        "day": 2
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-10-28T15:15",
+        "end": "2026-10-28T17:15",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-28T17:15",
+        "end": "2026-10-28T22:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-29T18:00",
+        "end": "2026-10-30T00:00",
+        "day": 3
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-30T18:00",
+        "end": "2026-10-31T00:30",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-11-01T08:45",
+        "end": "2026-11-01T17:30",
+        "day": 6
+      }
+    ]
+  },
+  "DOVINA Théo": {
+    "slug": "dovina-theo",
+    "events": []
+  },
+  "DUTROUILH Pierre": {
+    "slug": "dutrouilh-pierre",
+    "events": [
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-10-26T09:30",
+        "end": "2026-10-26T12:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-26T12:00",
+        "end": "2026-10-26T12:45",
+        "day": 0
+      },
+      {
+        "code": "CUP-R",
+        "label": "Cup Régisseur",
+        "start": "2026-10-26T12:45",
+        "end": "2026-10-26T18:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-27T20:00",
+        "end": "2026-10-28T00:00",
+        "day": 1
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-10-30T10:15",
+        "end": "2026-10-30T11:45",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-30T11:45",
+        "end": "2026-10-30T13:15",
+        "day": 4
+      },
+      {
+        "code": "C-PAD",
+        "label": "Cours Padel",
+        "start": "2026-10-30T13:15",
+        "end": "2026-10-30T15:45",
+        "day": 4
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-31T16:00",
+        "end": "2026-10-31T21:20",
+        "day": 5
+      }
+    ]
+  },
+  "GILBERT Pierre": {
+    "slug": "gilbert-pierre",
+    "events": []
+  },
+  "HANOT Louis": {
+    "slug": "hanot-louis",
+    "events": []
+  },
+  "JARGUEL Thomas": {
+    "slug": "jarguel-thomas",
+    "events": []
+  },
+  "KABUNDA NDEKE Marvyn": {
+    "slug": "kabunda-ndeke-marvyn",
+    "events": []
+  },
+  "LABEFODE Thomas": {
+    "slug": "labefode-thomas",
+    "events": []
+  },
+  "LOUIBA Yacine": {
+    "slug": "louiba-yacine",
+    "events": [
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-10-26T19:30",
+        "end": "2026-10-26T22:30",
+        "day": 0
+      },
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-10-28T19:30",
+        "end": "2026-10-28T22:30",
+        "day": 2
+      }
+    ]
+  },
+  "MOSTEFA Yanis": {
+    "slug": "mostefa-yanis",
+    "events": []
+  },
+  "PEREZ Loic": {
+    "slug": "perez-loic",
+    "events": [
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-10-27T19:30",
+        "end": "2026-10-27T22:30",
+        "day": 1
+      }
+    ]
+  },
+  "PISTORE Remi": {
+    "slug": "pistore-remi",
+    "events": []
+  },
+  "PUJOL Mathieu": {
+    "slug": "pujol-mathieu",
+    "events": [
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-26T09:45",
+        "end": "2026-10-26T18:00",
+        "day": 0
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-27T09:45",
+        "end": "2026-10-27T18:00",
+        "day": 1
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-28T09:45",
+        "end": "2026-10-28T18:00",
+        "day": 2
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-10-29T09:45",
+        "end": "2026-10-29T16:00",
+        "day": 3
+      }
+    ]
+  },
+  "RABII Mehdi": {
+    "slug": "rabii-mehdi",
+    "events": [
+      {
+        "code": "L-ARB",
+        "label": "L-ARB",
+        "start": "2026-10-26T19:30",
+        "end": "2026-10-26T22:30",
+        "day": 0
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-11-01T10:45",
+        "end": "2026-11-01T12:45",
+        "day": 6
+      },
+      {
+        "code": "VDC",
+        "label": "Vie de centre",
+        "start": "2026-11-01T12:45",
+        "end": "2026-11-01T13:15",
+        "day": 6
+      },
+      {
+        "code": "ANNIV",
+        "label": "Anniversaire",
+        "start": "2026-11-01T13:45",
+        "end": "2026-11-01T17:45",
+        "day": 6
+      }
+    ]
+  },
+  "SANGARNE Enzo": {
+    "slug": "sangarne-enzo",
+    "events": []
+  },
+  "_meta": {
+    "source": "Excel",
+    "updated_at": "2026-10-27 16:38",
+    "excel_version": 0
+  }
+}

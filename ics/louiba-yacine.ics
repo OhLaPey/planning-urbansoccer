@@ -788,4 +788,88 @@ DTSTART;TZID=Europe/Paris:20260916T200000
 DTEND;TZID=Europe/Paris:20260917T000000
 SUMMARY:Vie de centre
 END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s42-1@urban7d
+DTSTAMP:20250305T191338Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261012T193000
+DTEND;TZID=Europe/Paris:20261012T223000
+SUMMARY:L-ARB
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s42-2@urban7d
+DTSTAMP:20250819T045257Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261014T193000
+DTEND;TZID=Europe/Paris:20261014T223000
+SUMMARY:L-ARB
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s43-1@urban7d
+DTSTAMP:20251112T120002Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261019T193000
+DTEND;TZID=Europe/Paris:20261019T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s43-2@urban7d
+DTSTAMP:20250727T222439Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261020T200000
+DTEND;TZID=Europe/Paris:20261021T000000
+SUMMARY:Vie de centre
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s43-3@urban7d
+DTSTAMP:20250307T020305Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261021T193000
+DTEND;TZID=Europe/Paris:20261021T223000
+SUMMARY:L-ARB
+DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
+ eo\n⚽🏆🍕 Razel Bec lundi soir\n⚽🏆 Cup TBS jeudi aprem\n🥎
+ 🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
+ suivre si les créneaux sont réservés
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s44-1@urban7d
+DTSTAMP:20240330T020644Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261026T193000
+DTEND;TZID=Europe/Paris:20261026T223000
+SUMMARY:L-ARB
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s44-2@urban7d
+DTSTAMP:20240127T132204Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261028T193000
+DTEND;TZID=Europe/Paris:20261028T223000
+SUMMARY:L-ARB
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s45-1@urban7d
+DTSTAMP:20240527T211245Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261102T193000
+DTEND;TZID=Europe/Paris:20261102T223000
+SUMMARY:L-ARB
+END:VEVENT
+BEGIN:VEVENT
+UID:louiba-yacine-s45-2@urban7d
+DTSTAMP:20240210T072703Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261104T193000
+DTEND;TZID=Europe/Paris:20261104T223000
+SUMMARY:L-ARB
+END:VEVENT
 END:VCALENDAR

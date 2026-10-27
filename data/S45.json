@@ -1,0 +1,26 @@
+{
+  "semaine": 45,
+  "annee": 2026,
+  "date_debut": "2 Novembre",
+  "date_fin": "8 Novembre",
+  "employesActifs": [
+    "BARON Corentin",
+    "BONNET Mateo",
+    "CARRERE Peïo",
+    "CAYLA Simon",
+    "CRUZEL Quentin",
+    "DE NOUEL Maxime",
+    "DIVIEN Yohan",
+    "DONAER Nicolas",
+    "DUTROUILH Pierre",
+    "GILBERT Pierre",
+    "HANOT Louis",
+    "LABEFODE Thomas",
+    "LOUIBA Yacine",
+    "MOSTEFA Yanis",
+    "PEREZ Loic",
+    "PISTORE Remi",
+    "PUJOL Mathieu",
+    "RABII Mehdi"
+  ]
+}
