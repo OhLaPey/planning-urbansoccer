@@ -12,7 +12,7 @@
       {
         "code": "ANNIV",
         "label": "Anniversaire",
-        "start": "2026-10-31T13:45",
+        "start": "2026-10-31T15:30",
         "end": "2026-10-31T17:45",
         "day": 5
       },
@@ -420,8 +420,8 @@
     "events": []
   },
   "_meta": {
-    "source": "Excel",
-    "updated_at": "2026-10-27 16:38",
+    "source": "Modif admin",
+    "updated_at": "2026-10-30 15:57",
     "excel_version": 0
   }
 }
