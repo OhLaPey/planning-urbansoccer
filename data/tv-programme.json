@@ -5,7 +5,7 @@
     "updated_at": "2026-10-31",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-10-31 10:48"
+    "generated_at": "2026-10-31 19:08"
   },
   "abonnement": {
     "disponibles": [
@@ -397,15 +397,6 @@
     },
     {
       "date": "2026-10-31",
-      "heure": "08:30",
-      "categorie": "autre",
-      "competition": "V6",
-      "affiche": "V6",
-      "chaine": "L'Équipe",
-      "duree_min": 165
-    },
-    {
-      "date": "2026-10-31",
       "heure": "08:57",
       "categorie": "foot",
       "competition": "Football : Arkema Première Ligue",
@@ -496,6 +487,15 @@
     },
     {
       "date": "2026-10-31",
+      "heure": "10:14",
+      "categorie": "sport",
+      "competition": "Automoto",
+      "affiche": "Automoto",
+      "chaine": "L'Équipe",
+      "duree_min": 106
+    },
+    {
+      "date": "2026-10-31",
       "heure": "10:15",
       "categorie": "sport",
       "competition": "Moto GP : Grand Prix de Malaisie",
@@ -532,15 +532,6 @@
     },
     {
       "date": "2026-10-31",
-      "heure": "11:15",
-      "categorie": "sport",
-      "competition": "Automoto",
-      "affiche": "Automoto",
-      "chaine": "L'Équipe",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-10-31",
       "heure": "11:21",
       "categorie": "f1",
       "competition": "Formule 1 : Grand Prix du Mexique",
@@ -565,6 +556,15 @@
       "affiche": "Inside Robert Pirès",
       "chaine": "Canal+ Foot",
       "duree_min": 34
+    },
+    {
+      "date": "2026-10-31",
+      "heure": "12:00",
+      "categorie": "tennis",
+      "competition": "Tennis de table : WTT Champions de Montpellier",
+      "affiche": "Tennis de table : WTT Champions de Montpellier",
+      "chaine": "L'Équipe",
+      "duree_min": 570
     },
     {
       "date": "2026-10-31",
@@ -637,15 +637,6 @@
       "affiche": "Sports Week-end",
       "chaine": "Canal+ Sport 360",
       "duree_min": 30
-    },
-    {
-      "date": "2026-10-31",
-      "heure": "13:00",
-      "categorie": "tennis",
-      "competition": "Tennis de table : WTT Champions de Montpellier",
-      "affiche": "Tennis de table : WTT Champions de Montpellier",
-      "chaine": "L'Équipe",
-      "duree_min": 510
     },
     {
       "date": "2026-10-31",
@@ -1005,7 +996,7 @@
       "competition": "beIN SPORTS, le plus grand des spectacles",
       "affiche": "beIN SPORTS, le plus grand des spectacles",
       "chaine": "beIN Sports Max 10",
-      "duree_min": 1740
+      "duree_min": 2220
     },
     {
       "date": "2026-10-31",
@@ -1743,7 +1734,7 @@
       "competition": "beIN SPORTS, le plus grand des spectacles",
       "affiche": "beIN SPORTS, le plus grand des spectacles",
       "chaine": "beIN Sports Max 5",
-      "duree_min": 355
+      "duree_min": 810
     },
     {
       "date": "2026-11-01",
