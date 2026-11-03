@@ -1246,4 +1246,12 @@ DESCRIPTION:Planning 19/10 au 25/10\n⚽ Semaine de stage pour Yohan et Mat
  🏆 P100 samedi \n🎂 Animateurs programmés sur les anniversaires\, à 
  suivre si les créneaux sont réservés
 END:VEVENT
+BEGIN:VEVENT
+UID:jarguel-thomas-s46-1@urban7d
+DTSTAMP:20250120T172337Z
+SEQUENCE:0
+DTSTART;TZID=Europe/Paris:20261115T170000
+DTEND;TZID=Europe/Paris:20261115T220000
+SUMMARY:Vie de centre
+END:VEVENT
 END:VCALENDAR

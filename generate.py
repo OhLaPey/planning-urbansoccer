@@ -20,6 +20,7 @@ Le script détecte automatiquement tous les fichiers
 """
 
 import openpyxl
+import html as html_module
 import json
 import os
 import re
@@ -91,6 +92,20 @@ CODE_COLORS = {
     "FORP":  {"bg": "rgba(50,200,120,0.35)",  "border": "#32c878",  "text": "#80ffb0"},
 }
 DEFAULT_COLOR = {"bg": "rgba(255,255,255,0.20)", "border": "#888888", "text": "#cccccc"}
+
+# ── Fin de service (option 3) ──────────────────────────────────────────────
+# Si une date au format "YYYY-MM-DD" est fournie, les pages affichent :
+#  - avant cette date : un bandeau rouge "fin de service dans N jours"
+#  - à partir de cette date : un écran plein cadre "au revoir", le planning
+#    est masqué.
+# Mettre à None pour désactiver la bascule.
+END_OF_SERVICE_DATE = "2026-12-01"
+END_OF_SERVICE_FAREWELL = (
+    "L'outil a été construit par Peïo pendant son contrat chez Urban Soccer. "
+    "Son contrat se termine fin novembre 2026, et avec lui la maintenance du "
+    "service. Merci à toute l'équipe pour les retours, les idées, les corrections "
+    "et surtout pour avoir joué le jeu ⚽️"
+)
 
 COLS = ["B", "C", "D", "E", "F", "G", "H"]
 
@@ -622,6 +637,8 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
     all_codes_json = json.dumps(all_codes_map, ensure_ascii=False)
     notes_data = load_week_notes(week_num)
     notes_json = json.dumps(notes_data, ensure_ascii=False)
+    end_of_service_json = json.dumps(END_OF_SERVICE_DATE)
+    farewell_message = html_module.escape(END_OF_SERVICE_FAREWELL)
 
     DAYS_SHORT = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
     DAYS_FULL = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
@@ -1263,6 +1280,22 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
                        background: rgba(255,60,60,0.12); border: 1px solid rgba(255,80,80,0.55);
                        color: #ff6666; font-size: 13px; line-height: 1.45; font-weight: 500; }}
         .fb-warning a {{ color: #ff9999; text-decoration: underline; word-break: break-all; }}
+        .fb-warning.end-of-life {{ background: rgba(255,102,0,0.14); border-color: rgba(255,140,0,0.6); color: #ffb366; }}
+        .fb-warning.end-of-life a {{ color: #ffd199; }}
+        .goodbye-screen {{ display: none; min-height: 70vh; max-width: 640px; margin: 40px auto;
+                           padding: 40px 24px; text-align: center;
+                           background: rgba(255,255,255,0.03); border-radius: 14px;
+                           border: 1px solid rgba(255,255,255,0.08); color: #ddd; }}
+        .goodbye-screen h2 {{ font-size: 28px; color: #FF6600; margin-bottom: 20px; font-weight: 700; }}
+        .goodbye-screen p {{ font-size: 15px; line-height: 1.6; margin: 14px 0; }}
+        .goodbye-screen .gb-emoji {{ font-size: 48px; display: block; margin: 10px auto 20px; }}
+        .goodbye-screen .gb-fb {{ display: inline-block; margin-top: 20px; padding: 12px 22px;
+                                  background: #1877F2; color: #fff; border-radius: 8px;
+                                  text-decoration: none; font-weight: 600; }}
+        .goodbye-screen .gb-fb:hover {{ background: #166fe5; }}
+        .goodbye-screen .gb-signature {{ margin-top: 24px; font-size: 12px; color: #888; font-style: italic; }}
+        body.service-ended > .container > *:not(.goodbye-screen):not(.header):not(.top-bar) {{ display: none !important; }}
+        body.service-ended .goodbye-screen {{ display: block; }}
         .staff-filter {{ display: flex; gap: 6px; align-items: center; margin: 6px 0 10px; }}
         .staff-filter input {{ flex: 1; padding: 8px 12px; background: rgba(255,255,255,0.05);
                                border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
@@ -1309,6 +1342,16 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
         <div class="fb-warning">
             ⚠️ Merci de bien vérifier en priorité les infos liées au planning sur le groupe Facebook :
             <a href="https://www.facebook.com/groups/1643724212536389" target="_blank" rel="noopener">https://www.facebook.com/groups/1643724212536389</a>
+        </div>
+
+        <!-- ── Écran de fin de service (option 3) — masqué par défaut ── -->
+        <div class="goodbye-screen" id="goodbye-screen">
+            <span class="gb-emoji">👋⚽️</span>
+            <h2>Merci et à bientôt !</h2>
+            <p>{farewell_message}</p>
+            <p>Toutes les infos planning sont désormais sur le groupe Facebook — pensez à y faire un tour régulièrement.</p>
+            <a class="gb-fb" href="https://www.facebook.com/groups/1643724212536389" target="_blank" rel="noopener">Rejoindre le groupe Facebook</a>
+            <p class="gb-signature">Service maintenu jusqu'au 30/11/2026. Peïo 🧡</p>
         </div>
 
         <div class="week-selector">
@@ -1426,6 +1469,32 @@ def generate_html(week_employees, week_num, year, all_weeks, excel_version=0, we
     <script>
     (function() {{
         var NOTES_DATA = {notes_json};
+
+        // ── Fin de service : bascule automatique à la date configurée ──
+        // Avant la date : bandeau rouge normal transformé en "fin dans N jours"
+        // À partir de la date : écran plein cadre "au revoir", planning caché
+        var END_OF_SERVICE = {end_of_service_json};
+        if (END_OF_SERVICE) {{
+            try {{
+                var parts = END_OF_SERVICE.split('-');
+                var endDate = new Date(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10));
+                var now = new Date();
+                if (now >= endDate) {{
+                    document.body.classList.add('service-ended');
+                }} else {{
+                    var msPerDay = 1000 * 60 * 60 * 24;
+                    var daysLeft = Math.ceil((endDate.getTime() - now.getTime()) / msPerDay);
+                    var fb = document.querySelector('.fb-warning');
+                    if (fb) {{
+                        fb.classList.add('end-of-life');
+                        fb.innerHTML = '🕒 <strong>Fin de service dans ' + daysLeft + ' jour' + (daysLeft > 1 ? 's' : '') +
+                            '</strong> (' + endDate.toLocaleDateString('fr-FR') + '). Après cette date, les plannings ne seront plus mis à jour. ' +
+                            'Toutes les infos basculeront sur le groupe Facebook : <a href="https://www.facebook.com/groups/1643724212536389" target="_blank" rel="noopener">rejoindre le groupe</a>.';
+                    }}
+                }}
+            }} catch(e) {{ /* no-op */ }}
+        }}
+
         // Nettoyage des anciennes données localStorage (source de désync entre appareils)
         try {{ localStorage.removeItem('planning-notes-S{week_num}'); }} catch(e) {{}}
         var DATA = {events_json};
