@@ -2,10 +2,10 @@
   "_meta": {
     "titre": "Programme TV — Centre UrbanSoccer",
     "sous_titre": "Diffusion sur les écrans du centre",
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-07",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-11-06 20:42"
+    "generated_at": "2026-11-07 11:36"
   },
   "abonnement": {
     "disponibles": [
@@ -351,753 +351,6 @@
   },
   "evenements": [
     {
-      "date": "2026-11-06",
-      "heure": "06:00",
-      "categorie": "sport",
-      "competition": "L'Equipe du soir",
-      "affiche": "L'Equipe du soir",
-      "chaine": "L'Équipe",
-      "duree_min": 250
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "07:00",
-      "categorie": "tennis",
-      "competition": "Tennis : Tournoi WTA de Hong Kong",
-      "affiche": "Tennis : Tournoi WTA de Hong Kong",
-      "chaine": "beIN Sports Max 4",
-      "duree_min": 630
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "07:21",
-      "categorie": "foot",
-      "competition": "Football : Ligue Europa",
-      "affiche": "Football : Ligue Europa",
-      "chaine": "Canal+ Foot",
-      "duree_min": 104
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "08:00",
-      "categorie": "autre",
-      "competition": "Générations Intérieur Sport",
-      "affiche": "Générations Intérieur Sport",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 67
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "08:00",
-      "categorie": "foot",
-      "competition": "Football : Championnat du Portugal",
-      "affiche": "Football : Championnat du Portugal",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "08:00",
-      "categorie": "sport",
-      "competition": "Handball : Ligue Butagaz Energie",
-      "affiche": "Handball : Ligue Butagaz Energie",
-      "chaine": "beIN Sports 3",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "08:02",
-      "categorie": "film",
-      "competition": "La Voie du serpent",
-      "affiche": "La Voie du serpent",
-      "chaine": "Canal+",
-      "duree_min": 110
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "08:41",
-      "categorie": "rugby",
-      "competition": "Rugby : Rugby's Greatest Rivalry",
-      "affiche": "Rugby : Rugby's Greatest Rivalry",
-      "chaine": "Canal+ Sport",
-      "duree_min": 122
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "09:00",
-      "categorie": "sport",
-      "competition": "Basket-ball : Euroligue masculine",
-      "affiche": "Basket-ball : Euroligue masculine",
-      "chaine": "beIN Sports 1",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "09:05",
-      "categorie": "autre",
-      "competition": "Soir d'Europe le débrief",
-      "affiche": "Soir d'Europe le débrief",
-      "chaine": "Canal+ Foot",
-      "duree_min": 63
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "09:30",
-      "categorie": "autre",
-      "competition": "This is Paris",
-      "affiche": "This is Paris",
-      "chaine": "beIN Sports 3",
-      "duree_min": 30
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "09:52",
-      "categorie": "film",
-      "competition": "L'Intermédiaire (Relay)",
-      "affiche": "L'Intermédiaire (Relay)",
-      "chaine": "Canal+",
-      "duree_min": 109
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "10:00",
-      "categorie": "foot",
-      "competition": "Football : Bundesliga",
-      "affiche": "Football : Bundesliga",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "10:08",
-      "categorie": "foot",
-      "competition": "Football : Ligue Europa et Ligue Conférence",
-      "affiche": "Football : Ligue Europa et Ligue Conférence",
-      "chaine": "Canal+ Foot",
-      "duree_min": 104
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "10:10",
-      "categorie": "serie",
-      "competition": "Trimarans Ultim : au-delà des limites - 1x05",
-      "affiche": "Trimarans Ultim : au-delà des limites - 1x05",
-      "chaine": "L'Équipe",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "10:13",
-      "categorie": "sport",
-      "competition": "Débrief Moto",
-      "affiche": "Débrief Moto",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 42
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "10:15",
-      "categorie": "sport",
-      "competition": "NFL Extra",
-      "affiche": "NFL Extra",
-      "chaine": "beIN Sports 3",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "10:30",
-      "categorie": "tennis",
-      "competition": "Tennis : Tournoi WTA de Chennai",
-      "affiche": "Tennis : Tournoi WTA de Chennai",
-      "chaine": "beIN Sports Max 10",
-      "duree_min": 600
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "10:43",
-      "categorie": "autre",
-      "competition": "Thomas Ramos, point par point",
-      "affiche": "Thomas Ramos, point par point",
-      "chaine": "Canal+ Sport",
-      "duree_min": 81
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "10:45",
-      "categorie": "sport",
-      "competition": "Basket-ball : NBA",
-      "affiche": "Basket-ball : NBA",
-      "chaine": "beIN Sports 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "10:55",
-      "categorie": "sport",
-      "competition": "Moto 3 : Grand Prix du Qatar",
-      "affiche": "Moto 3 : Grand Prix du Qatar",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "11:00",
-      "categorie": "foot",
-      "competition": "Football américain : NFL",
-      "affiche": "Football américain : NFL",
-      "chaine": "beIN Sports 3",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "11:05",
-      "categorie": "serie",
-      "competition": "Trimarans Ultim : au-delà des limites - 1x06",
-      "affiche": "Trimarans Ultim : au-delà des limites - 1x06",
-      "chaine": "L'Équipe",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "11:41",
-      "categorie": "autre",
-      "competition": "En aparté",
-      "affiche": "En aparté",
-      "chaine": "Canal+",
-      "duree_min": 32
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "11:45",
-      "categorie": "sport",
-      "competition": "Moto 2 : Grand Prix du Qatar",
-      "affiche": "Moto 2 : Grand Prix du Qatar",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 50
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "12:00",
-      "categorie": "tennis",
-      "competition": "Tennis de table : WTT Champions de Francfort",
-      "affiche": "Tennis de table : WTT Champions de Francfort",
-      "chaine": "L'Équipe",
-      "duree_min": 300
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "12:00",
-      "categorie": "foot",
-      "competition": "Football : Ligue 2 BKT",
-      "affiche": "Metz / Saint-Etienne",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "12:00",
-      "categorie": "padel",
-      "competition": "Padel : Coupe du monde",
-      "affiche": "Padel : Coupe du monde",
-      "chaine": "beIN Sports Max 5",
-      "duree_min": 240
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "12:13",
-      "categorie": "autre",
-      "competition": "Clique",
-      "affiche": "Clique",
-      "chaine": "Canal+",
-      "duree_min": 54
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "12:31",
-      "categorie": "f1",
-      "competition": "Formule 1 : Grand Prix du Mexique",
-      "affiche": "Formule 1 : Grand Prix du Mexique",
-      "chaine": "Canal+ Sport",
-      "duree_min": 155
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "12:35",
-      "categorie": "sport",
-      "competition": "Moto GP : Grand Prix du Qatar",
-      "affiche": "Moto GP : Grand Prix du Qatar",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 65
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "12:45",
-      "categorie": "sport",
-      "competition": "NBA Extra",
-      "affiche": "NBA Extra",
-      "chaine": "beIN Sports 1",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "13:07",
-      "categorie": "autre",
-      "competition": "Les duos impossibles de Jérémy Ferrari",
-      "affiche": "Les duos impossibles de Jérémy Ferrari",
-      "chaine": "Canal+",
-      "duree_min": 155
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "13:30",
-      "categorie": "sport",
-      "competition": "Basket-ball : WNBA",
-      "affiche": "Basket-ball : WNBA",
-      "chaine": "beIN Sports 3",
-      "duree_min": 105
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "14:02",
-      "categorie": "sport",
-      "competition": "Rallye Club",
-      "affiche": "Rallye Club",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 32
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "14:34",
-      "categorie": "sport",
-      "competition": "Rallye : ERC, Rallye du Portugal",
-      "affiche": "Rallye : ERC, Rallye du Portugal",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 36
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "15:15",
-      "categorie": "autre",
-      "competition": "Au-delà des sommets",
-      "affiche": "Au-delà des sommets",
-      "chaine": "beIN Sports 3",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "15:30",
-      "categorie": "autre",
-      "competition": "A point",
-      "affiche": "A point",
-      "chaine": "beIN Sports 1",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "15:42",
-      "categorie": "film",
-      "competition": "Chers parents",
-      "affiche": "Chers parents",
-      "chaine": "Canal+",
-      "duree_min": 85
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "15:45",
-      "categorie": "foot",
-      "competition": "Football : Ligue Conférence",
-      "affiche": "Football : Ligue Conférence",
-      "chaine": "Canal+ Foot",
-      "duree_min": 111
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "16:00",
-      "categorie": "foot",
-      "competition": "Football : Süper Lig",
-      "affiche": "Football : Süper Lig",
-      "chaine": "beIN Sports 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "16:00",
-      "categorie": "sport",
-      "competition": "Basket-ball : NBA",
-      "affiche": "Basket-ball : NBA",
-      "chaine": "beIN Sports 3",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "16:00",
-      "categorie": "autre",
-      "competition": "beIN SPORTS, le plus grand des spectacles",
-      "affiche": "beIN SPORTS, le plus grand des spectacles",
-      "chaine": "beIN Sports Max 5",
-      "duree_min": 233
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "16:15",
-      "categorie": "f1",
-      "competition": "Formule 1 : Grand Prix du Brésil",
-      "affiche": "Formule 1 : Grand Prix du Brésil",
-      "chaine": "Canal+ Sport",
-      "duree_min": 86
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "16:30",
-      "categorie": "autre",
-      "competition": "Ça se passe sur beIN SPORTS",
-      "affiche": "Ça se passe sur beIN SPORTS",
-      "chaine": "beIN Sports 1",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "17:00",
-      "categorie": "sport",
-      "competition": "L'Equipe de choc",
-      "affiche": "L'Equipe de choc",
-      "chaine": "L'Équipe",
-      "duree_min": 58
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "17:07",
-      "categorie": "film",
-      "competition": "Les Enfants de la Résistance",
-      "affiche": "Les Enfants de la Résistance",
-      "chaine": "Canal+",
-      "duree_min": 98
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "17:41",
-      "categorie": "rugby",
-      "competition": "Rugby : Pro D2",
-      "affiche": "Rugby : Pro D2",
-      "chaine": "Canal+ Sport",
-      "duree_min": 104
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "17:58",
-      "categorie": "sport",
-      "competition": "L'Equipe de Greg",
-      "affiche": "L'Equipe de Greg",
-      "chaine": "L'Équipe",
-      "duree_min": 129
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "18:00",
-      "categorie": "sport",
-      "competition": "NBA Extra",
-      "affiche": "NBA Extra",
-      "chaine": "beIN Sports 3",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "18:10",
-      "categorie": "autre",
-      "competition": "Détective Mathoux",
-      "affiche": "Détective Mathoux",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 38
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "18:15",
-      "categorie": "autre",
-      "competition": "Pourquoi moi ?",
-      "affiche": "Pourquoi moi ?",
-      "chaine": "beIN Sports 2",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "18:45",
-      "categorie": "autre",
-      "competition": "Déambulations",
-      "affiche": "Déambulations",
-      "chaine": "Canal+",
-      "duree_min": 63
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "18:45",
-      "categorie": "sport",
-      "competition": "Handball : Qualifications à l'Euro masculin",
-      "affiche": "Handball : Qualifications à l'Euro masculin",
-      "chaine": "beIN Sports 3",
-      "duree_min": 90
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "19:10",
-      "categorie": "sport",
-      "competition": "Brive / Dax",
-      "affiche": "Brive / Dax",
-      "chaine": "Canal+ Live 1",
-      "duree_min": 110
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "19:15",
-      "categorie": "foot",
-      "competition": "Multiligue 2",
-      "affiche": "Multiligue 2",
-      "chaine": "beIN Sports 2",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "19:20",
-      "categorie": "foot",
-      "competition": "Premier League Review",
-      "affiche": "Premier League Review",
-      "chaine": "Canal+ Foot",
-      "duree_min": 57
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "19:25",
-      "categorie": "sport",
-      "competition": "Aurillac / Montauban",
-      "affiche": "Aurillac / Montauban",
-      "chaine": "Canal+ Live 3",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "19:26",
-      "categorie": "sport",
-      "competition": "Colomiers / Béziers",
-      "affiche": "Colomiers / Béziers",
-      "chaine": "Canal+ Live 4",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "19:26",
-      "categorie": "sport",
-      "competition": "Narbonne / Nice",
-      "affiche": "Narbonne / Nice",
-      "chaine": "Canal+ Live 5",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "19:26",
-      "categorie": "sport",
-      "competition": "Valence-Romans / Nevers",
-      "affiche": "Valence-Romans / Nevers",
-      "chaine": "Canal+ Live 6",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "19:53",
-      "categorie": "foot",
-      "competition": "Football : Ligue 2 BKT",
-      "affiche": "Metz / Saint-Etienne",
-      "chaine": "beIN Sports Max 4",
-      "duree_min": 127
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "20:07",
-      "categorie": "sport",
-      "competition": "A toute allure !",
-      "affiche": "A toute allure !",
-      "chaine": "L'Équipe",
-      "duree_min": 33
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "20:17",
-      "categorie": "foot",
-      "competition": "Jour de foot",
-      "affiche": "Jour de foot",
-      "chaine": "Canal+ Foot",
-      "duree_min": 38
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "20:30",
-      "categorie": "foot",
-      "competition": "Football : Bundesliga",
-      "affiche": "Football : Bundesliga",
-      "chaine": "beIN Sports 3",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "20:35",
-      "categorie": "autre",
-      "competition": "Super plan",
-      "affiche": "Super plan",
-      "chaine": "Canal+",
-      "duree_min": 35
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "20:40",
-      "categorie": "sport",
-      "competition": "Automoto",
-      "affiche": "Automoto",
-      "chaine": "L'Équipe",
-      "duree_min": 35
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "20:55",
-      "categorie": "foot",
-      "competition": "Football : Arkema Première Ligue",
-      "affiche": "Football : Arkema Première Ligue",
-      "chaine": "Canal+ Foot",
-      "duree_min": 125
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "20:55",
-      "categorie": "sport",
-      "competition": "Soyaux-Angoulême / Grenoble",
-      "affiche": "Soyaux-Angoulême / Grenoble",
-      "chaine": "Canal+ Live 2",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "20:55",
-      "categorie": "sport",
-      "competition": "Everton / Coventry City",
-      "affiche": "Everton / Coventry City",
-      "chaine": "Canal+ Live 7",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "20:55",
-      "categorie": "foot",
-      "competition": "Football : EFL Championship",
-      "affiche": "Football : EFL Championship",
-      "chaine": "beIN Sports Max 10",
-      "duree_min": 125
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "21:05",
-      "categorie": "rugby",
-      "competition": "Provence Rugby / Oyonnax",
-      "affiche": "Provence Rugby / Oyonnax",
-      "chaine": "Canal+ Live 1",
-      "duree_min": 111
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "21:10",
-      "categorie": "film",
-      "competition": "Super Mario Galaxy le film",
-      "affiche": "Super Mario Galaxy le film",
-      "chaine": "Canal+",
-      "duree_min": 96
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "21:11",
-      "categorie": "sport",
-      "competition": "Golf : Open de Los Cabos",
-      "affiche": "Golf : Open de Los Cabos",
-      "chaine": "Canal+ Sport",
-      "duree_min": 170
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "21:15",
-      "categorie": "film",
-      "competition": "Un petit boulot",
-      "affiche": "Un petit boulot",
-      "chaine": "L'Équipe",
-      "duree_min": 125
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "22:00",
-      "categorie": "autre",
-      "competition": "beIN SPORTS, le plus grand des spectacles",
-      "affiche": "beIN SPORTS, le plus grand des spectacles",
-      "chaine": "beIN Sports Max 4",
-      "duree_min": 240
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "22:30",
-      "categorie": "sport",
-      "competition": "NFL Extra",
-      "affiche": "NFL Extra",
-      "chaine": "beIN Sports 2",
-      "duree_min": 45
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "22:30",
-      "categorie": "sport",
-      "competition": "Volley-ball : Alterna VOLSTAR",
-      "affiche": "Volley-ball : Alterna VOLSTAR",
-      "chaine": "beIN Sports 3",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "22:46",
-      "categorie": "film",
-      "competition": "Cocorico 2",
-      "affiche": "Cocorico 2",
-      "chaine": "Canal+",
-      "duree_min": 89
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "22:55",
-      "categorie": "rugby",
-      "competition": "Soir de rugby",
-      "affiche": "Soir de rugby",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 55
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "22:55",
-      "categorie": "foot",
-      "competition": "La Premier League sur Canal+",
-      "affiche": "La Premier League sur Canal+",
-      "chaine": "Canal+ Premier League",
-      "duree_min": 751
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "23:00",
-      "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 61
-    },
-    {
-      "date": "2026-11-06",
-      "heure": "23:15",
-      "categorie": "foot",
-      "competition": "Football américain : NFL",
-      "affiche": "Football américain : NFL",
-      "chaine": "beIN Sports 2",
-      "duree_min": 165
-    },
-    {
       "date": "2026-11-07",
       "heure": "00:00",
       "categorie": "autre",
@@ -1126,12 +379,12 @@
     },
     {
       "date": "2026-11-07",
-      "heure": "07:38",
+      "heure": "07:37",
       "categorie": "rugby",
       "competition": "Rugby : Pro D2",
       "affiche": "Rugby : Pro D2",
       "chaine": "Canal+ Sport",
-      "duree_min": 311
+      "duree_min": 312
     },
     {
       "date": "2026-11-07",
@@ -1482,7 +735,7 @@
       "competition": "Formule 1 : Grand Prix du Brésil",
       "affiche": "Formule 1 : Grand Prix du Brésil",
       "chaine": "Canal+ Sport",
-      "duree_min": 174
+      "duree_min": 173
     },
     {
       "date": "2026-11-07",
@@ -1492,15 +745,6 @@
       "affiche": "Passion sous pression",
       "chaine": "beIN Sports 2",
       "duree_min": 60
-    },
-    {
-      "date": "2026-11-07",
-      "heure": "14:29",
-      "categorie": "sport",
-      "competition": "Toulouse / ASM Clermont",
-      "affiche": "Toulouse / ASM Clermont",
-      "chaine": "Canal+ Live 1",
-      "duree_min": 120
     },
     {
       "date": "2026-11-07",
@@ -1519,6 +763,15 @@
       "affiche": "This is Paris",
       "chaine": "beIN Sports 1",
       "duree_min": 30
+    },
+    {
+      "date": "2026-11-07",
+      "heure": "14:30",
+      "categorie": "sport",
+      "competition": "Toulouse / ASM Clermont",
+      "affiche": "Toulouse / ASM Clermont",
+      "chaine": "Canal+ Live 1",
+      "duree_min": 120
     },
     {
       "date": "2026-11-07",
@@ -1563,7 +816,7 @@
       "competition": "Arsenal / Hull City",
       "affiche": "Arsenal / Hull City",
       "chaine": "Canal+ Live 6",
-      "duree_min": 123
+      "duree_min": 122
     },
     {
       "date": "2026-11-07",
@@ -1779,7 +1032,7 @@
       "competition": "Générations Intérieur Sport",
       "affiche": "Générations Intérieur Sport",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 71
+      "duree_min": 72
     },
     {
       "date": "2026-11-07",
@@ -1829,15 +1082,6 @@
     {
       "date": "2026-11-07",
       "heure": "21:00",
-      "categorie": "f1",
-      "competition": "Formule 1 : Grand Prix du Brésil",
-      "affiche": "Formule 1 : Grand Prix du Brésil",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 104
-    },
-    {
-      "date": "2026-11-07",
-      "heure": "21:00",
       "categorie": "sport",
       "competition": "Golf : Open de Los Cabos",
       "affiche": "Golf : Open de Los Cabos",
@@ -1852,6 +1096,15 @@
       "affiche": "Courses de caisses à savon",
       "chaine": "L'Équipe",
       "duree_min": 100
+    },
+    {
+      "date": "2026-11-07",
+      "heure": "21:01",
+      "categorie": "f1",
+      "competition": "Formule 1 : Grand Prix du Brésil",
+      "affiche": "Formule 1 : Grand Prix du Brésil",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 104
     },
     {
       "date": "2026-11-07",
@@ -2067,7 +1320,16 @@
       "competition": "Manchester United / Aston Villa",
       "affiche": "Manchester United / Aston Villa",
       "chaine": "Canal+ Live 2",
-      "duree_min": 116
+      "duree_min": 115
+    },
+    {
+      "date": "2026-11-08",
+      "heure": "19:30",
+      "categorie": "foot",
+      "competition": "Canal Football Club",
+      "affiche": "Canal Football Club",
+      "chaine": "Canal+ Live 2",
+      "duree_min": 40
     },
     {
       "date": "2026-11-08",
@@ -2089,12 +1351,12 @@
     },
     {
       "date": "2026-11-08",
-      "heure": "20:24",
+      "heure": "20:20",
       "categorie": "rugby",
       "competition": "Canal Rugby Club",
       "affiche": "Canal Rugby Club",
       "chaine": "Canal+ Live 1",
-      "duree_min": 37
+      "duree_min": 35
     },
     {
       "date": "2026-11-08",
@@ -2103,7 +1365,7 @@
       "competition": "La Rochelle / Bayonne",
       "affiche": "La Rochelle / Bayonne",
       "chaine": "Canal+ Live 1",
-      "duree_min": 120
+      "duree_min": 117
     },
     {
       "date": "2026-11-08",
@@ -2130,7 +1392,7 @@
       "competition": "La Premier League sur Canal+",
       "affiche": "La Premier League sur Canal+",
       "chaine": "Canal+ Premier League",
-      "duree_min": 4532
+      "duree_min": 5972
     },
     {
       "date": "2026-11-09",
@@ -2320,6 +1582,132 @@
       "affiche": "Football : Ligue des champions féminine - Juventus / Lyon",
       "chaine": "L'Équipe",
       "duree_min": 140
+    },
+    {
+      "date": "2026-11-12",
+      "heure": "06:00",
+      "categorie": "sport",
+      "competition": "L'Equipe du soir",
+      "affiche": "L'Equipe du soir",
+      "chaine": "L'Équipe",
+      "duree_min": 240
+    },
+    {
+      "date": "2026-11-12",
+      "heure": "10:00",
+      "categorie": "autre",
+      "competition": "V6",
+      "affiche": "V6",
+      "chaine": "L'Équipe",
+      "duree_min": 180
+    },
+    {
+      "date": "2026-11-12",
+      "heure": "13:00",
+      "categorie": "autre",
+      "competition": "Design auto",
+      "affiche": "Design auto",
+      "chaine": "L'Équipe",
+      "duree_min": 60
+    },
+    {
+      "date": "2026-11-12",
+      "heure": "17:00",
+      "categorie": "sport",
+      "competition": "L'Equipe de choc",
+      "affiche": "L'Equipe de choc",
+      "chaine": "L'Équipe",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-11-12",
+      "heure": "18:30",
+      "categorie": "sport",
+      "competition": "L'Equipe de Greg",
+      "affiche": "L'Equipe de Greg",
+      "chaine": "L'Équipe",
+      "duree_min": 129
+    },
+    {
+      "date": "2026-11-12",
+      "heure": "20:39",
+      "categorie": "foot",
+      "competition": "Football : Ligue des Nations UEFA - Angleterre / Croatie",
+      "affiche": "Football : Ligue des Nations UEFA - Angleterre / Croatie",
+      "chaine": "L'Équipe",
+      "duree_min": 126
+    },
+    {
+      "date": "2026-11-13",
+      "heure": "06:00",
+      "categorie": "sport",
+      "competition": "L'Equipe du soir",
+      "affiche": "L'Equipe du soir",
+      "chaine": "L'Équipe",
+      "duree_min": 240
+    },
+    {
+      "date": "2026-11-13",
+      "heure": "10:00",
+      "categorie": "autre",
+      "competition": "V6",
+      "affiche": "V6",
+      "chaine": "L'Équipe",
+      "duree_min": 180
+    },
+    {
+      "date": "2026-11-13",
+      "heure": "13:00",
+      "categorie": "foot",
+      "competition": "Football : Ligue des Nations UEFA - Italie / France",
+      "affiche": "Football : Ligue des Nations UEFA - Italie / France",
+      "chaine": "L'Équipe",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-11-13",
+      "heure": "15:00",
+      "categorie": "foot",
+      "competition": "Football : Ligue des Nations UEFA - République tchèque / Espagne",
+      "affiche": "Football : Ligue des Nations UEFA - République tchèque / Espagne",
+      "chaine": "L'Équipe",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-11-13",
+      "heure": "17:00",
+      "categorie": "sport",
+      "competition": "L'Equipe de choc",
+      "affiche": "L'Equipe de choc",
+      "chaine": "L'Équipe",
+      "duree_min": 90
+    },
+    {
+      "date": "2026-11-13",
+      "heure": "18:30",
+      "categorie": "sport",
+      "competition": "L'Equipe de Greg",
+      "affiche": "L'Equipe de Greg",
+      "chaine": "L'Équipe",
+      "duree_min": 97
+    },
+    {
+      "date": "2026-11-13",
+      "heure": "20:07",
+      "categorie": "sport",
+      "competition": "A toute allure !",
+      "affiche": "A toute allure !",
+      "chaine": "L'Équipe",
+      "duree_min": 32
+    },
+    {
+      "date": "2026-11-13",
+      "heure": "20:39",
+      "categorie": "foot",
+      "competition": "Football : Ligue des Nations UEFA - Multiplex",
+      "affiche": "Football : Ligue des Nations UEFA - Multiplex",
+      "chaine": "L'Équipe",
+      "duree_min": 126
     }
   ]
 }
