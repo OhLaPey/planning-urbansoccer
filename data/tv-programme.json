@@ -5,7 +5,7 @@
     "updated_at": "2026-11-20",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-11-20 13:55"
+    "generated_at": "2026-11-20 22:08"
   },
   "abonnement": {
     "disponibles": [
@@ -370,12 +370,12 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "07:10",
+      "heure": "07:06",
       "categorie": "autre",
       "competition": "Histoire de Champions",
       "affiche": "Histoire de Champions",
       "chaine": "Canal+ Foot",
-      "duree_min": 115
+      "duree_min": 116
     },
     {
       "date": "2026-11-20",
@@ -420,7 +420,7 @@
       "competition": "Formule 1 : Grand Prix de Las Vegas",
       "affiche": "Formule 1 : Grand Prix de Las Vegas",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 85
+      "duree_min": 87
     },
     {
       "date": "2026-11-20",
@@ -433,7 +433,7 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "09:05",
+      "heure": "09:02",
       "categorie": "autre",
       "competition": "Platini",
       "affiche": "Platini",
@@ -447,7 +447,7 @@
       "competition": "Rugby : Pro D2",
       "affiche": "Rugby : Pro D2",
       "chaine": "Canal+ Sport",
-      "duree_min": 107
+      "duree_min": 106
     },
     {
       "date": "2026-11-20",
@@ -523,7 +523,7 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "11:16",
+      "heure": "11:15",
       "categorie": "f1",
       "competition": "Formule 1 : Grand Prix de Las Vegas",
       "affiche": "Formule 1 : Grand Prix de Las Vegas",
@@ -541,12 +541,12 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "11:41",
+      "heure": "11:38",
       "categorie": "foot",
       "competition": "Football : Arkema Première Ligue",
       "affiche": "Football : Arkema Première Ligue",
       "chaine": "Canal+ Foot",
-      "duree_min": 105
+      "duree_min": 107
     },
     {
       "date": "2026-11-20",
@@ -582,16 +582,25 @@
       "competition": "En aparté",
       "affiche": "En aparté",
       "chaine": "Canal+",
-      "duree_min": 32
+      "duree_min": 33
     },
     {
       "date": "2026-11-20",
-      "heure": "12:37",
+      "heure": "12:38",
       "categorie": "autre",
       "competition": "Clique",
       "affiche": "Clique",
       "chaine": "Canal+",
-      "duree_min": 54
+      "duree_min": 53
+    },
+    {
+      "date": "2026-11-20",
+      "heure": "12:44",
+      "categorie": "autre",
+      "competition": "Fast Life Margot Laffite",
+      "affiche": "Fast Life Margot Laffite",
+      "chaine": "Canal+ Sport",
+      "duree_min": 35
     },
     {
       "date": "2026-11-20",
@@ -601,15 +610,6 @@
       "affiche": "Le JT",
       "chaine": "Canal+ Sport 360",
       "duree_min": 30
-    },
-    {
-      "date": "2026-11-20",
-      "heure": "12:45",
-      "categorie": "autre",
-      "competition": "Fast Life Margot Laffite",
-      "affiche": "Fast Life Margot Laffite",
-      "chaine": "Canal+ Sport",
-      "duree_min": 34
     },
     {
       "date": "2026-11-20",
@@ -636,7 +636,7 @@
       "competition": "Canal Sports Quiz",
       "affiche": "Canal Sports Quiz",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 39
+      "duree_min": 40
     },
     {
       "date": "2026-11-20",
@@ -649,12 +649,12 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "13:26",
+      "heure": "13:25",
       "categorie": "foot",
       "competition": "Late Football Club",
       "affiche": "Late Football Club",
       "chaine": "Canal+ Foot",
-      "duree_min": 59
+      "duree_min": 60
     },
     {
       "date": "2026-11-20",
@@ -753,7 +753,7 @@
       "competition": "Soixante 80's",
       "affiche": "Soixante 80's",
       "chaine": "Canal+",
-      "duree_min": 65
+      "duree_min": 66
     },
     {
       "date": "2026-11-20",
@@ -793,12 +793,12 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "17:10",
+      "heure": "17:11",
       "categorie": "autre",
       "competition": "Détective Mathoux",
       "affiche": "Détective Mathoux",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 40
+      "duree_min": 43
     },
     {
       "date": "2026-11-20",
@@ -820,7 +820,7 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "17:40",
+      "heure": "17:41",
       "categorie": "autre",
       "competition": "French Pop",
       "affiche": "French Pop",
@@ -847,12 +847,12 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "18:34",
+      "heure": "18:35",
       "categorie": "autre",
       "competition": "Saturday Night Live",
       "affiche": "Saturday Night Live",
       "chaine": "Canal+",
-      "duree_min": 70
+      "duree_min": 69
     },
     {
       "date": "2026-11-20",
@@ -946,12 +946,12 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "20:30",
+      "heure": "20:29",
       "categorie": "sport",
       "competition": "MMA : ARES Fighting Championship",
       "affiche": "MMA : ARES Fighting Championship",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 213
+      "duree_min": 216
     },
     {
       "date": "2026-11-20",
@@ -996,7 +996,7 @@
       "competition": "Michael",
       "affiche": "Michael",
       "chaine": "Canal+",
-      "duree_min": 131
+      "duree_min": 129
     },
     {
       "date": "2026-11-20",
@@ -1036,12 +1036,12 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "22:52",
+      "heure": "22:51",
       "categorie": "rugby",
       "competition": "Soir de rugby",
       "affiche": "Soir de rugby",
       "chaine": "Canal+ Sport",
-      "duree_min": 36
+      "duree_min": 37
     },
     {
       "date": "2026-11-20",
@@ -1054,12 +1054,12 @@
     },
     {
       "date": "2026-11-20",
-      "heure": "23:20",
+      "heure": "23:18",
       "categorie": "autre",
       "competition": "Michael, le meilleur de Jackson",
       "affiche": "Michael, le meilleur de Jackson",
       "chaine": "Canal+",
-      "duree_min": 63
+      "duree_min": 64
     },
     {
       "date": "2026-11-20",
@@ -1158,7 +1158,7 @@
       "competition": "Singapura - 1x04",
       "affiche": "Singapura - 1x04",
       "chaine": "Canal+",
-      "duree_min": 52
+      "duree_min": 51
     },
     {
       "date": "2026-11-21",
@@ -1207,7 +1207,7 @@
     },
     {
       "date": "2026-11-21",
-      "heure": "09:53",
+      "heure": "09:52",
       "categorie": "film",
       "competition": "Michael",
       "affiche": "Michael",
@@ -1956,8 +1956,8 @@
       "date": "2026-11-22",
       "heure": "22:25",
       "categorie": "foot",
-      "competition": "Football américain : NFL - Denver Broncos / Las Vegas Raiders",
-      "affiche": "Football américain : NFL - Denver Broncos / Las Vegas Raiders",
+      "competition": "Football américain : NFL - New York Giants / Jacksonville Jaguars",
+      "affiche": "Football américain : NFL - New York Giants / Jacksonville Jaguars",
       "chaine": "L'Équipe",
       "duree_min": 175
     },
