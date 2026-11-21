@@ -5,7 +5,7 @@
     "updated_at": "2026-11-21",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-11-21 13:19"
+    "generated_at": "2026-11-21 20:48"
   },
   "abonnement": {
     "disponibles": [
@@ -370,7 +370,7 @@
     },
     {
       "date": "2026-11-21",
-      "heure": "07:39",
+      "heure": "07:38",
       "categorie": "foot",
       "competition": "Football : Arkema Première Ligue",
       "affiche": "Football : Arkema Première Ligue",
@@ -451,12 +451,12 @@
     },
     {
       "date": "2026-11-21",
-      "heure": "09:22",
+      "heure": "09:21",
       "categorie": "autre",
       "competition": "Inside Robert Pirès",
       "affiche": "Inside Robert Pirès",
       "chaine": "Canal+ Foot",
-      "duree_min": 34
+      "duree_min": 35
     },
     {
       "date": "2026-11-21",
@@ -609,7 +609,7 @@
       "competition": "Late Football Club",
       "affiche": "Late Football Club",
       "chaine": "Canal+ Foot",
-      "duree_min": 61
+      "duree_min": 60
     },
     {
       "date": "2026-11-21",
@@ -901,7 +901,7 @@
     },
     {
       "date": "2026-11-21",
-      "heure": "17:10",
+      "heure": "17:12",
       "categorie": "autre",
       "competition": "Canal Sports Quiz",
       "affiche": "Canal Sports Quiz",
@@ -937,7 +937,7 @@
     },
     {
       "date": "2026-11-21",
-      "heure": "17:49",
+      "heure": "17:51",
       "categorie": "autre",
       "competition": "La clinique des sports",
       "affiche": "La clinique des sports",
@@ -1027,12 +1027,12 @@
     },
     {
       "date": "2026-11-21",
-      "heure": "20:54",
+      "heure": "21:00",
       "categorie": "sport",
       "competition": "Voile : Grand Prix de Dubaï",
       "affiche": "Voile : Grand Prix de Dubaï",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 91
+      "duree_min": 92
     },
     {
       "date": "2026-11-21",
@@ -1140,7 +1140,7 @@
       "competition": "Voile : Grand Prix de Dubaï",
       "affiche": "Voile : Grand Prix de Dubaï",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 92
+      "duree_min": 93
     },
     {
       "date": "2026-11-22",
@@ -1230,7 +1230,7 @@
       "competition": "Moto GP : Grand Prix du Portugal",
       "affiche": "Moto GP : Grand Prix du Portugal",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 53
+      "duree_min": 54
     },
     {
       "date": "2026-11-22",
@@ -1419,7 +1419,7 @@
       "competition": "Formula One, le mag",
       "affiche": "Formula One, le mag",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 31
+      "duree_min": 32
     },
     {
       "date": "2026-11-22",
@@ -1477,12 +1477,12 @@
     },
     {
       "date": "2026-11-22",
-      "heure": "14:10",
+      "heure": "14:11",
       "categorie": "autre",
       "competition": "Trail 360",
       "affiche": "Trail 360",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 80
+      "duree_min": 79
     },
     {
       "date": "2026-11-22",
@@ -1648,7 +1648,7 @@
     },
     {
       "date": "2026-11-22",
-      "heure": "17:48",
+      "heure": "17:47",
       "categorie": "sport",
       "competition": "Débrief Moto",
       "affiche": "Débrief Moto",
@@ -1657,7 +1657,7 @@
     },
     {
       "date": "2026-11-22",
-      "heure": "18:28",
+      "heure": "18:27",
       "categorie": "f1",
       "competition": "Formule 1 : Grand Prix de Las Vegas",
       "affiche": "Formule 1 : Grand Prix de Las Vegas",
