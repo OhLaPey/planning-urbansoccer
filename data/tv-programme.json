@@ -5,7 +5,7 @@
     "updated_at": "2026-11-25",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-11-25 15:24"
+    "generated_at": "2026-11-25 23:28"
   },
   "abonnement": {
     "disponibles": [
@@ -370,21 +370,21 @@
     },
     {
       "date": "2026-11-25",
-      "heure": "06:58",
+      "heure": "06:42",
       "categorie": "ldc",
       "competition": "Football : Ligue des champions",
       "affiche": "Football : Ligue des champions",
       "chaine": "Canal+ Foot",
-      "duree_min": 418
+      "duree_min": 434
     },
     {
       "date": "2026-11-25",
-      "heure": "07:37",
+      "heure": "07:31",
       "categorie": "f1",
       "competition": "Formule 1 : Grand Prix de Las Vegas",
       "affiche": "Formule 1 : Grand Prix de Las Vegas",
       "chaine": "Canal+ Sport",
-      "duree_min": 98
+      "duree_min": 99
     },
     {
       "date": "2026-11-25",
@@ -433,6 +433,24 @@
     },
     {
       "date": "2026-11-25",
+      "heure": "09:01",
+      "categorie": "sport",
+      "competition": "Moto : Le podium",
+      "affiche": "Moto : Le podium",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-11-25",
+      "heure": "09:10",
+      "categorie": "autre",
+      "competition": "Le Podium",
+      "affiche": "Le Podium",
+      "chaine": "Canal+ Sport",
+      "duree_min": 30
+    },
+    {
+      "date": "2026-11-25",
       "heure": "09:15",
       "categorie": "sport",
       "competition": "Basket-ball : NBA",
@@ -451,12 +469,12 @@
     },
     {
       "date": "2026-11-25",
-      "heure": "09:48",
+      "heure": "09:49",
       "categorie": "autre",
       "competition": "Canal Sports Quiz",
       "affiche": "Canal Sports Quiz",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 40
+      "duree_min": 41
     },
     {
       "date": "2026-11-25",
@@ -487,7 +505,7 @@
     },
     {
       "date": "2026-11-25",
-      "heure": "10:10",
+      "heure": "10:05",
       "categorie": "f1",
       "competition": "F1 Academy : Grand Prix de Las Vegas",
       "affiche": "F1 Academy : Grand Prix de Las Vegas",
@@ -514,16 +532,16 @@
     },
     {
       "date": "2026-11-25",
-      "heure": "10:42",
+      "heure": "10:44",
       "categorie": "sport",
       "competition": "Voile : Grand Prix de Dubaï",
       "affiche": "Voile : Grand Prix de Dubaï",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 93
+      "duree_min": 91
     },
     {
       "date": "2026-11-25",
-      "heure": "11:08",
+      "heure": "11:04",
       "categorie": "rugby",
       "competition": "Rugby : Pro D2",
       "affiche": "Rugby : Pro D2",
@@ -559,6 +577,15 @@
     },
     {
       "date": "2026-11-25",
+      "heure": "12:44",
+      "categorie": "sport",
+      "competition": "Golf+, le mag",
+      "affiche": "Golf+, le mag",
+      "chaine": "Canal+ Sport",
+      "duree_min": 64
+    },
+    {
+      "date": "2026-11-25",
       "heure": "12:45",
       "categorie": "sport",
       "competition": "NBA Extra",
@@ -568,21 +595,12 @@
     },
     {
       "date": "2026-11-25",
-      "heure": "12:48",
-      "categorie": "sport",
-      "competition": "Golf+, le mag",
-      "affiche": "Golf+, le mag",
-      "chaine": "Canal+ Sport",
-      "duree_min": 64
-    },
-    {
-      "date": "2026-11-25",
       "heure": "13:00",
       "categorie": "sport",
       "competition": "Rallye : WRC, Rallye Italie Sardaigne",
       "affiche": "Rallye : WRC, Rallye Italie Sardaigne",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 151
+      "duree_min": 152
     },
     {
       "date": "2026-11-25",
@@ -622,12 +640,12 @@
     },
     {
       "date": "2026-11-25",
-      "heure": "13:52",
+      "heure": "13:48",
       "categorie": "sport",
       "competition": "Cesta Punta : Open international",
       "affiche": "Cesta Punta : Open international",
       "chaine": "Canal+ Sport",
-      "duree_min": 69
+      "duree_min": 70
     },
     {
       "date": "2026-11-25",
@@ -649,21 +667,21 @@
     },
     {
       "date": "2026-11-25",
-      "heure": "14:00",
-      "categorie": "sport",
-      "competition": "Sporting Club Portugal / Manchester United",
-      "affiche": "Sporting Club Portugal / Manchester United",
-      "chaine": "Canal+ Live 2",
-      "duree_min": 110
-    },
-    {
-      "date": "2026-11-25",
       "heure": "14:01",
       "categorie": "foot",
       "competition": "Football : UEFA Youth League",
       "affiche": "Football : UEFA Youth League",
       "chaine": "Canal+ Foot",
       "duree_min": 229
+    },
+    {
+      "date": "2026-11-25",
+      "heure": "14:01",
+      "categorie": "sport",
+      "competition": "Sporting Club Portugal / Manchester United",
+      "affiche": "Sporting Club Portugal / Manchester United",
+      "chaine": "Canal+ Live 2",
+      "duree_min": 110
     },
     {
       "date": "2026-11-25",
@@ -793,7 +811,7 @@
     },
     {
       "date": "2026-11-25",
-      "heure": "18:47",
+      "heure": "18:45",
       "categorie": "sport",
       "competition": "Slavia Prague / Villarreal",
       "affiche": "Slavia Prague / Villarreal",
@@ -834,7 +852,7 @@
       "competition": "Lundi Grand Prix",
       "affiche": "Lundi Grand Prix",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 70
+      "duree_min": 69
     },
     {
       "date": "2026-11-25",
@@ -910,15 +928,6 @@
     },
     {
       "date": "2026-11-25",
-      "heure": "20:59",
-      "categorie": "sport",
-      "competition": "Paris-SG / AS Roma",
-      "affiche": "Paris-SG / AS Roma",
-      "chaine": "Canal+ Live 1",
-      "duree_min": 120
-    },
-    {
-      "date": "2026-11-25",
       "heure": "21:00",
       "categorie": "ldc",
       "competition": "Football : Ligue des champions",
@@ -930,14 +939,23 @@
       "date": "2026-11-25",
       "heure": "21:00",
       "categorie": "sport",
-      "competition": "Lille / Bayern Munich",
-      "affiche": "Lille / Bayern Munich",
-      "chaine": "Canal+ Live 2",
-      "duree_min": 105
+      "competition": "Paris-SG / AS Roma",
+      "affiche": "Paris-SG / AS Roma",
+      "chaine": "Canal+ Live 1",
+      "duree_min": 117
     },
     {
       "date": "2026-11-25",
-      "heure": "21:07",
+      "heure": "21:00",
+      "categorie": "sport",
+      "competition": "Lille / Bayern Munich",
+      "affiche": "Lille / Bayern Munich",
+      "chaine": "Canal+ Live 2",
+      "duree_min": 120
+    },
+    {
+      "date": "2026-11-25",
+      "heure": "21:00",
       "categorie": "sport",
       "competition": "Club Bruges / Liverpool",
       "affiche": "Club Bruges / Liverpool",
@@ -964,6 +982,15 @@
     },
     {
       "date": "2026-11-25",
+      "heure": "22:59",
+      "categorie": "autre",
+      "competition": "Kimi Antonelli, la nouvelle étoile",
+      "affiche": "Kimi Antonelli, la nouvelle étoile",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 32
+    },
+    {
+      "date": "2026-11-25",
       "heure": "23:00",
       "categorie": "ldc",
       "competition": "Handball : Ligue des champions",
@@ -987,16 +1014,7 @@
       "competition": "Golf : WTGL",
       "affiche": "Golf : WTGL",
       "chaine": "Canal+ Sport",
-      "duree_min": 106
-    },
-    {
-      "date": "2026-11-25",
-      "heure": "23:02",
-      "categorie": "autre",
-      "competition": "Kimi Antonelli, la nouvelle étoile",
-      "affiche": "Kimi Antonelli, la nouvelle étoile",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 32
+      "duree_min": 107
     },
     {
       "date": "2026-11-25",
@@ -1032,7 +1050,7 @@
       "competition": "Le 5e tour",
       "affiche": "Le 5e tour",
       "chaine": "Canal+ Sport",
-      "duree_min": 148
+      "duree_min": 151
     },
     {
       "date": "2026-11-26",
@@ -1054,7 +1072,7 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "08:18",
+      "heure": "08:17",
       "categorie": "autre",
       "competition": "Ticaret",
       "affiche": "Ticaret",
@@ -1072,12 +1090,12 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "08:55",
+      "heure": "08:51",
       "categorie": "autre",
       "competition": "La clinique des sports",
       "affiche": "La clinique des sports",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 75
+      "duree_min": 74
     },
     {
       "date": "2026-11-26",
@@ -1090,12 +1108,12 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "09:53",
+      "heure": "09:56",
       "categorie": "f1",
       "competition": "Formule 1 : Grand Prix de Las Vegas",
       "affiche": "Formule 1 : Grand Prix de Las Vegas",
       "chaine": "Canal+ Sport",
-      "duree_min": 107
+      "duree_min": 98
     },
     {
       "date": "2026-11-26",
@@ -1126,12 +1144,12 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "10:10",
+      "heure": "10:05",
       "categorie": "autre",
       "competition": "Générations Intérieur Sport",
       "affiche": "Générations Intérieur Sport",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 78
+      "duree_min": 76
     },
     {
       "date": "2026-11-26",
@@ -1144,7 +1162,7 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "10:26",
+      "heure": "10:25",
       "categorie": "autre",
       "competition": "Soixante 80's",
       "affiche": "Soixante 80's",
@@ -1153,19 +1171,19 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "11:35",
+      "heure": "11:26",
       "categorie": "autre",
       "competition": "Détective Mathoux",
       "affiche": "Détective Mathoux",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 40
+      "duree_min": 49
     },
     {
       "date": "2026-11-26",
-      "heure": "11:53",
+      "heure": "11:34",
       "categorie": "autre",
-      "competition": "Formula One, le mag",
-      "affiche": "Formula One, le mag",
+      "competition": "Le Podium",
+      "affiche": "Le Podium",
       "chaine": "Canal+ Sport",
       "duree_min": 33
     },
@@ -1198,21 +1216,21 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "12:26",
-      "categorie": "sport",
-      "competition": "Golf : WTGL",
-      "affiche": "Golf : WTGL",
-      "chaine": "Canal+ Sport",
-      "duree_min": 107
-    },
-    {
-      "date": "2026-11-26",
       "heure": "12:34",
       "categorie": "autre",
       "competition": "Clique",
       "affiche": "Clique",
       "chaine": "Canal+",
       "duree_min": 54
+    },
+    {
+      "date": "2026-11-26",
+      "heure": "12:34",
+      "categorie": "sport",
+      "competition": "Golf : WTGL",
+      "affiche": "Golf : WTGL",
+      "chaine": "Canal+ Sport",
+      "duree_min": 107
     },
     {
       "date": "2026-11-26",
@@ -1243,7 +1261,7 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "13:23",
+      "heure": "13:21",
       "categorie": "f1",
       "competition": "Formule 1 : Grand Prix de Las Vegas",
       "affiche": "Formule 1 : Grand Prix de Las Vegas",
@@ -1270,15 +1288,6 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "14:13",
-      "categorie": "sport",
-      "competition": "Voile : Grand Prix de Dubaï",
-      "affiche": "Voile : Grand Prix de Dubaï",
-      "chaine": "Canal+ Sport",
-      "duree_min": 91
-    },
-    {
-      "date": "2026-11-26",
       "heure": "14:17",
       "categorie": "film",
       "competition": "Nuremberg",
@@ -1288,12 +1297,12 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "15:01",
-      "categorie": "autre",
-      "competition": "Le Podium",
-      "affiche": "Le Podium",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 30
+      "heure": "14:21",
+      "categorie": "sport",
+      "competition": "Voile : Grand Prix de Dubaï",
+      "affiche": "Voile : Grand Prix de Dubaï",
+      "chaine": "Canal+ Sport",
+      "duree_min": 90
     },
     {
       "date": "2026-11-26",
@@ -1306,12 +1315,21 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "15:44",
+      "heure": "15:27",
+      "categorie": "autre",
+      "competition": "Formula One, le mag",
+      "affiche": "Formula One, le mag",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 33
+    },
+    {
+      "date": "2026-11-26",
+      "heure": "15:51",
       "categorie": "sport",
       "competition": "Golf+, le mag",
       "affiche": "Golf+, le mag",
       "chaine": "Canal+ Sport",
-      "duree_min": 59
+      "duree_min": 62
     },
     {
       "date": "2026-11-26",
@@ -1351,12 +1369,12 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "16:36",
+      "heure": "16:35",
       "categorie": "sport",
       "competition": "Voile : Grand Prix de Dubaï",
       "affiche": "Voile : Grand Prix de Dubaï",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 53
+      "duree_min": 52
     },
     {
       "date": "2026-11-26",
@@ -1369,12 +1387,12 @@
     },
     {
       "date": "2026-11-26",
-      "heure": "16:43",
+      "heure": "16:53",
       "categorie": "rugby",
       "competition": "Rugby : Pro D2",
       "affiche": "Rugby : Pro D2",
       "chaine": "Canal+ Sport",
-      "duree_min": 107
+      "duree_min": 97
     },
     {
       "date": "2026-11-26",
@@ -1405,21 +1423,21 @@
     },
     {
       "date": "2026-11-26",
+      "heure": "17:47",
+      "categorie": "f1",
+      "competition": "On Board F1",
+      "affiche": "On Board F1",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 31
+    },
+    {
+      "date": "2026-11-26",
       "heure": "17:50",
       "categorie": "sport",
       "competition": "Biathlon : après-course",
       "affiche": "Biathlon : après-course",
       "chaine": "L'Équipe",
       "duree_min": 40
-    },
-    {
-      "date": "2026-11-26",
-      "heure": "17:51",
-      "categorie": "f1",
-      "competition": "On Board F1",
-      "affiche": "On Board F1",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 31
     },
     {
       "date": "2026-11-26",
@@ -1617,7 +1635,7 @@
       "competition": "Football : Ligue Conférence",
       "affiche": "Football : Ligue Conférence",
       "chaine": "Canal+ Sport",
-      "duree_min": 125
+      "duree_min": 126
     },
     {
       "date": "2026-11-26",
@@ -1888,6 +1906,15 @@
       "affiche": "Basket-ball : NBA",
       "chaine": "beIN Sports 3",
       "duree_min": 210
+    },
+    {
+      "date": "2026-11-26",
+      "heure": "22:56",
+      "categorie": "autre",
+      "competition": "Thomas Ramos, point par point",
+      "affiche": "Thomas Ramos, point par point",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 77
     },
     {
       "date": "2026-11-26",
