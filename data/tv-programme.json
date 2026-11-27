@@ -5,7 +5,7 @@
     "updated_at": "2026-11-27",
     "note": "Généré automatiquement depuis un flux XMLTV. Éditable à la main si besoin.",
     "source": "XMLTV — https://raw.githubusercontent.com/crisvale/channels-and-epg/main/epg/france.xml.gz",
-    "generated_at": "2026-11-27 14:51"
+    "generated_at": "2026-11-27 23:15"
   },
   "abonnement": {
     "disponibles": [
@@ -456,7 +456,7 @@
       "competition": "Football : Ligue Europa et Ligue Conférence",
       "affiche": "Football : Ligue Europa et Ligue Conférence",
       "chaine": "Canal+ Foot",
-      "duree_min": 105
+      "duree_min": 104
     },
     {
       "date": "2026-11-27",
@@ -523,25 +523,25 @@
     },
     {
       "date": "2026-11-27",
-      "heure": "11:42",
+      "heure": "11:41",
       "categorie": "foot",
       "competition": "Football : Ligue Europa",
       "affiche": "Football : Ligue Europa",
       "chaine": "Canal+ Foot",
-      "duree_min": 108
+      "duree_min": 109
     },
     {
       "date": "2026-11-27",
-      "heure": "11:48",
+      "heure": "11:45",
       "categorie": "f1",
       "competition": "On Board F1",
       "affiche": "On Board F1",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 31
+      "duree_min": 33
     },
     {
       "date": "2026-11-27",
-      "heure": "11:56",
+      "heure": "11:57",
       "categorie": "autre",
       "competition": "En aparté",
       "affiche": "En aparté",
@@ -568,12 +568,12 @@
     },
     {
       "date": "2026-11-27",
-      "heure": "12:29",
+      "heure": "12:30",
       "categorie": "autre",
       "competition": "Clique",
       "affiche": "Clique",
       "chaine": "Canal+",
-      "duree_min": 54
+      "duree_min": 53
     },
     {
       "date": "2026-11-27",
@@ -789,7 +789,7 @@
       "competition": "Voile : Grand Prix de Dubaï",
       "affiche": "Voile : Grand Prix de Dubaï",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 53
+      "duree_min": 54
     },
     {
       "date": "2026-11-27",
@@ -928,12 +928,12 @@
     },
     {
       "date": "2026-11-27",
-      "heure": "19:58",
+      "heure": "19:59",
       "categorie": "autre",
       "competition": "Super plan",
       "affiche": "Super plan",
       "chaine": "Canal+",
-      "duree_min": 34
+      "duree_min": 33
     },
     {
       "date": "2026-11-27",
@@ -1054,12 +1054,12 @@
     },
     {
       "date": "2026-11-27",
-      "heure": "21:09",
+      "heure": "21:10",
       "categorie": "film",
       "competition": "Les K d'or",
       "affiche": "Les K d'or",
       "chaine": "Canal+",
-      "duree_min": 95
+      "duree_min": 94
     },
     {
       "date": "2026-11-27",
@@ -1140,7 +1140,7 @@
       "competition": "La Premier League sur Canal+",
       "affiche": "La Premier League sur Canal+",
       "chaine": "Canal+ Premier League",
-      "duree_min": 765
+      "duree_min": 900
     },
     {
       "date": "2026-11-27",
@@ -1189,12 +1189,12 @@
     },
     {
       "date": "2026-11-28",
-      "heure": "07:33",
+      "heure": "07:50",
       "categorie": "foot",
       "competition": "Football : Ligue Europa",
       "affiche": "Football : Ligue Europa",
       "chaine": "Canal+ Foot",
-      "duree_min": 104
+      "duree_min": 105
     },
     {
       "date": "2026-11-28",
@@ -1239,7 +1239,7 @@
       "competition": "Maigret et le mort amoureux",
       "affiche": "Maigret et le mort amoureux",
       "chaine": "Canal+",
-      "duree_min": 78
+      "duree_min": 77
     },
     {
       "date": "2026-11-28",
@@ -1249,15 +1249,6 @@
       "affiche": "Basket-ball : Qualifications à la Coupe du monde masculine",
       "chaine": "beIN Sports 1",
       "duree_min": 105
-    },
-    {
-      "date": "2026-11-28",
-      "heure": "09:17",
-      "categorie": "ldc",
-      "competition": "Football : Ligue des champions",
-      "affiche": "Football : Ligue des champions",
-      "chaine": "Canal+ Foot",
-      "duree_min": 213
     },
     {
       "date": "2026-11-28",
@@ -1279,21 +1270,30 @@
     },
     {
       "date": "2026-11-28",
+      "heure": "09:35",
+      "categorie": "ldc",
+      "competition": "Football : Ligue des champions",
+      "affiche": "Football : Ligue des champions",
+      "chaine": "Canal+ Foot",
+      "duree_min": 198
+    },
+    {
+      "date": "2026-11-28",
       "heure": "10:00",
       "categorie": "sport",
       "competition": "Moto GP : Grand Prix de Valence",
       "affiche": "Moto GP : Grand Prix de Valence",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 106
+      "duree_min": 105
     },
     {
       "date": "2026-11-28",
-      "heure": "10:17",
+      "heure": "10:16",
       "categorie": "film",
       "competition": "Les K d'or",
       "affiche": "Les K d'or",
       "chaine": "Canal+",
-      "duree_min": 93
+      "duree_min": 94
     },
     {
       "date": "2026-11-28",
@@ -1321,15 +1321,6 @@
       "affiche": "Au-delà des sommets",
       "chaine": "beIN Sports 3",
       "duree_min": 45
-    },
-    {
-      "date": "2026-11-28",
-      "heure": "11:42",
-      "categorie": "sport",
-      "competition": "Nottingham Forest / Chelsea",
-      "affiche": "Nottingham Forest / Chelsea",
-      "chaine": "Canal+ Premier League",
-      "duree_min": 102
     },
     {
       "date": "2026-11-28",
@@ -1365,7 +1356,7 @@
       "competition": "Le cercle",
       "affiche": "Le cercle",
       "chaine": "Canal+",
-      "duree_min": 50
+      "duree_min": 49
     },
     {
       "date": "2026-11-28",
@@ -1398,15 +1389,6 @@
       "date": "2026-11-28",
       "heure": "12:55",
       "categorie": "foot",
-      "competition": "Late Football Club",
-      "affiche": "Late Football Club",
-      "chaine": "Canal+ Foot",
-      "duree_min": 60
-    },
-    {
-      "date": "2026-11-28",
-      "heure": "12:55",
-      "categorie": "foot",
       "competition": "Football : Bundesliga 2",
       "affiche": "Football : Bundesliga 2",
       "chaine": "beIN Sports Max 4",
@@ -1414,12 +1396,21 @@
     },
     {
       "date": "2026-11-28",
-      "heure": "13:10",
+      "heure": "12:58",
+      "categorie": "foot",
+      "competition": "Late Football Club",
+      "affiche": "Late Football Club",
+      "chaine": "Canal+ Foot",
+      "duree_min": 61
+    },
+    {
+      "date": "2026-11-28",
+      "heure": "13:09",
       "categorie": "foot",
       "competition": "Journal du foot",
       "affiche": "Journal du foot",
       "chaine": "Canal+",
-      "duree_min": 34
+      "duree_min": 35
     },
     {
       "date": "2026-11-28",
@@ -1429,15 +1420,6 @@
       "affiche": "Biathlon : Coupe du monde à Kontiolahti - Epreuve de Kontiolahti",
       "chaine": "L'Équipe",
       "duree_min": 45
-    },
-    {
-      "date": "2026-11-28",
-      "heure": "13:24",
-      "categorie": "foot",
-      "competition": "Sommaire Premier League",
-      "affiche": "Sommaire Premier League",
-      "chaine": "Canal+ Premier League",
-      "duree_min": 123
     },
     {
       "date": "2026-11-28",
@@ -1474,6 +1456,15 @@
       "affiche": "Biathlon : entre deux courses",
       "chaine": "L'Équipe",
       "duree_min": 80
+    },
+    {
+      "date": "2026-11-28",
+      "heure": "13:57",
+      "categorie": "sport",
+      "competition": "Nottingham Forest / Chelsea",
+      "affiche": "Nottingham Forest / Chelsea",
+      "chaine": "Canal+ Premier League",
+      "duree_min": 102
     },
     {
       "date": "2026-11-28",
@@ -1554,7 +1545,7 @@
       "competition": "Débrief Moto",
       "affiche": "Débrief Moto",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 34
+      "duree_min": 33
     },
     {
       "date": "2026-11-28",
@@ -1590,7 +1581,7 @@
       "competition": "Manchester United / Brentford",
       "affiche": "Manchester United / Brentford",
       "chaine": "Canal+ Live 6",
-      "duree_min": 120
+      "duree_min": 123
     },
     {
       "date": "2026-11-28",
@@ -1743,7 +1734,7 @@
       "competition": "Voile : Grand Prix d'Abu Dhabi",
       "affiche": "Voile : Grand Prix d'Abu Dhabi",
       "chaine": "Canal+ Sport 360",
-      "duree_min": 93
+      "duree_min": 94
     },
     {
       "date": "2026-11-28",
@@ -1801,30 +1792,21 @@
     },
     {
       "date": "2026-11-28",
+      "heure": "20:40",
+      "categorie": "foot",
+      "competition": "Football : Copa Libertadores - Palmeiras / Estudiantes La Plata",
+      "affiche": "Football : Copa Libertadores - Palmeiras / Estudiantes La Plata",
+      "chaine": "L'Équipe",
+      "duree_min": 160
+    },
+    {
+      "date": "2026-11-28",
       "heure": "20:45",
       "categorie": "sport",
       "competition": "Volley-ball : Alterna VOLSTAR",
       "affiche": "Volley-ball : Alterna VOLSTAR",
       "chaine": "beIN Sports 3",
       "duree_min": 120
-    },
-    {
-      "date": "2026-11-28",
-      "heure": "20:50",
-      "categorie": "foot",
-      "competition": "Football : Copa Libertadores - Palmeiras / Estudiantes La Plata",
-      "affiche": "Football : Copa Libertadores - Palmeiras / Estudiantes La Plata",
-      "chaine": "L'Équipe",
-      "duree_min": 150
-    },
-    {
-      "date": "2026-11-28",
-      "heure": "21:00",
-      "categorie": "f1",
-      "competition": "Formule 1 : Grand Prix du Qatar",
-      "affiche": "Formule 1 : Grand Prix du Qatar",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 103
     },
     {
       "date": "2026-11-28",
@@ -1837,12 +1819,21 @@
     },
     {
       "date": "2026-11-28",
+      "heure": "21:02",
+      "categorie": "f1",
+      "competition": "Formule 1 : Grand Prix du Qatar",
+      "affiche": "Formule 1 : Grand Prix du Qatar",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 104
+    },
+    {
+      "date": "2026-11-28",
       "heure": "21:30",
       "categorie": "foot",
       "competition": "Football américain : NCAA",
       "affiche": "Football américain : NCAA",
       "chaine": "beIN Sports Max 4",
-      "duree_min": 240
+      "duree_min": 420
     },
     {
       "date": "2026-11-28",
@@ -1864,21 +1855,21 @@
     },
     {
       "date": "2026-11-28",
-      "heure": "22:43",
-      "categorie": "autre",
-      "competition": "Trail 360",
-      "affiche": "Trail 360",
-      "chaine": "Canal+ Sport 360",
-      "duree_min": 77
-    },
-    {
-      "date": "2026-11-28",
       "heure": "22:45",
       "categorie": "foot",
       "competition": "Football américain : NFL",
       "affiche": "Football américain : NFL",
       "chaine": "beIN Sports 3",
       "duree_min": 150
+    },
+    {
+      "date": "2026-11-28",
+      "heure": "22:46",
+      "categorie": "autre",
+      "competition": "Trail 360",
+      "affiche": "Trail 360",
+      "chaine": "Canal+ Sport 360",
+      "duree_min": 77
     },
     {
       "date": "2026-11-29",
@@ -1941,7 +1932,7 @@
       "competition": "Everton / Liverpool",
       "affiche": "Everton / Liverpool",
       "chaine": "Canal+ Live 1",
-      "duree_min": 120
+      "duree_min": 107
     },
     {
       "date": "2026-11-29",
